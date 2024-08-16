@@ -1,3 +1,3 @@
 # GameBoxES
 
-### A game for a school project
+### A standalone game engine built with LWJGL 3
