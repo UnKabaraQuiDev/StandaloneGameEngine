@@ -97,8 +97,7 @@ test/
 /logs/*
 /target/
 
-mine_format.xml
-options.properties
-history.txt
+/config/
+!/config/main.properties
 
 # pom.xml
