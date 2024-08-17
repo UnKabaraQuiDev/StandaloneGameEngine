@@ -4,19 +4,22 @@ import java.util.logging.Level;
 
 import org.joml.Matrix4f;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.GameEngine;
+import lu.kbra.standalone.gameengine.anim.skeletal.ArmatureAnimation;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
+import lu.kbra.standalone.gameengine.objs.entity.components.ArmatureAnimationComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.MeshComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.TransformComponent;
 import lu.kbra.standalone.gameengine.scene.Scene;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 import lu.kbra.standalone.gameengine.scene.camera.Camera3D;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 
@@ -71,6 +74,14 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 					transformationMatrix = transform.getTransform().getMatrix();
 				}
 				material.setProperty(RenderShader.TRANSFORMATION_MATRIX, transformationMatrix);
+			}
+		}
+		
+		if (e.hasComponent(ArmatureAnimationComponent.class)) {
+			ArmatureAnimationComponent msac = (ArmatureAnimationComponent) e.getComponent(e.getComponents(ArmatureAnimationComponent.class).get(0));
+			if (msac != null) {
+				ArmatureAnimation msa = msac.getArmatureAnimation();
+				msa.bind(shader);
 			}
 		}
 

@@ -1,10 +1,7 @@
 package lu.kbra.standalone.gameengine.utils;
 
-import java.awt.Color;
-import java.nio.ByteBuffer;
+import java.io.PrintStream;
 import java.nio.IntBuffer;
-import java.util.Arrays;
-import java.util.Random;
 import java.util.stream.IntStream;
 
 import org.joml.Matrix3x2f;
@@ -14,6 +11,12 @@ import org.joml.Vector2i;
 import org.joml.Vector3f;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.lwjgl.PointerBuffer;
+import org.lwjgl.assimp.AIAnimation;
+import org.lwjgl.assimp.AIMaterial;
+import org.lwjgl.assimp.AIMesh;
+import org.lwjgl.assimp.AINode;
+import org.lwjgl.assimp.AIScene;
 import org.lwjgl.egl.EGL10;
 import org.lwjgl.openal.AL11;
 import org.lwjgl.openal.ALC11;
@@ -22,6 +25,8 @@ import org.lwjgl.opengl.GL40;
 import org.lwjgl.opengl.GL45;
 import org.lwjgl.opengles.GLES20;
 import org.lwjgl.opengles.GLES30;
+
+import lu.pcy113.pclib.PCUtils;
 
 import lu.kbra.standalone.gameengine.exceptions.egl.EGLBadAccessException;
 import lu.kbra.standalone.gameengine.exceptions.egl.EGLBadAllocException;
@@ -60,10 +65,6 @@ import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidOperationExc
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidValueException;
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESOutOfMemoryException;
 import lu.kbra.standalone.gameengine.impl.nexttask.NextTask;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL40;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
-import lu.pcy113.pclib.PCUtils;
 
 public final class GameEngineUtils {
 
@@ -353,6 +354,58 @@ public final class GameEngineUtils {
 			return vec.mul(-1);
 		}
 		return vec;
+	}
+
+	public static void list(AIScene scene, PrintStream out) {
+		// List meshes
+		int numMeshes = scene.mNumMeshes();
+		PointerBuffer meshes = scene.mMeshes();
+		out.println("Meshes (" + numMeshes + "):");
+		for (int i = 0; i < numMeshes; i++) {
+			AIMesh mesh = AIMesh.create(meshes.get(i));
+			out.println("  Mesh " + i + ": vertices=" + mesh.mNumVertices() + ", faces=" + mesh.mNumFaces());
+		}
+
+		// List materials
+		int numMaterials = scene.mNumMaterials();
+		PointerBuffer materials = scene.mMaterials();
+		out.println("Materials (" + numMaterials + "):");
+		for (int i = 0; i < numMaterials; i++) {
+			AIMaterial material = AIMaterial.create(materials.get(i));
+			out.println("  Material " + i);
+		}
+
+		// List animations
+		int numAnimations = scene.mNumAnimations();
+		PointerBuffer animations = scene.mAnimations();
+		out.println("Animations (" + numAnimations + "):");
+		for (int i = 0; i < numAnimations; i++) {
+			AIAnimation animation = AIAnimation.create(animations.get(i));
+			out.println("  Animation " + i + ": duration=" + animation.mDuration() + ", ticksPerSecond=" + animation.mTicksPerSecond());
+		}
+
+		// List nodes recursively
+		out.println("Node Hierarchy:");
+		listNode(scene.mRootNode(), 0, out);
+	}
+
+	private static void listNode(AINode node, int level, PrintStream out) {
+		String indent = PCUtils.repeatString("  ", level);
+		out.println(indent + "Node: " + node.mName().dataString());
+
+		// List meshes attached to this node
+		int numMeshes = node.mNumMeshes();
+		IntBuffer meshes = node.mMeshes();
+		for (int i = 0; i < numMeshes; i++) {
+			out.println(indent + "  Mesh Index: " + meshes.get(i));
+		}
+
+		// Recursively list child nodes
+		int numChildren = node.mNumChildren();
+		PointerBuffer children = node.mChildren();
+		for (int i = 0; i < numChildren; i++) {
+			listNode(AINode.create(children.get(i)), level + 1, out);
+		}
 	}
 
 }
