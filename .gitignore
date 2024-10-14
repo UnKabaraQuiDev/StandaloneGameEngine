@@ -97,7 +97,7 @@ test/
 /logs/*
 /target/
 
-/config/
-!/config/main.properties
+/config/*
+!config/main.properties
 
 # pom.xml
