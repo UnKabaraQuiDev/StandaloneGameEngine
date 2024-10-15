@@ -16,11 +16,12 @@ import org.lwjgl.opengles.GLESCapabilities;
 import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.exceptions.egl.EGLNoDisplayException;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.consts.GLType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class GLESWindow extends Window {
 

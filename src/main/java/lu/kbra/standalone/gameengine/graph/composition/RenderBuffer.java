@@ -1,11 +1,11 @@
 package lu.kbra.standalone.gameengine.graph.composition;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.consts.TexelFormat;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachment {
 

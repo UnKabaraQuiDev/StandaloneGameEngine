@@ -3,11 +3,12 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class AttribArray implements Cleanupable {
 

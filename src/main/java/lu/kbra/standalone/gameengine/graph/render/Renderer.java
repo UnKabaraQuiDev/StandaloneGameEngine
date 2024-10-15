@@ -1,10 +1,11 @@
 package lu.kbra.standalone.gameengine.graph.render;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class Renderer<T, K extends Renderable> implements UniqueID, Cleanupable {
 

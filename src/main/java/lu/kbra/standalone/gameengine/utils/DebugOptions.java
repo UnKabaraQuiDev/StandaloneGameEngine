@@ -5,6 +5,8 @@ import org.joml.Vector2f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.geom.Gizmo;
@@ -19,7 +21,6 @@ import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.scene.Scene;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class DebugOptions implements Cleanupable {
 

@@ -2,13 +2,14 @@ package lu.kbra.standalone.gameengine.utils.codec.encoder;
 
 import java.nio.ByteBuffer;
 
+import lu.pcy113.jbcodec.CodecManager;
+import lu.pcy113.jbcodec.encoder.DefaultObjectEncoder;
+
 import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.graph.material.Material;
-import lu.pcy113.jbcodec.CodecManager;
-import lu.pcy113.jbcodec.encoder.DefaultObjectEncoder;
 
 public class MeshEncoder extends DefaultObjectEncoder<Mesh> {
 

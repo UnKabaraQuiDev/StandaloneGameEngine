@@ -2,9 +2,10 @@ package lu.kbra.standalone.gameengine.utils.codec.encoder;
 
 import java.nio.ByteBuffer;
 
-import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.pcy113.jbcodec.CodecManager;
 import lu.pcy113.jbcodec.encoder.DefaultObjectEncoder;
+
+import lu.kbra.standalone.gameengine.graph.material.Material;
 
 public class MaterialEncoder extends DefaultObjectEncoder<Material> {
 

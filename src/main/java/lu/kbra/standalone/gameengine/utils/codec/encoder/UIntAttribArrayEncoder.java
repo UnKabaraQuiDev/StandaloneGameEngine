@@ -2,14 +2,14 @@ package lu.kbra.standalone.gameengine.utils.codec.encoder;
 
 import java.nio.ByteBuffer;
 
-import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.kbra.standalone.gameengine.utils.codec.decoder.UIntAttribArrayDecoder;
 import lu.pcy113.jbcodec.CodecManager;
 import lu.pcy113.jbcodec.encoder.DefaultObjectEncoder;
-import lu.pcy113.jbcodec.encoder.StringEncoder;
+import lu.pcy113.jbcodec.encoder.PlatformStringEncoder;
 import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
+
+import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
+import lu.kbra.standalone.gameengine.utils.codec.decoder.UIntAttribArrayDecoder;
 
 /**
  * STRING name ; INT index ; INT dataSize ; INT bufferType ; BOOL _static ; INT divisor ; INT arrayLength ; INT[] data ; INT END
@@ -46,7 +46,7 @@ public class UIntAttribArrayEncoder extends DefaultObjectEncoder<UIntAttribArray
 			bb.putShort(header);
 		}
 
-		ByteBuffer bbName = ((StringEncoder) cm.getEncoderByClass(String.class)).encode(false, name);
+		ByteBuffer bbName = ((PlatformStringEncoder) cm.getEncoderByClass(String.class)).encode(false, name);
 		bb.put(bbName);
 
 		bb.putInt(index);

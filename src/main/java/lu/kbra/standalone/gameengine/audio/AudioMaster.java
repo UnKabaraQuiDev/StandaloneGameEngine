@@ -17,10 +17,11 @@ import org.lwjgl.openal.ALUtil;
 import org.lwjgl.openal.EXTThreadLocalContext;
 import org.lwjgl.system.MemoryUtil;
 
-import lu.kbra.standalone.gameengine.impl.Cleanupable;
-import lu.kbra.standalone.gameengine.utils.PDRLoggerUtils;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
+
+import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
+import lu.kbra.standalone.gameengine.utils.PDRLoggerUtils;
 
 public class AudioMaster implements Cleanupable {
 

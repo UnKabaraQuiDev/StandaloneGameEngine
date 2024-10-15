@@ -116,7 +116,7 @@ public final class GameEngineUtils {
 	public static boolean checkAlcError(long device) {
 		boolean b;
 		if (b = ALC11.alcGetError(device) != ALC11.ALC_NO_ERROR)
-			throw new RuntimeException("Al error triggered: " + AL11.alGetError());
+			throw new RuntimeException("Alc error triggered: " + AL11.alGetError());
 		return b;
 	}
 

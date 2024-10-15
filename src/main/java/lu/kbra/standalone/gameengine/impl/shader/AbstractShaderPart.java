@@ -4,6 +4,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.logging.Level;
 
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.graph.shader.part.FragmentShaderPart;
 import lu.kbra.standalone.gameengine.graph.shader.part.VertexShaderPart;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
@@ -11,8 +14,6 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL40;
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 

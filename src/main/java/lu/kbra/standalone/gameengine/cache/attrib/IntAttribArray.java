@@ -2,7 +2,6 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import java.util.Arrays;
 
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class IntAttribArray extends AttribArray {

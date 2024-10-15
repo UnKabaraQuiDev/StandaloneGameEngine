@@ -3,12 +3,12 @@ package lu.kbra.standalone.gameengine.graph.texture;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
+import lu.pcy113.pclib.PCUtils;
+
 import lu.kbra.standalone.gameengine.utils.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.file.FileUtils;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;
-import lu.pcy113.pclib.PCUtils;
 
 public class CubemapTexture extends Texture {
 

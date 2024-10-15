@@ -6,11 +6,12 @@ import java.util.logging.Level;
 import org.joml.Vector2i;
 import org.joml.Vector4f;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class Compositor implements Cleanupable {
 

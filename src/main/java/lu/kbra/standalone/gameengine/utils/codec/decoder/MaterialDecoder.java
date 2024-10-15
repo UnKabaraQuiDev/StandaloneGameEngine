@@ -5,9 +5,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.nio.ByteBuffer;
 
+import lu.pcy113.jbcodec.decoder.DefaultObjectDecoder;
+
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.utils.codec.DefaultObjectDecoderMethod;
-import lu.pcy113.jbcodec.decoder.DefaultObjectDecoder;
 
 public class MaterialDecoder extends DefaultObjectDecoder<Material> {
 

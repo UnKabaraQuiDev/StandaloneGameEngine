@@ -5,6 +5,8 @@ import java.util.logging.Level;
 
 import org.joml.Vector3f;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
 import lu.kbra.standalone.gameengine.graph.window.GLESWindow;
@@ -19,7 +21,6 @@ import lu.kbra.standalone.gameengine.impl.nexttask.NextTaskEnvironnment;
 import lu.kbra.standalone.gameengine.utils.DebugOptions;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL40;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class GameEngine implements Cleanupable, UniqueID {
 

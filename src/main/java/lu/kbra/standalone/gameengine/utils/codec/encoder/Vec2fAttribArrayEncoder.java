@@ -4,13 +4,14 @@ import java.nio.ByteBuffer;
 
 import org.joml.Vector2f;
 
-import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
-import lu.kbra.standalone.gameengine.utils.codec.decoder.Vec2fAttribArrayDecoder;
 import lu.pcy113.jbcodec.CodecManager;
 import lu.pcy113.jbcodec.encoder.DefaultObjectEncoder;
 import lu.pcy113.jbcodec.encoder.Encoder;
-import lu.pcy113.jbcodec.encoder.StringEncoder;
+import lu.pcy113.jbcodec.encoder.PlatformStringEncoder;
 import lu.pcy113.pclib.logger.GlobalLogger;
+
+import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
+import lu.kbra.standalone.gameengine.utils.codec.decoder.Vec2fAttribArrayDecoder;
 
 /**
  * STRING name ; INT index ; INT dataSize ; INT bufferType ; BOOL _static ; INT
@@ -54,7 +55,7 @@ public class Vec2fAttribArrayEncoder extends DefaultObjectEncoder<Vec2fAttribArr
 			bb.putShort(header);
 		}
 		
-		ByteBuffer bbName = ((StringEncoder) cm.getEncoderByClass(String.class)).encode(false, name);
+		ByteBuffer bbName = ((PlatformStringEncoder) cm.getEncoderByClass(String.class)).encode(false, name);
 		bb.put(bbName);
 		bbName.clear();
 		bbName = null;

@@ -1,7 +1,8 @@
 package lu.kbra.standalone.gameengine;
 
-import lu.kbra.standalone.gameengine.impl.GameLogic;
 import lu.pcy113.pclib.logger.GlobalLogger;
+
+import lu.kbra.standalone.gameengine.impl.GameLogic;
 
 public class GameLogicTest extends GameLogic {
 

@@ -4,6 +4,8 @@ import java.util.logging.Level;
 
 import org.joml.Matrix4f;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.geom.Mesh;
@@ -20,7 +22,6 @@ import lu.kbra.standalone.gameengine.scene.Scene3D;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 import lu.kbra.standalone.gameengine.scene.camera.Camera3D;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class TextEmitterRenderer extends Renderer<Scene, TextEmitterComponent> {
 

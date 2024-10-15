@@ -2,10 +2,11 @@ package lu.kbra.standalone.gameengine.utils.codec.encoder;
 
 import java.nio.ByteBuffer;
 
-import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
-import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.pcy113.jbcodec.encoder.DefaultObjectEncoder;
 import lu.pcy113.jbcodec.encoder.EncoderNotFoundException;
+
+import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 
 public class AttribArrayEncoder extends DefaultObjectEncoder<AttribArray> {
 

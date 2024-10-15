@@ -3,9 +3,10 @@ package lu.kbra.standalone.gameengine.audio;
 import org.joml.Vector3f;
 import org.lwjgl.openal.AL11;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class ALSource implements Cleanupable {
 

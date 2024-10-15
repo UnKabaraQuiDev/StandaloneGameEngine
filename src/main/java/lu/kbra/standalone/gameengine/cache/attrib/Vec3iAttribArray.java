@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import org.joml.Vector3i;
 
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Vec3iAttribArray extends AttribArray {

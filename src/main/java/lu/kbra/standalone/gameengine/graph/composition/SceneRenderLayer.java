@@ -3,13 +3,14 @@ package lu.kbra.standalone.gameengine.graph.composition;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.graph.render.Renderer;
 import lu.kbra.standalone.gameengine.scene.Scene;
 import lu.kbra.standalone.gameengine.scene.Scene2D;
 import lu.kbra.standalone.gameengine.scene.Scene3D;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class SceneRenderLayer extends RenderLayer<GameEngine, Framebuffer, Scene> {
 	

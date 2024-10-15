@@ -1,9 +1,10 @@
 package lu.kbra.standalone.gameengine.graph.composition;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class RenderLayer<K, J, O extends Renderable> implements Renderable, UniqueID, Cleanupable {
 

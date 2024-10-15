@@ -10,6 +10,8 @@ import org.joml.Vector3f;
 import org.joml.Vector4f;
 import org.lwjgl.system.MemoryUtil;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
@@ -19,7 +21,6 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImageOrigin;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class AdvancedCompositor implements Cleanupable {
 

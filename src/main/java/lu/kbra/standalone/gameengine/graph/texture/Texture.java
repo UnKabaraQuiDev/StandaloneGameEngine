@@ -1,9 +1,10 @@
 package lu.kbra.standalone.gameengine.graph.texture;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.graph.composition.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.consts.DataType;
 import lu.kbra.standalone.gameengine.utils.consts.TexelFormat;
 import lu.kbra.standalone.gameengine.utils.consts.TexelInternalFormat;
@@ -12,7 +13,6 @@ import lu.kbra.standalone.gameengine.utils.consts.TextureParameter;
 import lu.kbra.standalone.gameengine.utils.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.consts.TextureWrap;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttachment {
 

@@ -7,6 +7,8 @@ import java.util.logging.Level;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.MultiAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
@@ -15,10 +17,8 @@ import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class Mesh implements UniqueID, Cleanupable, Renderable {
 

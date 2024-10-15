@@ -14,14 +14,14 @@ import org.joml.Vector3i;
 import org.joml.Vector4f;
 import org.lwjgl.system.MemoryStack;
 
-import lu.kbra.standalone.gameengine.GameEngine;
+import lu.pcy113.pclib.datastructure.pair.Pair;
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.Property;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.datastructure.pair.Pair;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class AbstractShader implements UniqueID, Cleanupable {
 

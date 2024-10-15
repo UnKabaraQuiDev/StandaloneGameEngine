@@ -9,6 +9,8 @@ import java.util.logging.Level;
 
 import org.joml.Vector2f;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.audio.Sound;
 import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.exceptions.opengl.ShaderInstantiationException;
@@ -34,7 +36,6 @@ import lu.kbra.standalone.gameengine.utils.consts.TextureFilter;
 import lu.kbra.standalone.gameengine.utils.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.consts.TextureWrap;
 import lu.kbra.standalone.gameengine.utils.transform.Transform;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class CacheManager implements Cleanupable, UniqueID {
 

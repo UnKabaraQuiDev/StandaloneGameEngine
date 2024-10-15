@@ -2,11 +2,11 @@ package lu.kbra.standalone.gameengine.utils.codec.decoder;
 
 import java.nio.ByteBuffer;
 
-import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.pcy113.jbcodec.decoder.DefaultObjectDecoder;
 import lu.pcy113.jbcodec.decoder.StringDecoder;
 import lu.pcy113.pclib.PCUtils;
+
+import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 
 /**
  * STRING name ; INT index ; INT dataSize ; INT bufferType ; BOOL _static ; INT
