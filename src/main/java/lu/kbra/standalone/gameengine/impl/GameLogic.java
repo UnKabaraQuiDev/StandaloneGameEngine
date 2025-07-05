@@ -9,10 +9,10 @@ import lu.kbra.standalone.gameengine.impl.nexttask.NextTaskEnvironnment;
 
 public abstract class GameLogic {
 
-	public GameEngine engine;
-	public SharedCacheManager cache;
-	public Window window;
-	public AudioMaster audio;
+	protected GameEngine engine;
+	protected SharedCacheManager cache;
+	protected Window window;
+	protected AudioMaster audio;
 
 	public void register(GameEngine e) {
 		/*

@@ -1,6 +1,7 @@
 package lu.kbra.standalone.gameengine;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -12,16 +13,12 @@ import lu.kbra.standalone.gameengine.impl.GameLogic;
 
 public class ClientMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
+			IllegalAccessException, FileNotFoundException, IOException {
 		final File propertyFile = new File("./config/main.properties");
 
 		final Properties props = new Properties();
-		try {
-			props.load(new FileReader(propertyFile));
-		} catch (IOException e) {
-			e.printStackTrace();
-			return;
-		}
+		props.load(new FileReader(propertyFile));
 
 		try {
 			GlobalLogger.init(new File(props.getProperty("logs.config.file")));
@@ -29,22 +26,11 @@ public class ClientMain {
 			e.printStackTrace();
 			return;
 		}
-		
-		Class<? extends GameLogic> gameLogicClass = null;
-		try {
-			gameLogicClass = (Class<? extends GameLogic>) Class.forName(props.getProperty("main.class"));
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			return;
-		}
 
-		GameLogic gameLogic = null;
-		try {
-			gameLogic = gameLogicClass.newInstance();
-		} catch (InstantiationException | IllegalAccessException e) {
-			e.printStackTrace();
-			return;
-		}
+		Class<? extends GameLogic> gameLogicClass = (Class<? extends GameLogic>) Class
+				.forName(props.getProperty("main.class"));
+
+		GameLogic gameLogic = gameLogicClass.newInstance();
 
 		final String name = props.getProperty("game.name");
 
