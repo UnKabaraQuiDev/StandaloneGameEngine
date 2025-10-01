@@ -14,8 +14,6 @@ import lu.kbra.standalone.gameengine.impl.shader.AbstractShaderPart;
 
 public class TextShader extends RenderShader {
 
-	public static final String NAME = TextShader.class.getName();
-
 	public static final String TXT1 = "txt1";
 	public static final String FG_COLOR = "fgColor";
 	public static final String BG_COLOR = "bgColor";
@@ -24,7 +22,8 @@ public class TextShader extends RenderShader {
 	public static final String THICKNESS = "thickness";
 
 	public TextShader() {
-		super(NAME, true, AbstractShaderPart.load("./resources/shaders/text/text.vert"), AbstractShaderPart.load("./resources/shaders/text/text.frag"));
+		super(TextShader.class.getName(), true, AbstractShaderPart.load("./resources/shaders/text/text.vert"),
+				AbstractShaderPart.load("./resources/shaders/text/text.frag"));
 	}
 
 	@Override

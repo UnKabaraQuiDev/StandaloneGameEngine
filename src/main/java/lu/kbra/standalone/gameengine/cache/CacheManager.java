@@ -127,6 +127,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 		this.framebuffers.values().forEach(Framebuffer::cleanup);
 		this.framebuffers.clear();
+
+		this.name = null;
 	}
 
 	@Override
@@ -150,20 +152,6 @@ public class CacheManager implements Cleanupable, UniqueID {
 			this.meshes.remove(m.getId()).cleanup();
 		return this.meshes.putIfAbsent(m.getId(), m) == null;
 	}
-
-	/*
-	 * private boolean add(Map<String, UniqueID> map, UniqueID m) { if (m == null) return false;
-	 * 
-	 * if (map.containsKey(m.getId()) && !map.get(m.getId()).equals(m)) map.remove(m.getId());
-	 * 
-	 * return map.putIfAbsent(m.getId(), (UniqueID) m) == null; }
-	 * 
-	 * private boolean addCleanup(Map<String, UniqueID> map, UniqueID m) { if (m == null) return false;
-	 * 
-	 * if (map.containsKey(m.getId()) && !map.get(m.getId()).equals(m)) ((Cleanupable) map.remove(m.getId())).cleanup();
-	 * 
-	 * return map.putIfAbsent(m.getId(), (UniqueID) m) == null; }
-	 */
 
 	public boolean addScene(Scene m) {
 		if (m == null)
@@ -274,7 +262,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public Renderer<?, ?> getRenderer(String name) {
 		/*
-		 * if (name != null && !renderers.containsKey(name)) GlobalLogger.log("No renderer found for: " + name);
+		 * if (name != null && !renderers.containsKey(name)) GlobalLogger.log("No renderer found for: " +
+		 * name);
 		 */
 		return this.renderers.getOrDefault(name, parent == null ? null : parent.getRenderer(name));
 	}
@@ -511,7 +500,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 			addRenderShader(shader);
 
 			return shader;
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| NoSuchMethodException | SecurityException e) {
 			throw new ShaderInstantiationException(e);
 		}
 	}
@@ -531,7 +521,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 			addRenderShader(mat.getRenderShader());
 
 			return mat;
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| NoSuchMethodException | SecurityException e) {
 			throw new ShaderInstantiationException(e);
 		}
 	}
@@ -656,6 +647,12 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public CacheManager getParent() {
 		return parent;
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		if (name != null)
+			GlobalLogger.severe("This CacheManager got lost ! (" + name + ")");
 	}
 
 }

@@ -63,7 +63,6 @@ import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidIndexExcepti
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidOperationException;
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidValueException;
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESOutOfMemoryException;
-import lu.kbra.standalone.gameengine.impl.nexttask.NextTask;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public final class GameEngineUtils {
@@ -319,16 +318,6 @@ public final class GameEngineUtils {
 	public static Vector2f loadRangeFloat(JSONObject sobj, String key) {
 		JSONArray arr = sobj.getJSONArray(key);
 		return new Vector2f(arr.getFloat(0), arr.getFloat(1));
-	}
-
-	public static NextTask[] castNextTask(Object[] array) {
-		NextTask[] nt = new NextTask[array.length];
-
-		for (int i = 0; i < array.length; i++) {
-			nt[i] = (NextTask) array[i];
-		}
-
-		return nt;
 	}
 
 	public static Vector2f clamp(Vector2f vec) {

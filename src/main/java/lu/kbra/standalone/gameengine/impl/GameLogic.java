@@ -4,8 +4,7 @@ import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
 import lu.kbra.standalone.gameengine.graph.window.Window;
-import lu.kbra.standalone.gameengine.impl.nexttask.NextTask;
-import lu.kbra.standalone.gameengine.impl.nexttask.NextTaskEnvironnment;
+import lu.kbra.standalone.gameengine.impl.nexttask.Dispatcher;
 
 public abstract class GameLogic {
 
@@ -14,18 +13,19 @@ public abstract class GameLogic {
 	protected Window window;
 	protected AudioMaster audio;
 
-	public void register(GameEngine e) {
-		/*
-		 * if (this.engine != null) throw new
-		 * IllegalStateException("Already registered");
-		 */
+	protected Dispatcher MAIN_DISPATCHER, RENDER_DISPATCHER, UPDATE_DISPATCHER;
 
+	public void register(GameEngine e) {
 		this.engine = e;
 
 		this.cache = e.getCache();
 		this.window = e.getWindow();
 
 		this.audio = e.getAudioMaster();
+
+		this.MAIN_DISPATCHER = e.getMainDispatcher();
+		this.RENDER_DISPATCHER = e.getRenderDispatcher();
+		this.UPDATE_DISPATCHER = e.getUpdateDispatcher();
 	}
 
 	public abstract void init(GameEngine e);
@@ -38,22 +38,6 @@ public abstract class GameLogic {
 	public abstract void update(float dTime);
 
 	public abstract void render(float dTime);
-
-	public <I, B, C> NextTask<I, B, C> createTask(int target) {
-		return engine.<I, B, C>createTask(target);
-	}
-
-	public <I, B, C> NextTask<I, B, C> createTask(int from, int target) {
-		return engine.<I, B, C>createTask(from, target);
-	}
-
-	public NextTaskEnvironnment getTaskEnvironnment() {
-		return engine.getTaskEnvironnment();
-	}
-
-	/*
-	 * protected boolean pushTask(NextTask nt) { return engine.pushTask(nt); }
-	 */
 
 	protected boolean waitForFrameEnd() {
 		return engine.waitForFrameEnd();
