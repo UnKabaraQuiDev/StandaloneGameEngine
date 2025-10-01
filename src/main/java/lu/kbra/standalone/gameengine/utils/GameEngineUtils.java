@@ -20,7 +20,6 @@ import org.lwjgl.assimp.AIScene;
 import org.lwjgl.egl.EGL10;
 import org.lwjgl.openal.AL11;
 import org.lwjgl.openal.ALC11;
-import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL40;
 import org.lwjgl.opengl.GL45;
 import org.lwjgl.opengles.GLES20;
@@ -65,6 +64,7 @@ import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidOperationExc
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidValueException;
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESOutOfMemoryException;
 import lu.kbra.standalone.gameengine.impl.nexttask.NextTask;
+import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public final class GameEngineUtils {
 
@@ -204,12 +204,12 @@ public final class GameEngineUtils {
 	}
 
 	public static boolean checkGlError(String msg) {
-		int status = GL11.glGetError();
+		int status = GL_W.glGetError();
 
-		if (status == GL40.GL_NO_ERROR)
+		if (status == GL_W.GL_NO_ERROR)
 			return true;
 
-		String caller = PCUtils.getCallerClassName(false);
+		final String caller = PCUtils.getCallerClassName(false);
 
 		switch (status) {
 		case GL40.GL_INVALID_OPERATION:
@@ -291,7 +291,10 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f[] floatArrayToVec3f(float[] arr) {
-		return IntStream.range(0, arr.length / 3).mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2])).toArray(Vector3f[]::new);
+		return IntStream
+				.range(0, arr.length / 3)
+				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2]))
+				.toArray(Vector3f[]::new);
 	}
 
 	public static Vector2f[] floatArrayToVec2f(float[] arr) {
@@ -299,7 +302,10 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f[] intArrayToVec3f(int[] arr) {
-		return IntStream.range(0, arr.length / 3).mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2])).toArray(Vector3f[]::new);
+		return IntStream
+				.range(0, arr.length / 3)
+				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2]))
+				.toArray(Vector3f[]::new);
 	}
 
 	public static Vector2f getCoordinates(Vector2f in, int[] viewport) {
@@ -330,7 +336,10 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f clampPositive(Vector3f vec) {
-		return vec.set(PCUtils.clampGreaterOrEquals(0, vec.x), PCUtils.clampGreaterOrEquals(0, vec.y), PCUtils.clampGreaterOrEquals(0, vec.z));
+		return vec
+				.set(PCUtils.clampGreaterOrEquals(0, vec.x),
+						PCUtils.clampGreaterOrEquals(0, vec.y),
+						PCUtils.clampGreaterOrEquals(0, vec.z));
 	}
 
 	public static Vector2f normalizeGreater(Vector2f vec) {

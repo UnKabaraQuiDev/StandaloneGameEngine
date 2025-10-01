@@ -22,8 +22,6 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Mesh implements UniqueID, Cleanupable, Renderable {
 
-	public static final String NAME = Mesh.class.getName();
-
 	protected String name;
 	protected int vao = -1;
 	protected HashMap<Integer, Integer> vbo = new HashMap<>();

@@ -43,10 +43,10 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 
 	@Override
 	public void render_in(CacheManager cache, GameEngine ge, Scene3D scene) {
-		meshRenderer = (MeshRenderer) cache.getRenderer(Mesh.NAME);
-		gizmoRenderer = (GizmoRenderer) cache.getRenderer(Gizmo.NAME);
-		instanceEmitterRenderer = (InstanceEmitterRenderer) cache.getRenderer(InstanceEmitter.NAME);
-		textEmitterRenderer = (TextEmitterRenderer) cache.getRenderer(TextEmitter.NAME);
+		meshRenderer = (MeshRenderer) cache.getRenderer(Mesh.class.getName());
+		gizmoRenderer = (GizmoRenderer) cache.getRenderer(Gizmo.class.getName());
+		instanceEmitterRenderer = (InstanceEmitterRenderer) cache.getRenderer(InstanceEmitter.class.getName());
+		textEmitterRenderer = (TextEmitterRenderer) cache.getRenderer(TextEmitter.class.getName());
 
 		LinkedHashMap<String, Entity> sortedMap = scene.getEntities().entrySet().stream().sorted(COMPARATOR).collect(LinkedHashMap::new, (linkedHashMap, entry) -> linkedHashMap.put(entry.getKey(), entry.getValue()), LinkedHashMap::putAll);
 		scene.setEntities(sortedMap);

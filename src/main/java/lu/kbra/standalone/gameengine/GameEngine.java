@@ -27,17 +27,16 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 	private static final long MIN_NANO_TIME_TO_START_TASK = 10_000;
 
-	public static Vector3f X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0), Y_POS = new Vector3f(0, 1, 0),
-			Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1), Z_NEG = new Vector3f(0, 0, -1),
-			ZERO = new Vector3f(0, 0, 0);
+	public static final Vector3f X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0), Y_POS = new Vector3f(0, 1, 0),
+			Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1), Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0, 0, 0);
 
-	public static Vector3f UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
+	public static final Vector3f UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
 			RIGHT = new Vector3f(X_POS), FORWARD = new Vector3f(Z_POS), BACK = new Vector3f(X_POS);
 
-	public static long POLL_EVENT_TIMEOUT = 500, BUFFER_SWAP_TIMEOUT = 500, WAIT_FRAME_END_TIMEOUT = 500,
+	public static final long POLL_EVENT_TIMEOUT = 500, BUFFER_SWAP_TIMEOUT = 500, WAIT_FRAME_END_TIMEOUT = 500,
 			WAIT_FRAME_START_TIMEOUT = 500, WAIT_UPDATE_END_TIMEOUT = 500, WAIT_UPDATE_START_TIMEOUT = 500; // ms
 
-	public static int QUEUE_MAIN = 0, QUEUE_RENDER = 1, QUEUE_UPDATE = 2;
+	public static final int QUEUE_MAIN = 0, QUEUE_RENDER = 1, QUEUE_UPDATE = 2;
 
 	public static DebugOptions DEBUG = new DebugOptions();
 
@@ -59,8 +58,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 	private ThreadGroup threadGroup;
 	private Thread updateThread, renderThread, mainThread;
 
-	private final Object waitForFrameEnd = new Object(), waitForUpdateEnd = new Object(),
-			waitForFrameStart = new Object(), waitForUpdateStart = new Object();
+	private final Object waitForFrameEnd = new Object(), waitForUpdateEnd = new Object(), waitForFrameStart = new Object(),
+			waitForUpdateStart = new Object();
 
 	private NextTaskEnvironnment taskEnvironnment;
 
@@ -237,9 +236,10 @@ public class GameEngine implements Cleanupable, UniqueID {
 						waitForFrameEnd.notifyAll(); // wake up waiting threads
 					}
 
-					GlobalLogger.info("FPS: " + PCUtils.round(this.currentFps, 5) + " delta: "
-							+ PCUtils.round(((double) deltaRender / 1_000_000), 5) + "ms renderLoop: "
-							+ PCUtils.round(((double) (System.nanoTime() - loopStart) / 1_000_000), 5) + "ms");
+					GlobalLogger
+							.info("FPS: " + PCUtils.round(this.currentFps, 5) + " delta: "
+									+ PCUtils.round(((double) deltaRender / 1_000_000), 5) + "ms renderLoop: "
+									+ PCUtils.round(((double) (System.nanoTime() - loopStart) / 1_000_000), 5) + "ms");
 				}
 
 				if (this.window.shouldClose()) {

@@ -28,10 +28,10 @@ public class Scene2DRenderer extends Renderer<GameEngine, Scene2D> {
 	public void render_in(CacheManager cache, GameEngine engine, Scene2D scene) {
 		GlobalLogger.log(Level.INFO, "Scene2D : " + scene.getId());
 
-		MeshRenderer meshRenderer = (MeshRenderer) cache.getRenderer(Mesh.NAME);
-		GizmoRenderer gizmoRenderer = (GizmoRenderer) cache.getRenderer(Gizmo.NAME);
-		InstanceEmitterRenderer instanceEmitterRenderer = (InstanceEmitterRenderer) cache.getRenderer(InstanceEmitter.NAME);
-		TextEmitterRenderer textEmitterRenderer = (TextEmitterRenderer) cache.getRenderer(TextEmitter.NAME);
+		MeshRenderer meshRenderer = (MeshRenderer) cache.getRenderer(Mesh.class.getName());
+		GizmoRenderer gizmoRenderer = (GizmoRenderer) cache.getRenderer(Gizmo.class.getName());
+		InstanceEmitterRenderer instanceEmitterRenderer = (InstanceEmitterRenderer) cache.getRenderer(InstanceEmitter.class.getName());
+		TextEmitterRenderer textEmitterRenderer = (TextEmitterRenderer) cache.getRenderer(TextEmitter.class.getName());
 
 		for (Entity e : scene.getEntities().values()) {
 			if (!e.isActive())

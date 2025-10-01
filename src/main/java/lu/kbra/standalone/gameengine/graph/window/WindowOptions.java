@@ -24,15 +24,13 @@ public class WindowOptions {
 	public WindowOptions(Properties props, String pathPrefix) {
 		this.fps = PCUtils.parseInteger(props.getProperty(pathPrefix + ".fps"), Consts.DEFAULT_FPS);
 		this.ups = PCUtils.parseInteger(props.getProperty(pathPrefix + ".fps"), Consts.DEFAULT_UPS);
-		this.fullscreen = PCUtils.parseBoolean(props.getProperty(pathPrefix + ".fullscreen"),
-				Consts.DEFAULT_FULLSCREEN);
+		this.fullscreen = PCUtils.parseBoolean(props.getProperty(pathPrefix + ".fullscreen"), Consts.DEFAULT_FULLSCREEN);
 		this.vsync = PCUtils.parseBoolean(props.getProperty(pathPrefix + ".vsync"), Consts.DEFAULT_VSYNC);
 		this.resizable = PCUtils.parseBoolean(props.getProperty(pathPrefix + ".resizable"), Consts.DEFAULT_RESIZABLE);
-		this.windowSize = GameEngineUtils.parseVec2i(props.getProperty(pathPrefix + ".windowSize"),
-				Consts.DEFAULT_WINDOW_SIZE);
+		this.windowSize = GameEngineUtils.parseVec2i(props.getProperty(pathPrefix + ".windowSize"), Consts.DEFAULT_WINDOW_SIZE);
 		this.title = props.getProperty(pathPrefix + ".title", Consts.DEFAULT_TITLE);
-		this.windowMultisample = PCUtils.parseInteger(props.getProperty(pathPrefix + ".windowMultisample"),
-				Consts.DEFAULT_WINDOW_MULTISAMPLE);
+		this.windowMultisample = PCUtils
+				.parseInteger(props.getProperty(pathPrefix + ".windowMultisample"), Consts.DEFAULT_WINDOW_MULTISAMPLE);
 		this.gles = PCUtils.parseBoolean(props.getProperty(pathPrefix + ".gles"), Consts.DEFAULT_GLES);
 	}
 

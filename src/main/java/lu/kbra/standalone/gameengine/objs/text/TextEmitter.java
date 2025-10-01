@@ -20,15 +20,15 @@ import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 
 public class TextEmitter implements Cleanupable, UniqueID {
 
-	public static final String NAME = TextEmitter.class.getName();
-
+	public static final int CHAR_BUFFER_INDEX = 7;
+	public static final String CHAR_BUFFER_NAME = "char";
 	public static final String STRING = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
 	public static int TAB_SIZE = 4;
 
 	private final String name;
 
-	private Vector2f charSize;
+	private final Vector2f charSize;
 	private String text;
 
 	private UIntAttribArray charBuffer;
@@ -36,8 +36,11 @@ public class TextEmitter implements Cleanupable, UniqueID {
 	private Mesh quad;
 
 	private Alignment alignment = Alignment.CENTER;
-	private boolean justify = false, boxed = false, correctTransform = false;
-	private Vector2f boxSize = new Vector2f(1), charOffset = new Vector2f(0);
+	private boolean justify = false;
+	private boolean boxed = false;
+	private boolean correctTransform = false; // swaps the y axis for opengl
+	private Vector2f boxSize = new Vector2f(1); // the size of the bounding box if using boxed = true
+	private Vector2f charOffset = new Vector2f(0);
 
 	public TextEmitter(String name, TextMaterial material, int bufferSize, String text, Vector2f size) {
 		this.name = name;
@@ -45,12 +48,12 @@ public class TextEmitter implements Cleanupable, UniqueID {
 		this.text = text;
 		this.charSize = size;
 
-		Integer[] chars = new Integer[bufferSize];
+		final Integer[] chars = new Integer[bufferSize];
 		Arrays.fill(chars, 0);
 		updateTextContent(new Matrix4f[bufferSize], chars);
 		// GlobalLogger.log(Level.FINEST, "SET: " + Arrays.toString(chars));
 
-		this.charBuffer = new UIntAttribArray("char", 7, 1, PCUtils.toPrimitiveInt(chars), false, 1);
+		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_INDEX, 1, PCUtils.toPrimitiveInt(chars), false, 1);
 		// GlobalLogger.log(Level.FINEST, Arrays.toString(charBuffer.getData()));
 		this.quad = Mesh.newQuad(name, material, size);
 
@@ -58,28 +61,25 @@ public class TextEmitter implements Cleanupable, UniqueID {
 	}
 
 	public boolean updateText() {
-		if (charBuffer.getLength() < text.length())
-			// throw new RuntimeException("Char buffer too small to hold text. ('"+text+"'
-			// for length: "+charBuffer.getLength()+")");
-			GlobalLogger.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length() + ") for length: " + charBuffer.getLength() + ")");
+		if (charBuffer.getLength() < text.length()) {
+			GlobalLogger
+					.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length() + ") for length: "
+							+ charBuffer.getLength() + ")");
+		}
 
 		text = text.substring(0, Math.min(text.length(), charBuffer.getLength()));
 
-		TextMaterial material = (TextMaterial) quad.getMaterial();
+		final TextMaterial material = (TextMaterial) quad.getMaterial();
 
 		material.setProperty(TextShader.TXT_LENGTH, text.length());
 
-		Matrix4f[] transforms = new Matrix4f[instances.getParticleCount()];
-		Integer[] chars = new Integer[instances.getParticleCount()];
+		final Matrix4f[] transforms = new Matrix4f[instances.getParticleCount()];
+		final Integer[] chars = new Integer[instances.getParticleCount()];
 		Arrays.fill(chars, 0);
 
 		updateTextContent(transforms, chars);
 
-		// GlobalLogger.log(Level.FINEST, Arrays.deepToString(transforms));
-
 		instances.updateDirect(transforms, new Object[][] { chars });
-
-		// GlobalLogger.log(Level.FINEST, Arrays.toString(charBuffer.getData()));
 
 		return true;
 	}
@@ -103,7 +103,8 @@ public class TextEmitter implements Cleanupable, UniqueID {
 
 	private void updateTextContentAbsCenter(Matrix4f[] transforms, Integer[] chars) {
 		final int[] widthCount = computeWidthCounts();
-		final int widthMax = boxed ? (int) (boxSize.x / charSize.x) : Arrays.stream(widthCount).max().getAsInt();
+		// final int widthMax = boxed ? (int) (boxSize.x / charSize.x) :
+		// Arrays.stream(widthCount).max().getAsInt();
 
 		int line = 0;
 		int character = 0;
@@ -123,8 +124,8 @@ public class TextEmitter implements Cleanupable, UniqueID {
 				character++;
 				chars[charIndex] = (int) currentChar;
 
-				float translationX = (character - widthCount[line] / 2) * (charSize.x + charOffset.x) - charSize.x;
-				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2 + charOffset.y;
+				final float translationX = (character - widthCount[line] / 2) * (charSize.x + charOffset.x) - charSize.x;
+				final float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2 + charOffset.y;
 
 				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 
@@ -187,8 +188,8 @@ public class TextEmitter implements Cleanupable, UniqueID {
 				character++;
 				chars[charIndex] = (int) currentChar;
 
-				float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x + charOffset.x) - charSize.x;
-				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
+				final float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x + charOffset.x) - charSize.x;
+				final float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
 
 				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 
@@ -335,7 +336,7 @@ public class TextEmitter implements Cleanupable, UniqueID {
 	public Vector2f getCharoffset() {
 		return charOffset;
 	}
-	
+
 	public void setCharOffset(Vector2f charSpace) {
 		this.charOffset = charSpace;
 	}
@@ -355,6 +356,7 @@ public class TextEmitter implements Cleanupable, UniqueID {
 		instances = null;
 		quad.cleanup();
 		quad = null;
+		charBuffer = null;
 	}
 
 	@Override

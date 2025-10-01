@@ -8,7 +8,7 @@ public final class PDRLoggerUtils {
 
 	private static int count = 0;
 
-	public static void log(ALCCapabilities deviceCapabilities) {
+	public static synchronized void log(ALCCapabilities deviceCapabilities) {
 		if (!GlobalLogger.isInit())
 			throw new RuntimeException("GloballogCger is not initiated");
 
@@ -75,7 +75,7 @@ public final class PDRLoggerUtils {
 		count = 0;
 	}
 
-	private static void logC(String string) {
+	private static synchronized void logC(String string) {
 		GlobalLogger.log(count++ + ". " + string);
 	}
 
