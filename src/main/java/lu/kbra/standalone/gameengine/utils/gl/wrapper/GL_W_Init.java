@@ -27,7 +27,7 @@ import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 public final class GL_W_Init {
 
 	public static class GLMethod {
-		private List<Class<?>> sources;
+		private final List<Class<?>> sources;
 
 		private String name;
 		private Class<?> returnType;
@@ -46,7 +46,9 @@ public final class GL_W_Init {
 
 		public boolean matches(Method method) {
 			return this.name.equals(method.getName()) && returnType.equals(method.getReturnType())
-					&& (method.getParameters().length == parameters.length && IntStream.range(0, parameters.length).allMatch((i) -> parameters[i].getType().equals(method.getParameters()[i].getType())));
+					&& (method.getParameters().length == parameters.length && IntStream
+							.range(0, parameters.length)
+							.allMatch((i) -> parameters[i].getType().equals(method.getParameters()[i].getType())));
 		}
 
 		public boolean merge(Class<?> source, Method method) {
@@ -60,6 +62,7 @@ public final class GL_W_Init {
 			}
 		}
 
+		// for the interface GL_W_Call
 		public String abstractString(boolean explicitReturnValue) {
 			final String ret = getType(returnType);
 
@@ -67,25 +70,31 @@ public final class GL_W_Init {
 
 			content.append("\tdefault " + ret + " " + name + (explicitReturnValue ? getSuffixReturnTypeName(returnType) : "") + "(");
 			content.append(Arrays.stream(parameters).map((c) -> c.toString()).collect(Collectors.joining(",")));
-			content.append(") {throw new RuntimeException(\"Not implemented yet.\");}\n");
+			content.append(") {throw new " + UnsupportedOperationException.class.getSimpleName() + "(\"Not implemented yet.\");}\n");
 
 			return content.toString();
 		}
 
 		public String signatureString() {
-			return returnType + " " + name + "(" + Arrays.stream(parameters).map(Parameter::toString).collect(Collectors.joining(", ")) + ")";
+			return returnType + " " + name + "(" + Arrays.stream(parameters).map(Parameter::toString).collect(Collectors.joining(", "))
+					+ ")";
 		}
 
+		// for GL_W class
 		public String wrapperString(boolean explicitReturnValue) {
 			final String ret = getType(returnType);
 
 			final StringBuilder content = new StringBuilder();
 
 			content.append("\t/** " + sources.stream().map(Class::getSimpleName).collect(Collectors.joining(", ")) + " */\n");
-			content.append("\tpublic static " + ret + " " + name + (explicitReturnValue ? getSuffixReturnTypeName(returnType) : "") + "(" + Arrays.stream(parameters).map((c) -> c.toString()).collect(Collectors.joining(",")) + ") {\n");
+			content
+					.append("\tpublic static " + ret + " " + name + (explicitReturnValue ? getSuffixReturnTypeName(returnType) : "") + "("
+							+ Arrays.stream(parameters).map((c) -> c.toString()).collect(Collectors.joining(",")) + ") {\n");
 
-			content.append("\t\t" + (!"void".equals(ret) ? "return " : "") + "WRAPPER." + name + (explicitReturnValue ? getSuffixReturnTypeName(returnType) : "") + "("
-					+ Arrays.stream(parameters).map((c) -> c.getName()).collect(Collectors.joining(",")) + ");\n");
+			content
+					.append("\t\t" + (!"void".equals(ret) ? "return " : "") + "WRAPPER." + name
+							+ (explicitReturnValue ? getSuffixReturnTypeName(returnType) : "") + "("
+							+ Arrays.stream(parameters).map((c) -> c.getName()).collect(Collectors.joining(",")) + ");\n");
 
 			content.append("\t}\n\n");
 
@@ -96,6 +105,7 @@ public final class GL_W_Init {
 			return sources.contains(clazz);
 		}
 
+		// for GL_W_GLxxxx class
 		public String implString(Class<?> clazz, boolean explicitReturnValue) {
 			final String ret = getType(returnType);
 
@@ -124,16 +134,22 @@ public final class GL_W_Init {
 
 	private static final String PACKAGE_PATH = "lu.kbra.standalone.gameengine.utils.gl.wrapper";
 	private static final String BASE_CONTENT = "package " + PACKAGE_PATH + ";\n" + "\n" + "public class GL_W {\n" + "\n";
-	private static final String INSTANCE_CONTENT = "package " + PACKAGE_PATH + ";\n" + "\n" + "public class {name} implements GL_W_Call {\n";
+	private static final String INSTANCE_CONTENT = "package " + PACKAGE_PATH + ";\n" + "\n"
+			+ "public class {name} implements GL_W_Call {\n";
 	private static final String CALLER_CONTENT = "package " + PACKAGE_PATH + ";\n" + "\n" + "public interface GL_W_Call {\n";
-	private static final List<String> NAME_BLACKLIST = Arrays.stream(Object.class.getDeclaredMethods()).map((c) -> c.getName()).distinct().collect(Collectors.toList());
+	private static final List<String> NAME_BLACKLIST = Arrays
+			.stream(Object.class.getDeclaredMethods())
+			.map((c) -> c.getName())
+			.distinct()
+			.collect(Collectors.toList());
 
 	private static HashMap<String, List<GLMethod>> glMethods = new HashMap<>();
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("Filtering out: " + NAME_BLACKLIST);
 
-		final List<Class<?>> allGLClasses = Arrays.asList(GL33.class, GL32.class, GL40.class, GLES20.class, GLES30.class, GL46.class, GLES32.class);
+		final List<Class<?>> allGLClasses = Arrays
+				.asList(GL33.class, GL32.class, GL40.class, GLES20.class, GLES30.class, GL46.class, GLES32.class);
 
 		callerBase(allGLClasses);
 		System.out.println("GL_W_Call done.");
@@ -150,7 +166,9 @@ public final class GL_W_Init {
 	private static void glInit(Class<?> clazz, List<Class<?>> otherClazzes) throws IOException {
 		final String FILE_PATH = "./src/main/java/" + PACKAGE_PATH.replace(".", "/") + "/GL_W_" + clazz.getSimpleName() + ".java";
 
-		List<String> out = Arrays.stream(INSTANCE_CONTENT.replace("{name}", "GL_W_" + clazz.getSimpleName()).split("\n")).collect(Collectors.toList());
+		final List<String> out = Arrays
+				.stream(INSTANCE_CONTENT.replace("{name}", "GL_W_" + clazz.getSimpleName()).split("\n"))
+				.collect(Collectors.toList());
 
 		out.add("\n\tpublic void init() {");
 		out.add("\t\tGL_W.WRAPPER = this;");
@@ -168,9 +186,17 @@ public final class GL_W_Init {
 		}
 
 		if (clazz.getSimpleName().contains("GLES")) {
-			out.add("	@Override\n" + "	public void checkError(String message) {\n		" + GameEngineUtils.class.getName() + ".checkGlESError(message);\n" + "	}");
+			out
+					.add("	@Override\n" + "	public void checkError(String message) {\n		" + GameEngineUtils.class.getName()
+							+ ".checkGlESError(message);\n" + "	}");
+			out.add("	@Override\n" + "	public boolean isGLES() {\n\t\treturn true;\n" + "	}");
+			out.add("	@Override\n" + "	public boolean isGL() {\n\t\treturn false;\n" + "	}");
 		} else {
-			out.add("	@Override\n" + "	public void checkError(String message) {\n		" + GameEngineUtils.class.getName() + ".checkGlError(message);\n" + "	}");
+			out
+					.add("	@Override\n" + "	public void checkError(String message) {\n		" + GameEngineUtils.class.getName()
+							+ ".checkGlError(message);\n" + "	}");
+			out.add("	@Override\n" + "	public boolean isGLES() {\n\t\treturn false;\n" + "	}");
+			out.add("	@Override\n" + "	public boolean isGL() {\n\t\treturn true;\n" + "	}");
 		}
 
 		out.add("}");
@@ -189,7 +215,7 @@ public final class GL_W_Init {
 	private static void callerBase(List<Class<?>> clazzes) throws IOException {
 		final String FILE_PATH = "./src/main/java/" + PACKAGE_PATH.replace(".", "/") + "/GL_W_Call.java";
 
-		List<String> out = Arrays.stream(CALLER_CONTENT.split("\n")).collect(Collectors.toList());
+		final List<String> out = Arrays.stream(CALLER_CONTENT.split("\n")).collect(Collectors.toList());
 
 		for (Class<?> clazz : clazzes) {
 			for (Method m : clazz.getMethods()) {
@@ -230,6 +256,10 @@ public final class GL_W_Init {
 
 		out.add("	void checkError(String message);");
 
+		out.add("	boolean isGLES();");
+
+		out.add("	boolean isGL();");
+
 		out.add("}");
 
 		Files.write(Paths.get(FILE_PATH), out);
@@ -238,7 +268,7 @@ public final class GL_W_Init {
 	private static void base(List<Class<?>> clazzes) throws IOException {
 		final String FILE_PATH = "./src/main/java/" + PACKAGE_PATH.replace(".", "/") + "/GL_W.java";
 
-		List<String> out = Arrays.stream(BASE_CONTENT.split("\n")).collect(Collectors.toList());
+		final List<String> out = Arrays.stream(BASE_CONTENT.split("\n")).collect(Collectors.toList());
 
 		out.add("\n\tpublic static GL_W_Call WRAPPER;\n");
 
@@ -258,16 +288,15 @@ public final class GL_W_Init {
 
 		for (Entry<String, List<GLMethod>> glMs : glMethods.entrySet()) {
 			for (GLMethod glM : glMs.getValue()) {
-				/*
-				 * if (glM.getName().contains("glGenFramebuffers")) {
-				 * System.out.println(glMs.getValue().stream().map(GLMethod::signatureString).collect(Collectors.joining(";"))); }
-				 */
 				out.add(glM.wrapperString(glMs.getValue().size() > 1));
 			}
 		}
 
 		out.add("	public static void checkError(String message) {\n" + "		WRAPPER.checkError(message);\n" + "	}");
 		out.add("	public static void checkError() {\n" + "		WRAPPER.checkError(\"\");\n" + "	}");
+
+		out.add("	public static boolean isGLES() {\n" + "		return WRAPPER.isGLES();\n" + "	}");
+		out.add("	public static boolean isGL() {\n" + "		return WRAPPER.isGL();\n" + "	}");
 
 		out.add("}");
 

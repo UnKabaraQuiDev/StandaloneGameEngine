@@ -14,22 +14,16 @@ public class Entity implements UniqueID {
 	private String name = "undefined";
 	private Map<Class<? extends Component>, Component> components = new HashMap<>();
 
-	/*public Entity(Component... cs) {
-		for (Component c : cs) {
-			addComponent(c);
-		}
-	}*/
-
 	public Entity(String str, Component... cs) {
 		this.name = str;
-		
+
 		for (Component c : cs) {
 			addComponent(c);
 		}
 	}
 
 	public Entity addComponent(Component component) {
-		if(component == null)
+		if (component == null)
 			throw new NullPointerException("Component == null.");
 		if (component.attach(this))
 			components.put(component.getClass(), component);
@@ -40,11 +34,24 @@ public class Entity implements UniqueID {
 		return (T) components.get(componentClass);
 	}
 
-	public boolean hasComponent(Class<? extends Component> clazz) {
+	public <T extends Component> T getComponentMatching(Class<T> clazz) {
+		return (T) components.get(components.keySet().parallelStream().filter(t -> clazz.isAssignableFrom(t)).findFirst().orElse(null));
+	}
+
+	public <T extends Component> List<T> getComponentsMatching(Class<T> clazz) {
+		return components
+				.keySet()
+				.stream()
+				.filter(t -> clazz.isAssignableFrom(t))
+				.map(t -> (T) components.get(t))
+				.collect(Collectors.toList());
+	}
+
+	public boolean hasComponentMatching(Class<? extends Component> clazz) {
 		return components.keySet().stream().map(t -> clazz.isAssignableFrom(t)).collect(Collectors.reducing((a, b) -> a || b)).get();
 	}
 
-	public List<Class<? extends Component>> getComponents(Class<? extends Component> clazz) {
+	public List<Class<? extends Component>> getComponentTypesMatching(Class<? extends Component> clazz) {
 		return components.keySet().stream().filter(t -> clazz.isAssignableFrom(t)).collect(Collectors.toList());
 	}
 

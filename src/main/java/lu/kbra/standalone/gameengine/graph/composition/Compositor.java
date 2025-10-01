@@ -10,6 +10,8 @@ import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
+import lu.kbra.standalone.gameengine.graph.composition.layer.PassRenderLayer;
+import lu.kbra.standalone.gameengine.graph.composition.layer.RenderLayer;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 

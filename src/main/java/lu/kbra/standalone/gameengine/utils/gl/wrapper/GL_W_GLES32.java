@@ -1051,11 +1051,6 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenVertexArrays(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengles.GLES32.glGenVertexArrays(arg0);
-	}
-
-	@Override
 	public void glGenVertexArrays(int[] arg0) {
 		org.lwjgl.opengles.GLES32.glGenVertexArrays(arg0);
 	}
@@ -1063,6 +1058,11 @@ public class GL_W_GLES32 implements GL_W_Call {
 	@Override
 	public int glGenVertexArrays() {
 		return org.lwjgl.opengles.GLES32.glGenVertexArrays();
+	}
+
+	@Override
+	public void glGenVertexArrays(java.nio.IntBuffer arg0) {
+		org.lwjgl.opengles.GLES32.glGenVertexArrays(arg0);
 	}
 
 	@Override
@@ -1076,8 +1076,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenFramebuffers() {
-		return org.lwjgl.opengles.GLES32.glGenFramebuffers();
+	public void glGenFramebuffers(int[] arg0) {
+		org.lwjgl.opengles.GLES32.glGenFramebuffers(arg0);
 	}
 
 	@Override
@@ -1086,17 +1086,17 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenFramebuffers(int[] arg0) {
-		org.lwjgl.opengles.GLES32.glGenFramebuffers(arg0);
-	}
-
-	@Override
-	public void glGetProgramResourceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4,java.nio.IntBuffer arg5) {
-		org.lwjgl.opengles.GLES32.glGetProgramResourceiv(arg0,arg1,arg2,arg3,arg4,arg5);
+	public int glGenFramebuffers() {
+		return org.lwjgl.opengles.GLES32.glGenFramebuffers();
 	}
 
 	@Override
 	public void glGetProgramResourceiv(int arg0,int arg1,int arg2,int[] arg3,int[] arg4,int[] arg5) {
+		org.lwjgl.opengles.GLES32.glGetProgramResourceiv(arg0,arg1,arg2,arg3,arg4,arg5);
+	}
+
+	@Override
+	public void glGetProgramResourceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4,java.nio.IntBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glGetProgramResourceiv(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -1126,22 +1126,22 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteVertexArrays(int arg0) {
-		org.lwjgl.opengles.GLES32.glDeleteVertexArrays(arg0);
-	}
-
-	@Override
 	public void glDeleteVertexArrays(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteVertexArrays(arg0);
 	}
 
 	@Override
-	public void glGetVertexAttribIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
-		org.lwjgl.opengles.GLES32.glGetVertexAttribIuiv(arg0,arg1,arg2);
+	public void glDeleteVertexArrays(int arg0) {
+		org.lwjgl.opengles.GLES32.glDeleteVertexArrays(arg0);
 	}
 
 	@Override
 	public void glGetVertexAttribIuiv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengles.GLES32.glGetVertexAttribIuiv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetVertexAttribIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetVertexAttribIuiv(arg0,arg1,arg2);
 	}
 
@@ -1151,12 +1151,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteFramebuffers(int[] arg0) {
+	public void glDeleteFramebuffers(int arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteFramebuffers(arg0);
 	}
 
 	@Override
-	public void glDeleteFramebuffers(int arg0) {
+	public void glDeleteFramebuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteFramebuffers(arg0);
 	}
 
@@ -1181,22 +1181,22 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glSamplerParameterIiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengles.GLES32.glSamplerParameterIiv(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glSamplerParameterIiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glSamplerParameterIiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetShaderiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengles.GLES32.glGetShaderiv(arg0,arg1,arg2);
+	public void glSamplerParameterIiv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengles.GLES32.glSamplerParameterIiv(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glGetShaderiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+		org.lwjgl.opengles.GLES32.glGetShaderiv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetShaderiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetShaderiv(arg0,arg1,arg2);
 	}
 
@@ -1216,13 +1216,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
-		org.lwjgl.opengles.GLES32.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4,arg5);
+	public java.lang.String glGetActiveUniform_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
+		return org.lwjgl.opengles.GLES32.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public java.lang.String glGetActiveUniform_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
-		return org.lwjgl.opengles.GLES32.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4);
+	public void glGetActiveUniform(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
+		org.lwjgl.opengles.GLES32.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
@@ -1241,13 +1241,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetObjectPtrLabel(long arg0,int[] arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengles.GLES32.glGetObjectPtrLabel(arg0,arg1,arg2);
+	public java.lang.String glGetObjectPtrLabel_String(long arg0) {
+		return org.lwjgl.opengles.GLES32.glGetObjectPtrLabel(arg0);
 	}
 
 	@Override
-	public java.lang.String glGetObjectPtrLabel_String(long arg0) {
-		return org.lwjgl.opengles.GLES32.glGetObjectPtrLabel(arg0);
+	public void glGetObjectPtrLabel(long arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengles.GLES32.glGetObjectPtrLabel(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -1271,12 +1271,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib1fv(int arg0,float[] arg1) {
+	public void glVertexAttrib1fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glVertexAttrib1fv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib1fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glVertexAttrib1fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES32.glVertexAttrib1fv(arg0,arg1);
 	}
 
@@ -1306,12 +1306,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetDebugMessageLog(int arg0,int[] arg1,int[] arg2,int[] arg3,int[] arg4,int[] arg5,java.nio.ByteBuffer arg6) {
+	public int glGetDebugMessageLog(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4,java.nio.IntBuffer arg5,java.nio.ByteBuffer arg6) {
 		return org.lwjgl.opengles.GLES32.glGetDebugMessageLog(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
 	@Override
-	public int glGetDebugMessageLog(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4,java.nio.IntBuffer arg5,java.nio.ByteBuffer arg6) {
+	public int glGetDebugMessageLog(int arg0,int[] arg1,int[] arg2,int[] arg3,int[] arg4,int[] arg5,java.nio.ByteBuffer arg6) {
 		return org.lwjgl.opengles.GLES32.glGetDebugMessageLog(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -1331,12 +1331,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform1uiv(int arg0,int arg1,int[] arg2) {
+	public void glProgramUniform1uiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glProgramUniform1uiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform1uiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glProgramUniform1uiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glProgramUniform1uiv(arg0,arg1,arg2);
 	}
 
@@ -1346,17 +1346,17 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawArraysIndirect(int arg0,java.nio.ByteBuffer arg1) {
-		org.lwjgl.opengles.GLES32.glDrawArraysIndirect(arg0,arg1);
-	}
-
-	@Override
 	public void glDrawArraysIndirect(int arg0,int[] arg1) {
 		org.lwjgl.opengles.GLES32.glDrawArraysIndirect(arg0,arg1);
 	}
 
 	@Override
 	public void glDrawArraysIndirect(int arg0,java.nio.IntBuffer arg1) {
+		org.lwjgl.opengles.GLES32.glDrawArraysIndirect(arg0,arg1);
+	}
+
+	@Override
+	public void glDrawArraysIndirect(int arg0,java.nio.ByteBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glDrawArraysIndirect(arg0,arg1);
 	}
 
@@ -1386,12 +1386,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix3fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glUniformMatrix3fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix3fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glUniformMatrix3fv(arg0,arg1,arg2);
 	}
 
@@ -1401,12 +1401,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetUniformIndices(int arg0,org.lwjgl.PointerBuffer arg1,java.nio.IntBuffer arg2) {
+	public void glGetUniformIndices(int arg0,org.lwjgl.PointerBuffer arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetUniformIndices(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetUniformIndices(int arg0,org.lwjgl.PointerBuffer arg1,int[] arg2) {
+	public void glGetUniformIndices(int arg0,org.lwjgl.PointerBuffer arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetUniformIndices(arg0,arg1,arg2);
 	}
 
@@ -1461,13 +1461,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenQueries() {
-		return org.lwjgl.opengles.GLES32.glGenQueries();
+	public void glGenQueries(java.nio.IntBuffer arg0) {
+		org.lwjgl.opengles.GLES32.glGenQueries(arg0);
 	}
 
 	@Override
-	public void glGenQueries(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengles.GLES32.glGenQueries(arg0);
+	public int glGenQueries() {
+		return org.lwjgl.opengles.GLES32.glGenQueries();
 	}
 
 	@Override
@@ -1481,12 +1481,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix2x4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix2x4fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glUniformMatrix2x4fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix2x4fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix2x4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glUniformMatrix2x4fv(arg0,arg1,arg2);
 	}
 
@@ -1501,17 +1501,17 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateFramebuffer(int arg0,int arg1) {
-		org.lwjgl.opengles.GLES32.glInvalidateFramebuffer(arg0,arg1);
-	}
-
-	@Override
 	public void glInvalidateFramebuffer(int arg0,int[] arg1) {
 		org.lwjgl.opengles.GLES32.glInvalidateFramebuffer(arg0,arg1);
 	}
 
 	@Override
 	public void glInvalidateFramebuffer(int arg0,java.nio.IntBuffer arg1) {
+		org.lwjgl.opengles.GLES32.glInvalidateFramebuffer(arg0,arg1);
+	}
+
+	@Override
+	public void glInvalidateFramebuffer(int arg0,int arg1) {
 		org.lwjgl.opengles.GLES32.glInvalidateFramebuffer(arg0,arg1);
 	}
 
@@ -1676,12 +1676,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform3fv(int arg0,int arg1,float[] arg2) {
+	public void glProgramUniform3fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glProgramUniform3fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform3fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glProgramUniform3fv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glProgramUniform3fv(arg0,arg1,arg2);
 	}
 
@@ -1771,12 +1771,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetBufferParameteri64v(int arg0,int arg1,java.nio.LongBuffer arg2) {
+	public void glGetBufferParameteri64v(int arg0,int arg1,long[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetBufferParameteri64v(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetBufferParameteri64v(int arg0,int arg1,long[] arg2) {
+	public void glGetBufferParameteri64v(int arg0,int arg1,java.nio.LongBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetBufferParameteri64v(arg0,arg1,arg2);
 	}
 
@@ -1796,12 +1796,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteRenderbuffers(int arg0) {
+	public void glDeleteRenderbuffers(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteRenderbuffers(arg0);
 	}
 
 	@Override
-	public void glDeleteRenderbuffers(java.nio.IntBuffer arg0) {
+	public void glDeleteRenderbuffers(int arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteRenderbuffers(arg0);
 	}
 
@@ -1841,13 +1841,18 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
+	public void glProgramUniform4uiv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengles.GLES32.glProgramUniform4uiv(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glProgramUniform4uiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glProgramUniform4uiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform4uiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengles.GLES32.glProgramUniform4uiv(arg0,arg1,arg2);
+	public void glGenTextures(int[] arg0) {
+		org.lwjgl.opengles.GLES32.glGenTextures(arg0);
 	}
 
 	@Override
@@ -1861,17 +1866,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenTextures(int[] arg0) {
-		org.lwjgl.opengles.GLES32.glGenTextures(arg0);
-	}
-
-	@Override
-	public void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {
+	public void glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengles.GLES32.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
+	public void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {
 		org.lwjgl.opengles.GLES32.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
 	}
 
@@ -1881,12 +1881,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetnUniformiv(int arg0,int arg1,float[] arg2) {
+	public void glGetnUniformiv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetnUniformiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetnUniformiv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetnUniformiv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetnUniformiv(arg0,arg1,arg2);
 	}
 
@@ -1896,23 +1896,18 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDebugMessageControl(int arg0,int arg1,int arg2,int[] arg3,boolean arg4) {
+	public void glDebugMessageControl(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,boolean arg4) {
 		org.lwjgl.opengles.GLES32.glDebugMessageControl(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public void glDebugMessageControl(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,boolean arg4) {
+	public void glDebugMessageControl(int arg0,int arg1,int arg2,int[] arg3,boolean arg4) {
 		org.lwjgl.opengles.GLES32.glDebugMessageControl(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
 	public void glDebugMessageControl(int arg0,int arg1,int arg2,int arg3,boolean arg4) {
 		org.lwjgl.opengles.GLES32.glDebugMessageControl(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
-	public void glDeleteProgramPipelines(int arg0) {
-		org.lwjgl.opengles.GLES32.glDeleteProgramPipelines(arg0);
 	}
 
 	@Override
@@ -1926,12 +1921,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetActiveUniformBlockName_String(int arg0,int arg1,int arg2) {
-		return org.lwjgl.opengles.GLES32.glGetActiveUniformBlockName(arg0,arg1,arg2);
+	public void glDeleteProgramPipelines(int arg0) {
+		org.lwjgl.opengles.GLES32.glDeleteProgramPipelines(arg0);
 	}
 
 	@Override
-	public void glGetActiveUniformBlockName(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
+	public void glGetActiveUniformBlockName(int arg0,int arg1,int[] arg2,java.nio.ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES32.glGetActiveUniformBlockName(arg0,arg1,arg2,arg3);
 	}
 
@@ -1941,8 +1936,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveUniformBlockName(int arg0,int arg1,int[] arg2,java.nio.ByteBuffer arg3) {
+	public void glGetActiveUniformBlockName(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES32.glGetActiveUniformBlockName(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public java.lang.String glGetActiveUniformBlockName_String(int arg0,int arg1,int arg2) {
+		return org.lwjgl.opengles.GLES32.glGetActiveUniformBlockName(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -1971,13 +1971,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetProgramPipelineInfoLog_String(int arg0) {
-		return org.lwjgl.opengles.GLES32.glGetProgramPipelineInfoLog(arg0);
+	public java.lang.String glGetProgramPipelineInfoLog_String(int arg0,int arg1) {
+		return org.lwjgl.opengles.GLES32.glGetProgramPipelineInfoLog(arg0,arg1);
 	}
 
 	@Override
-	public java.lang.String glGetProgramPipelineInfoLog_String(int arg0,int arg1) {
-		return org.lwjgl.opengles.GLES32.glGetProgramPipelineInfoLog(arg0,arg1);
+	public java.lang.String glGetProgramPipelineInfoLog_String(int arg0) {
+		return org.lwjgl.opengles.GLES32.glGetProgramPipelineInfoLog(arg0);
 	}
 
 	@Override
@@ -2011,12 +2011,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetSamplerParameterfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetSamplerParameterfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetSamplerParameterfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetSamplerParameterfv(int arg0,int arg1,float[] arg2) {
+	public void glGetSamplerParameterfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetSamplerParameterfv(arg0,arg1,arg2);
 	}
 
@@ -2036,12 +2036,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBindAttribLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
+	public void glBindAttribLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glBindAttribLocation(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glBindAttribLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glBindAttribLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
 		org.lwjgl.opengles.GLES32.glBindAttribLocation(arg0,arg1,arg2);
 	}
 
@@ -2071,12 +2071,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearBufferiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glClearBufferiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glClearBufferiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glClearBufferiv(int arg0,int arg1,int[] arg2) {
+	public void glClearBufferiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glClearBufferiv(arg0,arg1,arg2);
 	}
 
@@ -2091,12 +2091,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteTransformFeedbacks(java.nio.IntBuffer arg0) {
+	public void glDeleteTransformFeedbacks(int arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteTransformFeedbacks(arg0);
 	}
 
 	@Override
-	public void glDeleteTransformFeedbacks(int arg0) {
+	public void glDeleteTransformFeedbacks(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteTransformFeedbacks(arg0);
 	}
 
@@ -2116,13 +2116,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
-		org.lwjgl.opengles.GLES32.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.ByteBuffer arg7) {
+		org.lwjgl.opengles.GLES32.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.ByteBuffer arg7) {
-		org.lwjgl.opengles.GLES32.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
+		org.lwjgl.opengles.GLES32.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
 	@Override
@@ -2136,11 +2136,6 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0,int[] arg1,int arg2,int arg3,int arg4,int arg5) {
-		org.lwjgl.opengles.GLES32.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
 	public void glInvalidateSubFramebuffer(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3,int arg4,int arg5) {
 		org.lwjgl.opengles.GLES32.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
@@ -2151,12 +2146,17 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetSamplerParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
-		org.lwjgl.opengles.GLES32.glGetSamplerParameteriv(arg0,arg1,arg2);
+	public void glInvalidateSubFramebuffer(int arg0,int[] arg1,int arg2,int arg3,int arg4,int arg5) {
+		org.lwjgl.opengles.GLES32.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
 	public void glGetSamplerParameteriv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengles.GLES32.glGetSamplerParameteriv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetSamplerParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetSamplerParameteriv(arg0,arg1,arg2);
 	}
 
@@ -2166,17 +2166,17 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.ByteBuffer arg1,int arg2,int arg3) {
-		org.lwjgl.opengles.GLES32.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.ShortBuffer arg1,int arg2,int arg3) {
-		org.lwjgl.opengles.GLES32.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
 	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3) {
+		org.lwjgl.opengles.GLES32.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public void glDrawElementsInstancedBaseVertex(int arg0,int arg1,int arg2,long arg3,int arg4,int arg5) {
+		org.lwjgl.opengles.GLES32.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5);
+	}
+
+	@Override
+	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.ByteBuffer arg1,int arg2,int arg3) {
 		org.lwjgl.opengles.GLES32.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
 	}
 
@@ -2186,8 +2186,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0,int arg1,int arg2,long arg3,int arg4,int arg5) {
-		org.lwjgl.opengles.GLES32.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5);
+	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.ShortBuffer arg1,int arg2,int arg3) {
+		org.lwjgl.opengles.GLES32.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -2241,13 +2241,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,long arg10) {
-		org.lwjgl.opengles.GLES32.glCompressedTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+	public void glCompressedTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.ByteBuffer arg9) {
+		org.lwjgl.opengles.GLES32.glCompressedTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.ByteBuffer arg9) {
-		org.lwjgl.opengles.GLES32.glCompressedTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
+	public void glCompressedTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,long arg10) {
+		org.lwjgl.opengles.GLES32.glCompressedTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 	}
 
 	@Override
@@ -2321,22 +2321,22 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetQueryObjectuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
-		org.lwjgl.opengles.GLES32.glGetQueryObjectuiv(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glGetQueryObjectuiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetQueryObjectuiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetTexLevelParameteriv(int arg0,int arg1,int arg2,int[] arg3) {
-		org.lwjgl.opengles.GLES32.glGetTexLevelParameteriv(arg0,arg1,arg2,arg3);
+	public void glGetQueryObjectuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+		org.lwjgl.opengles.GLES32.glGetQueryObjectuiv(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glGetTexLevelParameteriv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
+		org.lwjgl.opengles.GLES32.glGetTexLevelParameteriv(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public void glGetTexLevelParameteriv(int arg0,int arg1,int arg2,int[] arg3) {
 		org.lwjgl.opengles.GLES32.glGetTexLevelParameteriv(arg0,arg1,arg2,arg3);
 	}
 
@@ -2351,8 +2351,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenRenderbuffers() {
-		return org.lwjgl.opengles.GLES32.glGenRenderbuffers();
+	public void glGenRenderbuffers(int[] arg0) {
+		org.lwjgl.opengles.GLES32.glGenRenderbuffers(arg0);
 	}
 
 	@Override
@@ -2361,8 +2361,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenRenderbuffers(int[] arg0) {
-		org.lwjgl.opengles.GLES32.glGenRenderbuffers(arg0);
+	public int glGenRenderbuffers() {
+		return org.lwjgl.opengles.GLES32.glGenRenderbuffers();
 	}
 
 	@Override
@@ -2416,18 +2416,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2,int arg3) {
-		return org.lwjgl.opengles.GLES32.glGetProgramResourceName(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
 	public void glGetProgramResourceName(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.ByteBuffer arg4) {
 		org.lwjgl.opengles.GLES32.glGetProgramResourceName(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
-	public java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2) {
-		return org.lwjgl.opengles.GLES32.glGetProgramResourceName(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -2436,12 +2426,22 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform4fv(int arg0,float[] arg1) {
-		org.lwjgl.opengles.GLES32.glUniform4fv(arg0,arg1);
+	public java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2,int arg3) {
+		return org.lwjgl.opengles.GLES32.glGetProgramResourceName(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2) {
+		return org.lwjgl.opengles.GLES32.glGetProgramResourceName(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glUniform4fv(int arg0,java.nio.FloatBuffer arg1) {
+		org.lwjgl.opengles.GLES32.glUniform4fv(arg0,arg1);
+	}
+
+	@Override
+	public void glUniform4fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES32.glUniform4fv(arg0,arg1);
 	}
 
@@ -2491,12 +2491,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribI4iv(int arg0,int[] arg1) {
+	public void glVertexAttribI4iv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glVertexAttribI4iv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttribI4iv(int arg0,java.nio.IntBuffer arg1) {
+	public void glVertexAttribI4iv(int arg0,int[] arg1) {
 		org.lwjgl.opengles.GLES32.glVertexAttribI4iv(arg0,arg1);
 	}
 
@@ -2526,22 +2526,22 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,int[] arg3) {
-		org.lwjgl.opengles.GLES32.glGetProgramInterfaceiv(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
 	public void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengles.GLES32.glGetProgramInterfaceiv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glUniformMatrix4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
-		org.lwjgl.opengles.GLES32.glUniformMatrix4fv(arg0,arg1,arg2);
+	public void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,int[] arg3) {
+		org.lwjgl.opengles.GLES32.glGetProgramInterfaceiv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
 	public void glUniformMatrix4fv(int arg0,boolean arg1,float[] arg2) {
+		org.lwjgl.opengles.GLES32.glUniformMatrix4fv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glUniformMatrix4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glUniformMatrix4fv(arg0,arg1,arg2);
 	}
 
@@ -2551,12 +2551,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix2x3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix2x3fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glUniformMatrix2x3fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix2x3fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix2x3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glUniformMatrix2x3fv(arg0,arg1,arg2);
 	}
 
@@ -2571,7 +2571,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
+		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int[] arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -2586,7 +2591,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -2596,17 +2601,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
+		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
 	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
-		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
-		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int[] arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -2616,12 +2616,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform3uiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glUniform3uiv(int arg0,int[] arg1) {
 		org.lwjgl.opengles.GLES32.glUniform3uiv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform3uiv(int arg0,int[] arg1) {
+	public void glUniform3uiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glUniform3uiv(arg0,arg1);
 	}
 
@@ -2631,12 +2631,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib4fv(int arg0,float[] arg1) {
+	public void glVertexAttrib4fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glVertexAttrib4fv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib4fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glVertexAttrib4fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES32.glVertexAttrib4fv(arg0,arg1);
 	}
 
@@ -2651,7 +2651,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,short[] arg10) {
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,float[] arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 	}
 
@@ -2666,17 +2666,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,java.nio.IntBuffer arg10) {
-		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
-	}
-
-	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,java.nio.ShortBuffer arg10) {
-		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
-	}
-
-	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,long arg10) {
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,short[] arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 	}
 
@@ -2686,7 +2676,17 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,float[] arg10) {
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,long arg10) {
+		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+	}
+
+	@Override
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,java.nio.ShortBuffer arg10) {
+		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+	}
+
+	@Override
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,java.nio.IntBuffer arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 	}
 
@@ -2781,12 +2781,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTransformFeedbackVaryings(int arg0,org.lwjgl.PointerBuffer arg1,int arg2) {
+	public void glTransformFeedbackVaryings(int arg0,java.lang.CharSequence[] arg1,int arg2) {
 		org.lwjgl.opengles.GLES32.glTransformFeedbackVaryings(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glTransformFeedbackVaryings(int arg0,java.lang.CharSequence[] arg1,int arg2) {
+	public void glTransformFeedbackVaryings(int arg0,org.lwjgl.PointerBuffer arg1,int arg2) {
 		org.lwjgl.opengles.GLES32.glTransformFeedbackVaryings(arg0,arg1,arg2);
 	}
 
@@ -2816,12 +2816,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexParameterIuiv(int arg0,int arg1,int[] arg2) {
+	public void glTexParameterIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glTexParameterIuiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glTexParameterIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glTexParameterIuiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glTexParameterIuiv(arg0,arg1,arg2);
 	}
 
@@ -2836,12 +2836,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetFloatv(int arg0,float[] arg1) {
+	public void glGetFloatv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glGetFloatv(arg0,arg1);
 	}
 
 	@Override
-	public void glGetFloatv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glGetFloatv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES32.glGetFloatv(arg0,arg1);
 	}
 
@@ -2851,12 +2851,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int[] arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,short[] arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -2866,7 +2866,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,short[] arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int[] arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -2881,7 +2881,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -2956,12 +2956,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTexParameterIuiv(int arg0,int arg1,int[] arg2) {
+	public void glGetTexParameterIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetTexParameterIuiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetTexParameterIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetTexParameterIuiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetTexParameterIuiv(arg0,arg1,arg2);
 	}
 
@@ -3036,12 +3036,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetAttachedShaders(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2) {
+	public void glGetAttachedShaders(int arg0,int[] arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetAttachedShaders(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetAttachedShaders(int arg0,int[] arg1,int[] arg2) {
+	public void glGetAttachedShaders(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetAttachedShaders(arg0,arg1,arg2);
 	}
 
@@ -3081,17 +3081,27 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
-		org.lwjgl.opengles.GLES32.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
 	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,float[] arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
 	@Override
 	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int[] arg8) {
+		org.lwjgl.opengles.GLES32.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
+		org.lwjgl.opengles.GLES32.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
+		org.lwjgl.opengles.GLES32.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -3107,16 +3117,6 @@ public class GL_W_GLES32 implements GL_W_Call {
 
 	@Override
 	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.FloatBuffer arg8) {
-		org.lwjgl.opengles.GLES32.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
-		org.lwjgl.opengles.GLES32.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -3166,17 +3166,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.FloatBuffer arg9) {
+	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int[] arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
 	@Override
 	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,float[] arg9) {
-		org.lwjgl.opengles.GLES32.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
-	}
-
-	@Override
-	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int[] arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
@@ -3197,6 +3192,11 @@ public class GL_W_GLES32 implements GL_W_Call {
 
 	@Override
 	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.IntBuffer arg9) {
+		org.lwjgl.opengles.GLES32.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
+	}
+
+	@Override
+	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.FloatBuffer arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
@@ -3236,27 +3236,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBufferData(int arg0,short[] arg1,int arg2) {
-		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,int[] arg1,int arg2) {
-		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glBufferData(int arg0,long arg1,int arg2) {
-		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,java.nio.IntBuffer arg1,int arg2) {
-		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,java.nio.ShortBuffer arg1,int arg2) {
 		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
 	}
 
@@ -3266,7 +3246,27 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
+	public void glBufferData(int arg0,int[] arg1,int arg2) {
+		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,short[] arg1,int arg2) {
+		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,java.nio.IntBuffer arg1,int arg2) {
+		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glBufferData(int arg0,java.nio.FloatBuffer arg1,int arg2) {
+		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,java.nio.ShortBuffer arg1,int arg2) {
 		org.lwjgl.opengles.GLES32.glBufferData(arg0,arg1,arg2);
 	}
 
@@ -3281,18 +3281,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetIntegeri_v(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengles.GLES32.glGetIntegeri_v(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glGetIntegeri_v(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetIntegeri_v(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform2iv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengles.GLES32.glProgramUniform2iv(arg0,arg1,arg2);
+	public void glGetIntegeri_v(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengles.GLES32.glGetIntegeri_v(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -3301,8 +3296,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetBufferParameteriv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengles.GLES32.glGetBufferParameteriv(arg0,arg1,arg2);
+	public void glProgramUniform2iv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengles.GLES32.glProgramUniform2iv(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -3311,7 +3306,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawBuffers(int arg0) {
+	public void glGetBufferParameteriv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengles.GLES32.glGetBufferParameteriv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glDrawBuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES32.glDrawBuffers(arg0);
 	}
 
@@ -3321,18 +3321,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawBuffers(int[] arg0) {
+	public void glDrawBuffers(int arg0) {
 		org.lwjgl.opengles.GLES32.glDrawBuffers(arg0);
-	}
-
-	@Override
-	public void glGetProgramInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengles.GLES32.glGetProgramInfoLog(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glGetProgramInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengles.GLES32.glGetProgramInfoLog(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -3343,6 +3333,16 @@ public class GL_W_GLES32 implements GL_W_Call {
 	@Override
 	public java.lang.String glGetProgramInfoLog_String(int arg0,int arg1) {
 		return org.lwjgl.opengles.GLES32.glGetProgramInfoLog(arg0,arg1);
+	}
+
+	@Override
+	public void glGetProgramInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengles.GLES32.glGetProgramInfoLog(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetProgramInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengles.GLES32.glGetProgramInfoLog(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -3431,12 +3431,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,long arg5) {
 		org.lwjgl.opengles.GLES32.glVertexAttribPointer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,long arg5) {
+	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.IntBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glVertexAttribPointer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -3446,7 +3446,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glVertexAttribPointer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -3471,12 +3471,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform4uiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glUniform4uiv(int arg0,int[] arg1) {
 		org.lwjgl.opengles.GLES32.glUniform4uiv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform4uiv(int arg0,int[] arg1) {
+	public void glUniform4uiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glUniform4uiv(arg0,arg1);
 	}
 
@@ -3566,12 +3566,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetIntegerv(int arg0,int[] arg1) {
+	public void glGetIntegerv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glGetIntegerv(arg0,arg1);
 	}
 
 	@Override
-	public void glGetIntegerv(int arg0,java.nio.IntBuffer arg1) {
+	public void glGetIntegerv(int arg0,int[] arg1) {
 		org.lwjgl.opengles.GLES32.glGetIntegerv(arg0,arg1);
 	}
 
@@ -3641,17 +3641,17 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstanced(int arg0,java.nio.ShortBuffer arg1,int arg2) {
+	public void glDrawElementsInstanced(int arg0,java.nio.ByteBuffer arg1,int arg2) {
 		org.lwjgl.opengles.GLES32.glDrawElementsInstanced(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glDrawElementsInstanced(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3) {
-		org.lwjgl.opengles.GLES32.glDrawElementsInstanced(arg0,arg1,arg2,arg3);
+	public void glDrawElementsInstanced(int arg0,java.nio.IntBuffer arg1,int arg2) {
+		org.lwjgl.opengles.GLES32.glDrawElementsInstanced(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glDrawElementsInstanced(int arg0,java.nio.IntBuffer arg1,int arg2) {
+	public void glDrawElementsInstanced(int arg0,java.nio.ShortBuffer arg1,int arg2) {
 		org.lwjgl.opengles.GLES32.glDrawElementsInstanced(arg0,arg1,arg2);
 	}
 
@@ -3661,8 +3661,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstanced(int arg0,java.nio.ByteBuffer arg1,int arg2) {
-		org.lwjgl.opengles.GLES32.glDrawElementsInstanced(arg0,arg1,arg2);
+	public void glDrawElementsInstanced(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3) {
+		org.lwjgl.opengles.GLES32.glDrawElementsInstanced(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -3676,12 +3676,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteQueries(java.nio.IntBuffer arg0) {
+	public void glDeleteQueries(int arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteQueries(arg0);
 	}
 
 	@Override
-	public void glDeleteQueries(int arg0) {
+	public void glDeleteQueries(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteQueries(arg0);
 	}
 
@@ -3721,8 +3721,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetShaderInfoLog_String(int arg0,int arg1) {
-		return org.lwjgl.opengles.GLES32.glGetShaderInfoLog(arg0,arg1);
+	public java.lang.String glGetShaderInfoLog_String(int arg0) {
+		return org.lwjgl.opengles.GLES32.glGetShaderInfoLog(arg0);
+	}
+
+	@Override
+	public void glGetShaderInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengles.GLES32.glGetShaderInfoLog(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -3731,13 +3736,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetShaderInfoLog_String(int arg0) {
-		return org.lwjgl.opengles.GLES32.glGetShaderInfoLog(arg0);
-	}
-
-	@Override
-	public void glGetShaderInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengles.GLES32.glGetShaderInfoLog(arg0,arg1,arg2);
+	public java.lang.String glGetShaderInfoLog_String(int arg0,int arg1) {
+		return org.lwjgl.opengles.GLES32.glGetShaderInfoLog(arg0,arg1);
 	}
 
 	@Override
@@ -3776,13 +3776,18 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
+	public void glUniform3fv(int arg0,java.nio.FloatBuffer arg1) {
+		org.lwjgl.opengles.GLES32.glUniform3fv(arg0,arg1);
+	}
+
+	@Override
 	public void glUniform3fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES32.glUniform3fv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform3fv(int arg0,java.nio.FloatBuffer arg1) {
-		org.lwjgl.opengles.GLES32.glUniform3fv(arg0,arg1);
+	public void glGenTransformFeedbacks(java.nio.IntBuffer arg0) {
+		org.lwjgl.opengles.GLES32.glGenTransformFeedbacks(arg0);
 	}
 
 	@Override
@@ -3793,11 +3798,6 @@ public class GL_W_GLES32 implements GL_W_Call {
 	@Override
 	public int glGenTransformFeedbacks() {
 		return org.lwjgl.opengles.GLES32.glGenTransformFeedbacks();
-	}
-
-	@Override
-	public void glGenTransformFeedbacks(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengles.GLES32.glGenTransformFeedbacks(arg0);
 	}
 
 	@Override
@@ -3841,12 +3841,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetUniformuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetUniformuiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetUniformuiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetUniformuiv(int arg0,int arg1,int[] arg2) {
+	public void glGetUniformuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetUniformuiv(arg0,arg1,arg2);
 	}
 
@@ -3856,12 +3856,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix4x3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
+	public void glProgramUniformMatrix4x3fv(int arg0,int arg1,boolean arg2,float[] arg3) {
 		org.lwjgl.opengles.GLES32.glProgramUniformMatrix4x3fv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glProgramUniformMatrix4x3fv(int arg0,int arg1,boolean arg2,float[] arg3) {
+	public void glProgramUniformMatrix4x3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
 		org.lwjgl.opengles.GLES32.glProgramUniformMatrix4x3fv(arg0,arg1,arg2,arg3);
 	}
 
@@ -3886,12 +3886,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetUniformfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetUniformfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetUniformfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetUniformfv(int arg0,int arg1,float[] arg2) {
+	public void glGetUniformfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetUniformfv(arg0,arg1,arg2);
 	}
 
@@ -3906,8 +3906,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsBaseVertex(int arg0,java.nio.ByteBuffer arg1,int arg2) {
-		org.lwjgl.opengles.GLES32.glDrawElementsBaseVertex(arg0,arg1,arg2);
+	public void glDrawElementsBaseVertex(int arg0,int arg1,int arg2,long arg3,int arg4) {
+		org.lwjgl.opengles.GLES32.glDrawElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -3916,8 +3916,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsBaseVertex(int arg0,int arg1,int arg2,long arg3,int arg4) {
-		org.lwjgl.opengles.GLES32.glDrawElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
+	public void glDrawElementsBaseVertex(int arg0,java.nio.ByteBuffer arg1,int arg2) {
+		org.lwjgl.opengles.GLES32.glDrawElementsBaseVertex(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -3986,12 +3986,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetQueryiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetQueryiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetQueryiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetQueryiv(int arg0,int arg1,int[] arg2) {
+	public void glGetQueryiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetQueryiv(arg0,arg1,arg2);
 	}
 
@@ -4031,13 +4031,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenBuffers() {
-		return org.lwjgl.opengles.GLES32.glGenBuffers();
+	public void glGenBuffers(int[] arg0) {
+		org.lwjgl.opengles.GLES32.glGenBuffers(arg0);
 	}
 
 	@Override
-	public void glGenBuffers(int[] arg0) {
-		org.lwjgl.opengles.GLES32.glGenBuffers(arg0);
+	public int glGenBuffers() {
+		return org.lwjgl.opengles.GLES32.glGenBuffers();
 	}
 
 	@Override
@@ -4066,22 +4066,22 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
-		org.lwjgl.opengles.GLES32.glProgramUniformMatrix2x3fv(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
 	public void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,float[] arg3) {
 		org.lwjgl.opengles.GLES32.glProgramUniformMatrix2x3fv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public int glCreateShaderProgramv(int arg0,java.lang.CharSequence... arg1) {
-		return org.lwjgl.opengles.GLES32.glCreateShaderProgramv(arg0,arg1);
+	public void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
+		org.lwjgl.opengles.GLES32.glProgramUniformMatrix2x3fv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
 	public int glCreateShaderProgramv(int arg0,org.lwjgl.PointerBuffer arg1) {
+		return org.lwjgl.opengles.GLES32.glCreateShaderProgramv(arg0,arg1);
+	}
+
+	@Override
+	public int glCreateShaderProgramv(int arg0,java.lang.CharSequence... arg1) {
 		return org.lwjgl.opengles.GLES32.glCreateShaderProgramv(arg0,arg1);
 	}
 
@@ -4111,8 +4111,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetTransformFeedbackVarying_String(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
-		return org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3);
+	public void glGetTransformFeedbackVarying(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
+		org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3,arg4,arg5);
+	}
+
+	@Override
+	public java.lang.String glGetTransformFeedbackVarying_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
+		return org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -4121,13 +4126,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
-		org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
-	public java.lang.String glGetTransformFeedbackVarying_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
-		return org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3,arg4);
+	public java.lang.String glGetTransformFeedbackVarying_String(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
+		return org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -4241,12 +4241,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetRenderbufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetRenderbufferParameteriv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetRenderbufferParameteriv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetRenderbufferParameteriv(int arg0,int arg1,int[] arg2) {
+	public void glGetRenderbufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetRenderbufferParameteriv(arg0,arg1,arg2);
 	}
 
@@ -4286,12 +4286,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetProgramResourceLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
+	public int glGetProgramResourceLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		return org.lwjgl.opengles.GLES32.glGetProgramResourceLocation(arg0,arg1,arg2);
 	}
 
 	@Override
-	public int glGetProgramResourceLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public int glGetProgramResourceLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
 		return org.lwjgl.opengles.GLES32.glGetProgramResourceLocation(arg0,arg1,arg2);
 	}
 
@@ -4306,11 +4306,6 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3,int arg4) {
-		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
 	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,java.nio.ShortBuffer arg3,int arg4) {
 		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
 	}
@@ -4321,13 +4316,18 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
+	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,int arg3,int arg4,long arg5,int arg6) {
+		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	}
+
+	@Override
 	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4,int arg5) {
 		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,int arg3,int arg4,long arg5,int arg6) {
-		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3,int arg4) {
+		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -4341,12 +4341,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glObjectPtrLabel(long arg0,java.lang.CharSequence arg1) {
+	public void glObjectPtrLabel(long arg0,java.nio.ByteBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glObjectPtrLabel(arg0,arg1);
 	}
 
 	@Override
-	public void glObjectPtrLabel(long arg0,java.nio.ByteBuffer arg1) {
+	public void glObjectPtrLabel(long arg0,java.lang.CharSequence arg1) {
 		org.lwjgl.opengles.GLES32.glObjectPtrLabel(arg0,arg1);
 	}
 
@@ -4356,12 +4356,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTexParameterIiv(int arg0,int arg1,int[] arg2) {
+	public void glGetTexParameterIiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetTexParameterIiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetTexParameterIiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetTexParameterIiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetTexParameterIiv(arg0,arg1,arg2);
 	}
 
@@ -4481,11 +4481,6 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBufferSubData(int arg0,long arg1,float[] arg2) {
-		org.lwjgl.opengles.GLES32.glBufferSubData(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glBufferSubData(int arg0,long arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glBufferSubData(arg0,arg1,arg2);
 	}
@@ -4501,12 +4496,17 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
+	public void glBufferSubData(int arg0,long arg1,java.nio.FloatBuffer arg2) {
+		org.lwjgl.opengles.GLES32.glBufferSubData(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glBufferSubData(int arg0,long arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glBufferSubData(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glBufferSubData(int arg0,long arg1,java.nio.FloatBuffer arg2) {
+	public void glBufferSubData(int arg0,long arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glBufferSubData(arg0,arg1,arg2);
 	}
 
@@ -4531,12 +4531,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform2fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glUniform2fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES32.glUniform2fv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform2fv(int arg0,float[] arg1) {
+	public void glUniform2fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES32.glUniform2fv(arg0,arg1);
 	}
 
@@ -4636,8 +4636,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetObjectLabel_String(int arg0,int arg1,int arg2) {
-		return org.lwjgl.opengles.GLES32.glGetObjectLabel(arg0,arg1,arg2);
+	public void glGetObjectLabel(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
+		org.lwjgl.opengles.GLES32.glGetObjectLabel(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -4646,13 +4646,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetObjectLabel(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
-		org.lwjgl.opengles.GLES32.glGetObjectLabel(arg0,arg1,arg2,arg3);
+	public java.lang.String glGetObjectLabel_String(int arg0,int arg1) {
+		return org.lwjgl.opengles.GLES32.glGetObjectLabel(arg0,arg1);
 	}
 
 	@Override
-	public java.lang.String glGetObjectLabel_String(int arg0,int arg1) {
-		return org.lwjgl.opengles.GLES32.glGetObjectLabel(arg0,arg1);
+	public java.lang.String glGetObjectLabel_String(int arg0,int arg1,int arg2) {
+		return org.lwjgl.opengles.GLES32.glGetObjectLabel(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -4741,12 +4741,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix4x2fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix4x2fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glUniformMatrix4x2fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix4x2fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix4x2fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glUniformMatrix4x2fv(arg0,arg1,arg2);
 	}
 
@@ -4816,11 +4816,6 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
-		org.lwjgl.opengles.GLES32.glGetActiveAttrib(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
 	public java.lang.String glGetActiveAttrib_String(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
 		return org.lwjgl.opengles.GLES32.glGetActiveAttrib(arg0,arg1,arg2,arg3);
 	}
@@ -4828,6 +4823,11 @@ public class GL_W_GLES32 implements GL_W_Call {
 	@Override
 	public java.lang.String glGetActiveAttrib_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
 		return org.lwjgl.opengles.GLES32.glGetActiveAttrib(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glGetActiveAttrib(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
+		org.lwjgl.opengles.GLES32.glGetActiveAttrib(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
@@ -4846,7 +4846,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsIndirect(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glDrawElementsIndirect(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glDrawElementsIndirect(arg0,arg1,arg2);
 	}
 
@@ -4856,12 +4856,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsIndirect(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glDrawElementsIndirect(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glDrawElementsIndirect(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glDrawElementsIndirect(int arg0,int arg1,int[] arg2) {
+	public void glDrawElementsIndirect(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glDrawElementsIndirect(arg0,arg1,arg2);
 	}
 
@@ -4896,7 +4896,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderSource(int arg0,java.lang.CharSequence arg1) {
+	public void glShaderSource(int arg0,java.lang.CharSequence... arg1) {
 		org.lwjgl.opengles.GLES32.glShaderSource(arg0,arg1);
 	}
 
@@ -4906,7 +4906,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderSource(int arg0,java.lang.CharSequence... arg1) {
+	public void glShaderSource(int arg0,java.lang.CharSequence arg1) {
 		org.lwjgl.opengles.GLES32.glShaderSource(arg0,arg1);
 	}
 
@@ -5001,12 +5001,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetVertexAttribfv(int arg0,int arg1,float[] arg2) {
+	public void glGetVertexAttribfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetVertexAttribfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetVertexAttribfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetVertexAttribfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetVertexAttribfv(arg0,arg1,arg2);
 	}
 
@@ -5056,13 +5056,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public java.nio.ByteBuffer glMapBufferRange_ByteBuffer(int arg0,long arg1,long arg2,int arg3) {
-		return org.lwjgl.opengles.GLES32.glMapBufferRange(arg0,arg1,arg2,arg3);
+	public java.nio.ByteBuffer glMapBufferRange_ByteBuffer(int arg0,long arg1,long arg2,int arg3,java.nio.ByteBuffer arg4) {
+		return org.lwjgl.opengles.GLES32.glMapBufferRange(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public java.nio.ByteBuffer glMapBufferRange_ByteBuffer(int arg0,long arg1,long arg2,int arg3,java.nio.ByteBuffer arg4) {
-		return org.lwjgl.opengles.GLES32.glMapBufferRange(arg0,arg1,arg2,arg3,arg4);
+	public java.nio.ByteBuffer glMapBufferRange_ByteBuffer(int arg0,long arg1,long arg2,int arg3) {
+		return org.lwjgl.opengles.GLES32.glMapBufferRange(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -5071,23 +5071,23 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetShaderSource(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+	public void glGetShaderSource(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetShaderSource(arg0,arg1,arg2);
 	}
 
 	@Override
-	public java.lang.String glGetShaderSource_String(int arg0) {
-		return org.lwjgl.opengles.GLES32.glGetShaderSource(arg0);
-	}
-
-	@Override
-	public void glGetShaderSource(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
+	public void glGetShaderSource(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetShaderSource(arg0,arg1,arg2);
 	}
 
 	@Override
 	public java.lang.String glGetShaderSource_String(int arg0,int arg1) {
 		return org.lwjgl.opengles.GLES32.glGetShaderSource(arg0,arg1);
+	}
+
+	@Override
+	public java.lang.String glGetShaderSource_String(int arg0) {
+		return org.lwjgl.opengles.GLES32.glGetShaderSource(arg0);
 	}
 
 	@Override
@@ -5106,12 +5106,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetVertexAttribiv(int arg0,int arg1,int[] arg2) {
+	public void glGetVertexAttribiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetVertexAttribiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetVertexAttribiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetVertexAttribiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetVertexAttribiv(arg0,arg1,arg2);
 	}
 
@@ -5126,23 +5126,23 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramBinary(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
-		org.lwjgl.opengles.GLES32.glGetProgramBinary(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
 	public void glGetProgramBinary(int arg0,int[] arg1,int[] arg2,java.nio.ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES32.glGetProgramBinary(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,long arg7) {
-		org.lwjgl.opengles.GLES32.glCompressedTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+	public void glGetProgramBinary(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
+		org.lwjgl.opengles.GLES32.glGetProgramBinary(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
 	public void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glCompressedTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	}
+
+	@Override
+	public void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,long arg7) {
+		org.lwjgl.opengles.GLES32.glCompressedTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
 	@Override
@@ -5156,7 +5156,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteBuffers(java.nio.IntBuffer arg0) {
+	public void glDeleteBuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteBuffers(arg0);
 	}
 
@@ -5166,7 +5166,7 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteBuffers(int[] arg0) {
+	public void glDeleteBuffers(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengles.GLES32.glDeleteBuffers(arg0);
 	}
 
@@ -5211,22 +5211,22 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetInteger64i_v(int arg0,int arg1,long[] arg2) {
-		org.lwjgl.opengles.GLES32.glGetInteger64i_v(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glGetInteger64i_v(int arg0,int arg1,java.nio.LongBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetInteger64i_v(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform4fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
-		org.lwjgl.opengles.GLES32.glProgramUniform4fv(arg0,arg1,arg2);
+	public void glGetInteger64i_v(int arg0,int arg1,long[] arg2) {
+		org.lwjgl.opengles.GLES32.glGetInteger64i_v(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glProgramUniform4fv(int arg0,int arg1,float[] arg2) {
+		org.lwjgl.opengles.GLES32.glProgramUniform4fv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glProgramUniform4fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glProgramUniform4fv(arg0,arg1,arg2);
 	}
 
@@ -5236,12 +5236,12 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramPipelineiv(int arg0,int arg1,int[] arg2) {
+	public void glGetProgramPipelineiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES32.glGetProgramPipelineiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetProgramPipelineiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetProgramPipelineiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES32.glGetProgramPipelineiv(arg0,arg1,arg2);
 	}
 
@@ -5261,6 +5261,11 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
+	public void glReadnPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
+		org.lwjgl.opengles.GLES32.glReadnPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	}
+
+	@Override
 	public void glReadnPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,short[] arg6) {
 		org.lwjgl.opengles.GLES32.glReadnPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
@@ -5276,13 +5281,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadnPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
-		org.lwjgl.opengles.GLES32.glReadnPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
-	}
-
-	@Override
-	public void glReadnPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.IntBuffer arg6) {
-		org.lwjgl.opengles.GLES32.glReadnPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	public void glReadnPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,long arg7) {
+		org.lwjgl.opengles.GLES32.glReadnPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
 	@Override
@@ -5296,8 +5296,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadnPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,long arg7) {
-		org.lwjgl.opengles.GLES32.glReadnPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+	public void glReadnPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.IntBuffer arg6) {
+		org.lwjgl.opengles.GLES32.glReadnPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
 	@Override
@@ -5341,8 +5341,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenSamplers() {
-		return org.lwjgl.opengles.GLES32.glGenSamplers();
+	public void glGenSamplers(int[] arg0) {
+		org.lwjgl.opengles.GLES32.glGenSamplers(arg0);
 	}
 
 	@Override
@@ -5351,8 +5351,8 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenSamplers(int[] arg0) {
-		org.lwjgl.opengles.GLES32.glGenSamplers(arg0);
+	public int glGenSamplers() {
+		return org.lwjgl.opengles.GLES32.glGenSamplers();
 	}
 
 	@Override
@@ -5391,22 +5391,22 @@ public class GL_W_GLES32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,long arg4) {
-		org.lwjgl.opengles.GLES32.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
 	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ShortBuffer arg4) {
 		org.lwjgl.opengles.GLES32.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
+	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {
 		org.lwjgl.opengles.GLES32.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {
+	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,long arg4) {
+		org.lwjgl.opengles.GLES32.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
 		org.lwjgl.opengles.GLES32.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -5473,5 +5473,13 @@ public class GL_W_GLES32 implements GL_W_Call {
 	@Override
 	public void checkError(String message) {
 		lu.kbra.standalone.gameengine.utils.GameEngineUtils.checkGlESError(message);
+	}
+	@Override
+	public boolean isGLES() {
+		return true;
+	}
+	@Override
+	public boolean isGL() {
+		return false;
 	}
 }

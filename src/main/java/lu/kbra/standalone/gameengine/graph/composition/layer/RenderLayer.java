@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.graph.composition;
+package lu.kbra.standalone.gameengine.graph.composition.layer;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 

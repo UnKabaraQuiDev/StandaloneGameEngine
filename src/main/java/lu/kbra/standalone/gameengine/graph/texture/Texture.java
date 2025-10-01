@@ -2,8 +2,8 @@ package lu.kbra.standalone.gameengine.graph.texture;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
-import lu.kbra.standalone.gameengine.graph.composition.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.consts.DataType;
 import lu.kbra.standalone.gameengine.utils.consts.TexelFormat;

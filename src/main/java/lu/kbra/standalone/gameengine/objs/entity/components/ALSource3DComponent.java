@@ -27,7 +27,7 @@ public class ALSource3DComponent extends Component {
 		if(source == null)
 			return;
 		
-		if (!super.getParent().hasComponent(Transform3DComponent.class))
+		if (!super.getParent().hasComponentMatching(Transform3DComponent.class))
 			return;
 
 		Transform3D transform = super.getParent().getComponent(Transform3DComponent.class).getTransform();

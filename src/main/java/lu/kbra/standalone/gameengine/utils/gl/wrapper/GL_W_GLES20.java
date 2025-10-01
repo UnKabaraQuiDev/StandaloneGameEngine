@@ -337,8 +337,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenFramebuffers() {
-		return org.lwjgl.opengles.GLES20.glGenFramebuffers();
+	public void glGenFramebuffers(int[] arg0) {
+		org.lwjgl.opengles.GLES20.glGenFramebuffers(arg0);
 	}
 
 	@Override
@@ -347,8 +347,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenFramebuffers(int[] arg0) {
-		org.lwjgl.opengles.GLES20.glGenFramebuffers(arg0);
+	public int glGenFramebuffers() {
+		return org.lwjgl.opengles.GLES20.glGenFramebuffers();
 	}
 
 	@Override
@@ -362,12 +362,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteFramebuffers(int[] arg0) {
+	public void glDeleteFramebuffers(int arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteFramebuffers(arg0);
 	}
 
 	@Override
-	public void glDeleteFramebuffers(int arg0) {
+	public void glDeleteFramebuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteFramebuffers(arg0);
 	}
 
@@ -392,12 +392,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetShaderiv(int arg0,int arg1,int[] arg2) {
+	public void glGetShaderiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetShaderiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetShaderiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderiv(arg0,arg1,arg2);
 	}
 
@@ -407,13 +407,13 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
-		org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4,arg5);
+	public java.lang.String glGetActiveUniform_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
+		return org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public java.lang.String glGetActiveUniform_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
-		return org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4);
+	public void glGetActiveUniform(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
+		org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
@@ -432,12 +432,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib1fv(int arg0,float[] arg1) {
+	public void glVertexAttrib1fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib1fv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib1fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glVertexAttrib1fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib1fv(arg0,arg1);
 	}
 
@@ -457,12 +457,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix3fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix3fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix3fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix3fv(arg0,arg1,arg2);
 	}
 
@@ -557,12 +557,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteRenderbuffers(int arg0) {
+	public void glDeleteRenderbuffers(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteRenderbuffers(arg0);
 	}
 
 	@Override
-	public void glDeleteRenderbuffers(java.nio.IntBuffer arg0) {
+	public void glDeleteRenderbuffers(int arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteRenderbuffers(arg0);
 	}
 
@@ -582,6 +582,11 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGenTextures(int[] arg0) {
+		org.lwjgl.opengles.GLES20.glGenTextures(arg0);
+	}
+
+	@Override
 	public void glGenTextures(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glGenTextures(arg0);
 	}
@@ -592,17 +597,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenTextures(int[] arg0) {
-		org.lwjgl.opengles.GLES20.glGenTextures(arg0);
-	}
-
-	@Override
-	public void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {
+	public void glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengles.GLES20.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
+	public void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {
 		org.lwjgl.opengles.GLES20.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
 	}
 
@@ -622,12 +622,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBindAttribLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
+	public void glBindAttribLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glBindAttribLocation(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glBindAttribLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glBindAttribLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
 		org.lwjgl.opengles.GLES20.glBindAttribLocation(arg0,arg1,arg2);
 	}
 
@@ -637,13 +637,13 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
-		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.ByteBuffer arg7) {
+		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.ByteBuffer arg7) {
-		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
+		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
 	@Override
@@ -687,8 +687,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenRenderbuffers() {
-		return org.lwjgl.opengles.GLES20.glGenRenderbuffers();
+	public void glGenRenderbuffers(int[] arg0) {
+		org.lwjgl.opengles.GLES20.glGenRenderbuffers(arg0);
 	}
 
 	@Override
@@ -697,8 +697,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenRenderbuffers(int[] arg0) {
-		org.lwjgl.opengles.GLES20.glGenRenderbuffers(arg0);
+	public int glGenRenderbuffers() {
+		return org.lwjgl.opengles.GLES20.glGenRenderbuffers();
 	}
 
 	@Override
@@ -722,12 +722,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform4fv(int arg0,float[] arg1) {
+	public void glUniform4fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform4fv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform4fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glUniform4fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform4fv(arg0,arg1);
 	}
 
@@ -772,12 +772,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix4fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix4fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix4fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix4fv(arg0,arg1,arg2);
 	}
 
@@ -792,7 +792,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
+		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -807,7 +812,7 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -817,17 +822,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
+		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
 	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
-		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
-		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -837,12 +837,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib4fv(int arg0,float[] arg1) {
+	public void glVertexAttrib4fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib4fv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib4fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glVertexAttrib4fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib4fv(arg0,arg1);
 	}
 
@@ -912,12 +912,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetFloatv(int arg0,float[] arg1) {
+	public void glGetFloatv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glGetFloatv(arg0,arg1);
 	}
 
 	@Override
-	public void glGetFloatv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glGetFloatv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES20.glGetFloatv(arg0,arg1);
 	}
 
@@ -927,12 +927,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int[] arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,short[] arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -942,7 +942,7 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,short[] arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int[] arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -957,7 +957,7 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -977,12 +977,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetAttachedShaders(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2) {
+	public void glGetAttachedShaders(int arg0,int[] arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetAttachedShaders(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetAttachedShaders(int arg0,int[] arg1,int[] arg2) {
+	public void glGetAttachedShaders(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetAttachedShaders(arg0,arg1,arg2);
 	}
 
@@ -1012,17 +1012,27 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
-		org.lwjgl.opengles.GLES20.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
 	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,float[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
 	@Override
 	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int[] arg8) {
+		org.lwjgl.opengles.GLES20.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
+		org.lwjgl.opengles.GLES20.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
+		org.lwjgl.opengles.GLES20.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -1042,16 +1052,6 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
-		org.lwjgl.opengles.GLES20.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
-		org.lwjgl.opengles.GLES20.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
 	public void nglDeleteTextures(int arg0,long arg1) {
 		org.lwjgl.opengles.GLES20.nglDeleteTextures(arg0,arg1);
 	}
@@ -1067,27 +1067,7 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBufferData(int arg0,short[] arg1,int arg2) {
-		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,int[] arg1,int arg2) {
-		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glBufferData(int arg0,long arg1,int arg2) {
-		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,java.nio.IntBuffer arg1,int arg2) {
-		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,java.nio.ShortBuffer arg1,int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
 	}
 
@@ -1097,7 +1077,27 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
+	public void glBufferData(int arg0,int[] arg1,int arg2) {
+		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,short[] arg1,int arg2) {
+		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,java.nio.IntBuffer arg1,int arg2) {
+		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glBufferData(int arg0,java.nio.FloatBuffer arg1,int arg2) {
+		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,java.nio.ShortBuffer arg1,int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0,arg1,arg2);
 	}
 
@@ -1107,23 +1107,13 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetBufferParameteriv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengles.GLES20.glGetBufferParameteriv(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glGetBufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetBufferParameteriv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetProgramInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengles.GLES20.glGetProgramInfoLog(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glGetProgramInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengles.GLES20.glGetProgramInfoLog(arg0,arg1,arg2);
+	public void glGetBufferParameteriv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengles.GLES20.glGetBufferParameteriv(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -1134,6 +1124,16 @@ public class GL_W_GLES20 implements GL_W_Call {
 	@Override
 	public java.lang.String glGetProgramInfoLog_String(int arg0,int arg1) {
 		return org.lwjgl.opengles.GLES20.glGetProgramInfoLog(arg0,arg1);
+	}
+
+	@Override
+	public void glGetProgramInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengles.GLES20.glGetProgramInfoLog(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetProgramInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengles.GLES20.glGetProgramInfoLog(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -1167,12 +1167,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,long arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,long arg5) {
+	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.IntBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -1182,7 +1182,7 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -1252,12 +1252,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetIntegerv(int arg0,int[] arg1) {
+	public void glGetIntegerv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glGetIntegerv(arg0,arg1);
 	}
 
 	@Override
-	public void glGetIntegerv(int arg0,java.nio.IntBuffer arg1) {
+	public void glGetIntegerv(int arg0,int[] arg1) {
 		org.lwjgl.opengles.GLES20.glGetIntegerv(arg0,arg1);
 	}
 
@@ -1312,16 +1312,6 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetShaderInfoLog_String(int arg0,int arg1) {
-		return org.lwjgl.opengles.GLES20.glGetShaderInfoLog(arg0,arg1);
-	}
-
-	@Override
-	public void glGetShaderInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengles.GLES20.glGetShaderInfoLog(arg0,arg1,arg2);
-	}
-
-	@Override
 	public java.lang.String glGetShaderInfoLog_String(int arg0) {
 		return org.lwjgl.opengles.GLES20.glGetShaderInfoLog(arg0);
 	}
@@ -1332,17 +1322,27 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGetShaderInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengles.GLES20.glGetShaderInfoLog(arg0,arg1,arg2);
+	}
+
+	@Override
+	public java.lang.String glGetShaderInfoLog_String(int arg0,int arg1) {
+		return org.lwjgl.opengles.GLES20.glGetShaderInfoLog(arg0,arg1);
+	}
+
+	@Override
 	public void glDepthFunc(int arg0) {
 		org.lwjgl.opengles.GLES20.glDepthFunc(arg0);
 	}
 
 	@Override
-	public void glUniform3fv(int arg0,float[] arg1) {
+	public void glUniform3fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform3fv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform3fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glUniform3fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform3fv(arg0,arg1);
 	}
 
@@ -1397,12 +1397,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetUniformfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetUniformfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetUniformfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetUniformfv(int arg0,int arg1,float[] arg2) {
+	public void glGetUniformfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetUniformfv(arg0,arg1,arg2);
 	}
 
@@ -1437,13 +1437,13 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenBuffers() {
-		return org.lwjgl.opengles.GLES20.glGenBuffers();
+	public void glGenBuffers(int[] arg0) {
+		org.lwjgl.opengles.GLES20.glGenBuffers(arg0);
 	}
 
 	@Override
-	public void glGenBuffers(int[] arg0) {
-		org.lwjgl.opengles.GLES20.glGenBuffers(arg0);
+	public int glGenBuffers() {
+		return org.lwjgl.opengles.GLES20.glGenBuffers();
 	}
 
 	@Override
@@ -1497,12 +1497,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetRenderbufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetRenderbufferParameteriv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetRenderbufferParameteriv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetRenderbufferParameteriv(int arg0,int arg1,int[] arg2) {
+	public void glGetRenderbufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetRenderbufferParameteriv(arg0,arg1,arg2);
 	}
 
@@ -1557,11 +1557,6 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBufferSubData(int arg0,long arg1,float[] arg2) {
-		org.lwjgl.opengles.GLES20.glBufferSubData(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glBufferSubData(int arg0,long arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0,arg1,arg2);
 	}
@@ -1577,12 +1572,17 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
+	public void glBufferSubData(int arg0,long arg1,java.nio.FloatBuffer arg2) {
+		org.lwjgl.opengles.GLES20.glBufferSubData(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glBufferSubData(int arg0,long arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glBufferSubData(int arg0,long arg1,java.nio.FloatBuffer arg2) {
+	public void glBufferSubData(int arg0,long arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0,arg1,arg2);
 	}
 
@@ -1597,12 +1597,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform2fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glUniform2fv(int arg0,float[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform2fv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform2fv(int arg0,float[] arg1) {
+	public void glUniform2fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform2fv(arg0,arg1);
 	}
 
@@ -1722,11 +1722,6 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
-		org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
 	public java.lang.String glGetActiveAttrib_String(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
 		return org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0,arg1,arg2,arg3);
 	}
@@ -1734,6 +1729,11 @@ public class GL_W_GLES20 implements GL_W_Call {
 	@Override
 	public java.lang.String glGetActiveAttrib_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
 		return org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glGetActiveAttrib(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
+		org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
@@ -1757,7 +1757,7 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderSource(int arg0,java.lang.CharSequence arg1) {
+	public void glShaderSource(int arg0,java.lang.CharSequence... arg1) {
 		org.lwjgl.opengles.GLES20.glShaderSource(arg0,arg1);
 	}
 
@@ -1767,7 +1767,7 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderSource(int arg0,java.lang.CharSequence... arg1) {
+	public void glShaderSource(int arg0,java.lang.CharSequence arg1) {
 		org.lwjgl.opengles.GLES20.glShaderSource(arg0,arg1);
 	}
 
@@ -1802,12 +1802,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetVertexAttribfv(int arg0,int arg1,float[] arg2) {
+	public void glGetVertexAttribfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetVertexAttribfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetVertexAttribfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetVertexAttribfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetVertexAttribfv(arg0,arg1,arg2);
 	}
 
@@ -1822,17 +1822,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetShaderSource(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+	public void glGetShaderSource(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderSource(arg0,arg1,arg2);
 	}
 
 	@Override
-	public java.lang.String glGetShaderSource_String(int arg0) {
-		return org.lwjgl.opengles.GLES20.glGetShaderSource(arg0);
-	}
-
-	@Override
-	public void glGetShaderSource(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
+	public void glGetShaderSource(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderSource(arg0,arg1,arg2);
 	}
 
@@ -1842,12 +1837,17 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetVertexAttribiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengles.GLES20.glGetVertexAttribiv(arg0,arg1,arg2);
+	public java.lang.String glGetShaderSource_String(int arg0) {
+		return org.lwjgl.opengles.GLES20.glGetShaderSource(arg0);
 	}
 
 	@Override
 	public void glGetVertexAttribiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+		org.lwjgl.opengles.GLES20.glGetVertexAttribiv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetVertexAttribiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetVertexAttribiv(arg0,arg1,arg2);
 	}
 
@@ -1857,17 +1857,17 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,long arg7) {
-		org.lwjgl.opengles.GLES20.glCompressedTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
-	}
-
-	@Override
 	public void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glCompressedTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
 	@Override
-	public void glDeleteBuffers(java.nio.IntBuffer arg0) {
+	public void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,long arg7) {
+		org.lwjgl.opengles.GLES20.glCompressedTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+	}
+
+	@Override
+	public void glDeleteBuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteBuffers(arg0);
 	}
 
@@ -1877,7 +1877,7 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteBuffers(int[] arg0) {
+	public void glDeleteBuffers(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteBuffers(arg0);
 	}
 
@@ -1964,5 +1964,13 @@ public class GL_W_GLES20 implements GL_W_Call {
 	@Override
 	public void checkError(String message) {
 		lu.kbra.standalone.gameengine.utils.GameEngineUtils.checkGlESError(message);
+	}
+	@Override
+	public boolean isGLES() {
+		return true;
+	}
+	@Override
+	public boolean isGL() {
+		return false;
 	}
 }

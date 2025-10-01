@@ -59,8 +59,10 @@ public class InstanceEmitterRenderer extends Renderer<Scene, InstanceEmitterComp
 			material.setPropertyIfPresent(RenderShader.PROJECTION_MATRIX, projectionMatrix);
 			material.setPropertyIfPresent(RenderShader.VIEW_MATRIX, viewMatrix);
 		}
-		if (pec.getParent().hasComponent(TransformComponent.class)) {
-			TransformComponent transform = (TransformComponent) pec.getParent().getComponent(pec.getParent().getComponents(TransformComponent.class).get(0));
+		if (pec.getParent().hasComponentMatching(TransformComponent.class)) {
+			TransformComponent transform = (TransformComponent) pec
+					.getParent()
+					.getComponent(pec.getParent().getComponentTypesMatching(TransformComponent.class).get(0));
 			if (transform != null) {
 				transformationMatrix = transform.getTransform().getMatrix();
 			}
@@ -82,19 +84,14 @@ public class InstanceEmitterRenderer extends Renderer<Scene, InstanceEmitterComp
 
 		pe.bind();
 
-		// GameEngine.DEBUG.start("r_compute");
-		// pe.updatePull();
-		// GameEngine.DEBUG.end("r_compute");
-
-		// GL_W.glPolygonMode(shader.getFaceMode().getGlId(), shader.getRenderType().getGlId());
-
-		GL_W.glDrawElementsInstanced(shader.getBeginMode().getGlId(), mesh.getIndicesCount(), GL_W.GL_UNSIGNED_INT, 0, pe.getParticleCount());
+		GL_W
+				.glDrawElementsInstanced(shader.getBeginMode().getGlId(),
+						mesh.getIndicesCount(),
+						GL_W.GL_UNSIGNED_INT,
+						0,
+						pe.getParticleCount());
 
 		GL_W.glDisable(GL_W.GL_BLEND);
-
-		// debug only
-		// GameEngine.DEBUG.wireframe(cache, scene, mesh, projectionMatrix, viewMatrix,
-		// c.getTransform().getMatrix());
 
 		mesh.unbind();
 

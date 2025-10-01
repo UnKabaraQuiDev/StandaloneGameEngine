@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.impl.shader;
+package lu.kbra.standalone.gameengine.graph.shader.part;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -7,8 +7,6 @@ import java.util.logging.Level;
 import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
-import lu.kbra.standalone.gameengine.graph.shader.part.FragmentShaderPart;
-import lu.kbra.standalone.gameengine.graph.shader.part.VertexShaderPart;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
@@ -39,7 +37,7 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 
 		this.sid = GL_W.glCreateShader(type);
 		GL_W.checkError("CreateShader(" + type + ") (" + file + ")");
-		GL_W.glShaderSource(sid, PCUtils.readStringFile(file).replace("{version}", GL_W.WRAPPER instanceof GL_W_GL40 ? "400" : "300 es"));
+		GL_W.glShaderSource(sid, PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER instanceof GL_W_GL40 ? "400" : "300 es"));
 		GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
 		GL_W.glCompileShader(sid);
 		GL_W.checkError("CompileShader(" + sid + ") (" + file + ")");
@@ -54,6 +52,18 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 	}
 
 	public static AbstractShaderPart load(String file) {
+		int type = shaderType(file.substring(file.lastIndexOf(".") + 1));
+		if (type == GL_W.GL_VERTEX_SHADER) {
+			return new VertexShaderPart(file);
+		} else if (type == GL_W.GL_FRAGMENT_SHADER) {
+			return new FragmentShaderPart(file);
+		} else {
+			GameEngineUtils.throwGLESError("Unknown shader part type: " + file);
+			return null;
+		}
+	}
+
+	public static AbstractShaderPart loadPackaged(String file) {
 		int type = shaderType(file.substring(file.lastIndexOf(".") + 1));
 		if (type == GL_W.GL_VERTEX_SHADER) {
 			return new VertexShaderPart(file);
@@ -118,7 +128,8 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 			return GL_W.GL_FRAGMENT_SHADER;
 		case "geo":
 		case "comp":
-			GameEngineUtils.throwGLESError("Cannot load Compute/Geo shader using GLES");
+			if (GL_W.isGLES())
+				GameEngineUtils.throwGLESError("Cannot load Compute/Geo shader using GLES");
 		}
 		GameEngineUtils.throwGLESError("Unknown shader type: " + type);
 		return -1;

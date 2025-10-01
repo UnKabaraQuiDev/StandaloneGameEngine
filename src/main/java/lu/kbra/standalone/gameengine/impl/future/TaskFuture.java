@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.impl.nexttask;
+package lu.kbra.standalone.gameengine.impl.future;
 
 import java.util.function.Function;
 import java.util.function.Supplier;

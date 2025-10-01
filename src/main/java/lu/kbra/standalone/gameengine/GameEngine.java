@@ -17,14 +17,12 @@ import lu.kbra.standalone.gameengine.graph.window.WindowOptions;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GameLogic;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.impl.nexttask.Dispatcher;
+import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 import lu.kbra.standalone.gameengine.utils.DebugOptions;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL40;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
 
 public class GameEngine implements Cleanupable, UniqueID {
-
-	private static final long MIN_NANO_TIME_TO_START_TASK = 10_000;
 
 	public static final Vector3f X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0), Y_POS = new Vector3f(0, 1, 0),
 			Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1), Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0, 0, 0);
@@ -71,7 +69,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 	private void updateRun() {
 		if (!running) {
 			try {
-				Thread.sleep(Long.MAX_VALUE); // waiting for renderThread to finish GameLogic#init()
+				Thread.sleep(5_000); // waiting for renderThread to finish GameLogic#init()
 				if (!Thread.interrupted()) {
 					GlobalLogger.severe("Update thread waiting too long for init");
 					return;

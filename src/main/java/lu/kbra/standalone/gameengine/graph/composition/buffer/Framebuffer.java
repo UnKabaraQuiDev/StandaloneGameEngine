@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.graph.composition;
+package lu.kbra.standalone.gameengine.graph.composition.buffer;
 
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -7,6 +7,7 @@ import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.graph.texture.SingleTexture;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.consts.FrameBufferAttachment;

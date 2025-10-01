@@ -41,7 +41,7 @@ public class Scene3D extends Scene {
 			return null;
 
 		this.entities.put(str, entity);
-		if (entity.hasComponent(LightComponent.class)) {
+		if (entity.hasComponentMatching(LightComponent.class)) {
 			this.lightEmittors.add(str);
 		}
 		return entity;

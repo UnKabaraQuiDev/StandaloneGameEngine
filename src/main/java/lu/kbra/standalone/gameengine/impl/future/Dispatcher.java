@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.impl.nexttask;
+package lu.kbra.standalone.gameengine.impl.future;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;

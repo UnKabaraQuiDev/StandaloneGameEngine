@@ -4,7 +4,7 @@ import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
 import lu.kbra.standalone.gameengine.graph.window.Window;
-import lu.kbra.standalone.gameengine.impl.nexttask.Dispatcher;
+import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 
 public abstract class GameLogic {
 

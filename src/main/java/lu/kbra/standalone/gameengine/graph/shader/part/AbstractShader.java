@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.impl.shader;
+package lu.kbra.standalone.gameengine.graph.shader.part;
 
 import java.util.HashMap;
 import java.util.Map;

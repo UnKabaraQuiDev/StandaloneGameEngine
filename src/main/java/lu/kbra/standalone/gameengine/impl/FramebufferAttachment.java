@@ -1,6 +1,5 @@
-package lu.kbra.standalone.gameengine.graph.composition;
+package lu.kbra.standalone.gameengine.impl;
 
-import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public interface FramebufferAttachment extends Cleanupable {

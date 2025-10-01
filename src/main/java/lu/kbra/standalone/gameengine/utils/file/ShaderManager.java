@@ -16,8 +16,8 @@ import java.util.HashMap;
 
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
-import lu.kbra.standalone.gameengine.impl.shader.AbstractShader;
-import lu.kbra.standalone.gameengine.impl.shader.AbstractShaderPart;
+import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShader;
+import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShaderPart;
 
 public class ShaderManager {
 

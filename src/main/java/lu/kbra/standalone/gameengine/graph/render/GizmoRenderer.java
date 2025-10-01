@@ -61,8 +61,8 @@ public class GizmoRenderer extends Renderer<Scene, GizmoComponent> {
 		}
 
 		if (material.hasProperty(RenderShader.TRANSFORMATION_MATRIX)) {
-			if (e.hasComponent(TransformComponent.class)) {
-				TransformComponent transform = (TransformComponent) e.getComponent(e.getComponents(TransformComponent.class).get(0));
+			if (e.hasComponentMatching(TransformComponent.class)) {
+				TransformComponent transform = (TransformComponent) e.getComponent(e.getComponentTypesMatching(TransformComponent.class).get(0));
 				if (transform != null) {
 					transformationMatrix = transform.getTransform().getMatrix();
 				}

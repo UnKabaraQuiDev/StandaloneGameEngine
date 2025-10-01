@@ -36,7 +36,9 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 			return;
 		}
 
-		GlobalLogger.log(Level.FINE, "Mesh : " + mesh.getId() + ", vao:" + mesh.getVao() + ", vec:" + mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
+		GlobalLogger
+				.log(Level.FINE,
+						"Mesh : " + mesh.getId() + ", vao:" + mesh.getVao() + ", vec:" + mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
 
 		mesh.bind();
 
@@ -66,15 +68,15 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 		}
 
 		if (material.hasProperty(RenderShader.TRANSFORMATION_MATRIX)) {
-			if (e.hasComponent(TransformComponent.class)) {
-				TransformComponent transform = (TransformComponent) e.getComponent(e.getComponents(TransformComponent.class).get(0));
+			if (e.hasComponentMatching(TransformComponent.class)) {
+				TransformComponent transform = (TransformComponent) e.getComponent(e.getComponentTypesMatching(TransformComponent.class).get(0));
 				if (transform != null) {
 					transformationMatrix = transform.getTransform().getMatrix();
 				}
 				material.setProperty(RenderShader.TRANSFORMATION_MATRIX, transformationMatrix);
 			}
 		}
-		
+
 		material.bindProperties(cache, scene, shader);
 
 		if (shader.isTransparent()) {
@@ -82,13 +84,10 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 			GL_W.glEnable(GL_W.GL_BLEND);
 		}
 
-		// GL_W.glPolygonMode(shader.getFaceMode().getGlId(), shader.getRenderType().getGlId());
-
 		GL_W.glDrawElements(shader.getBeginMode().getGlId(), mesh.getIndicesCount(), GL_W.GL_UNSIGNED_INT, 0);
 
 		GL_W.glDisable(GL_W.GL_BLEND);
 
-		// debug only
 		GameEngine.DEBUG.wireframe(cache, scene, mesh, projectionMatrix, viewMatrix, transformationMatrix);
 
 		mesh.unbind();

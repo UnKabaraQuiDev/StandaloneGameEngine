@@ -1450,12 +1450,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertex3dv(java.nio.DoubleBuffer arg0) {
+	public void glVertex3dv(double[] arg0) {
 		org.lwjgl.opengl.GL40.glVertex3dv(arg0);
 	}
 
 	@Override
-	public void glVertex3dv(double[] arg0) {
+	public void glVertex3dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glVertex3dv(arg0);
 	}
 
@@ -1500,11 +1500,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenVertexArrays(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengl.GL40.glGenVertexArrays(arg0);
-	}
-
-	@Override
 	public void glGenVertexArrays(int[] arg0) {
 		org.lwjgl.opengl.GL40.glGenVertexArrays(arg0);
 	}
@@ -1512,6 +1507,11 @@ public class GL_W_GL40 implements GL_W_Call {
 	@Override
 	public int glGenVertexArrays() {
 		return org.lwjgl.opengl.GL40.glGenVertexArrays();
+	}
+
+	@Override
+	public void glGenVertexArrays(java.nio.IntBuffer arg0) {
+		org.lwjgl.opengl.GL40.glGenVertexArrays(arg0);
 	}
 
 	@Override
@@ -1545,8 +1545,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenFramebuffers() {
-		return org.lwjgl.opengl.GL40.glGenFramebuffers();
+	public void glGenFramebuffers(int[] arg0) {
+		org.lwjgl.opengl.GL40.glGenFramebuffers(arg0);
 	}
 
 	@Override
@@ -1555,8 +1555,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenFramebuffers(int[] arg0) {
-		org.lwjgl.opengl.GL40.glGenFramebuffers(arg0);
+	public int glGenFramebuffers() {
+		return org.lwjgl.opengl.GL40.glGenFramebuffers();
 	}
 
 	@Override
@@ -1580,17 +1580,27 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInterleavedArrays(int arg0,int arg1,long arg2) {
+	public void glInterleavedArrays(int arg0,int arg1,float[] arg2) {
+		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glInterleavedArrays(int arg0,int arg1,double[] arg2) {
+		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glInterleavedArrays(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glInterleavedArrays(int arg0,int arg1,short[] arg2) {
 		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
-		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glInterleavedArrays(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
 	}
 
@@ -1605,27 +1615,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glInterleavedArrays(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glInterleavedArrays(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glInterleavedArrays(int arg0,int arg1,double[] arg2) {
-		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glInterleavedArrays(int arg0,int arg1,float[] arg2) {
-		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glInterleavedArrays(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glInterleavedArrays(int arg0,int arg1,short[] arg2) {
+	public void glInterleavedArrays(int arg0,int arg1,long arg2) {
 		org.lwjgl.opengl.GL40.glInterleavedArrays(arg0,arg1,arg2);
 	}
 
@@ -1655,12 +1655,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTexEnviv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetTexEnviv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetTexEnviv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetTexEnviv(int arg0,int arg1,int[] arg2) {
+	public void glGetTexEnviv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetTexEnviv(arg0,arg1,arg2);
 	}
 
@@ -1670,18 +1670,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteVertexArrays(int arg0) {
-		org.lwjgl.opengl.GL40.glDeleteVertexArrays(arg0);
-	}
-
-	@Override
 	public void glDeleteVertexArrays(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glDeleteVertexArrays(arg0);
 	}
 
 	@Override
-	public void glGetUniformSubroutineuiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengl.GL40.glGetUniformSubroutineuiv(arg0,arg1,arg2);
+	public void glDeleteVertexArrays(int arg0) {
+		org.lwjgl.opengl.GL40.glDeleteVertexArrays(arg0);
 	}
 
 	@Override
@@ -1690,12 +1685,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetVertexAttribIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
-		org.lwjgl.opengl.GL40.glGetVertexAttribIuiv(arg0,arg1,arg2);
+	public void glGetUniformSubroutineuiv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengl.GL40.glGetUniformSubroutineuiv(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glGetVertexAttribIuiv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengl.GL40.glGetVertexAttribIuiv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetVertexAttribIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetVertexAttribIuiv(arg0,arg1,arg2);
 	}
 
@@ -1705,22 +1705,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glFogCoordfv(java.nio.FloatBuffer arg0) {
-		org.lwjgl.opengl.GL40.glFogCoordfv(arg0);
-	}
-
-	@Override
 	public void glFogCoordfv(float[] arg0) {
 		org.lwjgl.opengl.GL40.glFogCoordfv(arg0);
 	}
 
 	@Override
-	public void glDeleteFramebuffers(int[] arg0) {
-		org.lwjgl.opengl.GL40.glDeleteFramebuffers(arg0);
+	public void glFogCoordfv(java.nio.FloatBuffer arg0) {
+		org.lwjgl.opengl.GL40.glFogCoordfv(arg0);
 	}
 
 	@Override
 	public void glDeleteFramebuffers(int arg0) {
+		org.lwjgl.opengl.GL40.glDeleteFramebuffers(arg0);
+	}
+
+	@Override
+	public void glDeleteFramebuffers(int[] arg0) {
 		org.lwjgl.opengl.GL40.glDeleteFramebuffers(arg0);
 	}
 
@@ -1745,22 +1745,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glSamplerParameterIiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengl.GL40.glSamplerParameterIiv(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glSamplerParameterIiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glSamplerParameterIiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetShaderiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengl.GL40.glGetShaderiv(arg0,arg1,arg2);
+	public void glSamplerParameterIiv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengl.GL40.glSamplerParameterIiv(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glGetShaderiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+		org.lwjgl.opengl.GL40.glGetShaderiv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetShaderiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetShaderiv(arg0,arg1,arg2);
 	}
 
@@ -1790,13 +1790,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
-		org.lwjgl.opengl.GL40.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4,arg5);
+	public java.lang.String glGetActiveUniform_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
+		return org.lwjgl.opengl.GL40.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public java.lang.String glGetActiveUniform_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
-		return org.lwjgl.opengl.GL40.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4);
+	public void glGetActiveUniform(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
+		org.lwjgl.opengl.GL40.glGetActiveUniform(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
@@ -1810,12 +1810,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertex3iv(int[] arg0) {
+	public void glVertex3iv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glVertex3iv(arg0);
 	}
 
 	@Override
-	public void glVertex3iv(java.nio.IntBuffer arg0) {
+	public void glVertex3iv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glVertex3iv(arg0);
 	}
 
@@ -1865,22 +1865,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiTexCoord3sv(int arg0,short[] arg1) {
-		org.lwjgl.opengl.GL40.glMultiTexCoord3sv(arg0,arg1);
-	}
-
-	@Override
 	public void glMultiTexCoord3sv(int arg0,java.nio.ShortBuffer arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord3sv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib1fv(int arg0,float[] arg1) {
-		org.lwjgl.opengl.GL40.glVertexAttrib1fv(arg0,arg1);
+	public void glMultiTexCoord3sv(int arg0,short[] arg1) {
+		org.lwjgl.opengl.GL40.glMultiTexCoord3sv(arg0,arg1);
 	}
 
 	@Override
 	public void glVertexAttrib1fv(int arg0,java.nio.FloatBuffer arg1) {
+		org.lwjgl.opengl.GL40.glVertexAttrib1fv(arg0,arg1);
+	}
+
+	@Override
+	public void glVertexAttrib1fv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib1fv(arg0,arg1);
 	}
 
@@ -1905,12 +1905,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glRasterPos2iv(java.nio.IntBuffer arg0) {
+	public void glRasterPos2iv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos2iv(arg0);
 	}
 
 	@Override
-	public void glRasterPos2iv(int[] arg0) {
+	public void glRasterPos2iv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos2iv(arg0);
 	}
 
@@ -1955,12 +1955,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib1dv(int arg0,java.nio.DoubleBuffer arg1) {
+	public void glVertexAttrib1dv(int arg0,double[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib1dv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib1dv(int arg0,double[] arg1) {
+	public void glVertexAttrib1dv(int arg0,java.nio.DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib1dv(arg0,arg1);
 	}
 
@@ -1985,22 +1985,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glRasterPos2fv(float[] arg0) {
-		org.lwjgl.opengl.GL40.glRasterPos2fv(arg0);
-	}
-
-	@Override
 	public void glRasterPos2fv(java.nio.FloatBuffer arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos2fv(arg0);
 	}
 
 	@Override
-	public void glEdgeFlagPointer(int arg0,long arg1) {
-		org.lwjgl.opengl.GL40.glEdgeFlagPointer(arg0,arg1);
+	public void glRasterPos2fv(float[] arg0) {
+		org.lwjgl.opengl.GL40.glRasterPos2fv(arg0);
 	}
 
 	@Override
 	public void glEdgeFlagPointer(int arg0,java.nio.ByteBuffer arg1) {
+		org.lwjgl.opengl.GL40.glEdgeFlagPointer(arg0,arg1);
+	}
+
+	@Override
+	public void glEdgeFlagPointer(int arg0,long arg1) {
 		org.lwjgl.opengl.GL40.glEdgeFlagPointer(arg0,arg1);
 	}
 
@@ -2040,12 +2040,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexCoord2iv(int[] arg0) {
+	public void glTexCoord2iv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glTexCoord2iv(arg0);
 	}
 
 	@Override
-	public void glTexCoord2iv(java.nio.IntBuffer arg0) {
+	public void glTexCoord2iv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glTexCoord2iv(arg0);
 	}
 
@@ -2075,12 +2075,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glSecondaryColorP3uiv(int arg0,int[] arg1) {
+	public void glSecondaryColorP3uiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glSecondaryColorP3uiv(arg0,arg1);
 	}
 
 	@Override
-	public void glSecondaryColorP3uiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glSecondaryColorP3uiv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glSecondaryColorP3uiv(arg0,arg1);
 	}
 
@@ -2090,17 +2090,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawArraysIndirect(int arg0,java.nio.ByteBuffer arg1) {
-		org.lwjgl.opengl.GL40.glDrawArraysIndirect(arg0,arg1);
-	}
-
-	@Override
 	public void glDrawArraysIndirect(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glDrawArraysIndirect(arg0,arg1);
 	}
 
 	@Override
 	public void glDrawArraysIndirect(int arg0,java.nio.IntBuffer arg1) {
+		org.lwjgl.opengl.GL40.glDrawArraysIndirect(arg0,arg1);
+	}
+
+	@Override
+	public void glDrawArraysIndirect(int arg0,java.nio.ByteBuffer arg1) {
 		org.lwjgl.opengl.GL40.glDrawArraysIndirect(arg0,arg1);
 	}
 
@@ -2135,12 +2135,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix3fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix3fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix3fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix3fv(arg0,arg1,arg2);
 	}
 
@@ -2150,7 +2150,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetUniformIndices(int arg0,java.lang.CharSequence[] arg1,java.nio.IntBuffer arg2) {
+	public void glGetUniformIndices(int arg0,org.lwjgl.PointerBuffer arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetUniformIndices(arg0,arg1,arg2);
 	}
 
@@ -2160,7 +2160,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetUniformIndices(int arg0,org.lwjgl.PointerBuffer arg1,int[] arg2) {
+	public void glGetUniformIndices(int arg0,java.lang.CharSequence[] arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetUniformIndices(arg0,arg1,arg2);
 	}
 
@@ -2240,13 +2240,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenQueries() {
-		return org.lwjgl.opengl.GL40.glGenQueries();
+	public void glGenQueries(java.nio.IntBuffer arg0) {
+		org.lwjgl.opengl.GL40.glGenQueries(arg0);
 	}
 
 	@Override
-	public void glGenQueries(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengl.GL40.glGenQueries(arg0);
+	public int glGenQueries() {
+		return org.lwjgl.opengl.GL40.glGenQueries();
 	}
 
 	@Override
@@ -2265,22 +2265,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveSubroutineUniformiv(int arg0,int arg1,int arg2,int arg3,int[] arg4) {
-		org.lwjgl.opengl.GL40.glGetActiveSubroutineUniformiv(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
 	public void glGetActiveSubroutineUniformiv(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {
 		org.lwjgl.opengl.GL40.glGetActiveSubroutineUniformiv(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public void glUniformMatrix2x4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
-		org.lwjgl.opengl.GL40.glUniformMatrix2x4fv(arg0,arg1,arg2);
+	public void glGetActiveSubroutineUniformiv(int arg0,int arg1,int arg2,int arg3,int[] arg4) {
+		org.lwjgl.opengl.GL40.glGetActiveSubroutineUniformiv(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
 	public void glUniformMatrix2x4fv(int arg0,boolean arg1,float[] arg2) {
+		org.lwjgl.opengl.GL40.glUniformMatrix2x4fv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glUniformMatrix2x4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix2x4fv(arg0,arg1,arg2);
 	}
 
@@ -2290,22 +2290,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexCoord2fv(java.nio.FloatBuffer arg0) {
-		org.lwjgl.opengl.GL40.glTexCoord2fv(arg0);
-	}
-
-	@Override
 	public void glTexCoord2fv(float[] arg0) {
 		org.lwjgl.opengl.GL40.glTexCoord2fv(arg0);
 	}
 
 	@Override
-	public void glMultiDrawElementsBaseVertex(int arg0,int[] arg1,int arg2,org.lwjgl.PointerBuffer arg3,int[] arg4) {
-		org.lwjgl.opengl.GL40.glMultiDrawElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
+	public void glTexCoord2fv(java.nio.FloatBuffer arg0) {
+		org.lwjgl.opengl.GL40.glTexCoord2fv(arg0);
 	}
 
 	@Override
 	public void glMultiDrawElementsBaseVertex(int arg0,java.nio.IntBuffer arg1,int arg2,org.lwjgl.PointerBuffer arg3,java.nio.IntBuffer arg4) {
+		org.lwjgl.opengl.GL40.glMultiDrawElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glMultiDrawElementsBaseVertex(int arg0,int[] arg1,int arg2,org.lwjgl.PointerBuffer arg3,int[] arg4) {
 		org.lwjgl.opengl.GL40.glMultiDrawElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -2490,12 +2490,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetMapfv(int arg0,int arg1,float[] arg2) {
+	public void glGetMapfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetMapfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetMapfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetMapfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glGetMapfv(arg0,arg1,arg2);
 	}
 
@@ -2515,12 +2515,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glLoadMatrixf(float[] arg0) {
+	public void glLoadMatrixf(java.nio.FloatBuffer arg0) {
 		org.lwjgl.opengl.GL40.glLoadMatrixf(arg0);
 	}
 
 	@Override
-	public void glLoadMatrixf(java.nio.FloatBuffer arg0) {
+	public void glLoadMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL40.glLoadMatrixf(arg0);
 	}
 
@@ -2545,12 +2545,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib4Nusv(int arg0,short[] arg1) {
+	public void glVertexAttrib4Nusv(int arg0,java.nio.ShortBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib4Nusv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib4Nusv(int arg0,java.nio.ShortBuffer arg1) {
+	public void glVertexAttrib4Nusv(int arg0,short[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib4Nusv(arg0,arg1);
 	}
 
@@ -2565,8 +2565,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public java.nio.ByteBuffer glMapBuffer_ByteBuffer(int arg0,int arg1,long arg2,java.nio.ByteBuffer arg3) {
-		return org.lwjgl.opengl.GL40.glMapBuffer(arg0,arg1,arg2,arg3);
+	public java.nio.ByteBuffer glMapBuffer_ByteBuffer(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+		return org.lwjgl.opengl.GL40.glMapBuffer(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -2575,8 +2575,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public java.nio.ByteBuffer glMapBuffer_ByteBuffer(int arg0,int arg1,java.nio.ByteBuffer arg2) {
-		return org.lwjgl.opengl.GL40.glMapBuffer(arg0,arg1,arg2);
+	public java.nio.ByteBuffer glMapBuffer_ByteBuffer(int arg0,int arg1,long arg2,java.nio.ByteBuffer arg3) {
+		return org.lwjgl.opengl.GL40.glMapBuffer(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -2655,18 +2655,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiTexCoord4sv(int arg0,short[] arg1) {
-		org.lwjgl.opengl.GL40.glMultiTexCoord4sv(arg0,arg1);
-	}
-
-	@Override
 	public void glMultiTexCoord4sv(int arg0,java.nio.ShortBuffer arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord4sv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib4Niv(int arg0,int[] arg1) {
-		org.lwjgl.opengl.GL40.glVertexAttrib4Niv(arg0,arg1);
+	public void glMultiTexCoord4sv(int arg0,short[] arg1) {
+		org.lwjgl.opengl.GL40.glMultiTexCoord4sv(arg0,arg1);
 	}
 
 	@Override
@@ -2675,12 +2670,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetMaterialiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengl.GL40.glGetMaterialiv(arg0,arg1,arg2);
+	public void glVertexAttrib4Niv(int arg0,int[] arg1) {
+		org.lwjgl.opengl.GL40.glVertexAttrib4Niv(arg0,arg1);
 	}
 
 	@Override
 	public void glGetMaterialiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+		org.lwjgl.opengl.GL40.glGetMaterialiv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetMaterialiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetMaterialiv(arg0,arg1,arg2);
 	}
 
@@ -2860,12 +2860,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiTexCoord4fv(int arg0,float[] arg1) {
+	public void glMultiTexCoord4fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord4fv(arg0,arg1);
 	}
 
 	@Override
-	public void glMultiTexCoord4fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glMultiTexCoord4fv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord4fv(arg0,arg1);
 	}
 
@@ -2875,18 +2875,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetBufferParameteri64v(int arg0,int arg1,java.nio.LongBuffer arg2) {
-		org.lwjgl.opengl.GL40.glGetBufferParameteri64v(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glGetBufferParameteri64v(int arg0,int arg1,long[] arg2) {
 		org.lwjgl.opengl.GL40.glGetBufferParameteri64v(arg0,arg1,arg2);
 	}
 
 	@Override
-	public int glGetFragDataIndex(int arg0,java.nio.ByteBuffer arg1) {
-		return org.lwjgl.opengl.GL40.glGetFragDataIndex(arg0,arg1);
+	public void glGetBufferParameteri64v(int arg0,int arg1,java.nio.LongBuffer arg2) {
+		org.lwjgl.opengl.GL40.glGetBufferParameteri64v(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -2895,12 +2890,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glEvalCoord2dv(java.nio.DoubleBuffer arg0) {
-		org.lwjgl.opengl.GL40.glEvalCoord2dv(arg0);
+	public int glGetFragDataIndex(int arg0,java.nio.ByteBuffer arg1) {
+		return org.lwjgl.opengl.GL40.glGetFragDataIndex(arg0,arg1);
 	}
 
 	@Override
 	public void glEvalCoord2dv(double[] arg0) {
+		org.lwjgl.opengl.GL40.glEvalCoord2dv(arg0);
+	}
+
+	@Override
+	public void glEvalCoord2dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glEvalCoord2dv(arg0);
 	}
 
@@ -2910,12 +2910,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteRenderbuffers(int arg0) {
+	public void glDeleteRenderbuffers(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glDeleteRenderbuffers(arg0);
 	}
 
 	@Override
-	public void glDeleteRenderbuffers(java.nio.IntBuffer arg0) {
+	public void glDeleteRenderbuffers(int arg0) {
 		org.lwjgl.opengl.GL40.glDeleteRenderbuffers(arg0);
 	}
 
@@ -2955,12 +2955,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib4Nuiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glVertexAttrib4Nuiv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib4Nuiv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib4Nuiv(int arg0,int[] arg1) {
+	public void glVertexAttrib4Nuiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib4Nuiv(arg0,arg1);
 	}
 
@@ -3020,6 +3020,11 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGenTextures(int[] arg0) {
+		org.lwjgl.opengl.GL40.glGenTextures(arg0);
+	}
+
+	@Override
 	public void glGenTextures(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glGenTextures(arg0);
 	}
@@ -3027,11 +3032,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	@Override
 	public int glGenTextures() {
 		return org.lwjgl.opengl.GL40.glGenTextures();
-	}
-
-	@Override
-	public void glGenTextures(int[] arg0) {
-		org.lwjgl.opengl.GL40.glGenTextures(arg0);
 	}
 
 	@Override
@@ -3075,12 +3075,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib1sv(int arg0,java.nio.ShortBuffer arg1) {
+	public void glVertexAttrib1sv(int arg0,short[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib1sv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib1sv(int arg0,short[] arg1) {
+	public void glVertexAttrib1sv(int arg0,java.nio.ShortBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib1sv(arg0,arg1);
 	}
 
@@ -3110,12 +3110,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetQueryObjectui64v(int arg0,int arg1,long[] arg2) {
+	public void glGetQueryObjectui64v(int arg0,int arg1,long arg2) {
 		org.lwjgl.opengl.GL40.glGetQueryObjectui64v(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetQueryObjectui64v(int arg0,int arg1,long arg2) {
+	public void glGetQueryObjectui64v(int arg0,int arg1,long[] arg2) {
 		org.lwjgl.opengl.GL40.glGetQueryObjectui64v(arg0,arg1,arg2);
 	}
 
@@ -3140,12 +3140,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetActiveUniformBlockName_String(int arg0,int arg1,int arg2) {
-		return org.lwjgl.opengl.GL40.glGetActiveUniformBlockName(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glGetActiveUniformBlockName(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
+	public void glGetActiveUniformBlockName(int arg0,int arg1,int[] arg2,java.nio.ByteBuffer arg3) {
 		org.lwjgl.opengl.GL40.glGetActiveUniformBlockName(arg0,arg1,arg2,arg3);
 	}
 
@@ -3155,8 +3150,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveUniformBlockName(int arg0,int arg1,int[] arg2,java.nio.ByteBuffer arg3) {
+	public void glGetActiveUniformBlockName(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
 		org.lwjgl.opengl.GL40.glGetActiveUniformBlockName(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public java.lang.String glGetActiveUniformBlockName_String(int arg0,int arg1,int arg2) {
+		return org.lwjgl.opengl.GL40.glGetActiveUniformBlockName(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -3205,12 +3205,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glLightiv(int arg0,int arg1,int[] arg2) {
+	public void glLightiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glLightiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glLightiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glLightiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glLightiv(arg0,arg1,arg2);
 	}
 
@@ -3265,12 +3265,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetSamplerParameterfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetSamplerParameterfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glGetSamplerParameterfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetSamplerParameterfv(int arg0,int arg1,float[] arg2) {
+	public void glGetSamplerParameterfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetSamplerParameterfv(arg0,arg1,arg2);
 	}
 
@@ -3290,22 +3290,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBindAttribLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
-		org.lwjgl.opengl.GL40.glBindAttribLocation(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glBindAttribLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengl.GL40.glBindAttribLocation(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glLightfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
-		org.lwjgl.opengl.GL40.glLightfv(arg0,arg1,arg2);
+	public void glBindAttribLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
+		org.lwjgl.opengl.GL40.glBindAttribLocation(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glLightfv(int arg0,int arg1,float[] arg2) {
+		org.lwjgl.opengl.GL40.glLightfv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glLightfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glLightfv(arg0,arg1,arg2);
 	}
 
@@ -3370,22 +3370,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexCoord1iv(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengl.GL40.glTexCoord1iv(arg0);
-	}
-
-	@Override
 	public void glTexCoord1iv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glTexCoord1iv(arg0);
 	}
 
 	@Override
-	public void glClearBufferiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
-		org.lwjgl.opengl.GL40.glClearBufferiv(arg0,arg1,arg2);
+	public void glTexCoord1iv(java.nio.IntBuffer arg0) {
+		org.lwjgl.opengl.GL40.glTexCoord1iv(arg0);
 	}
 
 	@Override
 	public void glClearBufferiv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengl.GL40.glClearBufferiv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glClearBufferiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glClearBufferiv(arg0,arg1,arg2);
 	}
 
@@ -3410,12 +3410,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteTransformFeedbacks(java.nio.IntBuffer arg0) {
+	public void glDeleteTransformFeedbacks(int arg0) {
 		org.lwjgl.opengl.GL40.glDeleteTransformFeedbacks(arg0);
 	}
 
 	@Override
-	public void glDeleteTransformFeedbacks(int arg0) {
+	public void glDeleteTransformFeedbacks(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glDeleteTransformFeedbacks(arg0);
 	}
 
@@ -3455,13 +3455,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
-		org.lwjgl.opengl.GL40.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.ByteBuffer arg7) {
+		org.lwjgl.opengl.GL40.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.ByteBuffer arg7) {
-		org.lwjgl.opengl.GL40.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+	public void glCompressedTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
+		org.lwjgl.opengl.GL40.glCompressedTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
 	@Override
@@ -3480,12 +3480,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribP4uiv(int arg0,int arg1,boolean arg2,java.nio.IntBuffer arg3) {
+	public void glVertexAttribP4uiv(int arg0,int arg1,boolean arg2,int[] arg3) {
 		org.lwjgl.opengl.GL40.glVertexAttribP4uiv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glVertexAttribP4uiv(int arg0,int arg1,boolean arg2,int[] arg3) {
+	public void glVertexAttribP4uiv(int arg0,int arg1,boolean arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengl.GL40.glVertexAttribP4uiv(arg0,arg1,arg2,arg3);
 	}
 
@@ -3505,12 +3505,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib4sv(int arg0,java.nio.ShortBuffer arg1) {
+	public void glVertexAttrib4sv(int arg0,short[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib4sv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib4sv(int arg0,short[] arg1) {
+	public void glVertexAttrib4sv(int arg0,java.nio.ShortBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib4sv(arg0,arg1);
 	}
 
@@ -3520,12 +3520,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetSamplerParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetSamplerParameteriv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetSamplerParameteriv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetSamplerParameteriv(int arg0,int arg1,int[] arg2) {
+	public void glGetSamplerParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetSamplerParameteriv(arg0,arg1,arg2);
 	}
 
@@ -3545,17 +3545,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.ByteBuffer arg1,int arg2,int arg3) {
-		org.lwjgl.opengl.GL40.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.ShortBuffer arg1,int arg2,int arg3) {
-		org.lwjgl.opengl.GL40.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
 	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3) {
+		org.lwjgl.opengl.GL40.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public void glDrawElementsInstancedBaseVertex(int arg0,int arg1,int arg2,long arg3,int arg4,int arg5) {
+		org.lwjgl.opengl.GL40.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5);
+	}
+
+	@Override
+	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.ByteBuffer arg1,int arg2,int arg3) {
 		org.lwjgl.opengl.GL40.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
 	}
 
@@ -3565,8 +3565,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0,int arg1,int arg2,long arg3,int arg4,int arg5) {
-		org.lwjgl.opengl.GL40.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5);
+	public void glDrawElementsInstancedBaseVertex(int arg0,java.nio.ShortBuffer arg1,int arg2,int arg3) {
+		org.lwjgl.opengl.GL40.glDrawElementsInstancedBaseVertex(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -3625,12 +3625,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertex2dv(java.nio.DoubleBuffer arg0) {
+	public void glVertex2dv(double[] arg0) {
 		org.lwjgl.opengl.GL40.glVertex2dv(arg0);
 	}
 
 	@Override
-	public void glVertex2dv(double[] arg0) {
+	public void glVertex2dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glVertex2dv(arg0);
 	}
 
@@ -3660,13 +3660,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,long arg10) {
-		org.lwjgl.opengl.GL40.glCompressedTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+	public void glCompressedTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.ByteBuffer arg9) {
+		org.lwjgl.opengl.GL40.glCompressedTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.ByteBuffer arg9) {
-		org.lwjgl.opengl.GL40.glCompressedTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
+	public void glCompressedTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,long arg10) {
+		org.lwjgl.opengl.GL40.glCompressedTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 	}
 
 	@Override
@@ -3725,6 +3725,11 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGetQueryObjectuiv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengl.GL40.glGetQueryObjectuiv(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glGetQueryObjectuiv(int arg0,int arg1,long arg2) {
 		org.lwjgl.opengl.GL40.glGetQueryObjectuiv(arg0,arg1,arg2);
 	}
@@ -3735,17 +3740,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetQueryObjectuiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengl.GL40.glGetQueryObjectuiv(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glGetTexLevelParameteriv(int arg0,int arg1,int arg2,int[] arg3) {
+	public void glGetTexLevelParameteriv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengl.GL40.glGetTexLevelParameteriv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glGetTexLevelParameteriv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
+	public void glGetTexLevelParameteriv(int arg0,int arg1,int arg2,int[] arg3) {
 		org.lwjgl.opengl.GL40.glGetTexLevelParameteriv(arg0,arg1,arg2,arg3);
 	}
 
@@ -3770,8 +3770,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenRenderbuffers() {
-		return org.lwjgl.opengl.GL40.glGenRenderbuffers();
+	public void glGenRenderbuffers(int[] arg0) {
+		org.lwjgl.opengl.GL40.glGenRenderbuffers(arg0);
 	}
 
 	@Override
@@ -3780,8 +3780,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenRenderbuffers(int[] arg0) {
-		org.lwjgl.opengl.GL40.glGenRenderbuffers(arg0);
+	public int glGenRenderbuffers() {
+		return org.lwjgl.opengl.GL40.glGenRenderbuffers();
 	}
 
 	@Override
@@ -3840,12 +3840,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform4fv(int arg0,float[] arg1) {
+	public void glUniform4fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glUniform4fv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform4fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glUniform4fv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glUniform4fv(arg0,arg1);
 	}
 
@@ -3870,12 +3870,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix4dv(int arg0,boolean arg1,double[] arg2) {
+	public void glUniformMatrix4dv(int arg0,boolean arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix4dv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix4dv(int arg0,boolean arg1,java.nio.DoubleBuffer arg2) {
+	public void glUniformMatrix4dv(int arg0,boolean arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix4dv(arg0,arg1,arg2);
 	}
 
@@ -3945,12 +3945,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribI4iv(int arg0,int[] arg1) {
+	public void glVertexAttribI4iv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttribI4iv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttribI4iv(int arg0,java.nio.IntBuffer arg1) {
+	public void glVertexAttribI4iv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttribI4iv(arg0,arg1);
 	}
 
@@ -4025,12 +4025,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix4fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix4fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix4fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix4fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix4fv(arg0,arg1,arg2);
 	}
 
@@ -4065,12 +4065,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,short[] arg6) {
-		org.lwjgl.opengl.GL40.glTexSubImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
-	}
-
-	@Override
-	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int[] arg6) {
+	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,double[] arg6) {
 		org.lwjgl.opengl.GL40.glTexSubImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -4080,7 +4075,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
+	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int[] arg6) {
+		org.lwjgl.opengl.GL40.glTexSubImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	}
+
+	@Override
+	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,short[] arg6) {
 		org.lwjgl.opengl.GL40.glTexSubImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -4090,7 +4090,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
+	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
 		org.lwjgl.opengl.GL40.glTexSubImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -4100,12 +4100,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,long arg6) {
+	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
 		org.lwjgl.opengl.GL40.glTexSubImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,double[] arg6) {
+	public void glTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,long arg6) {
 		org.lwjgl.opengl.GL40.glTexSubImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -4125,12 +4125,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexCoordP4uiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glTexCoordP4uiv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glTexCoordP4uiv(arg0,arg1);
 	}
 
 	@Override
-	public void glTexCoordP4uiv(int arg0,int[] arg1) {
+	public void glTexCoordP4uiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glTexCoordP4uiv(arg0,arg1);
 	}
 
@@ -4145,12 +4145,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix2x3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix2x3fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix2x3fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix2x3fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix2x3fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix2x3fv(arg0,arg1,arg2);
 	}
 
@@ -4175,7 +4175,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
+		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int[] arg8) {
 		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -4190,17 +4195,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
-		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,double[] arg8) {
-		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,float[] arg8) {
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.FloatBuffer arg8) {
 		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -4210,17 +4205,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,float[] arg8) {
+		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,double[] arg8) {
+		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
+		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
 	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
-		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
-		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int[] arg8) {
 		org.lwjgl.opengl.GL40.glTexSubImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -4230,12 +4230,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform3uiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glUniform3uiv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glUniform3uiv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform3uiv(int arg0,int[] arg1) {
+	public void glUniform3uiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glUniform3uiv(arg0,arg1);
 	}
 
@@ -4255,12 +4255,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttrib4fv(int arg0,float[] arg1) {
+	public void glVertexAttrib4fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib4fv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttrib4fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glVertexAttrib4fv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttrib4fv(arg0,arg1);
 	}
 
@@ -4290,12 +4290,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,double[] arg10) {
-		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
-	}
-
-	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,short[] arg10) {
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,float[] arg10) {
 		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 	}
 
@@ -4310,17 +4305,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,java.nio.IntBuffer arg10) {
-		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
-	}
-
-	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,java.nio.ShortBuffer arg10) {
-		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
-	}
-
-	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,long arg10) {
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,short[] arg10) {
 		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 	}
 
@@ -4330,12 +4315,27 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,long arg10) {
+		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+	}
+
+	@Override
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,java.nio.ShortBuffer arg10) {
+		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+	}
+
+	@Override
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,java.nio.IntBuffer arg10) {
+		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+	}
+
+	@Override
 	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,java.nio.DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,float[] arg10) {
+	public void glTexSubImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int arg9,double[] arg10) {
 		org.lwjgl.opengl.GL40.glTexSubImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
 	}
 
@@ -4360,12 +4360,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix2x3dv(int arg0,boolean arg1,java.nio.DoubleBuffer arg2) {
+	public void glUniformMatrix2x3dv(int arg0,boolean arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix2x3dv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix2x3dv(int arg0,boolean arg1,double[] arg2) {
+	public void glUniformMatrix2x3dv(int arg0,boolean arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix2x3dv(arg0,arg1,arg2);
 	}
 
@@ -4385,22 +4385,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform4dv(int arg0,double[] arg1) {
-		org.lwjgl.opengl.GL40.glUniform4dv(arg0,arg1);
-	}
-
-	@Override
 	public void glUniform4dv(int arg0,java.nio.DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL40.glUniform4dv(arg0,arg1);
 	}
 
 	@Override
-	public void glTexCoord1dv(java.nio.DoubleBuffer arg0) {
-		org.lwjgl.opengl.GL40.glTexCoord1dv(arg0);
+	public void glUniform4dv(int arg0,double[] arg1) {
+		org.lwjgl.opengl.GL40.glUniform4dv(arg0,arg1);
 	}
 
 	@Override
 	public void glTexCoord1dv(double[] arg0) {
+		org.lwjgl.opengl.GL40.glTexCoord1dv(arg0);
+	}
+
+	@Override
+	public void glTexCoord1dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glTexCoord1dv(arg0);
 	}
 
@@ -4430,6 +4430,16 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,float[] arg4) {
+		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,java.nio.DoubleBuffer arg4) {
+		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
 	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,double[] arg4) {
 		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
 	}
@@ -4445,27 +4455,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,float[] arg4) {
-		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
-	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {
-		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
-	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,java.nio.DoubleBuffer arg4) {
+	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,java.nio.FloatBuffer arg4) {
 		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,java.nio.ShortBuffer arg4) {
-		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
-	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,java.nio.FloatBuffer arg4) {
 		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -4476,6 +4471,11 @@ public class GL_W_GL40 implements GL_W_Call {
 
 	@Override
 	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,long arg4) {
+		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glGetTexImage(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {
 		org.lwjgl.opengl.GL40.glGetTexImage(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -4495,11 +4495,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glPixelMapfv(int arg0,int arg1,long arg2) {
-		org.lwjgl.opengl.GL40.glPixelMapfv(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glPixelMapfv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glPixelMapfv(arg0,arg1);
 	}
@@ -4507,6 +4502,11 @@ public class GL_W_GL40 implements GL_W_Call {
 	@Override
 	public void glPixelMapfv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glPixelMapfv(arg0,arg1);
+	}
+
+	@Override
+	public void glPixelMapfv(int arg0,int arg1,long arg2) {
+		org.lwjgl.opengl.GL40.glPixelMapfv(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -4610,12 +4610,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTransformFeedbackVaryings(int arg0,org.lwjgl.PointerBuffer arg1,int arg2) {
+	public void glTransformFeedbackVaryings(int arg0,java.lang.CharSequence[] arg1,int arg2) {
 		org.lwjgl.opengl.GL40.glTransformFeedbackVaryings(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glTransformFeedbackVaryings(int arg0,java.lang.CharSequence[] arg1,int arg2) {
+	public void glTransformFeedbackVaryings(int arg0,org.lwjgl.PointerBuffer arg1,int arg2) {
 		org.lwjgl.opengl.GL40.glTransformFeedbackVaryings(arg0,arg1,arg2);
 	}
 
@@ -4640,22 +4640,27 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glColor4uiv(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengl.GL40.glColor4uiv(arg0);
-	}
-
-	@Override
 	public void glColor4uiv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glColor4uiv(arg0);
 	}
 
 	@Override
-	public void glNormalPointer(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glColor4uiv(java.nio.IntBuffer arg0) {
+		org.lwjgl.opengl.GL40.glColor4uiv(arg0);
+	}
+
+	@Override
+	public void glNormalPointer(int arg0,int arg1,java.nio.ShortBuffer arg2) {
 		org.lwjgl.opengl.GL40.glNormalPointer(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glNormalPointer(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+		org.lwjgl.opengl.GL40.glNormalPointer(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glNormalPointer(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glNormalPointer(arg0,arg1,arg2);
 	}
 
@@ -4666,11 +4671,6 @@ public class GL_W_GL40 implements GL_W_Call {
 
 	@Override
 	public void glNormalPointer(int arg0,int arg1,long arg2) {
-		org.lwjgl.opengl.GL40.glNormalPointer(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glNormalPointer(int arg0,int arg1,java.nio.ShortBuffer arg2) {
 		org.lwjgl.opengl.GL40.glNormalPointer(arg0,arg1,arg2);
 	}
 
@@ -4695,12 +4695,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glRasterPos4sv(java.nio.ShortBuffer arg0) {
+	public void glRasterPos4sv(short[] arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos4sv(arg0);
 	}
 
 	@Override
-	public void glRasterPos4sv(short[] arg0) {
+	public void glRasterPos4sv(java.nio.ShortBuffer arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos4sv(arg0);
 	}
 
@@ -4715,12 +4715,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexParameterIuiv(int arg0,int arg1,int[] arg2) {
+	public void glTexParameterIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glTexParameterIuiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glTexParameterIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glTexParameterIuiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glTexParameterIuiv(arg0,arg1,arg2);
 	}
 
@@ -4760,12 +4760,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetFloatv(int arg0,float[] arg1) {
+	public void glGetFloatv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glGetFloatv(arg0,arg1);
 	}
 
 	@Override
-	public void glGetFloatv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glGetFloatv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glGetFloatv(arg0,arg1);
 	}
 
@@ -4785,12 +4785,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
 		org.lwjgl.opengl.GL40.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int[] arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,short[] arg6) {
 		org.lwjgl.opengl.GL40.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -4800,7 +4800,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,short[] arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int[] arg6) {
 		org.lwjgl.opengl.GL40.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -4815,7 +4815,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
+	public void glReadPixels(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
 		org.lwjgl.opengl.GL40.glReadPixels(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -4825,12 +4825,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertex2sv(short[] arg0) {
+	public void glVertex2sv(java.nio.ShortBuffer arg0) {
 		org.lwjgl.opengl.GL40.glVertex2sv(arg0);
 	}
 
 	@Override
-	public void glVertex2sv(java.nio.ShortBuffer arg0) {
+	public void glVertex2sv(short[] arg0) {
 		org.lwjgl.opengl.GL40.glVertex2sv(arg0);
 	}
 
@@ -4890,12 +4890,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glRectsv(java.nio.ShortBuffer arg0,java.nio.ShortBuffer arg1) {
+	public void glRectsv(short[] arg0,short[] arg1) {
 		org.lwjgl.opengl.GL40.glRectsv(arg0,arg1);
 	}
 
 	@Override
-	public void glRectsv(short[] arg0,short[] arg1) {
+	public void glRectsv(java.nio.ShortBuffer arg0,java.nio.ShortBuffer arg1) {
 		org.lwjgl.opengl.GL40.glRectsv(arg0,arg1);
 	}
 
@@ -4910,12 +4910,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTexParameterIuiv(int arg0,int arg1,int[] arg2) {
+	public void glGetTexParameterIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetTexParameterIuiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetTexParameterIuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetTexParameterIuiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetTexParameterIuiv(arg0,arg1,arg2);
 	}
 
@@ -5025,6 +5025,11 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGetQueryObjecti64v(int arg0,int arg1,long[] arg2) {
+		org.lwjgl.opengl.GL40.glGetQueryObjecti64v(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glGetQueryObjecti64v(int arg0,int arg1,long arg2) {
 		org.lwjgl.opengl.GL40.glGetQueryObjecti64v(arg0,arg1,arg2);
 	}
@@ -5035,17 +5040,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetQueryObjecti64v(int arg0,int arg1,long[] arg2) {
-		org.lwjgl.opengl.GL40.glGetQueryObjecti64v(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glColor4usv(short[] arg0) {
+	public void glColor4usv(java.nio.ShortBuffer arg0) {
 		org.lwjgl.opengl.GL40.glColor4usv(arg0);
 	}
 
 	@Override
-	public void glColor4usv(java.nio.ShortBuffer arg0) {
+	public void glColor4usv(short[] arg0) {
 		org.lwjgl.opengl.GL40.glColor4usv(arg0);
 	}
 
@@ -5095,21 +5095,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawPixels(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
-		org.lwjgl.opengl.GL40.glDrawPixels(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
-	public void glDrawPixels(int arg0,int arg1,int arg2,int arg3,long arg4) {
-		org.lwjgl.opengl.GL40.glDrawPixels(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
-	public void glDrawPixels(int arg0,int arg1,int arg2,int arg3,short[] arg4) {
-		org.lwjgl.opengl.GL40.glDrawPixels(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
 	public void glDrawPixels(int arg0,int arg1,int arg2,int arg3,int[] arg4) {
 		org.lwjgl.opengl.GL40.glDrawPixels(arg0,arg1,arg2,arg3,arg4);
 	}
@@ -5130,7 +5115,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glDrawPixels(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
+		org.lwjgl.opengl.GL40.glDrawPixels(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glDrawPixels(int arg0,int arg1,int arg2,int arg3,long arg4) {
+		org.lwjgl.opengl.GL40.glDrawPixels(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
 	public void glDrawPixels(int arg0,int arg1,int arg2,int arg3,java.nio.ShortBuffer arg4) {
+		org.lwjgl.opengl.GL40.glDrawPixels(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glDrawPixels(int arg0,int arg1,int arg2,int arg3,short[] arg4) {
 		org.lwjgl.opengl.GL40.glDrawPixels(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -5155,12 +5155,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetAttachedShaders(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2) {
+	public void glGetAttachedShaders(int arg0,int[] arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetAttachedShaders(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetAttachedShaders(int arg0,int[] arg1,int[] arg2) {
+	public void glGetAttachedShaders(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetAttachedShaders(arg0,arg1,arg2);
 	}
 
@@ -5225,17 +5225,32 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
-		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
 	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,float[] arg8) {
 		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
 	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.DoubleBuffer arg8) {
+		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
 	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int[] arg8) {
+		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,short[] arg8) {
+		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
+		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+	}
+
+	@Override
+	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
 		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -5251,21 +5266,6 @@ public class GL_W_GL40 implements GL_W_Call {
 
 	@Override
 	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.FloatBuffer arg8) {
-		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.DoubleBuffer arg8) {
-		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {
-		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
-	}
-
-	@Override
-	public void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.ByteBuffer arg8) {
 		org.lwjgl.opengl.GL40.glTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
 	}
 
@@ -5340,27 +5340,27 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,double[] arg9) {
-		org.lwjgl.opengl.GL40.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
-	}
-
-	@Override
 	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,short[] arg9) {
 		org.lwjgl.opengl.GL40.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.FloatBuffer arg9) {
+	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int[] arg9) {
+		org.lwjgl.opengl.GL40.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
+	}
+
+	@Override
+	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.DoubleBuffer arg9) {
+		org.lwjgl.opengl.GL40.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
+	}
+
+	@Override
+	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,double[] arg9) {
 		org.lwjgl.opengl.GL40.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
 	@Override
 	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,float[] arg9) {
-		org.lwjgl.opengl.GL40.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
-	}
-
-	@Override
-	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,int[] arg9) {
 		org.lwjgl.opengl.GL40.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
@@ -5380,12 +5380,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.DoubleBuffer arg9) {
+	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.IntBuffer arg9) {
 		org.lwjgl.opengl.GL40.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.IntBuffer arg9) {
+	public void glTexImage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,int arg8,java.nio.FloatBuffer arg9) {
 		org.lwjgl.opengl.GL40.glTexImage3D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
@@ -5405,13 +5405,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCallLists(java.nio.ShortBuffer arg0) {
+	public void glCallLists(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glCallLists(arg0);
 	}
 
 	@Override
-	public void glCallLists(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengl.GL40.glCallLists(arg0);
+	public void glCallLists(int arg0,java.nio.ByteBuffer arg1) {
+		org.lwjgl.opengl.GL40.glCallLists(arg0,arg1);
 	}
 
 	@Override
@@ -5420,8 +5420,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCallLists(int arg0,java.nio.ByteBuffer arg1) {
-		org.lwjgl.opengl.GL40.glCallLists(arg0,arg1);
+	public void glCallLists(java.nio.ShortBuffer arg0) {
+		org.lwjgl.opengl.GL40.glCallLists(arg0);
 	}
 
 	@Override
@@ -5440,12 +5440,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiTexCoord3fv(int arg0,float[] arg1) {
+	public void glMultiTexCoord3fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord3fv(arg0,arg1);
 	}
 
 	@Override
-	public void glMultiTexCoord3fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glMultiTexCoord3fv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord3fv(arg0,arg1);
 	}
 
@@ -5455,12 +5455,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glEvalCoord1dv(double[] arg0) {
+	public void glEvalCoord1dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glEvalCoord1dv(arg0);
 	}
 
 	@Override
-	public void glEvalCoord1dv(java.nio.DoubleBuffer arg0) {
+	public void glEvalCoord1dv(double[] arg0) {
 		org.lwjgl.opengl.GL40.glEvalCoord1dv(arg0);
 	}
 
@@ -5470,7 +5470,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBufferData(int arg0,java.nio.DoubleBuffer arg1,int arg2) {
+	public void glBufferData(int arg0,float[] arg1,int arg2) {
 		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
 	}
 
@@ -5480,42 +5480,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBufferData(int arg0,float[] arg1,int arg2) {
-		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,long[] arg1,int arg2) {
-		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,short[] arg1,int arg2) {
-		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,int[] arg1,int arg2) {
-		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glBufferData(int arg0,long arg1,int arg2) {
-		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,java.nio.LongBuffer arg1,int arg2) {
-		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,java.nio.IntBuffer arg1,int arg2) {
-		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferData(int arg0,java.nio.ShortBuffer arg1,int arg2) {
 		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
 	}
 
@@ -5525,7 +5490,42 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glBufferData(int arg0,long[] arg1,int arg2) {
+		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,int[] arg1,int arg2) {
+		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,short[] arg1,int arg2) {
+		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,java.nio.IntBuffer arg1,int arg2) {
+		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,java.nio.LongBuffer arg1,int arg2) {
+		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glBufferData(int arg0,java.nio.FloatBuffer arg1,int arg2) {
+		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,java.nio.ShortBuffer arg1,int arg2) {
+		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferData(int arg0,java.nio.DoubleBuffer arg1,int arg2) {
 		org.lwjgl.opengl.GL40.glBufferData(arg0,arg1,arg2);
 	}
 
@@ -5540,23 +5540,18 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetIntegeri_v(int arg0,int arg1,int[] arg2) {
+	public void glGetIntegeri_v(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetIntegeri_v(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetIntegeri_v(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetIntegeri_v(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetIntegeri_v(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void nglTexSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,long arg6) {
 		org.lwjgl.opengl.GL40.nglTexSubImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
-	}
-
-	@Override
-	public void glTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.FloatBuffer arg7) {
-		org.lwjgl.opengl.GL40.glTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
 	@Override
@@ -5570,12 +5565,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.ShortBuffer arg7) {
+		org.lwjgl.opengl.GL40.glTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+	}
+
+	@Override
 	public void glTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.IntBuffer arg7) {
 		org.lwjgl.opengl.GL40.glTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.DoubleBuffer arg7) {
+	public void glTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.FloatBuffer arg7) {
+		org.lwjgl.opengl.GL40.glTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+	}
+
+	@Override
+	public void glTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int[] arg7) {
 		org.lwjgl.opengl.GL40.glTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
@@ -5595,18 +5600,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int[] arg7) {
+	public void glTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.DoubleBuffer arg7) {
 		org.lwjgl.opengl.GL40.glTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
-	}
-
-	@Override
-	public void glTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,java.nio.ShortBuffer arg7) {
-		org.lwjgl.opengl.GL40.glTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
-	}
-
-	@Override
-	public void glGetBufferParameteriv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengl.GL40.glGetBufferParameteriv(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -5615,7 +5610,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawBuffers(int arg0) {
+	public void glGetBufferParameteriv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengl.GL40.glGetBufferParameteriv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glDrawBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL40.glDrawBuffers(arg0);
 	}
 
@@ -5625,7 +5625,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawBuffers(int[] arg0) {
+	public void glDrawBuffers(int arg0) {
 		org.lwjgl.opengl.GL40.glDrawBuffers(arg0);
 	}
 
@@ -5640,8 +5640,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengl.GL40.glGetProgramInfoLog(arg0,arg1,arg2);
+	public java.lang.String glGetProgramInfoLog_String(int arg0) {
+		return org.lwjgl.opengl.GL40.glGetProgramInfoLog(arg0);
+	}
+
+	@Override
+	public java.lang.String glGetProgramInfoLog_String(int arg0,int arg1) {
+		return org.lwjgl.opengl.GL40.glGetProgramInfoLog(arg0,arg1);
 	}
 
 	@Override
@@ -5650,13 +5655,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetProgramInfoLog_String(int arg0) {
-		return org.lwjgl.opengl.GL40.glGetProgramInfoLog(arg0);
-	}
-
-	@Override
-	public java.lang.String glGetProgramInfoLog_String(int arg0,int arg1) {
-		return org.lwjgl.opengl.GL40.glGetProgramInfoLog(arg0,arg1);
+	public void glGetProgramInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengl.GL40.glGetProgramInfoLog(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -5675,18 +5675,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribI2uiv(int arg0,int[] arg1) {
-		org.lwjgl.opengl.GL40.glVertexAttribI2uiv(arg0,arg1);
-	}
-
-	@Override
 	public void glVertexAttribI2uiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttribI2uiv(arg0,arg1);
 	}
 
 	@Override
-	public void glEvalCoord1fv(java.nio.FloatBuffer arg0) {
-		org.lwjgl.opengl.GL40.glEvalCoord1fv(arg0);
+	public void glVertexAttribI2uiv(int arg0,int[] arg1) {
+		org.lwjgl.opengl.GL40.glVertexAttribI2uiv(arg0,arg1);
 	}
 
 	@Override
@@ -5695,12 +5690,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiTexCoord3iv(int arg0,int[] arg1) {
-		org.lwjgl.opengl.GL40.glMultiTexCoord3iv(arg0,arg1);
+	public void glEvalCoord1fv(java.nio.FloatBuffer arg0) {
+		org.lwjgl.opengl.GL40.glEvalCoord1fv(arg0);
 	}
 
 	@Override
 	public void glMultiTexCoord3iv(int arg0,java.nio.IntBuffer arg1) {
+		org.lwjgl.opengl.GL40.glMultiTexCoord3iv(arg0,arg1);
+	}
+
+	@Override
+	public void glMultiTexCoord3iv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord3iv(arg0,arg1);
 	}
 
@@ -5725,12 +5725,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexPointer(int arg0,int arg1,int arg2,long arg3) {
-		org.lwjgl.opengl.GL40.glVertexPointer(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public void glVertexPointer(int arg0,int arg1,int arg2,java.nio.FloatBuffer arg3) {
+	public void glVertexPointer(int arg0,int arg1,int arg2,java.nio.ShortBuffer arg3) {
 		org.lwjgl.opengl.GL40.glVertexPointer(arg0,arg1,arg2,arg3);
 	}
 
@@ -5740,7 +5735,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexPointer(int arg0,int arg1,int arg2,java.nio.ShortBuffer arg3) {
+	public void glVertexPointer(int arg0,int arg1,int arg2,java.nio.FloatBuffer arg3) {
+		org.lwjgl.opengl.GL40.glVertexPointer(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public void glVertexPointer(int arg0,int arg1,int arg2,long arg3) {
 		org.lwjgl.opengl.GL40.glVertexPointer(arg0,arg1,arg2,arg3);
 	}
 
@@ -5765,12 +5765,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexGendv(int arg0,int arg1,double[] arg2) {
+	public void glTexGendv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL40.glTexGendv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glTexGendv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
+	public void glTexGendv(int arg0,int arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glTexGendv(arg0,arg1,arg2);
 	}
 
@@ -5805,12 +5805,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glRasterPos4dv(java.nio.DoubleBuffer arg0) {
+	public void glRasterPos4dv(double[] arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos4dv(arg0);
 	}
 
 	@Override
-	public void glRasterPos4dv(double[] arg0) {
+	public void glRasterPos4dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos4dv(arg0);
 	}
 
@@ -5855,12 +5855,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,long arg5) {
 		org.lwjgl.opengl.GL40.glVertexAttribPointer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,long arg5) {
+	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.IntBuffer arg5) {
 		org.lwjgl.opengl.GL40.glVertexAttribPointer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -5870,7 +5870,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0,int arg1,int arg2,boolean arg3,int arg4,java.nio.ByteBuffer arg5) {
 		org.lwjgl.opengl.GL40.glVertexAttribPointer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -5920,12 +5920,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform4uiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glUniform4uiv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glUniform4uiv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform4uiv(int arg0,int[] arg1) {
+	public void glUniform4uiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glUniform4uiv(arg0,arg1);
 	}
 
@@ -6080,12 +6080,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexGeniv(int arg0,int arg1,int[] arg2) {
+	public void glTexGeniv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glTexGeniv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glTexGeniv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glTexGeniv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glTexGeniv(arg0,arg1,arg2);
 	}
 
@@ -6125,12 +6125,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMaterialfv(int arg0,int arg1,float[] arg2) {
+	public void glMaterialfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glMaterialfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glMaterialfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glMaterialfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glMaterialfv(arg0,arg1,arg2);
 	}
 
@@ -6140,18 +6140,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glRasterPos4iv(int[] arg0) {
-		org.lwjgl.opengl.GL40.glRasterPos4iv(arg0);
-	}
-
-	@Override
 	public void glRasterPos4iv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos4iv(arg0);
 	}
 
 	@Override
-	public void glGetIntegerv(int arg0,int[] arg1) {
-		org.lwjgl.opengl.GL40.glGetIntegerv(arg0,arg1);
+	public void glRasterPos4iv(int[] arg0) {
+		org.lwjgl.opengl.GL40.glRasterPos4iv(arg0);
 	}
 
 	@Override
@@ -6160,8 +6155,18 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGetIntegerv(int arg0,int[] arg1) {
+		org.lwjgl.opengl.GL40.glGetIntegerv(arg0,arg1);
+	}
+
+	@Override
 	public void glOrtho(double arg0,double arg1,double arg2,double arg3,double arg4,double arg5) {
 		org.lwjgl.opengl.GL40.glOrtho(arg0,arg1,arg2,arg3,arg4,arg5);
+	}
+
+	@Override
+	public void glPixelMapuiv(int arg0,int[] arg1) {
+		org.lwjgl.opengl.GL40.glPixelMapuiv(arg0,arg1);
 	}
 
 	@Override
@@ -6175,11 +6180,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glPixelMapuiv(int arg0,int[] arg1) {
-		org.lwjgl.opengl.GL40.glPixelMapuiv(arg0,arg1);
-	}
-
-	@Override
 	public void glRectd(double arg0,double arg1,double arg2,double arg3) {
 		org.lwjgl.opengl.GL40.glRectd(arg0,arg1,arg2,arg3);
 	}
@@ -6190,12 +6190,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribP3uiv(int arg0,int arg1,boolean arg2,java.nio.IntBuffer arg3) {
+	public void glVertexAttribP3uiv(int arg0,int arg1,boolean arg2,int[] arg3) {
 		org.lwjgl.opengl.GL40.glVertexAttribP3uiv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glVertexAttribP3uiv(int arg0,int arg1,boolean arg2,int[] arg3) {
+	public void glVertexAttribP3uiv(int arg0,int arg1,boolean arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengl.GL40.glVertexAttribP3uiv(arg0,arg1,arg2,arg3);
 	}
 
@@ -6240,17 +6240,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public boolean glAreTexturesResident_boolean(int[] arg0,java.nio.ByteBuffer arg1) {
+		return org.lwjgl.opengl.GL40.glAreTexturesResident(arg0,arg1);
+	}
+
+	@Override
 	public boolean glAreTexturesResident_boolean(java.nio.IntBuffer arg0,java.nio.ByteBuffer arg1) {
 		return org.lwjgl.opengl.GL40.glAreTexturesResident(arg0,arg1);
 	}
 
 	@Override
 	public boolean glAreTexturesResident_boolean(int arg0,java.nio.ByteBuffer arg1) {
-		return org.lwjgl.opengl.GL40.glAreTexturesResident(arg0,arg1);
-	}
-
-	@Override
-	public boolean glAreTexturesResident_boolean(int[] arg0,java.nio.ByteBuffer arg1) {
 		return org.lwjgl.opengl.GL40.glAreTexturesResident(arg0,arg1);
 	}
 
@@ -6270,12 +6270,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glFogfv(int arg0,float[] arg1) {
+	public void glFogfv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glFogfv(arg0,arg1);
 	}
 
 	@Override
-	public void glFogfv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glFogfv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glFogfv(arg0,arg1);
 	}
 
@@ -6370,11 +6370,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetActiveUniformName_String(int arg0,int arg1) {
-		return org.lwjgl.opengl.GL40.glGetActiveUniformName(arg0,arg1);
-	}
-
-	@Override
 	public void glGetActiveUniformName(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
 		org.lwjgl.opengl.GL40.glGetActiveUniformName(arg0,arg1,arg2,arg3);
 	}
@@ -6385,17 +6380,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstanced(int arg0,java.nio.ShortBuffer arg1,int arg2) {
+	public java.lang.String glGetActiveUniformName_String(int arg0,int arg1) {
+		return org.lwjgl.opengl.GL40.glGetActiveUniformName(arg0,arg1);
+	}
+
+	@Override
+	public void glDrawElementsInstanced(int arg0,java.nio.ByteBuffer arg1,int arg2) {
 		org.lwjgl.opengl.GL40.glDrawElementsInstanced(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glDrawElementsInstanced(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3) {
-		org.lwjgl.opengl.GL40.glDrawElementsInstanced(arg0,arg1,arg2,arg3);
+	public void glDrawElementsInstanced(int arg0,java.nio.IntBuffer arg1,int arg2) {
+		org.lwjgl.opengl.GL40.glDrawElementsInstanced(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glDrawElementsInstanced(int arg0,java.nio.IntBuffer arg1,int arg2) {
+	public void glDrawElementsInstanced(int arg0,java.nio.ShortBuffer arg1,int arg2) {
 		org.lwjgl.opengl.GL40.glDrawElementsInstanced(arg0,arg1,arg2);
 	}
 
@@ -6405,8 +6405,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstanced(int arg0,java.nio.ByteBuffer arg1,int arg2) {
-		org.lwjgl.opengl.GL40.glDrawElementsInstanced(arg0,arg1,arg2);
+	public void glDrawElementsInstanced(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3) {
+		org.lwjgl.opengl.GL40.glDrawElementsInstanced(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -6470,12 +6470,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribI3iv(int arg0,int[] arg1) {
+	public void glVertexAttribI3iv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttribI3iv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttribI3iv(int arg0,java.nio.IntBuffer arg1) {
+	public void glVertexAttribI3iv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttribI3iv(arg0,arg1);
 	}
 
@@ -6500,12 +6500,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix4x3dv(int arg0,boolean arg1,java.nio.DoubleBuffer arg2) {
+	public void glUniformMatrix4x3dv(int arg0,boolean arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix4x3dv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix4x3dv(int arg0,boolean arg1,double[] arg2) {
+	public void glUniformMatrix4x3dv(int arg0,boolean arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix4x3dv(arg0,arg1,arg2);
 	}
 
@@ -6520,12 +6520,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteQueries(java.nio.IntBuffer arg0) {
+	public void glDeleteQueries(int arg0) {
 		org.lwjgl.opengl.GL40.glDeleteQueries(arg0);
 	}
 
 	@Override
-	public void glDeleteQueries(int arg0) {
+	public void glDeleteQueries(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glDeleteQueries(arg0);
 	}
 
@@ -6555,12 +6555,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTexGenfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetTexGenfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glGetTexGenfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetTexGenfv(int arg0,int arg1,float[] arg2) {
+	public void glGetTexGenfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetTexGenfv(arg0,arg1,arg2);
 	}
 
@@ -6615,23 +6615,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform3dv(int arg0,java.nio.DoubleBuffer arg1) {
-		org.lwjgl.opengl.GL40.glUniform3dv(arg0,arg1);
-	}
-
-	@Override
 	public void glUniform3dv(int arg0,double[] arg1) {
 		org.lwjgl.opengl.GL40.glUniform3dv(arg0,arg1);
 	}
 
 	@Override
-	public java.lang.String glGetShaderInfoLog_String(int arg0,int arg1) {
-		return org.lwjgl.opengl.GL40.glGetShaderInfoLog(arg0,arg1);
-	}
-
-	@Override
-	public void glGetShaderInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengl.GL40.glGetShaderInfoLog(arg0,arg1,arg2);
+	public void glUniform3dv(int arg0,java.nio.DoubleBuffer arg1) {
+		org.lwjgl.opengl.GL40.glUniform3dv(arg0,arg1);
 	}
 
 	@Override
@@ -6645,13 +6635,18 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexCoord1d(double arg0) {
-		org.lwjgl.opengl.GL40.glTexCoord1d(arg0);
+	public void glGetShaderInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengl.GL40.glGetShaderInfoLog(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glVertexAttribI4usv(int arg0,java.nio.ShortBuffer arg1) {
-		org.lwjgl.opengl.GL40.glVertexAttribI4usv(arg0,arg1);
+	public java.lang.String glGetShaderInfoLog_String(int arg0,int arg1) {
+		return org.lwjgl.opengl.GL40.glGetShaderInfoLog(arg0,arg1);
+	}
+
+	@Override
+	public void glTexCoord1d(double arg0) {
+		org.lwjgl.opengl.GL40.glTexCoord1d(arg0);
 	}
 
 	@Override
@@ -6660,12 +6655,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glRectiv(int[] arg0,int[] arg1) {
-		org.lwjgl.opengl.GL40.glRectiv(arg0,arg1);
+	public void glVertexAttribI4usv(int arg0,java.nio.ShortBuffer arg1) {
+		org.lwjgl.opengl.GL40.glVertexAttribI4usv(arg0,arg1);
 	}
 
 	@Override
 	public void glRectiv(java.nio.IntBuffer arg0,java.nio.IntBuffer arg1) {
+		org.lwjgl.opengl.GL40.glRectiv(arg0,arg1);
+	}
+
+	@Override
+	public void glRectiv(int[] arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glRectiv(arg0,arg1);
 	}
 
@@ -6690,12 +6690,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glColor4dv(java.nio.DoubleBuffer arg0) {
+	public void glColor4dv(double[] arg0) {
 		org.lwjgl.opengl.GL40.glColor4dv(arg0);
 	}
 
 	@Override
-	public void glColor4dv(double[] arg0) {
+	public void glColor4dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glColor4dv(arg0);
 	}
 
@@ -6745,12 +6745,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glIndexiv(int[] arg0) {
+	public void glIndexiv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glIndexiv(arg0);
 	}
 
 	@Override
-	public void glIndexiv(java.nio.IntBuffer arg0) {
+	public void glIndexiv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glIndexiv(arg0);
 	}
 
@@ -6765,12 +6765,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTexGeniv(int arg0,int arg1,int[] arg2) {
+	public void glGetTexGeniv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetTexGeniv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetTexGeniv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetTexGeniv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetTexGeniv(arg0,arg1,arg2);
 	}
 
@@ -6805,12 +6805,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform3fv(int arg0,float[] arg1) {
+	public void glUniform3fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glUniform3fv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform3fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glUniform3fv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glUniform3fv(arg0,arg1);
 	}
 
@@ -6850,6 +6850,11 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGenTransformFeedbacks(java.nio.IntBuffer arg0) {
+		org.lwjgl.opengl.GL40.glGenTransformFeedbacks(arg0);
+	}
+
+	@Override
 	public void glGenTransformFeedbacks(int[] arg0) {
 		org.lwjgl.opengl.GL40.glGenTransformFeedbacks(arg0);
 	}
@@ -6857,11 +6862,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	@Override
 	public int glGenTransformFeedbacks() {
 		return org.lwjgl.opengl.GL40.glGenTransformFeedbacks();
-	}
-
-	@Override
-	public void glGenTransformFeedbacks(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengl.GL40.glGenTransformFeedbacks(arg0);
 	}
 
 	@Override
@@ -6920,12 +6920,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetUniformdv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
+	public void glGetUniformdv(int arg0,int arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glGetUniformdv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetUniformdv(int arg0,int arg1,double[] arg2) {
+	public void glGetUniformdv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetUniformdv(arg0,arg1,arg2);
 	}
 
@@ -6945,12 +6945,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetUniformuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetUniformuiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetUniformuiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetUniformuiv(int arg0,int arg1,int[] arg2) {
+	public void glGetUniformuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetUniformuiv(arg0,arg1,arg2);
 	}
 
@@ -6980,22 +6980,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetBufferSubData(int arg0,long arg1,double[] arg2) {
-		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glGetBufferSubData(int arg0,long arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetBufferSubData(int arg0,long arg1,long[] arg2) {
+	public void glGetBufferSubData(int arg0,long arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetBufferSubData(int arg0,long arg1,int[] arg2) {
+	public void glGetBufferSubData(int arg0,long arg1,double[] arg2) {
+		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetBufferSubData(int arg0,long arg1,long[] arg2) {
 		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
 	}
 
@@ -7006,16 +7006,6 @@ public class GL_W_GL40 implements GL_W_Call {
 
 	@Override
 	public void glGetBufferSubData(int arg0,long arg1,java.nio.ShortBuffer arg2) {
-		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glGetBufferSubData(int arg0,long arg1,java.nio.DoubleBuffer arg2) {
-		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glGetBufferSubData(int arg0,long arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
 	}
 
@@ -7031,6 +7021,16 @@ public class GL_W_GL40 implements GL_W_Call {
 
 	@Override
 	public void glGetBufferSubData(int arg0,long arg1,java.nio.LongBuffer arg2) {
+		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetBufferSubData(int arg0,long arg1,java.nio.DoubleBuffer arg2) {
+		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetBufferSubData(int arg0,long arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetBufferSubData(arg0,arg1,arg2);
 	}
 
@@ -7070,12 +7070,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glColor3uiv(int[] arg0) {
+	public void glColor3uiv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glColor3uiv(arg0);
 	}
 
 	@Override
-	public void glColor3uiv(java.nio.IntBuffer arg0) {
+	public void glColor3uiv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glColor3uiv(arg0);
 	}
 
@@ -7105,12 +7105,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetUniformfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetUniformfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glGetUniformfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetUniformfv(int arg0,int arg1,float[] arg2) {
+	public void glGetUniformfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetUniformfv(arg0,arg1,arg2);
 	}
 
@@ -7140,8 +7140,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsBaseVertex(int arg0,java.nio.ByteBuffer arg1,int arg2) {
-		org.lwjgl.opengl.GL40.glDrawElementsBaseVertex(arg0,arg1,arg2);
+	public void glDrawElementsBaseVertex(int arg0,int arg1,int arg2,long arg3,int arg4) {
+		org.lwjgl.opengl.GL40.glDrawElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -7150,8 +7150,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsBaseVertex(int arg0,int arg1,int arg2,long arg3,int arg4) {
-		org.lwjgl.opengl.GL40.glDrawElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
+	public void glDrawElementsBaseVertex(int arg0,java.nio.ByteBuffer arg1,int arg2) {
+		org.lwjgl.opengl.GL40.glDrawElementsBaseVertex(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -7160,12 +7160,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetSubroutineIndex(int arg0,int arg1,java.lang.CharSequence arg2) {
+	public int glGetSubroutineIndex(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		return org.lwjgl.opengl.GL40.glGetSubroutineIndex(arg0,arg1,arg2);
 	}
 
 	@Override
-	public int glGetSubroutineIndex(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public int glGetSubroutineIndex(int arg0,int arg1,java.lang.CharSequence arg2) {
 		return org.lwjgl.opengl.GL40.glGetSubroutineIndex(arg0,arg1,arg2);
 	}
 
@@ -7195,12 +7195,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTexGendv(int arg0,int arg1,double[] arg2) {
+	public void glGetTexGendv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetTexGendv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetTexGendv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
+	public void glGetTexGendv(int arg0,int arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glGetTexGendv(arg0,arg1,arg2);
 	}
 
@@ -7215,12 +7215,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glIndexfv(java.nio.FloatBuffer arg0) {
+	public void glIndexfv(float[] arg0) {
 		org.lwjgl.opengl.GL40.glIndexfv(arg0);
 	}
 
 	@Override
-	public void glIndexfv(float[] arg0) {
+	public void glIndexfv(java.nio.FloatBuffer arg0) {
 		org.lwjgl.opengl.GL40.glIndexfv(arg0);
 	}
 
@@ -7290,12 +7290,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetSubroutineUniformLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public int glGetSubroutineUniformLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
 		return org.lwjgl.opengl.GL40.glGetSubroutineUniformLocation(arg0,arg1,arg2);
 	}
 
 	@Override
-	public int glGetSubroutineUniformLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
+	public int glGetSubroutineUniformLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		return org.lwjgl.opengl.GL40.glGetSubroutineUniformLocation(arg0,arg1,arg2);
 	}
 
@@ -7310,12 +7310,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiTexCoord2iv(int arg0,java.nio.IntBuffer arg1) {
+	public void glMultiTexCoord2iv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord2iv(arg0,arg1);
 	}
 
 	@Override
-	public void glMultiTexCoord2iv(int arg0,int[] arg1) {
+	public void glMultiTexCoord2iv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord2iv(arg0,arg1);
 	}
 
@@ -7360,12 +7360,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetQueryiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetQueryiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetQueryiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetQueryiv(int arg0,int arg1,int[] arg2) {
+	public void glGetQueryiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetQueryiv(arg0,arg1,arg2);
 	}
 
@@ -7375,12 +7375,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glRasterPos3sv(short[] arg0) {
+	public void glRasterPos3sv(java.nio.ShortBuffer arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos3sv(arg0);
 	}
 
 	@Override
-	public void glRasterPos3sv(java.nio.ShortBuffer arg0) {
+	public void glRasterPos3sv(short[] arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos3sv(arg0);
 	}
 
@@ -7410,12 +7410,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glWindowPos2fv(java.nio.FloatBuffer arg0) {
+	public void glWindowPos2fv(float[] arg0) {
 		org.lwjgl.opengl.GL40.glWindowPos2fv(arg0);
 	}
 
 	@Override
-	public void glWindowPos2fv(float[] arg0) {
+	public void glWindowPos2fv(java.nio.FloatBuffer arg0) {
 		org.lwjgl.opengl.GL40.glWindowPos2fv(arg0);
 	}
 
@@ -7440,13 +7440,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenBuffers() {
-		return org.lwjgl.opengl.GL40.glGenBuffers();
+	public void glGenBuffers(int[] arg0) {
+		org.lwjgl.opengl.GL40.glGenBuffers(arg0);
 	}
 
 	@Override
-	public void glGenBuffers(int[] arg0) {
-		org.lwjgl.opengl.GL40.glGenBuffers(arg0);
+	public int glGenBuffers() {
+		return org.lwjgl.opengl.GL40.glGenBuffers();
 	}
 
 	@Override
@@ -7460,12 +7460,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glWindowPos2dv(java.nio.DoubleBuffer arg0) {
+	public void glWindowPos2dv(double[] arg0) {
 		org.lwjgl.opengl.GL40.glWindowPos2dv(arg0);
 	}
 
 	@Override
-	public void glWindowPos2dv(double[] arg0) {
+	public void glWindowPos2dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glWindowPos2dv(arg0);
 	}
 
@@ -7480,12 +7480,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glNormal3iv(int[] arg0) {
+	public void glNormal3iv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glNormal3iv(arg0);
 	}
 
 	@Override
-	public void glNormal3iv(java.nio.IntBuffer arg0) {
+	public void glNormal3iv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glNormal3iv(arg0);
 	}
 
@@ -7510,8 +7510,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glIndexPointer(int arg0,java.nio.IntBuffer arg1) {
-		org.lwjgl.opengl.GL40.glIndexPointer(arg0,arg1);
+	public void glIndexPointer(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengl.GL40.glIndexPointer(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -7525,12 +7525,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glIndexPointer(int arg0,int arg1,long arg2) {
-		org.lwjgl.opengl.GL40.glIndexPointer(arg0,arg1,arg2);
+	public void glIndexPointer(int arg0,java.nio.IntBuffer arg1) {
+		org.lwjgl.opengl.GL40.glIndexPointer(arg0,arg1);
 	}
 
 	@Override
-	public void glIndexPointer(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glIndexPointer(int arg0,int arg1,long arg2) {
 		org.lwjgl.opengl.GL40.glIndexPointer(arg0,arg1,arg2);
 	}
 
@@ -7555,16 +7555,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetTransformFeedbackVarying_String(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
-		return org.lwjgl.opengl.GL40.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public void glGetTransformFeedbackVarying(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4,java.nio.ByteBuffer arg5) {
-		org.lwjgl.opengl.GL40.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
 	public void glGetTransformFeedbackVarying(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
 		org.lwjgl.opengl.GL40.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
@@ -7575,17 +7565,27 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGetTransformFeedbackVarying(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4,java.nio.ByteBuffer arg5) {
+		org.lwjgl.opengl.GL40.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3,arg4,arg5);
+	}
+
+	@Override
+	public java.lang.String glGetTransformFeedbackVarying_String(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
+		return org.lwjgl.opengl.GL40.glGetTransformFeedbackVarying(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
 	public void nglSecondaryColor3sv(long arg0) {
 		org.lwjgl.opengl.GL40.nglSecondaryColor3sv(arg0);
 	}
 
 	@Override
-	public void glVertexP4uiv(int arg0,int[] arg1) {
+	public void glVertexP4uiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexP4uiv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexP4uiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glVertexP4uiv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexP4uiv(arg0,arg1);
 	}
 
@@ -7610,17 +7610,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glColorPointer(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
+		org.lwjgl.opengl.GL40.glColorPointer(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
 	public void glColorPointer(int arg0,int arg1,int arg2,java.nio.ShortBuffer arg3) {
 		org.lwjgl.opengl.GL40.glColorPointer(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
 	public void glColorPointer(int arg0,int arg1,int arg2,long arg3) {
-		org.lwjgl.opengl.GL40.glColorPointer(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public void glColorPointer(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengl.GL40.glColorPointer(arg0,arg1,arg2,arg3);
 	}
 
@@ -7650,22 +7650,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glNormal3dv(double[] arg0) {
-		org.lwjgl.opengl.GL40.glNormal3dv(arg0);
-	}
-
-	@Override
 	public void glNormal3dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glNormal3dv(arg0);
 	}
 
 	@Override
-	public void glWindowPos2iv(int[] arg0) {
-		org.lwjgl.opengl.GL40.glWindowPos2iv(arg0);
+	public void glNormal3dv(double[] arg0) {
+		org.lwjgl.opengl.GL40.glNormal3dv(arg0);
 	}
 
 	@Override
 	public void glWindowPos2iv(java.nio.IntBuffer arg0) {
+		org.lwjgl.opengl.GL40.glWindowPos2iv(arg0);
+	}
+
+	@Override
+	public void glWindowPos2iv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glWindowPos2iv(arg0);
 	}
 
@@ -7685,12 +7685,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glColor4iv(java.nio.IntBuffer arg0) {
+	public void glColor4iv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glColor4iv(arg0);
 	}
 
 	@Override
-	public void glColor4iv(int[] arg0) {
+	public void glColor4iv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glColor4iv(arg0);
 	}
 
@@ -7820,12 +7820,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glColorP3uiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glColorP3uiv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glColorP3uiv(arg0,arg1);
 	}
 
 	@Override
-	public void glColorP3uiv(int arg0,int[] arg1) {
+	public void glColorP3uiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glColorP3uiv(arg0,arg1);
 	}
 
@@ -7865,12 +7865,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glColor3usv(short[] arg0) {
+	public void glColor3usv(java.nio.ShortBuffer arg0) {
 		org.lwjgl.opengl.GL40.glColor3usv(arg0);
 	}
 
 	@Override
-	public void glColor3usv(java.nio.ShortBuffer arg0) {
+	public void glColor3usv(short[] arg0) {
 		org.lwjgl.opengl.GL40.glColor3usv(arg0);
 	}
 
@@ -7890,12 +7890,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetRenderbufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetRenderbufferParameteriv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetRenderbufferParameteriv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetRenderbufferParameteriv(int arg0,int arg1,int[] arg2) {
+	public void glGetRenderbufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetRenderbufferParameteriv(arg0,arg1,arg2);
 	}
 
@@ -7920,12 +7920,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glIndexsv(java.nio.ShortBuffer arg0) {
+	public void glIndexsv(short[] arg0) {
 		org.lwjgl.opengl.GL40.glIndexsv(arg0);
 	}
 
 	@Override
-	public void glIndexsv(short[] arg0) {
+	public void glIndexsv(java.nio.ShortBuffer arg0) {
 		org.lwjgl.opengl.GL40.glIndexsv(arg0);
 	}
 
@@ -7945,12 +7945,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiTexCoord2dv(int arg0,double[] arg1) {
+	public void glMultiTexCoord2dv(int arg0,java.nio.DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord2dv(arg0,arg1);
 	}
 
 	@Override
-	public void glMultiTexCoord2dv(int arg0,java.nio.DoubleBuffer arg1) {
+	public void glMultiTexCoord2dv(int arg0,double[] arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord2dv(arg0,arg1);
 	}
 
@@ -7975,12 +7975,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMap1d(int arg0,double arg1,double arg2,int arg3,int arg4,java.nio.DoubleBuffer arg5) {
+	public void glMap1d(int arg0,double arg1,double arg2,int arg3,int arg4,double[] arg5) {
 		org.lwjgl.opengl.GL40.glMap1d(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
-	public void glMap1d(int arg0,double arg1,double arg2,int arg3,int arg4,double[] arg5) {
+	public void glMap1d(int arg0,double arg1,double arg2,int arg3,int arg4,java.nio.DoubleBuffer arg5) {
 		org.lwjgl.opengl.GL40.glMap1d(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -8030,12 +8030,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMap2d(int arg0,double arg1,double arg2,int arg3,int arg4,double arg5,double arg6,int arg7,int arg8,java.nio.DoubleBuffer arg9) {
+	public void glMap2d(int arg0,double arg1,double arg2,int arg3,int arg4,double arg5,double arg6,int arg7,int arg8,double[] arg9) {
 		org.lwjgl.opengl.GL40.glMap2d(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
 	@Override
-	public void glMap2d(int arg0,double arg1,double arg2,int arg3,int arg4,double arg5,double arg6,int arg7,int arg8,double[] arg9) {
+	public void glMap2d(int arg0,double arg1,double arg2,int arg3,int arg4,double arg5,double arg6,int arg7,int arg8,java.nio.DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL40.glMap2d(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
@@ -8045,22 +8045,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMap2f(int arg0,float arg1,float arg2,int arg3,int arg4,float arg5,float arg6,int arg7,int arg8,float[] arg9) {
-		org.lwjgl.opengl.GL40.glMap2f(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
-	}
-
-	@Override
 	public void glMap2f(int arg0,float arg1,float arg2,int arg3,int arg4,float arg5,float arg6,int arg7,int arg8,java.nio.FloatBuffer arg9) {
 		org.lwjgl.opengl.GL40.glMap2f(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
 	@Override
-	public void glTexCoordPointer(int arg0,int arg1,int arg2,java.nio.ShortBuffer arg3) {
-		org.lwjgl.opengl.GL40.glTexCoordPointer(arg0,arg1,arg2,arg3);
+	public void glMap2f(int arg0,float arg1,float arg2,int arg3,int arg4,float arg5,float arg6,int arg7,int arg8,float[] arg9) {
+		org.lwjgl.opengl.GL40.glMap2f(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
 	}
 
 	@Override
-	public void glTexCoordPointer(int arg0,int arg1,int arg2,long arg3) {
+	public void glTexCoordPointer(int arg0,int arg1,int arg2,java.nio.FloatBuffer arg3) {
 		org.lwjgl.opengl.GL40.glTexCoordPointer(arg0,arg1,arg2,arg3);
 	}
 
@@ -8070,12 +8065,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexCoordPointer(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
+	public void glTexCoordPointer(int arg0,int arg1,int arg2,long arg3) {
 		org.lwjgl.opengl.GL40.glTexCoordPointer(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glTexCoordPointer(int arg0,int arg1,int arg2,java.nio.FloatBuffer arg3) {
+	public void glTexCoordPointer(int arg0,int arg1,int arg2,java.nio.ShortBuffer arg3) {
+		org.lwjgl.opengl.GL40.glTexCoordPointer(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public void glTexCoordPointer(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengl.GL40.glTexCoordPointer(arg0,arg1,arg2,arg3);
 	}
 
@@ -8095,11 +8095,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3,int arg4) {
-		org.lwjgl.opengl.GL40.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
 	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,java.nio.ShortBuffer arg3,int arg4) {
 		org.lwjgl.opengl.GL40.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
 	}
@@ -8110,13 +8105,18 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,int arg3,int arg4,long arg5,int arg6) {
+		org.lwjgl.opengl.GL40.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	}
+
+	@Override
 	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4,int arg5) {
 		org.lwjgl.opengl.GL40.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,int arg3,int arg4,long arg5,int arg6) {
-		org.lwjgl.opengl.GL40.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	public void glDrawRangeElementsBaseVertex(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3,int arg4) {
+		org.lwjgl.opengl.GL40.glDrawRangeElementsBaseVertex(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -8130,12 +8130,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTexParameterIiv(int arg0,int arg1,int[] arg2) {
+	public void glGetTexParameterIiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetTexParameterIiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetTexParameterIiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetTexParameterIiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetTexParameterIiv(arg0,arg1,arg2);
 	}
 
@@ -8150,12 +8150,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glSecondaryColor3iv(java.nio.IntBuffer arg0) {
+	public void glSecondaryColor3iv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glSecondaryColor3iv(arg0);
 	}
 
 	@Override
-	public void glSecondaryColor3iv(int[] arg0) {
+	public void glSecondaryColor3iv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glSecondaryColor3iv(arg0);
 	}
 
@@ -8190,12 +8190,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertex4dv(double[] arg0) {
+	public void glVertex4dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glVertex4dv(arg0);
 	}
 
 	@Override
-	public void glVertex4dv(java.nio.DoubleBuffer arg0) {
+	public void glVertex4dv(double[] arg0) {
 		org.lwjgl.opengl.GL40.glVertex4dv(arg0);
 	}
 
@@ -8240,12 +8240,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertex4fv(float[] arg0) {
+	public void glVertex4fv(java.nio.FloatBuffer arg0) {
 		org.lwjgl.opengl.GL40.glVertex4fv(arg0);
 	}
 
 	@Override
-	public void glVertex4fv(java.nio.FloatBuffer arg0) {
+	public void glVertex4fv(float[] arg0) {
 		org.lwjgl.opengl.GL40.glVertex4fv(arg0);
 	}
 
@@ -8300,22 +8300,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glLightModelfv(int arg0,float[] arg1) {
-		org.lwjgl.opengl.GL40.glLightModelfv(arg0,arg1);
-	}
-
-	@Override
 	public void glLightModelfv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glLightModelfv(arg0,arg1);
 	}
 
 	@Override
-	public void glTexCoord3sv(java.nio.ShortBuffer arg0) {
-		org.lwjgl.opengl.GL40.glTexCoord3sv(arg0);
+	public void glLightModelfv(int arg0,float[] arg1) {
+		org.lwjgl.opengl.GL40.glLightModelfv(arg0,arg1);
 	}
 
 	@Override
 	public void glTexCoord3sv(short[] arg0) {
+		org.lwjgl.opengl.GL40.glTexCoord3sv(arg0);
+	}
+
+	@Override
+	public void glTexCoord3sv(java.nio.ShortBuffer arg0) {
 		org.lwjgl.opengl.GL40.glTexCoord3sv(arg0);
 	}
 
@@ -8350,27 +8350,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBufferSubData(int arg0,long arg1,short[] arg2) {
-		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glBufferSubData(int arg0,long arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glBufferSubData(int arg0,long arg1,float[] arg2) {
-		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glBufferSubData(int arg0,long arg1,long[] arg2) {
+	public void glBufferSubData(int arg0,long arg1,short[] arg2) {
 		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0,long arg1,int[] arg2) {
+		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glBufferSubData(int arg0,long arg1,long[] arg2) {
 		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
 	}
 
@@ -8385,12 +8380,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBufferSubData(int arg0,long arg1,java.nio.LongBuffer arg2) {
+	public void glBufferSubData(int arg0,long arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glBufferSubData(int arg0,long arg1,java.nio.ByteBuffer arg2) {
+	public void glBufferSubData(int arg0,long arg1,java.nio.LongBuffer arg2) {
 		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
 	}
 
@@ -8400,17 +8395,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBufferSubData(int arg0,long arg1,java.nio.FloatBuffer arg2) {
+	public void glBufferSubData(int arg0,long arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glRasterPos3fv(java.nio.FloatBuffer arg0) {
-		org.lwjgl.opengl.GL40.glRasterPos3fv(arg0);
+	public void glBufferSubData(int arg0,long arg1,float[] arg2) {
+		org.lwjgl.opengl.GL40.glBufferSubData(arg0,arg1,arg2);
 	}
 
 	@Override
 	public void glRasterPos3fv(float[] arg0) {
+		org.lwjgl.opengl.GL40.glRasterPos3fv(arg0);
+	}
+
+	@Override
+	public void glRasterPos3fv(java.nio.FloatBuffer arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos3fv(arg0);
 	}
 
@@ -8430,12 +8430,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribP2uiv(int arg0,int arg1,boolean arg2,int[] arg3) {
+	public void glVertexAttribP2uiv(int arg0,int arg1,boolean arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengl.GL40.glVertexAttribP2uiv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glVertexAttribP2uiv(int arg0,int arg1,boolean arg2,java.nio.IntBuffer arg3) {
+	public void glVertexAttribP2uiv(int arg0,int arg1,boolean arg2,int[] arg3) {
 		org.lwjgl.opengl.GL40.glVertexAttribP2uiv(arg0,arg1,arg2,arg3);
 	}
 
@@ -8455,12 +8455,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniform2fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glUniform2fv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glUniform2fv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniform2fv(int arg0,float[] arg1) {
+	public void glUniform2fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glUniform2fv(arg0,arg1);
 	}
 
@@ -8470,12 +8470,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glSecondaryColor3fv(java.nio.FloatBuffer arg0) {
+	public void glSecondaryColor3fv(float[] arg0) {
 		org.lwjgl.opengl.GL40.glSecondaryColor3fv(arg0);
 	}
 
 	@Override
-	public void glSecondaryColor3fv(float[] arg0) {
+	public void glSecondaryColor3fv(java.nio.FloatBuffer arg0) {
 		org.lwjgl.opengl.GL40.glSecondaryColor3fv(arg0);
 	}
 
@@ -8505,13 +8505,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveSubroutineUniformName(int arg0,int arg1,int arg2,int[] arg3,java.nio.ByteBuffer arg4) {
+	public void glGetActiveSubroutineUniformName(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.ByteBuffer arg4) {
 		org.lwjgl.opengl.GL40.glGetActiveSubroutineUniformName(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public java.lang.String glGetActiveSubroutineUniformName_String(int arg0,int arg1,int arg2) {
-		return org.lwjgl.opengl.GL40.glGetActiveSubroutineUniformName(arg0,arg1,arg2);
+	public void glGetActiveSubroutineUniformName(int arg0,int arg1,int arg2,int[] arg3,java.nio.ByteBuffer arg4) {
+		org.lwjgl.opengl.GL40.glGetActiveSubroutineUniformName(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -8520,8 +8520,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveSubroutineUniformName(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.ByteBuffer arg4) {
-		org.lwjgl.opengl.GL40.glGetActiveSubroutineUniformName(arg0,arg1,arg2,arg3,arg4);
+	public java.lang.String glGetActiveSubroutineUniformName_String(int arg0,int arg1,int arg2) {
+		return org.lwjgl.opengl.GL40.glGetActiveSubroutineUniformName(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -8535,12 +8535,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertex4iv(int[] arg0) {
+	public void glVertex4iv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glVertex4iv(arg0);
 	}
 
 	@Override
-	public void glVertex4iv(java.nio.IntBuffer arg0) {
+	public void glVertex4iv(int[] arg0) {
 		org.lwjgl.opengl.GL40.glVertex4iv(arg0);
 	}
 
@@ -8550,22 +8550,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBindFragDataLocationIndexed(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3) {
-		org.lwjgl.opengl.GL40.glBindFragDataLocationIndexed(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
 	public void glBindFragDataLocationIndexed(int arg0,int arg1,int arg2,java.lang.CharSequence arg3) {
 		org.lwjgl.opengl.GL40.glBindFragDataLocationIndexed(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glRasterPos3dv(java.nio.DoubleBuffer arg0) {
-		org.lwjgl.opengl.GL40.glRasterPos3dv(arg0);
+	public void glBindFragDataLocationIndexed(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3) {
+		org.lwjgl.opengl.GL40.glBindFragDataLocationIndexed(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
 	public void glRasterPos3dv(double[] arg0) {
+		org.lwjgl.opengl.GL40.glRasterPos3dv(arg0);
+	}
+
+	@Override
+	public void glRasterPos3dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos3dv(arg0);
 	}
 
@@ -8625,12 +8625,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformSubroutinesuiv(int arg0,int[] arg1) {
+	public void glUniformSubroutinesuiv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glUniformSubroutinesuiv(arg0,arg1);
 	}
 
 	@Override
-	public void glUniformSubroutinesuiv(int arg0,java.nio.IntBuffer arg1) {
+	public void glUniformSubroutinesuiv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glUniformSubroutinesuiv(arg0,arg1);
 	}
 
@@ -8820,18 +8820,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glRasterPos3iv(int[] arg0) {
-		org.lwjgl.opengl.GL40.glRasterPos3iv(arg0);
-	}
-
-	@Override
 	public void glRasterPos3iv(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glRasterPos3iv(arg0);
 	}
 
 	@Override
-	public void glUniform2dv(int arg0,java.nio.DoubleBuffer arg1) {
-		org.lwjgl.opengl.GL40.glUniform2dv(arg0,arg1);
+	public void glRasterPos3iv(int[] arg0) {
+		org.lwjgl.opengl.GL40.glRasterPos3iv(arg0);
 	}
 
 	@Override
@@ -8840,8 +8835,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glSecondaryColor3dv(double[] arg0) {
-		org.lwjgl.opengl.GL40.glSecondaryColor3dv(arg0);
+	public void glUniform2dv(int arg0,java.nio.DoubleBuffer arg1) {
+		org.lwjgl.opengl.GL40.glUniform2dv(arg0,arg1);
 	}
 
 	@Override
@@ -8850,12 +8845,17 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexCoord3dv(java.nio.DoubleBuffer arg0) {
-		org.lwjgl.opengl.GL40.glTexCoord3dv(arg0);
+	public void glSecondaryColor3dv(double[] arg0) {
+		org.lwjgl.opengl.GL40.glSecondaryColor3dv(arg0);
 	}
 
 	@Override
 	public void glTexCoord3dv(double[] arg0) {
+		org.lwjgl.opengl.GL40.glTexCoord3dv(arg0);
+	}
+
+	@Override
+	public void glTexCoord3dv(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glTexCoord3dv(arg0);
 	}
 
@@ -8915,12 +8915,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix4x2fv(int arg0,boolean arg1,float[] arg2) {
+	public void glUniformMatrix4x2fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix4x2fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix4x2fv(int arg0,boolean arg1,java.nio.FloatBuffer arg2) {
+	public void glUniformMatrix4x2fv(int arg0,boolean arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix4x2fv(arg0,arg1,arg2);
 	}
 
@@ -9000,11 +9000,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetProgramStagei(int arg0,int arg1,int arg2) {
-		return org.lwjgl.opengl.GL40.glGetProgramStagei(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glUniformMatrix2dv(int arg0,boolean arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix2dv(arg0,arg1,arg2);
 	}
@@ -9012,6 +9007,11 @@ public class GL_W_GL40 implements GL_W_Call {
 	@Override
 	public void glUniformMatrix2dv(int arg0,boolean arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix2dv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public int glGetProgramStagei(int arg0,int arg1,int arg2) {
+		return org.lwjgl.opengl.GL40.glGetProgramStagei(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -9040,12 +9040,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribI2iv(int arg0,java.nio.IntBuffer arg1) {
+	public void glVertexAttribI2iv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttribI2iv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttribI2iv(int arg0,int[] arg1) {
+	public void glVertexAttribI2iv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glVertexAttribI2iv(arg0,arg1);
 	}
 
@@ -9095,11 +9095,6 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
-		org.lwjgl.opengl.GL40.glGetActiveAttrib(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
 	public java.lang.String glGetActiveAttrib_String(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
 		return org.lwjgl.opengl.GL40.glGetActiveAttrib(arg0,arg1,arg2,arg3);
 	}
@@ -9107,6 +9102,11 @@ public class GL_W_GL40 implements GL_W_Call {
 	@Override
 	public java.lang.String glGetActiveAttrib_String(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4) {
 		return org.lwjgl.opengl.GL40.glGetActiveAttrib(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glGetActiveAttrib(int arg0,int arg1,int[] arg2,int[] arg3,int[] arg4,java.nio.ByteBuffer arg5) {
+		org.lwjgl.opengl.GL40.glGetActiveAttrib(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
@@ -9145,7 +9145,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsIndirect(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glDrawElementsIndirect(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glDrawElementsIndirect(arg0,arg1,arg2);
 	}
 
@@ -9155,12 +9155,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsIndirect(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glDrawElementsIndirect(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengl.GL40.glDrawElementsIndirect(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glDrawElementsIndirect(int arg0,int arg1,int[] arg2) {
+	public void glDrawElementsIndirect(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glDrawElementsIndirect(arg0,arg1,arg2);
 	}
 
@@ -9210,7 +9210,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderSource(int arg0,java.lang.CharSequence arg1) {
+	public void glShaderSource(int arg0,java.lang.CharSequence... arg1) {
 		org.lwjgl.opengl.GL40.glShaderSource(arg0,arg1);
 	}
 
@@ -9220,7 +9220,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderSource(int arg0,java.lang.CharSequence... arg1) {
+	public void glShaderSource(int arg0,java.lang.CharSequence arg1) {
 		org.lwjgl.opengl.GL40.glShaderSource(arg0,arg1);
 	}
 
@@ -9280,12 +9280,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetVertexAttribdv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
+	public void glGetVertexAttribdv(int arg0,int arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glGetVertexAttribdv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetVertexAttribdv(int arg0,int arg1,double[] arg2) {
+	public void glGetVertexAttribdv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetVertexAttribdv(arg0,arg1,arg2);
 	}
 
@@ -9340,12 +9340,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiTexCoord1iv(int arg0,int[] arg1) {
+	public void glMultiTexCoord1iv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord1iv(arg0,arg1);
 	}
 
 	@Override
-	public void glMultiTexCoord1iv(int arg0,java.nio.IntBuffer arg1) {
+	public void glMultiTexCoord1iv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord1iv(arg0,arg1);
 	}
 
@@ -9405,12 +9405,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetVertexAttribfv(int arg0,int arg1,float[] arg2) {
+	public void glGetVertexAttribfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetVertexAttribfv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetVertexAttribfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetVertexAttribfv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengl.GL40.glGetVertexAttribfv(arg0,arg1,arg2);
 	}
 
@@ -9510,12 +9510,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glUniformMatrix3x4dv(int arg0,boolean arg1,double[] arg2) {
+	public void glUniformMatrix3x4dv(int arg0,boolean arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix3x4dv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glUniformMatrix3x4dv(int arg0,boolean arg1,java.nio.DoubleBuffer arg2) {
+	public void glUniformMatrix3x4dv(int arg0,boolean arg1,double[] arg2) {
 		org.lwjgl.opengl.GL40.glUniformMatrix3x4dv(arg0,arg1,arg2);
 	}
 
@@ -9575,13 +9575,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveSubroutineName(int arg0,int arg1,int arg2,int[] arg3,java.nio.ByteBuffer arg4) {
-		org.lwjgl.opengl.GL40.glGetActiveSubroutineName(arg0,arg1,arg2,arg3,arg4);
+	public java.lang.String glGetActiveSubroutineName_String(int arg0,int arg1,int arg2,int arg3) {
+		return org.lwjgl.opengl.GL40.glGetActiveSubroutineName(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public java.lang.String glGetActiveSubroutineName_String(int arg0,int arg1,int arg2,int arg3) {
-		return org.lwjgl.opengl.GL40.glGetActiveSubroutineName(arg0,arg1,arg2,arg3);
+	public void glGetActiveSubroutineName(int arg0,int arg1,int arg2,int[] arg3,java.nio.ByteBuffer arg4) {
+		org.lwjgl.opengl.GL40.glGetActiveSubroutineName(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -9600,13 +9600,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public java.nio.ByteBuffer glMapBufferRange_ByteBuffer(int arg0,long arg1,long arg2,int arg3) {
-		return org.lwjgl.opengl.GL40.glMapBufferRange(arg0,arg1,arg2,arg3);
+	public java.nio.ByteBuffer glMapBufferRange_ByteBuffer(int arg0,long arg1,long arg2,int arg3,java.nio.ByteBuffer arg4) {
+		return org.lwjgl.opengl.GL40.glMapBufferRange(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public java.nio.ByteBuffer glMapBufferRange_ByteBuffer(int arg0,long arg1,long arg2,int arg3,java.nio.ByteBuffer arg4) {
-		return org.lwjgl.opengl.GL40.glMapBufferRange(arg0,arg1,arg2,arg3,arg4);
+	public java.nio.ByteBuffer glMapBufferRange_ByteBuffer(int arg0,long arg1,long arg2,int arg3) {
+		return org.lwjgl.opengl.GL40.glMapBufferRange(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -9650,23 +9650,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,java.nio.ByteBuffer arg5) {
-		org.lwjgl.opengl.GL40.glCompressedTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
 	public void glCompressedTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,long arg6) {
 		org.lwjgl.opengl.GL40.glCompressedTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
 	@Override
-	public void glGetShaderSource(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengl.GL40.glGetShaderSource(arg0,arg1,arg2);
-	}
-
-	@Override
-	public java.lang.String glGetShaderSource_String(int arg0) {
-		return org.lwjgl.opengl.GL40.glGetShaderSource(arg0);
+	public void glCompressedTexImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,java.nio.ByteBuffer arg5) {
+		org.lwjgl.opengl.GL40.glCompressedTexImage1D(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
@@ -9675,8 +9665,18 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glGetShaderSource(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengl.GL40.glGetShaderSource(arg0,arg1,arg2);
+	}
+
+	@Override
 	public java.lang.String glGetShaderSource_String(int arg0,int arg1) {
 		return org.lwjgl.opengl.GL40.glGetShaderSource(arg0,arg1);
+	}
+
+	@Override
+	public java.lang.String glGetShaderSource_String(int arg0) {
+		return org.lwjgl.opengl.GL40.glGetShaderSource(arg0);
 	}
 
 	@Override
@@ -9695,12 +9695,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetVertexAttribiv(int arg0,int arg1,int[] arg2) {
+	public void glGetVertexAttribiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetVertexAttribiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetVertexAttribiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetVertexAttribiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetVertexAttribiv(arg0,arg1,arg2);
 	}
 
@@ -9740,7 +9740,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetQueryObjectiv(int arg0,int arg1,long arg2) {
+	public void glGetQueryObjectiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL40.glGetQueryObjectiv(arg0,arg1,arg2);
 	}
 
@@ -9750,18 +9750,18 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetQueryObjectiv(int arg0,int arg1,int[] arg2) {
+	public void glGetQueryObjectiv(int arg0,int arg1,long arg2) {
 		org.lwjgl.opengl.GL40.glGetQueryObjectiv(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,long arg7) {
-		org.lwjgl.opengl.GL40.glCompressedTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
 	@Override
 	public void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.ByteBuffer arg6) {
 		org.lwjgl.opengl.GL40.glCompressedTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	}
+
+	@Override
+	public void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,long arg7) {
+		org.lwjgl.opengl.GL40.glCompressedTexImage2D(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);
 	}
 
 	@Override
@@ -9795,7 +9795,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteBuffers(java.nio.IntBuffer arg0) {
+	public void glDeleteBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL40.glDeleteBuffers(arg0);
 	}
 
@@ -9805,7 +9805,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteBuffers(int[] arg0) {
+	public void glDeleteBuffers(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL40.glDeleteBuffers(arg0);
 	}
 
@@ -9905,12 +9905,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetInteger64i_v(int arg0,int arg1,long[] arg2) {
+	public void glGetInteger64i_v(int arg0,int arg1,java.nio.LongBuffer arg2) {
 		org.lwjgl.opengl.GL40.glGetInteger64i_v(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetInteger64i_v(int arg0,int arg1,java.nio.LongBuffer arg2) {
+	public void glGetInteger64i_v(int arg0,int arg1,long[] arg2) {
 		org.lwjgl.opengl.GL40.glGetInteger64i_v(arg0,arg1,arg2);
 	}
 
@@ -9965,12 +9965,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glColor3sv(short[] arg0) {
+	public void glColor3sv(java.nio.ShortBuffer arg0) {
 		org.lwjgl.opengl.GL40.glColor3sv(arg0);
 	}
 
 	@Override
-	public void glColor3sv(java.nio.ShortBuffer arg0) {
+	public void glColor3sv(short[] arg0) {
 		org.lwjgl.opengl.GL40.glColor3sv(arg0);
 	}
 
@@ -9980,12 +9980,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetPixelMapfv(int arg0,float[] arg1) {
+	public void glGetPixelMapfv(int arg0,long arg1) {
 		org.lwjgl.opengl.GL40.glGetPixelMapfv(arg0,arg1);
 	}
 
 	@Override
-	public void glGetPixelMapfv(int arg0,long arg1) {
+	public void glGetPixelMapfv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glGetPixelMapfv(arg0,arg1);
 	}
 
@@ -10115,8 +10115,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenSamplers() {
-		return org.lwjgl.opengl.GL40.glGenSamplers();
+	public void glGenSamplers(int[] arg0) {
+		org.lwjgl.opengl.GL40.glGenSamplers(arg0);
 	}
 
 	@Override
@@ -10125,8 +10125,8 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenSamplers(int[] arg0) {
-		org.lwjgl.opengl.GL40.glGenSamplers(arg0);
+	public int glGenSamplers() {
+		return org.lwjgl.opengl.GL40.glGenSamplers();
 	}
 
 	@Override
@@ -10170,6 +10170,16 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
+	public void glSecondaryColorPointer(int arg0,int arg1,int arg2,long arg3) {
+		org.lwjgl.opengl.GL40.glSecondaryColorPointer(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public void glSecondaryColorPointer(int arg0,int arg1,int arg2,java.nio.FloatBuffer arg3) {
+		org.lwjgl.opengl.GL40.glSecondaryColorPointer(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
 	public void glSecondaryColorPointer(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengl.GL40.glSecondaryColorPointer(arg0,arg1,arg2,arg3);
 	}
@@ -10181,16 +10191,6 @@ public class GL_W_GL40 implements GL_W_Call {
 
 	@Override
 	public void glSecondaryColorPointer(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3) {
-		org.lwjgl.opengl.GL40.glSecondaryColorPointer(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public void glSecondaryColorPointer(int arg0,int arg1,int arg2,java.nio.FloatBuffer arg3) {
-		org.lwjgl.opengl.GL40.glSecondaryColorPointer(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public void glSecondaryColorPointer(int arg0,int arg1,int arg2,long arg3) {
 		org.lwjgl.opengl.GL40.glSecondaryColorPointer(arg0,arg1,arg2,arg3);
 	}
 
@@ -10215,7 +10215,7 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glFogCoordPointer(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glFogCoordPointer(int arg0,int arg1,long arg2) {
 		org.lwjgl.opengl.GL40.glFogCoordPointer(arg0,arg1,arg2);
 	}
 
@@ -10225,12 +10225,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glFogCoordPointer(int arg0,int arg1,java.nio.ShortBuffer arg2) {
+	public void glFogCoordPointer(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL40.glFogCoordPointer(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glFogCoordPointer(int arg0,int arg1,long arg2) {
+	public void glFogCoordPointer(int arg0,int arg1,java.nio.ShortBuffer arg2) {
 		org.lwjgl.opengl.GL40.glFogCoordPointer(arg0,arg1,arg2);
 	}
 
@@ -10280,12 +10280,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultTransposeMatrixf(float[] arg0) {
+	public void glMultTransposeMatrixf(java.nio.FloatBuffer arg0) {
 		org.lwjgl.opengl.GL40.glMultTransposeMatrixf(arg0);
 	}
 
 	@Override
-	public void glMultTransposeMatrixf(java.nio.FloatBuffer arg0) {
+	public void glMultTransposeMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL40.glMultTransposeMatrixf(arg0);
 	}
 
@@ -10305,22 +10305,22 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,long arg4) {
-		org.lwjgl.opengl.GL40.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
 	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ShortBuffer arg4) {
 		org.lwjgl.opengl.GL40.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
+	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {
 		org.lwjgl.opengl.GL40.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {
+	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,long arg4) {
+		org.lwjgl.opengl.GL40.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glVertexAttribIPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
 		org.lwjgl.opengl.GL40.glVertexAttribIPointer(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -10350,12 +10350,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultTransposeMatrixd(java.nio.DoubleBuffer arg0) {
+	public void glMultTransposeMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL40.glMultTransposeMatrixd(arg0);
 	}
 
 	@Override
-	public void glMultTransposeMatrixd(double[] arg0) {
+	public void glMultTransposeMatrixd(java.nio.DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL40.glMultTransposeMatrixd(arg0);
 	}
 
@@ -10395,12 +10395,12 @@ public class GL_W_GL40 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiTexCoord1fv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glMultiTexCoord1fv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord1fv(arg0,arg1);
 	}
 
 	@Override
-	public void glMultiTexCoord1fv(int arg0,float[] arg1) {
+	public void glMultiTexCoord1fv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL40.glMultiTexCoord1fv(arg0,arg1);
 	}
 
@@ -10427,5 +10427,13 @@ public class GL_W_GL40 implements GL_W_Call {
 	@Override
 	public void checkError(String message) {
 		lu.kbra.standalone.gameengine.utils.GameEngineUtils.checkGlError(message);
+	}
+	@Override
+	public boolean isGLES() {
+		return false;
+	}
+	@Override
+	public boolean isGL() {
+		return true;
 	}
 }

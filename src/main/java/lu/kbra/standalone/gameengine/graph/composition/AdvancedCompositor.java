@@ -17,6 +17,8 @@ import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.geom.Mesh;
+import lu.kbra.standalone.gameengine.graph.composition.layer.PassRenderLayer;
+import lu.kbra.standalone.gameengine.graph.composition.layer.RenderLayer;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;
@@ -40,10 +42,10 @@ public class AdvancedCompositor implements Cleanupable {
 	protected int samples = 1;
 
 	public void render(GameEngine engine) {
-		int width = engine.getWindow().getWidth();
-		int height = engine.getWindow().getHeight();
+		final int width = engine.getWindow().getWidth();
+		final int height = engine.getWindow().getHeight();
 
-		boolean needRegen = !resolution.equals(width, height);
+		final boolean needRegen = !resolution.equals(width, height);
 
 		if (needRegen) {
 			resolution = new Vector2i(width, height);

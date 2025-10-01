@@ -1,9 +1,10 @@
 package lu.kbra.standalone.gameengine.graph.shader;
 
-import lu.kbra.standalone.gameengine.impl.shader.AbstractShader;
-import lu.kbra.standalone.gameengine.impl.shader.AbstractShaderPart;
+import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShader;
+import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShaderPart;
 import lu.kbra.standalone.gameengine.utils.consts.BeginMode;
 import lu.kbra.standalone.gameengine.utils.consts.FaceMode;
+
 public abstract class RenderShader extends AbstractShader {
 
 	public static final String PROJECTION_MATRIX = "projectionMatrix";

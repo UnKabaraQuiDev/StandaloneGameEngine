@@ -32,13 +32,13 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 		super(Scene3D.class);
 	}
 
-	private static final Comparator<Entry<String, Entity>> COMPARATOR = (a, b) -> {
-		return Float.compare(a.getValue().hasComponent(RenderComponent.class) ? a.getValue().getComponent(RenderComponent.class).getPriority() : 0,
-				b.getValue().hasComponent(RenderComponent.class) ? b.getValue().getComponent(RenderComponent.class).getPriority() : 0);
+	public static final Comparator<Entry<String, Entity>> PRIORITY_COMPARATOR = (a, b) -> {
+		return Float.compare(a.getValue().hasComponentMatching(RenderComponent.class) ? a.getValue().getComponent(RenderComponent.class).getPriority() : 0,
+				b.getValue().hasComponentMatching(RenderComponent.class) ? b.getValue().getComponent(RenderComponent.class).getPriority() : 0);
 	};
 
-	private static final Comparator<Entity> COMPARATOR_ENTITY = (a, b) -> {
-		return Float.compare(a.hasComponent(RenderComponent.class) ? a.getComponent(RenderComponent.class).getPriority() : 0, b.hasComponent(RenderComponent.class) ? b.getComponent(RenderComponent.class).getPriority() : 0);
+	public static final Comparator<Entity> PRIORITY_COMPARATOR_ENTITY = (a, b) -> {
+		return Float.compare(a.hasComponentMatching(RenderComponent.class) ? a.getComponent(RenderComponent.class).getPriority() : 0, b.hasComponentMatching(RenderComponent.class) ? b.getComponent(RenderComponent.class).getPriority() : 0);
 	};
 
 	@Override
@@ -48,7 +48,7 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 		instanceEmitterRenderer = (InstanceEmitterRenderer) cache.getRenderer(InstanceEmitter.class.getName());
 		textEmitterRenderer = (TextEmitterRenderer) cache.getRenderer(TextEmitter.class.getName());
 
-		LinkedHashMap<String, Entity> sortedMap = scene.getEntities().entrySet().stream().sorted(COMPARATOR).collect(LinkedHashMap::new, (linkedHashMap, entry) -> linkedHashMap.put(entry.getKey(), entry.getValue()), LinkedHashMap::putAll);
+		LinkedHashMap<String, Entity> sortedMap = scene.getEntities().entrySet().stream().sorted(PRIORITY_COMPARATOR).collect(LinkedHashMap::new, (linkedHashMap, entry) -> linkedHashMap.put(entry.getKey(), entry.getValue()), LinkedHashMap::putAll);
 		scene.setEntities(sortedMap);
 
 		Collection<Entity> ce = scene.getEntities().values();
@@ -57,7 +57,7 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 				return;
 			}
 
-			if (e.hasComponent(RenderConditionComponent.class) && !e.getComponent(RenderConditionComponent.class).get()) {
+			if (e.hasComponentMatching(RenderConditionComponent.class) && !e.getComponent(RenderConditionComponent.class).get()) {
 				return;
 			}
 
@@ -66,21 +66,21 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 	}
 
 	private void render(CacheManager cache, Scene3D scene, Entity e) {
-		if (meshRenderer != null && e.hasComponent(MeshComponent.class)) {
+		if (meshRenderer != null && e.hasComponentMatching(MeshComponent.class)) {
 			meshRenderer.render(cache, scene, (MeshComponent) e.getComponent(MeshComponent.class));
 		}
-		if (gizmoRenderer != null && e.hasComponent(GizmoComponent.class)) {
+		if (gizmoRenderer != null && e.hasComponentMatching(GizmoComponent.class)) {
 			gizmoRenderer.render(cache, scene, (GizmoComponent) e.getComponent(GizmoComponent.class));
 		}
-		if (instanceEmitterRenderer != null && e.hasComponent(InstanceEmitterComponent.class)) {
+		if (instanceEmitterRenderer != null && e.hasComponentMatching(InstanceEmitterComponent.class)) {
 			instanceEmitterRenderer.render(cache, scene, (InstanceEmitterComponent) e.getComponent(InstanceEmitterComponent.class));
 		}
-		if (textEmitterRenderer != null && e.hasComponent(TextEmitterComponent.class)) {
+		if (textEmitterRenderer != null && e.hasComponentMatching(TextEmitterComponent.class)) {
 			textEmitterRenderer.render(cache, scene, (TextEmitterComponent) e.getComponent(TextEmitterComponent.class));
 		}
 
-		if (e.hasComponent(SubEntitiesComponent.class)) {
-			e.getComponent(SubEntitiesComponent.class).getEntities().sort(COMPARATOR_ENTITY);
+		if (e.hasComponentMatching(SubEntitiesComponent.class)) {
+			e.getComponent(SubEntitiesComponent.class).getEntities().sort(PRIORITY_COMPARATOR_ENTITY);
 			for (Entity en : e.getComponent(SubEntitiesComponent.class).getEntities()) {
 				if (!en.isActive()) {
 					return;

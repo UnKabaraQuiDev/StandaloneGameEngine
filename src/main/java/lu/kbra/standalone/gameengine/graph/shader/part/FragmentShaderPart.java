@@ -1,6 +1,5 @@
 package lu.kbra.standalone.gameengine.graph.shader.part;
 
-import lu.kbra.standalone.gameengine.impl.shader.AbstractShaderPart;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class FragmentShaderPart extends AbstractShaderPart {

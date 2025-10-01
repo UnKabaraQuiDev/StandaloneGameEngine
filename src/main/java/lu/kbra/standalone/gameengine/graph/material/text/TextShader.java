@@ -7,10 +7,10 @@ import org.joml.Vector4f;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.graph.material.TextureMaterial;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
+import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShaderPart;
 import lu.kbra.standalone.gameengine.graph.texture.SingleTexture;
 import lu.kbra.standalone.gameengine.graph.texture.Texture;
 import lu.kbra.standalone.gameengine.impl.Renderable;
-import lu.kbra.standalone.gameengine.impl.shader.AbstractShaderPart;
 
 public class TextShader extends RenderShader {
 
