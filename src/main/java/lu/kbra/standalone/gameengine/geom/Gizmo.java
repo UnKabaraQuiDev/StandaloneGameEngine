@@ -20,8 +20,6 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Gizmo implements UniqueID, Cleanupable, Renderable {
 
-	public static final String NAME = Gizmo.class.getName();
-
 	public static final float LINE_WIDTH = 2.5f;
 
 	protected final String name;

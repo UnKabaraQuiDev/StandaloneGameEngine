@@ -9,9 +9,9 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 
 public class MemImage implements Cleanupable {
 
-	private int width, height, channels;
+	private final int width, height, channels;
 	private ByteBuffer buffer;
-	private MemImageOrigin origin;
+	private final MemImageOrigin origin;
 
 	public MemImage(int width, int height, int channels, ByteBuffer buffer, MemImageOrigin origin) {
 		this.width = width;

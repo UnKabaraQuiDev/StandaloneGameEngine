@@ -10,8 +10,9 @@
 	<name>Standalone Game Engine</name>
 
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<java.version>17</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 
 		<lwjgl.version>3.3.3</lwjgl.version>
 		<steamworks4j-server.version>1.9.0</steamworks4j-server.version>
@@ -177,6 +178,7 @@
 			<classifier>${lwjgl.natives}</classifier>
 		</dependency>
 
+		<!-- steam things -->
 		<dependency>
 			<groupId>com.code-disaster.steamworks4j</groupId>
 			<artifactId>steamworks4j-server</artifactId>
@@ -187,6 +189,8 @@
 			<artifactId>steamworks4j</artifactId>
 			<version>${steamworks4j.version}</version>
 		</dependency>
+
+		<!-- others -->
 		<dependency>
 			<groupId>org.joml</groupId>
 			<artifactId>joml</artifactId>
@@ -198,9 +202,15 @@
 			<version>20240303</version>
 		</dependency>
 		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.19.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>lu.pcy113</groupId>
 			<artifactId>PCLib</artifactId>
-			<version>0.8</version>
+			<version>0.9.5</version>
 		</dependency>
 		<dependency>
 			<groupId>lu.pcy113</groupId>

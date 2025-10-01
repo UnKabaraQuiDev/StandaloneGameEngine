@@ -19,8 +19,6 @@ import lu.kbra.standalone.gameengine.utils.transform.Transform;
 
 public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 
-	public static final String NAME = InstanceEmitter.class.getName();
-
 	protected final String name;
 
 	protected Instance[] particles;

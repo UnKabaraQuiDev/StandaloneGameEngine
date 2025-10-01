@@ -1,5 +1,6 @@
 package lu.kbra.standalone.gameengine.graph.texture;
 
+import java.io.File;
 import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -57,18 +58,19 @@ public class SingleTexture extends Texture {
 	public SingleTexture(String name, String path) {
 		super(name, path, TextureOperation.FILE_BUFFER_LOAD);
 	}
+	
+	/**
+	 * FILE BUFFER LOAD
+	 */
+	public SingleTexture(String name, File path) {
+		super(name, path.getAbsolutePath(), TextureOperation.FILE_BUFFER_LOAD);
+	}
 
 	@Override
 	public boolean checkConfigErrors() {
-		// Invalid operation (glTexImage2DMultisample)
-		/*
-		 * if (((TexelInternalFormat.isDepth(super.internalFormat) || TexelInternalFormat.isStencil(super.internalFormat)) && super.sampleCount > MAX_DEPTH_TEXTURE_SAMPLES) || (TexelInternalFormat.isColor(super.internalFormat) &&
-		 * super.sampleCount > MAX_COLOR_TEXTURE_SAMPLES) || (TexelInternalFormat.isInteger(super.internalFormat)) && super.sampleCount > MAX_INTEGER_SAMPLES) { PDRUtils.throwGLESError(super.internalFormat + " does not support " +
-		 * super.sampleCount + " samples, max are Depth:" + MAX_DEPTH_TEXTURE_SAMPLES + ", Color:" + MAX_COLOR_TEXTURE_SAMPLES + ", Integer:" + MAX_INTEGER_SAMPLES); }
-		 */
-
 		// Invalid value (glTexImage2DMultisample)
-		if ((width > MAX_TEXTURE_SIZE || width < 0) || (height > MAX_TEXTURE_SIZE || height < 0) || (depth > MAX_TEXTURE_SIZE || depth < 0)) {
+		if ((width > MAX_TEXTURE_SIZE || width < 0) || (height > MAX_TEXTURE_SIZE || height < 0)
+				|| (depth > MAX_TEXTURE_SIZE || depth < 0)) {
 			GameEngineUtils.throwGLESError("Invalid texture size: " + width + "x" + height + "x" + depth + ", max is " + MAX_TEXTURE_SIZE);
 		}
 
@@ -107,7 +109,8 @@ public class SingleTexture extends Texture {
 		format = getFormatByChannels(channels);
 		internalFormat = getInternalFormatByChannels(channels);
 		if (format == null || internalFormat == null)
-			throw new RuntimeException("Invalid channel count: " + channels + " to format:" + format + " & internalFormat:" + internalFormat);
+			throw new RuntimeException(
+					"Invalid channel count: " + channels + " to format:" + format + " & internalFormat:" + internalFormat);
 
 		if (image.getBuffer() == null)
 			throw new RuntimeException("Failed to load texture buffer.");
@@ -129,9 +132,28 @@ public class SingleTexture extends Texture {
 		GL_W.glPixelStorei(GL_W.GL_UNPACK_ALIGNMENT, 1);
 		GL_W.checkError("PixelStoreI.UnpackAlignment=1");
 		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
-			GL_W.glTexImage2D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, 0, format.getGlId(), dataType.getGlId(), buffer.getBuffer());
+			GL_W
+					.glTexImage2D(txtType.getGlId(),
+							0,
+							internalFormat.getGlId(),
+							width,
+							height,
+							0,
+							format.getGlId(),
+							dataType.getGlId(),
+							buffer.getBuffer());
 		} else if (TextureType.TXT3D.equals(txtType)) {
-			GL_W.glTexImage3D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, depth, 0, format.getGlId(), dataType.getGlId(), buffer.getBuffer());
+			GL_W
+					.glTexImage3D(txtType.getGlId(),
+							0,
+							internalFormat.getGlId(),
+							width,
+							height,
+							depth,
+							0,
+							format.getGlId(),
+							dataType.getGlId(),
+							buffer.getBuffer());
 		}
 		GL_W.checkError("TexImage_" + txtType);
 		applyFilter();
@@ -150,9 +172,28 @@ public class SingleTexture extends Texture {
 		bind();
 
 		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
-			GL_W.glTexImage2D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, 0, format.getGlId(), dataType.getGlId(), MemoryUtil.NULL);
+			GL_W
+					.glTexImage2D(txtType.getGlId(),
+							0,
+							internalFormat.getGlId(),
+							width,
+							height,
+							0,
+							format.getGlId(),
+							dataType.getGlId(),
+							MemoryUtil.NULL);
 		} else if (TextureType.TXT3D.equals(txtType)) {
-			GL_W.glTexImage3D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, depth, 0, format.getGlId(), dataType.getGlId(), MemoryUtil.NULL);
+			GL_W
+					.glTexImage3D(txtType.getGlId(),
+							0,
+							internalFormat.getGlId(),
+							width,
+							height,
+							depth,
+							0,
+							format.getGlId(),
+							dataType.getGlId(),
+							MemoryUtil.NULL);
 		}
 		GL_W.checkError("TexImage_" + txtType);
 		applyFilter();
@@ -167,12 +208,6 @@ public class SingleTexture extends Texture {
 	}
 
 	public MemImage getStoredImage() {
-		/*
-		 * int width = GL_W.glGetTexLevelParameteri(GL_W.GL_TEXTURE_2D, 0, GL_W. GL_TEXTURE_WIDTH); int height = GL_W.glGetTexLevelParameteri(GL_W.GL_TEXTURE_2D, 0, GL_W. GL_TEXTURE_HEIGHT); int internalFormat =
-		 * GL_W.glGetTexLevelParameteri(GL_W.GL_TEXTURE_2D, 0, GL_W.GL_TEXTURE_INTERNAL_FORMAT); int channels = Texture.getChannelsByInternalFormat(internalFormat); int internalType =
-		 * GL_W.glGetTexLevelParameteriv(GL_W.GL_TEXTURE_2D, 0, GL_W.GL_TEXTURE_COMPONENTS);
-		 */
-
 		bind();
 
 		int channelCount = getChannelsByFormat(format.getGlId());
