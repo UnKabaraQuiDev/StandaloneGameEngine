@@ -6,4 +6,12 @@ public class GLContextLost extends GLRuntimeException {
 		super(caller, status, msg);
 	}
 
+	public GLContextLost(int status, String msg) {
+		super(status, msg);
+	}
+
+	public GLContextLost(String str) {
+		super(str);
+	}
+
 }

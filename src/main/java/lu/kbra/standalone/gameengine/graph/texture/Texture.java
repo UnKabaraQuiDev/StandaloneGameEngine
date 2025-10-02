@@ -16,10 +16,6 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttachment {
 
-	/*
-	 * public static final int MAX_DEPTH_TEXTURE_SAMPLES = GL_W.glGetInteger(GL_W.GL_MAX_DEPTH_TEXTURE_SAMPLES); public static final int MAX_COLOR_TEXTURE_SAMPLES = GL_W.glGetInteger(GL_W.GL_MAX_COLOR_TEXTURE_SAMPLES); public static
-	 * final int MAX_INTEGER_SAMPLES = GL_W.glGetInteger(GL_W.GL_MAX_INTEGER_SAMPLES);
-	 */
 	public static final int MAX_TEXTURE_LOD_BIAS = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_LOD_BIAS);
 	public static final int MAX_TEXTURE_SIZE = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_SIZE);
 
@@ -247,7 +243,8 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 	@Override
 	public String toString() {
-		return "{tid: " + tid + ", name: " + name + ", valid: " + isValid() + ", type: " + txtType + ", format: " + format + ", internalFormat: " + internalFormat + ", dataType: " + dataType + "}";
+		return "{tid: " + tid + ", name: " + name + ", valid: " + isValid() + ", type: " + txtType + ", format: " + format
+				+ ", internalFormat: " + internalFormat + ", dataType: " + dataType + "}";
 	}
 
 	public static TexelFormat getFormatByChannels(int channels) {

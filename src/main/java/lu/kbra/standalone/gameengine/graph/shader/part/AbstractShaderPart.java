@@ -23,28 +23,30 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 		this.file = file;
 		this.type = type;
 
-		if (!Files.exists(Paths.get(file))) {
-			GameEngineUtils.throwGLESError("File: " + file + " not found");
-			this.sid = -1;
-			return;
-		}
-
 		if (type == -1) {
 			GameEngineUtils.throwGLESError("Unknown shader type: " + file);
 			this.sid = -1;
 			return;
 		}
 
+		final String source;
+		try {
+			source = PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER.isGL() ? "400 core" : "300 es");
+		} catch (Exception e) {
+			throw new RuntimeException("Error when loading file `" + file + "`", e);
+		}
+
 		this.sid = GL_W.glCreateShader(type);
 		GL_W.checkError("CreateShader(" + type + ") (" + file + ")");
 		// TODO: add gl version
-		GL_W.glShaderSource(sid, PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER.isGL() ? "400" : "300 es"));
+		GL_W.glShaderSource(sid, source);
 		GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
 		GL_W.glCompileShader(sid);
 		GL_W.checkError("CompileShader(" + sid + ") (" + file + ")");
 
 		if (GL_W.glGetShaderi(sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
-			GlobalLogger.log(Level.SEVERE, file + "> " + GL_W.glGetShaderInfoLog_String(sid, 1024));
+			final int logLen = GL_W.glGetShaderi(this.sid, GL_W.GL_INFO_LOG_LENGTH);
+			GlobalLogger.log(Level.SEVERE, file + "> " + GL_W.glGetShaderInfoLog_String(sid, logLen));
 			cleanup();
 			throw new IllegalStateException(file + "(" + sid + "): Failed to compile shader!");
 		} else {
@@ -77,15 +79,21 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 	}
 
 	public boolean recompile() {
-		GL_W.glShaderSource(sid, PCUtils.readStringFile(file));
+		final String source;
+		try {
+			source = PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER.isGL() ? "430" : "300 es");
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+
+		GL_W.glShaderSource(sid, source);
 		GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
 		GL_W.glCompileShader(sid);
 		GL_W.checkError("CompileShader(" + sid + ") (" + file + ")");
 
 		if (GL_W.glGetShaderi(sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
-			GlobalLogger.log(Level.SEVERE, file + "> " + GL_W.glGetShaderInfoLog_String(sid, 1024));
-			// throw new IllegalStateException(file + "(" + sid + "): Failed to recompile
-			// shader!");
+			final int logLen = GL_W.glGetShaderi(this.sid, GL_W.GL_INFO_LOG_LENGTH);
+			GlobalLogger.log(Level.SEVERE, file + "> " + GL_W.glGetShaderInfoLog_String(sid, logLen));
 			return false;
 		} else {
 			GlobalLogger.log(Level.INFO, "ShaderPart " + file + " (" + sid + ") (" + type + ") recompiled successfully");

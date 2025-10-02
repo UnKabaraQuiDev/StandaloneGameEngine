@@ -29,7 +29,7 @@ public class Material implements UniqueID {
 		shader.getUniforms().keySet().forEach(t -> properties.put(t, null));
 	}
 
-	public void bindProperties(CacheManager cache, Renderable parent, RenderShader shader) {
+	public void bindProperties(CacheManager cache, Renderable parent) {
 		for (Entry<String, Object> eso : properties.entrySet()) {
 			shader.setUniform(eso.getKey(), eso.getValue());
 		}

@@ -26,36 +26,42 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 public abstract class AbstractShader implements UniqueID, Cleanupable {
 
 	protected final String name;
-	protected int shaderProgram = -1;
+	protected int spid = -1;
 	protected Map<Integer, AbstractShaderPart> parts;
 	protected Map<String, Pair<Property<Object>, Integer>> uniforms;
 
-	public AbstractShader(String name, AbstractShaderPart... parts) {
-		this.name = name;
+	public AbstractShader(String name_, AbstractShaderPart... parts) {
+		this.name = name_ == null ? this.getClass().getName() : name_;
 
-		this.shaderProgram = GL_W.glCreateProgram();
+		this.spid = GL_W.glCreateProgram();
 		GL_W.checkError("CreateProgram() (" + name + ")");
-		if (this.shaderProgram == -1) {
-			GameEngineUtils.throwGLESError(name + ": Failed to create shader program!");
+		if (this.spid == -1) {
+			GameEngineUtils.throwGLError(name + ": Failed to create shader program!");
 		}
 		this.parts = new HashMap<>();
 		for (AbstractShaderPart sp : parts) {
 			this.parts.put(sp.getType(), sp);
-			GL_W.glAttachShader(this.shaderProgram, sp.getSid());
-			GL_W.checkError("AttachShader(" + this.shaderProgram + ")");
+			GL_W.glAttachShader(this.spid, sp.getSid());
+			GL_W.checkError("AttachShader(" + this.spid + ")");
 		}
-		GL_W.glLinkProgram(this.shaderProgram);
-		GL_W.checkError("LinkProgram(" + this.shaderProgram + ")");
+		GL_W.glLinkProgram(this.spid);
+		GL_W.checkError("LinkProgram(" + this.spid + ")");
 
-		if (GL_W.glGetProgrami(this.shaderProgram, GL_W.GL_LINK_STATUS) == GL_W.GL_FALSE) {
-			GlobalLogger.log(Level.SEVERE, name + "(" + shaderProgram + "): " + GL_W.glGetProgramInfoLog_String(this.shaderProgram, 1024));
+		final int logLen = GL_W.glGetProgrami(this.spid, GL_W.GL_INFO_LOG_LENGTH);
+		if (logLen > 1) {
+			final String log = GL_W.glGetProgramInfoLog_String(this.spid, logLen);
+			GlobalLogger.severe("Link log:\n" + log);
+		}
+
+		if (GL_W.glGetProgrami(this.spid, GL_W.GL_LINK_STATUS) == GL_W.GL_FALSE) {
+			GlobalLogger.log(Level.SEVERE, name + "(" + spid + "): " + GL_W.glGetProgramInfoLog_String(this.spid, 1024));
 			this.cleanup();
-			throw new IllegalStateException(name + "(" + shaderProgram + "): Failed to link shader program!");
-		} else if (!GL_W.glIsProgram(shaderProgram)) {
+			throw new IllegalStateException(name + "(" + spid + "): Failed to link shader program!");
+		} else if (!GL_W.glIsProgram(spid)) {
 			this.cleanup();
-			throw new IllegalStateException(name + "(" + shaderProgram + "): Is not a GL Shader Program!");
+			throw new IllegalStateException(name + "(" + spid + "): Is not a GL Shader Program!");
 		} else {
-			GlobalLogger.log(Level.INFO, "ShaderProgram " + name + " (" + shaderProgram + ") created successfully");
+			GlobalLogger.log(Level.INFO, "ShaderProgram " + name + " (" + spid + ") created successfully");
 		}
 
 		this.bind();
@@ -70,23 +76,23 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 			if (!part.recompile())
 				return false;
 		}
-		/*
-		 * for (AbstractShaderPart sp : parts.values()) { GL_W.glAttachShader(this.shaderProgram, sp.getSid());
-		 * PDRUtils.checkGL_WError("AttachShader("+this.shaderProgram+")"); }
-		 */
-		GL_W.glLinkProgram(this.shaderProgram);
-		GL_W.checkError("LinkProgram(" + this.shaderProgram + ")");
+		GL_W.glLinkProgram(this.spid);
+		GL_W.checkError("LinkProgram(" + this.spid + ")");
 		return true;
 	}
 
 	public abstract void createUniforms();
 
 	public void setUniform(String key, Object value) {
-		Pair<Property<Object>, Integer> unif = uniforms.get(key);
+		if (!uniforms.containsKey(key)) {
+			return;
+		}
+
+		final Pair<Property<Object>, Integer> unif = uniforms.get(key);
 		if (unif == null) {
 			return;
 		}
-		Property<Object> prop = unif.hasKey() ? unif.getKey() : new Property<Object>();
+		final Property<Object> prop = unif.hasKey() ? unif.getKey() : new Property<Object>();
 		prop.setValue(value);
 		if (!prop.isChanged()) {
 			return;
@@ -132,9 +138,9 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 	}
 
 	public int getUniformLocation(String name) {
-		if (!this.hasUniform(name))
-			if (!this.createUniform(name))
-				return -1;
+		if (!this.hasUniform(name) && !this.createUniform(name)) {
+			return -1;
+		}
 
 		return this.uniforms.get(name).getValue();
 	}
@@ -144,31 +150,34 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 	}
 
 	public boolean createUniform(String name) {
-		int loc = GL_W.glGetUniformLocation(this.shaderProgram, name);
-		GL_W.checkError();
+		final int loc = GL_W.glGetUniformLocation(this.spid, name);
+		GL_W.checkError("GetUniformLocation(" + this.spid + ", " + name + ")");
 
 		if (loc != -1) {
 			this.uniforms.put(name, new Pair<>(new Property<>(), loc));
 			return true;
 		} else {
-			GlobalLogger.log(Level.WARNING, "Could not get Uniform location for: " + name + " in program " + this.name + " (" + this.shaderProgram + ") (" + GL_W.glGetError() + ")");
+			GlobalLogger
+					.log(Level.WARNING,
+							"Could not get Uniform location for: " + name + " in program " + this.name + " (" + this.spid + ") ("
+									+ GL_W.glGetError() + ")");
 		}
 
 		return false;
 	}
 
 	public void bind() {
-		if (this.shaderProgram == -1) {
-			GlobalLogger.warning("Shader program is -1 (" + name + ")");
+		if (this.spid == -1) {
+			GlobalLogger.warning("Shader program is invalid (" + name + ").");
 			return;
 		}
-		GL_W.glUseProgram(this.shaderProgram);
-		GL_W.checkError("UseProgram(" + shaderProgram + ") (" + name + ")");
+		GL_W.glUseProgram(this.spid);
+		GL_W.checkError("UseProgram(" + spid + ") (" + name + ").");
 	}
 
 	public void unbind() {
 		GL_W.glUseProgram(0);
-		GL_W.checkError("UseProgram(0) (" + name + ")");
+		GL_W.checkError("UseProgram(0) (" + name + ").");
 	}
 
 	@Override
@@ -176,19 +185,23 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 		GlobalLogger.log();
 		GlobalLogger.warning("Cleaning up: " + name);
 
-		if (this.shaderProgram == -1)
+		if (this.spid == -1)
 			return;
 
 		this.parts.values().forEach(AbstractShaderPart::cleanup);
 		this.parts = null;
-		GL_W.glDeleteProgram(this.shaderProgram);
-		GL_W.checkError("DeleteProgram(" + shaderProgram + ") (" + name + ")");
-		this.shaderProgram = -1;
+		GL_W.glDeleteProgram(this.spid);
+		GL_W.checkError("DeleteProgram(" + spid + ") (" + name + ")");
+		this.spid = -1;
 	}
 
 	@Override
 	public String getId() {
 		return this.name;
+	}
+
+	public int getSpid() {
+		return spid;
 	}
 
 	public Map<Integer, AbstractShaderPart> getParts() {

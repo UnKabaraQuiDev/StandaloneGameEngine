@@ -203,9 +203,9 @@ public interface GL_W_Call {
 
 	default void glInterleavedArrays(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetProgramResourceiv(int arg0,int arg1,int arg2,int[] arg3,int[] arg4,int[] arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetProgramResourceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4,java.nio.IntBuffer arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetProgramResourceiv(int arg0,int arg1,int arg2,int[] arg3,int[] arg4,int[] arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglGenProgramPipelines(int arg0,long arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -303,15 +303,15 @@ public interface GL_W_Call {
 
 	default void glColorMask(boolean arg0,boolean arg1,boolean arg2,boolean arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void nglGetTextureParameterfv(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glMultiDrawElementsIndirect(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glMultiDrawElementsIndirect(int arg0,int arg1,java.nio.IntBuffer arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glMultiDrawElementsIndirect(int arg0,int arg1,long arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
+	default void glMultiDrawElementsIndirect(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+
 	default void glMultiDrawElementsIndirect(int arg0,int arg1,int[] arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void nglGetTextureParameterfv(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glMultiTexCoordP3ui(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -323,9 +323,9 @@ public interface GL_W_Call {
 
 	default void glGetCompressedTexImage(int arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default java.lang.String glGetObjectPtrLabel_String(long arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetObjectPtrLabel(long arg0,int[] arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default java.lang.String glGetObjectPtrLabel_String(long arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default java.lang.String glGetObjectPtrLabel_String(long arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -351,9 +351,9 @@ public interface GL_W_Call {
 
 	default void glBeginQuery(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetFloati_v(int arg0,int arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetFloati_v(int arg0,int arg1,java.nio.FloatBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetFloati_v(int arg0,int arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglVertex3dv(long arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -411,19 +411,19 @@ public interface GL_W_Call {
 
 	default int glCheckNamedFramebufferStatus(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glTextureBuffer(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniform3ui(int arg0,int arg1,int arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
+	default void glTextureBuffer(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
 	default void nglGetnMapiv(int arg0,int arg1,int arg2,long arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glGetnMapiv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glGetnMapiv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glProgramUniform1uiv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glProgramUniform1uiv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetnMapiv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetnMapiv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glTexEnvfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -589,11 +589,11 @@ public interface GL_W_Call {
 
 	default void nglPrioritizeTextures(int arg0,long arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glInvalidateFramebuffer(int arg0,int[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glInvalidateFramebuffer(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glInvalidateFramebuffer(int arg0,java.nio.IntBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glInvalidateFramebuffer(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glInvalidateFramebuffer(int arg0,int[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glTexCoordP4ui(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -679,9 +679,9 @@ public interface GL_W_Call {
 
 	default void glSamplerParameterIui(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glVertexAttribL2dv(int arg0,double[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glVertexAttribL2dv(int arg0,java.nio.DoubleBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glVertexAttribL2dv(int arg0,double[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglVertex2iv(long arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -853,9 +853,9 @@ public interface GL_W_Call {
 
 	default void glGetCompressedTextureImage(int arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniform3fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniform3fv(int arg0,int arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniform3fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglProgramUniformMatrix2x4dv(int arg0,int arg1,int arg2,boolean arg3,long arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -951,9 +951,9 @@ public interface GL_W_Call {
 
 	default void nglMultiDrawArraysIndirectCount(int arg0,long arg1,long arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glDebugMessageInsert(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glDebugMessageInsert(int arg0,int arg1,int arg2,int arg3,java.lang.CharSequence arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glDebugMessageInsert(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glProgramUniform3dv(int arg0,int arg1,double[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1039,9 +1039,9 @@ public interface GL_W_Call {
 
 	default void glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default int glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glMultiTexCoord4iv(int arg0,int[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1117,9 +1117,9 @@ public interface GL_W_Call {
 
 	default void glGetnUniformiv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetnUniformiv(int arg0,int arg1,java.nio.FloatBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetnUniformiv(int arg0,int arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetnUniformiv(int arg0,int arg1,java.nio.FloatBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglColor4fv(long arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1155,19 +1155,19 @@ public interface GL_W_Call {
 
 	default void glTextureSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,java.nio.FloatBuffer arg8) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glDebugMessageControl(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,boolean arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glDebugMessageControl(int arg0,int arg1,int arg2,int arg3,boolean arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glDebugMessageControl(int arg0,int arg1,int arg2,int[] arg3,boolean arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glDebugMessageControl(int arg0,int arg1,int arg2,int arg3,boolean arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glDebugMessageControl(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,boolean arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglVertexAttrib1sv(int arg0,long arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glDeleteProgramPipelines(java.nio.IntBuffer arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glDeleteProgramPipelines(int[] arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glDeleteProgramPipelines(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glDeleteProgramPipelines(java.nio.IntBuffer arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glGetActiveUniformBlockName(int arg0,int arg1,int[] arg2,java.nio.ByteBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1225,11 +1225,11 @@ public interface GL_W_Call {
 
 	default void glTextureSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,java.nio.DoubleBuffer arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default java.lang.String glGetProgramPipelineInfoLog_String(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default java.lang.String glGetProgramPipelineInfoLog_String(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glGetProgramPipelineInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default java.lang.String glGetProgramPipelineInfoLog_String(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glGetProgramPipelineInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1367,11 +1367,11 @@ public interface GL_W_Call {
 
 	default void glGetTextureParameterfv(int arg0,int arg1,java.nio.FloatBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
+	default void glInvalidateSubFramebuffer(int arg0,int[] arg1,int arg2,int arg3,int arg4,int arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
+
 	default void glInvalidateSubFramebuffer(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3,int arg4,int arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glInvalidateSubFramebuffer(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glInvalidateSubFramebuffer(int arg0,int[] arg1,int arg2,int arg3,int arg4,int arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glVertexAttrib4sv(int arg0,short[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1459,19 +1459,19 @@ public interface GL_W_Call {
 
 	default void nglGetIntegerv(int arg0,long arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,float[] arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,short[] arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,int[] arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,short[] arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,float[] arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.FloatBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.ShortBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default int nglGetProgramResourceLocationIndex(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1581,11 +1581,11 @@ public interface GL_W_Call {
 
 	default void glGetProgramResourceName(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.ByteBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
+	default java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
 	default void glGetProgramResourceName(int arg0,int arg1,int arg2,int[] arg3,java.nio.ByteBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2,int arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glUniform4fv(int arg0,java.nio.FloatBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1685,9 +1685,9 @@ public interface GL_W_Call {
 
 	default void glUseProgram(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,int[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glUniformMatrix4fv(int arg0,boolean arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1907,9 +1907,9 @@ public interface GL_W_Call {
 
 	default int nglGetSubroutineIndex(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,double[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glVertexAttribL1dv(int arg0,java.nio.DoubleBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -1989,9 +1989,9 @@ public interface GL_W_Call {
 
 	default void glFramebufferTexture3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniformMatrix3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniformMatrix3fv(int arg0,int arg1,boolean arg2,float[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniformMatrix3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glColor4uiv(int[] arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -2109,9 +2109,9 @@ public interface GL_W_Call {
 
 	default void glDrawElementsInstancedBaseInstance(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glDrawElementsInstancedBaseInstance(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glDrawElementsInstancedBaseInstance(int arg0,int arg1,int arg2,long arg3,int arg4,int arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glDrawElementsInstancedBaseInstance(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glDrawElementsInstancedBaseInstance(int arg0,java.nio.ByteBuffer arg1,int arg2,int arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -2193,11 +2193,11 @@ public interface GL_W_Call {
 
 	default void glSecondaryColorP3ui(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default int glGenProgramPipelines() {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glGenProgramPipelines(int[] arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glGenProgramPipelines(java.nio.IntBuffer arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGenProgramPipelines(int[] arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default int glGenProgramPipelines() {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glProgramUniform2dv(int arg0,int arg1,double[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -2343,9 +2343,9 @@ public interface GL_W_Call {
 
 	default void glRasterPos3d(double arg0,double arg1,double arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,double[] arg8) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -2455,6 +2455,8 @@ public interface GL_W_Call {
 
 	default void nglTextureSubImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,int arg7,long arg8) {throw new UnsupportedOperationException("Not implemented yet.");}
 
+	default void nglProgramUniformMatrix2x3fv(int arg0,int arg1,int arg2,boolean arg3,long arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+
 	default void glNamedBufferStorage(int arg0,double[] arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glNamedBufferStorage(int arg0,float[] arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
@@ -2474,8 +2476,6 @@ public interface GL_W_Call {
 	default void glNamedBufferStorage(int arg0,long arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glNamedBufferStorage(int arg0,java.nio.IntBuffer arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void nglProgramUniformMatrix2x3fv(int arg0,int arg1,int arg2,boolean arg3,long arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glMultiTexCoord3fv(int arg0,java.nio.FloatBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -2601,9 +2601,9 @@ public interface GL_W_Call {
 
 	default void glEvalCoord1fv(java.nio.FloatBuffer arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetDoublei_v(int arg0,int arg1,double[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetDoublei_v(int arg0,int arg1,java.nio.DoubleBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetDoublei_v(int arg0,int arg1,double[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glMultiTexCoord3iv(int arg0,java.nio.IntBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -2657,17 +2657,17 @@ public interface GL_W_Call {
 
 	default void glRasterPos4dv(java.nio.DoubleBuffer arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glPushDebugGroup(int arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glPushDebugGroup(int arg0,int arg1,java.lang.CharSequence arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glPushDebugGroup(int arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glLineWidth(float arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglGetShaderSource(int arg0,int arg1,long arg2,long arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniform3uiv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniform3uiv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniform3uiv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glInvalidateNamedFramebufferData(int arg0,int[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -2731,9 +2731,9 @@ public interface GL_W_Call {
 
 	default void nglMaterialiv(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniform1iv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniform1iv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniform1iv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glDrawElements(int arg0,java.nio.IntBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -2797,19 +2797,19 @@ public interface GL_W_Call {
 
 	default int glGetSamplerParameterIi(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.IntBuffer arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.ByteBuffer arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,short[] arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,int[] arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,float[] arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,short[] arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.IntBuffer arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.ByteBuffer arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glTexGeniv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -2923,9 +2923,9 @@ public interface GL_W_Call {
 
 	default void glFogfv(int arg0,float[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glReleaseShaderCompiler() {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glDrawTransformFeedbackInstanced(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glReleaseShaderCompiler() {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glPushName(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3107,13 +3107,13 @@ public interface GL_W_Call {
 
 	default void glTexCoord1f(float arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetNamedBufferParameteriv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glGetNamedBufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glGetInternalformati64v(int arg0,int arg1,int arg2,java.nio.LongBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glGetInternalformati64v(int arg0,int arg1,int arg2,long[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetInternalformati64v(int arg0,int arg1,int arg2,java.nio.LongBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glGetNamedBufferParameteriv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetNamedBufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glColor4dv(double[] arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3333,11 +3333,11 @@ public interface GL_W_Call {
 
 	default void glMultiTexCoord4d(int arg0,double arg1,double arg2,double arg3,double arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
+	default void nglVertexAttribL3dv(int arg0,long arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+
 	default void glGetnPixelMapusv(int arg0,java.nio.ShortBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glGetnPixelMapusv(int arg0,short[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void nglVertexAttribL3dv(int arg0,long arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glGetUniformfv(int arg0,int arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3541,17 +3541,17 @@ public interface GL_W_Call {
 
 	default void glFramebufferParameteri(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glViewportArrayv(int arg0,float[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glViewportArrayv(int arg0,java.nio.FloatBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glViewportArrayv(int arg0,float[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glNormal3iv(java.nio.IntBuffer arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glNormal3iv(int[] arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,float[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,float[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglGetActiveSubroutineName(int arg0,int arg1,int arg2,int arg3,long arg4,long arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3577,9 +3577,9 @@ public interface GL_W_Call {
 
 	default void nglCompressedTextureSubImage1D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,long arg6) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default int glCreateShaderProgramv(int arg0,org.lwjgl.PointerBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default int glCreateShaderProgramv(int arg0,java.lang.CharSequence... arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default int glCreateShaderProgramv(int arg0,org.lwjgl.PointerBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default int glCreateShaderProgramv(int arg0,java.lang.CharSequence arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3607,9 +3607,9 @@ public interface GL_W_Call {
 
 	default void glEndList() {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,float[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,float[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glFramebufferTextureLayer(int arg0,int arg1,int arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3659,9 +3659,9 @@ public interface GL_W_Call {
 
 	default void nglProgramUniformMatrix3x4dv(int arg0,int arg1,int arg2,boolean arg3,long arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,double[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default long nglGetString(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3669,9 +3669,9 @@ public interface GL_W_Call {
 
 	default void nglInterleavedArrays(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniformMatrix2x3dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniformMatrix2x3dv(int arg0,int arg1,boolean arg2,double[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniformMatrix2x3dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glNormal3dv(java.nio.DoubleBuffer arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3741,9 +3741,9 @@ public interface GL_W_Call {
 
 	default long glGetQueryObjectui64(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default boolean glUnmapNamedBuffer(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniform1d(int arg0,int arg1,double arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default boolean glUnmapNamedBuffer(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glProgramUniform1f(int arg0,int arg1,float arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3803,9 +3803,9 @@ public interface GL_W_Call {
 
 	default void glColor4us(short arg0,short arg1,short arg2,short arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glViewportIndexedfv(int arg0,float[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glViewportIndexedfv(int arg0,java.nio.FloatBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glViewportIndexedfv(int arg0,float[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glBlendEquationSeparatei(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3863,9 +3863,9 @@ public interface GL_W_Call {
 
 	default void glPixelMapusv(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniform1fv(int arg0,int arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniform1fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniform1fv(int arg0,int arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glIndexsv(short[] arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3925,9 +3925,9 @@ public interface GL_W_Call {
 
 	default void nglGetVertexAttribLdv(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default int glGetProgramResourceLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default int glGetProgramResourceLocation(int arg0,int arg1,java.lang.CharSequence arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default int glGetProgramResourceLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glTexCoordPointer(int arg0,int arg1,int arg2,java.nio.FloatBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3939,17 +3939,17 @@ public interface GL_W_Call {
 
 	default void glTexCoordPointer(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniform1dv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniform1dv(int arg0,int arg1,double[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniform1dv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glMultiTexCoord2fv(int arg0,float[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glMultiTexCoord2fv(int arg0,java.nio.FloatBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetFramebufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetFramebufferParameteriv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetFramebufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglPointParameteriv(int arg0,long arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -3979,9 +3979,9 @@ public interface GL_W_Call {
 
 	default void glBeginTransformFeedback(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glObjectPtrLabel(long arg0,java.nio.ByteBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glObjectPtrLabel(long arg0,java.lang.CharSequence arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glObjectPtrLabel(long arg0,java.nio.ByteBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glGetQueryBufferObjectuiv(int arg0,int arg1,int arg2,long arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -4317,13 +4317,13 @@ public interface GL_W_Call {
 
 	default void glColor3dv(double[] arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetnConvolutionFilter(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glGetnConvolutionFilter(int arg0,int arg1,int arg2,int arg3,long arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glScissorIndexedv(int arg0,int[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glScissorIndexedv(int arg0,java.nio.IntBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetnConvolutionFilter(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetnConvolutionFilter(int arg0,int arg1,int arg2,int arg3,long arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglIndexiv(long arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -4353,13 +4353,13 @@ public interface GL_W_Call {
 
 	default void glPushAttrib(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetObjectLabel(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetObjectLabel(int arg0,int arg1,int[] arg2,java.nio.ByteBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default java.lang.String glGetObjectLabel_String(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default java.lang.String glGetObjectLabel_String(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetObjectLabel(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glSecondaryColor3bv(java.nio.ByteBuffer arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -4509,15 +4509,13 @@ public interface GL_W_Call {
 
 	default void nglSamplerParameterfv(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,double[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglGetTransformFeedbackiv(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglVertex2fv(long arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
-
-	default void glMultiDrawArraysIndirect(int arg0,int[] arg1,int arg2,int arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glMultiDrawArraysIndirect(int arg0,java.nio.ByteBuffer arg1,int arg2,int arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -4525,11 +4523,13 @@ public interface GL_W_Call {
 
 	default void glMultiDrawArraysIndirect(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glVertexAttribLPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glMultiDrawArraysIndirect(int arg0,int[] arg1,int arg2,int arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glVertexAttribLPointer(int arg0,int arg1,int arg2,int arg3,long arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glVertexAttribLPointer(int arg0,int arg1,int arg2,java.nio.DoubleBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glVertexAttribLPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglMultiTexCoordP1uiv(int arg0,int arg1,long arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -4731,15 +4731,15 @@ public interface GL_W_Call {
 
 	default int glGetTextureParameterIui(int arg0,int arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glTextureStorage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glInvalidateBufferData(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glTransformFeedbackBufferBase(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glTextureStorage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniformMatrix4x2fv(int arg0,int arg1,boolean arg2,float[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glProgramUniformMatrix4x2fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniformMatrix4x2fv(int arg0,int arg1,boolean arg2,float[] arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
+	default void glTransformFeedbackBufferBase(int arg0,int arg1,int arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglBufferSubData(int arg0,long arg1,long arg2,long arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -4793,9 +4793,9 @@ public interface GL_W_Call {
 
 	default void glPointParameterf(int arg0,float arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glDepthRangeArrayv(int arg0,java.nio.DoubleBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glDepthRangeArrayv(int arg0,double[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glDepthRangeArrayv(int arg0,java.nio.DoubleBuffer arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glGetnTexImage(int arg0,int arg1,int arg2,int arg3,double[] arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -4825,9 +4825,9 @@ public interface GL_W_Call {
 
 	default void nglCreateTransformFeedbacks(int arg0,long arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glProgramUniform4dv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glProgramUniform4dv(int arg0,int arg1,double[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glProgramUniform4dv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,long arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -4957,9 +4957,9 @@ public interface GL_W_Call {
 
 	default void glCompressedTexImage2D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5,int arg6,long arg7) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void nglBindBuffersBase(int arg0,int arg1,int arg2,long arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glDepthRangeIndexed(int arg0,double arg1,double arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void nglBindBuffersBase(int arg0,int arg1,int arg2,long arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glColorP4uiv(int arg0,int[] arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -5017,9 +5017,9 @@ public interface GL_W_Call {
 
 	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3,int arg4,int arg5) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0,java.nio.ShortBuffer arg1,int arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0,java.nio.ShortBuffer arg1,int arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0,java.nio.ByteBuffer arg1,int arg2,int arg3,int arg4) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -5057,9 +5057,9 @@ public interface GL_W_Call {
 
 	default void glGetInteger64i_v(int arg0,int arg1,long[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default int glGetProgramResourceLocationIndex(int arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default int glGetProgramResourceLocationIndex(int arg0,int arg1,java.lang.CharSequence arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default int glGetProgramResourceLocationIndex(int arg0,int arg1,java.nio.ByteBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglEvalCoord2dv(long arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -5113,9 +5113,9 @@ public interface GL_W_Call {
 
 	default void glValidateProgramPipeline(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetProgramPipelineiv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetProgramPipelineiv(int arg0,int arg1,int[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetProgramPipelineiv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglVertexAttribI3uiv(int arg0,long arg1) {throw new UnsupportedOperationException("Not implemented yet.");}
 
@@ -5185,9 +5185,9 @@ public interface GL_W_Call {
 
 	default void glGetnUniformuiv(int arg0,int arg1,java.nio.IntBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	default void glGetnUniformuiv(int arg0,int arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
-
 	default void glGetnUniformuiv(int arg0,int arg1,java.nio.FloatBuffer arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
+
+	default void glGetnUniformuiv(int arg0,int arg1,float[] arg2) {throw new UnsupportedOperationException("Not implemented yet.");}
 
 	default void nglBufferData(int arg0,long arg1,long arg2,int arg3) {throw new UnsupportedOperationException("Not implemented yet.");}
 

@@ -977,7 +977,7 @@ public class GL_W_GLES30 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateFramebuffer(int arg0,int[] arg1) {
+	public void glInvalidateFramebuffer(int arg0,int arg1) {
 		org.lwjgl.opengles.GLES30.glInvalidateFramebuffer(arg0,arg1);
 	}
 
@@ -987,7 +987,7 @@ public class GL_W_GLES30 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateFramebuffer(int arg0,int arg1) {
+	public void glInvalidateFramebuffer(int arg0,int[] arg1) {
 		org.lwjgl.opengles.GLES30.glInvalidateFramebuffer(arg0,arg1);
 	}
 
@@ -1372,17 +1372,17 @@ public class GL_W_GLES30 implements GL_W_Call {
 	}
 
 	@Override
+	public void glInvalidateSubFramebuffer(int arg0,int[] arg1,int arg2,int arg3,int arg4,int arg5) {
+		org.lwjgl.opengles.GLES30.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
+	}
+
+	@Override
 	public void glInvalidateSubFramebuffer(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3,int arg4,int arg5) {
 		org.lwjgl.opengles.GLES30.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
 	public void glInvalidateSubFramebuffer(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5) {
-		org.lwjgl.opengles.GLES30.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
-	public void glInvalidateSubFramebuffer(int arg0,int[] arg1,int arg2,int arg3,int arg4,int arg5) {
 		org.lwjgl.opengles.GLES30.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -2027,12 +2027,12 @@ public class GL_W_GLES30 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES30.glShaderBinary(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES30.glShaderBinary(arg0,arg1,arg2);
 	}
 

@@ -17,9 +17,7 @@ public abstract class Scene implements UniqueID, Cleanupable, Renderable {
 
 	@Override
 	public void cleanup() {
-		if (name != null) {
-			name = null;
-		}
+		name = null;
 	}
 
 	@Override
@@ -29,6 +27,10 @@ public abstract class Scene implements UniqueID, Cleanupable, Renderable {
 
 	public Camera getCamera() {
 		return camera;
+	}
+
+	public void setCamera(Camera camera) {
+		this.camera = camera;
 	}
 
 }

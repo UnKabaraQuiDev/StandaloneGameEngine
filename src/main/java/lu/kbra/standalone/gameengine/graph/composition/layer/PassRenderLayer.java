@@ -26,8 +26,13 @@ public class PassRenderLayer extends RenderLayer<GameEngine, Framebuffer, Mesh> 
 	public static final String SCREEN_WIDTH = "screen_width";
 	public static final String SCREEN_HEIGHT = "screen_height";
 
-	private static Mesh SCREEN = new Mesh("PASS_SCREEN", null, new Vec3fAttribArray("pos", 0, 1, new Vector3f[] { new Vector3f(-1, 1, 0), new Vector3f(1, 1, 0), new Vector3f(1, -1, 0), new Vector3f(-1, -1, 0) }),
-			new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 2, 0, 2, 3 }, GL_W.GL_ELEMENT_ARRAY_BUFFER), new Vec2fAttribArray("uv", 1, 1, new Vector2f[] { new Vector2f(0, 1), new Vector2f(1, 1), new Vector2f(1, 0), new Vector2f(0, 0) }));
+	private static Mesh SCREEN = new Mesh("PASS_SCREEN", null,
+			new Vec3fAttribArray("pos", 0, 1,
+					new Vector3f[] { new Vector3f(-1, 1, 0), new Vector3f(1, 1, 0), new Vector3f(1, -1, 0),
+							new Vector3f(-1, -1, 0) }),
+			new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 2, 0, 2, 3 }, GL_W.GL_ELEMENT_ARRAY_BUFFER),
+			new Vec2fAttribArray("uv", 1, 1,
+					new Vector2f[] { new Vector2f(0, 1), new Vector2f(1, 1), new Vector2f(1, 0), new Vector2f(0, 0) }));
 
 	protected CacheManager cache;
 	protected Material material;
@@ -67,7 +72,7 @@ public class PassRenderLayer extends RenderLayer<GameEngine, Framebuffer, Mesh> 
 			}
 		}
 
-		material.bindProperties(cache, this, shader);
+		material.bindProperties(cache, this);
 
 		if (shader.isTransparent()) {
 			GL_W.glEnable(GL_W.GL_BLEND);

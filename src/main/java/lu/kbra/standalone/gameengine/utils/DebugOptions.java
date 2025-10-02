@@ -55,7 +55,7 @@ public class DebugOptions implements Cleanupable {
 			deb.setPropertyIfPresent(RenderShader.TRANSFORMATION_MATRIX, modelMatrix);
 		else
 			deb.setPropertyIfPresent(RenderShader.TRANSFORMATION_MATRIX, new Matrix4f().identity());
-		deb.bindProperties(cache, scene, debShader);
+		deb.bindProperties(cache, scene);
 
 		if (GameEngine.DEBUG.ignoreDepth)
 			GL_W.glDisable(GL_W.GL_DEPTH_TEST);
@@ -92,7 +92,7 @@ public class DebugOptions implements Cleanupable {
 		else
 			deb.setPropertyIfPresent(RenderShader.TRANSFORMATION_MATRIX, new Matrix4f().identity());
 		deb.setPropertyIfPresent(WireframeShader.COLOR, wireframeColor);
-		deb.bindProperties(cache, scene, debShader);
+		deb.bindProperties(cache, scene);
 
 		if (GameEngine.DEBUG.ignoreDepth)
 			GL_W.glDisable(GL_W.GL_DEPTH_TEST);
@@ -120,7 +120,7 @@ public class DebugOptions implements Cleanupable {
 		deb.setPropertyIfPresent(RenderShader.VIEW_MATRIX, viewMatrix);
 		deb.setPropertyIfPresent(RenderShader.TRANSFORMATION_MATRIX, transformationMatrix);
 		deb.setPropertyIfPresent(WireframeShader.COLOR, wireframeColor);
-		deb.bindProperties(cache, scene, debShader);
+		deb.bindProperties(cache, scene);
 
 		if (GameEngine.DEBUG.ignoreDepth)
 			GL_W.glDisable(GL_W.GL_DEPTH_TEST);
@@ -156,7 +156,7 @@ public class DebugOptions implements Cleanupable {
 			deb.setPropertyIfPresent(RenderShader.TRANSFORMATION_MATRIX, modelMatrix.get(new Matrix4f()).scale(new Vector3f(boxSize.x, boxSize.y, 1)));
 		else
 			deb.setPropertyIfPresent(RenderShader.TRANSFORMATION_MATRIX, new Matrix4f().identity().scale(new Vector3f(boxSize.x, boxSize.y, 1)));
-		deb.bindProperties(cache, scene, debShader);
+		deb.bindProperties(cache, scene);
 
 		if (GameEngine.DEBUG.ignoreDepth)
 			GL_W.glDisable(GL_W.GL_DEPTH_TEST);

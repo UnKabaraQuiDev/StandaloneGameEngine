@@ -20,8 +20,13 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class GenerateRenderLayer extends RenderLayer<GameEngine, Framebuffer, Mesh> {
 
-	private static Mesh SCREEN = new Mesh("GEN_SCREEN", null, new Vec3fAttribArray("pos", 0, 1, new Vector3f[] { new Vector3f(-1, 1, 0), new Vector3f(1, 1, 0), new Vector3f(1, -1, 0), new Vector3f(-1, -1, 0) }),
-			new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 3, 1, 2, 3 }), new Vec2fAttribArray("uv", 1, 1, new Vector2f[] { new Vector2f(-1, 1), new Vector2f(1, 1), new Vector2f(1, -1), new Vector2f(-1, -1) }));
+	private static Mesh SCREEN = new Mesh("GEN_SCREEN", null,
+			new Vec3fAttribArray("pos", 0, 1,
+					new Vector3f[] { new Vector3f(-1, 1, 0), new Vector3f(1, 1, 0), new Vector3f(1, -1, 0),
+							new Vector3f(-1, -1, 0) }),
+			new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 3, 1, 2, 3 }),
+			new Vec2fAttribArray("uv", 1, 1, new Vector2f[] { new Vector2f(-1, 1), new Vector2f(1, 1),
+					new Vector2f(1, -1), new Vector2f(-1, -1) }));
 
 	protected CacheManager cache;
 	protected Material material;
@@ -49,7 +54,7 @@ public class GenerateRenderLayer extends RenderLayer<GameEngine, Framebuffer, Me
 
 		shader.bind();
 
-		material.bindProperties(cache, this, shader);
+		material.bindProperties(cache, this);
 
 		GL_W.glDepthMask(false);
 

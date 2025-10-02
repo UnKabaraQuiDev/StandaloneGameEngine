@@ -1002,12 +1002,12 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glShaderBinary(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glShaderBinary(arg0,arg1,arg2);
 	}
 

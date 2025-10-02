@@ -16,12 +16,21 @@ public abstract class RenderShader extends AbstractShader {
 	protected BeginMode beginMode = BeginMode.TRIANGLES;
 	protected FaceMode faceMode = FaceMode.FRONT_AND_BACK;
 
+	public RenderShader(AbstractShaderPart... parts) {
+		this(null, false, parts);
+	}
+
 	public RenderShader(String name, AbstractShaderPart... parts) {
 		this(name, false, parts);
 	}
 
 	public RenderShader(String name, boolean transparent, AbstractShaderPart... parts) {
 		super(name, parts);
+		this.transparent = transparent;
+	}
+
+	public RenderShader(boolean transparent, AbstractShaderPart... parts) {
+		super(null, parts);
 		this.transparent = transparent;
 	}
 

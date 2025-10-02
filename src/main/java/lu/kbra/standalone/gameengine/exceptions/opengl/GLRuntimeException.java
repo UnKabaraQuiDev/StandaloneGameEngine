@@ -10,4 +10,8 @@ public class GLRuntimeException extends RuntimeException {
 		super("" + caller + " triggered : " + status + " (" + msg + ")");
 	}
 
+	public GLRuntimeException(int status, String msg) {
+		super(status + " (" + msg + ")");
+	}
+
 }

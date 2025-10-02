@@ -19,7 +19,7 @@ import lu.kbra.standalone.gameengine.impl.GameLogic;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 import lu.kbra.standalone.gameengine.utils.DebugOptions;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL40;
+import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL46;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
 
 public class GameEngine implements Cleanupable, UniqueID {
@@ -207,7 +207,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 			new GL_W_GLES30().init();
 			this.window = new GLESWindow(this.windowOptions);
 		} else {
-			new GL_W_GL40().init();
+			new GL_W_GL46().init();
 			this.window = new GLWindow(this.windowOptions);
 		}
 

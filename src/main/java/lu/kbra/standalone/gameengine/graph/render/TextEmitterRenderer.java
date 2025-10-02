@@ -78,7 +78,8 @@ public class TextEmitterRenderer extends Renderer<Scene, TextEmitterComponent> {
 
 		if (material.hasProperty(RenderShader.TRANSFORMATION_MATRIX)) {
 			if (e.hasComponentMatching(TransformComponent.class)) {
-				TransformComponent transform = (TransformComponent) e.getComponent(e.getComponentTypesMatching(TransformComponent.class).get(0));
+				TransformComponent transform = (TransformComponent) e
+						.getComponent(e.getComponentTypesMatching(TransformComponent.class).get(0));
 				if (transform != null) {
 					transformationMatrix = transform.getTransform().getMatrix();
 				}
@@ -92,7 +93,7 @@ public class TextEmitterRenderer extends Renderer<Scene, TextEmitterComponent> {
 				plsc.bindLights(cache, ((Scene3D) scene).getLights(), material);
 		}
 
-		material.bindProperties(cache, scene, shader);
+		material.bindProperties(cache, scene);
 
 		if (shader.isTransparent()) {
 			GL_W.glEnable(GL_W.GL_BLEND);
@@ -101,17 +102,20 @@ public class TextEmitterRenderer extends Renderer<Scene, TextEmitterComponent> {
 
 		pe.bind();
 
-		GL_W.glDrawElementsInstanced(shader.getBeginMode().getGlId(), mesh.getIndicesCount(), GL_W.GL_UNSIGNED_INT, 0, pe.getParticleCount());
+		GL_W.glDrawElementsInstanced(shader.getBeginMode().getGlId(), mesh.getIndicesCount(), GL_W.GL_UNSIGNED_INT, 0,
+				pe.getParticleCount());
 
 		GL_W.glDisable(GL_W.GL_BLEND);
 
 		// debug only
-		// GameEngine.DEBUG.wireframe(cache, scene, mesh, projectionMatrix, viewMatrix, c.getTransform().getMatrix());
+		// GameEngine.DEBUG.wireframe(cache, scene, mesh, projectionMatrix, viewMatrix,
+		// c.getTransform().getMatrix());
 
 		mesh.unbind();
 
 		GameEngine.DEBUG.gizmos(cache, scene, projectionMatrix, viewMatrix, transformationMatrix);
-		GameEngine.DEBUG.boundingRect(cache, scene, projectionMatrix, viewMatrix, transformationMatrix, te.getBoxSize());
+		GameEngine.DEBUG.boundingRect(cache, scene, projectionMatrix, viewMatrix, transformationMatrix,
+				te.getBoxSize());
 	}
 
 }

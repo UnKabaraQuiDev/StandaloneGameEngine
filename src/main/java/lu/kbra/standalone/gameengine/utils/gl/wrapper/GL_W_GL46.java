@@ -2304,12 +2304,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramResourceiv(int arg0,int arg1,int arg2,int[] arg3,int[] arg4,int[] arg5) {
+	public void glGetProgramResourceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4,java.nio.IntBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceiv(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
-	public void glGetProgramResourceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,java.nio.IntBuffer arg4,java.nio.IntBuffer arg5) {
+	public void glGetProgramResourceiv(int arg0,int arg1,int arg2,int[] arg3,int[] arg4,int[] arg5) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceiv(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -2554,16 +2554,6 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetTextureParameterfv(int arg0,int arg1,long arg2) {
-		org.lwjgl.opengl.GL46.nglGetTextureParameterfv(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glMultiDrawElementsIndirect(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3,int arg4) {
-		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirect(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
 	public void glMultiDrawElementsIndirect(int arg0,int arg1,java.nio.IntBuffer arg2,int arg3,int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirect(arg0,arg1,arg2,arg3,arg4);
 	}
@@ -2574,8 +2564,18 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
+	public void glMultiDrawElementsIndirect(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3,int arg4) {
+		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirect(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
 	public void glMultiDrawElementsIndirect(int arg0,int arg1,int[] arg2,int arg3,int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirect(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void nglGetTextureParameterfv(int arg0,int arg1,long arg2) {
+		org.lwjgl.opengl.GL46.nglGetTextureParameterfv(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -2604,13 +2604,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetObjectPtrLabel_String(long arg0) {
-		return org.lwjgl.opengl.GL46.glGetObjectPtrLabel(arg0);
+	public void glGetObjectPtrLabel(long arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+		org.lwjgl.opengl.GL46.glGetObjectPtrLabel(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetObjectPtrLabel(long arg0,int[] arg1,java.nio.ByteBuffer arg2) {
-		org.lwjgl.opengl.GL46.glGetObjectPtrLabel(arg0,arg1,arg2);
+	public java.lang.String glGetObjectPtrLabel_String(long arg0) {
+		return org.lwjgl.opengl.GL46.glGetObjectPtrLabel(arg0);
 	}
 
 	@Override
@@ -2674,12 +2674,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetFloati_v(int arg0,int arg1,float[] arg2) {
+	public void glGetFloati_v(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL46.glGetFloati_v(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetFloati_v(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glGetFloati_v(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengl.GL46.glGetFloati_v(arg0,arg1,arg2);
 	}
 
@@ -2824,28 +2824,18 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureBuffer(int arg0,int arg1,int arg2) {
-		org.lwjgl.opengl.GL46.glTextureBuffer(arg0,arg1,arg2);
-	}
-
-	@Override
 	public void glProgramUniform3ui(int arg0,int arg1,int arg2,int arg3,int arg4) {
 		org.lwjgl.opengl.GL46.glProgramUniform3ui(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
+	public void glTextureBuffer(int arg0,int arg1,int arg2) {
+		org.lwjgl.opengl.GL46.glTextureBuffer(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void nglGetnMapiv(int arg0,int arg1,int arg2,long arg3) {
 		org.lwjgl.opengl.GL46.nglGetnMapiv(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public void glGetnMapiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
-		org.lwjgl.opengl.GL46.glGetnMapiv(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glGetnMapiv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengl.GL46.glGetnMapiv(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -2856,6 +2846,16 @@ public class GL_W_GL46 implements GL_W_Call {
 	@Override
 	public void glProgramUniform1uiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform1uiv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetnMapiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+		org.lwjgl.opengl.GL46.glGetnMapiv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetnMapiv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengl.GL46.glGetnMapiv(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -3269,7 +3269,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateFramebuffer(int arg0,int[] arg1) {
+	public void glInvalidateFramebuffer(int arg0,int arg1) {
 		org.lwjgl.opengl.GL46.glInvalidateFramebuffer(arg0,arg1);
 	}
 
@@ -3279,7 +3279,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateFramebuffer(int arg0,int arg1) {
+	public void glInvalidateFramebuffer(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL46.glInvalidateFramebuffer(arg0,arg1);
 	}
 
@@ -3489,12 +3489,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribL2dv(int arg0,double[] arg1) {
+	public void glVertexAttribL2dv(int arg0,java.nio.DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL46.glVertexAttribL2dv(arg0,arg1);
 	}
 
 	@Override
-	public void glVertexAttribL2dv(int arg0,java.nio.DoubleBuffer arg1) {
+	public void glVertexAttribL2dv(int arg0,double[] arg1) {
 		org.lwjgl.opengl.GL46.glVertexAttribL2dv(arg0,arg1);
 	}
 
@@ -3919,12 +3919,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform3fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glProgramUniform3fv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform3fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform3fv(int arg0,int arg1,float[] arg2) {
+	public void glProgramUniform3fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform3fv(arg0,arg1,arg2);
 	}
 
@@ -4164,12 +4164,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDebugMessageInsert(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
+	public void glDebugMessageInsert(int arg0,int arg1,int arg2,int arg3,java.lang.CharSequence arg4) {
 		org.lwjgl.opengl.GL46.glDebugMessageInsert(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public void glDebugMessageInsert(int arg0,int arg1,int arg2,int arg3,java.lang.CharSequence arg4) {
+	public void glDebugMessageInsert(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glDebugMessageInsert(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -4379,13 +4379,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {
-		org.lwjgl.opengl.GL46.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
+	public int glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2) {
+		return org.lwjgl.opengl.GL46.glGetShaderPrecisionFormat(arg0,arg1,arg2);
 	}
 
 	@Override
-	public int glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2) {
-		return org.lwjgl.opengl.GL46.glGetShaderPrecisionFormat(arg0,arg1,arg2);
+	public void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {
+		org.lwjgl.opengl.GL46.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -4659,7 +4659,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDebugMessageControl(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,boolean arg4) {
+	public void glDebugMessageControl(int arg0,int arg1,int arg2,int arg3,boolean arg4) {
 		org.lwjgl.opengl.GL46.glDebugMessageControl(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -4669,7 +4669,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDebugMessageControl(int arg0,int arg1,int arg2,int arg3,boolean arg4) {
+	public void glDebugMessageControl(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3,boolean arg4) {
 		org.lwjgl.opengl.GL46.glDebugMessageControl(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -4679,17 +4679,17 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDeleteProgramPipelines(java.nio.IntBuffer arg0) {
-		org.lwjgl.opengl.GL46.glDeleteProgramPipelines(arg0);
-	}
-
-	@Override
 	public void glDeleteProgramPipelines(int[] arg0) {
 		org.lwjgl.opengl.GL46.glDeleteProgramPipelines(arg0);
 	}
 
 	@Override
 	public void glDeleteProgramPipelines(int arg0) {
+		org.lwjgl.opengl.GL46.glDeleteProgramPipelines(arg0);
+	}
+
+	@Override
+	public void glDeleteProgramPipelines(java.nio.IntBuffer arg0) {
 		org.lwjgl.opengl.GL46.glDeleteProgramPipelines(arg0);
 	}
 
@@ -4834,11 +4834,6 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public java.lang.String glGetProgramPipelineInfoLog_String(int arg0,int arg1) {
-		return org.lwjgl.opengl.GL46.glGetProgramPipelineInfoLog(arg0,arg1);
-	}
-
-	@Override
 	public java.lang.String glGetProgramPipelineInfoLog_String(int arg0) {
 		return org.lwjgl.opengl.GL46.glGetProgramPipelineInfoLog(arg0);
 	}
@@ -4846,6 +4841,11 @@ public class GL_W_GL46 implements GL_W_Call {
 	@Override
 	public void glGetProgramPipelineInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengl.GL46.glGetProgramPipelineInfoLog(arg0,arg1,arg2);
+	}
+
+	@Override
+	public java.lang.String glGetProgramPipelineInfoLog_String(int arg0,int arg1) {
+		return org.lwjgl.opengl.GL46.glGetProgramPipelineInfoLog(arg0,arg1);
 	}
 
 	@Override
@@ -5189,17 +5189,17 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
+	public void glInvalidateSubFramebuffer(int arg0,int[] arg1,int arg2,int arg3,int arg4,int arg5) {
+		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
+	}
+
+	@Override
 	public void glInvalidateSubFramebuffer(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3,int arg4,int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
 	public void glInvalidateSubFramebuffer(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5) {
-		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
-	public void glInvalidateSubFramebuffer(int arg0,int[] arg1,int arg2,int arg3,int arg4,int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
@@ -5419,12 +5419,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
-		org.lwjgl.opengl.GL46.glClearBufferData(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
-	public void glClearBufferData(int arg0,int arg1,int arg2,int arg3,float[] arg4) {
+	public void glClearBufferData(int arg0,int arg1,int arg2,int arg3,short[] arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -5434,12 +5429,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearBufferData(int arg0,int arg1,int arg2,int arg3,short[] arg4) {
+	public void glClearBufferData(int arg0,int arg1,int arg2,int arg3,float[] arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {
+	public void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -5450,6 +5445,11 @@ public class GL_W_GL46 implements GL_W_Call {
 
 	@Override
 	public void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.ShortBuffer arg4) {
+		org.lwjgl.opengl.GL46.glClearBufferData(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
+	public void glClearBufferData(int arg0,int arg1,int arg2,int arg3,java.nio.IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -5724,6 +5724,11 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
+	public java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2) {
+		return org.lwjgl.opengl.GL46.glGetProgramResourceName(arg0,arg1,arg2);
+	}
+
+	@Override
 	public void glGetProgramResourceName(int arg0,int arg1,int arg2,int[] arg3,java.nio.ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceName(arg0,arg1,arg2,arg3,arg4);
 	}
@@ -5731,11 +5736,6 @@ public class GL_W_GL46 implements GL_W_Call {
 	@Override
 	public java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2,int arg3) {
 		return org.lwjgl.opengl.GL46.glGetProgramResourceName(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public java.lang.String glGetProgramResourceName_String(int arg0,int arg1,int arg2) {
-		return org.lwjgl.opengl.GL46.glGetProgramResourceName(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -5984,12 +5984,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
+	public void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,int[] arg3) {
 		org.lwjgl.opengl.GL46.glGetProgramInterfaceiv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,int[] arg3) {
+	public void glGetProgramInterfaceiv(int arg0,int arg1,int arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengl.GL46.glGetProgramInterfaceiv(arg0,arg1,arg2,arg3);
 	}
 
@@ -6539,12 +6539,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
+	public void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,double[] arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix2x4dv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,double[] arg3) {
+	public void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix2x4dv(arg0,arg1,arg2,arg3);
 	}
 
@@ -6744,12 +6744,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
+	public void glProgramUniformMatrix3fv(int arg0,int arg1,boolean arg2,float[] arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix3fv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glProgramUniformMatrix3fv(int arg0,int arg1,boolean arg2,float[] arg3) {
+	public void glProgramUniformMatrix3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix3fv(arg0,arg1,arg2,arg3);
 	}
 
@@ -7044,13 +7044,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseInstance(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3,int arg4) {
-		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0,arg1,arg2,arg3,arg4);
+	public void glDrawElementsInstancedBaseInstance(int arg0,int arg1,int arg2,long arg3,int arg4,int arg5) {
+		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0,arg1,arg2,arg3,arg4,arg5);
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseInstance(int arg0,int arg1,int arg2,long arg3,int arg4,int arg5) {
-		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0,arg1,arg2,arg3,arg4,arg5);
+	public void glDrawElementsInstancedBaseInstance(int arg0,int arg1,java.nio.ByteBuffer arg2,int arg3,int arg4) {
+		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -7254,8 +7254,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGenProgramPipelines() {
-		return org.lwjgl.opengl.GL46.glGenProgramPipelines();
+	public void glGenProgramPipelines(int[] arg0) {
+		org.lwjgl.opengl.GL46.glGenProgramPipelines(arg0);
 	}
 
 	@Override
@@ -7264,8 +7264,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGenProgramPipelines(int[] arg0) {
-		org.lwjgl.opengl.GL46.glGenProgramPipelines(arg0);
+	public int glGenProgramPipelines() {
+		return org.lwjgl.opengl.GL46.glGenProgramPipelines();
 	}
 
 	@Override
@@ -7629,12 +7629,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengl.GL46.glShaderBinary(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengl.GL46.glShaderBinary(arg0,arg1,arg2);
 	}
 
@@ -7909,6 +7909,11 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
+	public void nglProgramUniformMatrix2x3fv(int arg0,int arg1,int arg2,boolean arg3,long arg4) {
+		org.lwjgl.opengl.GL46.nglProgramUniformMatrix2x3fv(arg0,arg1,arg2,arg3,arg4);
+	}
+
+	@Override
 	public void glNamedBufferStorage(int arg0,double[] arg1,int arg2) {
 		org.lwjgl.opengl.GL46.glNamedBufferStorage(arg0,arg1,arg2);
 	}
@@ -7956,11 +7961,6 @@ public class GL_W_GL46 implements GL_W_Call {
 	@Override
 	public void glNamedBufferStorage(int arg0,java.nio.IntBuffer arg1,int arg2) {
 		org.lwjgl.opengl.GL46.glNamedBufferStorage(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void nglProgramUniformMatrix2x3fv(int arg0,int arg1,int arg2,boolean arg3,long arg4) {
-		org.lwjgl.opengl.GL46.nglProgramUniformMatrix2x3fv(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -8274,12 +8274,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetDoublei_v(int arg0,int arg1,double[] arg2) {
+	public void glGetDoublei_v(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL46.glGetDoublei_v(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetDoublei_v(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
+	public void glGetDoublei_v(int arg0,int arg1,double[] arg2) {
 		org.lwjgl.opengl.GL46.glGetDoublei_v(arg0,arg1,arg2);
 	}
 
@@ -8414,12 +8414,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glPushDebugGroup(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glPushDebugGroup(int arg0,int arg1,java.lang.CharSequence arg2) {
 		org.lwjgl.opengl.GL46.glPushDebugGroup(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glPushDebugGroup(int arg0,int arg1,java.lang.CharSequence arg2) {
+	public void glPushDebugGroup(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengl.GL46.glPushDebugGroup(arg0,arg1,arg2);
 	}
 
@@ -8434,12 +8434,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform3uiv(int arg0,int arg1,int[] arg2) {
+	public void glProgramUniform3uiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform3uiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform3uiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glProgramUniform3uiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform3uiv(arg0,arg1,arg2);
 	}
 
@@ -8599,12 +8599,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform1iv(int arg0,int arg1,int[] arg2) {
+	public void glProgramUniform1iv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform1iv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform1iv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glProgramUniform1iv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform1iv(arg0,arg1,arg2);
 	}
 
@@ -8764,22 +8764,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.IntBuffer arg6) {
-		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
-	}
-
-	@Override
-	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.ByteBuffer arg6) {
-		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
-	}
-
-	@Override
-	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
-		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
-	}
-
-	@Override
-	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
+	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,short[] arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -8794,7 +8779,22 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,short[] arg6) {
+	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.FloatBuffer arg6) {
+		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	}
+
+	@Override
+	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.IntBuffer arg6) {
+		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	}
+
+	@Override
+	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.ShortBuffer arg6) {
+		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
+	}
+
+	@Override
+	public void glClearBufferSubData(int arg0,int arg1,long arg2,long arg3,int arg4,int arg5,java.nio.ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0,arg1,arg2,arg3,arg4,arg5,arg6);
 	}
 
@@ -9079,13 +9079,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReleaseShaderCompiler() {
-		org.lwjgl.opengl.GL46.glReleaseShaderCompiler();
+	public void glDrawTransformFeedbackInstanced(int arg0,int arg1,int arg2) {
+		org.lwjgl.opengl.GL46.glDrawTransformFeedbackInstanced(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glDrawTransformFeedbackInstanced(int arg0,int arg1,int arg2) {
-		org.lwjgl.opengl.GL46.glDrawTransformFeedbackInstanced(arg0,arg1,arg2);
+	public void glReleaseShaderCompiler() {
+		org.lwjgl.opengl.GL46.glReleaseShaderCompiler();
 	}
 
 	@Override
@@ -9539,13 +9539,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetNamedBufferParameteriv(int arg0,int arg1,int[] arg2) {
-		org.lwjgl.opengl.GL46.glGetNamedBufferParameteriv(arg0,arg1,arg2);
-	}
-
-	@Override
-	public void glGetNamedBufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
-		org.lwjgl.opengl.GL46.glGetNamedBufferParameteriv(arg0,arg1,arg2);
+	public void glGetInternalformati64v(int arg0,int arg1,int arg2,java.nio.LongBuffer arg3) {
+		org.lwjgl.opengl.GL46.glGetInternalformati64v(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -9554,8 +9549,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetInternalformati64v(int arg0,int arg1,int arg2,java.nio.LongBuffer arg3) {
-		org.lwjgl.opengl.GL46.glGetInternalformati64v(arg0,arg1,arg2,arg3);
+	public void glGetNamedBufferParameteriv(int arg0,int arg1,int[] arg2) {
+		org.lwjgl.opengl.GL46.glGetNamedBufferParameteriv(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetNamedBufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+		org.lwjgl.opengl.GL46.glGetNamedBufferParameteriv(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -10104,6 +10104,11 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
+	public void nglVertexAttribL3dv(int arg0,long arg1) {
+		org.lwjgl.opengl.GL46.nglVertexAttribL3dv(arg0,arg1);
+	}
+
+	@Override
 	public void glGetnPixelMapusv(int arg0,java.nio.ShortBuffer arg1) {
 		org.lwjgl.opengl.GL46.glGetnPixelMapusv(arg0,arg1);
 	}
@@ -10111,11 +10116,6 @@ public class GL_W_GL46 implements GL_W_Call {
 	@Override
 	public void glGetnPixelMapusv(int arg0,short[] arg1) {
 		org.lwjgl.opengl.GL46.glGetnPixelMapusv(arg0,arg1);
-	}
-
-	@Override
-	public void nglVertexAttribL3dv(int arg0,long arg1) {
-		org.lwjgl.opengl.GL46.nglVertexAttribL3dv(arg0,arg1);
 	}
 
 	@Override
@@ -10624,12 +10624,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glViewportArrayv(int arg0,float[] arg1) {
+	public void glViewportArrayv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL46.glViewportArrayv(arg0,arg1);
 	}
 
 	@Override
-	public void glViewportArrayv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glViewportArrayv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL46.glViewportArrayv(arg0,arg1);
 	}
 
@@ -10644,12 +10644,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,float[] arg3) {
+	public void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix2x3fv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
+	public void glProgramUniformMatrix2x3fv(int arg0,int arg1,boolean arg2,float[] arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix2x3fv(arg0,arg1,arg2,arg3);
 	}
 
@@ -10714,12 +10714,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public int glCreateShaderProgramv(int arg0,org.lwjgl.PointerBuffer arg1) {
+	public int glCreateShaderProgramv(int arg0,java.lang.CharSequence... arg1) {
 		return org.lwjgl.opengl.GL46.glCreateShaderProgramv(arg0,arg1);
 	}
 
 	@Override
-	public int glCreateShaderProgramv(int arg0,java.lang.CharSequence... arg1) {
+	public int glCreateShaderProgramv(int arg0,org.lwjgl.PointerBuffer arg1) {
 		return org.lwjgl.opengl.GL46.glCreateShaderProgramv(arg0,arg1);
 	}
 
@@ -10789,12 +10789,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,float[] arg3) {
+	public void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix4fv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
+	public void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,float[] arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix4fv(arg0,arg1,arg2,arg3);
 	}
 
@@ -10919,12 +10919,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
+	public void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,double[] arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix4dv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,double[] arg3) {
+	public void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix4dv(arg0,arg1,arg2,arg3);
 	}
 
@@ -10944,12 +10944,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix2x3dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
+	public void glProgramUniformMatrix2x3dv(int arg0,int arg1,boolean arg2,double[] arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix2x3dv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glProgramUniformMatrix2x3dv(int arg0,int arg1,boolean arg2,double[] arg3) {
+	public void glProgramUniformMatrix2x3dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix2x3dv(arg0,arg1,arg2,arg3);
 	}
 
@@ -11119,13 +11119,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public boolean glUnmapNamedBuffer(int arg0) {
-		return org.lwjgl.opengl.GL46.glUnmapNamedBuffer(arg0);
+	public void glProgramUniform1d(int arg0,int arg1,double arg2) {
+		org.lwjgl.opengl.GL46.glProgramUniform1d(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform1d(int arg0,int arg1,double arg2) {
-		org.lwjgl.opengl.GL46.glProgramUniform1d(arg0,arg1,arg2);
+	public boolean glUnmapNamedBuffer(int arg0) {
+		return org.lwjgl.opengl.GL46.glUnmapNamedBuffer(arg0);
 	}
 
 	@Override
@@ -11274,12 +11274,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glViewportIndexedfv(int arg0,float[] arg1) {
+	public void glViewportIndexedfv(int arg0,java.nio.FloatBuffer arg1) {
 		org.lwjgl.opengl.GL46.glViewportIndexedfv(arg0,arg1);
 	}
 
 	@Override
-	public void glViewportIndexedfv(int arg0,java.nio.FloatBuffer arg1) {
+	public void glViewportIndexedfv(int arg0,float[] arg1) {
 		org.lwjgl.opengl.GL46.glViewportIndexedfv(arg0,arg1);
 	}
 
@@ -11424,12 +11424,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform1fv(int arg0,int arg1,float[] arg2) {
+	public void glProgramUniform1fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform1fv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform1fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public void glProgramUniform1fv(int arg0,int arg1,float[] arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform1fv(arg0,arg1,arg2);
 	}
 
@@ -11579,12 +11579,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetProgramResourceLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public int glGetProgramResourceLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
 		return org.lwjgl.opengl.GL46.glGetProgramResourceLocation(arg0,arg1,arg2);
 	}
 
 	@Override
-	public int glGetProgramResourceLocation(int arg0,int arg1,java.lang.CharSequence arg2) {
+	public int glGetProgramResourceLocation(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		return org.lwjgl.opengl.GL46.glGetProgramResourceLocation(arg0,arg1,arg2);
 	}
 
@@ -11614,12 +11614,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform1dv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
+	public void glProgramUniform1dv(int arg0,int arg1,double[] arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform1dv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform1dv(int arg0,int arg1,double[] arg2) {
+	public void glProgramUniform1dv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform1dv(arg0,arg1,arg2);
 	}
 
@@ -11634,12 +11634,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetFramebufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetFramebufferParameteriv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL46.glGetFramebufferParameteriv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetFramebufferParameteriv(int arg0,int arg1,int[] arg2) {
+	public void glGetFramebufferParameteriv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL46.glGetFramebufferParameteriv(arg0,arg1,arg2);
 	}
 
@@ -11714,12 +11714,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glObjectPtrLabel(long arg0,java.nio.ByteBuffer arg1) {
+	public void glObjectPtrLabel(long arg0,java.lang.CharSequence arg1) {
 		org.lwjgl.opengl.GL46.glObjectPtrLabel(arg0,arg1);
 	}
 
 	@Override
-	public void glObjectPtrLabel(long arg0,java.lang.CharSequence arg1) {
+	public void glObjectPtrLabel(long arg0,java.nio.ByteBuffer arg1) {
 		org.lwjgl.opengl.GL46.glObjectPtrLabel(arg0,arg1);
 	}
 
@@ -12554,16 +12554,6 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetnConvolutionFilter(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3) {
-		org.lwjgl.opengl.GL46.glGetnConvolutionFilter(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
-	public void glGetnConvolutionFilter(int arg0,int arg1,int arg2,int arg3,long arg4) {
-		org.lwjgl.opengl.GL46.glGetnConvolutionFilter(arg0,arg1,arg2,arg3,arg4);
-	}
-
-	@Override
 	public void glScissorIndexedv(int arg0,int[] arg1) {
 		org.lwjgl.opengl.GL46.glScissorIndexedv(arg0,arg1);
 	}
@@ -12571,6 +12561,16 @@ public class GL_W_GL46 implements GL_W_Call {
 	@Override
 	public void glScissorIndexedv(int arg0,java.nio.IntBuffer arg1) {
 		org.lwjgl.opengl.GL46.glScissorIndexedv(arg0,arg1);
+	}
+
+	@Override
+	public void glGetnConvolutionFilter(int arg0,int arg1,int arg2,java.nio.ByteBuffer arg3) {
+		org.lwjgl.opengl.GL46.glGetnConvolutionFilter(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public void glGetnConvolutionFilter(int arg0,int arg1,int arg2,int arg3,long arg4) {
+		org.lwjgl.opengl.GL46.glGetnConvolutionFilter(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -12644,11 +12644,6 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetObjectLabel(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
-		org.lwjgl.opengl.GL46.glGetObjectLabel(arg0,arg1,arg2,arg3);
-	}
-
-	@Override
 	public void glGetObjectLabel(int arg0,int arg1,int[] arg2,java.nio.ByteBuffer arg3) {
 		org.lwjgl.opengl.GL46.glGetObjectLabel(arg0,arg1,arg2,arg3);
 	}
@@ -12661,6 +12656,11 @@ public class GL_W_GL46 implements GL_W_Call {
 	@Override
 	public java.lang.String glGetObjectLabel_String(int arg0,int arg1,int arg2) {
 		return org.lwjgl.opengl.GL46.glGetObjectLabel(arg0,arg1,arg2);
+	}
+
+	@Override
+	public void glGetObjectLabel(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
+		org.lwjgl.opengl.GL46.glGetObjectLabel(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -13034,12 +13034,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
+	public void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,double[] arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix4x2dv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,double[] arg3) {
+	public void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL46.glProgramUniformMatrix4x2dv(arg0,arg1,arg2,arg3);
 	}
 
@@ -13051,11 +13051,6 @@ public class GL_W_GL46 implements GL_W_Call {
 	@Override
 	public void nglVertex2fv(long arg0) {
 		org.lwjgl.opengl.GL46.nglVertex2fv(arg0);
-	}
-
-	@Override
-	public void glMultiDrawArraysIndirect(int arg0,int[] arg1,int arg2,int arg3) {
-		org.lwjgl.opengl.GL46.glMultiDrawArraysIndirect(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -13074,8 +13069,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribLPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
-		org.lwjgl.opengl.GL46.glVertexAttribLPointer(arg0,arg1,arg2,arg3,arg4);
+	public void glMultiDrawArraysIndirect(int arg0,int[] arg1,int arg2,int arg3) {
+		org.lwjgl.opengl.GL46.glMultiDrawArraysIndirect(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -13086,6 +13081,11 @@ public class GL_W_GL46 implements GL_W_Call {
 	@Override
 	public void glVertexAttribLPointer(int arg0,int arg1,int arg2,java.nio.DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL46.glVertexAttribLPointer(arg0,arg1,arg2,arg3);
+	}
+
+	@Override
+	public void glVertexAttribLPointer(int arg0,int arg1,int arg2,int arg3,java.nio.ByteBuffer arg4) {
+		org.lwjgl.opengl.GL46.glVertexAttribLPointer(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
@@ -13589,18 +13589,18 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureStorage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5) {
-		org.lwjgl.opengl.GL46.glTextureStorage3D(arg0,arg1,arg2,arg3,arg4,arg5);
-	}
-
-	@Override
 	public void glInvalidateBufferData(int arg0) {
 		org.lwjgl.opengl.GL46.glInvalidateBufferData(arg0);
 	}
 
 	@Override
-	public void glTransformFeedbackBufferBase(int arg0,int arg1,int arg2) {
-		org.lwjgl.opengl.GL46.glTransformFeedbackBufferBase(arg0,arg1,arg2);
+	public void glTextureStorage3D(int arg0,int arg1,int arg2,int arg3,int arg4,int arg5) {
+		org.lwjgl.opengl.GL46.glTextureStorage3D(arg0,arg1,arg2,arg3,arg4,arg5);
+	}
+
+	@Override
+	public void glProgramUniformMatrix4x2fv(int arg0,int arg1,boolean arg2,float[] arg3) {
+		org.lwjgl.opengl.GL46.glProgramUniformMatrix4x2fv(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -13609,8 +13609,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniformMatrix4x2fv(int arg0,int arg1,boolean arg2,float[] arg3) {
-		org.lwjgl.opengl.GL46.glProgramUniformMatrix4x2fv(arg0,arg1,arg2,arg3);
+	public void glTransformFeedbackBufferBase(int arg0,int arg1,int arg2) {
+		org.lwjgl.opengl.GL46.glTransformFeedbackBufferBase(arg0,arg1,arg2);
 	}
 
 	@Override
@@ -13744,12 +13744,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDepthRangeArrayv(int arg0,java.nio.DoubleBuffer arg1) {
+	public void glDepthRangeArrayv(int arg0,double[] arg1) {
 		org.lwjgl.opengl.GL46.glDepthRangeArrayv(arg0,arg1);
 	}
 
 	@Override
-	public void glDepthRangeArrayv(int arg0,double[] arg1) {
+	public void glDepthRangeArrayv(int arg0,java.nio.DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL46.glDepthRangeArrayv(arg0,arg1);
 	}
 
@@ -13824,12 +13824,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform4dv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
+	public void glProgramUniform4dv(int arg0,int arg1,double[] arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform4dv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glProgramUniform4dv(int arg0,int arg1,double[] arg2) {
+	public void glProgramUniform4dv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL46.glProgramUniform4dv(arg0,arg1,arg2);
 	}
 
@@ -14149,13 +14149,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglBindBuffersBase(int arg0,int arg1,int arg2,long arg3) {
-		org.lwjgl.opengl.GL46.nglBindBuffersBase(arg0,arg1,arg2,arg3);
+	public void glDepthRangeIndexed(int arg0,double arg1,double arg2) {
+		org.lwjgl.opengl.GL46.glDepthRangeIndexed(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glDepthRangeIndexed(int arg0,double arg1,double arg2) {
-		org.lwjgl.opengl.GL46.glDepthRangeIndexed(arg0,arg1,arg2);
+	public void nglBindBuffersBase(int arg0,int arg1,int arg2,long arg3) {
+		org.lwjgl.opengl.GL46.nglBindBuffersBase(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
@@ -14299,12 +14299,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0,java.nio.ShortBuffer arg1,int arg2,int arg3,int arg4) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3,int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0,arg1,arg2,arg3,arg4);
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0,java.nio.IntBuffer arg1,int arg2,int arg3,int arg4) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0,java.nio.ShortBuffer arg1,int arg2,int arg3,int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0,arg1,arg2,arg3,arg4);
 	}
 
@@ -14399,12 +14399,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetProgramResourceLocationIndex(int arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public int glGetProgramResourceLocationIndex(int arg0,int arg1,java.lang.CharSequence arg2) {
 		return org.lwjgl.opengl.GL46.glGetProgramResourceLocationIndex(arg0,arg1,arg2);
 	}
 
 	@Override
-	public int glGetProgramResourceLocationIndex(int arg0,int arg1,java.lang.CharSequence arg2) {
+	public int glGetProgramResourceLocationIndex(int arg0,int arg1,java.nio.ByteBuffer arg2) {
 		return org.lwjgl.opengl.GL46.glGetProgramResourceLocationIndex(arg0,arg1,arg2);
 	}
 
@@ -14539,12 +14539,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramPipelineiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public void glGetProgramPipelineiv(int arg0,int arg1,int[] arg2) {
 		org.lwjgl.opengl.GL46.glGetProgramPipelineiv(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glGetProgramPipelineiv(int arg0,int arg1,int[] arg2) {
+	public void glGetProgramPipelineiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		org.lwjgl.opengl.GL46.glGetProgramPipelineiv(arg0,arg1,arg2);
 	}
 

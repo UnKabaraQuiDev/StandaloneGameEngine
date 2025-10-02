@@ -1,5 +1,6 @@
 package lu.kbra.standalone.gameengine.graph;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -16,7 +17,8 @@ public class MaterialFactory {
 
 	public static MaterialFactory INSTANCE;
 
-	public static final Map<Class<? extends Material>, Class<? extends RenderShader>> MATERIAL_2_SHADERS = new HashMap<>();
+	private static final Map<Class<? extends Material>, Class<? extends RenderShader>> MATERIAL_2_SHADERS = new HashMap<>();
+	private static final Map<Class<? extends Material>, Constructor<? extends Material>> SHADERS_CONSTRUCTORS = new HashMap<>();
 
 	private CacheManager cache;
 
@@ -24,21 +26,22 @@ public class MaterialFactory {
 		this.cache = cache;
 	}
 
-	public <T extends Material> T newMaterial(Class<T> clazz, Object... args) {
-		MATERIAL_2_SHADERS.computeIfAbsent(clazz, k -> {
+	public <T extends Material> T newMaterial_(Class<T> materialClazz, Object... args) {
+		MATERIAL_2_SHADERS.computeIfAbsent(materialClazz, k -> {
 			if (!k.isAnnotationPresent(AssociatedShader.class)) {
-				throw new IllegalStateException("Class: " + k + " doesn't have @" + AssociatedShader.class.getSimpleName() + ".");
+				throw new IllegalStateException(
+						"Class: " + k + " doesn't have @" + AssociatedShader.class.getSimpleName() + ".");
 			}
 			return k.getAnnotation(AssociatedShader.class).value();
 		});
 
-		final Class<? extends RenderShader> shaderClazz = MATERIAL_2_SHADERS.get(clazz);
+		final Class<? extends RenderShader> shaderClazz = MATERIAL_2_SHADERS.get(materialClazz);
 
 		if (!cache.hasRenderShader(shaderClazz.getName())) {
 			try {
 				cache.addRenderShader(shaderClazz.getConstructor().newInstance());
-			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-					| NoSuchMethodException | SecurityException e) {
+			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException
+					| InvocationTargetException | NoSuchMethodException | SecurityException e) {
 				throw new RuntimeException("Exception while creating render shader.", e);
 			}
 		}
@@ -46,14 +49,23 @@ public class MaterialFactory {
 		final RenderShader shader = cache.getRenderShader(shaderClazz.getName());
 
 		try {
-			return (T) clazz
-					.getConstructor(PCUtils.combineArrays(new Class<?>[]
-					{ shaderClazz }, Arrays.stream(args).map(Object::getClass).toArray(Class<?>[]::new)))
-					.newInstance(shader);
+			if (!SHADERS_CONSTRUCTORS.containsKey(materialClazz)) {
+				final Constructor<T> constructor = PCUtils.findCompatibleConstructor(materialClazz,
+						PCUtils.combineArrays(new Class<?>[] { shaderClazz },
+								Arrays.stream(args).map(Object::getClass).toArray(Class<?>[]::new)));
+				SHADERS_CONSTRUCTORS.put(materialClazz, constructor);
+			}
+			final Constructor<T> constructor = (Constructor<T>) SHADERS_CONSTRUCTORS.get(materialClazz);
+
+			return constructor.newInstance(PCUtils.combineArrays(new Object[] { shader }, args));
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 				| NoSuchMethodException | SecurityException e) {
 			throw new RuntimeException("Exception while creating material.", e);
 		}
+	}
+
+	public static <T extends Material> T newMaterial(Class<T> clazz, Object... args) {
+		return INSTANCE.newMaterial_(clazz, args);
 	}
 
 }

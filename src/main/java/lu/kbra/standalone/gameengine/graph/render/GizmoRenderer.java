@@ -62,7 +62,8 @@ public class GizmoRenderer extends Renderer<Scene, GizmoComponent> {
 
 		if (material.hasProperty(RenderShader.TRANSFORMATION_MATRIX)) {
 			if (e.hasComponentMatching(TransformComponent.class)) {
-				TransformComponent transform = (TransformComponent) e.getComponent(e.getComponentTypesMatching(TransformComponent.class).get(0));
+				TransformComponent transform = (TransformComponent) e
+						.getComponent(e.getComponentTypesMatching(TransformComponent.class).get(0));
 				if (transform != null) {
 					transformationMatrix = transform.getTransform().getMatrix();
 				}
@@ -70,12 +71,13 @@ public class GizmoRenderer extends Renderer<Scene, GizmoComponent> {
 			material.setProperty(RenderShader.TRANSFORMATION_MATRIX, transformationMatrix);
 		}
 
-		material.bindProperties(cache, scene, shader);
+		material.bindProperties(cache, scene);
 
 		if (GameEngine.DEBUG.ignoreDepth)
 			GL_W.glDisable(GL_W.GL_DEPTH_TEST);
 
-		// GL_W.glPolygonMode(shader.getFaceMode().getGlId(), shader.getRenderType().getGlId());
+		// GL_W.glPolygonMode(shader.getFaceMode().getGlId(),
+		// shader.getRenderType().getGlId());
 		GL_W.glLineWidth(Gizmo.LINE_WIDTH);
 
 		GL_W.glDrawElements(shader.getBeginMode().getGlId(), gizmo.getIndicesCount(), GL_W.GL_UNSIGNED_INT, 0);

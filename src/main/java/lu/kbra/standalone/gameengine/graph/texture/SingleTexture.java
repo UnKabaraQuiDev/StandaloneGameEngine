@@ -58,7 +58,7 @@ public class SingleTexture extends Texture {
 	public SingleTexture(String name, String path) {
 		super(name, path, TextureOperation.FILE_BUFFER_LOAD);
 	}
-	
+
 	/**
 	 * FILE BUFFER LOAD
 	 */
@@ -80,7 +80,7 @@ public class SingleTexture extends Texture {
 	@Override
 	public boolean setup() {
 		if (isValid()) {
-			throw new RuntimeException("Cannot setup already loaded Single Texture");
+			throw new RuntimeException("Cannot setup already loaded Single Texture.");
 		}
 
 		checkConfigErrors();
@@ -171,6 +171,19 @@ public class SingleTexture extends Texture {
 		gen();
 		bind();
 
+		resize();
+		applyFilter();
+		applyWrap();
+
+		if (generateMipmaps) {
+			GL_W.glGenerateMipmap(txtType.getGlId());
+			GL_W.checkError("GenerateMipmap[" + txtType + "]");
+		}
+
+		unbind();
+	}
+
+	public void resize() {
 		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
 			GL_W
 					.glTexImage2D(txtType.getGlId(),
@@ -196,15 +209,6 @@ public class SingleTexture extends Texture {
 							MemoryUtil.NULL);
 		}
 		GL_W.checkError("TexImage_" + txtType);
-		applyFilter();
-		applyWrap();
-
-		if (generateMipmaps) {
-			GL_W.glGenerateMipmap(txtType.getGlId());
-			GL_W.checkError("GenerateMipmap[" + txtType + "]");
-		}
-
-		unbind();
 	}
 
 	public MemImage getStoredImage() {

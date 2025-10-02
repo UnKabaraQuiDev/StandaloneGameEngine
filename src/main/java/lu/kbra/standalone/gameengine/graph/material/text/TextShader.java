@@ -74,13 +74,13 @@ public class TextShader extends RenderShader {
 		}
 
 		@Override
-		public void bindProperties(CacheManager cache, Renderable scene, RenderShader shader) {
+		public void bindProperties(CacheManager cache, Renderable scene) {
 			setProperty(THICKNESS, thickness);
 			setProperty(FG_COLOR, fgColor);
 			setProperty(BG_COLOR, bgColor);
 			setProperty(TRANSPARENT, transparent);
 
-			super.bindProperties(cache, scene, shader);
+			super.bindProperties(cache, scene);
 		}
 
 		public float getThickness() {

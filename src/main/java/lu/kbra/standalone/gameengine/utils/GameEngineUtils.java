@@ -203,33 +203,32 @@ public final class GameEngineUtils {
 	}
 
 	public static boolean checkGlError(String msg) {
-		int status = GL_W.glGetError();
+		final int status = GL_W.glGetError();
 
 		if (status == GL_W.GL_NO_ERROR)
 			return true;
 
-		final String caller = PCUtils.getCallerClassName(false);
-
+		GL_W.glGetError(); // to clear
+		
 		switch (status) {
 		case GL40.GL_INVALID_OPERATION:
-			throw new GLInvalidOperationException(caller, status, msg);
+			throw new GLInvalidOperationException(status, msg);
 		case GL40.GL_INVALID_INDEX:
-			throw new GLInvalidIndexException(caller, status, msg);
+			throw new GLInvalidIndexException(status, msg);
 		case GL40.GL_INVALID_ENUM:
-			throw new GLInvalidEnumException(caller, status, msg);
+			throw new GLInvalidEnumException(status, msg);
 		case GL40.GL_INVALID_VALUE:
-			throw new GLInvalidValueException(caller, status, msg);
+			throw new GLInvalidValueException(status, msg);
 		case GL40.GL_INVALID_FRAMEBUFFER_OPERATION:
-			throw new GLInvalidFrameBufferOperationException(caller, status, msg);
+			throw new GLInvalidFrameBufferOperationException(status, msg);
 		case GL40.GL_STACK_OVERFLOW:
-			throw new GLStackOverflowException(caller, status, msg);
+			throw new GLStackOverflowException(status, msg);
 		case GL40.GL_STACK_UNDERFLOW:
-			throw new GLStackUnderflowException(caller, status, msg);
+			throw new GLStackUnderflowException(status, msg);
 		case GL40.GL_OUT_OF_MEMORY:
-			throw new GLOutOfMemoryException(caller, status, msg);
+			throw new GLOutOfMemoryException(status, msg);
 		case GL45.GL_CONTEXT_LOST:
-			throw new GLContextLost(caller, status, msg);
-		// case GL45.GL_TABLE_TOO_LARGE:
+			throw new GLContextLost(status, msg);
 		default:
 			return true;
 		}

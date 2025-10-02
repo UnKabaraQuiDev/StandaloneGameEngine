@@ -1,11 +1,13 @@
 package lu.kbra.standalone.gameengine.graph.composition.buffer;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.graph.texture.SingleTexture;
+import lu.kbra.standalone.gameengine.graph.texture.Texture;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
@@ -24,8 +26,6 @@ public class Framebuffer implements UniqueID, Cleanupable {
 
 	public Framebuffer(String name) {
 		this.name = name;
-
-		fbo = GL_W.glGenFramebuffers();
 	}
 
 	public boolean attachTexture(FrameBufferAttachment attach, int offset, SingleTexture texture) {
@@ -71,6 +71,25 @@ public class Framebuffer implements UniqueID, Cleanupable {
 
 	public int getError() {
 		return GL_W.glCheckFramebufferStatus(GL_W.GL_FRAMEBUFFER);
+	}
+
+	public int gen() {
+		return fbo = GL_W.glGenFramebuffers();
+	}
+
+	public void setup() {
+		final int[] bfs = attachments
+				.entrySet()
+				.stream()
+				.filter(e -> e.getValue() instanceof Texture)
+				.sorted((a, b) -> a.getKey() - b.getKey())
+				.mapToInt(a -> a.getKey())
+				.toArray();
+		GL_W.glDrawBuffers(bfs);
+		GL_W.checkError("DrawBuffers(" + Arrays.toString(bfs) + ")");
+		if (!isComplete()) {
+			throw new IllegalStateException("Couldn't setup framebuffer: " + name + " (" + fbo + ").");
+		}
 	}
 
 	public void bind() {

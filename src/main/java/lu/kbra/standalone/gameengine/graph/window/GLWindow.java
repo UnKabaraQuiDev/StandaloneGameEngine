@@ -7,12 +7,17 @@ import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GLCapabilities;
+import org.lwjgl.opengl.GLDebugMessageCallback;
+import org.lwjgl.opengl.GLDebugMessageCallbackI;
 import org.lwjgl.system.MemoryUtil;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
+import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.utils.consts.GLType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL43;
+import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES32;
 
 public class GLWindow extends Window {
 
@@ -38,9 +43,24 @@ public class GLWindow extends Window {
 			throw new RuntimeException("Failed to create GLFW Window");
 
 		takeGLContext();
-		if ((this.capabilities = GL.createCapabilities()) == null)
+		if ((this.capabilities = GL.createCapabilities()) == null) {
 			throw new RuntimeException("Failed to create OpenGL context");
-		
+		}
+
+		// TODO: add option to disable debug output
+		if (GL_W.WRAPPER instanceof GL_W_GL43 || capabilities.GL_KHR_debug) {
+			GL_W.glEnable(GL_W.GL_DEBUG_OUTPUT);
+			GL_W.glEnable(GL_W.GL_DEBUG_OUTPUT_SYNCHRONOUS);
+
+			// Register callback
+			GL_W.glDebugMessageCallback((GLDebugMessageCallbackI) (source, type, id, severity, length, message, userParam) -> {
+				final String msg = GLDebugMessageCallback.getMessage(length, message);
+				GlobalLogger
+						.severe("GL DEBUG: " + msg + " (source=" + source + ", type=" + type + ", id=" + id + ", severity=" + severity
+								+ ")");
+			}, 0);
+		}
+
 		try {
 			GlobalLogger.log("OpenGL Capabilities:");
 			for (Field f : GLCapabilities.class.getFields()) {
@@ -82,21 +102,21 @@ public class GLWindow extends Window {
 	@Override
 	public void cleanup() {
 		GlobalLogger.log("Cleaning up: " + getClass().getName() + " (" + handle + ")");
-		
+
 		if (GL.getCapabilities() != null) {
 			GL.setCapabilities(null);
 		}
 	}
-	
+
 	public void cleanupGLFW() {
 		GlobalLogger.log("Cleaning up: " + getClass().getName() + " (" + handle + ")");
-		
+
 		if (handle != -1) {
 			Callbacks.glfwFreeCallbacks(handle);
-			
+
 			errorCallback.free();
 			joystickCallback.free();
-			
+
 			GLFW.glfwDestroyWindow(handle);
 			GLFW.glfwTerminate();
 			handle = -1;

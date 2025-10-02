@@ -26,8 +26,8 @@ public class TextureMaterial extends Material {
 	}
 
 	@Override
-	public void bindProperties(CacheManager cache, Renderable scene, RenderShader shader) {
-		super.bindProperties(cache, scene, shader);
+	public void bindProperties(CacheManager cache, Renderable scene) {
+		super.bindProperties(cache, scene);
 
 		int i = 0;
 		for (Entry<String, Texture> txt : textures.entrySet()) {

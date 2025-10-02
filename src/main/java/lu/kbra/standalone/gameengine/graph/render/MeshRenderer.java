@@ -36,9 +36,8 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 			return;
 		}
 
-		GlobalLogger
-				.log(Level.FINE,
-						"Mesh : " + mesh.getId() + ", vao:" + mesh.getVao() + ", vec:" + mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
+		GlobalLogger.log(Level.FINE, "Mesh : " + mesh.getId() + ", vao:" + mesh.getVao() + ", vec:"
+				+ mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
 
 		mesh.bind();
 
@@ -69,7 +68,8 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 
 		if (material.hasProperty(RenderShader.TRANSFORMATION_MATRIX)) {
 			if (e.hasComponentMatching(TransformComponent.class)) {
-				TransformComponent transform = (TransformComponent) e.getComponent(e.getComponentTypesMatching(TransformComponent.class).get(0));
+				TransformComponent transform = (TransformComponent) e
+						.getComponent(e.getComponentTypesMatching(TransformComponent.class).get(0));
 				if (transform != null) {
 					transformationMatrix = transform.getTransform().getMatrix();
 				}
@@ -77,7 +77,7 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 			}
 		}
 
-		material.bindProperties(cache, scene, shader);
+		material.bindProperties(cache, scene);
 
 		if (shader.isTransparent()) {
 			GL_W.glBlendFunc(GL_W.GL_SRC_ALPHA, GL_W.GL_ONE_MINUS_SRC_ALPHA);
