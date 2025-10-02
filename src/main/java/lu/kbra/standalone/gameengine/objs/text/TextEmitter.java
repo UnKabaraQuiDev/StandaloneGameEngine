@@ -15,7 +15,7 @@ import lu.kbra.standalone.gameengine.graph.material.text.TextShader;
 import lu.kbra.standalone.gameengine.graph.material.text.TextShader.TextMaterial;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.utils.consts.Alignment;
+import lu.kbra.standalone.gameengine.utils.gl.consts.Alignment;
 import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 
 public class TextEmitter implements Cleanupable, UniqueID {

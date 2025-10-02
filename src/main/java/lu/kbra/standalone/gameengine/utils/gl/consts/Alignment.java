@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.utils.consts;
+package lu.kbra.standalone.gameengine.utils.gl.consts;
 
 public enum Alignment {
 

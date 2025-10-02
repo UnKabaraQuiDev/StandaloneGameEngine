@@ -3,7 +3,6 @@ package lu.kbra.standalone.gameengine.impl.future;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.PriorityBlockingQueue;
-import java.util.concurrent.atomic.AtomicInteger;
 
 class WorkerDispatcher {
 

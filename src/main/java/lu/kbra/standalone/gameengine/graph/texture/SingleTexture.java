@@ -10,8 +10,8 @@ import org.joml.Vector2i;
 import org.lwjgl.system.MemoryUtil;
 
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.kbra.standalone.gameengine.utils.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.file.FileUtils;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImageOrigin;
@@ -130,7 +130,7 @@ public class SingleTexture extends Texture {
 		bind();
 
 		GL_W.glPixelStorei(GL_W.GL_UNPACK_ALIGNMENT, 1);
-		GL_W.checkError("PixelStoreI.UnpackAlignment=1");
+		assert GL_W.checkError("PixelStoreI.UnpackAlignment=1");
 		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
 			GL_W
 					.glTexImage2D(txtType.getGlId(),
@@ -155,7 +155,7 @@ public class SingleTexture extends Texture {
 							dataType.getGlId(),
 							buffer.getBuffer());
 		}
-		GL_W.checkError("TexImage_" + txtType);
+		assert GL_W.checkError("TexImage_" + txtType);
 		applyFilter();
 		applyWrap();
 
@@ -177,7 +177,7 @@ public class SingleTexture extends Texture {
 
 		if (generateMipmaps) {
 			GL_W.glGenerateMipmap(txtType.getGlId());
-			GL_W.checkError("GenerateMipmap[" + txtType + "]");
+			assert GL_W.checkError("GenerateMipmap[" + txtType + "]");
 		}
 
 		unbind();
@@ -208,7 +208,7 @@ public class SingleTexture extends Texture {
 							dataType.getGlId(),
 							MemoryUtil.NULL);
 		}
-		GL_W.checkError("TexImage_" + txtType);
+		assert GL_W.checkError("TexImage_" + txtType);
 	}
 
 	public MemImage getStoredImage() {
@@ -220,7 +220,7 @@ public class SingleTexture extends Texture {
 		// GL_W.glBindBuffer(GL_W.GL_PIXEL_PACK_BUFFER, 0);
 		// GL_W.glBindFramebuffer(GL_W.GL_READ_FRAMEBUFFER_BINDING, 0);
 		GL_W.glReadPixels(0, 0, width, height, format.getGlId(), dataType.getGlId(), buffer);
-		GL_W.checkError("glReadPixels(0, 0, " + width + ", " + height + ", " + internalFormat + ", " + dataType + ")");
+		assert GL_W.checkError("glReadPixels(0, 0, " + width + ", " + height + ", " + internalFormat + ", " + dataType + ")");
 
 		unbind();
 

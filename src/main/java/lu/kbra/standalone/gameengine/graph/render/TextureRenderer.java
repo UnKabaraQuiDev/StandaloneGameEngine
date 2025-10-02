@@ -12,10 +12,10 @@ import lu.kbra.standalone.gameengine.graph.texture.SingleTexture;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.utils.consts.DataType;
-import lu.kbra.standalone.gameengine.utils.consts.FrameBufferAttachment;
-import lu.kbra.standalone.gameengine.utils.consts.TexelFormat;
-import lu.kbra.standalone.gameengine.utils.consts.TexelInternalFormat;
+import lu.kbra.standalone.gameengine.utils.gl.consts.DataType;
+import lu.kbra.standalone.gameengine.utils.gl.consts.FrameBufferAttachment;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TexelFormat;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TexelInternalFormat;
 
 public class TextureRenderer implements Cleanupable, UniqueID {
 

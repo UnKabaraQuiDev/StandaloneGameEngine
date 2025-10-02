@@ -6,7 +6,6 @@ import org.joml.Matrix4f;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
-import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
@@ -102,20 +101,16 @@ public class TextEmitterRenderer extends Renderer<Scene, TextEmitterComponent> {
 
 		pe.bind();
 
-		GL_W.glDrawElementsInstanced(shader.getBeginMode().getGlId(), mesh.getIndicesCount(), GL_W.GL_UNSIGNED_INT, 0,
-				pe.getParticleCount());
+		GL_W
+				.glDrawElementsInstanced(shader.getBeginMode().getGlId(),
+						mesh.getIndicesCount(),
+						GL_W.GL_UNSIGNED_INT,
+						0,
+						pe.getParticleCount());
 
 		GL_W.glDisable(GL_W.GL_BLEND);
 
-		// debug only
-		// GameEngine.DEBUG.wireframe(cache, scene, mesh, projectionMatrix, viewMatrix,
-		// c.getTransform().getMatrix());
-
 		mesh.unbind();
-
-		GameEngine.DEBUG.gizmos(cache, scene, projectionMatrix, viewMatrix, transformationMatrix);
-		GameEngine.DEBUG.boundingRect(cache, scene, projectionMatrix, viewMatrix, transformationMatrix,
-				te.getBoxSize());
 	}
 
 }

@@ -5,13 +5,13 @@ import lu.pcy113.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.utils.consts.DataType;
-import lu.kbra.standalone.gameengine.utils.consts.TexelFormat;
-import lu.kbra.standalone.gameengine.utils.consts.TexelInternalFormat;
-import lu.kbra.standalone.gameengine.utils.consts.TextureFilter;
-import lu.kbra.standalone.gameengine.utils.consts.TextureParameter;
-import lu.kbra.standalone.gameengine.utils.consts.TextureType;
-import lu.kbra.standalone.gameengine.utils.consts.TextureWrap;
+import lu.kbra.standalone.gameengine.utils.gl.consts.DataType;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TexelFormat;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TexelInternalFormat;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TextureFilter;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TextureParameter;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TextureWrap;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttachment {
@@ -44,7 +44,7 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 	protected int gen() {
 		this.tid = GL_W.glGenTextures();
-		GL_W.checkError("GenTextures");
+		assert GL_W.checkError("GenTextures");
 		return tid;
 	}
 
@@ -52,7 +52,7 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 		if (i > 31)
 			return;
 		GL_W.glActiveTexture(GL_W.GL_TEXTURE0 + i);
-		GL_W.checkError("ActiveTexture[" + (GL_W.GL_TEXTURE0 + i) + "]");
+		assert GL_W.checkError("ActiveTexture[" + (GL_W.GL_TEXTURE0 + i) + "] (" + tid + ") (" + name + ")");
 	}
 
 	public void bind(int i) {
@@ -64,7 +64,7 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 		if (tid == -1)
 			return;
 		GL_W.glBindTexture(txtType.getGlId(), tid);
-		GL_W.checkError("BindTexture[" + txtType + "]=" + tid);
+		assert GL_W.checkError("BindTexture[" + txtType + "]=" + tid);
 	}
 
 	public void unbind(int i) {
@@ -74,28 +74,28 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 	public void unbind() {
 		GL_W.glBindTexture(txtType.getGlId(), 0);
-		GL_W.checkError("BindTexture[" + txtType + "]=0");
+		assert GL_W.checkError("BindTexture[" + txtType + "]=0");
 	}
 
 	public void genMipMaps() {
 		GL_W.glGenerateMipmap(txtType.getGlId());
-		GL_W.checkError("GenerateMipmap[" + txtType + "]");
+		assert GL_W.checkError("GenerateMipmap[" + txtType + "]");
 	}
 
 	public void applyFilter() {
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.MIN_FILTER.getGlId(), minFilter.getGlId());
-		GL_W.checkError("TexParameter[" + txtType + "].MinFilter=" + minFilter);
+		assert GL_W.checkError("TexParameter[" + txtType + "].MinFilter=" + minFilter);
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.MAG_FILTER.getGlId(), magFilter.getGlId());
-		GL_W.checkError("TexParameter[" + txtType + "].MagFilter=" + magFilter);
+		assert GL_W.checkError("TexParameter[" + txtType + "].MagFilter=" + magFilter);
 	}
 
 	public void applyWrap() {
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_HORIZONTAL.getGlId(), hWrap.getGlId());
-		GL_W.checkError("TexParameter[" + txtType + "].WrapHorizontal=" + hWrap);
+		assert GL_W.checkError("TexParameter[" + txtType + "].WrapHorizontal=" + hWrap);
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_VERTICAL.getGlId(), vWrap.getGlId());
-		GL_W.checkError("TexParameter[" + txtType + "].WrapVertical=" + vWrap);
+		assert GL_W.checkError("TexParameter[" + txtType + "].WrapVertical=" + vWrap);
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_DEPTH.getGlId(), dWrap.getGlId());
-		GL_W.checkError("TexParameter[" + txtType + "].WrapDepth=" + dWrap);
+		assert GL_W.checkError("TexParameter[" + txtType + "].WrapDepth=" + dWrap);
 	}
 
 	@Override
@@ -106,7 +106,7 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 			return;
 
 		GL_W.glDeleteTextures(tid);
-		GL_W.checkError("DeleteTextures[" + tid + "] (" + name + ")");
+		assert GL_W.checkError("DeleteTextures[" + tid + "] (" + name + ")");
 		tid = -1;
 	}
 

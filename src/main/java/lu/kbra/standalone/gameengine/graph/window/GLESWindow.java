@@ -20,7 +20,7 @@ import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.exceptions.egl.EGLNoDisplayException;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.kbra.standalone.gameengine.utils.consts.GLType;
+import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class GLESWindow extends Window {

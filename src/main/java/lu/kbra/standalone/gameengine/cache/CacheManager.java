@@ -2,40 +2,28 @@ package lu.kbra.standalone.gameengine.cache;
 
 import java.io.PrintStream;
 import java.io.PrintWriter;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import org.joml.Vector2f;
-
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.audio.Sound;
-import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
-import lu.kbra.standalone.gameengine.exceptions.opengl.ShaderInstantiationException;
 import lu.kbra.standalone.gameengine.geom.Gizmo;
 import lu.kbra.standalone.gameengine.geom.Mesh;
-import lu.kbra.standalone.gameengine.geom.QuadMesh;
 import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
-import lu.kbra.standalone.gameengine.geom.utils.ObjLoader;
 import lu.kbra.standalone.gameengine.graph.composition.buffer.Framebuffer;
 import lu.kbra.standalone.gameengine.graph.composition.layer.RenderLayer;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.graph.render.Renderer;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
-import lu.kbra.standalone.gameengine.graph.texture.CubemapTexture;
-import lu.kbra.standalone.gameengine.graph.texture.SingleTexture;
+import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShader;
 import lu.kbra.standalone.gameengine.graph.texture.Texture;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.objs.lights.PointLight;
 import lu.kbra.standalone.gameengine.objs.text.TextEmitter;
 import lu.kbra.standalone.gameengine.scene.Scene;
-import lu.kbra.standalone.gameengine.utils.consts.TextureFilter;
-import lu.kbra.standalone.gameengine.utils.consts.TextureType;
-import lu.kbra.standalone.gameengine.utils.consts.TextureWrap;
-import lu.kbra.standalone.gameengine.utils.transform.Transform;
 
 public class CacheManager implements Cleanupable, UniqueID {
 
@@ -47,7 +35,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 	protected Map<String, Scene> scenes;
 	protected Map<String, Renderer<?, ?>> renderers;
 	protected Map<String, Material> materials;
-	protected Map<String, RenderShader> renderShaders;
+	protected Map<String, AbstractShader> abstractShaders;
 	protected Map<String, Texture> textures;
 	protected Map<String, PointLight> pointLights;
 	protected Map<String, Gizmo> gizmos;
@@ -73,7 +61,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 		this.scenes = new HashMap<>();
 		this.renderers = new HashMap<>();
 		this.materials = new HashMap<>();
-		this.renderShaders = new HashMap<>();
+		this.abstractShaders = new HashMap<>();
 		this.textures = new HashMap<>();
 		this.pointLights = new HashMap<>();
 		this.gizmos = new HashMap<>();
@@ -101,8 +89,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 		// materials.values().forEach(Material::cleanup);
 		this.materials.clear();
 
-		this.renderShaders.values().forEach(RenderShader::cleanup);
-		this.renderShaders.clear();
+		this.abstractShaders.values().forEach(AbstractShader::cleanup);
+		this.abstractShaders.clear();
 
 		this.textures.values().forEach(Texture::cleanup);
 		this.textures.clear();
@@ -177,15 +165,15 @@ public class CacheManager implements Cleanupable, UniqueID {
 		return this.materials.putIfAbsent(m.getId(), m) == null;
 	}
 
-	public boolean addRenderShader(RenderShader m) {
+	public boolean addAbstractShader(AbstractShader m) {
 		if (m == null)
 			return false;
-		if (this.renderShaders.containsKey(m.getId()) && !this.renderShaders.get(m.getId()).equals(m)) {
+		if (this.abstractShaders.containsKey(m.getId()) && !this.abstractShaders.get(m.getId()).equals(m)) {
 			GlobalLogger.log();
 			GlobalLogger.warning("Overwriting shader: " + m.getId());
-			this.renderShaders.remove(m.getId()).cleanup();
+			this.abstractShaders.remove(m.getId()).cleanup();
 		}
-		return this.renderShaders.putIfAbsent(m.getId(), m) == null;
+		return this.abstractShaders.putIfAbsent(m.getId(), m) == null;
 	}
 
 	public boolean addTexture(Texture m) {
@@ -276,8 +264,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 		return this.materials.getOrDefault(name, parent == null ? null : parent.getMaterial(name));
 	}
 
-	public RenderShader getRenderShader(String name) {
-		return this.renderShaders.getOrDefault(name, parent == null ? null : parent.getRenderShader(name));
+	public AbstractShader getAbstractShader(String name) {
+		return this.abstractShaders.getOrDefault(name, parent == null ? null : parent.getAbstractShader(name));
 	}
 
 	public Texture getTexture(String name) {
@@ -348,12 +336,12 @@ public class CacheManager implements Cleanupable, UniqueID {
 		this.materials = materials;
 	}
 
-	public Map<String, RenderShader> getRenderShaders() {
-		return this.renderShaders;
+	public Map<String, AbstractShader> getRenderShaders() {
+		return this.abstractShaders;
 	}
 
-	public void setRenderShaders(Map<String, RenderShader> shaders) {
-		this.renderShaders = shaders;
+	public void setRenderShaders(Map<String, AbstractShader> shaders) {
+		this.abstractShaders = shaders;
 	}
 
 	public Map<String, Texture> getTextures() {
@@ -425,7 +413,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 	 */
 
 	public boolean hasRenderShader(String name) {
-		return renderShaders.containsKey(name) || (parent != null ? parent.hasRenderShader(name) : false);
+		return abstractShaders.containsKey(name) || (parent != null ? parent.hasRenderShader(name) : false);
 	}
 
 	public boolean hasMaterial(String name) {
@@ -449,153 +437,6 @@ public class CacheManager implements Cleanupable, UniqueID {
 	}
 
 	/*
-	 * LOADER
-	 */
-
-	public SingleTexture loadOrGetSingleTexture(String name, String path) {
-		return loadOrGetSingleTexture(name, path, TextureFilter.LINEAR);
-	}
-
-	public SingleTexture loadOrGetSingleTexture(String name, String path, TextureFilter filter) {
-		return loadOrGetSingleTexture(name, path, filter, TextureWrap.REPEAT);
-	}
-
-	public SingleTexture loadOrGetSingleTexture(String name, String path, TextureFilter filter, TextureWrap wrap) {
-		if (hasTexture(name)) {
-			return (SingleTexture) getTexture(name);
-		} else {
-			return loadSingleTexture(name, path, filter, wrap);
-		}
-	}
-
-	public <T extends Material> T loadOrGetMaterial(String name, Class<T> clazz, Object... args) {
-		GlobalLogger.log();
-
-		if (hasMaterial(name)) {
-			return (T) getMaterial(name);
-		} else {
-			return loadMaterial(clazz, args);
-		}
-	}
-
-	public <T extends RenderShader> T loadOrGetRenderShader(String name, Class<T> clazz, Object... args) {
-		if (hasRenderShader(name)) {
-			return (T) getRenderShader(name);
-		} else {
-			return loadRenderShader(clazz, args);
-		}
-	}
-
-	private <T extends RenderShader> T loadRenderShader(Class<T> clazz, Object[] args) {
-		GlobalLogger.log();
-
-		try {
-			Class[] types = new Class[args.length];
-			for (int i = 0; i < args.length; i++) {
-				types[i] = args[i].getClass();
-			}
-
-			T shader = clazz.getConstructor(types).newInstance(args);
-
-			addRenderShader(shader);
-
-			return shader;
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-				| NoSuchMethodException | SecurityException e) {
-			throw new ShaderInstantiationException(e);
-		}
-	}
-
-	public <T extends Material> T loadMaterial(Class<T> clazz, Object... args) {
-		GlobalLogger.log();
-
-		try {
-			Class[] types = new Class[args.length];
-			for (int i = 0; i < args.length; i++) {
-				types[i] = args[i].getClass();
-			}
-
-			T mat = clazz.getConstructor(types).newInstance(args);
-
-			addMaterial(mat);
-			addRenderShader(mat.getRenderShader());
-
-			return mat;
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-				| NoSuchMethodException | SecurityException e) {
-			throw new ShaderInstantiationException(e);
-		}
-	}
-
-	public QuadMesh newQuadMesh(String name, Material mat, Vector2f size) {
-		QuadMesh mesh = Mesh.newQuad(name, mat, size);
-		addMesh(mesh);
-		return mesh;
-	}
-
-	public SingleTexture loadSingleTexture(String string, String path, TextureFilter filter) {
-		return loadSingleTexture(string, path, filter, TextureType.TXT2D, TextureWrap.REPEAT);
-	}
-
-	public SingleTexture loadSingleTexture(String string, String path, TextureFilter filter, TextureWrap wrap) {
-		return loadSingleTexture(string, path, filter, TextureType.TXT2D, wrap);
-	}
-
-	public SingleTexture loadSingleTexture(String string, String path, TextureFilter filter, TextureType type, TextureWrap wrap) {
-		SingleTexture texture = new SingleTexture(string, path);
-		texture.setFilters(filter);
-		texture.setTextureType(type);
-		texture.setWraps(wrap);
-		texture.setup();
-		addTexture(texture);
-		return texture;
-	}
-
-	public InstanceEmitter loadInstanceEmitter(String name, Mesh mesh, int count, Transform baseTransform, AttribArray... attribArrays) {
-		InstanceEmitter instanceEmitter = new InstanceEmitter(name, mesh, count, baseTransform, attribArrays);
-		addInstanceEmitter(instanceEmitter);
-		return instanceEmitter;
-	}
-
-	public Mesh loadMesh(String name, Material material, String path) {
-		Mesh mesh = null;
-
-		if (path.endsWith("obj"))
-			mesh = ObjLoader.loadMesh(name, material, path);
-
-		if (mesh == null)
-			throw new RuntimeException("Could not load mesh.");
-
-		addMesh(mesh);
-		return mesh;
-	}
-
-	public CubemapTexture loadCubemapTexture(String name, String path) {
-		CubemapTexture txt = new CubemapTexture(name, path);
-		txt.setup();
-		addTexture(txt);
-		return txt;
-	}
-
-	public Framebuffer loadFramebuffer(String name) {
-		Framebuffer fb = new Framebuffer(name);
-		addFramebuffer(fb);
-		return fb;
-	}
-
-	public Sound loadSound(String name, String file) {
-		return loadSound(name, file, true);
-	}
-
-	public Sound loadSound(String name, String file, boolean stereo) {
-		if (hasSound(name))
-			return getSound(name);
-		Sound sound = new Sound(name, file, stereo);
-		addSound(sound);
-		return sound;
-	}
-
-	/*
 	 * UTILS
 	 */
 
@@ -605,7 +446,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 		out.println(Scene.class.getName() + ": " + this.scenes.size() + ": " + this.scenes);
 		out.println(Renderer.class.getName() + ": " + this.renderers.size() + ": " + this.renderers);
 		out.println(Material.class.getName() + ": " + this.materials.size() + ": " + this.materials);
-		out.println(RenderShader.class.getName() + ": " + this.renderShaders.size() + ": " + this.renderShaders);
+		out.println(RenderShader.class.getName() + ": " + this.abstractShaders.size() + ": " + this.abstractShaders);
 		out.println(Texture.class.getName() + ": " + this.textures.size() + ": " + this.textures);
 		out.println(Gizmo.class.getName() + ": " + this.gizmos.size() + ": " + this.gizmos);
 		out.println(RenderLayer.class.getName() + ": " + this.renderLayers.size() + ": " + this.renderLayers);
@@ -628,7 +469,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 		out.println(Scene.class.getName() + ": " + this.scenes.size() + ": " + this.scenes);
 		out.println(Renderer.class.getName() + ": " + this.renderers.size() + ": " + this.renderers);
 		out.println(Material.class.getName() + ": " + this.materials.size() + ": " + this.materials);
-		out.println(RenderShader.class.getName() + ": " + this.renderShaders.size() + ": " + this.renderShaders);
+		out.println(RenderShader.class.getName() + ": " + this.abstractShaders.size() + ": " + this.abstractShaders);
 		out.println(Texture.class.getName() + ": " + this.textures.size() + ": " + this.textures);
 		out.println(Gizmo.class.getName() + ": " + this.gizmos.size() + ": " + this.gizmos);
 		out.println(RenderLayer.class.getName() + ": " + this.renderLayers.size() + ": " + this.renderLayers);

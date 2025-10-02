@@ -5343,7 +5343,7 @@ public interface GL_W_Call {
 
 	default void glLinkProgram(int arg0) {throw new UnsupportedOperationException("Not implemented yet.");}
 
-	void checkError(String message);
+	boolean checkError(String message);
 	boolean isGLES();
 	boolean isGL();
 }

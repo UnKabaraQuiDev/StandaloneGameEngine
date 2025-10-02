@@ -6,7 +6,6 @@ import org.joml.Matrix4f;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
-import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.graph.material.Material;
@@ -36,8 +35,9 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 			return;
 		}
 
-		GlobalLogger.log(Level.FINE, "Mesh : " + mesh.getId() + ", vao:" + mesh.getVao() + ", vec:"
-				+ mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
+		GlobalLogger
+				.log(Level.FINE,
+						"Mesh : " + mesh.getId() + ", vao:" + mesh.getVao() + ", vec:" + mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
 
 		mesh.bind();
 
@@ -88,11 +88,7 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 
 		GL_W.glDisable(GL_W.GL_BLEND);
 
-		GameEngine.DEBUG.wireframe(cache, scene, mesh, projectionMatrix, viewMatrix, transformationMatrix);
-
 		mesh.unbind();
-
-		GameEngine.DEBUG.gizmos(cache, scene, projectionMatrix, viewMatrix, transformationMatrix);
 	}
 
 	@Override

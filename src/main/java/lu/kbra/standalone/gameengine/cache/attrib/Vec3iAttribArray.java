@@ -48,7 +48,7 @@ public class Vec3iAttribArray extends AttribArray {
 		data = nPos;
 
 		GL_W.glBufferSubData(GL_W.GL_ARRAY_BUFFER, 0, toFlatArray());
-		GL_W.checkError();
+		assert GL_W.checkError();
 		
 		return true;
 	}

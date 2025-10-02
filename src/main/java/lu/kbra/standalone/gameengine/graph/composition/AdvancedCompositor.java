@@ -53,12 +53,12 @@ public class AdvancedCompositor implements Cleanupable {
 		}
 
 		GL_W.glEnable(GL_W.GL_DEPTH_TEST);
-		GL_W.checkError("Enable(DEPTH_TEST)");
+		assert GL_W.checkError("Enable(DEPTH_TEST)");
 
 		GL_W.glClearColor(background.x, background.y, background.z, background.w);
-		GL_W.checkError("ClearColor(" + background + ")");
+		assert GL_W.checkError("ClearColor(" + background + ")");
 		GL_W.glClear(GL_W.GL_COLOR_BUFFER_BIT | GL_W.GL_DEPTH_BUFFER_BIT);
-		GL_W.checkError("Clear(COLOR | DEPTH)");
+		assert GL_W.checkError("Clear(COLOR | DEPTH)");
 
 		for (String l : layers) {
 			if (l == null)
@@ -106,7 +106,7 @@ public class AdvancedCompositor implements Cleanupable {
 		ByteBuffer buffer = MemoryUtil.memAlloc(width * height * channelCount);
 
 		GL_W.glReadPixels(0, 0, width, height, GL_W.GL_RGB, GL_W.GL_UNSIGNED_BYTE, buffer);
-		GL_W.checkError("glReadPixels(0, 0, " + width + ", " + height + ", RGB, unsigned byte)");
+		assert GL_W.checkError("glReadPixels(0, 0, " + width + ", " + height + ", RGB, unsigned byte)");
 
 		return new MemImage(width, height, channelCount, buffer, MemImageOrigin.OPENGL);
 	}

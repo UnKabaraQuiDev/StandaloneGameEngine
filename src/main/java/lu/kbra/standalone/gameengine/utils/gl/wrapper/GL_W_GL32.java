@@ -9072,8 +9072,9 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void checkError(String message) {
+	public boolean checkError(String message) {
 		lu.kbra.standalone.gameengine.utils.GameEngineUtils.checkGlError(message);
+		return true;
 	}
 	@Override
 	public boolean isGLES() {

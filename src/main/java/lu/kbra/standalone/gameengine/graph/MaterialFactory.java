@@ -12,6 +12,7 @@ import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.graph.shader.annotation.AssociatedShader;
+import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShader;
 
 public class MaterialFactory {
 
@@ -29,8 +30,7 @@ public class MaterialFactory {
 	public <T extends Material> T newMaterial_(Class<T> materialClazz, Object... args) {
 		MATERIAL_2_SHADERS.computeIfAbsent(materialClazz, k -> {
 			if (!k.isAnnotationPresent(AssociatedShader.class)) {
-				throw new IllegalStateException(
-						"Class: " + k + " doesn't have @" + AssociatedShader.class.getSimpleName() + ".");
+				throw new IllegalStateException("Class: " + k + " doesn't have @" + AssociatedShader.class.getSimpleName() + ".");
 			}
 			return k.getAnnotation(AssociatedShader.class).value();
 		});
@@ -39,20 +39,22 @@ public class MaterialFactory {
 
 		if (!cache.hasRenderShader(shaderClazz.getName())) {
 			try {
-				cache.addRenderShader(shaderClazz.getConstructor().newInstance());
-			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException
-					| InvocationTargetException | NoSuchMethodException | SecurityException e) {
+				cache.addAbstractShader(shaderClazz.getConstructor().newInstance());
+			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+					| NoSuchMethodException | SecurityException e) {
 				throw new RuntimeException("Exception while creating render shader.", e);
 			}
 		}
 
-		final RenderShader shader = cache.getRenderShader(shaderClazz.getName());
+		final AbstractShader shader = cache.getAbstractShader(shaderClazz.getName());
 
 		try {
 			if (!SHADERS_CONSTRUCTORS.containsKey(materialClazz)) {
-				final Constructor<T> constructor = PCUtils.findCompatibleConstructor(materialClazz,
-						PCUtils.combineArrays(new Class<?>[] { shaderClazz },
-								Arrays.stream(args).map(Object::getClass).toArray(Class<?>[]::new)));
+				final Constructor<T> constructor = PCUtils
+						.findCompatibleConstructor(materialClazz,
+								PCUtils
+										.combineArrays(new Class<?>[] { shaderClazz },
+												Arrays.stream(args).map(Object::getClass).toArray(Class<?>[]::new)));
 				SHADERS_CONSTRUCTORS.put(materialClazz, constructor);
 			}
 			final Constructor<T> constructor = (Constructor<T>) SHADERS_CONSTRUCTORS.get(materialClazz);

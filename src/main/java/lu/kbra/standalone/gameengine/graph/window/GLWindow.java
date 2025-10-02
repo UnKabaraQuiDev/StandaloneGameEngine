@@ -13,11 +13,9 @@ import org.lwjgl.system.MemoryUtil;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
-import lu.kbra.standalone.gameengine.GameEngine;
-import lu.kbra.standalone.gameengine.utils.consts.GLType;
+import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL43;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES32;
 
 public class GLWindow extends Window {
 

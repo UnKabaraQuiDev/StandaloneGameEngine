@@ -3,8 +3,8 @@ package lu.kbra.standalone.gameengine.graph.material.gizmo;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShaderPart;
-import lu.kbra.standalone.gameengine.utils.consts.BeginMode;
-import lu.kbra.standalone.gameengine.utils.consts.FaceMode;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BeginMode;
+import lu.kbra.standalone.gameengine.utils.gl.consts.FaceMode;
 
 public class GizmoShader extends RenderShader {
 

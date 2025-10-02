@@ -36,10 +36,10 @@ public class IntAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		GL_W.glBufferData(bufferType, data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		GL_W.checkError("BufferData(" + bufferType + ", " + Arrays.toString(data) + ", " + iStatic + ")");
+		assert GL_W.checkError("BufferData(" + bufferType + ", " + Arrays.toString(data) + ", " + iStatic + ")");
 		if (bufferType != GL_W.GL_ELEMENT_ARRAY_BUFFER && bufferType != GL_W.GL_UNIFORM_BUFFER) {
 			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_INT, false, 0, 0);
-			GL_W.checkError("VertexAttribPointer(" + index + ", " + dataSize + ", INT, FALSE, 0, 0)");
+			assert GL_W.checkError("VertexAttribPointer(" + index + ", " + dataSize + ", INT, FALSE, 0, 0)");
 		}
 	}
 

@@ -62,14 +62,14 @@ public abstract class AttribArray implements Cleanupable {
 
 	public void enable() {
 		GL_W.glEnableVertexAttribArray(index);
-		GL_W.checkError("EnableVertexAttribArray(" + index + ") (" + name + ")");
+		assert GL_W.checkError("EnableVertexAttribArray(" + index + ") (" + name + ")");
 		GL_W.glVertexAttribDivisor(index, divisor);
-		GL_W.checkError("VertexAttribDivisor(" + index + ", " + divisor + ") (" + name + ")");
+		assert GL_W.checkError("VertexAttribDivisor(" + index + ", " + divisor + ") (" + name + ")");
 	}
 
 	public void disable() {
 		GL_W.glDisableVertexAttribArray(index);
-		GL_W.checkError("DisableVertexAttribArray(" + index + ") (" + name + ")");
+		assert GL_W.checkError("DisableVertexAttribArray(" + index + ") (" + name + ")");
 	}
 
 	public int gen() {
@@ -78,12 +78,12 @@ public abstract class AttribArray implements Cleanupable {
 
 	public void bind() {
 		GL_W.glBindBuffer(bufferType, bufferIndex);
-		GL_W.checkError("BindBuffer(" + bufferType + ", " + bufferIndex + ") (" + name + ")");
+		assert GL_W.checkError("BindBuffer(" + bufferType + ", " + bufferIndex + ") (" + name + ")");
 	}
 
 	public void unbind() {
 		GL_W.glBindBuffer(bufferType, 0);
-		GL_W.checkError("BindBuffer(" + bufferType + ", 0) (" + name + ")");
+		assert GL_W.checkError("BindBuffer(" + bufferType + ", 0) (" + name + ")");
 	}
 
 	@Override
@@ -94,7 +94,7 @@ public abstract class AttribArray implements Cleanupable {
 			return;
 
 		GL_W.glDeleteBuffers(bufferIndex);
-		GL_W.checkError("DeleteBuffers(" + bufferIndex + ") (" + name + ")");
+		assert GL_W.checkError("DeleteBuffers(" + bufferIndex + ") (" + name + ")");
 		bufferIndex = -1;
 	}
 

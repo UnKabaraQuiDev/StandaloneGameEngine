@@ -21,7 +21,7 @@ import org.lwjgl.BufferUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.objs.text.TextEmitter;
-import lu.kbra.standalone.gameengine.utils.consts.Consts;
+import lu.kbra.standalone.gameengine.utils.gl.consts.Consts;
 
 public class FontAtlasGenerator {
 

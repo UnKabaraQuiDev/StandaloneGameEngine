@@ -1,7 +1,5 @@
 package lu.kbra.standalone.gameengine.graph.shader.part;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.logging.Level;
 
 import lu.pcy113.pclib.PCUtils;
@@ -11,7 +9,6 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL40;
 
 public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 
@@ -37,12 +34,12 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 		}
 
 		this.sid = GL_W.glCreateShader(type);
-		GL_W.checkError("CreateShader(" + type + ") (" + file + ")");
+		assert GL_W.checkError("CreateShader(" + type + ") (" + file + ")");
 		// TODO: add gl version
 		GL_W.glShaderSource(sid, source);
-		GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
+		assert GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
 		GL_W.glCompileShader(sid);
-		GL_W.checkError("CompileShader(" + sid + ") (" + file + ")");
+		assert GL_W.checkError("CompileShader(" + sid + ") (" + file + ")");
 
 		if (GL_W.glGetShaderi(sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
 			final int logLen = GL_W.glGetShaderi(this.sid, GL_W.GL_INFO_LOG_LENGTH);
@@ -60,6 +57,8 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 			return new VertexShaderPart(file);
 		} else if (type == GL_W.GL_FRAGMENT_SHADER) {
 			return new FragmentShaderPart(file);
+		} else if (type == GL_W.GL_COMPUTE_SHADER) {
+			return new ComputeShaderPart(file);
 		} else {
 			GameEngineUtils.throwGLESError("Unknown shader part type: " + file);
 			return null;
@@ -87,9 +86,9 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 		}
 
 		GL_W.glShaderSource(sid, source);
-		GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
+		assert GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
 		GL_W.glCompileShader(sid);
-		GL_W.checkError("CompileShader(" + sid + ") (" + file + ")");
+		assert GL_W.checkError("CompileShader(" + sid + ") (" + file + ")");
 
 		if (GL_W.glGetShaderi(sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
 			final int logLen = GL_W.glGetShaderi(this.sid, GL_W.GL_INFO_LOG_LENGTH);
@@ -137,8 +136,10 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 			return GL_W.GL_FRAGMENT_SHADER;
 		case "geo":
 		case "comp":
-			if (GL_W.isGLES())
-				GameEngineUtils.throwGLESError("Cannot load Compute/Geo shader using GLES");
+			if (GL_W.isGLES()) {
+				GameEngineUtils.throwGLESError("Cannot load Compute/Geometry shader using GLES");
+			}
+			return GL_W.GL_COMPUTE_SHADER;
 		}
 		GameEngineUtils.throwGLESError("Unknown shader type: " + type);
 		return -1;

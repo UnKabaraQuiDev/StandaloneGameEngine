@@ -36,7 +36,7 @@ public class Compositor implements Cleanupable {
 		}
 
 		GL_W.glEnable(GL_W.GL_DEPTH_TEST);
-		GL_W.checkError("glEnable(DEPTH_TEST)");
+		assert GL_W.checkError("glEnable(DEPTH_TEST)");
 
 		for (String l : layers) {
 			if (l == null)
@@ -55,7 +55,7 @@ public class Compositor implements Cleanupable {
 		}
 
 		GL_W.glDepthMask(false);
-		GL_W.checkError("glDepthMask(false)");
+		assert GL_W.checkError("glDepthMask(false)");
 		for (String l : passes) {
 			if (l == null)
 				continue;
@@ -75,12 +75,12 @@ public class Compositor implements Cleanupable {
 			((PassRenderLayer) prl).render(engine, null);
 		}
 		GL_W.glDepthMask(true);
-		GL_W.checkError("glDepthMask(true)");
+		assert GL_W.checkError("glDepthMask(true)");
 
 		GL_W.glClearColor(background.x, background.y, background.z, background.w);
-		GL_W.checkError("glClearColor(" + background + ")");
+		assert GL_W.checkError("glClearColor(" + background + ")");
 		GL_W.glClear(GL_W.GL_COLOR_BUFFER_BIT | GL_W.GL_DEPTH_BUFFER_BIT);
-		GL_W.checkError("glClear(COLOR_BUFFER | DEPTH_BUFFER)");
+		assert GL_W.checkError("glClear(COLOR_BUFFER | DEPTH_BUFFER)");
 	}
 
 	public void addRenderLayer(int i, RenderLayer id) {

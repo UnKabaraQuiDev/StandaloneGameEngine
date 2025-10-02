@@ -17053,12 +17053,12 @@ public class GL_W {
 		WRAPPER.glLinkProgram(arg0);
 	}
 
-	public static void checkError(String message) {
-		WRAPPER.checkError(message);
+	public static boolean checkError(String message) {
+		return WRAPPER.checkError(message);
 	}
 
-	public static void checkError() {
-		WRAPPER.checkError("");
+	public static boolean checkError() {
+		return WRAPPER.checkError("");
 	}
 
 	public static boolean isGLES() {

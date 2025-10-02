@@ -2,8 +2,8 @@ package lu.kbra.standalone.gameengine.graph.material.wireframe;
 
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShaderPart;
-import lu.kbra.standalone.gameengine.utils.consts.BeginMode;
-import lu.kbra.standalone.gameengine.utils.consts.FaceMode;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BeginMode;
+import lu.kbra.standalone.gameengine.utils.gl.consts.FaceMode;
 
 public class WireframeShader extends RenderShader {
 

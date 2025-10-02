@@ -18,7 +18,6 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GameLogic;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
-import lu.kbra.standalone.gameengine.utils.DebugOptions;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL46;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
 
@@ -34,8 +33,6 @@ public class GameEngine implements Cleanupable, UniqueID {
 			WAIT_FRAME_START_TIMEOUT = 500, WAIT_UPDATE_END_TIMEOUT = 500, WAIT_UPDATE_START_TIMEOUT = 500; // ms
 
 	public static final int QUEUE_MAIN = 0, QUEUE_RENDER = 1, QUEUE_UPDATE = 2;
-
-	public static DebugOptions DEBUG = new DebugOptions();
 
 	private final String name;
 
@@ -395,8 +392,6 @@ public class GameEngine implements Cleanupable, UniqueID {
 			this.cache.cleanup();
 
 			this.window.cleanup();
-
-			DEBUG.cleanup();
 		} else if (Thread.currentThread().equals(mainThread)) {
 			this.window.cleanupGLFW();
 			window = null;

@@ -39,11 +39,11 @@ public class TextureMaterial extends Material {
 			texture.bind(i);
 			int loc = shader.getUniformLocation(txt.getKey());
 			texture.bindUniform(loc, i);
-			
+
 			i++;
 		}
 	}
-	
+
 	public Texture setTexture(String key, Texture texture) {
 		return textures.put(key, texture);
 	}

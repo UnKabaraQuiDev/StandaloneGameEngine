@@ -34,7 +34,7 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 		this.name = name_ == null ? this.getClass().getName() : name_;
 
 		this.spid = GL_W.glCreateProgram();
-		GL_W.checkError("CreateProgram() (" + name + ")");
+		assert GL_W.checkError("CreateProgram() (" + name + ")");
 		if (this.spid == -1) {
 			GameEngineUtils.throwGLError(name + ": Failed to create shader program!");
 		}
@@ -42,10 +42,10 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 		for (AbstractShaderPart sp : parts) {
 			this.parts.put(sp.getType(), sp);
 			GL_W.glAttachShader(this.spid, sp.getSid());
-			GL_W.checkError("AttachShader(" + this.spid + ")");
+			assert GL_W.checkError("AttachShader(" + this.spid + ")");
 		}
 		GL_W.glLinkProgram(this.spid);
-		GL_W.checkError("LinkProgram(" + this.spid + ")");
+		assert GL_W.checkError("LinkProgram(" + this.spid + ")");
 
 		final int logLen = GL_W.glGetProgrami(this.spid, GL_W.GL_INFO_LOG_LENGTH);
 		if (logLen > 1) {
@@ -77,14 +77,14 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 				return false;
 		}
 		GL_W.glLinkProgram(this.spid);
-		GL_W.checkError("LinkProgram(" + this.spid + ")");
+		assert GL_W.checkError("LinkProgram(" + this.spid + ")");
 		return true;
 	}
 
 	public abstract void createUniforms();
 
 	public void setUniform(String key, Object value) {
-		if (!uniforms.containsKey(key)) {
+		if (getUniformLocation(key) == -1) {
 			return;
 		}
 
@@ -138,7 +138,8 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 	}
 
 	public int getUniformLocation(String name) {
-		if (!this.hasUniform(name) && !this.createUniform(name)) {
+		// TODO: add a blacklist to avoid trying to get invalid uniforms multiple times
+		if (!this.createUniform(name)) {
 			return -1;
 		}
 
@@ -151,7 +152,7 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 
 	public boolean createUniform(String name) {
 		final int loc = GL_W.glGetUniformLocation(this.spid, name);
-		GL_W.checkError("GetUniformLocation(" + this.spid + ", " + name + ")");
+		assert GL_W.checkError("GetUniformLocation(" + this.spid + ", " + name + ")");
 
 		if (loc != -1) {
 			this.uniforms.put(name, new Pair<>(new Property<>(), loc));
@@ -172,12 +173,12 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 			return;
 		}
 		GL_W.glUseProgram(this.spid);
-		GL_W.checkError("UseProgram(" + spid + ") (" + name + ").");
+		assert GL_W.checkError("UseProgram(" + spid + ") (" + name + ").");
 	}
 
 	public void unbind() {
 		GL_W.glUseProgram(0);
-		GL_W.checkError("UseProgram(0) (" + name + ").");
+		assert GL_W.checkError("UseProgram(0) (" + name + ").");
 	}
 
 	@Override
@@ -191,7 +192,7 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 		this.parts.values().forEach(AbstractShaderPart::cleanup);
 		this.parts = null;
 		GL_W.glDeleteProgram(this.spid);
-		GL_W.checkError("DeleteProgram(" + spid + ") (" + name + ")");
+		assert GL_W.checkError("DeleteProgram(" + spid + ") (" + name + ")");
 		this.spid = -1;
 	}
 

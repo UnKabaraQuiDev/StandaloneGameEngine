@@ -12,8 +12,8 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.kbra.standalone.gameengine.utils.consts.FrameBufferAttachment;
-import lu.kbra.standalone.gameengine.utils.consts.TextureType;
+import lu.kbra.standalone.gameengine.utils.gl.consts.FrameBufferAttachment;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Framebuffer implements UniqueID, Cleanupable {
@@ -41,14 +41,18 @@ public class Framebuffer implements UniqueID, Cleanupable {
 		}
 
 		this.attachments.put(attach.getGlId() + offset, texture);
-		GL_W.checkError("FrameBufferTexture[" + attach + "+" + offset + "][" + name + "]=" + texture.getId());
+		assert GL_W.checkError("FrameBufferTexture[" + attach + "+" + offset + "][" + name + "]=" + texture.getId());
 		return true;
 	}
 
+	public void attachTexture(FrameBufferAttachment depth, SingleTexture txtDepth) {
+		attachTexture(depth, 0, txtDepth);
+	}
+
 	public boolean attachRenderBuffer(FrameBufferAttachment attach, int offset, RenderBuffer texture) {
-		GL_W.glFramebufferRenderbuffer(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, GL_W.GL_RENDERBUFFER, texture.getRBid());
+		GL_W.glFramebufferRenderbuffer(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, GL_W.GL_RENDERBUFFER, texture.getRbid());
 		this.attachments.put(attach.getGlId() + offset, texture);
-		GL_W.checkError("FrameBufferRenderbuffer[" + attach + "+" + offset + "][" + name + "]=" + texture.getId());
+		assert GL_W.checkError("FrameBufferRenderbuffer[" + attach + "+" + offset + "][" + name + "]=" + texture.getId());
 		return true;
 	}
 
@@ -59,7 +63,7 @@ public class Framebuffer implements UniqueID, Cleanupable {
 	public boolean clearAttachments() {
 		for (Entry<Integer, FramebufferAttachment> it : attachments.entrySet()) {
 			GameEngineUtils.throwGLESError("Cannot clear attachments from Framebuffer");
-			GL_W.checkError("FrameBufferTexture[" + it.getKey() + "][" + name + "]=0");
+			assert GL_W.checkError("FrameBufferTexture[" + it.getKey() + "][" + name + "]=0");
 		}
 		attachments.clear();
 		return true;
@@ -81,12 +85,13 @@ public class Framebuffer implements UniqueID, Cleanupable {
 		final int[] bfs = attachments
 				.entrySet()
 				.stream()
-				.filter(e -> e.getValue() instanceof Texture)
+				.filter(e -> e.getKey() >= FrameBufferAttachment.COLOR_FIRST.getGlId()
+						&& e.getKey() <= FrameBufferAttachment.COLOR_LAST.getGlId())
 				.sorted((a, b) -> a.getKey() - b.getKey())
 				.mapToInt(a -> a.getKey())
 				.toArray();
 		GL_W.glDrawBuffers(bfs);
-		GL_W.checkError("DrawBuffers(" + Arrays.toString(bfs) + ")");
+		assert GL_W.checkError("DrawBuffers(" + Arrays.toString(bfs) + ")");
 		if (!isComplete()) {
 			throw new IllegalStateException("Couldn't setup framebuffer: " + name + " (" + fbo + ").");
 		}
@@ -98,7 +103,7 @@ public class Framebuffer implements UniqueID, Cleanupable {
 
 	public void bind(int target) {
 		GL_W.glBindFramebuffer(target, fbo);
-		GL_W.checkError("BindFrameBuffer[" + target + "][" + name + "]=" + fbo);
+		assert GL_W.checkError("BindFrameBuffer[" + target + "][" + name + "]=" + fbo);
 	}
 
 	public void unbind() {
@@ -107,11 +112,15 @@ public class Framebuffer implements UniqueID, Cleanupable {
 
 	public void unbind(int target) {
 		GL_W.glBindFramebuffer(target, 0);
-		GL_W.checkError("BindFrameBuffer[" + target + "][" + name + "]=" + fbo);
+		assert GL_W.checkError("BindFrameBuffer[" + target + "][" + name + "]=" + fbo);
 	}
 
 	public FramebufferAttachment getAttachment(FrameBufferAttachment attach, int offset) {
 		return attachments.get(attach.getGlId() + offset);
+	}
+
+	public FramebufferAttachment getAttachment(FrameBufferAttachment attach) {
+		return attachments.get(attach.getGlId());
 	}
 
 	@Override
@@ -121,7 +130,7 @@ public class Framebuffer implements UniqueID, Cleanupable {
 		if (fbo == -1)
 			return;
 		GL_W.glDeleteFramebuffers(fbo);
-		GL_W.checkError("DeleteFrameBuffer[" + fbo + "]");
+		assert GL_W.checkError("DeleteFrameBuffer[" + fbo + "]");
 		fbo = -1;
 	}
 

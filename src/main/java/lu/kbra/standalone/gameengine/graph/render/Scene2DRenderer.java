@@ -6,12 +6,10 @@ import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
-import lu.kbra.standalone.gameengine.geom.Gizmo;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
-import lu.kbra.standalone.gameengine.objs.entity.components.GizmoComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.InstanceEmitterComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.MeshComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.TextEmitterComponent;
@@ -29,7 +27,6 @@ public class Scene2DRenderer extends Renderer<GameEngine, Scene2D> {
 		GlobalLogger.log(Level.INFO, "Scene2D : " + scene.getId());
 
 		MeshRenderer meshRenderer = (MeshRenderer) cache.getRenderer(Mesh.class.getName());
-		GizmoRenderer gizmoRenderer = (GizmoRenderer) cache.getRenderer(Gizmo.class.getName());
 		InstanceEmitterRenderer instanceEmitterRenderer = (InstanceEmitterRenderer) cache.getRenderer(InstanceEmitter.class.getName());
 		TextEmitterRenderer textEmitterRenderer = (TextEmitterRenderer) cache.getRenderer(TextEmitter.class.getName());
 
@@ -40,8 +37,6 @@ public class Scene2DRenderer extends Renderer<GameEngine, Scene2D> {
 			Component c = null;
 			if ((c = e.getComponent(MeshComponent.class)) != null) {
 				meshRenderer.render(cache, scene, (MeshComponent) c);
-			} else if ((c = e.getComponent(GizmoComponent.class)) != null) {
-				gizmoRenderer.render(cache, scene, (GizmoComponent) c);
 			} else if ((c = e.getComponent(InstanceEmitterComponent.class)) != null) {
 				instanceEmitterRenderer.render(cache, scene, (InstanceEmitterComponent) c);
 			} else if ((c = e.getComponent(TextEmitterComponent.class)) != null) {

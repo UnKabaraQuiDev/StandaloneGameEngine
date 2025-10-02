@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
+import lu.pcy113.pclib.PCUtils;
+
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.graph.material.components.MaterialComponent;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
@@ -17,8 +19,8 @@ public class Material implements UniqueID {
 	protected Map<String, Object> properties;
 	protected RenderShader shader;
 
-	public Material(String name, RenderShader shader) {
-		this.name = name;
+	public Material(String name_, RenderShader shader) {
+		this.name = name_ == null ? PCUtils.toSimpleIdentityString(this) : name_;
 		this.shader = shader;
 
 		this.properties = new HashMap<>();

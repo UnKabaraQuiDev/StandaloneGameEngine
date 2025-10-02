@@ -8,7 +8,7 @@ public interface FramebufferAttachment extends Cleanupable {
 	
 	default void bindUniform(int loc, int i) {
 		GL_W.glUniform1i(loc, i);
-		GL_W.checkError("Uniform1i["+loc+"] = "+i);
+		assert GL_W.checkError("Uniform1i["+loc+"] = "+i);
 	}
 
 }

@@ -208,12 +208,12 @@ public final class GL_W_Init {
 		System.out.println("GL_W done.");
 
 		for (Class<?> c : allGLClasses) {
-			glInit(c, allGLClasses.stream().filter((a) -> !a.equals(c)).collect(Collectors.toList()));
+			gl_w_glxxxx(c, allGLClasses.stream().filter((a) -> !a.equals(c)).collect(Collectors.toList()));
 			System.out.println("GL_W_" + c.getSimpleName() + " done.");
 		}
 	}
 
-	private static void glInit(Class<?> clazz, List<Class<?>> otherClazzes) throws IOException {
+	private static void gl_w_glxxxx(Class<?> clazz, List<Class<?>> otherClazzes) throws IOException {
 		final String FILE_PATH = "./src/main/java/" + PACKAGE_PATH.replace(".", "/") + "/GL_W_" + clazz.getSimpleName() + ".java";
 
 		final List<String> out = Arrays
@@ -237,14 +237,14 @@ public final class GL_W_Init {
 
 		if (clazz.getSimpleName().contains("GLES")) {
 			out
-					.add("	@Override\n" + "	public void checkError(String message) {\n		" + GameEngineUtils.class.getName()
-							+ ".checkGlESError(message);\n" + "	}");
+					.add("	@Override\n" + "	public boolean checkError(String message) {\n		" + GameEngineUtils.class.getName()
+							+ ".checkGlESError(message);\n\t\treturn true;\n\t}");
 			out.add("	@Override\n" + "	public boolean isGLES() {\n\t\treturn true;\n" + "	}");
 			out.add("	@Override\n" + "	public boolean isGL() {\n\t\treturn false;\n" + "	}");
 		} else {
 			out
-					.add("	@Override\n" + "	public void checkError(String message) {\n		" + GameEngineUtils.class.getName()
-							+ ".checkGlError(message);\n" + "	}");
+					.add("	@Override\n" + "	public boolean checkError(String message) {\n		" + GameEngineUtils.class.getName()
+							+ ".checkGlError(message);\n\t\treturn true;\n\t}");
 			out.add("	@Override\n" + "	public boolean isGLES() {\n\t\treturn false;\n" + "	}");
 			out.add("	@Override\n" + "	public boolean isGL() {\n\t\treturn true;\n" + "	}");
 		}
@@ -305,7 +305,7 @@ public final class GL_W_Init {
 			}
 		}
 
-		out.add("	void checkError(String message);");
+		out.add("	boolean checkError(String message);");
 
 		out.add("	boolean isGLES();");
 
@@ -344,8 +344,8 @@ public final class GL_W_Init {
 			}
 		}
 
-		out.add("\tpublic static void checkError(String message) {\n\t\tWRAPPER.checkError(message);\n" + "	}\n");
-		out.add("\tpublic static void checkError() {\n\t\tWRAPPER.checkError(\"\");\n" + "	}\n");
+		out.add("\tpublic static boolean checkError(String message) {\n\t\treturn WRAPPER.checkError(message);\n\t}\n");
+		out.add("\tpublic static boolean checkError() {\n\t\treturn WRAPPER.checkError(\"\");\n\t}\n");
 
 		out.add("\tpublic static boolean isGLES() {\n\t\treturn WRAPPER.isGLES();\n\t}\n");
 		out.add("\tpublic static boolean isGL() {\n\t\treturn WRAPPER.isGL();\n\t}\n");

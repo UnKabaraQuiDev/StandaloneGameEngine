@@ -5,7 +5,7 @@ import lu.pcy113.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.utils.consts.TexelInternalFormat;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TexelInternalFormat;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachment {
@@ -35,7 +35,7 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 
 	public void resize() {
 		GL_W.glRenderbufferStorage(GL_W.GL_RENDERBUFFER, texelInternalFormat.getGlId(), width, height);
-		GL_W.checkError("RenderbufferStorage[" + texelInternalFormat + "]=(" + width + "," + height + ")");
+		assert GL_W.checkError("RenderbufferStorage[" + texelInternalFormat + "]=(" + width + "," + height + ")");
 	}
 
 	public void bind() {
@@ -46,14 +46,19 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 		unbind(GL_W.GL_RENDERBUFFER);
 	}
 
+	public void active(int i) {
+		GL_W.glActiveTexture(GL_W.GL_TEXTURE0 + i);
+		assert GL_W.checkError("ActiveTexture[" + (GL_W.GL_TEXTURE0 + i) + "]");
+	}
+
 	public void bind(int target) {
 		GL_W.glBindRenderbuffer(target, rbid);
-		GL_W.checkError("BindRenderbuffer[" + target + "] = " + rbid);
+		assert GL_W.checkError("BindRenderbuffer[" + target + "] = " + rbid);
 	}
 
 	public void unbind(int target) {
 		GL_W.glBindRenderbuffer(target, 0);
-		GL_W.checkError("BindRenderbuffer[" + target + "] = " + rbid);
+		assert GL_W.checkError("BindRenderbuffer[" + target + "] = " + rbid);
 	}
 
 	public int gen() {
@@ -89,7 +94,7 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 		this.height = h;
 	}
 
-	public int getRBid() {
+	public int getRbid() {
 		return rbid;
 	}
 
@@ -101,7 +106,7 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 			return;
 
 		GL_W.glDeleteRenderbuffers(rbid);
-		GL_W.checkError("DeleteRenderbuffers(" + rbid + ")");
+		assert GL_W.checkError("DeleteRenderbuffers(" + rbid + ")");
 		rbid = -1;
 	}
 

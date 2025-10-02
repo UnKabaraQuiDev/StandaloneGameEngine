@@ -112,12 +112,12 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 
 	public void bind() {
 		GL_W.glBindVertexArray(vao);
-		GL_W.checkError("BindVertexArray(" + vao + ") (" + name + ")");
+		assert GL_W.checkError("BindVertexArray(" + vao + ") (" + name + ")");
 	}
 
 	public void unbind() {
 		GL_W.glBindVertexArray(0);
-		GL_W.checkError("BindVertexArray(" + 0 + ") (" + name + ")");
+		assert GL_W.checkError("BindVertexArray(" + 0 + ") (" + name + ")");
 	}
 
 	@Override
