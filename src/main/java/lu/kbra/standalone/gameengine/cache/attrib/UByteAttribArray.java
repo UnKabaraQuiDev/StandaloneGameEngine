@@ -2,6 +2,7 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import java.nio.ByteBuffer;
 
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class UByteAttribArray extends AttribArray {
@@ -15,13 +16,13 @@ public class UByteAttribArray extends AttribArray {
 		this.bbuffer = ByteBuffer.wrap(data);
 	}
 
-	public UByteAttribArray(String name, int index, int dataSize, byte[] data, int bufferType) {
+	public UByteAttribArray(String name, int index, int dataSize, byte[] data, BufferType bufferType) {
 		super(name, index, dataSize, bufferType);
 		this.data = data;
 		this.bbuffer = ByteBuffer.wrap(data);
 	}
 
-	public UByteAttribArray(String name, int index, int dataSize, byte[] data, int bufferType, boolean s) {
+	public UByteAttribArray(String name, int index, int dataSize, byte[] data, BufferType bufferType, boolean s) {
 		super(name, index, dataSize, bufferType, s);
 		this.data = data;
 		this.bbuffer = ByteBuffer.wrap(data);
@@ -35,9 +36,11 @@ public class UByteAttribArray extends AttribArray {
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType, bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		if (bufferType != GL_W.GL_ELEMENT_ARRAY_BUFFER)
+		GL_W.glBufferData(bufferType.getGlId(), bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+
+		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
 			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_BYTE, 0, 0);
+		}
 	}
 
 	@Override
@@ -53,15 +56,17 @@ public class UByteAttribArray extends AttribArray {
 		return data[i];
 	}
 
-	public void update(byte[] nPos) {
+	public boolean update(byte[] nPos) {
 		if (!iStatic && nPos.length != data.length)
-			return;
+			return false;
+		
 		data = nPos;
 
 		bbuffer.position(0);
 		bbuffer.put(data);
 
-		GL_W.glBufferSubData(GL_W.GL_ARRAY_BUFFER, 0, bbuffer);
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, bbuffer);
+		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 
 }

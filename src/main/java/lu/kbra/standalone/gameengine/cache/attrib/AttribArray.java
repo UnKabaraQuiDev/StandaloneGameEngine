@@ -8,40 +8,39 @@ import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public abstract class AttribArray implements Cleanupable {
 
-	protected int bufferIndex = -1;
+	protected int bid = -1;
 	protected boolean iStatic = true;;
-
-	protected int bufferType = -1;
-
+	protected BufferType bufferType;
 	protected String name = null;
 	protected int index = -1;
 	protected final int dataSize, divisor;
 
 	public AttribArray(String name, int index, int dataSize) {
-		this(name, index, dataSize, GL_W.GL_ARRAY_BUFFER, true);
+		this(name, index, dataSize, BufferType.ARRAY, true);
 	}
 
-	public AttribArray(String name, int index, int dataSize, int bufferType) {
+	public AttribArray(String name, int index, int dataSize, BufferType bufferType) {
 		this(name, index, dataSize, bufferType, true);
 	}
 
 	public AttribArray(String name, int index, int dataSize, boolean iStatic) {
-		this(name, index, dataSize, GL_W.GL_ARRAY_BUFFER, iStatic);
+		this(name, index, dataSize, BufferType.ARRAY, iStatic);
 	}
 
 	public AttribArray(String name, int index, int dataSize, boolean iStatic, int divisor) {
-		this(name, index, dataSize, GL_W.GL_ARRAY_BUFFER, iStatic, divisor);
+		this(name, index, dataSize, BufferType.ARRAY, iStatic, divisor);
 	}
 
-	public AttribArray(String name, int index, int dataSize, int bufferType, boolean iStatic) {
+	public AttribArray(String name, int index, int dataSize, BufferType bufferType, boolean iStatic) {
 		this(name, index, dataSize, bufferType, iStatic, 0);
 	}
 
-	public AttribArray(String name, int index, int dataSize, int bufferType, boolean iStatic, int divisor) {
+	public AttribArray(String name, int index, int dataSize, BufferType bufferType, boolean iStatic, int divisor) {
 		this.name = name;
 		this.index = index;
 		this.dataSize = dataSize;
@@ -73,29 +72,31 @@ public abstract class AttribArray implements Cleanupable {
 	}
 
 	public int gen() {
-		return (bufferIndex = GL_W.glGenBuffers());
+		bid = GL_W.glGenBuffers();
+		assert GL_W.checkError("GenBuffers() (" + name + ")");
+		return bid;
 	}
 
 	public void bind() {
-		GL_W.glBindBuffer(bufferType, bufferIndex);
-		assert GL_W.checkError("BindBuffer(" + bufferType + ", " + bufferIndex + ") (" + name + ")");
+		GL_W.glBindBuffer(bufferType.getGlId(), bid);
+		assert GL_W.checkError("BindBuffer(" + bufferType + ", " + bid + ") (" + name + ")");
 	}
 
 	public void unbind() {
-		GL_W.glBindBuffer(bufferType, 0);
+		GL_W.glBindBuffer(bufferType.getGlId(), 0);
 		assert GL_W.checkError("BindBuffer(" + bufferType + ", 0) (" + name + ")");
 	}
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: "+name+" ("+index+"="+bufferIndex+")");
-		
-		if (bufferIndex == -1)
+		GlobalLogger.log("Cleaning up: " + name + " (" + index + "=" + bid + ")");
+
+		if (bid == -1)
 			return;
 
-		GL_W.glDeleteBuffers(bufferIndex);
-		assert GL_W.checkError("DeleteBuffers(" + bufferIndex + ") (" + name + ")");
-		bufferIndex = -1;
+		GL_W.glDeleteBuffers(bid);
+		assert GL_W.checkError("DeleteBuffers(" + bid + ") (" + name + ")");
+		bid = -1;
 	}
 
 	public String getName() {
@@ -118,20 +119,24 @@ public abstract class AttribArray implements Cleanupable {
 		return dataSize;
 	}
 
-	public int getBufferType() {
+	public boolean isiStatic() {
+		return iStatic;
+	}
+
+	public void setiStatic(boolean iStatic) {
+		this.iStatic = iStatic;
+	}
+
+	public BufferType getBufferType() {
 		return bufferType;
 	}
 
-	public void setBufferType(int bufferType) {
+	public void setBufferType(BufferType bufferType) {
 		this.bufferType = bufferType;
 	}
 
-	/*
-	 * public void setVbo(int bufferIndex) { this.bufferIndex = bufferIndex; }
-	 */
-
-	public int getBufferIndex() {
-		return bufferIndex;
+	public int getBid() {
+		return bid;
 	}
 
 	public boolean isStatic() {
@@ -144,18 +149,18 @@ public abstract class AttribArray implements Cleanupable {
 
 	@Override
 	public String toString() {
-		return getBufferIndex() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
+		return getBid() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
 	}
 
 	public static <T> boolean update(AttribArray arr, T[] data) {
-		if(arr == null) {
+		if (arr == null) {
 			GlobalLogger.log();
 			GlobalLogger.warning("AttribArray is null!");
 			return false;
 		}
-		
+
 		arr.bind();
-		
+
 		if (arr instanceof IntAttribArray)
 			return ((IntAttribArray) arr).update(PCUtils.toPrimitiveInt(data));
 		else if (arr instanceof UIntAttribArray)

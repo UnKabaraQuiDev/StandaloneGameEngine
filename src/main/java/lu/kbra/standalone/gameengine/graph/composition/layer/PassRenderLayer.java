@@ -19,6 +19,7 @@ import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class PassRenderLayer extends RenderLayer<GameEngine, Framebuffer, Mesh> {
@@ -30,7 +31,7 @@ public class PassRenderLayer extends RenderLayer<GameEngine, Framebuffer, Mesh> 
 			new Vec3fAttribArray("pos", 0, 1,
 					new Vector3f[] { new Vector3f(-1, 1, 0), new Vector3f(1, 1, 0), new Vector3f(1, -1, 0),
 							new Vector3f(-1, -1, 0) }),
-			new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 2, 0, 2, 3 }, GL_W.GL_ELEMENT_ARRAY_BUFFER),
+			new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 2, 0, 2, 3 }, BufferType.ELEMENT_ARRAY),
 			new Vec2fAttribArray("uv", 1, 1,
 					new Vector2f[] { new Vector2f(0, 1), new Vector2f(1, 1), new Vector2f(1, 0), new Vector2f(0, 0) }));
 

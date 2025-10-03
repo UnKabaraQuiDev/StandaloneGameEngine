@@ -20,6 +20,7 @@ import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.graph.composition.layer.PassRenderLayer;
 import lu.kbra.standalone.gameengine.graph.composition.layer.RenderLayer;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImageOrigin;
@@ -30,7 +31,7 @@ public class AdvancedCompositor implements Cleanupable {
 	public static final String SCREEN_HEIGHT = "screen_height";
 
 	private static Mesh SCREEN = new Mesh("PASS_SCREEN", null, new Vec3fAttribArray("pos", 0, 1, new Vector3f[] { new Vector3f(-1, 1, 0), new Vector3f(1, 1, 0), new Vector3f(1, -1, 0), new Vector3f(-1, -1, 0) }),
-			new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 2, 0, 2, 3 }, GL_W.GL_ELEMENT_ARRAY_BUFFER),
+			new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 2, 0, 2, 3 }, BufferType.ELEMENT_ARRAY),
 			new Vec2fAttribArray("uv", 1, 1, new Vector2f[] { new Vector2f(0, 1), new Vector2f(1, 1), new Vector2f(1, 0), new Vector2f(0, 0) }));
 
 	protected Vector4f background = new Vector4f(0);

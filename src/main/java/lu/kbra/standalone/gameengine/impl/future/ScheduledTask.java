@@ -7,7 +7,7 @@ public class ScheduledTask implements Comparable<ScheduledTask>, Runnable {
 	private final Runnable task;
 	private final int priority;
 
-	ScheduledTask(Runnable task, int priority) {
+	public ScheduledTask(Runnable task, int priority) {
 		this.task = task;
 		this.priority = priority;
 	}
@@ -20,6 +20,10 @@ public class ScheduledTask implements Comparable<ScheduledTask>, Runnable {
 	@Override
 	public void run() {
 		task.run();
+	}
+
+	public int getPriority() {
+		return priority;
 	}
 
 }

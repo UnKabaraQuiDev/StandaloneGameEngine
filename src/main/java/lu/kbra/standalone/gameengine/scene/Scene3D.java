@@ -1,6 +1,7 @@
 package lu.kbra.standalone.gameengine.scene;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,7 @@ public class Scene3D extends Scene {
 
 	public static final String NAME = Scene3D.class.getName();
 
-	protected Map<String, Entity> entities = new LinkedHashMap<>();
+	protected Map<String, Entity> entities = Collections.synchronizedMap(new LinkedHashMap<>());
 	protected List<String> lightEmittors = new ArrayList<>();
 
 	public Scene3D(String name) {

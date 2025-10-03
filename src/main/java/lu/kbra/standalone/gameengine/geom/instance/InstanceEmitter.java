@@ -14,6 +14,7 @@ import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.transform.Transform;
 
@@ -45,7 +46,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 			transforms[i] = this.particles[i].getTransform().getMatrix();
 		}
 
-		this.instancesTransforms = new Mat4fAttribArray("transforms", 3, 1, transforms, GL_W.GL_ARRAY_BUFFER, false, 1);
+		this.instancesTransforms = new Mat4fAttribArray("transforms", 3, 1, transforms, BufferType.ARRAY, false, 1);
 
 		this.instancesAttribs = attribs;
 		this.instanceMesh = mesh;
@@ -94,7 +95,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 				GlobalLogger.log(Level.WARNING, "Failed to update attrib array: " + this.instancesAttribs[c].getName());
 			}
 		}
-		GL_W.glBindBuffer(GL_W.GL_ARRAY_BUFFER, 0);
+		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
 	public void updateDirect(Matrix4f[] transforms, Object[][] atts) {
@@ -113,7 +114,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 			/*else
 				GlobalLogger.info("Updated attrib array: " + this.instancesAttribs[c].getName() + " (" + this.instancesAttribs[c].getIndex() + ") for " + this.getId());*/
 		}
-		GL_W.glBindBuffer(GL_W.GL_ARRAY_BUFFER, 0);
+		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
 	public void updateParticles() {
@@ -137,7 +138,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 				GlobalLogger.log(Level.WARNING, "Failed to update attrib array: " + this.instancesAttribs[c].getName());
 			}
 		}
-		GL_W.glBindBuffer(GL_W.GL_ARRAY_BUFFER, 0);
+		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 	
 
@@ -152,7 +153,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 			GlobalLogger.log(Level.WARNING, "Could not update transforms");
 		}
 
-		GL_W.glBindBuffer(GL_W.GL_ARRAY_BUFFER, 0);
+		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
 	public void bind() {

@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.joml.Vector4f;
 
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Vec4fAttribArray extends AttribArray {
@@ -15,20 +16,21 @@ public class Vec4fAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec4fAttribArray(String name, int index, int dataSize, Vector4f[] data, int bufferType) {
+	public Vec4fAttribArray(String name, int index, int dataSize, Vector4f[] data, BufferType bufferType) {
 		super(name, index, dataSize, bufferType);
 		this.data = data;
 	}
 
-	public Vec4fAttribArray(String name, int index, int dataSize, Vector4f[] data, int bufferType, boolean s) {
+	public Vec4fAttribArray(String name, int index, int dataSize, Vector4f[] data, BufferType bufferType, boolean s) {
 		super(name, index, dataSize, bufferType, s);
 		this.data = data;
 	}
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType, toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		if (bufferType != GL_W.GL_ELEMENT_ARRAY_BUFFER)
+		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+
+		if (bufferType != BufferType.ELEMENT_ARRAY)
 			GL_W.glVertexAttribPointer(index, dataSize * 4, GL_W.GL_FLOAT, false, 0, 0);
 	}
 

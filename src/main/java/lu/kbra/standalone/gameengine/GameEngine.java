@@ -144,45 +144,53 @@ public class GameEngine implements Cleanupable, UniqueID {
 			mainThread.interrupt();
 
 			this.targetFps = this.window.getOptions().fps;
-			final long targetPerFps = (long) (1e9 / this.targetFps);
-			long lastTime = System.nanoTime(); // nanos
-			float timeUps = this.targetFps > 0 ? 1e9f / this.targetFps : 0;
+			final long targetNanoPerFps = (long) (1e9 / this.targetFps);
+			long lastFrameTime = System.nanoTime();
 
 			while (this.shouldRun()) {
-				long now = System.nanoTime();
+				long currentTime = System.nanoTime();
+				long nanoTimeSinceLastFrame = currentTime - lastFrameTime;
 
-				long deltaRender = now - lastTime;
-				if (deltaRender > timeUps) {
+				if (nanoTimeSinceLastFrame >= targetNanoPerFps) {
 					synchronized (waitForFrameStart) {
-						waitForFrameStart.notifyAll(); // wake up waiting threads
+						waitForFrameStart.notifyAll();
 					}
 
-					long loopStart = System.nanoTime();
-					this.gameLogic.render(deltaRender / 1e9f);
+					long frameStartTime = System.nanoTime();
+
+					// Render the game
+					float deltaSeconds = nanoTimeSinceLastFrame / 1e9f;
+					this.gameLogic.render(deltaSeconds);
 					this.window.swapBuffers();
 
-					lastTime = now;
-
-					this.currentFps = (double) 1 / ((double) deltaRender / 1e9);
+					// Update frame timing
+					lastFrameTime = currentTime;
+					this.currentFps = 1.0 / deltaSeconds;
 
 					synchronized (waitForFrameEnd) {
-						waitForFrameEnd.notifyAll(); // wake up waiting threads
+						waitForFrameEnd.notifyAll();
 					}
 
+					long frameRenderDurationNano = System.nanoTime() - frameStartTime;
+					double frameRenderDurationMs = (double) frameRenderDurationNano / 1_000_000;
+					long dispatcherTimeBudgetNanos = Math.max(0, targetNanoPerFps - frameRenderDurationNano);
 					GlobalLogger
-							.info("FPS: " + PCUtils.round(this.currentFps, 5) + " delta: "
-									+ PCUtils.round(((double) deltaRender / 1_000_000), 5) + "ms renderLoop: "
-									+ PCUtils.round(((double) (System.nanoTime() - loopStart) / 1_000_000), 5) + "ms");
+							.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
+									+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
+									+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
+									+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms");
+
+					// Pump the render dispatcher
+					renderDispatcher.pump(dispatcherTimeBudgetNanos);
 				}
 
+				// Stop loop if window requests closure
 				if (this.window.shouldClose()) {
 					stop();
 					break;
 				}
-
-				final long dispatcherBudgetNanos = Math.max(0, targetPerFps - deltaRender);
-				renderDispatcher.pump((long) (dispatcherBudgetNanos * 1e6));
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -211,9 +219,9 @@ public class GameEngine implements Cleanupable, UniqueID {
 		this.window.runCallbacks();
 		this.window.clearGLContext();
 
-		this.mainDispatcher = new Dispatcher();
-		this.renderDispatcher = new Dispatcher();
-		this.updateDispatcher = new Dispatcher();
+		this.mainDispatcher = new Dispatcher("main");
+		this.renderDispatcher = new Dispatcher("render");
+		this.updateDispatcher = new Dispatcher("update");
 
 		this.threadGroup = new ThreadGroup(getClass().getSimpleName() + "#" + name);
 
@@ -251,7 +259,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 				updateThread.interrupt();
 			}
 
-			renderDispatcher.pump(10);
+			// mainDispatcher.pump(10);
 		}
 
 		Thread.interrupted();

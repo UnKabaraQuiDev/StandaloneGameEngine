@@ -18,6 +18,7 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Mesh implements UniqueID, Cleanupable, Renderable {
@@ -39,7 +40,7 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 	public Mesh(String name, Material material, Vec3fAttribArray vertices, UIntAttribArray indices, AttribArray... attribs) {
 		this.name = name;
 		this.vertices = vertices;
-		indices.setBufferType(GL_W.GL_ELEMENT_ARRAY_BUFFER);
+		indices.setBufferType(BufferType.ELEMENT_ARRAY);
 		this.indices = indices;
 		this.material = material;
 		this.attribs = attribs;
@@ -59,6 +60,7 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 				continue;
 			}
 			storeAttribArray(a);
+			System.err.println("storing attrib: " + a);
 		}
 
 		unbind();
@@ -76,7 +78,7 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 		if (data instanceof MultiAttribArray) {
 			MultiAttribArray ma = (MultiAttribArray) data;
 			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++) {
-				vbo.put(a, data.getBufferIndex());
+				vbo.put(a, data.getBid());
 			}
 		}
 	}
@@ -93,7 +95,7 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 		if (data instanceof MultiAttribArray) {
 			MultiAttribArray ma = (MultiAttribArray) data;
 			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++) {
-				vbo.put(a, data.getBufferIndex());
+				vbo.put(a, data.getBid());
 			}
 		}
 
@@ -104,7 +106,7 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 	}
 
 	private void storeElementArray(UIntAttribArray indices) {
-		indices.setBufferType(GL_W.GL_ELEMENT_ARRAY_BUFFER);
+		indices.setBufferType(BufferType.ELEMENT_ARRAY);
 		this.vbo.put(indices.getIndex(), indices.gen());
 		indices.bind();
 		indices.init();

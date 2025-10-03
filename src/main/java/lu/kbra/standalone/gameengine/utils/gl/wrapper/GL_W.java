@@ -1216,7 +1216,7 @@ public class GL_W {
 	public static int GL_TEXTURE_COMPRESSED_BLOCK_HEIGHT;
 	/** GL43, GL46, GLES32 */
 	public static int GL_MATRIX_STRIDE;
-	/** GLES20, GLES30, GLES32 */
+	/** GL33, GL32, GL40, GL43, GLES20, GLES30, GL46, GLES32 */
 	public static int GL_BLEND_EQUATION;
 	/** GL40, GL43, GL46 */
 	public static int GL_PATCH_DEFAULT_OUTER_LEVEL;
@@ -1394,7 +1394,7 @@ public class GL_W {
 	public static int GL_COMPRESSED_RGBA_ASTC_10x6;
 	/** GLES32 */
 	public static int GL_COMPRESSED_RGBA_ASTC_10x8;
-	/** GLES20, GLES30, GLES32 */
+	/** GL33, GL32, GL40, GL43, GLES20, GLES30, GL46, GLES32 */
 	public static int GL_BLEND_COLOR;
 	/** GLES32 */
 	public static int GL_COMPRESSED_RGBA_ASTC_10x5;
@@ -5394,12 +5394,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glVertexAttribL2dv(int arg0,java.nio.DoubleBuffer arg1) {
+	public static void glVertexAttribL2dv(int arg0,double[] arg1) {
 		WRAPPER.glVertexAttribL2dv(arg0,arg1);
 	}
 
 	/** GL43, GL46 */
-	public static void glVertexAttribL2dv(int arg0,double[] arg1) {
+	public static void glVertexAttribL2dv(int arg0,java.nio.DoubleBuffer arg1) {
 		WRAPPER.glVertexAttribL2dv(arg0,arg1);
 	}
 
@@ -6288,11 +6288,6 @@ public class GL_W {
 		WRAPPER.nglSelectBuffer(arg0,arg1);
 	}
 
-	/** GL43, GLES20, GLES30, GL46, GLES32 */
-	public static void glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
-		WRAPPER.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
-	}
-
 	/** GL43, GL46 */
 	public static int glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		return WRAPPER.glGetShaderPrecisionFormat(arg0,arg1,arg2);
@@ -6300,6 +6295,11 @@ public class GL_W {
 
 	/** GL43, GLES20, GLES30, GL46, GLES32 */
 	public static void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {
+		WRAPPER.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
+	}
+
+	/** GL43, GLES20, GLES30, GL46, GLES32 */
+	public static void glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
 		WRAPPER.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
 	}
 
@@ -6489,12 +6489,12 @@ public class GL_W {
 	}
 
 	/** GLES32 */
-	public static void glGetnUniformiv(int arg0,int arg1,float[] arg2) {
+	public static void glGetnUniformiv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		WRAPPER.glGetnUniformiv(arg0,arg1,arg2);
 	}
 
 	/** GLES32 */
-	public static void glGetnUniformiv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public static void glGetnUniformiv(int arg0,int arg1,float[] arg2) {
 		WRAPPER.glGetnUniformiv(arg0,arg1,arg2);
 	}
 
@@ -6604,17 +6604,17 @@ public class GL_W {
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glDeleteProgramPipelines(int[] arg0) {
-		WRAPPER.glDeleteProgramPipelines(arg0);
-	}
-
-	/** GL43, GL46, GLES32 */
 	public static void glDeleteProgramPipelines(int arg0) {
 		WRAPPER.glDeleteProgramPipelines(arg0);
 	}
 
 	/** GL43, GL46, GLES32 */
 	public static void glDeleteProgramPipelines(java.nio.IntBuffer arg0) {
+		WRAPPER.glDeleteProgramPipelines(arg0);
+	}
+
+	/** GL43, GL46, GLES32 */
+	public static void glDeleteProgramPipelines(int[] arg0) {
 		WRAPPER.glDeleteProgramPipelines(arg0);
 	}
 
@@ -6759,22 +6759,22 @@ public class GL_W {
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static java.lang.String glGetProgramPipelineInfoLog_String(int arg0) {
-		return WRAPPER.glGetProgramPipelineInfoLog_String(arg0);
-	}
-
-	/** GL43, GL46, GLES32 */
-	public static void glGetProgramPipelineInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
-		WRAPPER.glGetProgramPipelineInfoLog(arg0,arg1,arg2);
-	}
-
-	/** GL43, GL46, GLES32 */
 	public static java.lang.String glGetProgramPipelineInfoLog_String(int arg0,int arg1) {
 		return WRAPPER.glGetProgramPipelineInfoLog_String(arg0,arg1);
 	}
 
 	/** GL43, GL46, GLES32 */
+	public static java.lang.String glGetProgramPipelineInfoLog_String(int arg0) {
+		return WRAPPER.glGetProgramPipelineInfoLog_String(arg0);
+	}
+
+	/** GL43, GL46, GLES32 */
 	public static void glGetProgramPipelineInfoLog(int arg0,int[] arg1,java.nio.ByteBuffer arg2) {
+		WRAPPER.glGetProgramPipelineInfoLog(arg0,arg1,arg2);
+	}
+
+	/** GL43, GL46, GLES32 */
+	public static void glGetProgramPipelineInfoLog(int arg0,java.nio.IntBuffer arg1,java.nio.ByteBuffer arg2) {
 		WRAPPER.glGetProgramPipelineInfoLog(arg0,arg1,arg2);
 	}
 
@@ -8464,12 +8464,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,double[] arg3) {
+	public static void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
 		WRAPPER.glProgramUniformMatrix2x4dv(arg0,arg1,arg2,arg3);
 	}
 
 	/** GL43, GL46 */
-	public static void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
+	public static void glProgramUniformMatrix2x4dv(int arg0,int arg1,boolean arg2,double[] arg3) {
 		WRAPPER.glProgramUniformMatrix2x4dv(arg0,arg1,arg2,arg3);
 	}
 
@@ -9554,12 +9554,12 @@ public class GL_W {
 	}
 
 	/** GL43, GLES20, GLES30, GL46, GLES32 */
-	public static void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public static void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
 		WRAPPER.glShaderBinary(arg0,arg1,arg2);
 	}
 
 	/** GL43, GLES20, GLES30, GL46, GLES32 */
-	public static void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public static void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
 		WRAPPER.glShaderBinary(arg0,arg1,arg2);
 	}
 
@@ -10014,12 +10014,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniform2iv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public static void glProgramUniform2iv(int arg0,int arg1,int[] arg2) {
 		WRAPPER.glProgramUniform2iv(arg0,arg1,arg2);
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniform2iv(int arg0,int arg1,int[] arg2) {
+	public static void glProgramUniform2iv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		WRAPPER.glProgramUniform2iv(arg0,arg1,arg2);
 	}
 
@@ -10169,12 +10169,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniform2fv(int arg0,int arg1,float[] arg2) {
+	public static void glProgramUniform2fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		WRAPPER.glProgramUniform2fv(arg0,arg1,arg2);
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniform2fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public static void glProgramUniform2fv(int arg0,int arg1,float[] arg2) {
 		WRAPPER.glProgramUniform2fv(arg0,arg1,arg2);
 	}
 
@@ -12099,12 +12099,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glVertexAttribL4dv(int arg0,java.nio.DoubleBuffer arg1) {
+	public static void glVertexAttribL4dv(int arg0,double[] arg1) {
 		WRAPPER.glVertexAttribL4dv(arg0,arg1);
 	}
 
 	/** GL43, GL46 */
-	public static void glVertexAttribL4dv(int arg0,double[] arg1) {
+	public static void glVertexAttribL4dv(int arg0,java.nio.DoubleBuffer arg1) {
 		WRAPPER.glVertexAttribL4dv(arg0,arg1);
 	}
 
@@ -12549,12 +12549,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glViewportArrayv(int arg0,java.nio.FloatBuffer arg1) {
+	public static void glViewportArrayv(int arg0,float[] arg1) {
 		WRAPPER.glViewportArrayv(arg0,arg1);
 	}
 
 	/** GL43, GL46 */
-	public static void glViewportArrayv(int arg0,float[] arg1) {
+	public static void glViewportArrayv(int arg0,java.nio.FloatBuffer arg1) {
 		WRAPPER.glViewportArrayv(arg0,arg1);
 	}
 
@@ -12714,12 +12714,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
+	public static void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,float[] arg3) {
 		WRAPPER.glProgramUniformMatrix4fv(arg0,arg1,arg2,arg3);
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,float[] arg3) {
+	public static void glProgramUniformMatrix4fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
 		WRAPPER.glProgramUniformMatrix4fv(arg0,arg1,arg2,arg3);
 	}
 
@@ -12754,12 +12754,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glGetVertexAttribLdv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
+	public static void glGetVertexAttribLdv(int arg0,int arg1,double[] arg2) {
 		WRAPPER.glGetVertexAttribLdv(arg0,arg1,arg2);
 	}
 
 	/** GL43, GL46 */
-	public static void glGetVertexAttribLdv(int arg0,int arg1,double[] arg2) {
+	public static void glGetVertexAttribLdv(int arg0,int arg1,java.nio.DoubleBuffer arg2) {
 		WRAPPER.glGetVertexAttribLdv(arg0,arg1,arg2);
 	}
 
@@ -12844,12 +12844,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,double[] arg3) {
+	public static void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
 		WRAPPER.glProgramUniformMatrix4dv(arg0,arg1,arg2,arg3);
 	}
 
 	/** GL43, GL46 */
-	public static void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
+	public static void glProgramUniformMatrix4dv(int arg0,int arg1,boolean arg2,double[] arg3) {
 		WRAPPER.glProgramUniformMatrix4dv(arg0,arg1,arg2,arg3);
 	}
 
@@ -13204,12 +13204,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glViewportIndexedfv(int arg0,java.nio.FloatBuffer arg1) {
+	public static void glViewportIndexedfv(int arg0,float[] arg1) {
 		WRAPPER.glViewportIndexedfv(arg0,arg1);
 	}
 
 	/** GL43, GL46 */
-	public static void glViewportIndexedfv(int arg0,float[] arg1) {
+	public static void glViewportIndexedfv(int arg0,java.nio.FloatBuffer arg1) {
 		WRAPPER.glViewportIndexedfv(arg0,arg1);
 	}
 
@@ -13354,12 +13354,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniform1fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
+	public static void glProgramUniform1fv(int arg0,int arg1,float[] arg2) {
 		WRAPPER.glProgramUniform1fv(arg0,arg1,arg2);
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniform1fv(int arg0,int arg1,float[] arg2) {
+	public static void glProgramUniform1fv(int arg0,int arg1,java.nio.FloatBuffer arg2) {
 		WRAPPER.glProgramUniform1fv(arg0,arg1,arg2);
 	}
 
@@ -14489,12 +14489,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glScissorIndexedv(int arg0,int[] arg1) {
+	public static void glScissorIndexedv(int arg0,java.nio.IntBuffer arg1) {
 		WRAPPER.glScissorIndexedv(arg0,arg1);
 	}
 
 	/** GL43, GL46 */
-	public static void glScissorIndexedv(int arg0,java.nio.IntBuffer arg1) {
+	public static void glScissorIndexedv(int arg0,int[] arg1) {
 		WRAPPER.glScissorIndexedv(arg0,arg1);
 	}
 
@@ -14864,12 +14864,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glVertexAttribL3dv(int arg0,double[] arg1) {
+	public static void glVertexAttribL3dv(int arg0,java.nio.DoubleBuffer arg1) {
 		WRAPPER.glVertexAttribL3dv(arg0,arg1);
 	}
 
 	/** GL43, GL46 */
-	public static void glVertexAttribL3dv(int arg0,java.nio.DoubleBuffer arg1) {
+	public static void glVertexAttribL3dv(int arg0,double[] arg1) {
 		WRAPPER.glVertexAttribL3dv(arg0,arg1);
 	}
 
@@ -14969,12 +14969,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46 */
-	public static void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,double[] arg3) {
+	public static void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
 		WRAPPER.glProgramUniformMatrix4x2dv(arg0,arg1,arg2,arg3);
 	}
 
 	/** GL43, GL46 */
-	public static void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,java.nio.DoubleBuffer arg3) {
+	public static void glProgramUniformMatrix4x2dv(int arg0,int arg1,boolean arg2,double[] arg3) {
 		WRAPPER.glProgramUniformMatrix4x2dv(arg0,arg1,arg2,arg3);
 	}
 
@@ -15534,12 +15534,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniformMatrix4x2fv(int arg0,int arg1,boolean arg2,float[] arg3) {
+	public static void glProgramUniformMatrix4x2fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
 		WRAPPER.glProgramUniformMatrix4x2fv(arg0,arg1,arg2,arg3);
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glProgramUniformMatrix4x2fv(int arg0,int arg1,boolean arg2,java.nio.FloatBuffer arg3) {
+	public static void glProgramUniformMatrix4x2fv(int arg0,int arg1,boolean arg2,float[] arg3) {
 		WRAPPER.glProgramUniformMatrix4x2fv(arg0,arg1,arg2,arg3);
 	}
 
@@ -16044,12 +16044,12 @@ public class GL_W {
 	}
 
 	/** GL43, GLES30, GL46, GLES32 */
-	public static void glGetProgramBinary(int arg0,int[] arg1,int[] arg2,java.nio.ByteBuffer arg3) {
+	public static void glGetProgramBinary(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
 		WRAPPER.glGetProgramBinary(arg0,arg1,arg2,arg3);
 	}
 
 	/** GL43, GLES30, GL46, GLES32 */
-	public static void glGetProgramBinary(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
+	public static void glGetProgramBinary(int arg0,int[] arg1,int[] arg2,java.nio.ByteBuffer arg3) {
 		WRAPPER.glGetProgramBinary(arg0,arg1,arg2,arg3);
 	}
 
@@ -16479,12 +16479,12 @@ public class GL_W {
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glGetProgramPipelineiv(int arg0,int arg1,int[] arg2) {
+	public static void glGetProgramPipelineiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
 		WRAPPER.glGetProgramPipelineiv(arg0,arg1,arg2);
 	}
 
 	/** GL43, GL46, GLES32 */
-	public static void glGetProgramPipelineiv(int arg0,int arg1,java.nio.IntBuffer arg2) {
+	public static void glGetProgramPipelineiv(int arg0,int arg1,int[] arg2) {
 		WRAPPER.glGetProgramPipelineiv(arg0,arg1,arg2);
 	}
 

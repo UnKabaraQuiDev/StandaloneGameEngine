@@ -1,6 +1,8 @@
 package lu.kbra.standalone.gameengine.graph.shader.part;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
@@ -28,7 +30,8 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 	protected final String name;
 	protected int spid = -1;
 	protected Map<Integer, AbstractShaderPart> parts;
-	protected Map<String, Pair<Property<Object>, Integer>> uniforms;
+	protected Map<String, Pair<Property<Object>, Integer>> uniforms = new HashMap<>();
+	protected List<String> knownNotExistsUniforms = new ArrayList<>();
 
 	public AbstractShader(String name_, AbstractShaderPart... parts) {
 		this.name = name_ == null ? this.getClass().getName() : name_;
@@ -65,8 +68,6 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 		}
 
 		this.bind();
-		this.uniforms = new HashMap<>();
-
 		this.createUniforms();
 		this.unbind();
 	}
@@ -78,6 +79,10 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 		}
 		GL_W.glLinkProgram(this.spid);
 		assert GL_W.checkError("LinkProgram(" + this.spid + ")");
+
+		knownNotExistsUniforms.clear();
+		uniforms.clear();
+
 		return true;
 	}
 
@@ -138,7 +143,6 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 	}
 
 	public int getUniformLocation(String name) {
-		// TODO: add a blacklist to avoid trying to get invalid uniforms multiple times
 		if (!this.createUniform(name)) {
 			return -1;
 		}
@@ -151,6 +155,14 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 	}
 
 	public boolean createUniform(String name) {
+		if (knownNotExistsUniforms.contains(name)) {
+			return false;
+		}
+
+		if (uniforms.containsKey(name)) {
+			return true;
+		}
+
 		final int loc = GL_W.glGetUniformLocation(this.spid, name);
 		assert GL_W.checkError("GetUniformLocation(" + this.spid + ", " + name + ")");
 
@@ -162,9 +174,9 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 					.log(Level.WARNING,
 							"Could not get Uniform location for: " + name + " in program " + this.name + " (" + this.spid + ") ("
 									+ GL_W.glGetError() + ")");
+			knownNotExistsUniforms.add(name);
+			return false;
 		}
-
-		return false;
 	}
 
 	public void bind() {

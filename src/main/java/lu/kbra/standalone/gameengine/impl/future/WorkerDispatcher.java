@@ -2,17 +2,13 @@ package lu.kbra.standalone.gameengine.impl.future;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.PriorityBlockingQueue;
 
-class WorkerDispatcher {
+public class WorkerDispatcher extends Dispatcher {
 
-	private final PriorityBlockingQueue<ScheduledTask> queue = new PriorityBlockingQueue<>();
 	private final ExecutorService[] workers;
 
-	public WorkerDispatcher(int workerCount) {
-		// final IntPointer ip = new IntPointer(0);
-		// workers = Executors.newFixedThreadPool(workerCount, (run) ->
-		// ThreadBuilder.create(run).name("Worker-" + ip.increment()).build());
+	public WorkerDispatcher(String name, int workerCount) {
+		super(name);
 
 		workers = new ExecutorService[workerCount];
 		for (int i = 0; i < workerCount; i++) {
@@ -38,6 +34,11 @@ class WorkerDispatcher {
 				}
 			});
 		}
+	}
+
+	@Override
+	public void pump(long timeBudgetMillis) {
+		// do nothing
 	}
 
 	public void post(Runnable task) {

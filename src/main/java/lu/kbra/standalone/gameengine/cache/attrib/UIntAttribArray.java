@@ -1,5 +1,6 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class UIntAttribArray extends AttribArray {
@@ -11,12 +12,12 @@ public class UIntAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data, int bufferType) {
+	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType) {
 		super(name, index, dataSize, bufferType);
 		this.data = data;
 	}
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data, int bufferType, boolean _static) {
+	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static) {
 		super(name, index, dataSize, bufferType, _static);
 		this.data = data;
 	}
@@ -26,15 +27,16 @@ public class UIntAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data, int bufferType, boolean _static, int divisor) {
+	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType, data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		if (bufferType != GL_W.GL_ELEMENT_ARRAY_BUFFER)
+		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+
+		if (bufferType != BufferType.ELEMENT_ARRAY)
 			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
 	}
 
@@ -56,7 +58,7 @@ public class UIntAttribArray extends AttribArray {
 			return false;
 		data = nPos;
 
-		GL_W.glBufferSubData(bufferType, 0, data);
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
 		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 

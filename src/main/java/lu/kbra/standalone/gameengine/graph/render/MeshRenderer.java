@@ -28,7 +28,7 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 	public void render_in(CacheManager cache, Scene scene, MeshComponent m) {
 		Entity e = m.getParent();
 
-		Mesh mesh = m.getMesh(cache);
+		Mesh mesh = m.getMesh();
 		if (mesh == null) {
 			GlobalLogger.log(Level.WARNING, "Mesh is null, for entity: " + e + "!");
 			cache.dump(GlobalLogger.getLogger().getFileWriter());

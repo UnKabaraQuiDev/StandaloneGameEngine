@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.joml.Vector3i;
 
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Vec3iAttribArray extends AttribArray {
@@ -15,12 +16,12 @@ public class Vec3iAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, int bufferType) {
+	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, BufferType bufferType) {
 		super(name, index, dataSize, bufferType);
 		this.data = data;
 	}
 
-	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, int bufferType, boolean s) {
+	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, BufferType bufferType, boolean s) {
 		super(name, index, dataSize, bufferType, s);
 		this.data = data;
 	}
@@ -30,15 +31,16 @@ public class Vec3iAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, int bufferType, boolean _static, int divisor) {
+	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, BufferType bufferType, boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType, toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		if (bufferType != GL_W.GL_ELEMENT_ARRAY_BUFFER)
+		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+
+		if (bufferType != BufferType.ELEMENT_ARRAY)
 			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_INT, false, 0, 0);
 	}
 
@@ -49,7 +51,7 @@ public class Vec3iAttribArray extends AttribArray {
 
 		GL_W.glBufferSubData(GL_W.GL_ARRAY_BUFFER, 0, toFlatArray());
 		assert GL_W.checkError();
-		
+
 		return true;
 	}
 
@@ -77,10 +79,10 @@ public class Vec3iAttribArray extends AttribArray {
 	public IntAttribArray toIntAttribArray() {
 		return new IntAttribArray(name, index, dataSize * 3, toFlatArray(), bufferType, iStatic);
 	}
+
 	public UIntAttribArray toUIntAttribArray() {
 		return new UIntAttribArray(name, index, dataSize * 3, toFlatArray(), bufferType, iStatic);
 	}
-
 
 	public Vector3i[] getData() {
 		return data;

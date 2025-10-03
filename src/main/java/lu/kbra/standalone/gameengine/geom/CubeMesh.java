@@ -7,7 +7,7 @@ import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.graph.material.Material;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public class CubeMesh extends Mesh {
 
@@ -63,7 +63,7 @@ public class CubeMesh extends Mesh {
 								6,
 								7,
 								3 },
-						GL_W.GL_ELEMENT_ARRAY_BUFFER),
+						BufferType.ELEMENT_ARRAY),
 				new Vec3fAttribArray("normal", 1, 1,
 						new Vector3f[] {
 								new Vector3f(-1, -1, -1).normalize(),

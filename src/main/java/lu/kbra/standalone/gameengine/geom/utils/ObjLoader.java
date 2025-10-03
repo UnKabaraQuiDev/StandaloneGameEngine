@@ -18,6 +18,7 @@ import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
 import lu.kbra.standalone.gameengine.geom.Gizmo;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.graph.material.Material;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public final class ObjLoader {
@@ -93,7 +94,7 @@ public final class ObjLoader {
 		 * "Indices " + Arrays.toString(indicesArr));
 		 */
 
-		return new Gizmo(name, new Vec3fAttribArray("pos", 0, 1, verticesArr, GL_W.GL_ARRAY_BUFFER), new UIntAttribArray("ind", -1, 1, indicesArr, GL_W.GL_ELEMENT_ARRAY_BUFFER), new Vec4fAttribArray("col", 1, 1, colorArr, GL_W.GL_ARRAY_BUFFER));
+		return new Gizmo(name, new Vec3fAttribArray("pos", 0, 1, verticesArr, BufferType.ARRAY), new UIntAttribArray("ind", -1, 1, indicesArr, BufferType.ELEMENT_ARRAY), new Vec4fAttribArray("col", 1, 1, colorArr, BufferType.ARRAY));
 	}
 
 	public static Mesh loadMesh(String name, Material material, String path) {
@@ -168,10 +169,10 @@ public final class ObjLoader {
 
 		int[] indicesArr = indices.stream().mapToInt((v) -> v).toArray();
 
-		Vec3fAttribArray pos = new Vec3fAttribArray("pos", 0, 1, verticesArr, GL_W.GL_ARRAY_BUFFER);
-		UIntAttribArray ind = new UIntAttribArray("ind", -1, 1, indicesArr, GL_W.GL_ELEMENT_ARRAY_BUFFER);
-		Vec3fAttribArray norm = new Vec3fAttribArray("norm", 1, 1, normalsArr, GL_W.GL_ARRAY_BUFFER);
-		Vec2fAttribArray uv = new Vec2fAttribArray("uv", 2, 1, uvsArr, GL_W.GL_ARRAY_BUFFER);
+		Vec3fAttribArray pos = new Vec3fAttribArray("pos", 0, 1, verticesArr, BufferType.ARRAY);
+		UIntAttribArray ind = new UIntAttribArray("ind", -1, 1, indicesArr, BufferType.ELEMENT_ARRAY);
+		Vec3fAttribArray norm = new Vec3fAttribArray("norm", 1, 1, normalsArr, BufferType.ARRAY);
+		Vec2fAttribArray uv = new Vec2fAttribArray("uv", 2, 1, uvsArr, BufferType.ARRAY);
 
 		return new Mesh(name, material, pos, ind, norm, uv);
 	}

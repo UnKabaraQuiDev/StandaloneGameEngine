@@ -14,7 +14,7 @@
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 
-		<lwjgl.version>3.3.3</lwjgl.version>
+		<lwjgl.version>3.3.6</lwjgl.version>
 		<steamworks4j-server.version>1.9.0</steamworks4j-server.version>
 		<steamworks4j.version>1.9.0</steamworks4j.version>
 		<joml.version>1.10.5</joml.version>
@@ -221,27 +221,6 @@
 
 	<build>
 		<plugins>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>3.2.0</version>
-				<executions>
-					<!-- Add a source directory for PDRUtils project -->
-					<execution>
-						<id>add-source-pdrutils</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>${project.basedir}/PDRUtils/src</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>

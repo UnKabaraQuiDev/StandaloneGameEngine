@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.joml.Vector4i;
 
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Vec4iAttribArray extends AttribArray {
@@ -15,12 +16,12 @@ public class Vec4iAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, int bufferType) {
+	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType) {
 		super(name, index, dataSize, bufferType);
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, int bufferType, boolean s) {
+	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType, boolean s) {
 		super(name, index, dataSize, bufferType, s);
 		this.data = data;
 	}
@@ -30,15 +31,16 @@ public class Vec4iAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, int bufferType, boolean _static, int divisor) {
+	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType, boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType, toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		if (bufferType != GL_W.GL_ELEMENT_ARRAY_BUFFER)
+		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+
+		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM)
 			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_INT, false, 0, 0);
 	}
 

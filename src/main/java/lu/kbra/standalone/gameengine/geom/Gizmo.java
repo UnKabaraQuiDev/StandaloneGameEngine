@@ -16,6 +16,7 @@ import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Gizmo implements UniqueID, Cleanupable, Renderable {
@@ -83,7 +84,7 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 	private void storeElementArray(UIntAttribArray indices) {
 		if (indices == null)
 			throw new NullPointerException("UintAttribArray indices is null");
-		indices.setBufferType(GL_W.GL_ELEMENT_ARRAY_BUFFER);
+		indices.setBufferType(BufferType.ELEMENT_ARRAY);
 		this.vbo.put(indices.getIndex(), indices.gen());
 		indices.bind();
 		indices.init();

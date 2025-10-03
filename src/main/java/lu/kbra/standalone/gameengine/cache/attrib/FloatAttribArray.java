@@ -1,5 +1,6 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class FloatAttribArray extends AttribArray {
@@ -11,17 +12,17 @@ public class FloatAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, int bufferType) {
+	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType) {
 		super(name, index, dataSize, bufferType);
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, int bufferType, boolean _static) {
+	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static) {
 		super(name, index, dataSize, bufferType, _static);
 		this.data = data;
 	}
-	
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, int bufferType, boolean _static, int divisor) {
+
+	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -38,8 +39,8 @@ public class FloatAttribArray extends AttribArray {
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType, data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		if (bufferType != GL_W.GL_ELEMENT_ARRAY_BUFFER && bufferType != GL_W.GL_UNIFORM_BUFFER)
+		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM)
 			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_FLOAT, false, 0, 0);
 	}
 
@@ -47,9 +48,7 @@ public class FloatAttribArray extends AttribArray {
 		if (!iStatic && nPos.length != data.length)
 			return false;
 		data = nPos;
-		// try (MemoryStack stack = MemoryStack.stackPush()) {
-		GL_W.glBufferSubData(bufferType, 0, data);
-		// }
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
 
 		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}

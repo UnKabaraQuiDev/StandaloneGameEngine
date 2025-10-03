@@ -6,6 +6,7 @@ import java.util.Arrays;
 import org.joml.Matrix4f;
 import org.lwjgl.BufferUtils;
 
+import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
@@ -17,7 +18,7 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		this.data = data;
 	}
 
-	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, int bufferType) {
+	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, BufferType bufferType) {
 		super(name, index, dataSize, bufferType);
 		this.data = data;
 	}
@@ -32,19 +33,19 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		this.data = data;
 	}
 
-	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, int bufferType, boolean s) {
+	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, BufferType bufferType, boolean s) {
 		super(name, index, dataSize, bufferType, s);
 		this.data = data;
 	}
 
-	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, int bufferType, boolean iStatic, int divisor) {
+	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, BufferType bufferType, boolean iStatic, int divisor) {
 		super(name, index, dataSize, bufferType, iStatic, divisor);
 		this.data = data;
 	}
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType, toFloatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), toFloatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 	}
 
 	public boolean update(Matrix4f[] nPos) {
@@ -53,7 +54,7 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		}
 		data = nPos;
 
-		GL_W.glBufferSubData(GL_W.GL_ARRAY_BUFFER, 0, toFloatArray());
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFloatArray());
 		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 
@@ -113,7 +114,7 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 
 	@Override
 	public String toString() {
-		return getBufferIndex() + "|" + getMaxIndex() + "-" + getMaxIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
+		return getBid() + "|" + getMaxIndex() + "-" + getMaxIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
 	}
 
 }

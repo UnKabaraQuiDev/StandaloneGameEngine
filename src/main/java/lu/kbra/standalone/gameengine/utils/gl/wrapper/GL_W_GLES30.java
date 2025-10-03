@@ -1222,12 +1222,12 @@ public class GL_W_GLES30 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
+	public void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {
 		org.lwjgl.opengles.GLES30.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glGetShaderPrecisionFormat(int arg0,int arg1,int[] arg2,int[] arg3) {
+	public void glGetShaderPrecisionFormat(int arg0,int arg1,java.nio.IntBuffer arg2,java.nio.IntBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetShaderPrecisionFormat(arg0,arg1,arg2,arg3);
 	}
 
@@ -2027,12 +2027,12 @@ public class GL_W_GLES30 implements GL_W_Call {
 	}
 
 	@Override
-	public void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES30.glShaderBinary(arg0,arg1,arg2);
 	}
 
 	@Override
-	public void glShaderBinary(int[] arg0,int arg1,java.nio.ByteBuffer arg2) {
+	public void glShaderBinary(java.nio.IntBuffer arg0,int arg1,java.nio.ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES30.glShaderBinary(arg0,arg1,arg2);
 	}
 
@@ -3472,12 +3472,12 @@ public class GL_W_GLES30 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramBinary(int arg0,int[] arg1,int[] arg2,java.nio.ByteBuffer arg3) {
+	public void glGetProgramBinary(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetProgramBinary(arg0,arg1,arg2,arg3);
 	}
 
 	@Override
-	public void glGetProgramBinary(int arg0,java.nio.IntBuffer arg1,java.nio.IntBuffer arg2,java.nio.ByteBuffer arg3) {
+	public void glGetProgramBinary(int arg0,int[] arg1,int[] arg2,java.nio.ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetProgramBinary(arg0,arg1,arg2,arg3);
 	}
 

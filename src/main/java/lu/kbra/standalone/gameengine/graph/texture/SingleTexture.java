@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 
 import org.joml.Vector2f;
 import org.joml.Vector2i;
+import org.joml.Vector3i;
 import org.lwjgl.system.MemoryUtil;
 
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
@@ -27,6 +28,10 @@ public class SingleTexture extends Texture {
 		setTextureType(TextureType.TXT2D);
 	}
 
+	public SingleTexture(String string, Vector2i outputResolution) {
+		this(string, outputResolution.x, outputResolution.y);
+	}
+
 	/**
 	 * GEN
 	 */
@@ -34,6 +39,10 @@ public class SingleTexture extends Texture {
 		super(name, name, TextureOperation.GENERATE);
 		setSize(width, height, depth);
 		setTextureType(TextureType.TXT3D);
+	}
+
+	public SingleTexture(String string, Vector3i outputResolution) {
+		this(string, outputResolution.x, outputResolution.y, outputResolution.z);
 	}
 
 	// BUFFER LOAD
@@ -239,6 +248,14 @@ public class SingleTexture extends Texture {
 		this.width = width;
 		this.height = height;
 		this.depth = depth;
+	}
+
+	public void setSize(Vector2i resolution) {
+		setSize(resolution.x, resolution.y, 0);
+	}
+
+	public void setSize(Vector3i resolution) {
+		setSize(resolution.x, resolution.y, resolution.z);
 	}
 
 	public MemImage getMemImage() {
