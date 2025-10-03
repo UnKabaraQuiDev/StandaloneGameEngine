@@ -60,7 +60,6 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 				continue;
 			}
 			storeAttribArray(a);
-			System.err.println("storing attrib: " + a);
 		}
 
 		unbind();
@@ -177,13 +176,18 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 		return indicesCount;
 	}
 
+	public int getFaceCount() {
+		return indicesCount / 6;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	@Override
 	public String toString() {
-		return "{" + name + " | VAO: " + vao + " | VBO: " + vbo + " | V: " + vertexCount + "/" + indicesCount + " | Attribs: " + Arrays.toString(attribs) + "}";
+		return "{" + name + " | VAO: " + vao + " | VBO: " + vbo + " | V: " + vertexCount + "/" + indicesCount + " | Attribs: "
+				+ Arrays.toString(attribs) + "}";
 	}
 
 	public static QuadMesh newQuad(String name, Material material2, Vector2f size) {

@@ -32,12 +32,20 @@ public abstract class AttribArray implements Cleanupable {
 		this(name, index, dataSize, BufferType.ARRAY, iStatic);
 	}
 
+	public AttribArray(String name, int index, int dataSize, int divisor) {
+		this(name, index, dataSize, BufferType.ARRAY, false, divisor);
+	}
+
 	public AttribArray(String name, int index, int dataSize, boolean iStatic, int divisor) {
 		this(name, index, dataSize, BufferType.ARRAY, iStatic, divisor);
 	}
 
 	public AttribArray(String name, int index, int dataSize, BufferType bufferType, boolean iStatic) {
 		this(name, index, dataSize, bufferType, iStatic, 0);
+	}
+
+	public AttribArray(String name, int index, int dataSize, BufferType bufferType, int _divisor) {
+		this(name, index, dataSize, bufferType, false, _divisor);
 	}
 
 	public AttribArray(String name, int index, int dataSize, BufferType bufferType, boolean iStatic, int divisor) {
