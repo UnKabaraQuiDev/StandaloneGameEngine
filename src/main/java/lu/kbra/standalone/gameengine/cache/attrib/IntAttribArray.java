@@ -40,7 +40,7 @@ public class IntAttribArray extends AttribArray {
 		assert GL_W.checkError("BufferData(" + bufferType + ", " + Arrays.toString(data) + ", " + iStatic + ")");
 		
 		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
-			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_INT, false, 0, 0);
+			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_INT, 0, 0);
 			assert GL_W.checkError("VertexAttribPointer(" + index + ", " + dataSize + ", INT, FALSE, 0, 0)");
 		}
 	}

@@ -18,6 +18,8 @@ public class Scene3D extends Scene {
 
 	public static final String NAME = Scene3D.class.getName();
 
+	private final Object entitiesLock = new Object();
+
 	protected Map<String, Entity> entities = Collections.synchronizedMap(new LinkedHashMap<>());
 	protected List<String> lightEmittors = new ArrayList<>();
 
@@ -35,14 +37,18 @@ public class Scene3D extends Scene {
 	}
 
 	public void setEntities(Map<String, Entity> entities) {
-		this.entities = entities;
+		synchronized (entitiesLock) {
+			this.entities = entities;
+		}
 	}
 
 	public Entity addEntity(String str, Entity entity) {
 		if (entity == null)
 			return null;
 
-		this.entities.put(str, entity);
+		synchronized (entitiesLock) {
+			this.entities.put(str, entity);
+		}
 		if (entity.hasComponentMatching(LightComponent.class)) {
 			this.lightEmittors.add(str);
 		}
@@ -50,20 +56,28 @@ public class Scene3D extends Scene {
 	}
 
 	public Entity addEntity(Entity e) {
-		return addEntity(e.getId(), e);
+		synchronized (entitiesLock) {
+			return addEntity(e.getId(), e);
+		}
 	}
 
 	public Entity addEntity(String str, Component... components) {
-		return addEntity(str, new Entity(str, components));
+		synchronized (entitiesLock) {
+			return addEntity(str, new Entity(str, components));
+		}
 	}
 
 	public Entity getEntity(String str) {
-		return this.entities.get(str);
+		synchronized (entitiesLock) {
+			return this.entities.get(str);
+		}
 	}
 
 	public void addEntities(String[] names, Entity[] entities) {
-		for (int i = 0; i < Math.min(names.length, entities.length); i++) {
-			this.addEntity(names[i], entities[i]);
+		synchronized (entitiesLock) {
+			for (int i = 0; i < Math.min(names.length, entities.length); i++) {
+				this.addEntity(names[i], entities[i]);
+			}
 		}
 	}
 
@@ -89,6 +103,10 @@ public class Scene3D extends Scene {
 
 	public void setCamera(Camera3D camera) {
 		super.setCamera(camera);
+	}
+
+	public Object getEntitiesLock() {
+		return entitiesLock;
 	}
 
 }

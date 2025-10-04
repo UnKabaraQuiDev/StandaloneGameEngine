@@ -3,6 +3,8 @@ package lu.kbra.standalone.gameengine.impl.future;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import lu.pcy113.pclib.builder.ThreadBuilder;
+
 public class WorkerDispatcher extends Dispatcher {
 
 	private final ExecutorService[] workers;
@@ -13,7 +15,7 @@ public class WorkerDispatcher extends Dispatcher {
 		workers = new ExecutorService[workerCount];
 		for (int i = 0; i < workerCount; i++) {
 			final int index = i;
-			workers[i] = Executors.newSingleThreadExecutor(r -> new Thread(r, "Worker-" + index));
+			workers[i] = Executors.newSingleThreadExecutor(r -> ThreadBuilder.create(r).name("Worker-" + index).daemon(true).build());
 		}
 		startWorkers();
 	}

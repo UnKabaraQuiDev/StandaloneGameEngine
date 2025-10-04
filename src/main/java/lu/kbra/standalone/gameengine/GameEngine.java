@@ -2,6 +2,7 @@ package lu.kbra.standalone.gameengine;
 
 import java.util.logging.Level;
 
+import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
 import lu.pcy113.pclib.PCUtils;
@@ -28,6 +29,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 	public static final Vector3f UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
 			RIGHT = new Vector3f(X_POS), FORWARD = new Vector3f(Z_POS), BACK = new Vector3f(X_POS);
+
+	public static final Matrix4f IDENTITY_MATRIX4F = new Matrix4f().identity();
 
 	public static final long POLL_EVENT_TIMEOUT = 500, BUFFER_SWAP_TIMEOUT = 500, WAIT_FRAME_END_TIMEOUT = 500,
 			WAIT_FRAME_START_TIMEOUT = 500, WAIT_UPDATE_END_TIMEOUT = 500, WAIT_UPDATE_START_TIMEOUT = 500; // ms
@@ -174,14 +177,19 @@ public class GameEngine implements Cleanupable, UniqueID {
 					long frameRenderDurationNano = System.nanoTime() - frameStartTime;
 					double frameRenderDurationMs = (double) frameRenderDurationNano / 1_000_000;
 					long dispatcherTimeBudgetNanos = Math.max(0, targetNanoPerFps - frameRenderDurationNano);
+
+					// Pump the render dispatcher
+					final long dispatcherStartNano = System.nanoTime();
+					renderDispatcher.pump(dispatcherTimeBudgetNanos);
+					final long dispatcherUsedNano = System.nanoTime() - dispatcherStartNano;
+
 					GlobalLogger
 							.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
 									+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
 									+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
-									+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms");
-
-					// Pump the render dispatcher
-					renderDispatcher.pump(dispatcherTimeBudgetNanos);
+									+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
+									+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms "
+									+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true));
 				}
 
 				// Stop loop if window requests closure

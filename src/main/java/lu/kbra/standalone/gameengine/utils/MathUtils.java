@@ -11,7 +11,7 @@ public final class MathUtils {
 	public static float map(float x, float in_min, float in_max, float out_min, float out_max) {
 		return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 	}
-	
+
 	public static double map(double x, double in_min, double in_max, double out_min, double out_max) {
 		return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 	}
@@ -48,7 +48,7 @@ public final class MathUtils {
 				index = i;
 				max = (byte) Math.abs(arr[i]);
 			}
-			if(Math.abs(arr[i]) < min) {
+			if (Math.abs(arr[i]) < min) {
 				min = (byte) Math.abs(arr[i]);
 			}
 		}
@@ -74,7 +74,7 @@ public final class MathUtils {
 	}
 
 	public static String fillPrefix(int desiredLength, char c, String string) {
-		if(string.length() >= desiredLength)
+		if (string.length() >= desiredLength)
 			return string;
 		int missing = desiredLength - string.length();
 		StringBuilder sb = new StringBuilder();
@@ -89,10 +89,22 @@ public final class MathUtils {
 	}
 
 	public static float zigzag(float x, float period) {
-		return x % 2*period < period ? x % period : period - x % period;
+		return x % 2 * period < period ? x % period : period - x % period;
 	}
+
 	public static float zigzagNormalized(float x, float period) {
-		return zigzag(x, period)/period;
+		return zigzag(x, period) / period;
+	}
+
+	public static Vector2f rotate(Vector2f v, float deg) {
+		float rad = (float) Math.toRadians(deg);
+		float cos = (float) Math.cos(rad);
+		float sin = (float) Math.sin(rad);
+		float xNew = v.x * cos - v.y * sin;
+		float yNew = v.x * sin + v.y * cos;
+		v.set(xNew, yNew);
+		
+		return v;
 	}
 
 }

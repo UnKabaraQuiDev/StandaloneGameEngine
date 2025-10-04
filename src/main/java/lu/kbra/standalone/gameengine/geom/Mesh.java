@@ -23,6 +23,16 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Mesh implements UniqueID, Cleanupable, Renderable {
 
+	public static final String ATTRIB_VERTICES_NAME = "vertices";
+	public static final String ATTRIB_INDICES_NAME = "ids";
+	public static final String ATTRIB_NORMALS_NAME = "normals";
+	public static final String ATTRIB_UVS_NAME = "uvs";
+
+	public static final int ATTRIB_VERTICES_ID = 0;
+	public static final int ATTRIB_INDICES_ID = -1;
+	public static final int ATTRIB_NORMALS_ID = 1;
+	public static final int ATTRIB_UVS_ID = 2;
+
 	protected String name;
 	protected int vao = -1;
 	protected HashMap<Integer, Integer> vbo = new HashMap<>();
@@ -51,7 +61,7 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 		this.vao = GL_W.glGenVertexArrays();
 		bind();
 		storeElementArray((UIntAttribArray) indices);
-		vertices.setIndex(0);
+		vertices.setIndex(ATTRIB_VERTICES_ID);
 		storeAttribArray((Vec3fAttribArray) vertices);
 
 		for (AttribArray a : attribs) {
@@ -98,7 +108,7 @@ public class Mesh implements UniqueID, Cleanupable, Renderable {
 			}
 		}
 
-		AttribArray[] newAttribs = new AttribArray[this.attribs.length + 1];
+		final AttribArray[] newAttribs = new AttribArray[this.attribs.length + 1];
 		System.arraycopy(this.attribs, 0, newAttribs, 0, this.attribs.length);
 		newAttribs[this.attribs.length] = data;
 		this.attribs = newAttribs;

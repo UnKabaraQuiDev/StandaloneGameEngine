@@ -6,6 +6,38 @@ import java.util.function.Supplier;
 
 public class TaskFuture<T, U> {
 
+	public class TaskState<V> {
+
+		private boolean started = false;
+		private boolean ongoing = false;
+		private boolean done = false;
+
+		private V result;
+
+		public boolean isStarted() {
+			return started;
+		}
+
+		public boolean isOngoing() {
+			return ongoing;
+		}
+
+		public boolean isDone() {
+			return done;
+		}
+
+		public V getResult() {
+			return result;
+		}
+
+		@Override
+		public String toString() {
+			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result
+					+ "]";
+		}
+
+	}
+
 	private TaskFuture<?, ?> first;
 	private final Dispatcher dispatcher;
 	private final Function<T, U> task;
@@ -73,15 +105,24 @@ public class TaskFuture<T, U> {
 		return nextFuture;
 	}
 
-	public void push() {
-		first.pushInternal(null);
+	public TaskState<U> push() {
+		final TaskState<U> state = new TaskState<>();
+		state.started = true;
+		first.pushInternal(null, state);
+		return state;
 	}
 
-	private void pushInternal(T v) {
+	@SuppressWarnings("unchecked")
+	private void pushInternal(T v, TaskState state) {
 		dispatcher.post(() -> {
+			state.ongoing = true;
 			final U result = task.apply((T) v);
 			if (next != null) {
-				next.pushInternal(result);
+				next.pushInternal(result, state);
+			} else {
+				state.result = result;
+				state.done = true;
+				state.ongoing = false;
 			}
 		}, priority);
 	}
