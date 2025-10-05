@@ -1,16 +1,34 @@
 package lu.kbra.standalone.gameengine.geom.utils;
 
+import static org.lwjgl.assimp.Assimp.aiGetErrorString;
+import static org.lwjgl.assimp.Assimp.aiProcess_FlipUVs;
+import static org.lwjgl.assimp.Assimp.aiProcess_GenSmoothNormals;
+import static org.lwjgl.assimp.Assimp.aiProcess_JoinIdenticalVertices;
+import static org.lwjgl.assimp.Assimp.aiProcess_Triangulate;
+
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 import org.joml.Vector2f;
 import org.joml.Vector2i;
 import org.joml.Vector3f;
 import org.joml.Vector3i;
 import org.joml.Vector4f;
+import org.lwjgl.assimp.AIFace;
+import org.lwjgl.assimp.AIMesh;
+import org.lwjgl.assimp.AIScene;
+import org.lwjgl.assimp.AIVector3D;
+import org.lwjgl.assimp.Assimp;
+import org.lwjgl.system.MemoryUtil;
 
 import lu.pcy113.pclib.PCUtils;
 
+import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
@@ -19,18 +37,18 @@ import lu.kbra.standalone.gameengine.geom.Gizmo;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public final class ObjLoader {
+
+	public record LoadedMeshData(Vec3fAttribArray vertices, UIntAttribArray indices, AttribArray[] attribs, String name,
+			Material material) {
+
+	}
 
 	public static Gizmo loadGizmo(String name, String path) {
 		String[] lines = PCUtils.readStringFile(path).split("\n");
 
 		List<Vector3f> vertices = new ArrayList<>();
-		/*
-		 * List<Vector3f> normals = new ArrayList<>(); List<Vector2f> uvs = new
-		 * ArrayList<>();
-		 */
 		List<Vector2i> edges = new ArrayList<>();
 		List<Vector4f> colors = new ArrayList<>();
 
@@ -43,7 +61,9 @@ public final class ObjLoader {
 			case "v":
 				vertices.add(new Vector3f(Float.parseFloat(tokens[1]), Float.parseFloat(tokens[2]), Float.parseFloat(tokens[3])));
 				if (tokens.length > 4)
-					colors.add(new Vector4f(Float.parseFloat(tokens[4]), Float.parseFloat(tokens[5]), Float.parseFloat(tokens[6]), tokens.length > 7 ? Float.parseFloat(tokens[7]) : 1));
+					colors
+							.add(new Vector4f(Float.parseFloat(tokens[4]), Float.parseFloat(tokens[5]), Float.parseFloat(tokens[6]),
+									tokens.length > 7 ? Float.parseFloat(tokens[7]) : 1));
 				break;
 			case "l":
 				edges.add(new Vector2i(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2])));
@@ -62,18 +82,10 @@ public final class ObjLoader {
 		for (int i = 0; i < vertices.size(); i++) {
 			Vector3f pos = vertices.get(i);
 
-			/*
-			 * verticesArr[i*3+0] = pos.x; verticesArr[i*3+1] = pos.y; verticesArr[i*3+2] =
-			 * pos.z;
-			 */
 			verticesArr[i] = pos;
 
 			if (colors != null) {
 				Vector4f col = colors.get(i);
-				/*
-				 * colorArr[i*4+0] = col.x; colorArr[i*4+1] = col.y; colorArr[i*4+2] = col.z;
-				 * colorArr[i*4+3] = col.w;
-				 */
 				colorArr[i] = col;
 			}
 		}
@@ -87,94 +99,93 @@ public final class ObjLoader {
 		}
 		int[] indicesArr = indices.stream().mapToInt((v) -> v).toArray();
 
-		/*
-		 * GlobalLogger.log(Level.INFO, "Loaded " + name); GlobalLogger.log(Level.INFO,
-		 * "Vertices " + Arrays.toString(verticesArr)); GlobalLogger.log(Level.INFO,
-		 * "Color " + Arrays.toString(colorArr)); GlobalLogger.log(Level.INFO,
-		 * "Indices " + Arrays.toString(indicesArr));
-		 */
-
-		return new Gizmo(name, new Vec3fAttribArray("pos", 0, 1, verticesArr, BufferType.ARRAY), new UIntAttribArray("ind", -1, 1, indicesArr, BufferType.ELEMENT_ARRAY), new Vec4fAttribArray("col", 1, 1, colorArr, BufferType.ARRAY));
+		return new Gizmo(name, new Vec3fAttribArray("pos", 0, 1, verticesArr, BufferType.ARRAY),
+				new UIntAttribArray("ind", -1, 1, indicesArr, BufferType.ELEMENT_ARRAY),
+				new Vec4fAttribArray("col", 1, 1, colorArr, BufferType.ARRAY));
 	}
 
 	public static Mesh loadMesh(String name, Material material, String path) {
-		String[] lines = PCUtils.readStringFile(path).split("\n");
+		return loadMesh(name, material, path, (t) -> new Mesh(t.name, t.material, t.vertices, t.indices, t.attribs));
+	}
 
-		List<Vector3f> vertices = new ArrayList<>();
-		List<Vector3f> normals = new ArrayList<>();
-		List<Vector2f> uvs = new ArrayList<>();
-		List<Vector3i> faces = new ArrayList<>();
+	public static Mesh loadMesh(String name, Material material, String path, Function<LoadedMeshData, Mesh> factory) {
+		final byte[] data = PCUtils.readBytesSource(path);
+		final ByteBuffer buffer = MemoryUtil.memAlloc(data.length).put(data).flip();
 
-		int li = 0;
-		while (li < lines.length) {
-			String line = lines[li++];
-			String[] tokens = line.split("\\s+");
+		final AIScene scene = Assimp
+				.aiImportFileFromMemory(buffer,
+						aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
+						PCUtils.getFileExtension(path));
 
-			switch (tokens[0]) {
-			case "v":
-				vertices.add(new Vector3f(Float.parseFloat(tokens[1]), Float.parseFloat(tokens[2]), Float.parseFloat(tokens[3])));
-				break;
-			case "vt":
-				uvs.add(new Vector2f(Float.parseFloat(tokens[1]), Float.parseFloat(tokens[2])));
-				break;
-			case "vn":
-				normals.add(new Vector3f(Float.parseFloat(tokens[1]), Float.parseFloat(tokens[2]), Float.parseFloat(tokens[3])));
-				break;
-			case "f":
-				processFace(tokens[1], faces);
-				processFace(tokens[2], faces);
-				processFace(tokens[3], faces);
-				break;
-			}
-		}
-		List<Integer> indices = new ArrayList<>();
-		Vector3f[] verticesArr = new Vector3f[vertices.size()];
-		int i = 0;
-		for (Vector3f pos : vertices) {
-			/*
-			 * verticesArr[i*3+0] = pos.x; verticesArr[i*3+1] = pos.y; verticesArr[i*3+2] =
-			 * pos.z;
-			 */
-			verticesArr[i] = pos;
-			i++;
+		if (scene == null) {
+			throw new RuntimeException("Failed to load OBJ: " + aiGetErrorString());
 		}
 
-		Vector2f[] uvsArr = new Vector2f[vertices.size()];
-		Vector3f[] normalsArr = new Vector3f[vertices.size()];
+		List<Vector3f> positionsList = new ArrayList<>();
+		List<Vector3f> normalsList = new ArrayList<>();
+		List<Vector2f> uvsList = new ArrayList<>();
+		List<Integer> indicesList = new ArrayList<>();
 
-		for (Vector3i face : faces) {
-			int pos = face.x;
-			int tex = face.y;
-			int nor = face.z;
+		Map<String, Integer> vertexMap = new HashMap<>(); // key = "posIndex/uvIndex/normIndex"
 
-			indices.add(pos);
+		int globalIndex = 0;
 
-			if (tex >= 0) {
-				Vector2f v = uvs.get(tex);
-				/*
-				 * uvsArr[pos*2+0] = v.x; uvsArr[pos*2+1] = 1-v.y;
-				 */
-				uvsArr[pos] = v;
-			}
+		for (int m = 0; m < scene.mNumMeshes(); m++) {
+			AIMesh mesh = AIMesh.create(scene.mMeshes().get(m));
 
-			if (nor >= 0) {
-				Vector3f v = normals.get(nor);
-				/*
-				 * normalsArr[pos*3+0] = v.x; normalsArr[pos*3+1] = v.y; normalsArr[pos*3+2] =
-				 * v.z;
-				 */
-				normalsArr[pos] = v;
+			AIVector3D.Buffer verts = mesh.mVertices();
+			AIVector3D.Buffer norms = mesh.mNormals();
+			AIVector3D.Buffer texCoords = mesh.mTextureCoords(0);
+
+			for (int f = 0; f < mesh.mNumFaces(); f++) {
+				AIFace face = mesh.mFaces().get(f);
+				IntBuffer faceIndices = face.mIndices();
+
+				for (int j = 0; j < face.mNumIndices(); j++) {
+					int idx = faceIndices.get(j);
+
+					Vector3f pos = new Vector3f(verts.get(idx).x(), verts.get(idx).y(), verts.get(idx).z());
+
+					Vector3f norm = new Vector3f(0, 0, 0);
+					if (norms != null) {
+						norm = new Vector3f(norms.get(idx).x(), norms.get(idx).y(), norms.get(idx).z());
+					}
+
+					Vector2f uv = new Vector2f(0, 0);
+					if (texCoords != null) {
+						AIVector3D t = texCoords.get(idx);
+						uv = new Vector2f(t.x(), 1.0f - t.y()); // flip V
+					}
+
+					String key = idx + "/" + uv.x + "/" + uv.y + "/" + norm.x + "/" + norm.y + "/" + norm.z;
+
+					Integer existing = vertexMap.get(key);
+					if (existing != null) {
+						indicesList.add(existing);
+					} else {
+						positionsList.add(pos);
+						normalsList.add(norm);
+						uvsList.add(uv);
+						indicesList.add(globalIndex);
+						vertexMap.put(key, globalIndex);
+						globalIndex++;
+					}
+				}
 			}
 		}
 
-		int[] indicesArr = indices.stream().mapToInt((v) -> v).toArray();
+		// Convert lists to arrays
+		Vector3f[] verticesArr = positionsList.toArray(new Vector3f[0]);
+		Vector3f[] normalsArr = normalsList.toArray(new Vector3f[0]);
+		Vector2f[] uvsArr = uvsList.toArray(new Vector2f[0]);
+		int[] indicesArr = indicesList.stream().mapToInt(i -> i).toArray();
 
-		Vec3fAttribArray pos = new Vec3fAttribArray("pos", 0, 1, verticesArr, BufferType.ARRAY);
-		UIntAttribArray ind = new UIntAttribArray("ind", -1, 1, indicesArr, BufferType.ELEMENT_ARRAY);
-		Vec3fAttribArray norm = new Vec3fAttribArray("norm", 1, 1, normalsArr, BufferType.ARRAY);
-		Vec2fAttribArray uv = new Vec2fAttribArray("uv", 2, 1, uvsArr, BufferType.ARRAY);
+		final Vec3fAttribArray pos = new Vec3fAttribArray("pos", 0, 1, verticesArr, BufferType.ARRAY);
+		final UIntAttribArray ind = new UIntAttribArray("ind", -1, 1, indicesArr, BufferType.ELEMENT_ARRAY);
+		final Vec3fAttribArray norm = new Vec3fAttribArray("norm", 1, 1, normalsArr, BufferType.ARRAY);
+		final Vec2fAttribArray uv = new Vec2fAttribArray("uv", 2, 1, uvsArr, BufferType.ARRAY);
 
-		return new Mesh(name, material, pos, ind, norm, uv);
+		return factory.apply(new LoadedMeshData(pos, ind, new AttribArray[] { norm, uv }, name, material));
 	}
 
 	private static void processFace(String token, List<Vector3i> faces) {

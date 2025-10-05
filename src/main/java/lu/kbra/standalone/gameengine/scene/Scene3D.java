@@ -55,9 +55,9 @@ public class Scene3D extends Scene {
 		return entity;
 	}
 
-	public Entity addEntity(Entity e) {
+	public <T extends Entity> T addEntity(T e) {
 		synchronized (entitiesLock) {
-			return addEntity(e.getId(), e);
+			return (T) addEntity(e.getId(), e);
 		}
 	}
 

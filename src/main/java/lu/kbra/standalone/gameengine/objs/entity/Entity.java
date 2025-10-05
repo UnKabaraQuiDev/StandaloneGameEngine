@@ -24,7 +24,7 @@ public class Entity implements UniqueID {
 
 	public Entity addComponent(Component component) {
 		if (component == null)
-			throw new NullPointerException("Component == null.");
+			return this;
 		if (component.attach(this))
 			components.put(component.getClass(), component);
 		return this;

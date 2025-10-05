@@ -30,11 +30,17 @@ public final class FileUtils {
 		return STBILoad(filePath, 3);
 	}
 
-	public static MemImage STBILoad(String filePath, int desiredChannels) {
+	public static MemImage STBILoad(String location, int desiredChannels) {
 		int[] w = new int[1], h = new int[1], c = new int[1];
-		
+
+		byte[] data = PCUtils.readBytesSource(location);
+		final ByteBuffer bb = ByteBuffer.allocateDirect(data.length);
+		bb.put(data);
+		bb.flip();
+		data = null;
+
 		STBImage.stbi_set_flip_vertically_on_load(true);
-		ByteBuffer buffer = STBImage.stbi_load(filePath, w, h, c, desiredChannels);
+		final ByteBuffer buffer = STBImage.stbi_load_from_memory(bb, w, h, c, desiredChannels);
 
 		return new MemImage(w[0], h[0], c[0], buffer, MemImageOrigin.STBI);
 	}

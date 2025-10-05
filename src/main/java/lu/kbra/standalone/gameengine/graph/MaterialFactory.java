@@ -37,7 +37,7 @@ public class MaterialFactory {
 
 		final Class<? extends RenderShader> shaderClazz = MATERIAL_2_SHADERS.get(materialClazz);
 
-		if (!cache.hasRenderShader(shaderClazz.getName())) {
+		if (!cache.hasAbstractShader(shaderClazz.getName())) {
 			try {
 				cache.addAbstractShader(shaderClazz.getConstructor().newInstance());
 			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException

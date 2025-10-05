@@ -412,8 +412,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 	 * CONTAIN
 	 */
 
-	public boolean hasRenderShader(String name) {
-		return abstractShaders.containsKey(name) || (parent != null ? parent.hasRenderShader(name) : false);
+	public boolean hasAbstractShader(String name) {
+		return abstractShaders.containsKey(name) || (parent != null ? parent.hasAbstractShader(name) : false);
 	}
 
 	public boolean hasMaterial(String name) {

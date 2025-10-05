@@ -4,6 +4,8 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import lu.pcy113.pclib.impl.ExceptionFunction;
+
 public class TaskFuture<T, U> {
 
 	public class TaskState<V> {
@@ -32,8 +34,7 @@ public class TaskFuture<T, U> {
 
 		@Override
 		public String toString() {
-			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result
-					+ "]";
+			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result + "]";
 		}
 
 	}
@@ -78,6 +79,23 @@ public class TaskFuture<T, U> {
 			task.run();
 			return null;
 		}, priority);
+	}
+
+	public <V> TaskFuture<U, V> then(Dispatcher nextDispatcher, ExceptionFunction<U, V> function) {
+		return then(nextDispatcher, function, 0);
+	}
+
+	public <V> TaskFuture<U, V> then(Dispatcher nextDispatcher, ExceptionFunction<U, V> function, int priority) {
+		TaskFuture<U, V> nextFuture = new TaskFuture<U, V>(nextDispatcher, (v) -> {
+			try {
+				return function.apply(v);
+			} catch (Throwable e) {
+				throw new RuntimeException(e);
+			}
+		}, priority);
+		nextFuture.first = this.first;
+		this.next = nextFuture;
+		return nextFuture;
 	}
 
 	public <V> TaskFuture<U, V> then(Dispatcher nextDispatcher, Function<U, V> function) {

@@ -2,17 +2,18 @@ package lu.kbra.standalone.gameengine.graph.texture;
 
 import java.io.File;
 import java.nio.ByteBuffer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import org.joml.Vector2f;
 import org.joml.Vector2i;
 import org.joml.Vector3i;
 import org.lwjgl.system.MemoryUtil;
 
+import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.file.FileUtils;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TextureFilter;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TextureWrap;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImageOrigin;
@@ -106,14 +107,11 @@ public class SingleTexture extends Texture {
 
 	// FILE BUFFER LOAD
 	private void generateFileBufferTexture() {
-		if (!Files.exists(Paths.get(path)))
-			throw new RuntimeException("File '" + path + "' not found");
+		final MemImage image = FileUtils.STBILoad(path);
 
-		MemImage image = FileUtils.STBILoad(path);
-
-		int wi = image.getWidth();
-		int he = image.getHeight();
-		int channels = image.getChannels();
+		final int wi = image.getWidth();
+		final int he = image.getHeight();
+		final int channels = image.getChannels();
 
 		format = getFormatByChannels(channels);
 		internalFormat = getInternalFormatByChannels(channels);
@@ -276,6 +274,65 @@ public class SingleTexture extends Texture {
 
 	public Vector2f getNormalizedSize2D() {
 		return new Vector2f(getSize2D()).div(Math.max(width, height));
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public int getDepth() {
+		return depth;
+	}
+
+	public static SingleTexture loadSingleTexture(
+			CacheManager cache,
+			String name,
+			String path,
+			TextureFilter filter,
+			TextureType type,
+			TextureWrap wrap) {
+		SingleTexture texture = new SingleTexture(name, path);
+		texture.setFilters(filter);
+		texture.setTextureType(type);
+		texture.setWraps(wrap);
+		texture.setup();
+		cache.addTexture(texture);
+		return texture;
+	}
+
+	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter, TextureType type) {
+		SingleTexture texture = new SingleTexture(name, path);
+		texture.setFilters(filter);
+		texture.setTextureType(type);
+		texture.setup();
+		cache.addTexture(texture);
+		return texture;
+	}
+
+	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter) {
+		SingleTexture texture = new SingleTexture(name, path);
+		texture.setFilters(filter);
+		texture.setup();
+		cache.addTexture(texture);
+		return texture;
+	}
+
+	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path) {
+		SingleTexture texture = new SingleTexture(name, path);
+		texture.setup();
+		cache.addTexture(texture);
+		return texture;
+	}
+
+	public static SingleTexture loadSingleTexture(CacheManager cache, String path) {
+		SingleTexture texture = new SingleTexture(path, path);
+		texture.setup();
+		cache.addTexture(texture);
+		return texture;
 	}
 
 }
