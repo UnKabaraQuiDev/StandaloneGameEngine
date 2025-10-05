@@ -114,7 +114,7 @@ public final class ObjLoader {
 
 		final AIScene scene = Assimp
 				.aiImportFileFromMemory(buffer,
-						aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
+						aiProcess_Triangulate /*| aiProcess_GenSmoothNormals*/ | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
 						PCUtils.getFileExtension(path));
 
 		if (scene == null) {
