@@ -5,9 +5,6 @@ import java.util.logging.Level;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
-
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
 import lu.kbra.standalone.gameengine.graph.MaterialFactory;
@@ -21,6 +18,8 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL46;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class GameEngine implements Cleanupable, UniqueID {
 
@@ -189,7 +188,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 									+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
 									+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
 									+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms "
-									+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true));
+									/*+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true)*/);
 				}
 
 				// Stop loop if window requests closure
