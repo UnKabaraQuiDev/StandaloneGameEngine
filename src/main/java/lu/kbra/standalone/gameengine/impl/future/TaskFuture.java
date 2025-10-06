@@ -34,7 +34,8 @@ public class TaskFuture<T, U> {
 
 		@Override
 		public String toString() {
-			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result + "]";
+			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result
+					+ "]";
 		}
 
 	}
@@ -45,11 +46,11 @@ public class TaskFuture<T, U> {
 	private final int priority;
 	private TaskFuture<U, ?> next;
 
-	public TaskFuture(Dispatcher dispatcher, Function<T, U> task) {
+	protected TaskFuture(Dispatcher dispatcher, Function<T, U> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, Function<T, U> task, int priority) {
+	protected TaskFuture(Dispatcher dispatcher, Function<T, U> task, int priority) {
 		this.dispatcher = dispatcher;
 		this.task = task;
 		this.priority = priority;
@@ -116,6 +117,20 @@ public class TaskFuture<T, U> {
 	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, Consumer<U> consumer, int priority) {
 		TaskFuture<U, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
 			consumer.accept(v);
+			return null;
+		}, priority);
+		nextFuture.first = this.first;
+		this.next = nextFuture;
+		return nextFuture;
+	}
+
+	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, Runnable consumer) {
+		return then(nextDispatcher, consumer, 0);
+	}
+
+	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, Runnable consumer, int priority) {
+		TaskFuture<U, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
+			consumer.run();
 			return null;
 		}, priority);
 		nextFuture.first = this.first;
