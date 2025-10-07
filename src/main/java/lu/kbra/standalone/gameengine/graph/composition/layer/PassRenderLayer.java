@@ -6,13 +6,12 @@ import java.util.logging.Level;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
 import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
+import lu.kbra.standalone.gameengine.geom.LoadedMesh;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.graph.composition.buffer.Framebuffer;
 import lu.kbra.standalone.gameengine.graph.material.Material;
@@ -21,13 +20,14 @@ import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class PassRenderLayer extends RenderLayer<GameEngine, Framebuffer, Mesh> {
 
 	public static final String SCREEN_WIDTH = "screen_width";
 	public static final String SCREEN_HEIGHT = "screen_height";
 
-	private static Mesh SCREEN = new Mesh("PASS_SCREEN", null,
+	private static Mesh SCREEN = new LoadedMesh("PASS_SCREEN", null,
 			new Vec3fAttribArray("pos", 0, 1,
 					new Vector3f[] { new Vector3f(-1, 1, 0), new Vector3f(1, 1, 0), new Vector3f(1, -1, 0),
 							new Vector3f(-1, -1, 0) }),

@@ -138,6 +138,16 @@ public class TaskFuture<T, U> {
 		return nextFuture;
 	}
 
+	public <N> TaskFuture<U, N> then(Dispatcher nextDispatcher, TaskFuture<U, N> nextFuture) {
+		return then(nextDispatcher, nextFuture, 0);
+	}
+
+	public <N> TaskFuture<U, N> then(Dispatcher nextDispatcher, TaskFuture<U, N> nextFuture, int priority) {
+		nextFuture.first = this.first;
+		this.next = nextFuture;
+		return nextFuture;
+	}
+
 	public TaskState<U> push() {
 		final TaskState<U> state = new TaskState<>();
 		state.started = true;

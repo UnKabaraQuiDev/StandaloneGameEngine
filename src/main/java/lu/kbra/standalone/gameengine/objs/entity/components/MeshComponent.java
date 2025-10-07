@@ -6,7 +6,7 @@ import lu.kbra.standalone.gameengine.objs.entity.Component;
 
 public class MeshComponent extends Component implements Renderable {
 
-	private Mesh mesh;
+	protected Mesh mesh;
 
 	public MeshComponent(Mesh mesh) {
 		this.mesh = mesh;

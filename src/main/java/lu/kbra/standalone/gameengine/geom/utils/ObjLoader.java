@@ -2,7 +2,6 @@ package lu.kbra.standalone.gameengine.geom.utils;
 
 import static org.lwjgl.assimp.Assimp.aiGetErrorString;
 import static org.lwjgl.assimp.Assimp.aiProcess_FlipUVs;
-import static org.lwjgl.assimp.Assimp.aiProcess_GenSmoothNormals;
 import static org.lwjgl.assimp.Assimp.aiProcess_JoinIdenticalVertices;
 import static org.lwjgl.assimp.Assimp.aiProcess_Triangulate;
 
@@ -26,17 +25,17 @@ import org.lwjgl.assimp.AIVector3D;
 import org.lwjgl.assimp.Assimp;
 import org.lwjgl.system.MemoryUtil;
 
-import lu.pcy113.pclib.PCUtils;
-
 import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
 import lu.kbra.standalone.gameengine.geom.Gizmo;
+import lu.kbra.standalone.gameengine.geom.LoadedMesh;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
+import lu.pcy113.pclib.PCUtils;
 
 public final class ObjLoader {
 
@@ -59,11 +58,11 @@ public final class ObjLoader {
 
 			switch (tokens[0]) {
 			case "v":
-				vertices.add(new Vector3f(Float.parseFloat(tokens[1]), Float.parseFloat(tokens[2]), Float.parseFloat(tokens[3])));
+				vertices.add(new Vector3f(Float.parseFloat(tokens[1]), Float.parseFloat(tokens[2]),
+						Float.parseFloat(tokens[3])));
 				if (tokens.length > 4)
-					colors
-							.add(new Vector4f(Float.parseFloat(tokens[4]), Float.parseFloat(tokens[5]), Float.parseFloat(tokens[6]),
-									tokens.length > 7 ? Float.parseFloat(tokens[7]) : 1));
+					colors.add(new Vector4f(Float.parseFloat(tokens[4]), Float.parseFloat(tokens[5]),
+							Float.parseFloat(tokens[6]), tokens.length > 7 ? Float.parseFloat(tokens[7]) : 1));
 				break;
 			case "l":
 				edges.add(new Vector2i(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2])));
@@ -105,17 +104,17 @@ public final class ObjLoader {
 	}
 
 	public static Mesh loadMesh(String name, Material material, String path) {
-		return loadMesh(name, material, path, (t) -> new Mesh(t.name, t.material, t.vertices, t.indices, t.attribs));
+		return loadMesh(name, material, path,
+				(t) -> new LoadedMesh(t.name, t.material, t.vertices, t.indices, t.attribs));
 	}
 
 	public static Mesh loadMesh(String name, Material material, String path, Function<LoadedMeshData, Mesh> factory) {
 		final byte[] data = PCUtils.readBytesSource(path);
 		final ByteBuffer buffer = MemoryUtil.memAlloc(data.length).put(data).flip();
 
-		final AIScene scene = Assimp
-				.aiImportFileFromMemory(buffer,
-						aiProcess_Triangulate /*| aiProcess_GenSmoothNormals*/ | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
-						PCUtils.getFileExtension(path));
+		final AIScene scene = Assimp.aiImportFileFromMemory(buffer, aiProcess_Triangulate
+				/* | aiProcess_GenSmoothNormals */ | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
+				PCUtils.getFileExtension(path));
 
 		if (scene == null) {
 			throw new RuntimeException("Failed to load OBJ: " + aiGetErrorString());

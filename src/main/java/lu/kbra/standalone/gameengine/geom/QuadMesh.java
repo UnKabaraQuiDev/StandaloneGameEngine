@@ -10,7 +10,7 @@ import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class QuadMesh extends Mesh {
+public class QuadMesh extends LoadedMesh {
 
 	private Vector2f size;
 
