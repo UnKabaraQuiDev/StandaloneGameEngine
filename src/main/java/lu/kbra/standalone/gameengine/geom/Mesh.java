@@ -39,6 +39,8 @@ public interface Mesh extends UniqueID, Cleanupable, Renderable {
 	int getIndicesCount();
 
 	Material getMaterial();
+	
+	boolean isValid();
 
 	public static QuadMesh newQuad(String name, Material material2, Vector2f size) {
 		return new QuadMesh(name, material2, size);

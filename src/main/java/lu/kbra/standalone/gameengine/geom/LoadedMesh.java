@@ -195,6 +195,11 @@ public class LoadedMesh implements Mesh {
 	}
 
 	@Override
+	public boolean isValid() {
+		return vao != -1;
+	}
+
+	@Override
 	public String toString() {
 		return "{" + name + " | VAO: " + vao + " | VBO: " + vbo + " | V: " + vertexCount + "/" + indicesCount
 				+ " | Attribs: " + Arrays.toString(attribs) + "}";

@@ -1,10 +1,9 @@
 package lu.kbra.standalone.gameengine.impl.future;
 
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
-
+import lu.pcy113.pclib.impl.ExceptionConsumer;
 import lu.pcy113.pclib.impl.ExceptionFunction;
+import lu.pcy113.pclib.impl.ExceptionRunnable;
+import lu.pcy113.pclib.impl.ExceptionSupplier;
 
 public class TaskFuture<T, U> {
 
@@ -42,40 +41,40 @@ public class TaskFuture<T, U> {
 
 	private TaskFuture<?, ?> first;
 	private final Dispatcher dispatcher;
-	private final Function<T, U> task;
+	private final ExceptionFunction<T, U> task;
 	private final int priority;
 	private TaskFuture<U, ?> next;
 
-	protected TaskFuture(Dispatcher dispatcher, Function<T, U> task) {
+	protected TaskFuture(Dispatcher dispatcher, ExceptionFunction<T, U> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	protected TaskFuture(Dispatcher dispatcher, Function<T, U> task, int priority) {
+	protected TaskFuture(Dispatcher dispatcher, ExceptionFunction<T, U> task, int priority) {
 		this.dispatcher = dispatcher;
 		this.task = task;
 		this.priority = priority;
 		this.first = this;
 	}
 
-	public TaskFuture(Dispatcher dispatcher, Supplier<U> task) {
+	public TaskFuture(Dispatcher dispatcher, ExceptionSupplier<U> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, Supplier<U> task, int priority) {
+	public TaskFuture(Dispatcher dispatcher, ExceptionSupplier<U> task, int priority) {
 		this.dispatcher = dispatcher;
 		this.task = (v) -> task.get();
 		this.priority = priority;
 		this.first = this;
 	}
 
-	public TaskFuture(Dispatcher dispatcher, Runnable task) {
+	public TaskFuture(Dispatcher dispatcher, ExceptionRunnable task) {
 		this(dispatcher, () -> {
 			task.run();
 			return null;
 		}, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, Runnable task, int priority) {
+	public TaskFuture(Dispatcher dispatcher, ExceptionRunnable task, int priority) {
 		this(dispatcher, () -> {
 			task.run();
 			return null;
@@ -87,34 +86,17 @@ public class TaskFuture<T, U> {
 	}
 
 	public <V> TaskFuture<U, V> then(Dispatcher nextDispatcher, ExceptionFunction<U, V> function, int priority) {
-		TaskFuture<U, V> nextFuture = new TaskFuture<U, V>(nextDispatcher, (v) -> {
-			try {
-				return function.apply(v);
-			} catch (Throwable e) {
-				throw new RuntimeException(e);
-			}
-		}, priority);
-		nextFuture.first = this.first;
-		this.next = nextFuture;
-		return nextFuture;
-	}
-
-	public <V> TaskFuture<U, V> then(Dispatcher nextDispatcher, Function<U, V> function) {
-		return then(nextDispatcher, function, 0);
-	}
-
-	public <V> TaskFuture<U, V> then(Dispatcher nextDispatcher, Function<U, V> function, int priority) {
 		TaskFuture<U, V> nextFuture = new TaskFuture<U, V>(nextDispatcher, function, priority);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
 	}
 
-	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, Consumer<U> consumer) {
+	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, ExceptionConsumer<U> consumer) {
 		return then(nextDispatcher, consumer, 0);
 	}
 
-	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, Consumer<U> consumer, int priority) {
+	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, ExceptionConsumer<U> consumer, int priority) {
 		TaskFuture<U, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
 			consumer.accept(v);
 			return null;
@@ -124,11 +106,11 @@ public class TaskFuture<T, U> {
 		return nextFuture;
 	}
 
-	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, Runnable consumer) {
+	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, ExceptionRunnable consumer) {
 		return then(nextDispatcher, consumer, 0);
 	}
 
-	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, Runnable consumer, int priority) {
+	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, ExceptionRunnable consumer, int priority) {
 		TaskFuture<U, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
 			consumer.run();
 			return null;
@@ -156,16 +138,37 @@ public class TaskFuture<T, U> {
 	}
 
 	@SuppressWarnings("unchecked")
-	private void pushInternal(T v, TaskState state) {
+	private void pushInternal(Object v, TaskState state) {
 		dispatcher.post(() -> {
 			state.ongoing = true;
-			final U result = task.apply((T) v);
-			if (next != null) {
-				next.pushInternal(result, state);
-			} else {
-				state.result = result;
-				state.done = true;
-				state.ongoing = false;
+			U result = null;
+			try {
+				result = task.apply((T) v);
+				if (next != null) {
+					next.pushInternal(result, state);
+				} else {
+					state.result = result;
+					state.done = true;
+					state.ongoing = false;
+				}
+			} catch (SkipThen st) {
+				TaskFuture<?, ?> current = next;
+				int remaining = st.getCount();
+
+				while (current != null && remaining > 1) {
+					current = current.next;
+					remaining--;
+				}
+
+				if (current != null && current.next != null) {
+					current.next.pushInternal(st.getObj(), state);
+				} else {
+					state.result = st.getObj();
+					state.done = true;
+					state.ongoing = false;
+				}
+			} catch (Throwable e) {
+				throw new RuntimeException(e);
 			}
 		}, priority);
 	}

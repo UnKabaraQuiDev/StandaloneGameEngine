@@ -18,17 +18,21 @@ public class Dispatcher {
 		queue.add(new ScheduledTask(task, priority));
 	}
 
-	public void pump(long timeBudgetMillis) {
-		if (timeBudgetMillis <= 0)
-			return;
+	public int pump(long timeBudgetNanos) {
+		if (timeBudgetNanos <= 0)
+			return 0;
 
-		final long deadline = System.currentTimeMillis() + timeBudgetMillis;
-		while (System.currentTimeMillis() < deadline) {
+		int count = 0;
+		final long deadline = System.nanoTime() + timeBudgetNanos;
+		while (System.nanoTime() < deadline) {
 			final ScheduledTask task = queue.poll();
 			if (task == null)
 				break;
 			task.run();
+			count++;
 		}
+
+		return count;
 	}
 
 	public String getName() {

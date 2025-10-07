@@ -15,7 +15,8 @@ public class WorkerDispatcher extends Dispatcher {
 		workers = new ExecutorService[workerCount];
 		for (int i = 0; i < workerCount; i++) {
 			final int index = i;
-			workers[i] = Executors.newSingleThreadExecutor(r -> ThreadBuilder.create(r).name("Worker-" + index).daemon(true).build());
+			workers[i] = Executors
+					.newSingleThreadExecutor(r -> ThreadBuilder.create(r).name("Worker-" + index).daemon(true).build());
 		}
 		startWorkers();
 	}
@@ -36,11 +37,6 @@ public class WorkerDispatcher extends Dispatcher {
 				}
 			});
 		}
-	}
-
-	@Override
-	public void pump(long timeBudgetMillis) {
-		// do nothing
 	}
 
 	public void post(Runnable task) {

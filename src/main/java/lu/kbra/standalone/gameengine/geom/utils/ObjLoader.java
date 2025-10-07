@@ -108,7 +108,8 @@ public final class ObjLoader {
 				(t) -> new LoadedMesh(t.name, t.material, t.vertices, t.indices, t.attribs));
 	}
 
-	public static Mesh loadMesh(String name, Material material, String path, Function<LoadedMeshData, Mesh> factory) {
+	public static <T extends Mesh> T loadMesh(String name, Material material, String path,
+			Function<LoadedMeshData, T> factory) {
 		final byte[] data = PCUtils.readBytesSource(path);
 		final ByteBuffer buffer = MemoryUtil.memAlloc(data.length).put(data).flip();
 

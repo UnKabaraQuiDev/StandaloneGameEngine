@@ -1,22 +1,15 @@
 package lu.kbra.standalone.gameengine.utils;
 
-import java.io.PrintStream;
-import java.nio.IntBuffer;
 import java.util.stream.IntStream;
 
 import org.joml.Matrix3x2f;
 import org.joml.Matrix4f;
+import org.joml.Quaternionf;
 import org.joml.Vector2f;
 import org.joml.Vector2i;
 import org.joml.Vector3f;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.assimp.AIAnimation;
-import org.lwjgl.assimp.AIMaterial;
-import org.lwjgl.assimp.AIMesh;
-import org.lwjgl.assimp.AINode;
-import org.lwjgl.assimp.AIScene;
 import org.lwjgl.egl.EGL10;
 import org.lwjgl.openal.AL11;
 import org.lwjgl.openal.ALC11;
@@ -92,12 +85,14 @@ public final class GameEngineUtils {
 
 		switch (status) {
 		/*
-		 * case AL11.AL_INVALID_DEVICE: throw new ALInvalidDeviceException(caller, status, msg);
+		 * case AL11.AL_INVALID_DEVICE: throw new ALInvalidDeviceException(caller,
+		 * status, msg);
 		 */
 		case AL11.AL_INVALID_OPERATION:
 			throw new ALInvalidOperationException(caller, status, msg);
 		/*
-		 * case AL11.AL_INVALID_CONTEXT: throw new ALInvalidContextException(caller, status, msg);
+		 * case AL11.AL_INVALID_CONTEXT: throw new ALInvalidContextException(caller,
+		 * status, msg);
 		 */
 		case AL11.AL_INVALID_NAME:
 			throw new ALInvalidNameException(caller, status, msg);
@@ -187,7 +182,8 @@ public final class GameEngineUtils {
 		case EGL10.EGL_BAD_NATIVE_WINDOW:
 			throw new EGLBadNativeWindowException(caller, status, msg);
 		/*
-		 * case EGL10.EGL_NO_CONTEXT: throw new EGLNoContextException(caller, status, msg);
+		 * case EGL10.EGL_NO_CONTEXT: throw new EGLNoContextException(caller, status,
+		 * msg);
 		 */
 		default:
 			return true;
@@ -209,7 +205,7 @@ public final class GameEngineUtils {
 			return true;
 
 		GL_W.glGetError(); // to clear
-		
+
 		switch (status) {
 		case GL40.GL_INVALID_OPERATION:
 			throw new GLInvalidOperationException(status, msg);
@@ -289,21 +285,18 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f[] floatArrayToVec3f(float[] arr) {
-		return IntStream
-				.range(0, arr.length / 3)
-				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2]))
-				.toArray(Vector3f[]::new);
+		return IntStream.range(0, arr.length / 3)
+				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2])).toArray(Vector3f[]::new);
 	}
 
 	public static Vector2f[] floatArrayToVec2f(float[] arr) {
-		return IntStream.range(0, arr.length / 2).mapToObj(i -> new Vector2f(arr[i * 2 + 0], arr[i * 2 + 1])).toArray(Vector2f[]::new);
+		return IntStream.range(0, arr.length / 2).mapToObj(i -> new Vector2f(arr[i * 2 + 0], arr[i * 2 + 1]))
+				.toArray(Vector2f[]::new);
 	}
 
 	public static Vector3f[] intArrayToVec3f(int[] arr) {
-		return IntStream
-				.range(0, arr.length / 3)
-				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2]))
-				.toArray(Vector3f[]::new);
+		return IntStream.range(0, arr.length / 3)
+				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2])).toArray(Vector3f[]::new);
 	}
 
 	public static Vector2f getCoordinates(Vector2f in, int[] viewport) {
@@ -324,10 +317,8 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f clampPositive(Vector3f vec) {
-		return vec
-				.set(PCUtils.clampGreaterOrEquals(0, vec.x),
-						PCUtils.clampGreaterOrEquals(0, vec.y),
-						PCUtils.clampGreaterOrEquals(0, vec.z));
+		return vec.set(PCUtils.clampGreaterOrEquals(0, vec.x), PCUtils.clampGreaterOrEquals(0, vec.y),
+				PCUtils.clampGreaterOrEquals(0, vec.z));
 	}
 
 	public static Vector2f normalizeGreater(Vector2f vec) {
@@ -353,56 +344,17 @@ public final class GameEngineUtils {
 		return vec;
 	}
 
-	public static void list(AIScene scene, PrintStream out) {
-		// List meshes
-		int numMeshes = scene.mNumMeshes();
-		PointerBuffer meshes = scene.mMeshes();
-		out.println("Meshes (" + numMeshes + "):");
-		for (int i = 0; i < numMeshes; i++) {
-			AIMesh mesh = AIMesh.create(meshes.get(i));
-			out.println("  Mesh " + i + ": vertices=" + mesh.mNumVertices() + ", faces=" + mesh.mNumFaces());
-		}
-
-		// List materials
-		int numMaterials = scene.mNumMaterials();
-		PointerBuffer materials = scene.mMaterials();
-		out.println("Materials (" + numMaterials + "):");
-		for (int i = 0; i < numMaterials; i++) {
-			AIMaterial material = AIMaterial.create(materials.get(i));
-			out.println("  Material " + i);
-		}
-
-		// List animations
-		int numAnimations = scene.mNumAnimations();
-		PointerBuffer animations = scene.mAnimations();
-		out.println("Animations (" + numAnimations + "):");
-		for (int i = 0; i < numAnimations; i++) {
-			AIAnimation animation = AIAnimation.create(animations.get(i));
-			out.println("  Animation " + i + ": duration=" + animation.mDuration() + ", ticksPerSecond=" + animation.mTicksPerSecond());
-		}
-
-		// List nodes recursively
-		out.println("Node Hierarchy:");
-		listNode(scene.mRootNode(), 0, out);
+	public static Vector3f jsonArrayToVec3f(JSONArray jsonArray) {
+		if (jsonArray == null)
+			return new Vector3f(0);
+		return new Vector3f(jsonArray.getFloat(0), jsonArray.getFloat(1), jsonArray.getFloat(2));
 	}
 
-	private static void listNode(AINode node, int level, PrintStream out) {
-		String indent = PCUtils.repeatString("  ", level);
-		out.println(indent + "Node: " + node.mName().dataString());
-
-		// List meshes attached to this node
-		int numMeshes = node.mNumMeshes();
-		IntBuffer meshes = node.mMeshes();
-		for (int i = 0; i < numMeshes; i++) {
-			out.println(indent + "  Mesh Index: " + meshes.get(i));
-		}
-
-		// Recursively list child nodes
-		int numChildren = node.mNumChildren();
-		PointerBuffer children = node.mChildren();
-		for (int i = 0; i < numChildren; i++) {
-			listNode(AINode.create(children.get(i)), level + 1, out);
-		}
+	public static Quaternionf jsonArrayToQuatf(JSONArray jsonArray) {
+		if (jsonArray == null)
+			return new Quaternionf();
+		return new Quaternionf(jsonArray.getFloat(0), jsonArray.getFloat(1), jsonArray.getFloat(2),
+				jsonArray.getFloat(3));
 	}
 
 }
