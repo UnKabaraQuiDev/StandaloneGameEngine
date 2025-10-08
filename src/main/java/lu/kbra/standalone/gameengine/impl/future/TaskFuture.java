@@ -40,7 +40,7 @@ public class TaskFuture<T, U> {
 	}
 
 	private TaskFuture<?, ?> first;
-	private final Dispatcher dispatcher;
+	private Dispatcher dispatcher;
 	private final ExceptionFunction<T, U> task;
 	private final int priority;
 	private TaskFuture<U, ?> next;
@@ -126,7 +126,18 @@ public class TaskFuture<T, U> {
 
 	public <N> TaskFuture<U, N> then(Dispatcher nextDispatcher, TaskFuture<U, N> nextFuture, int priority) {
 		nextFuture.first = this.first;
+		nextFuture.dispatcher = nextDispatcher;
 		this.next = nextFuture;
+		return nextFuture;
+	}
+
+	public <N> TaskFuture<U, N> then(TaskFuture<U, N> nextFuture) {
+		return then(nextFuture, 0);
+	}
+
+	public <N> TaskFuture<U, N> then(TaskFuture<U, N> nextFuture, int priority) {
+		this.next = (TaskFuture<U, ?>) nextFuture.first;
+		nextFuture.first = this.first;
 		return nextFuture;
 	}
 
@@ -161,6 +172,11 @@ public class TaskFuture<T, U> {
 				}
 
 				if (current != null && current.next != null) {
+					if (st.getNext() != null) {
+						final TaskFuture tmp = current.next;
+						current.next = st.getNext();
+						st.getNext().next = tmp;
+					}
 					current.next.pushInternal(st.getObj(), state);
 				} else {
 					state.result = st.getObj();
