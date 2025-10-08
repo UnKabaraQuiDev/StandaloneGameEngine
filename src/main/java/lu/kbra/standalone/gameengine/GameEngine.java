@@ -1,9 +1,13 @@
 package lu.kbra.standalone.gameengine;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
+
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
@@ -18,8 +22,6 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL46;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class GameEngine implements Cleanupable, UniqueID {
 
@@ -46,6 +48,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 	private boolean running = false;
 	private volatile boolean waitingForEvents = false;
+	private Object waitingForEventsLock = new Object();
+	private CountDownLatch latch = new CountDownLatch(1);
 
 	public int targetUps, targetFps;
 	private double currentFps;
@@ -67,17 +71,10 @@ public class GameEngine implements Cleanupable, UniqueID {
 	}
 
 	private void updateRun() {
-		if (!running) {
-			try {
-				Thread.sleep(5_000); // waiting for renderThread to finish GameLogic#init()
-				if (!Thread.interrupted()) {
-					GlobalLogger.severe("Update thread waiting too long for init");
-					return;
-				}
-			} catch (InterruptedException e) {
-				Thread.currentThread().interrupt();
-				GlobalLogger.info("Update thread interrupted, continuing");
-			}
+		try {
+			latch.await();
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
 		}
 
 		init: {
@@ -126,13 +123,13 @@ public class GameEngine implements Cleanupable, UniqueID {
 		// this.stop();
 	}
 
-	private boolean pollEvents() {
+	private void pollEvents() {
 		try {
 			waitingForEvents = true;
-			Thread.sleep(POLL_EVENT_TIMEOUT);
-			return Thread.interrupted();
+			synchronized (waitingForEventsLock) {
+				waitingForEventsLock.wait(POLL_EVENT_TIMEOUT);
+			}
 		} catch (InterruptedException e) {
-			return false;
 		}
 	}
 
@@ -143,8 +140,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 			running = true;
 			this.gameLogic.register(this);
 			this.gameLogic.init(this);
-			updateThread.interrupt();
-			mainThread.interrupt();
+			latch.countDown();
 
 			this.targetFps = this.window.getOptions().fps;
 			final long targetNanoPerFps = (long) (1e9 / this.targetFps);
@@ -239,31 +235,26 @@ public class GameEngine implements Cleanupable, UniqueID {
 		this.updateThread.start();
 		this.renderThread.start();
 
-		this.waitStop();
+		this.mainRun();
 
 		// this.run();
 	}
 
 	// in main thread
-	private void waitStop() {
-		if (!running) {
-			try {
-				Thread.sleep(Long.MAX_VALUE); // waiting for renderThread to finish GameLogic#init()
-				if (!Thread.interrupted()) {
-					GlobalLogger.severe("Main thread waiting too long for init");
-					return;
-				}
-			} catch (InterruptedException e) {
-				GlobalLogger.info("Main thread interrupted, continuing");
-				Thread.currentThread().interrupt();
-			}
+	private void mainRun() {
+		try {
+			latch.await();
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
 		}
 
 		while (running) {
 			if (waitingForEvents) {
 				this.window.pollEvents();
 				waitingForEvents = false;
-				updateThread.interrupt();
+				synchronized (waitingForEventsLock) {
+					waitingForEventsLock.notifyAll();
+				}
 			}
 
 			// mainDispatcher.pump(10);

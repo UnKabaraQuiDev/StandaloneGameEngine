@@ -2,6 +2,8 @@ package lu.kbra.standalone.gameengine.graph.window;
 
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.BiConsumer;
 import java.util.logging.Level;
 
@@ -16,6 +18,7 @@ import org.lwjgl.glfw.GLFWFramebufferSizeCallback;
 import org.lwjgl.glfw.GLFWGamepadState;
 import org.lwjgl.glfw.GLFWJoystickCallback;
 import org.lwjgl.glfw.GLFWKeyCallback;
+import org.lwjgl.glfw.GLFWMouseButtonCallback;
 import org.lwjgl.glfw.GLFWScrollCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.system.MemoryUtil;
@@ -35,6 +38,7 @@ public abstract class Window implements Cleanupable {
 
 	protected long monitor;
 	protected long handle;
+	protected Thread ownerThread;
 
 	protected GLFWGamepadState gamepadState;
 
@@ -42,9 +46,11 @@ public abstract class Window implements Cleanupable {
 
 	// Callbacks
 	protected BiConsumer<Integer, Integer> onResize;
-	
-	private KeyState[] keyStates = new KeyState[GLFW.GLFW_KEY_LAST];
+
+	protected KeyState[] keyStates = new KeyState[GLFW.GLFW_KEY_LAST];
 	protected GLFWKeyCallback keyCallback;
+	protected Map<Integer, Boolean> connectedGamepads = new ConcurrentHashMap<>();
+	protected Map<Integer, GLFWGamepadState> gamepadStates = new ConcurrentHashMap<>();
 	protected GLFWJoystickCallback joystickCallback;
 	protected GLFWFramebufferSizeCallback frameBufferCallback;
 	protected GLFWErrorCallback errorCallback;
@@ -52,18 +58,21 @@ public abstract class Window implements Cleanupable {
 	protected GLFWScrollCallback scrollCallback;
 	protected Vector2f cursorPos = new Vector2f();
 	protected GLFWCursorPosCallback cursorPosCallback;
+	protected KeyState[] mouseButtonStates = new KeyState[GLFW.GLFW_MOUSE_BUTTON_LAST];
+	protected GLFWMouseButtonCallback mouseButtonCallback;
 
 	protected int width, height;
 
 	public Window(GLType glType, WindowOptions options) {
 		this.glType = glType;
 		this.options = options;
+		this.ownerThread = Thread.currentThread();
 
 		init();
 	}
 
 	protected abstract void init();
-	
+
 	public abstract void cleanupGLFW();
 
 	public void clearGLContext() {
@@ -75,25 +84,26 @@ public abstract class Window implements Cleanupable {
 	protected long getQualifiedMonitor() {
 		long monitor = GLFW.glfwGetPrimaryMonitor();
 		if (monitor == MemoryUtil.NULL) {
-			// throw new RuntimeException("No primary monitor found");
 			PointerBuffer ptb = GLFW.glfwGetMonitors();
 			if (!ptb.hasRemaining()) {
 				throw new RuntimeException("No primary monitor found");
 			}
-			monitor = ptb.get(); // get first monitor if no primary is found
+			monitor = ptb.get();
 			ptb.free();
 		}
 		return monitor;
 	}
 
 	protected void createCallbacks() {
-		keyCallback = GLFWKeyCallback.create((window, key, scancode, action, mods) -> callback_key(window, key, scancode, action, mods));
+		keyCallback = GLFWKeyCallback
+				.create((window, key, scancode, action, mods) -> callback_key(window, key, scancode, action, mods));
 		GLFW.glfwSetKeyCallback(handle, keyCallback);
 
 		joystickCallback = GLFWJoystickCallback.create((jid, event) -> callback_joystick(jid, event));
 		GLFW.glfwSetJoystickCallback(joystickCallback);
 
-		frameBufferCallback = GLFWFramebufferSizeCallback.create((window, width, height) -> callback_frameBuffer(window, width, height));
+		frameBufferCallback = GLFWFramebufferSizeCallback
+				.create((window, width, height) -> callback_frameBuffer(window, width, height));
 		GLFW.glfwSetFramebufferSizeCallback(handle, frameBufferCallback);
 
 		scrollCallback = GLFWScrollCallback.create((window, sx, sy) -> callback_scroll(window, sx, sy));
@@ -102,7 +112,21 @@ public abstract class Window implements Cleanupable {
 		cursorPosCallback = GLFWCursorPosCallback.create((window, sx, sy) -> callback_cursor_pos(window, sx, sy));
 		GLFW.glfwSetCursorPosCallback(handle, cursorPosCallback);
 
-		gamepadState = GLFWGamepadState.create();
+		mouseButtonCallback = GLFWMouseButtonCallback
+				.create((window, button, action, mods) -> callback_mouse_button(window, button, action, mods));
+		GLFW.glfwSetMouseButtonCallback(handle, mouseButtonCallback);
+	}
+
+	protected void callback_mouse_button(long window, int button, int action, int mods) {
+		if (button >= 0 && button < mouseButtonStates.length) {
+			if (action == GLFW.GLFW_PRESS) {
+				mouseButtonStates[button] = KeyState.PRESS;
+			} else if (action == GLFW.GLFW_RELEASE) {
+				mouseButtonStates[button] = KeyState.RELEASE;
+			}
+		} else {
+			GlobalLogger.severe("Unsuppored mouse button: " + button);
+		}
 	}
 
 	protected void callback_cursor_pos(long window, double sx, double sy) {
@@ -130,9 +154,19 @@ public abstract class Window implements Cleanupable {
 
 	protected void callback_joystick(int jid, int event) {
 		if (event == GLFW.GLFW_CONNECTED) {
+			boolean isGamepad = GLFW.glfwJoystickIsGamepad(jid);
+			connectedGamepads.put(jid, isGamepad);
+			if (isGamepad) {
+				GLFWGamepadState state = GLFWGamepadState.create();
+				gamepadStates.put(jid, state);
+			}
 			GlobalLogger.log(Level.INFO,
-					"Joystick connected: jid:" + jid + ", name:" + GLFW.glfwGetJoystickName(jid) + ", guid:" + GLFW.glfwGetJoystickGUID(jid) + " -> name:" + GLFW.glfwGetGamepadName(jid) + ", joystick as gamepad:" + GLFW.glfwJoystickIsGamepad(jid));
+					"Joystick connected: jid:" + jid + ", name:" + GLFW.glfwGetJoystickName(jid) + ", guid:"
+							+ GLFW.glfwGetJoystickGUID(jid) + " -> name:" + GLFW.glfwGetGamepadName(jid)
+							+ ", joystick as gamepad:" + GLFW.glfwJoystickIsGamepad(jid));
 		} else if (event == GLFW.GLFW_DISCONNECTED) {
+			connectedGamepads.remove(jid);
+			gamepadStates.remove(jid);
 			GlobalLogger.log(Level.INFO, "Joystick disconnected: jid:" + jid);
 		}
 	}
@@ -140,7 +174,7 @@ public abstract class Window implements Cleanupable {
 	protected void callback_key(long window, int key, int scancode, int action, int mods) {
 		if (window != handle)
 			return;
-		
+
 		if (key == GLFW.GLFW_KEY_ESCAPE && action == GLFW.GLFW_PRESS) {
 			setWindowShouldClose(true);
 		} else if (key == GLFW.GLFW_KEY_F11 && action == GLFW.GLFW_PRESS) {
@@ -148,18 +182,27 @@ public abstract class Window implements Cleanupable {
 			updateOptions();
 		}
 
-		String strName = GLFW.glfwGetKeyName(key, scancode);
-		if(strName == null || strName.isEmpty())
-			return;
-		
-		char name = strName.toCharArray()[0];
-		
-		if (action == GLFW.GLFW_PRESS) {
-			keyStates[name] = KeyState.PRESS;
-		} else if (action == GLFW.GLFW_REPEAT) {
-			keyStates[name] = KeyState.REPEAT;
-		} else if (action == GLFW.GLFW_RELEASE) {
-			keyStates[name] = KeyState.RELEASE;
+		if (key > 0 && key < keyStates.length) {
+			keyStates[key] = KeyState.byGLFWId(action);
+		}
+	}
+
+	public void postPollEvents() {
+		pollGamePadStates();
+	}
+
+	protected void pollGamePadStates() {
+		for (Map.Entry<Integer, Boolean> entry : connectedGamepads.entrySet()) {
+			final int jid = entry.getKey();
+			if (!entry.getValue()) {
+				return;
+			}
+			final GLFWGamepadState state = gamepadStates.get(jid);
+			final boolean isValid = GLFW.glfwGetGamepadState(jid, state);
+			if (!isValid) {
+				connectedGamepads.put(entry.getKey(), false);
+				gamepadStates.remove(entry.getKey());
+			}
 		}
 	}
 
@@ -167,51 +210,71 @@ public abstract class Window implements Cleanupable {
 		GLFW.glfwSetWindowShouldClose(handle, b);
 	}
 
+	@Deprecated
 	public boolean isJoystickPresent() {
+		assert Thread.currentThread() == ownerThread;
 		return GLFW.glfwJoystickPresent(GLFW.GLFW_JOYSTICK_1);
 	}
 
+	@Deprecated
 	public float[] getJoystickAxis(int jid) {
+		assert Thread.currentThread() == ownerThread;
 		FloatBuffer fb = GLFW.glfwGetJoystickAxes(jid);
 		float[] bb = new float[fb.remaining()];
 		fb.get(bb);
 		return bb;
 	}
-	
+
+	@Deprecated
 	public float getJoystickAxis(int jid, int axis) {
+		assert Thread.currentThread() == ownerThread;
 		FloatBuffer fb = GLFW.glfwGetJoystickAxes(jid);
 		float[] bb = new float[fb.remaining()];
 		fb.get(bb);
 		return bb[axis];
 	}
 
+	@Deprecated
 	public boolean getJoystickButton(int jid, int btn) {
+		assert Thread.currentThread() == ownerThread;
 		ByteBuffer fb = GLFW.glfwGetJoystickButtons(jid);
 		byte[] bb = new byte[fb.remaining()];
 		fb.get(bb);
 		return bb[btn] == GLFW.GLFW_PRESS;
 	}
-	
+
+	@Deprecated
 	public byte[] getJoystickButtonsArray(int jid) {
+		assert Thread.currentThread() == ownerThread;
 		ByteBuffer fb = GLFW.glfwGetJoystickButtons(jid);
 		byte[] bb = new byte[fb.remaining()];
 		fb.get(bb);
 		return bb;
 	}
 
+	@Deprecated
 	public ByteBuffer getJoystickButtons(int jid) {
+		assert Thread.currentThread() == ownerThread;
 		return GLFW.glfwGetJoystickButtons(jid);
 	}
 
+	@Deprecated
 	public byte getJoystickHat(int jid, int hat) {
+		assert Thread.currentThread() == ownerThread;
 		ByteBuffer fb = GLFW.glfwGetJoystickButtons(jid);
 		byte[] bb = new byte[fb.remaining()];
 		fb.get(bb);
 		return bb[hat];
 	}
 
+	@Deprecated
 	public boolean isMouseButtonPressed(int mbid) {
+		assert Thread.currentThread() == ownerThread;
 		return GLFW.glfwGetMouseButton(handle, mbid) == GLFW.GLFW_PRESS;
+	}
+
+	public KeyState getMouseButtonState(int mbid) {
+		return mouseButtonStates[mbid];
 	}
 
 	public Vector2f getMousePos() {
@@ -229,15 +292,17 @@ public abstract class Window implements Cleanupable {
 	public GLFWGamepadState getGamepad() {
 		return gamepadState;
 	}
-	
-	public boolean isCharPress(int code) {
-		return keyStates[code] == KeyState.PRESS;
-	}
-	
+
+	@Deprecated
 	public boolean isKeyPressed(int code) {
+		assert Thread.currentThread() == ownerThread;
 		return GLFW.glfwGetKey(handle, code) == GLFW.GLFW_PRESS;
 	}
-	
+
+	public KeyState getKeyState(int code) {
+		return keyStates[code];
+	}
+
 	public boolean shouldClose() {
 		return GLFW.glfwWindowShouldClose(handle);
 	}
@@ -247,18 +312,26 @@ public abstract class Window implements Cleanupable {
 	}
 
 	public void pollEvents() {
+		assert Thread.currentThread() == ownerThread;
 		GLFW.glfwPollEvents();
 	}
 
+	@Deprecated
 	public boolean updateGamepad(int jid) {
+		assert Thread.currentThread() == ownerThread;
 		return GLFW.glfwGetGamepadState(jid, gamepadState);
 	}
 
 	public void updateOptions() {
+		assert Thread.currentThread() == ownerThread;
+
 		GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, options.resizable ? GLFW.GLFW_TRUE : GLFW.GLFW_FALSE);
 		GLFW.glfwSwapInterval(options.vsync ? 1 : 0);
 		GLFWVidMode vidMode = GLFW.glfwGetVideoMode(monitor);
-		GLFW.glfwSetWindowMonitor(handle, options.fullscreen ? monitor : MemoryUtil.NULL, 0, 0, !options.fullscreen ? options.windowSize.x : vidMode.width(), !options.fullscreen ? options.windowSize.y : vidMode.height(), options.fps);
+		GLFW.glfwSetWindowMonitor(handle, options.fullscreen ? monitor : MemoryUtil.NULL, 0, 0,
+				!options.fullscreen ? options.windowSize.x : vidMode.width(),
+				!options.fullscreen ? options.windowSize.y : vidMode.height(), options.fps);
+
 		this.width = !options.fullscreen ? options.windowSize.x : vidMode.width();
 		this.height = !options.fullscreen ? options.windowSize.y : vidMode.height();
 	}
@@ -296,6 +369,7 @@ public abstract class Window implements Cleanupable {
 	}
 
 	public void runCallbacks() {
+		assert Thread.currentThread() == ownerThread;
 		if (onResize != null) {
 			int[] w = new int[1];
 			int[] h = new int[1];
