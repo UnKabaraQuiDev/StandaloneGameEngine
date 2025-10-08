@@ -3,6 +3,7 @@ package lu.kbra.standalone.gameengine.scene.camera;
 import java.io.PrintStream;
 
 import org.joml.Matrix4f;
+import org.joml.Vector2i;
 
 public class Projection {
 
@@ -19,7 +20,8 @@ public class Projection {
 		out.println("Fov: " + fov + ", size: " + size);
 	}
 
-	public Projection(int width, int height, float nearPlane, float farPlane, float fov, float size, boolean perspective) {
+	public Projection(int width, int height, float nearPlane, float farPlane, float fov, float size,
+			boolean perspective) {
 		this.width = width;
 		this.height = height;
 		this.nearPlane = nearPlane;
@@ -37,6 +39,12 @@ public class Projection {
 		return update();
 	}
 
+	public Projection update(Vector2i resolution) {
+		this.width = resolution.x;
+		this.height = resolution.y;
+		return update();
+	}
+
 	public Projection update() {
 		if (perspective) {
 			float aspectRatio = (float) width / height;
@@ -49,7 +57,8 @@ public class Projection {
 			float halfWidth = width / 2f;
 			float halfHeight = height / 2f;
 
-			projectionMatrix = new Matrix4f().identity().ortho(-halfWidth / size, halfWidth / size, -halfHeight / size, halfHeight / size, nearPlane, farPlane);
+			projectionMatrix = new Matrix4f().identity().ortho(-halfWidth / size, halfWidth / size, -halfHeight / size,
+					halfHeight / size, nearPlane, farPlane);
 		}
 		return this;
 	}
@@ -75,6 +84,12 @@ public class Projection {
 
 	public Projection setFov(float fov) {
 		this.fov = fov;
+		return this;
+	}
+
+	public Projection setSize(Vector2i size) {
+		this.width = size.x;
+		this.width = size.y;
 		return this;
 	}
 

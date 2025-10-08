@@ -8,8 +8,6 @@ public class ComputeShader extends AbstractShader {
 	public static final String INPUT_SIZE = "inputSize";
 	public static final String OUTPUT_SIZE = "outputSize";
 
-	public static final String SCREEN_SIZE = "screenSize";
-
 	public ComputeShader(ComputeShaderPart part) {
 		super(null, part);
 	}
@@ -20,7 +18,6 @@ public class ComputeShader extends AbstractShader {
 
 	@Override
 	public void createUniforms() {
-		createUniform(SCREEN_SIZE);
 	}
 
 }
