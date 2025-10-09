@@ -31,7 +31,8 @@ public class Vec3iAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, BufferType bufferType, boolean _static, int divisor) {
+	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, BufferType bufferType,
+			boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -39,9 +40,12 @@ public class Vec3iAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		assert GL_W.checkError("BufferData(" + bufferType + ", " + data.length * 3 + ", " + iStatic + ")");
 
-		if (bufferType != BufferType.ELEMENT_ARRAY)
-			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_INT, false, 0, 0);
+		if (bufferType != BufferType.ELEMENT_ARRAY) {
+			GL_W.glVertexAttribIPointer(index, dataSize * 3, GL_W.GL_UNSIGNED_INT, 0, 0);
+			assert GL_W.checkError("VertexAttribIPointer(" + index + ", " + dataSize + ", GL_UNSIGNED_INT, 0, 0)");
+		}
 	}
 
 	public boolean update(Vector3i[] nPos) {
@@ -49,8 +53,8 @@ public class Vec3iAttribArray extends AttribArray {
 			throw new IllegalArgumentException("Array's size cannot change");
 		data = nPos;
 
-		GL_W.glBufferSubData(GL_W.GL_ARRAY_BUFFER, 0, toFlatArray());
-		assert GL_W.checkError();
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
+		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0, " + data.length * 3 + ")");
 
 		return true;
 	}
@@ -63,15 +67,12 @@ public class Vec3iAttribArray extends AttribArray {
 	public int[] toFlatArray() {
 		int[] flatArray = new int[data.length * 3];
 		for (int i = 0; i < data.length; i++) {
-			int[] dat = new int[3];
 			Vector3i cdata = data[i];
 			if (cdata != null) {
-				dat[0] = cdata.x;
-				dat[1] = cdata.y;
-				dat[2] = cdata.z;
-			} else
-				Arrays.fill(dat, 0);
-			System.arraycopy(dat, 0, flatArray, i * 3, 3);
+				flatArray[i * 3] = cdata.x;
+				flatArray[i * 3 + 1] = cdata.y;
+				flatArray[i * 3 + 2] = cdata.z;
+			}
 		}
 		return flatArray;
 	}

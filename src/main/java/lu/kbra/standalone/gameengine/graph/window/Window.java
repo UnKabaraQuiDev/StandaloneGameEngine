@@ -9,6 +9,7 @@ import java.util.logging.Level;
 
 import org.joml.Vector2d;
 import org.joml.Vector2f;
+import org.joml.Vector2i;
 import org.joml.Vector4f;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.glfw.GLFW;
@@ -56,7 +57,7 @@ public abstract class Window implements Cleanupable {
 	protected GLFWErrorCallback errorCallback;
 	protected Vector2d scroll = new Vector2d();
 	protected GLFWScrollCallback scrollCallback;
-	protected Vector2f cursorPos = new Vector2f();
+	protected Vector2f cursorPosition = new Vector2f();
 	protected GLFWCursorPosCallback cursorPosCallback;
 	protected KeyState[] mouseButtonStates = new KeyState[GLFW.GLFW_MOUSE_BUTTON_LAST];
 	protected GLFWMouseButtonCallback mouseButtonCallback;
@@ -130,7 +131,7 @@ public abstract class Window implements Cleanupable {
 	}
 
 	protected void callback_cursor_pos(long window, double sx, double sy) {
-		cursorPos.set(sx, sy);
+		cursorPosition.set(sx, sy);
 	}
 
 	protected void callback_scroll(long window, double sx, double sy) {
@@ -277,8 +278,8 @@ public abstract class Window implements Cleanupable {
 		return mouseButtonStates[mbid];
 	}
 
-	public Vector2f getMousePos() {
-		return cursorPos;
+	public Vector2f getMousePosition() {
+		return cursorPosition;
 	}
 
 	public boolean getJoystickHat(int jid, int hat, byte state) {
@@ -358,6 +359,10 @@ public abstract class Window implements Cleanupable {
 
 	public Vector2d getScroll() {
 		return scroll;
+	}
+
+	public Vector2i getSize() {
+		return new Vector2i(width, height);
 	}
 
 	public void clearScroll() {

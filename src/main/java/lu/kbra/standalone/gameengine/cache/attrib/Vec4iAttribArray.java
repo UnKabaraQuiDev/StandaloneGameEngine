@@ -31,7 +31,8 @@ public class Vec4iAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType, boolean _static, int divisor) {
+	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType,
+			boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -39,9 +40,12 @@ public class Vec4iAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		assert GL_W.checkError("BufferData(" + bufferType + ", 0, " + data.length * 4 + ")");
 
-		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM)
-			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_INT, false, 0, 0);
+		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
+			GL_W.glVertexAttribIPointer(index, dataSize * 4, GL_W.GL_UNSIGNED_INT, 0, 0);
+			assert GL_W.checkError("VertexAttribIPointer(" + index + ", " + dataSize + ", GL_UNSIGNED_INT, 0, 0)");
+		}
 	}
 
 	public boolean update(Vector4i[] nPos) {
@@ -49,9 +53,9 @@ public class Vec4iAttribArray extends AttribArray {
 			throw new IllegalArgumentException("Array's size cannot change");
 		data = nPos;
 
-		GL_W.glBufferSubData(GL_W.GL_ARRAY_BUFFER, 0, toFlatArray());
-		assert GL_W.checkError();
-		
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
+		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0, " + data.length * 4 + ")");
+
 		return true;
 	}
 
@@ -79,10 +83,10 @@ public class Vec4iAttribArray extends AttribArray {
 	public IntAttribArray toIntAttribArray() {
 		return new IntAttribArray(name, index, dataSize * 3, toFlatArray(), bufferType, iStatic);
 	}
+
 	public UIntAttribArray toUIntAttribArray() {
 		return new UIntAttribArray(name, index, dataSize * 3, toFlatArray(), bufferType, iStatic);
 	}
-
 
 	public Vector4i[] getData() {
 		return data;

@@ -330,6 +330,18 @@ public class GameEngine implements Cleanupable, UniqueID {
 		return updateDispatcher;
 	}
 
+	public Thread getMainThread() {
+		return mainThread;
+	}
+
+	public Thread getRenderThread() {
+		return renderThread;
+	}
+
+	public Thread getUpdateThread() {
+		return updateThread;
+	}
+
 	public boolean waitForFrameStart() {
 		if (Thread.currentThread().equals(renderThread))
 			throw new IllegalAccessError(renderThread.getName() + " cannot wait for itself");
