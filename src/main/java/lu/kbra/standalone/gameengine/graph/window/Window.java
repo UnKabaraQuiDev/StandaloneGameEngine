@@ -2,6 +2,7 @@ package lu.kbra.standalone.gameengine.graph.window;
 
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.BiConsumer;
@@ -68,6 +69,9 @@ public abstract class Window implements Cleanupable {
 		this.glType = glType;
 		this.options = options;
 		this.ownerThread = Thread.currentThread();
+
+		Arrays.fill(keyStates, KeyState.RELEASE);
+		Arrays.fill(mouseButtonStates, KeyState.RELEASE);
 
 		init();
 	}

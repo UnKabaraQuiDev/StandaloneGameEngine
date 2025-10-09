@@ -38,12 +38,7 @@ public abstract class Camera {
 
 		Vector3f origin = new Vector3f(), dir = new Vector3f();
 
-		// in = in.mul(new Vector2f(1, -1), new Vector2f());
-
 		projView.unprojectRay(GameEngineUtils.getCoordinates(in, viewport), viewport, origin, dir);
-
-		// origin.y = -origin.y;
-		// dir.y = -dir.y;
 
 		return new Ray(origin, dir);
 	}
