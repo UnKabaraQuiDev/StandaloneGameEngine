@@ -25,6 +25,10 @@ public enum Direction {
 		return index;
 	}
 
+	public static Direction ZERO() {
+		return SOUTH;
+	}
+
 	public static Direction getByIndex(int i) {
 		for (Direction d : values()) {
 			if (d.getIndex() == i) {
@@ -38,7 +42,7 @@ public enum Direction {
 		return getByIndex((index + 1) % 4);
 	}
 
-	public Direction getCounterClockwiser() {
+	public Direction getCounterClockwise() {
 		return getByIndex(index - 1 == -1 ? 3 : index - 1);
 	}
 
@@ -68,7 +72,7 @@ public enum Direction {
 
 	public Quaternionf rotate(Quaternionf first) {
 		return switch (this) {
-		case NORTH -> first.rotateY((float) Math.toRadians(180));
+		case NORTH -> first.rotateY((float) Math.toRadians(-90));
 		case SOUTH -> first.rotateY(0);
 		case EAST -> first.rotateY((float) Math.toRadians(90));
 		case WEST -> first.rotateY((float) Math.toRadians(-90));

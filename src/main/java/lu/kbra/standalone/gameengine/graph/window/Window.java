@@ -49,7 +49,7 @@ public abstract class Window implements Cleanupable {
 	// Callbacks
 	protected BiConsumer<Integer, Integer> onResize;
 
-	protected KeyState[] keyStates = new KeyState[GLFW.GLFW_KEY_LAST];
+	protected KeyState[] keyStates = new KeyState[GLFW.GLFW_KEY_LAST + 1];
 	protected GLFWKeyCallback keyCallback;
 	protected Map<Integer, Boolean> connectedGamepads = new ConcurrentHashMap<>();
 	protected Map<Integer, GLFWGamepadState> gamepadStates = new ConcurrentHashMap<>();
@@ -60,7 +60,7 @@ public abstract class Window implements Cleanupable {
 	protected GLFWScrollCallback scrollCallback;
 	protected Vector2f cursorPosition = new Vector2f();
 	protected GLFWCursorPosCallback cursorPosCallback;
-	protected KeyState[] mouseButtonStates = new KeyState[GLFW.GLFW_MOUSE_BUTTON_LAST];
+	protected KeyState[] mouseButtonStates = new KeyState[GLFW.GLFW_MOUSE_BUTTON_LAST + 1];
 	protected GLFWMouseButtonCallback mouseButtonCallback;
 
 	protected int width, height;

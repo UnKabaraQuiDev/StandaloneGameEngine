@@ -18,6 +18,8 @@ public class ComputeShader extends AbstractShader {
 
 	@Override
 	public void createUniforms() {
+		createUniform(INPUT_SIZE);
+		createUniform(OUTPUT_SIZE);
 	}
 
 }

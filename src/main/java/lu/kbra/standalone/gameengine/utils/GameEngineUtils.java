@@ -8,6 +8,9 @@ import org.joml.Quaternionf;
 import org.joml.Vector2f;
 import org.joml.Vector2i;
 import org.joml.Vector3f;
+import org.joml.Vector3i;
+import org.joml.Vector4f;
+import org.joml.Vector4i;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.lwjgl.egl.EGL10;
@@ -355,6 +358,84 @@ public final class GameEngineUtils {
 			return new Quaternionf();
 		return new Quaternionf(jsonArray.getFloat(0), jsonArray.getFloat(1), jsonArray.getFloat(2),
 				jsonArray.getFloat(3));
+	}
+
+	public static int[] toFlatArray(Vector2i[] data) {
+		int[] flatArray = new int[data.length * 2];
+		for (int i = 0; i < data.length; i++) {
+			Vector2i cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 2] = cdata.x;
+				flatArray[i * 2 + 1] = cdata.y;
+			}
+		}
+		return flatArray;
+	}
+
+	public static int[] toFlatArray(Vector3i[] data) {
+		int[] flatArray = new int[data.length * 3];
+		for (int i = 0; i < data.length; i++) {
+			Vector3i cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 3] = cdata.x;
+				flatArray[i * 3 + 1] = cdata.y;
+				flatArray[i * 3 + 2] = cdata.z;
+			}
+		}
+		return flatArray;
+	}
+
+	public static int[] toFlatArray(Vector4i[] data) {
+		int[] flatArray = new int[data.length * 4];
+		for (int i = 0; i < data.length; i++) {
+			Vector4i cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 4] = cdata.x;
+				flatArray[i * 4 + 1] = cdata.y;
+				flatArray[i * 4 + 2] = cdata.z;
+				flatArray[i * 4 + 3] = cdata.z;
+			}
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Vector2f[] data) {
+		float[] flatArray = new float[data.length * 2];
+		for (int i = 0; i < data.length; i++) {
+			Vector2f cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 2] = cdata.x;
+				flatArray[i * 2 + 1] = cdata.y;
+			}
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Vector3f[] data) {
+		float[] flatArray = new float[data.length * 3];
+		for (int i = 0; i < data.length; i++) {
+			Vector3f cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 3] = cdata.x;
+				flatArray[i * 3 + 1] = cdata.y;
+				flatArray[i * 3 + 2] = cdata.z;
+			}
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Vector4f[] data) {
+		float[] flatArray = new float[data.length * 4];
+		for (int i = 0; i < data.length; i++) {
+			Vector4f cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 4] = cdata.x;
+				flatArray[i * 4 + 1] = cdata.y;
+				flatArray[i * 4 + 2] = cdata.z;
+				flatArray[i * 4 + 3] = cdata.z;
+			}
+		}
+		return flatArray;
 	}
 
 }

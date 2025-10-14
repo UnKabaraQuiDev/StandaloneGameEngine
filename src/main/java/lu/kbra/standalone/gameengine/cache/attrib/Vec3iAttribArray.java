@@ -1,9 +1,8 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
-import java.util.Arrays;
-
 import org.joml.Vector3i;
 
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
@@ -39,7 +38,7 @@ public class Vec3iAttribArray extends AttribArray {
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", " + data.length * 3 + ", " + iStatic + ")");
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
@@ -53,7 +52,7 @@ public class Vec3iAttribArray extends AttribArray {
 			throw new IllegalArgumentException("Array's size cannot change");
 		data = nPos;
 
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
 		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0, " + data.length * 3 + ")");
 
 		return true;
@@ -64,25 +63,12 @@ public class Vec3iAttribArray extends AttribArray {
 		return data.length;
 	}
 
-	public int[] toFlatArray() {
-		int[] flatArray = new int[data.length * 3];
-		for (int i = 0; i < data.length; i++) {
-			Vector3i cdata = data[i];
-			if (cdata != null) {
-				flatArray[i * 3] = cdata.x;
-				flatArray[i * 3 + 1] = cdata.y;
-				flatArray[i * 3 + 2] = cdata.z;
-			}
-		}
-		return flatArray;
-	}
-
 	public IntAttribArray toIntAttribArray() {
-		return new IntAttribArray(name, index, dataSize * 3, toFlatArray(), bufferType, iStatic);
+		return new IntAttribArray(name, index, dataSize * 3, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	public UIntAttribArray toUIntAttribArray() {
-		return new UIntAttribArray(name, index, dataSize * 3, toFlatArray(), bufferType, iStatic);
+		return new UIntAttribArray(name, index, dataSize * 3, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	public Vector3i[] getData() {

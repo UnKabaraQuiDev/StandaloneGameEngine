@@ -1,5 +1,7 @@
 package lu.kbra.standalone.gameengine.graph.shader.part;
 
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.logging.Level;
 
 import lu.pcy113.pclib.PCUtils;
@@ -15,10 +17,16 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 	private final String file;
 	private int sid;
 	private final int type;
+	private final Map<String, Object> replacements;
 
 	public AbstractShaderPart(String file, int type) {
+		this(file, type, null);
+	}
+
+	public AbstractShaderPart(String file, int type, Map<String, Object> replacements) {
 		this.file = file;
 		this.type = type;
+		this.replacements = replacements;
 
 		if (type == -1) {
 			GameEngineUtils.throwGLESError("Unknown shader type: " + file);
@@ -26,12 +34,7 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 			return;
 		}
 
-		final String source;
-		try {
-			source = PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER.isGL() ? "400 core" : "300 es");
-		} catch (Exception e) {
-			throw new RuntimeException("Error when loading file `" + file + "`", e);
-		}
+		final String source = loadSource();
 
 		this.sid = GL_W.glCreateShader(type);
 		assert GL_W.checkError("CreateShader(" + type + ") (" + file + ")");
@@ -51,26 +54,37 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 		}
 	}
 
-	public static AbstractShaderPart load(String file) {
-		int type = shaderType(file.substring(file.lastIndexOf(".") + 1));
-		if (type == GL_W.GL_VERTEX_SHADER) {
-			return new VertexShaderPart(file);
-		} else if (type == GL_W.GL_FRAGMENT_SHADER) {
-			return new FragmentShaderPart(file);
-		} else if (type == GL_W.GL_COMPUTE_SHADER) {
-			return new ComputeShaderPart(file);
-		} else {
-			GameEngineUtils.throwGLESError("Unknown shader part type: " + file);
-			return null;
+	protected String loadSource() {
+		String source;
+		try {
+			source = PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER.isGL() ? "400 core" : "300 es");
+		} catch (Exception e) {
+			throw new RuntimeException("Error when loading file `" + file + "`", e);
 		}
+		if (replacements != null) {
+			for (Entry<String, Object> eso : replacements.entrySet()) {
+				if (eso.getValue() == null) {
+					throw new IllegalArgumentException(
+							"Value is null for key: " + eso.getKey() + ", probably not intended");
+				}
+				source = source.replace(eso.getKey(), eso.getValue().toString());
+			}
+		}
+		return source;
 	}
 
-	public static AbstractShaderPart loadPackaged(String file) {
-		int type = shaderType(file.substring(file.lastIndexOf(".") + 1));
+	public static AbstractShaderPart load(String file) {
+		return load(file, null);
+	}
+
+	public static AbstractShaderPart load(String file, Map<String, Object> replacements) {
+		final int type = shaderType(file.substring(file.lastIndexOf(".") + 1));
 		if (type == GL_W.GL_VERTEX_SHADER) {
-			return new VertexShaderPart(file);
+			return new VertexShaderPart(file, replacements);
 		} else if (type == GL_W.GL_FRAGMENT_SHADER) {
-			return new FragmentShaderPart(file);
+			return new FragmentShaderPart(file, replacements);
+		} else if (type == GL_W.GL_COMPUTE_SHADER) {
+			return new ComputeShaderPart(file, replacements);
 		} else {
 			GameEngineUtils.throwGLESError("Unknown shader part type: " + file);
 			return null;
@@ -78,12 +92,7 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 	}
 
 	public boolean recompile() {
-		final String source;
-		try {
-			source = PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER.isGL() ? "430" : "300 es");
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+		final String source = loadSource();
 
 		GL_W.glShaderSource(sid, source);
 		assert GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
@@ -95,7 +104,8 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 			GlobalLogger.log(Level.SEVERE, file + "> " + GL_W.glGetShaderInfoLog_String(sid, logLen));
 			return false;
 		} else {
-			GlobalLogger.log(Level.INFO, "ShaderPart " + file + " (" + sid + ") (" + type + ") recompiled successfully");
+			GlobalLogger.log(Level.INFO,
+					"ShaderPart " + file + " (" + sid + ") (" + type + ") recompiled successfully");
 			return true;
 		}
 	}

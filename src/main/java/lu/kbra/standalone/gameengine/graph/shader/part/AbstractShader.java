@@ -105,48 +105,133 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 			return;
 		}
 
-		if (value instanceof Integer) {
-			GL_W.glUniform1i(unif.getValue(), (int) value);
-		} else if (value instanceof Float) {
-			GL_W.glUniform1f(unif.getValue(), (float) value);
-		} else if (value instanceof Vector2f) {
-			GL_W.glUniform2f(unif.getValue(), ((Vector2f) value).x, ((Vector2f) value).y);
-		} else if (value instanceof Vector3f) {
-			GL_W.glUniform3f(unif.getValue(), ((Vector3f) value).x, ((Vector3f) value).y, ((Vector3f) value).z);
-		} else if (value instanceof Vector4f) {
-			GL_W.glUniform4f(unif.getValue(), ((Vector4f) value).x, ((Vector4f) value).y, ((Vector4f) value).z,
-					((Vector4f) value).w);
-		} else if (value instanceof Vector2i) {
-			GL_W.glUniform2i(unif.getValue(), ((Vector2i) value).x, ((Vector2i) value).y);
-		} else if (value instanceof Vector3i) {
-			GL_W.glUniform3i(unif.getValue(), ((Vector3i) value).x, ((Vector3i) value).y, ((Vector3i) value).z);
-		} else if (value instanceof Vector4i) {
-			GL_W.glUniform4i(unif.getValue(), ((Vector4i) value).x, ((Vector4i) value).y, ((Vector4i) value).z,
-					((Vector4i) value).w);
-		} else if (value instanceof Matrix4f) {
+		final int unifLoc = unif.getValue();
+
+		storeUniform(unifLoc, value, key);
+	}
+
+	private void storeUniform(int unifLoc, Object value, String key) {
+		if (value instanceof Float val) {
+			GL_W.glUniform1f(unifLoc, val);
+		} else if (value instanceof Vector2f val) {
+			GL_W.glUniform2f(unifLoc, val.x, val.y);
+		} else if (value instanceof Vector3f val) {
+			GL_W.glUniform3f(unifLoc, val.x, val.y, val.z);
+		} else if (value instanceof Vector4f val) {
+			GL_W.glUniform4f(unifLoc, val.x, val.y, val.z, val.w);
+		} else if (value instanceof Vector2f[] val) {
+			GL_W.glUniform2fv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector3f[] val) {
+			GL_W.glUniform3fv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector4f[] val) {
+			GL_W.glUniform4fv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Integer val) {
+			GL_W.glUniform1i(unifLoc, val);
+		} else if (value instanceof Vector2i val) {
+			GL_W.glUniform2i(unifLoc, val.x, val.y);
+		} else if (value instanceof Vector3i val) {
+			GL_W.glUniform3i(unifLoc, val.x, val.y, val.z);
+		} else if (value instanceof Vector4i val) {
+			GL_W.glUniform4i(unifLoc, val.x, val.y, val.z, val.w);
+		} else if (value instanceof Vector2i[] val) {
+			GL_W.glUniform2iv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector3i[] val) {
+			GL_W.glUniform3iv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector4i[] val) {
+			GL_W.glUniform4iv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Matrix4f val) {
 			try (MemoryStack stack = MemoryStack.stackPush()) {
-				GL_W.glUniformMatrix4fv(unif.getValue(), false, ((Matrix4f) value).get(stack.mallocFloat(16)));
+				GL_W.glUniformMatrix4fv(unifLoc, false, val.get(stack.mallocFloat(16)));
 			}
-		} else if (value instanceof Matrix3f) {
+		} else if (value instanceof Matrix3f val) {
 			try (MemoryStack stack = MemoryStack.stackPush()) {
-				GL_W.glUniformMatrix3fv(unif.getValue(), false, ((Matrix3f) value).get(stack.mallocFloat(9)));
+				GL_W.glUniformMatrix3fv(unifLoc, false, val.get(stack.mallocFloat(9)));
 			}
-		} else if (value instanceof Matrix3x2f) {
+		} else if (value instanceof Matrix3x2f val) {
 			try (MemoryStack stack = MemoryStack.stackPush()) {
-				GL_W.glUniformMatrix3x2fv(unif.getValue(), false, ((Matrix3x2f) value).get(stack.mallocFloat(6)));
+				GL_W.glUniformMatrix3x2fv(unifLoc, false, val.get(stack.mallocFloat(6)));
 			}
-		} else if (value instanceof Boolean) {
-			GL_W.glUniform1i(unif.getValue(), (boolean) value ? 1 : 0);
-		} else if (value instanceof Double) {
+		} else if (value instanceof Boolean val) {
+			GL_W.glUniform1i(unifLoc, val ? 1 : 0);
+		} else if (value instanceof Double val) {
 			throw new UnsupportedOperationException("Double not supported.");
-		} else if (value instanceof Character) {
+		} else if (value instanceof Character val) {
 			throw new UnsupportedOperationException("Character not supported.");
 		} else {
 			throw new UnsupportedOperationException(value.getClass().getName() + " not supported.");
 		}
 
-		assert GL_W.checkError("Uniform(" + unif.getValue() + ", " + value + ") (" + key + ", "
-				+ value.getClass().getName() + ") (" + getId() + ")");
+		assert GL_W.checkError("Uniform(" + unifLoc + ", " + value + ") (" + key + ", " + value.getClass().getName()
+				+ ") (" + getId() + ")");
+	}
+
+	public void setUniformUnsigned(String key, Object value) {
+		if (getUniformLocation(key) == -1) {
+			return;
+		}
+
+		final Pair<Property<Object>, Integer> unif = uniforms.get(key);
+		if (unif == null) {
+			return;
+		}
+		final Property<Object> prop = unif.hasKey() ? unif.getKey() : new Property<Object>();
+		prop.setValue(value);
+		if (!prop.isChanged()) {
+			return;
+		}
+
+		final int unifLoc = unif.getValue();
+
+		storeUniformUnsigned(unifLoc, value, key);
+	}
+
+	private void storeUniformUnsigned(int unifLoc, Object value, String key) {
+		if (value instanceof Integer val) {
+			GL_W.glUniform1ui(unifLoc, val);
+		} else if (value instanceof Vector2i val) {
+			GL_W.glUniform2ui(unifLoc, val.x, val.y);
+		} else if (value instanceof Vector3i val) {
+			GL_W.glUniform3ui(unifLoc, val.x, val.y, val.z);
+		} else if (value instanceof Vector4i val) {
+			GL_W.glUniform4ui(unifLoc, val.x, val.y, val.z, val.w);
+		} else if (value instanceof Vector2i[] val) {
+			GL_W.glUniform2uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector3i[] val) {
+			GL_W.glUniform3uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector4i[] val) {
+			GL_W.glUniform4uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Boolean val) {
+			GL_W.glUniform1ui(unifLoc, val ? 1 : 0);
+		} else {
+			throw new UnsupportedOperationException(value.getClass().getName() + " not supported.");
+		}
+
+		assert GL_W.checkError("UniformU(" + unifLoc + ", " + value + ") (" + key + ", " + value.getClass().getName()
+				+ ") (" + getId() + ")");
+	}
+
+	public void storeUniform(int unifLoc, Object value) {
+		this.storeUniform(unifLoc, value, null);
+	}
+
+	public void storeUniformUnsigned(int unifLoc, Object value) {
+		this.storeUniformUnsigned(unifLoc, value, null);
+	}
+
+	public void storeUniform(int unifLoc, Object value, boolean signed) {
+		if (signed) {
+			storeUniform(unifLoc, value);
+		} else {
+			storeUniformUnsigned(unifLoc, value);
+		}
+	}
+
+	public void setUniform(String key, Object value, boolean signed) {
+		if (signed) {
+			setUniform(key, value);
+		} else {
+			setUniformUnsigned(key, value);
+		}
 	}
 
 	public int getUniformLocation(String name) {

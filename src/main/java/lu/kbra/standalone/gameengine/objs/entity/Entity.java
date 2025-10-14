@@ -5,9 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import lu.kbra.standalone.gameengine.impl.UniqueID;
-
-public class Entity implements UniqueID {
+public class Entity implements SceneEntity {
 
 	private boolean active = true;
 
@@ -22,6 +20,7 @@ public class Entity implements UniqueID {
 		}
 	}
 
+	@Override
 	public Entity addComponent(Component component) {
 		if (component == null)
 			return this;
@@ -30,43 +29,50 @@ public class Entity implements UniqueID {
 		return this;
 	}
 
+	@Override
 	public <T extends Component> T getComponent(Class<T> componentClass) {
 		return (T) components.get(componentClass);
 	}
 
+	@Override
 	public <T extends Component> T getComponentMatching(Class<T> clazz) {
-		return (T) components.get(components.keySet().parallelStream().filter(t -> clazz.isAssignableFrom(t)).findFirst().orElse(null));
+		return (T) components.get(
+				components.keySet().parallelStream().filter(t -> clazz.isAssignableFrom(t)).findFirst().orElse(null));
 	}
 
+	@Override
 	public <T extends Component> List<T> getComponentsMatching(Class<T> clazz) {
-		return components
-				.keySet()
-				.stream()
-				.filter(t -> clazz.isAssignableFrom(t))
-				.map(t -> (T) components.get(t))
+		return components.keySet().stream().filter(t -> clazz.isAssignableFrom(t)).map(t -> (T) components.get(t))
 				.collect(Collectors.toList());
 	}
 
+	@Override
 	public boolean hasComponentMatching(Class<? extends Component> clazz) {
-		return components.keySet().stream().map(t -> clazz.isAssignableFrom(t)).collect(Collectors.reducing((a, b) -> a || b)).get();
+		return components.keySet().stream().map(t -> clazz.isAssignableFrom(t))
+				.collect(Collectors.reducing((a, b) -> a || b)).get();
 	}
 
+	@Override
 	public List<Class<? extends Component>> getComponentTypesMatching(Class<? extends Component> clazz) {
 		return components.keySet().stream().filter(t -> clazz.isAssignableFrom(t)).collect(Collectors.toList());
 	}
 
+	@Override
 	public Map<Class<? extends Component>, Component> getComponents() {
 		return components;
 	}
 
+	@Override
 	public void setComponents(Map<Class<? extends Component>, Component> components) {
 		this.components = components;
 	}
 
+	@Override
 	public boolean isActive() {
 		return active;
 	}
 
+	@Override
 	public Entity setActive(boolean a) {
 		this.active = a;
 		return this;
@@ -74,7 +80,8 @@ public class Entity implements UniqueID {
 
 	@Override
 	public String toString() {
-		return "Entity@" + getClass().getSimpleName() + "#" + name + "[active=" + active + ", componentCount=" + components.size() + "]";
+		return "Entity@" + getClass().getSimpleName() + "#" + name + "[active=" + active + ", componentCount="
+				+ components.size() + "]";
 	}
 
 	@Override
