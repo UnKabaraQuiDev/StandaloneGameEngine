@@ -5,7 +5,7 @@ import lu.pcy113.pclib.impl.ExceptionFunction;
 import lu.pcy113.pclib.impl.ExceptionRunnable;
 import lu.pcy113.pclib.impl.ExceptionSupplier;
 
-public class TaskFuture<T, U> {
+public class TaskFuture<I, O> {
 
 	public class TaskState<V> {
 
@@ -41,26 +41,25 @@ public class TaskFuture<T, U> {
 
 	private TaskFuture<?, ?> first;
 	private Dispatcher dispatcher;
-	private final ExceptionFunction<T, U> task;
+	private final ExceptionFunction<I, O> task;
 	private final int priority;
-	private TaskFuture<U, ?> next;
+	private TaskFuture<O, ?> next;
 
-	protected TaskFuture(Dispatcher dispatcher, ExceptionFunction<T, U> task) {
+	protected TaskFuture(Dispatcher dispatcher, ExceptionFunction<I, O> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	protected TaskFuture(Dispatcher dispatcher, ExceptionFunction<T, U> task, int priority) {
+	protected TaskFuture(Dispatcher dispatcher, ExceptionFunction<I, O> task, int priority) {
 		this.dispatcher = dispatcher;
 		this.task = task;
 		this.priority = priority;
-		this.first = this;
 	}
 
-	public TaskFuture(Dispatcher dispatcher, ExceptionSupplier<U> task) {
+	public TaskFuture(Dispatcher dispatcher, ExceptionSupplier<O> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, ExceptionSupplier<U> task, int priority) {
+	public TaskFuture(Dispatcher dispatcher, ExceptionSupplier<O> task, int priority) {
 		this.dispatcher = dispatcher;
 		this.task = (v) -> task.get();
 		this.priority = priority;
@@ -81,23 +80,23 @@ public class TaskFuture<T, U> {
 		}, priority);
 	}
 
-	public <V> TaskFuture<U, V> then(Dispatcher nextDispatcher, ExceptionFunction<U, V> function) {
+	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, ExceptionFunction<O, N> function) {
 		return then(nextDispatcher, function, 0);
 	}
 
-	public <V> TaskFuture<U, V> then(Dispatcher nextDispatcher, ExceptionFunction<U, V> function, int priority) {
-		TaskFuture<U, V> nextFuture = new TaskFuture<U, V>(nextDispatcher, function, priority);
+	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, ExceptionFunction<O, N> function, int priority) {
+		TaskFuture<O, N> nextFuture = new TaskFuture<O, N>(nextDispatcher, function, priority);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
 	}
 
-	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, ExceptionConsumer<U> consumer) {
+	public TaskFuture<O, Void> then(Dispatcher nextDispatcher, ExceptionConsumer<O> consumer) {
 		return then(nextDispatcher, consumer, 0);
 	}
 
-	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, ExceptionConsumer<U> consumer, int priority) {
-		TaskFuture<U, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
+	public TaskFuture<O, Void> then(Dispatcher nextDispatcher, ExceptionConsumer<O> consumer, int priority) {
+		TaskFuture<O, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
 			consumer.accept(v);
 			return null;
 		}, priority);
@@ -106,12 +105,12 @@ public class TaskFuture<T, U> {
 		return nextFuture;
 	}
 
-	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, ExceptionRunnable consumer) {
+	public TaskFuture<O, Void> then(Dispatcher nextDispatcher, ExceptionRunnable consumer) {
 		return then(nextDispatcher, consumer, 0);
 	}
 
-	public TaskFuture<U, Void> then(Dispatcher nextDispatcher, ExceptionRunnable consumer, int priority) {
-		TaskFuture<U, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
+	public TaskFuture<O, Void> then(Dispatcher nextDispatcher, ExceptionRunnable consumer, int priority) {
+		TaskFuture<O, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
 			consumer.run();
 			return null;
 		}, priority);
@@ -120,29 +119,29 @@ public class TaskFuture<T, U> {
 		return nextFuture;
 	}
 
-	public <N> TaskFuture<U, N> then(Dispatcher nextDispatcher, TaskFuture<U, N> nextFuture) {
+	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, TaskFuture<O, N> nextFuture) {
 		return then(nextDispatcher, nextFuture, 0);
 	}
 
-	public <N> TaskFuture<U, N> then(Dispatcher nextDispatcher, TaskFuture<U, N> nextFuture, int priority) {
+	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, TaskFuture<O, N> nextFuture, int priority) {
 		nextFuture.first = this.first;
 		nextFuture.dispatcher = nextDispatcher;
 		this.next = nextFuture;
 		return nextFuture;
 	}
 
-	public <N> TaskFuture<U, N> then(TaskFuture<U, N> nextFuture) {
+	public <N> TaskFuture<O, N> then(TaskFuture<O, N> nextFuture) {
 		return then(nextFuture, 0);
 	}
 
-	public <N> TaskFuture<U, N> then(TaskFuture<U, N> nextFuture, int priority) {
-		this.next = (TaskFuture<U, ?>) nextFuture.first;
+	public <N> TaskFuture<O, N> then(TaskFuture<O, N> nextFuture, int priority) {
+		this.next = (TaskFuture<O, ?>) nextFuture.first;
 		nextFuture.first = this.first;
 		return nextFuture;
 	}
 
-	public TaskState<U> push() {
-		final TaskState<U> state = new TaskState<>();
+	public TaskState<O> push() {
+		final TaskState<O> state = new TaskState<>();
 		state.started = true;
 		first.pushInternal(null, state);
 		return state;
@@ -152,9 +151,9 @@ public class TaskFuture<T, U> {
 	private void pushInternal(Object v, TaskState state) {
 		dispatcher.post(() -> {
 			state.ongoing = true;
-			U result = null;
+			O result = null;
 			try {
-				result = task.apply((T) v);
+				result = task.apply((I) v);
 				if (next != null) {
 					next.pushInternal(result, state);
 				} else {
