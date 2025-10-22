@@ -1,5 +1,6 @@
 package lu.kbra.standalone.gameengine.scene;
 
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -7,9 +8,11 @@ import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 
-public class Scene2D extends Scene {
+public class Scene2D extends Scene implements Iterable<Entity> {
 
 	public static final String NAME = Scene2D.class.getName();
+
+	private final Object entitiesLock = new Object();
 
 	protected Map<String, Entity> entities = new LinkedHashMap<>();
 
@@ -45,6 +48,15 @@ public class Scene2D extends Scene {
 
 	public Entity getEntity(String str) {
 		return this.entities.get(str);
+	}
+
+	public Object getEntitiesLock() {
+		return entitiesLock;
+	}
+
+	@Override
+	public Iterator<Entity> iterator() {
+		return this.entities.values().iterator();
 	}
 
 }

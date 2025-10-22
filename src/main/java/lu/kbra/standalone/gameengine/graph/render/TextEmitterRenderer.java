@@ -32,7 +32,7 @@ public class TextEmitterRenderer extends Renderer<Scene, TextEmitterComponent> {
 	public void render_in(CacheManager cache, Scene scene, TextEmitterComponent tec) {
 		Entity e = tec.getParent();
 
-		TextEmitter te = tec.getTextEmitter(cache);
+		TextEmitter te = tec.getTextEmitter();
 		if (te == null) {
 			GlobalLogger.log(Level.WARNING, "TextEmitter is null: " + e + "!");
 			return;

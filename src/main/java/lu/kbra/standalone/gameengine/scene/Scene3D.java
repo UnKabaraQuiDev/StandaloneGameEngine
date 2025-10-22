@@ -2,6 +2,7 @@ package lu.kbra.standalone.gameengine.scene;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ import lu.kbra.standalone.gameengine.objs.entity.components.PointLightComponent;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 import lu.kbra.standalone.gameengine.scene.camera.Camera3D;
 
-public class Scene3D extends Scene {
+public class Scene3D extends Scene implements Iterable<Entity> {
 
 	public static final String NAME = Scene3D.class.getName();
 
@@ -90,8 +91,7 @@ public class Scene3D extends Scene {
 	}
 
 	public List<LightComponent> getLights() {
-		return getLightEmittors()
-				.stream()
+		return getLightEmittors().stream()
 				.map((String e) -> (PointLightComponent) entities.get(e).getComponent(PointLightComponent.class))
 				.collect(Collectors.toList());
 	}
@@ -107,6 +107,11 @@ public class Scene3D extends Scene {
 
 	public Object getEntitiesLock() {
 		return entitiesLock;
+	}
+
+	@Override
+	public Iterator<Entity> iterator() {
+		return this.entities.values().iterator();
 	}
 
 }

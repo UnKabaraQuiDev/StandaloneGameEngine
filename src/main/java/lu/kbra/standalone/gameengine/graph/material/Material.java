@@ -12,6 +12,7 @@ import lu.kbra.standalone.gameengine.graph.material.components.MaterialComponent
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Material implements UniqueID {
 
@@ -34,6 +35,13 @@ public class Material implements UniqueID {
 	public void bindProperties(CacheManager cache, Renderable parent) {
 		for (Entry<String, Object> eso : properties.entrySet()) {
 			shader.setUniform(eso.getKey(), eso.getValue());
+		}
+
+		if (shader.isTransparent()) {
+			GL_W.glEnable(GL_W.GL_BLEND);
+			assert GL_W.checkError("Enable(BLEND)");
+			GL_W.glBlendFunc(GL_W.GL_SRC_ALPHA, GL_W.GL_ONE_MINUS_SRC_ALPHA);
+			assert GL_W.checkError("BlendFunc(SRC_ALPHA, ONE_MINUS_SRC_ALPHA)");
 		}
 	}
 
@@ -91,7 +99,8 @@ public class Material implements UniqueID {
 	}
 
 	public boolean hasComponent(Class<? extends MaterialComponent> clazz) {
-		return components.keySet().stream().map(t -> clazz.isAssignableFrom(t)).collect(Collectors.reducing((a, b) -> a || b)).get();
+		return components.keySet().stream().map(t -> clazz.isAssignableFrom(t))
+				.collect(Collectors.reducing((a, b) -> a || b)).get();
 	}
 
 	public Map<Class<? extends MaterialComponent>, MaterialComponent> getComponents() {
