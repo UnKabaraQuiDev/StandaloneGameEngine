@@ -48,8 +48,7 @@ public class Entity implements SceneEntity {
 
 	@Override
 	public boolean hasComponentMatching(Class<? extends Component> clazz) {
-		return components.keySet().stream().map(t -> clazz.isAssignableFrom(t))
-				.collect(Collectors.reducing((a, b) -> a || b)).get();
+		return components.keySet().stream().map(t -> clazz.isAssignableFrom(t)).anyMatch(b -> b);
 	}
 
 	@Override

@@ -8,11 +8,12 @@ import org.joml.Vector3f;
 import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 
-public interface Mesh extends UniqueID, Cleanupable, Renderable {
+public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
 
 	public static final String ATTRIB_VERTICES_NAME = "vertices";
 	public static final String ATTRIB_INDICES_NAME = "ids";
@@ -32,15 +33,11 @@ public interface Mesh extends UniqueID, Cleanupable, Renderable {
 
 	int getVertexCount();
 
-	int getVao();
-
 	Map<Integer, Integer> getVbo();
 
 	int getIndicesCount();
 
 	Material getMaterial();
-	
-	boolean isValid();
 
 	public static QuadMesh newQuad(String name, Material material2, Vector2f size) {
 		return new QuadMesh(name, material2, size);

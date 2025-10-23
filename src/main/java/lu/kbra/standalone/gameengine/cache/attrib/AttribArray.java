@@ -7,11 +7,12 @@ import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
-public abstract class AttribArray implements Cleanupable {
+public abstract class AttribArray implements Cleanupable, GLObject {
 
 	protected int bid = -1;
 	protected boolean iStatic = true;;
@@ -143,7 +144,8 @@ public abstract class AttribArray implements Cleanupable {
 		this.bufferType = bufferType;
 	}
 
-	public int getBid() {
+	@Override
+	public int getGlId() {
 		return bid;
 	}
 
@@ -156,8 +158,19 @@ public abstract class AttribArray implements Cleanupable {
 	}
 
 	@Override
+	public boolean isValid() {
+		return bid != -1;
+	}
+
+	@Override
+	public String getId() {
+		return name + "#" + bid + "@" + PCUtils.toSimpleIdentityString(this);
+	}
+
+	@Override
 	public String toString() {
-		return getBid() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
+		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "="
+				+ getDataCount();
 	}
 
 	public static <T> boolean update(AttribArray arr, T[] data) {

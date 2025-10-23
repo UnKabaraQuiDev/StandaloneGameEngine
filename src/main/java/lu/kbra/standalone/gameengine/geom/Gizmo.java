@@ -123,7 +123,7 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 		return vertexCount;
 	}
 
-	public int getVao() {
+	public int getGlId() {
 		return vao;
 	}
 

@@ -12,13 +12,14 @@ import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Mat4fAttribArray;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.transform.Transform;
 
-public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
+public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObject {
 
 	protected final String name;
 
@@ -56,7 +57,8 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 		mesh.addAttribArray(this.instancesTransforms);
 		for (AttribArray a : this.instancesAttribs) {
 			if (mesh.getVbo().containsKey(a.getIndex())) {
-				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
+				GlobalLogger.log(Level.WARNING,
+						"Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
 			}
 			mesh.addAttribArray(a);
@@ -66,7 +68,8 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 
 		// System.err.println(this.instancesTransforms);
 
-		GlobalLogger.log(Level.INFO, "ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo() + "); count:" + count + "; attribs: " + Arrays.toString(attribs));
+		GlobalLogger.log(Level.INFO, "ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo()
+				+ "); count:" + count + "; attribs: " + Arrays.toString(attribs));
 	}
 
 	/**
@@ -101,18 +104,21 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 	public void updateDirect(Matrix4f[] transforms, Object[][] atts) {
 		if (transforms.length != this.count || atts.length != this.instancesAttribs.length)
 			throw new IllegalArgumentException();
-		
+
 		// update this.particles to the new values ?
-		
+
 		if (!AttribArray.update(this.instancesTransforms, transforms))
 			GlobalLogger.log(Level.WARNING, "Could not update transforms");
 
-		
 		for (int c = 0; c < this.instancesAttribs.length; c++) {
 			if (!AttribArray.update(this.instancesAttribs[c], atts[c]))
-				GlobalLogger.log(Level.WARNING, "Failed to update attrib array: " + this.instancesAttribs[c].getName() + " (" + this.instancesAttribs[c].getIndex() + ")");
-			/*else
-				GlobalLogger.info("Updated attrib array: " + this.instancesAttribs[c].getName() + " (" + this.instancesAttribs[c].getIndex() + ") for " + this.getId());*/
+				GlobalLogger.log(Level.WARNING, "Failed to update attrib array: " + this.instancesAttribs[c].getName()
+						+ " (" + this.instancesAttribs[c].getIndex() + ")");
+			/*
+			 * else GlobalLogger.info("Updated attrib array: " +
+			 * this.instancesAttribs[c].getName() + " (" +
+			 * this.instancesAttribs[c].getIndex() + ") for " + this.getId());
+			 */
 		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
@@ -140,7 +146,6 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
-	
 
 	public void updateParticlesTransforms() {
 		Matrix4f[] transforms = new Matrix4f[this.count];
@@ -180,10 +185,15 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 		this.instanceMesh.cleanup();
 		this.instanceMesh = null;
 	}
-	
+
 	@Override
 	public String getId() {
 		return this.name;
+	}
+
+	@Override
+	public int getGlId() {
+		return instanceMesh.getGlId();
 	}
 
 	public int getParticleCount() {
@@ -204,6 +214,11 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID {
 
 	public AttribArray getParticleTransforms() {
 		return this.instancesTransforms;
+	}
+
+	@Override
+	public boolean isValid() {
+		return instanceMesh != null && instanceMesh.isValid() && instancesTransforms.isValid();
 	}
 
 }

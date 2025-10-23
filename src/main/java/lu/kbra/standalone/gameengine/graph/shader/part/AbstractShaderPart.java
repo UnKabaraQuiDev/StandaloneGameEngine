@@ -8,11 +8,12 @@ import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
-public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
+public abstract class AbstractShaderPart implements UniqueID, Cleanupable, GLObject {
 
 	private final String file;
 	private int sid;
@@ -118,6 +119,7 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 			return;
 
 		GL_W.glDeleteShader(sid);
+		assert GL_W.checkError("DeleteShader(" + file + ")");
 		sid = -1;
 	}
 
@@ -126,8 +128,14 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable {
 		return file;
 	}
 
-	public int getSid() {
+	@Override
+	public int getGlId() {
 		return sid;
+	}
+
+	@Override
+	public boolean isValid() {
+		return sid != -1;
 	}
 
 	public String getFile() {

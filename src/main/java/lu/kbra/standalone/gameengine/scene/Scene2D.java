@@ -6,6 +6,7 @@ import java.util.Map;
 
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
+import lu.kbra.standalone.gameengine.objs.entity.components.LightComponent;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 
 public class Scene2D extends Scene implements Iterable<Entity> {
@@ -37,17 +38,40 @@ public class Scene2D extends Scene implements Iterable<Entity> {
 		this.entities = entities;
 	}
 
-	public Entity addEntity(String str, Entity entity) {
-		this.entities.put(str, entity);
-		return entity;
+	public <T extends Entity> T addEntity(T e) {
+		synchronized (entitiesLock) {
+			return (T) addEntity(e.getId(), e);
+		}
 	}
 
 	public Entity addEntity(String str, Component... components) {
-		return addEntity(str, new Entity(str, components));
+		synchronized (entitiesLock) {
+			return addEntity(str, new Entity(str, components));
+		}
 	}
 
 	public Entity getEntity(String str) {
-		return this.entities.get(str);
+		synchronized (entitiesLock) {
+			return this.entities.get(str);
+		}
+	}
+
+	public void addEntities(String[] names, Entity[] entities) {
+		synchronized (entitiesLock) {
+			for (int i = 0; i < Math.min(names.length, entities.length); i++) {
+				this.addEntity(names[i], entities[i]);
+			}
+		}
+	}
+
+	public <T extends Entity> T addEntity(String str, T entity) {
+		if (entity == null)
+			return null;
+
+		synchronized (entitiesLock) {
+			this.entities.put(str, entity);
+		}
+		return entity;
 	}
 
 	public Object getEntitiesLock() {

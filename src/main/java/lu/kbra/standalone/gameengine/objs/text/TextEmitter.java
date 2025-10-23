@@ -14,11 +14,12 @@ import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
 import lu.kbra.standalone.gameengine.graph.material.text.TextShader;
 import lu.kbra.standalone.gameengine.graph.material.text.TextShader.TextMaterial;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.gl.consts.Alignment;
 import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 
-public class TextEmitter implements Cleanupable, UniqueID {
+public class TextEmitter implements Cleanupable, UniqueID, GLObject {
 
 	public static final int CHAR_BUFFER_INDEX = 7;
 	public static final String CHAR_BUFFER_NAME = "char";
@@ -33,7 +34,6 @@ public class TextEmitter implements Cleanupable, UniqueID {
 
 	private UIntAttribArray charBuffer;
 	private InstanceEmitter instances;
-	private Mesh quad;
 
 	private Alignment alignment = Alignment.CENTER;
 	private boolean justify = false;
@@ -51,25 +51,24 @@ public class TextEmitter implements Cleanupable, UniqueID {
 		final Integer[] chars = new Integer[bufferSize];
 		Arrays.fill(chars, 0);
 		updateTextContent(new Matrix4f[bufferSize], chars);
-		// GlobalLogger.log(Level.FINEST, "SET: " + Arrays.toString(chars));
 
-		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_INDEX, 1, PCUtils.toPrimitiveInt(chars), false, 1);
-		// GlobalLogger.log(Level.FINEST, Arrays.toString(charBuffer.getData()));
-		this.quad = Mesh.newQuad(name, material, size);
+		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_INDEX, 1, PCUtils.toPrimitiveInt(chars),
+				false, 1);
 
-		this.instances = new InstanceEmitter(name, quad, bufferSize, new Transform3D(), charBuffer);
+		// quad mesh ownership goes to the InstanceEmitter
+		this.instances = new InstanceEmitter(name, Mesh.newQuad(name, material, size), bufferSize, new Transform3D(),
+				charBuffer);
 	}
 
 	public boolean updateText() {
 		if (charBuffer.getLength() < text.length()) {
-			GlobalLogger
-					.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length() + ") for length: "
-							+ charBuffer.getLength() + ")");
+			GlobalLogger.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length()
+					+ ") for length: " + charBuffer.getLength() + ")");
 		}
 
 		text = text.substring(0, Math.min(text.length(), charBuffer.getLength()));
 
-		final TextMaterial material = (TextMaterial) quad.getMaterial();
+		final TextMaterial material = (TextMaterial) instances.getParticleMesh().getMaterial();
 
 		material.setProperty(TextShader.TXT_LENGTH, text.length());
 
@@ -124,10 +123,12 @@ public class TextEmitter implements Cleanupable, UniqueID {
 				character++;
 				chars[charIndex] = (int) currentChar;
 
-				final float translationX = (character - widthCount[line] / 2) * (charSize.x + charOffset.x) - charSize.x;
+				final float translationX = (character - widthCount[line] / 2) * (charSize.x + charOffset.x)
+						- charSize.x;
 				final float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2 + charOffset.y;
 
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+				transforms[charIndex] = new Matrix4f().identity().translate(translationX,
+						(correctTransform ? -1 : 1) * translationY, 0);
 
 				charIndex++;
 			}
@@ -156,10 +157,12 @@ public class TextEmitter implements Cleanupable, UniqueID {
 				character++;
 				chars[charIndex] = (int) currentChar;
 
-				float translationX = (character - widthCount[line] / 2) * (charSize.x + charOffset.x) + widthMax / 2 - charSize.x;
+				float translationX = (character - widthCount[line] / 2) * (charSize.x + charOffset.x) + widthMax / 2
+						- charSize.x;
 				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
 
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+				transforms[charIndex] = new Matrix4f().identity().translate(translationX,
+						(correctTransform ? -1 : 1) * translationY, 0);
 
 				charIndex++;
 			}
@@ -188,10 +191,12 @@ public class TextEmitter implements Cleanupable, UniqueID {
 				character++;
 				chars[charIndex] = (int) currentChar;
 
-				final float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x + charOffset.x) - charSize.x;
+				final float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x + charOffset.x)
+						- charSize.x;
 				final float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
 
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+				transforms[charIndex] = new Matrix4f().identity().translate(translationX,
+						(correctTransform ? -1 : 1) * translationY, 0);
 
 				charIndex++;
 			}
@@ -223,7 +228,8 @@ public class TextEmitter implements Cleanupable, UniqueID {
 				float translationX = (character - widthCount[line]) * (charSize.x + charOffset.x) - charSize.x / 2;
 				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
 
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+				transforms[charIndex] = new Matrix4f().identity().translate(translationX,
+						(correctTransform ? -1 : 1) * translationY, 0);
 
 				charIndex++;
 			}
@@ -252,7 +258,8 @@ public class TextEmitter implements Cleanupable, UniqueID {
 				float translationX = character * (charSize.x + charOffset.x) - charSize.x / 2;
 				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
 
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+				transforms[charIndex] = new Matrix4f().identity().translate(translationX,
+						(correctTransform ? -1 : 1) * translationY, 0);
 
 				charIndex++;
 			}
@@ -329,10 +336,6 @@ public class TextEmitter implements Cleanupable, UniqueID {
 		this.boxSize = boxSize;
 	}
 
-	public Mesh getMesh() {
-		return quad;
-	}
-
 	public Vector2f getCharoffset() {
 		return charOffset;
 	}
@@ -349,19 +352,28 @@ public class TextEmitter implements Cleanupable, UniqueID {
 	public void cleanup() {
 		GlobalLogger.log("Cleaning up: " + name);
 
-		if (quad == null)
+		if (instances == null)
 			return;
 
 		instances.cleanup();
 		instances = null;
-		quad.cleanup();
-		quad = null;
+		// owned by InstanceEmitter
 		charBuffer = null;
 	}
 
 	@Override
 	public String getId() {
 		return name;
+	}
+
+	@Override
+	public int getGlId() {
+		return instances.getGlId();
+	}
+
+	@Override
+	public boolean isValid() {
+		return instances.isValid();
 	}
 
 }

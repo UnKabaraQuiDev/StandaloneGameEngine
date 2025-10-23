@@ -45,7 +45,7 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 		this.parts = new HashMap<>();
 		for (AbstractShaderPart sp : parts) {
 			this.parts.put(sp.getType(), sp);
-			GL_W.glAttachShader(this.spid, sp.getSid());
+			GL_W.glAttachShader(this.spid, sp.getGlId());
 			assert GL_W.checkError("AttachShader(" + this.spid + ")");
 		}
 		GL_W.glLinkProgram(this.spid);

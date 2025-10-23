@@ -3,9 +3,10 @@ package lu.kbra.standalone.gameengine.scene;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.objs.entity.Entity;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 
-public abstract class Scene implements UniqueID, Cleanupable, Renderable {
+public abstract class Scene implements UniqueID, Cleanupable, Renderable, Iterable<Entity> {
 
 	protected String name;
 	protected Camera camera;

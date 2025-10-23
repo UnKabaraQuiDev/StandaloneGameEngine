@@ -37,7 +37,7 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 
 		GlobalLogger
 				.log(Level.FINE,
-						"Mesh : " + mesh.getId() + ", vao:" + mesh.getVao() + ", vec:" + mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
+						"Mesh : " + mesh.getId() + ", vao:" + mesh.getGlId() + ", vec:" + mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
 
 		mesh.bind();
 

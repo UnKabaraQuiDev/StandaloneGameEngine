@@ -88,7 +88,7 @@ public class LoadedMesh implements Mesh {
 		if (data instanceof MultiAttribArray) {
 			MultiAttribArray ma = (MultiAttribArray) data;
 			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++) {
-				vbo.put(a, data.getBid());
+				vbo.put(a, data.getGlId());
 			}
 		}
 	}
@@ -105,7 +105,7 @@ public class LoadedMesh implements Mesh {
 		if (data instanceof MultiAttribArray) {
 			MultiAttribArray ma = (MultiAttribArray) data;
 			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++) {
-				vbo.put(a, data.getBid());
+				vbo.put(a, data.getGlId());
 			}
 		}
 
@@ -155,7 +155,8 @@ public class LoadedMesh implements Mesh {
 		return vertexCount;
 	}
 
-	public int getVao() {
+	@Override
+	public int getGlId() {
 		return vao;
 	}
 
