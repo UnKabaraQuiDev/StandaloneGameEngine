@@ -124,7 +124,7 @@ public class Framebuffer implements UniqueID, Cleanupable, GLObject {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + name + "(" + fbo + ")");
+		GlobalLogger.log("Cleaning up: " + name + " (" + fbo + ")");
 
 		if (fbo == -1)
 			return;

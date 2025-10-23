@@ -4,6 +4,8 @@ import java.io.File;
 
 import org.joml.Vector2i;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public final class Consts {
 
 	public static final String DEFAULT_TITLE = "PDR Engine";
@@ -16,6 +18,9 @@ public final class Consts {
 	public static final int DEFAULT_WINDOW_MULTISAMPLE = 4;
 	public static final boolean DEFAULT_GLES = false;
 
+	public static final File CONFIG_DIR = new File("./config/");
+
+	@Deprecated
 	public static final File RES_DIR = new File("./resources/");
 	public static final File MODEL_RES_DIR = new File(RES_DIR, "models/");
 	public static final File AUDIO_RES_DIR = new File(RES_DIR, "audio/");
@@ -27,5 +32,7 @@ public final class Consts {
 	public static final File FONTS_TEXTURES_RES_DIR = new File(TEXTURES_RES_DIR, "fonts/");
 	public static final File MONOSPACED_30_FONTS_TEXTURES_RES_DIR = new File(FONTS_TEXTURES_RES_DIR, "monospaced-30.png");
 	public static final File UI_TEXTURES_RES_DIR = new File(TEXTURES_RES_DIR, "ui/");
+
+	public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
 }

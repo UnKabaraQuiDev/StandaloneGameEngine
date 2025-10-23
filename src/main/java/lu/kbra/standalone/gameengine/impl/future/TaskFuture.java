@@ -4,23 +4,24 @@ import lu.pcy113.pclib.impl.ExceptionConsumer;
 import lu.pcy113.pclib.impl.ExceptionFunction;
 import lu.pcy113.pclib.impl.ExceptionRunnable;
 import lu.pcy113.pclib.impl.ExceptionSupplier;
+import lu.pcy113.pclib.pointer.prim.BooleanPointer;
 
 public class TaskFuture<I, O> {
 
 	public class TaskState<V> {
 
-		private boolean started = false;
-		private boolean ongoing = false;
+		private BooleanPointer started = new BooleanPointer(false);
+		private BooleanPointer ongoing = new BooleanPointer(false);
 		private boolean done = false;
 
 		private V result;
 
 		public boolean isStarted() {
-			return started;
+			return started.get();
 		}
 
 		public boolean isOngoing() {
-			return ongoing;
+			return ongoing.get();
 		}
 
 		public boolean isDone() {
@@ -31,10 +32,23 @@ public class TaskFuture<I, O> {
 			return result;
 		}
 
+		void setDone() {
+			ongoing.set(false);
+		}
+
+		public void join() {
+			ongoing.waitForTrue();
+			ongoing.waitForFalse();
+		}
+
+		public void join(long timeout) {
+			ongoing.waitForTrue();
+			ongoing.waitForFalse(timeout);
+		}
+
 		@Override
 		public String toString() {
-			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result
-					+ "]";
+			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result + "]";
 		}
 
 	}
@@ -142,7 +156,7 @@ public class TaskFuture<I, O> {
 
 	public TaskState<O> push() {
 		final TaskState<O> state = new TaskState<>();
-		state.started = true;
+		state.started.set(true);
 		first.pushInternal(null, state);
 		return state;
 	}
@@ -150,7 +164,7 @@ public class TaskFuture<I, O> {
 	@SuppressWarnings("unchecked")
 	private void pushInternal(Object v, TaskState state) {
 		dispatcher.post(() -> {
-			state.ongoing = true;
+			state.ongoing.set(true);
 			O result = null;
 			try {
 				result = task.apply((I) v);
@@ -159,7 +173,7 @@ public class TaskFuture<I, O> {
 				} else {
 					state.result = result;
 					state.done = true;
-					state.ongoing = false;
+					state.ongoing.set(false);
 				}
 			} catch (SkipThen st) {
 				TaskFuture<?, ?> current = next;
@@ -180,10 +194,12 @@ public class TaskFuture<I, O> {
 				} else {
 					state.result = st.getObj();
 					state.done = true;
-					state.ongoing = false;
+					state.ongoing.set(false);
 				}
 			} catch (Throwable e) {
 				throw new RuntimeException(e);
+			} finally {
+				state.ongoing.set(false);
 			}
 		}, priority);
 	}

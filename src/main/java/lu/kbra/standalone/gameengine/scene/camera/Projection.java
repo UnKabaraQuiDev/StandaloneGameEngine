@@ -7,7 +7,7 @@ import org.joml.Vector2i;
 
 public class Projection {
 
-	private Matrix4f projectionMatrix;
+	private Matrix4f projectionMatrix = new Matrix4f();
 	private float nearPlane, farPlane;
 	private boolean perspective;
 	private int width, height;
@@ -20,8 +20,7 @@ public class Projection {
 		out.println("Fov: " + fov + ", size: " + size);
 	}
 
-	public Projection(int width, int height, float nearPlane, float farPlane, float fov, float size,
-			boolean perspective) {
+	public Projection(int width, int height, float nearPlane, float farPlane, float fov, float size, boolean perspective) {
 		this.width = width;
 		this.height = height;
 		this.nearPlane = nearPlane;
@@ -52,13 +51,15 @@ public class Projection {
 			// float xScale = yScale / aspectRatio;
 			// float frustumLength = farPlane - nearPlane;
 
-			projectionMatrix = new Matrix4f().identity().perspective(fov, aspectRatio, nearPlane, farPlane);
+			projectionMatrix.identity().perspective(fov, aspectRatio, nearPlane, farPlane);
 		} else {
-			float halfWidth = width / 2f;
-			float halfHeight = height / 2f;
+			float halfHeight = 1f;
+			final float aspectRatio = (float) width / height;
+			final float halfWidth = halfHeight * aspectRatio;
 
-			projectionMatrix = new Matrix4f().identity().ortho(-halfWidth / size, halfWidth / size, -halfHeight / size,
-					halfHeight / size, nearPlane, farPlane);
+			projectionMatrix
+					.identity()
+					.ortho(-halfWidth / size, halfWidth / size, -halfHeight / size, halfHeight / size, nearPlane, farPlane);
 		}
 		return this;
 	}

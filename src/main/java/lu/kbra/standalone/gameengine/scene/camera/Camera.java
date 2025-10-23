@@ -86,15 +86,18 @@ public abstract class Camera {
 	}
 
 	public static final Camera3D perspectiveCamera3D() {
-		return new Camera3D(new Vector3f(0), new Quaternionf().identity().rotateTo(new Vector3f(-1, 0, 0), new Vector3f(1, 0, 0)), new Projection(720, 480, 0.1f, 1000f, (float) Math.toRadians(60), 100, true));
+		return new Camera3D(new Vector3f(0), new Quaternionf().identity().rotateTo(new Vector3f(-1, 0, 0), new Vector3f(1, 0, 0)),
+				new Projection(720, 480, 0.1f, 1000f, (float) Math.toRadians(60), 100, true));
 	}
 
 	public static final Camera3D orthographicCamera3D() {
-		return new Camera3D(new Vector3f(0), new Quaternionf().identity().rotateTo(GameEngine.FORWARD, GameEngine.BACK), new Projection(720, 480, 0.1f, 1000f, (float) Math.toRadians(60), 100, false));
+		return new Camera3D(new Vector3f(0), new Quaternionf().identity().rotateTo(new Vector3f(-1, 0, 0), new Vector3f(1, 0, 0)),
+				new Projection(720, 480, 0.1f, 1000f, (float) Math.toRadians(60), 100, false));
 	}
 
 	public static Camera2D orthographicCamera2D() {
-		return new Camera2D(new Vector2f(0), new Quaternionf().identity(), new Projection(720, 480, 0.1f, 1000f, (float) Math.toRadians(60), 100, false));
+		return new Camera2D(new Vector2f(0), new Quaternionf().identity(),
+				new Projection(720, 480, 0.1f, 1000f, (float) Math.toRadians(60), 100, false));
 	}
 
 }

@@ -25,9 +25,8 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
 
 public class GameEngine implements Cleanupable, UniqueID {
 
-	public static final Vector3f X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0),
-			Y_POS = new Vector3f(0, 1, 0), Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1),
-			Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0, 0, 0);
+	public static final Vector3f X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0), Y_POS = new Vector3f(0, 1, 0),
+			Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1), Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0, 0, 0);
 
 	public static final Vector3f UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
 			RIGHT = new Vector3f(X_POS), FORWARD = new Vector3f(Z_POS), BACK = new Vector3f(X_POS);
@@ -61,8 +60,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 	private ThreadGroup threadGroup;
 	private Thread renderThread, updateThread, mainThread;
 
-	private final Object waitForFrameEnd = new Object(), waitForUpdateEnd = new Object(),
-			waitForFrameStart = new Object(), waitForUpdateStart = new Object();
+	private final Object waitForFrameEnd = new Object(), waitForUpdateEnd = new Object(), waitForFrameStart = new Object(),
+			waitForUpdateStart = new Object();
 
 	public GameEngine(String name, GameLogic game, WindowOptions options) {
 		this.name = name;
@@ -139,7 +138,11 @@ public class GameEngine implements Cleanupable, UniqueID {
 		try {
 			running = true;
 			this.gameLogic.register(this);
-			this.gameLogic.init(this);
+			try {
+				this.gameLogic.init(this);
+			} catch (Exception e) {
+				throw new Exception("Caught exception in init method. Stopping.", e);
+			}
 			latch.countDown();
 
 			this.targetFps = this.window.getOptions().fps;
@@ -179,12 +182,13 @@ public class GameEngine implements Cleanupable, UniqueID {
 					final int taskCount = renderDispatcher.pump((long) (dispatcherTimeBudgetNanos * 0.9f));
 					final long dispatcherUsedNano = System.nanoTime() - dispatcherStartNano;
 
-					GlobalLogger.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
-							+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
-							+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
-							+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
-							+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + taskCount + ") "
-							+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true));
+					GlobalLogger
+							.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
+									+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
+									+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
+									+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
+									+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + taskCount + ") "
+									+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true));
 				}
 
 				// Stop loop if window requests closure
@@ -196,11 +200,9 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			this.cleanup();
 		}
-
-		this.cleanup();
-		// this.window.clearGLContext();
-		// this.stop();
 	}
 
 	public void start() {

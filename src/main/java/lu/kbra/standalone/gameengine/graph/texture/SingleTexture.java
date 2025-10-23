@@ -335,4 +335,14 @@ public class SingleTexture extends Texture {
 		return texture;
 	}
 
+	@Override
+	public String toString() {
+		return "SingleTexture [width=" + width + ", height=" + height + ", depth=" + depth + ", buffer=" + buffer + ", path=" + path
+				+ ", name=" + name + ", tid=" + tid + ", minFilter=" + minFilter + ", magFilter=" + magFilter + ", txtType=" + txtType
+				+ ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap + ", dataType=" + dataType + ", format=" + format
+				+ ", internalFormat=" + internalFormat + ", generateMipmaps=" + generateMipmaps + ", fixedSampleLocation="
+				+ fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation=" + textureOperation + ", isValid()="
+				+ isValid() + "]";
+	}
+
 }

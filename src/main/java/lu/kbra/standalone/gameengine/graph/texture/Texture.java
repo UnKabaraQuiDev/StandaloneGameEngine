@@ -243,8 +243,11 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 	@Override
 	public String toString() {
-		return "{tid: " + tid + ", name: " + name + ", valid: " + isValid() + ", type: " + txtType + ", format: " + format
-				+ ", internalFormat: " + internalFormat + ", dataType: " + dataType + "}";
+		return getClass().getSimpleName() + " [path=" + path + ", name=" + name + ", tid=" + tid + ", minFilter=" + minFilter
+				+ ", magFilter=" + magFilter + ", txtType=" + txtType + ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap
+				+ ", dataType=" + dataType + ", format=" + format + ", internalFormat=" + internalFormat + ", generateMipmaps="
+				+ generateMipmaps + ", fixedSampleLocation=" + fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation="
+				+ textureOperation + ", isValid()=" + isValid() + "]";
 	}
 
 	public static TexelFormat getFormatByChannels(int channels) {

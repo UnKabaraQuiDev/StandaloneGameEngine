@@ -21,12 +21,13 @@ import lu.pcy113.pclib.datastructure.pair.Pair;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.Property;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
-public abstract class AbstractShader implements UniqueID, Cleanupable {
+public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject {
 
 	protected final String name;
 	protected int spid = -1;
@@ -58,8 +59,7 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 		}
 
 		if (GL_W.glGetProgrami(this.spid, GL_W.GL_LINK_STATUS) == GL_W.GL_FALSE) {
-			GlobalLogger.log(Level.SEVERE,
-					name + "(" + spid + "): " + GL_W.glGetProgramInfoLog_String(this.spid, 1024));
+			GlobalLogger.log(Level.SEVERE, name + "(" + spid + "): " + GL_W.glGetProgramInfoLog_String(this.spid, 1024));
 			this.cleanup();
 			throw new IllegalStateException(name + "(" + spid + "): Failed to link shader program!");
 		} else if (!GL_W.glIsProgram(spid)) {
@@ -161,8 +161,8 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 			throw new UnsupportedOperationException(value.getClass().getName() + " not supported.");
 		}
 
-		assert GL_W.checkError("Uniform(" + unifLoc + ", " + value + ") (" + key + ", " + value.getClass().getName()
-				+ ") (" + getId() + ")");
+		assert GL_W
+				.checkError("Uniform(" + unifLoc + ", " + value + ") (" + key + ", " + value.getClass().getName() + ") (" + getId() + ")");
 	}
 
 	public void setUniformUnsigned(String key, Object value) {
@@ -206,8 +206,8 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 			throw new UnsupportedOperationException(value.getClass().getName() + " not supported.");
 		}
 
-		assert GL_W.checkError("UniformU(" + unifLoc + ", " + value + ") (" + key + ", " + value.getClass().getName()
-				+ ") (" + getId() + ")");
+		assert GL_W
+				.checkError("UniformU(" + unifLoc + ", " + value + ") (" + key + ", " + value.getClass().getName() + ") (" + getId() + ")");
 	}
 
 	public void storeUniform(int unifLoc, Object value) {
@@ -262,8 +262,10 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 			this.uniforms.put(name, new Pair<>(new Property<>(), loc));
 			return true;
 		} else {
-			GlobalLogger.log(Level.WARNING, "Could not get Uniform location for: " + name + " in program " + this.name
-					+ " (" + this.spid + ") (" + GL_W.glGetError() + ")");
+			GlobalLogger
+					.log(Level.WARNING,
+							"Could not get Uniform location for: " + name + " in program " + this.name + " (" + this.spid + ") ("
+									+ GL_W.glGetError() + ")");
 			knownNotExistsUniforms.add(name);
 			return false;
 		}
@@ -303,8 +305,14 @@ public abstract class AbstractShader implements UniqueID, Cleanupable {
 		return this.name;
 	}
 
-	public int getSpid() {
+	@Override
+	public int getGlId() {
 		return spid;
+	}
+
+	@Override
+	public boolean isValid() {
+		return spid != -1;
 	}
 
 	public Map<Integer, AbstractShaderPart> getParts() {

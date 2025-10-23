@@ -28,7 +28,7 @@ public abstract class GameLogic {
 		this.UPDATE_DISPATCHER = e.getUpdateDispatcher();
 	}
 
-	public abstract void init(GameEngine e);
+	public abstract void init(GameEngine e) throws Exception;
 
 	public void updateInit() {
 	}

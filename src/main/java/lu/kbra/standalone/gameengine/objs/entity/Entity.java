@@ -1,9 +1,12 @@
 package lu.kbra.standalone.gameengine.objs.entity;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import lu.pcy113.pclib.PCUtils;
 
 public class Entity implements SceneEntity {
 
@@ -36,13 +39,16 @@ public class Entity implements SceneEntity {
 
 	@Override
 	public <T extends Component> T getComponentMatching(Class<T> clazz) {
-		return (T) components.get(
-				components.keySet().parallelStream().filter(t -> clazz.isAssignableFrom(t)).findFirst().orElse(null));
+		return (T) components.get(components.keySet().parallelStream().filter(t -> clazz.isAssignableFrom(t)).findFirst().orElse(null));
 	}
 
 	@Override
 	public <T extends Component> List<T> getComponentsMatching(Class<T> clazz) {
-		return components.keySet().stream().filter(t -> clazz.isAssignableFrom(t)).map(t -> (T) components.get(t))
+		return components
+				.keySet()
+				.stream()
+				.filter(t -> clazz.isAssignableFrom(t))
+				.map(t -> (T) components.get(t))
 				.collect(Collectors.toList());
 	}
 
@@ -79,8 +85,13 @@ public class Entity implements SceneEntity {
 
 	@Override
 	public String toString() {
-		return "Entity@" + getClass().getSimpleName() + "#" + name + "[active=" + active + ", componentCount="
-				+ components.size() + "]";
+		return this.getClass().getSimpleName() + " [active=" + active + ", name=" + name + ", components="
+				+ components
+						.values()
+						.parallelStream()
+						.map(c -> PCUtils.toSimpleIdentityString(c))
+						.collect(Collectors.joining(", ", "[", "]"))
+				+ "]";
 	}
 
 	@Override
