@@ -1,5 +1,6 @@
 package lu.kbra.standalone.gameengine.impl.future;
 
+import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.impl.ExceptionConsumer;
 import lu.pcy113.pclib.impl.ExceptionFunction;
 import lu.pcy113.pclib.impl.ExceptionRunnable;
@@ -48,16 +49,21 @@ public class TaskFuture<I, O> {
 
 		@Override
 		public String toString() {
-			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result + "]";
+			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result
+					+ "]";
 		}
 
 	}
+
+	protected static final boolean PARENT = false;
+	protected static final boolean SIMPLE = true;
 
 	private TaskFuture<?, ?> first;
 	private Dispatcher dispatcher;
 	private final ExceptionFunction<I, O> task;
 	private final int priority;
 	private TaskFuture<O, ?> next;
+	private String currentSource;
 
 	protected TaskFuture(Dispatcher dispatcher, ExceptionFunction<I, O> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
@@ -78,6 +84,7 @@ public class TaskFuture<I, O> {
 		this.task = (v) -> task.get();
 		this.priority = priority;
 		this.first = this;
+		this.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 	}
 
 	public TaskFuture(Dispatcher dispatcher, ExceptionRunnable task) {
@@ -100,6 +107,7 @@ public class TaskFuture<I, O> {
 
 	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, ExceptionFunction<O, N> function, int priority) {
 		TaskFuture<O, N> nextFuture = new TaskFuture<O, N>(nextDispatcher, function, priority);
+		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
@@ -114,6 +122,7 @@ public class TaskFuture<I, O> {
 			consumer.accept(v);
 			return null;
 		}, priority);
+		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
@@ -128,6 +137,7 @@ public class TaskFuture<I, O> {
 			consumer.run();
 			return null;
 		}, priority);
+		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
@@ -138,6 +148,7 @@ public class TaskFuture<I, O> {
 	}
 
 	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, TaskFuture<O, N> nextFuture, int priority) {
+		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		nextFuture.dispatcher = nextDispatcher;
 		this.next = nextFuture;
@@ -150,6 +161,7 @@ public class TaskFuture<I, O> {
 
 	public <N> TaskFuture<O, N> then(TaskFuture<O, N> nextFuture, int priority) {
 		this.next = (TaskFuture<O, ?>) nextFuture.first;
+		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		return nextFuture;
 	}
@@ -201,7 +213,7 @@ public class TaskFuture<I, O> {
 			} finally {
 				state.ongoing.set(false);
 			}
-		}, priority);
+		}, priority, currentSource);
 	}
 
 }

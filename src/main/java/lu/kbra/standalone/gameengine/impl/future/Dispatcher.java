@@ -1,5 +1,6 @@
 package lu.kbra.standalone.gameengine.impl.future;
 
+import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
@@ -18,6 +19,15 @@ public class Dispatcher {
 		queue.add(new ScheduledTask(task, priority));
 	}
 
+	public void post(Runnable task, int priority, String source) {
+		queue.add(new ScheduledTask(task, priority, source));
+	}
+
+	public void post(ScheduledTask task) {
+		queue.add(task);
+	}
+
+	// duplicated for optimisation
 	public int pump(long timeBudgetNanos) {
 		if (timeBudgetNanos <= 0)
 			return 0;
@@ -29,6 +39,26 @@ public class Dispatcher {
 			if (task == null)
 				break;
 			task.run();
+			count++;
+		}
+
+		return count;
+	}
+
+	public int pump(long timeBudgetNanos, List<String> list) {
+		list.clear();
+
+		if (timeBudgetNanos <= 0)
+			return 0;
+
+		int count = 0;
+		final long deadline = System.nanoTime() + timeBudgetNanos;
+		while (System.nanoTime() < deadline) {
+			final ScheduledTask task = queue.poll();
+			if (task == null)
+				break;
+			task.run();
+			list.add(task.getSourceString());
 			count++;
 		}
 

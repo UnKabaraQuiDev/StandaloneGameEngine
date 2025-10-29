@@ -25,7 +25,7 @@ public enum Direction {
 		return index;
 	}
 
-	public static Direction ZERO() {
+	public static Direction DEFAULT() {
 		return SOUTH;
 	}
 

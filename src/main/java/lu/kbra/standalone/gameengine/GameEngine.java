@@ -1,11 +1,16 @@
 package lu.kbra.standalone.gameengine;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.lwjgl.glfw.GLFW;
+
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
@@ -20,8 +25,6 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL46;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class GameEngine implements Cleanupable, UniqueID {
 
@@ -46,11 +49,11 @@ public class GameEngine implements Cleanupable, UniqueID {
 	private AudioMaster audioMaster;
 	private GameLogic gameLogic;
 
-	private boolean running = false;
+	private volatile boolean running = false;
 	private volatile boolean waitingForEvents = false;
 	private Object waitingForEventsLock = new Object();
-	private CountDownLatch latch = new CountDownLatch(1);
-	private double totalTime = 0d;
+	private CountDownLatch startLatch = new CountDownLatch(1);
+	private volatile double totalTime = 0d;
 
 	public int targetUps, targetFps;
 	private double currentFps;
@@ -58,7 +61,6 @@ public class GameEngine implements Cleanupable, UniqueID {
 	private SharedCacheManager cache;
 
 	private Dispatcher mainDispatcher, renderDispatcher, updateDispatcher;
-
 	private ThreadGroup threadGroup;
 	private Thread renderThread, updateThread, mainThread;
 
@@ -73,7 +75,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 	private void updateRun() {
 		try {
-			latch.await();
+			startLatch.await();
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
@@ -118,10 +120,9 @@ public class GameEngine implements Cleanupable, UniqueID {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			this.cleanup();
 		}
-
-		this.cleanup();
-		// this.stop();
 	}
 
 	private void pollEvents() {
@@ -145,11 +146,12 @@ public class GameEngine implements Cleanupable, UniqueID {
 			} catch (Exception e) {
 				throw new Exception("Caught exception in init method. Stopping.", e);
 			}
-			latch.countDown();
+			startLatch.countDown();
 
 			this.targetFps = this.window.getOptions().fps;
 			final long targetNanoPerFps = (long) (1e9 / this.targetFps);
 			long lastFrameTime = System.nanoTime();
+			final List<String> tasks = new ArrayList<>();
 
 			while (this.shouldRun()) {
 				long currentTime = System.nanoTime();
@@ -181,15 +183,15 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 					// Pump the render dispatcher
 					final long dispatcherStartNano = System.nanoTime();
-					final int taskCount = renderDispatcher.pump((long) (dispatcherTimeBudgetNanos * 0.9f));
+					renderDispatcher.pump((long) (dispatcherTimeBudgetNanos * 0.9f), tasks);
 					final long dispatcherUsedNano = System.nanoTime() - dispatcherStartNano;
 
 					GlobalLogger.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
 							+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
 							+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
 							+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
-							+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + taskCount + ") "
-							+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true));
+							+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + tasks.size() + ") "
+							+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true) + " " + tasks);
 				}
 
 				// Stop loop if window requests closure
@@ -246,7 +248,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 	// in main thread
 	private void mainRun() {
 		try {
-			latch.await();
+			startLatch.await();
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
@@ -272,15 +274,9 @@ public class GameEngine implements Cleanupable, UniqueID {
 			this.renderThread.join();
 		} catch (InterruptedException e) {
 			GlobalLogger.severe("Main thread interrupted while joining subthreads");
+		} finally {
+			this.cleanup();
 		}
-
-		// this.window.takeGLContext();
-		this.cleanup();
-
-		// TimeGraphPlot.main(new String[] {
-		// PCUtils.appendFileName(GlobalLogger.getLogger().getLogFile().getPath(),
-		// "-time")
-		// });
 	}
 
 	public void stop() {
