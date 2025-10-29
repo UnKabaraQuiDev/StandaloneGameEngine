@@ -4,7 +4,7 @@ import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.text.TextEmitter;
 
-public class TextEmitterComponent extends Component implements Renderable {
+public class TextEmitterComponent extends Component implements Renderable, RenderableComponent {
 
 	private TextEmitter textEmitter;
 
@@ -18,6 +18,11 @@ public class TextEmitterComponent extends Component implements Renderable {
 
 	public void setTextEmitter(TextEmitter textEmitter) {
 		this.textEmitter = textEmitter;
+	}
+
+	@Override
+	public Renderable getRenderable() {
+		return textEmitter;
 	}
 
 }

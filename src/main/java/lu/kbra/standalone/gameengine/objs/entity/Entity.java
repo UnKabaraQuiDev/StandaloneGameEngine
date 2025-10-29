@@ -1,6 +1,5 @@
 package lu.kbra.standalone.gameengine.objs.entity;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

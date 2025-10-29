@@ -5,9 +5,6 @@ import java.util.Arrays;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
-
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
@@ -15,17 +12,21 @@ import lu.kbra.standalone.gameengine.graph.material.text.TextShader;
 import lu.kbra.standalone.gameengine.graph.material.text.TextShader.TextMaterial;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
+import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.utils.gl.consts.Alignment;
+import lu.kbra.standalone.gameengine.utils.gl.consts.TextAlignment;
 import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
-public class TextEmitter implements Cleanupable, UniqueID, GLObject {
+public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable {
 
 	public static final int CHAR_BUFFER_INDEX = 7;
 	public static final String CHAR_BUFFER_NAME = "char";
 	public static final String STRING = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
 	public static int TAB_SIZE = 4;
+	public static String TAB_CHARS = PCUtils.repeatString(" ", TAB_SIZE);
 
 	private final String name;
 
@@ -35,7 +36,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject {
 	private UIntAttribArray charBuffer;
 	private InstanceEmitter instances;
 
-	private Alignment alignment = Alignment.CENTER;
+	private TextAlignment alignment = TextAlignment.CENTER;
 	private boolean justify = false;
 	private boolean boxed = false;
 	private boolean correctTransform = false; // swaps the y axis for opengl
@@ -84,17 +85,17 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject {
 	}
 
 	private void updateTextContent(Matrix4f[] transforms, Integer[] chars) {
-		if (Alignment.LEFT.equals(alignment)) {
+		if (TextAlignment.LEFT.equals(alignment)) {
 			updateTextContentLeft(transforms, chars);
-		} else if (Alignment.TEXT_LEFT.equals(alignment)) { // same as LEFT
+		} else if (TextAlignment.TEXT_LEFT.equals(alignment)) { // same as LEFT
 			updateTextContentLeft(transforms, chars);
-		} else if (Alignment.RIGHT.equals(alignment)) {
+		} else if (TextAlignment.RIGHT.equals(alignment)) {
 			updateTextContentRight(transforms, chars);
-		} else if (Alignment.TEXT_RIGHT.equals(alignment)) {
+		} else if (TextAlignment.TEXT_RIGHT.equals(alignment)) {
 			updateTextContentAbsRight(transforms, chars);
-		} else if (Alignment.CENTER.equals(alignment)) {
+		} else if (TextAlignment.CENTER.equals(alignment)) {
 			updateTextContentCenter(transforms, chars);
-		} else if (Alignment.TEXT_CENTER.equals(alignment)) {
+		} else if (TextAlignment.TEXT_CENTER.equals(alignment)) {
 			updateTextContentAbsCenter(transforms, chars);
 		}
 
@@ -287,7 +288,24 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject {
 		return max;
 	}
 
+	public Vector2f getTextBounds() {
+		return charSize.mul(getColumnsCount(), getLineCount(), new Vector2f());
+	}
+
+	public int getColumnsCount() {
+		return Arrays.stream(getDisplayedText().split("\n")).mapToInt(String::length).max().orElse(0);
+	}
+
+	private String getDisplayedText() {
+		if (boxed) {
+			throw new UnsupportedOperationException();
+		} else {
+			return text.replace("\t", TAB_CHARS);
+		}
+	}
+
 	public int getLineCount() {
+		final String text = getDisplayedText();
 		return text.length() - text.replace("\n", "").length();
 	}
 
@@ -304,11 +322,11 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject {
 		return instances;
 	}
 
-	public Alignment getAlignment() {
+	public TextAlignment getTextAlignment() {
 		return alignment;
 	}
 
-	public void setAlignment(Alignment alignment) {
+	public void setTextAlignment(TextAlignment alignment) {
 		this.alignment = alignment;
 	}
 

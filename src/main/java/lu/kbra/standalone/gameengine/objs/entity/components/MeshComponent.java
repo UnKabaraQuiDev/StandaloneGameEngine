@@ -4,7 +4,7 @@ import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 
-public class MeshComponent extends Component implements Renderable {
+public class MeshComponent extends Component implements Renderable, RenderableComponent {
 
 	protected Mesh mesh;
 
@@ -18,6 +18,11 @@ public class MeshComponent extends Component implements Renderable {
 
 	public void setMesh(Mesh mesh) {
 		this.mesh = mesh;
+	}
+
+	@Override
+	public Renderable getRenderable() {
+		return mesh;
 	}
 
 }

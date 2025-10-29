@@ -12,7 +12,7 @@ import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
 import lu.kbra.standalone.gameengine.objs.entity.components.InstanceEmitterComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.MeshComponent;
-import lu.kbra.standalone.gameengine.objs.entity.components.RenderComponent;
+import lu.kbra.standalone.gameengine.objs.entity.components.RenderPriorityComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.RenderConditionComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.SubEntitiesComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.TextEmitterComponent;
@@ -32,18 +32,18 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 	public static final Comparator<Entry<String, Entity>> PRIORITY_COMPARATOR = (a, b) -> {
 		return Float
 				.compare(
-						a.getValue().hasComponentMatching(RenderComponent.class)
-								? a.getValue().getComponent(RenderComponent.class).getPriority()
+						a.getValue().hasComponentMatching(RenderPriorityComponent.class)
+								? a.getValue().getComponent(RenderPriorityComponent.class).getPriority()
 								: 0,
-						b.getValue().hasComponentMatching(RenderComponent.class)
-								? b.getValue().getComponent(RenderComponent.class).getPriority()
+						b.getValue().hasComponentMatching(RenderPriorityComponent.class)
+								? b.getValue().getComponent(RenderPriorityComponent.class).getPriority()
 								: 0);
 	};
 
 	public static final Comparator<Entity> PRIORITY_COMPARATOR_ENTITY = (a, b) -> {
 		return Float
-				.compare(a.hasComponentMatching(RenderComponent.class) ? a.getComponent(RenderComponent.class).getPriority() : 0,
-						b.hasComponentMatching(RenderComponent.class) ? b.getComponent(RenderComponent.class).getPriority() : 0);
+				.compare(a.hasComponentMatching(RenderPriorityComponent.class) ? a.getComponent(RenderPriorityComponent.class).getPriority() : 0,
+						b.hasComponentMatching(RenderPriorityComponent.class) ? b.getComponent(RenderPriorityComponent.class).getPriority() : 0);
 	};
 
 	@Override

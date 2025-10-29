@@ -2,11 +2,11 @@ package lu.kbra.standalone.gameengine.objs.entity.components;
 
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 
-public class RenderComponent extends Component {
+public class RenderPriorityComponent extends Component {
 
 	private float priority;
 
-	public RenderComponent(float priority) {
+	public RenderPriorityComponent(float priority) {
 		this.priority = priority;
 	}
 
