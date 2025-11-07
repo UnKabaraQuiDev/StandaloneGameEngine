@@ -9,9 +9,6 @@ import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.lwjgl.glfw.GLFW;
 
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
-
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
 import lu.kbra.standalone.gameengine.graph.MaterialFactory;
@@ -25,12 +22,14 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL46;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class GameEngine implements Cleanupable, UniqueID {
 
 	public static final Vector3f X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0),
 			Y_POS = new Vector3f(0, 1, 0), Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1),
-			Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0, 0, 0);
+			Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0), IDENTITY = new Vector3f(1);
 
 	public static final Vector3f UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
 			RIGHT = new Vector3f(X_POS), FORWARD = new Vector3f(Z_POS), BACK = new Vector3f(X_POS);
@@ -84,7 +83,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 			this.audioMaster = new AudioMaster();
 			gameLogic.register(this);
 
-			gameLogic.updateInit();
+			// gameLogic.updateInit();
 		}
 
 		try {
@@ -142,7 +141,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 			running = true;
 			this.gameLogic.register(this);
 			try {
-				this.gameLogic.init(this);
+				this.gameLogic.init();
 			} catch (Exception e) {
 				throw new Exception("Caught exception in init method. Stopping.", e);
 			}

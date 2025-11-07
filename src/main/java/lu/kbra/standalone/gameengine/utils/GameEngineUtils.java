@@ -1,6 +1,10 @@
 package lu.kbra.standalone.gameengine.utils;
 
+import java.awt.Shape;
+import java.awt.geom.Rectangle2D;
 import java.util.stream.IntStream;
+
+import javax.swing.GroupLayout.Alignment;
 
 import org.joml.Matrix3x2f;
 import org.joml.Matrix4f;
@@ -20,8 +24,6 @@ import org.lwjgl.opengl.GL40;
 import org.lwjgl.opengl.GL45;
 import org.lwjgl.opengles.GLES20;
 import org.lwjgl.opengles.GLES30;
-
-import lu.pcy113.pclib.PCUtils;
 
 import lu.kbra.standalone.gameengine.exceptions.egl.EGLBadAccessException;
 import lu.kbra.standalone.gameengine.exceptions.egl.EGLBadAllocException;
@@ -60,6 +62,7 @@ import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidOperationExc
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidValueException;
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESOutOfMemoryException;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.pcy113.pclib.PCUtils;
 
 public final class GameEngineUtils {
 
@@ -88,12 +91,14 @@ public final class GameEngineUtils {
 
 		switch (status) {
 		/*
-		 * case AL11.AL_INVALID_DEVICE: throw new ALInvalidDeviceException(caller, status, msg);
+		 * case AL11.AL_INVALID_DEVICE: throw new ALInvalidDeviceException(caller,
+		 * status, msg);
 		 */
 		case AL11.AL_INVALID_OPERATION:
 			throw new ALInvalidOperationException(caller, status, msg);
 		/*
-		 * case AL11.AL_INVALID_CONTEXT: throw new ALInvalidContextException(caller, status, msg);
+		 * case AL11.AL_INVALID_CONTEXT: throw new ALInvalidContextException(caller,
+		 * status, msg);
 		 */
 		case AL11.AL_INVALID_NAME:
 			throw new ALInvalidNameException(caller, status, msg);
@@ -183,7 +188,8 @@ public final class GameEngineUtils {
 		case EGL10.EGL_BAD_NATIVE_WINDOW:
 			throw new EGLBadNativeWindowException(caller, status, msg);
 		/*
-		 * case EGL10.EGL_NO_CONTEXT: throw new EGLNoContextException(caller, status, msg);
+		 * case EGL10.EGL_NO_CONTEXT: throw new EGLNoContextException(caller, status,
+		 * msg);
 		 */
 		default:
 			return true;
@@ -285,21 +291,18 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f[] floatArrayToVec3f(float[] arr) {
-		return IntStream
-				.range(0, arr.length / 3)
-				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2]))
-				.toArray(Vector3f[]::new);
+		return IntStream.range(0, arr.length / 3)
+				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2])).toArray(Vector3f[]::new);
 	}
 
 	public static Vector2f[] floatArrayToVec2f(float[] arr) {
-		return IntStream.range(0, arr.length / 2).mapToObj(i -> new Vector2f(arr[i * 2 + 0], arr[i * 2 + 1])).toArray(Vector2f[]::new);
+		return IntStream.range(0, arr.length / 2).mapToObj(i -> new Vector2f(arr[i * 2 + 0], arr[i * 2 + 1]))
+				.toArray(Vector2f[]::new);
 	}
 
 	public static Vector3f[] intArrayToVec3f(int[] arr) {
-		return IntStream
-				.range(0, arr.length / 3)
-				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2]))
-				.toArray(Vector3f[]::new);
+		return IntStream.range(0, arr.length / 3)
+				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2])).toArray(Vector3f[]::new);
 	}
 
 	public static Vector2f getCoordinates(Vector2f in, int[] viewport) {
@@ -320,10 +323,8 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f clampPositive(Vector3f vec) {
-		return vec
-				.set(PCUtils.clampGreaterOrEquals(0, vec.x),
-						PCUtils.clampGreaterOrEquals(0, vec.y),
-						PCUtils.clampGreaterOrEquals(0, vec.z));
+		return vec.set(PCUtils.clampGreaterOrEquals(0, vec.x), PCUtils.clampGreaterOrEquals(0, vec.y),
+				PCUtils.clampGreaterOrEquals(0, vec.z));
 	}
 
 	public static Vector2f normalizeGreater(Vector2f vec) {
@@ -358,7 +359,8 @@ public final class GameEngineUtils {
 	public static Quaternionf jsonArrayToQuatf(JSONArray jsonArray) {
 		if (jsonArray == null)
 			return new Quaternionf();
-		return new Quaternionf(jsonArray.getFloat(0), jsonArray.getFloat(1), jsonArray.getFloat(2), jsonArray.getFloat(3));
+		return new Quaternionf(jsonArray.getFloat(0), jsonArray.getFloat(1), jsonArray.getFloat(2),
+				jsonArray.getFloat(3));
 	}
 
 	public static int[] toFlatArray(Vector2i[] data) {
@@ -442,6 +444,29 @@ public final class GameEngineUtils {
 	public static Vector2f normalizeSize(float width, float height) {
 		float max = Math.max(width, height);
 		return new Vector2f(width / max, height / max);
+	}
+
+	public static Shape toRectangleBounds(Vector2f size, Alignment horizontal, Alignment vertical) {
+		float x = 0;
+		float y = 0;
+
+		if (horizontal == Alignment.LEADING) {
+			x = 0;
+		} else if (horizontal == Alignment.CENTER) {
+			x = -size.x / 2f;
+		} else if (horizontal == Alignment.TRAILING) {
+			x = -size.x;
+		}
+
+		if (vertical == Alignment.LEADING) {
+			y = 0;
+		} else if (vertical == Alignment.CENTER) {
+			y = -size.y / 2f;
+		} else if (vertical == Alignment.TRAILING) {
+			y = -size.y;
+		}
+
+		return new Rectangle2D.Float(x, y, size.x, size.y);
 	}
 
 }

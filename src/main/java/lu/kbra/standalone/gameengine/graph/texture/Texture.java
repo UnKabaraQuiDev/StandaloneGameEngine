@@ -1,9 +1,8 @@
 package lu.kbra.standalone.gameengine.graph.texture;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
+import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.gl.consts.DataType;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TexelFormat;
@@ -13,15 +12,16 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.TextureParameter;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureWrap;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
-public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttachment {
+public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttachment, GLObject {
 
 	public static final int MAX_TEXTURE_LOD_BIAS = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_LOD_BIAS);
 	public static final int MAX_TEXTURE_SIZE = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_SIZE);
 
 	protected final String path;
 	protected final String name;
-	protected int tid = -1;
+	protected int glId = -1;
 	protected TextureFilter minFilter = TextureFilter.LINEAR, magFilter = TextureFilter.LINEAR;
 	protected TextureType txtType = TextureType.TXT2D;
 	protected TextureWrap hWrap = TextureWrap.CLAMP_TO_EDGE, vWrap = TextureWrap.CLAMP_TO_EDGE, dWrap = TextureWrap.CLAMP_TO_EDGE;
@@ -43,16 +43,16 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 	public abstract boolean checkConfigErrors();
 
 	protected int gen() {
-		this.tid = GL_W.glGenTextures();
+		this.glId = GL_W.glGenTextures();
 		assert GL_W.checkError("GenTextures");
-		return tid;
+		return glId;
 	}
 
 	public void active(int i) {
 		if (i > 31)
 			return;
 		GL_W.glActiveTexture(GL_W.GL_TEXTURE0 + i);
-		assert GL_W.checkError("ActiveTexture[" + (GL_W.GL_TEXTURE0 + i) + "] (" + tid + ") (" + name + ")");
+		assert GL_W.checkError("ActiveTexture[" + (GL_W.GL_TEXTURE0 + i) + "] (" + glId + ") (" + name + ")");
 	}
 
 	public void bind(int i) {
@@ -61,10 +61,10 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 	}
 
 	public void bind() {
-		if (tid == -1)
+		if (glId == -1)
 			return;
-		GL_W.glBindTexture(txtType.getGlId(), tid);
-		assert GL_W.checkError("BindTexture[" + txtType + "]=" + tid);
+		GL_W.glBindTexture(txtType.getGlId(), glId);
+		assert GL_W.checkError("BindTexture[" + txtType + "]=" + glId);
 	}
 
 	public void unbind(int i) {
@@ -100,14 +100,14 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + name + " (" + tid + ")");
+		GlobalLogger.log("Cleaning up: " + name + " (" + glId + ")");
 
-		if (tid == -1)
+		if (glId == -1)
 			return;
 
-		GL_W.glDeleteTextures(tid);
-		assert GL_W.checkError("DeleteTextures[" + tid + "] (" + name + ")");
-		tid = -1;
+		GL_W.glDeleteTextures(glId);
+		assert GL_W.checkError("DeleteTextures[" + glId + "] (" + name + ")");
+		glId = -1;
 	}
 
 	@Override
@@ -115,8 +115,9 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 		return name;
 	}
 
-	public int getTid() {
-		return tid;
+	@Override
+	public int getGlId() {
+		return glId;
 	}
 
 	public String getPath() {
@@ -218,7 +219,7 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 	}
 
 	public boolean isValid() {
-		return tid != -1;
+		return glId != -1;
 	}
 
 	public boolean isGenerateMipmaps() {
@@ -243,7 +244,7 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + " [path=" + path + ", name=" + name + ", tid=" + tid + ", minFilter=" + minFilter
+		return getClass().getSimpleName() + " [path=" + path + ", name=" + name + ", tid=" + glId + ", minFilter=" + minFilter
 				+ ", magFilter=" + magFilter + ", txtType=" + txtType + ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap
 				+ ", dataType=" + dataType + ", format=" + format + ", internalFormat=" + internalFormat + ", generateMipmaps="
 				+ generateMipmaps + ", fixedSampleLocation=" + fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation="

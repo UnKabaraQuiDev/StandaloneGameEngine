@@ -28,10 +28,7 @@ public abstract class GameLogic {
 		this.UPDATE_DISPATCHER = e.getUpdateDispatcher();
 	}
 
-	public abstract void init(GameEngine e) throws Exception;
-
-	public void updateInit() {
-	}
+	public abstract void init() throws Exception;
 
 	public abstract void input(float dTime);
 

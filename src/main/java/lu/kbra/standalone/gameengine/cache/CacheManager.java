@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
 import lu.kbra.standalone.gameengine.audio.Sound;
 import lu.kbra.standalone.gameengine.geom.Gizmo;
 import lu.kbra.standalone.gameengine.geom.Mesh;
@@ -24,6 +22,7 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.objs.lights.PointLight;
 import lu.kbra.standalone.gameengine.objs.text.TextEmitter;
 import lu.kbra.standalone.gameengine.scene.Scene;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class CacheManager implements Cleanupable, UniqueID {
 
@@ -250,8 +249,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public Renderer<?, ?> getRenderer(String name) {
 		/*
-		 * if (name != null && !renderers.containsKey(name)) GlobalLogger.log("No renderer found for: " +
-		 * name);
+		 * if (name != null && !renderers.containsKey(name))
+		 * GlobalLogger.log("No renderer found for: " + name);
 		 */
 		return this.renderers.getOrDefault(name, parent == null ? null : parent.getRenderer(name));
 	}
@@ -266,6 +265,10 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public AbstractShader getAbstractShader(String name) {
 		return this.abstractShaders.getOrDefault(name, parent == null ? null : parent.getAbstractShader(name));
+	}
+
+	public <T extends AbstractShader> T getAbstractShader(Class<T> clazz) {
+		return (T) getAbstractShader(clazz.getName());
 	}
 
 	public Texture getTexture(String name) {

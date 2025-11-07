@@ -320,7 +320,7 @@ public class SingleTexture extends Texture {
 	@Override
 	public String toString() {
 		return "SingleTexture [width=" + width + ", height=" + height + ", depth=" + depth + ", buffer=" + buffer
-				+ ", path=" + path + ", name=" + name + ", tid=" + tid + ", minFilter=" + minFilter + ", magFilter="
+				+ ", path=" + path + ", name=" + name + ", tid=" + glId + ", minFilter=" + minFilter + ", magFilter="
 				+ magFilter + ", txtType=" + txtType + ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap
 				+ ", dataType=" + dataType + ", format=" + format + ", internalFormat=" + internalFormat
 				+ ", generateMipmaps=" + generateMipmaps + ", fixedSampleLocation=" + fixedSampleLocation
