@@ -45,16 +45,12 @@ public class Projection {
 	}
 
 	public Projection update() {
-		if (perspective) {
-			float aspectRatio = (float) width / height;
-			float yScale = (float) (1 / Math.tan(Math.toRadians(fov / 2)));
-			// float xScale = yScale / aspectRatio;
-			// float frustumLength = farPlane - nearPlane;
+		final float aspectRatio = getAspectRatio();
 
+		if (perspective) {
 			projectionMatrix.identity().perspective(fov, aspectRatio, nearPlane, farPlane);
 		} else {
-			float halfHeight = 1f;
-			final float aspectRatio = (float) width / height;
+			final float halfHeight = 1f;
 			final float halfWidth = halfHeight * aspectRatio;
 
 			projectionMatrix
@@ -62,6 +58,10 @@ public class Projection {
 					.ortho(-halfWidth / size, halfWidth / size, -halfHeight / size, halfHeight / size, nearPlane, farPlane);
 		}
 		return this;
+	}
+
+	public float getAspectRatio() {
+		return (float) width / height;
 	}
 
 	public Matrix4f getProjectionMatrix() {

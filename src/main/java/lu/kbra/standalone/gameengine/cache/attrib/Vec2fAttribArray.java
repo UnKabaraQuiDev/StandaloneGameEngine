@@ -20,14 +20,12 @@ public class Vec2fAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec2fAttribArray(String name, int index, int dataSize, Vector2f[] data, BufferType bufferType,
-			boolean _static) {
+	public Vec2fAttribArray(String name, int index, int dataSize, Vector2f[] data, BufferType bufferType, boolean _static) {
 		super(name, index, dataSize, bufferType, _static);
 		this.data = data;
 	}
 
-	public Vec2fAttribArray(String name, int index, int dataSize, Vector2f[] data, BufferType bufferType,
-			boolean _static, int divisor) {
+	public Vec2fAttribArray(String name, int index, int dataSize, Vector2f[] data, BufferType bufferType, boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -55,15 +53,20 @@ public class Vec2fAttribArray extends AttribArray {
 
 	@Override
 	public int getLength() {
-		return data.length;
+		return !isLoaded() ? -1 : data.length;
+	}
+
+	@Override
+	public boolean isLoaded() {
+		return data != null;
+	}
+
+	public Vector2f get(int i) {
+		return !isLoaded() ? null : data[i];
 	}
 
 	public Vector2f[] getData() {
 		return data;
-	}
-
-	public Vector2f get(int i) {
-		return data[i];
 	}
 
 }

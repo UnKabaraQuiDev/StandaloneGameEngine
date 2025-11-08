@@ -19,6 +19,7 @@ public class Transform3DComponent extends TransformComponent {
 
 	public Transform3DComponent(Transform3D transform) {
 		this.transform = transform;
+		this.transform.updateMatrix();
 	}
 
 	public Transform3DComponent(Vector3f trans, Quaternionf rot, Vector3f scale) {

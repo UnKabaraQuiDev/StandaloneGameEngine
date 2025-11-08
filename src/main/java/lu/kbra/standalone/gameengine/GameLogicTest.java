@@ -7,7 +7,7 @@ import lu.kbra.standalone.gameengine.impl.GameLogic;
 public class GameLogicTest extends GameLogic {
 
 	@Override
-	public void init(GameEngine e) {
+	public void init() {
 		GlobalLogger.log();
 	}
 
@@ -23,6 +23,11 @@ public class GameLogicTest extends GameLogic {
 
 	@Override
 	public void render(float dTime) {
+		GlobalLogger.log();
+	}
+
+	@Override
+	public void cleanup() {
 		GlobalLogger.log();
 	}
 

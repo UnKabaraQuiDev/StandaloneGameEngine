@@ -1,6 +1,8 @@
 package lu.kbra.standalone.gameengine.utils.file;
 
+import java.io.File;
 import java.nio.ByteBuffer;
+import java.util.Objects;
 
 import org.lwjgl.stb.STBImage;
 import org.lwjgl.stb.STBImageWrite;
@@ -51,8 +53,24 @@ public final class FileUtils {
 	}
 
 	public static boolean STBISave(String filePath, MemImage image) {
+		return STBISave(new File(filePath), image);
+	}
+
+	public static boolean STBISave(File file, MemImage image) {
+		file.getParentFile().mkdirs();
+		Objects.requireNonNull(image);
+		Objects.requireNonNull(image.getBuffer());
+		if (!image.getBuffer().isDirect()) {
+			throw new IllegalArgumentException("The buffer: " + image + " isn't direct.");
+		}
 		STBImageWrite.stbi_flip_vertically_on_write(image.isFromOGL());
-		return STBImageWrite.stbi_write_png(filePath, image.getWidth(), image.getHeight(), image.getChannels(), image.getBuffer(), 0);
+		return STBImageWrite
+				.stbi_write_png(file.getAbsolutePath(),
+						image.getWidth(),
+						image.getHeight(),
+						image.getChannels(),
+						image.getBuffer(),
+						image.getWidth() * image.getChannels());
 	}
 
 	public static void STBIFree(ByteBuffer buffer) {

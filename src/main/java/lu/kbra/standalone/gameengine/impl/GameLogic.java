@@ -36,6 +36,8 @@ public abstract class GameLogic {
 
 	public abstract void render(float dTime);
 
+	public abstract void cleanup();
+
 	protected boolean waitForFrameEnd() {
 		return engine.waitForFrameEnd();
 	}

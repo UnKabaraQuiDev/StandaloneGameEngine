@@ -38,8 +38,7 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		this.data = data;
 	}
 
-	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, BufferType bufferType,
-			boolean iStatic, int divisor) {
+	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, BufferType bufferType, boolean iStatic, int divisor) {
 		super(name, index, dataSize, bufferType, iStatic, divisor);
 		this.data = data;
 	}
@@ -92,15 +91,16 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 
 	@Override
 	public int getLength() {
-		return data.length;
+		return !isLoaded() ? -1 : data.length;
 	}
 
-	public Matrix4f[] getData() {
-		return data;
+	@Override
+	public boolean isLoaded() {
+		return data != null;
 	}
 
 	public Matrix4f get(int i) {
-		return data[i];
+		return !isLoaded() ? null : data[i];
 	}
 
 	@Override
@@ -115,8 +115,8 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 
 	@Override
 	public String toString() {
-		return getGlId() + "|" + getMaxIndex() + "-" + getMaxIndex() + ") " + getName() + ": " + getLength() + "/"
-				+ getDataSize() + "=" + getDataCount();
+		return getGlId() + "|" + getMaxIndex() + "-" + getMaxIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "="
+				+ getDataCount();
 	}
 
 }

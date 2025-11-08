@@ -38,7 +38,7 @@ public class IntAttribArray extends AttribArray {
 	public void init() {
 		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", " + Arrays.toString(data) + ", " + iStatic + ")");
-		
+
 		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
 			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_INT, 0, 0);
 			assert GL_W.checkError("VertexAttribPointer(" + index + ", " + dataSize + ", INT, FALSE, 0, 0)");
@@ -47,15 +47,20 @@ public class IntAttribArray extends AttribArray {
 
 	@Override
 	public int getLength() {
-		return data.length;
+		return !isLoaded() ? -1 : data.length;
+	}
+
+	@Override
+	public boolean isLoaded() {
+		return data != null;
+	}
+
+	public Integer get(int i) {
+		return !isLoaded() ? null : data[i];
 	}
 
 	public int[] getData() {
 		return data;
-	}
-
-	public Integer get(int i) {
-		return data[i];
 	}
 
 	public boolean update() {

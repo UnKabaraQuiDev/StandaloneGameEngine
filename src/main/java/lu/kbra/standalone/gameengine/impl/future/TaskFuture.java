@@ -38,19 +38,18 @@ public class TaskFuture<I, O> {
 		}
 
 		public void join() {
-			ongoing.waitForTrue();
+			started.waitForTrue();
 			ongoing.waitForFalse();
 		}
 
 		public void join(long timeout) {
-			ongoing.waitForTrue();
+			started.waitForTrue();
 			ongoing.waitForFalse(timeout);
 		}
 
 		@Override
 		public String toString() {
-			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result
-					+ "]";
+			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result + "]";
 		}
 
 	}

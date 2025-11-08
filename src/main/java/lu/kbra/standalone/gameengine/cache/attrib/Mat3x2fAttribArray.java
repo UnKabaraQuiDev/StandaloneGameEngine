@@ -91,15 +91,20 @@ public class Mat3x2fAttribArray extends AttribArray {
 
 	@Override
 	public int getLength() {
-		return data.length;
+		return !isLoaded() ? -1 : data.length;
+	}
+
+	@Override
+	public boolean isLoaded() {
+		return data != null;
+	}
+
+	public Matrix3x2f get(int i) {
+		return !isLoaded() ? null : data[i];
 	}
 
 	public Matrix3x2f[] getData() {
 		return data;
-	}
-
-	public Matrix3x2f get(int i) {
-		return data[i];
 	}
 
 }

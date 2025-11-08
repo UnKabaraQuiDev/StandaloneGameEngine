@@ -6,7 +6,7 @@ import org.joml.Vector2i;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public final class Consts {
+public class Consts {
 
 	public static final String DEFAULT_TITLE = "PDR Engine";
 	public static final int DEFAULT_UPS = 30;
@@ -26,6 +26,7 @@ public final class Consts {
 	public static final File AUDIO_RES_DIR = new File(RES_DIR, "audio/");
 	public static final File BAKES_RES_DIR = new File(RES_DIR, "bakes/");
 	public static final File FONTS_BAKES_RES_DIR = new File(BAKES_RES_DIR, "fonts/");
+	public static final File ICONS_BAKES_RES_DIR = new File(BAKES_RES_DIR, "icons/");
 	public static final File SHADERS_RES_DIR = new File(RES_DIR, "shaders/");
 	public static final File TEXTURES_RES_DIR = new File(RES_DIR, "textures/");
 	public static final File FONTS_RES_DIR = new File(RES_DIR, "fonts/");

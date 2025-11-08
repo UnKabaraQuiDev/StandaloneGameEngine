@@ -46,15 +46,20 @@ public class UByteAttribArray extends AttribArray {
 
 	@Override
 	public int getLength() {
-		return data.length;
+		return !isLoaded() ? -1 : data.length;
+	}
+
+	@Override
+	public boolean isLoaded() {
+		return data != null;
+	}
+
+	public Byte get(int i) {
+		return !isLoaded() ? null : data[i];
 	}
 
 	public byte[] getData() {
 		return data;
-	}
-
-	public Byte get(int i) {
-		return data[i];
 	}
 
 	public boolean update(byte[] nPos) {

@@ -53,17 +53,21 @@ public class FloatAttribArray extends AttribArray {
 		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 
-	@Override
-	public int getLength() {
-		return data.length;
-	}
-
 	public float[] getData() {
 		return data;
 	}
 
-	public Float get(int i) {
-		return data[i];
+	@Override
+	public int getLength() {
+		return !isLoaded() ? -1 : data.length;
 	}
 
+	@Override
+	public boolean isLoaded() {
+		return data != null;
+	}
+
+	public Float get(int i) {
+		return !isLoaded() ? null : data[i];
+	}
 }

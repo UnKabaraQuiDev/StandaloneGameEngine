@@ -58,7 +58,7 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable, GLObj
 	protected String loadSource() {
 		String source;
 		try {
-			source = PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER.isGL() ? "400 core" : "300 es");
+			source = PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER.isGL() ? "420 core" : "300 es");
 		} catch (Exception e) {
 			throw new RuntimeException("Error when loading file `" + file + "`", e);
 		}

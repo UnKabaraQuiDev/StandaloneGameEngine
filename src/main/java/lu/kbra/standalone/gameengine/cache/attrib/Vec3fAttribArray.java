@@ -20,20 +20,17 @@ public class Vec3fAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType,
-			boolean _static) {
+	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType, boolean _static) {
 		super(name, index, dataSize, bufferType, _static);
 		this.data = data;
 	}
 
-	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType,
-			int _divisor) {
+	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType, int _divisor) {
 		super(name, index, dataSize, bufferType, _divisor);
 		this.data = data;
 	}
 
-	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType,
-			boolean _static, int _divisor) {
+	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType, boolean _static, int _divisor) {
 		super(name, index, dataSize, bufferType, _static, _divisor);
 		this.data = data;
 	}
@@ -45,8 +42,7 @@ public class Vec3fAttribArray extends AttribArray {
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data),
-				iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM)
 			GL_W.glVertexAttribPointer(index, dataSize * 3, GL_W.GL_FLOAT, false, 0, 0);
 	}
@@ -66,15 +62,20 @@ public class Vec3fAttribArray extends AttribArray {
 
 	@Override
 	public int getLength() {
-		return data.length;
+		return !isLoaded() ? -1 : data.length;
+	}
+
+	@Override
+	public boolean isLoaded() {
+		return data != null;
+	}
+
+	public Vector3f get(int i) {
+		return !isLoaded() ? null : data[i];
 	}
 
 	public Vector3f[] getData() {
 		return data;
-	}
-
-	public Vector3f get(int i) {
-		return data[i];
 	}
 
 }

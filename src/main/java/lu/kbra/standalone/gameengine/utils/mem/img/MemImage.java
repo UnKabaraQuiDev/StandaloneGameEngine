@@ -23,9 +23,9 @@ public class MemImage implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		if(buffer == null)
+		if (buffer == null)
 			return;
-		
+
 		if (MemImageOrigin.STBI.equals(origin)) {
 			STBImage.stbi_image_free(buffer);
 			buffer = null;
@@ -57,6 +57,12 @@ public class MemImage implements Cleanupable {
 
 	public ByteBuffer getBuffer() {
 		return buffer;
+	}
+
+	@Override
+	public String toString() {
+		return "MemImage [width=" + width + ", height=" + height + ", channels=" + channels + ", buffer=" + buffer + ", origin=" + origin
+				+ ", direct=" + (buffer != null ? buffer.isDirect() : false) + "]";
 	}
 
 }

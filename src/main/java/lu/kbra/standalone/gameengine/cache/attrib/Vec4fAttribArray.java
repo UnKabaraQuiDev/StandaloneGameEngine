@@ -48,15 +48,20 @@ public class Vec4fAttribArray extends AttribArray {
 
 	@Override
 	public int getLength() {
-		return data.length;
+		return !isLoaded() ? -1 : data.length;
+	}
+
+	@Override
+	public boolean isLoaded() {
+		return data != null;
+	}
+
+	public Vector4f get(int i) {
+		return !isLoaded() ? null : data[i];
 	}
 
 	public Vector4f[] getData() {
 		return data;
-	}
-
-	public Vector4f get(int i) {
-		return data[i];
 	}
 
 }

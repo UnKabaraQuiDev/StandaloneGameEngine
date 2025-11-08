@@ -45,15 +45,20 @@ public class UIntAttribArray extends AttribArray {
 
 	@Override
 	public int getLength() {
-		return data.length;
+		return !isLoaded() ? -1 : data.length;
+	}
+
+	@Override
+	public boolean isLoaded() {
+		return data != null;
+	}
+
+	public Integer get(int i) {
+		return !isLoaded() ? null : data[i];
 	}
 
 	public int[] getData() {
 		return data;
-	}
-
-	public Integer get(int i) {
-		return data[i];
 	}
 
 	public boolean update(int[] nPos) {

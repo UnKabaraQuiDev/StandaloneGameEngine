@@ -30,8 +30,7 @@ public class Vec3iAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, BufferType bufferType,
-			boolean _static, int divisor) {
+	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data, BufferType bufferType, boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -58,11 +57,6 @@ public class Vec3iAttribArray extends AttribArray {
 		return true;
 	}
 
-	@Override
-	public int getLength() {
-		return data.length;
-	}
-
 	public IntAttribArray toIntAttribArray() {
 		return new IntAttribArray(name, index, dataSize * 3, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
@@ -71,12 +65,22 @@ public class Vec3iAttribArray extends AttribArray {
 		return new UIntAttribArray(name, index, dataSize * 3, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
-	public Vector3i[] getData() {
-		return data;
+	@Override
+	public int getLength() {
+		return !isLoaded() ? -1 : data.length;
+	}
+
+	@Override
+	public boolean isLoaded() {
+		return data != null;
 	}
 
 	public Vector3i get(int i) {
-		return data[i];
+		return !isLoaded() ? null : data[i];
+	}
+
+	public Vector3i[] getData() {
+		return data;
 	}
 
 }

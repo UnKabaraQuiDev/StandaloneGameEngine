@@ -21,6 +21,9 @@ import lu.kbra.standalone.gameengine.utils.transform.Transform;
 
 public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObject {
 
+	public static final int TRANSFORM_BUFFER_INDEX = 5;
+	public static final String TRANSFORM_BUFFER_NAME = "transforms";
+
 	protected final String name;
 
 	protected Instance[] particles;
@@ -47,7 +50,8 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			transforms[i] = this.particles[i].getTransform().getMatrix();
 		}
 
-		this.instancesTransforms = new Mat4fAttribArray("transforms", 3, 1, transforms, BufferType.ARRAY, false, 1);
+		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME, TRANSFORM_BUFFER_INDEX, 1, transforms, BufferType.ARRAY,
+				false, 1);
 
 		this.instancesAttribs = attribs;
 		this.instanceMesh = mesh;
@@ -57,8 +61,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		mesh.addAttribArray(this.instancesTransforms);
 		for (AttribArray a : this.instancesAttribs) {
 			if (mesh.getVbo().containsKey(a.getIndex())) {
-				GlobalLogger.log(Level.WARNING,
-						"Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
+				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
 			}
 			mesh.addAttribArray(a);
@@ -68,8 +71,10 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 		// System.err.println(this.instancesTransforms);
 
-		GlobalLogger.log(Level.INFO, "ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo()
-				+ "); count:" + count + "; attribs: " + Arrays.toString(attribs));
+		GlobalLogger
+				.log(Level.INFO,
+						"ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo() + "); count:" + count + "; attribs: "
+								+ Arrays.toString(attribs));
 	}
 
 	/**
@@ -102,25 +107,26 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 	}
 
 	public void updateDirect(Matrix4f[] transforms, Object[][] atts) {
-		if (transforms.length != this.count || atts.length != this.instancesAttribs.length)
+		if (transforms.length != this.count || atts.length != this.instancesAttribs.length) {
 			throw new IllegalArgumentException();
+		}
 
 		// update this.particles to the new values ?
 
-		if (!AttribArray.update(this.instancesTransforms, transforms))
+		if (!AttribArray.update(this.instancesTransforms, transforms)) {
 			GlobalLogger.log(Level.WARNING, "Could not update transforms");
+		}
 
 		for (int c = 0; c < this.instancesAttribs.length; c++) {
-			if (!AttribArray.update(this.instancesAttribs[c], atts[c]))
-				GlobalLogger.log(Level.WARNING, "Failed to update attrib array: " + this.instancesAttribs[c].getName()
-						+ " (" + this.instancesAttribs[c].getIndex() + ")");
-			/*
-			 * else GlobalLogger.info("Updated attrib array: " +
-			 * this.instancesAttribs[c].getName() + " (" +
-			 * this.instancesAttribs[c].getIndex() + ") for " + this.getId());
-			 */
+			if (!AttribArray.update(this.instancesAttribs[c], atts[c])) {
+				GlobalLogger
+						.log(Level.WARNING,
+								"Failed to update attrib array: " + this.instancesAttribs[c].getName() + " ("
+										+ this.instancesAttribs[c].getIndex() + ")");
+			}
 		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
+		assert GL_W.checkError("BindBuffer(ARRAY, 0)");
 	}
 
 	public void updateParticles() {
@@ -173,8 +179,9 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 	public void cleanup() {
 		GlobalLogger.log("Cleaning up: " + name);
 
-		if (instanceMesh == null)
+		if (instanceMesh == null) {
 			return;
+		}
 
 		Arrays.stream(this.instancesAttribs).forEach(AttribArray::cleanup);
 		this.instancesAttribs = null;

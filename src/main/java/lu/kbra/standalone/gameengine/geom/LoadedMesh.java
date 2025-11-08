@@ -15,6 +15,7 @@ import lu.kbra.standalone.gameengine.cache.attrib.MultiAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.graph.material.Material;
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
@@ -40,7 +41,8 @@ public class LoadedMesh implements Mesh {
 	protected UIntAttribArray indices;
 	protected AttribArray[] attribs;
 
-	protected int vertexCount, indicesCount;
+	protected final int vertexCount, indicesCount;
+	protected final BoundingBox boundingBox;
 
 	/**
 	 * Positions are stored as attribArray 0, normals as attribArray 1, uvs as attribArray 2
@@ -55,6 +57,7 @@ public class LoadedMesh implements Mesh {
 
 		this.vertexCount = vertices.getDataCount();
 		this.indicesCount = indices.getLength();
+		this.boundingBox = GameEngineUtils.getBoundingBox(vertices);
 
 		this.vao = GL_W.glGenVertexArrays();
 		bind();
@@ -148,6 +151,7 @@ public class LoadedMesh implements Mesh {
 		return name;
 	}
 
+	@Override
 	public int getVertexCount() {
 		return vertexCount;
 	}
@@ -157,6 +161,7 @@ public class LoadedMesh implements Mesh {
 		return vao;
 	}
 
+	@Override
 	public Map<Integer, Integer> getVbo() {
 		return vbo;
 	}
@@ -173,6 +178,7 @@ public class LoadedMesh implements Mesh {
 		return vertices;
 	}
 
+	@Override
 	public Material getMaterial() {
 		return material;
 	}
@@ -181,6 +187,7 @@ public class LoadedMesh implements Mesh {
 		return attribs;
 	}
 
+	@Override
 	public int getIndicesCount() {
 		return indicesCount;
 	}
@@ -199,10 +206,15 @@ public class LoadedMesh implements Mesh {
 	}
 
 	@Override
+	public BoundingBox getBoundingBox() {
+		return boundingBox;
+	}
+
+	@Override
 	public String toString() {
 		return "LoadedMesh [name=" + name + ", vao=" + vao + ", vbo=" + vbo + ", material=" + material + ", vertices=" + vertices
 				+ ", indices=" + indices + ", attribs=" + Arrays.toString(attribs) + ", vertexCount=" + vertexCount + ", indicesCount="
-				+ indicesCount + ", isValid()=" + isValid() + "]";
+				+ indicesCount + ", isValid()=" + isValid() + ", boundingBox=" + boundingBox + "]";
 	}
 
 	public static QuadMesh newQuad(String name, Material material2, Vector2f size) {

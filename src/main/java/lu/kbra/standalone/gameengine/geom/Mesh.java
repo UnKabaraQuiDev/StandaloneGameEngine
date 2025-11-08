@@ -15,15 +15,15 @@ import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 
 public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
 
-	public static final String ATTRIB_VERTICES_NAME = "vertices";
-	public static final String ATTRIB_INDICES_NAME = "ids";
-	public static final String ATTRIB_NORMALS_NAME = "normals";
-	public static final String ATTRIB_UVS_NAME = "uvs";
+	String ATTRIB_VERTICES_NAME = "vertices";
+	String ATTRIB_INDICES_NAME = "ids";
+	String ATTRIB_NORMALS_NAME = "normals";
+	String ATTRIB_UVS_NAME = "uvs";
 
-	public static final int ATTRIB_VERTICES_ID = 0;
-	public static final int ATTRIB_INDICES_ID = -1;
-	public static final int ATTRIB_NORMALS_ID = 1;
-	public static final int ATTRIB_UVS_ID = 2;
+	int ATTRIB_VERTICES_ID = 0;
+	int ATTRIB_INDICES_ID = -1;
+	int ATTRIB_NORMALS_ID = 1;
+	int ATTRIB_UVS_ID = 2;
 
 	void addAttribArray(AttribArray data);
 
@@ -38,6 +38,8 @@ public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
 	int getIndicesCount();
 
 	Material getMaterial();
+
+	BoundingBox getBoundingBox();
 
 	public static QuadMesh newQuad(String name, Material material2, Vector2f size) {
 		return new QuadMesh(name, material2, size);

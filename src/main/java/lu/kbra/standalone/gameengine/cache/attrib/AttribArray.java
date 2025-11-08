@@ -68,6 +68,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	public abstract Object get(int i);
 
+	public abstract boolean isLoaded();
+
 	public void enable() {
 		GL_W.glEnableVertexAttribArray(index);
 		assert GL_W.checkError("EnableVertexAttribArray(" + index + ") (" + name + ")");
@@ -169,8 +171,7 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	@Override
 	public String toString() {
-		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "="
-				+ getDataCount();
+		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
 	}
 
 	public static <T> boolean update(AttribArray arr, T[] data) {
@@ -182,20 +183,22 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 		arr.bind();
 
-		if (arr instanceof IntAttribArray)
+		if (arr instanceof IntAttribArray) {
 			return ((IntAttribArray) arr).update(PCUtils.toPrimitiveInt(data));
-		else if (arr instanceof UIntAttribArray)
+		} else if (arr instanceof UIntAttribArray) {
 			return ((UIntAttribArray) arr).update(PCUtils.toPrimitiveInt(data));
-		else if (arr instanceof FloatAttribArray)
+		} else if (arr instanceof FloatAttribArray) {
 			return ((FloatAttribArray) arr).update(PCUtils.toPrimitiveFloat(data));
-		else if (arr instanceof Mat4fAttribArray)
+		} else if (arr instanceof Mat4fAttribArray) {
 			return ((Mat4fAttribArray) arr).update(GameEngineUtils.castArrayMat4f(data));
-		else if (arr instanceof Vec4fAttribArray)
+		} else if (arr instanceof Vec4fAttribArray) {
 			return ((Vec4fAttribArray) arr).update((Vector4f[]) data);
-		else if (arr instanceof Vec3fAttribArray)
+		} else if (arr instanceof Vec3fAttribArray) {
 			return ((Vec3fAttribArray) arr).update((Vector3f[]) data);
-		else if (arr instanceof Mat3x2fAttribArray)
+		} else if (arr instanceof Mat3x2fAttribArray) {
 			return ((Mat3x2fAttribArray) arr).update(GameEngineUtils.castArrayMat3x2f(data));
+		}
+
 		return false;
 	}
 

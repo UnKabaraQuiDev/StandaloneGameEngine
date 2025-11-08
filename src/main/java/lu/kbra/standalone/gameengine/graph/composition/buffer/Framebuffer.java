@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
+import org.joml.Vector2i;
+
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.graph.texture.SingleTexture;
@@ -28,6 +30,20 @@ public class Framebuffer implements UniqueID, Cleanupable, GLObject {
 		this.name = name;
 	}
 
+	public void resize(Vector2i resolution) {
+		for (FramebufferAttachment fa : getAttachments().values()) {
+			if (fa instanceof SingleTexture txt) {
+				txt.setSize(resolution.x, resolution.y);
+				txt.bind();
+				txt.resize();
+			} else if (fa instanceof RenderBuffer rb) {
+				rb.setSize(resolution.x, resolution.y);
+				rb.bind();
+				rb.resize();
+			}
+		}
+	}
+
 	public boolean attachTexture(FrameBufferAttachment attach, int offset, SingleTexture texture) {
 		TextureType txtType = texture.getTextureType();
 		if (txtType == null) {
@@ -35,8 +51,7 @@ public class Framebuffer implements UniqueID, Cleanupable, GLObject {
 		}
 
 		if (TextureType.TXT2D.equals(txtType)) {
-			GL_W.glFramebufferTexture2D(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, txtType.getGlId(),
-					texture.getTid(), 0);
+			GL_W.glFramebufferTexture2D(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, txtType.getGlId(), texture.getGlId(), 0);
 		} else if (TextureType.TXT3D.equals(txtType)) {
 			GameEngineUtils.throwGLESError("Cannot attach TXT3D to Framebuffer");
 		}
@@ -51,11 +66,9 @@ public class Framebuffer implements UniqueID, Cleanupable, GLObject {
 	}
 
 	public boolean attachRenderBuffer(FrameBufferAttachment attach, int offset, RenderBuffer texture) {
-		GL_W.glFramebufferRenderbuffer(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, GL_W.GL_RENDERBUFFER,
-				texture.getRbid());
+		GL_W.glFramebufferRenderbuffer(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, GL_W.GL_RENDERBUFFER, texture.getRbid());
 		this.attachments.put(attach.getGlId() + offset, texture);
-		assert GL_W
-				.checkError("FrameBufferRenderbuffer[" + attach + "+" + offset + "][" + name + "]=" + texture.getId());
+		assert GL_W.checkError("FrameBufferRenderbuffer[" + attach + "+" + offset + "][" + name + "]=" + texture.getId());
 		return true;
 	}
 
@@ -85,10 +98,14 @@ public class Framebuffer implements UniqueID, Cleanupable, GLObject {
 	}
 
 	public void setup() {
-		final int[] bfs = attachments.entrySet().stream()
+		final int[] bfs = attachments
+				.entrySet()
+				.stream()
 				.filter(e -> e.getKey() >= FrameBufferAttachment.COLOR_FIRST.getGlId()
 						&& e.getKey() <= FrameBufferAttachment.COLOR_LAST.getGlId())
-				.sorted((a, b) -> a.getKey() - b.getKey()).mapToInt(a -> a.getKey()).toArray();
+				.sorted((a, b) -> a.getKey() - b.getKey())
+				.mapToInt(a -> a.getKey())
+				.toArray();
 		GL_W.glDrawBuffers(bfs);
 		assert GL_W.checkError("DrawBuffers(" + Arrays.toString(bfs) + ")");
 		if (!isComplete()) {
