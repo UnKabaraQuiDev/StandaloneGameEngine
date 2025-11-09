@@ -21,7 +21,7 @@ import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.kbra.standalone.gameengine.utils.PDRLoggerUtils;
+import lu.kbra.standalone.gameengine.utils.GameEngineLoggerUtils;
 
 public class AudioMaster implements Cleanupable {
 
@@ -49,7 +49,11 @@ public class AudioMaster implements Cleanupable {
 		}
 
 		deviceCapabilities = ALC.createCapabilities(device);
-		PDRLoggerUtils.log(deviceCapabilities);
+		try {
+			GameEngineLoggerUtils.log(deviceCapabilities);
+		} catch (IllegalArgumentException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
 
 		if (!deviceCapabilities.OpenALC10) {
 			throw new RuntimeException("Could not open OpenAL device: OpenALC10 not supported");

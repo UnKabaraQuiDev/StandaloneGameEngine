@@ -22,6 +22,9 @@ import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 
 public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable {
 
+	private static record SetupData(TextMaterial material, int bufferSize) {
+	}
+
 	public static final int CHAR_BUFFER_INDEX = 9;
 	public static final String CHAR_BUFFER_NAME = "char";
 
@@ -35,6 +38,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 	private final Vector2f charSize;
 	private String text;
 
+	private SetupData setupData;
 	private UIntAttribArray charBuffer;
 	private InstanceEmitter instances;
 
@@ -45,18 +49,28 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 	private Vector2f boxSize = new Vector2f(1); // the size of the bounding box if using boxed = true
 	private Vector2f charOffset = new Vector2f(0);
 
-	public TextEmitter(String name, TextMaterial material, int bufferSize, String text, Vector2f size) {
+	public TextEmitter(String name, TextMaterial material, int bufferSize, String text, Vector2f charSize) {
 		this.name = name;
 
 		this.text = text;
-		this.charSize = size;
+		this.charSize = charSize;
 
-		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_INDEX, 1, new int[bufferSize], false, 1);
+		this.setupData = new SetupData(material, bufferSize);
+	}
 
+	public void setup() {
+		if (setupData == null) {
+			throw new IllegalStateException("TextEmitter already initialized.");
+		}
+
+		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_INDEX, 1, new int[setupData.bufferSize], false, 1);
 		// quad mesh ownership goes to the InstanceEmitter
-		this.instances = new InstanceEmitter(name, new QuadMesh(name, material, size), bufferSize, new Transform3D(), charBuffer);
+		this.instances = new InstanceEmitter(name, new QuadMesh(name, setupData.material, charSize), setupData.bufferSize,
+				new Transform3D(), charBuffer);
 
 		updateText();
+
+		setupData = null;
 	}
 
 	public boolean updateText() {

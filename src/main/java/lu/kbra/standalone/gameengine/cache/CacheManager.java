@@ -249,8 +249,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public Renderer<?, ?> getRenderer(String name) {
 		/*
-		 * if (name != null && !renderers.containsKey(name))
-		 * GlobalLogger.log("No renderer found for: " + name);
+		 * if (name != null && !renderers.containsKey(name)) GlobalLogger.log("No renderer found for: " +
+		 * name);
 		 */
 		return this.renderers.getOrDefault(name, parent == null ? null : parent.getRenderer(name));
 	}
@@ -437,6 +437,14 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public boolean hasTexture(String name) {
 		return textures.containsKey(name) || (parent != null ? parent.hasTexture(name) : false);
+	}
+
+	public boolean hasTextEmitter(String name) {
+		return textEmitters.containsKey(name) || (parent != null ? parent.hasTextEmitter(name) : false);
+	}
+
+	public boolean hasInstanceEmitter(String name) {
+		return instanceEmitters.containsKey(name) || (parent != null ? parent.hasInstanceEmitter(name) : false);
 	}
 
 	/*

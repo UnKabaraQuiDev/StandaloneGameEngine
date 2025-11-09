@@ -1,7 +1,5 @@
 package lu.kbra.standalone.gameengine.graph.window;
 
-import java.lang.reflect.Field;
-
 import org.lwjgl.glfw.Callbacks;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWErrorCallback;
@@ -13,6 +11,7 @@ import org.lwjgl.system.MemoryUtil;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
+import lu.kbra.standalone.gameengine.utils.GameEngineLoggerUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL43;
@@ -31,18 +30,20 @@ public class GLWindow extends Window {
 		errorCallback = GLFWErrorCallback.createPrint(System.err);
 		// GLFW.glfwSetErrorCallback(errorCallback);
 
-		if (!GLFW.glfwInit())
+		if (!GLFW.glfwInit()) {
 			throw new RuntimeException("Failed to initialize GLFW");
+		}
 
 		monitor = getQualifiedMonitor();
 
 		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL, MemoryUtil.NULL);
-		if (handle == MemoryUtil.NULL)
+		if (handle == MemoryUtil.NULL) {
 			throw new RuntimeException("Failed to create GLFW Window");
+		}
 
 		takeGLContext();
 		if ((this.capabilities = GL.createCapabilities()) == null) {
-			throw new RuntimeException("Failed to create OpenGL context");
+			throw new RuntimeException("Failed to create OpenGL context.");
 		}
 
 		// TODO: add option to disable debug output
@@ -60,14 +61,7 @@ public class GLWindow extends Window {
 		}
 
 		try {
-			GlobalLogger.log("OpenGL Capabilities:");
-			for (Field f : GLCapabilities.class.getFields()) {
-				if (f.getType() == boolean.class) {
-					if (f.get(this.capabilities).equals(Boolean.TRUE)) {
-						GlobalLogger.log("\t" + f.getName());
-					}
-				}
-			}
+			GameEngineLoggerUtils.log(this.capabilities);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
