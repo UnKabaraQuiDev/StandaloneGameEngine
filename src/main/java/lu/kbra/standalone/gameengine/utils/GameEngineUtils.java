@@ -1,6 +1,5 @@
 package lu.kbra.standalone.gameengine.utils;
 
-import java.awt.Shape;
 import java.awt.geom.Rectangle2D;
 import java.util.stream.IntStream;
 
@@ -450,7 +449,7 @@ public final class GameEngineUtils {
 		return new Vector2f(width / max, height / max);
 	}
 
-	public static Shape toRectangleBounds(Vector2f size, Alignment horizontal, Alignment vertical) {
+	public static Rectangle2D.Float toRectangleBounds(Vector2f size, Alignment horizontal, Alignment vertical) {
 		float x = 0;
 		float y = 0;
 

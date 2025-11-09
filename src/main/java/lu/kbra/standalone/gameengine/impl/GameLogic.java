@@ -58,4 +58,12 @@ public abstract class GameLogic {
 		engine.stop();
 	}
 
+	public GameEngine getGameEngine() {
+		return engine;
+	}
+
+	public double getTotalTime() {
+		return engine.getTotalTime();
+	}
+
 }

@@ -1,41 +1,36 @@
 package lu.kbra.standalone.gameengine.impl.future;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import lu.pcy113.pclib.builder.ThreadBuilder;
 
-public class WorkerDispatcher extends Dispatcher {
+public class WorkerDispatcher extends Dispatcher implements Runnable {
 
-	private final ExecutorService[] workers;
+	private final ThreadGroup group;
+	private final Thread[] workers;
 
 	public WorkerDispatcher(String name, int workerCount) {
 		super(name);
 
-		workers = new ExecutorService[workerCount];
+		group = new ThreadGroup(name);
+		workers = new Thread[workerCount];
 		for (int i = 0; i < workerCount; i++) {
 			final int index = i;
-			workers[i] = Executors
-					.newSingleThreadExecutor(r -> ThreadBuilder.create(r).name("Worker-" + index).daemon(true).build());
+			workers[i] = ThreadBuilder.create(group, this).name("Worker-" + name + "-" + index).daemon(true).start();
 		}
-		startWorkers();
 	}
-
-	private void startWorkers() {
-		for (ExecutorService worker : workers) {
-			worker.submit(() -> {
-				while (!Thread.currentThread().isInterrupted()) {
-					try {
-						final ScheduledTask task = queue.take(); // block until task
-						task.run();
-					} catch (InterruptedException e) {
-						Thread.currentThread().interrupt();
-						break;
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			});
+	
+	@Override
+	public void run() {
+		while (!Thread.currentThread().isInterrupted()) {
+			try {
+				final ScheduledTask task = queue.take();
+				task.run();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				Thread.currentThread().interrupt();
+				break;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -48,9 +43,7 @@ public class WorkerDispatcher extends Dispatcher {
 	}
 
 	public void shutdown() {
-		for (ExecutorService worker : workers) {
-			worker.shutdownNow();
-		}
+		group.interrupt();
 	}
 
 }

@@ -6,8 +6,12 @@ import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 
 import org.joml.Matrix4f;
+import org.joml.Quaternionf;
 import org.joml.Vector3f;
 import org.lwjgl.glfw.GLFW;
+
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
@@ -22,19 +26,18 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL46;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class GameEngine implements Cleanupable, UniqueID {
 
 	public static final Vector3f X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0), Y_POS = new Vector3f(0, 1, 0),
 			Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1), Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0),
-			IDENTITY = new Vector3f(1);
+			IDENTITY_VECTOR3F = new Vector3f(1);
 
 	public static final Vector3f UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
 			RIGHT = new Vector3f(X_POS), FORWARD = new Vector3f(Z_POS), BACK = new Vector3f(X_POS);
 
 	public static final Matrix4f IDENTITY_MATRIX4F = new Matrix4f().identity();
+	public static final Quaternionf IDENTITY_QUATERNIONF = new Quaternionf().identity();
 
 	public static final long POLL_EVENT_TIMEOUT = 500, BUFFER_SWAP_TIMEOUT = 500, WAIT_FRAME_END_TIMEOUT = 500,
 			WAIT_FRAME_START_TIMEOUT = 500, WAIT_UPDATE_END_TIMEOUT = 500, WAIT_UPDATE_START_TIMEOUT = 500; // ms
@@ -237,6 +240,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 		this.updateThread = new Thread(threadGroup, this::updateRun, threadGroup.getName() + ":update");
 		this.renderThread = new Thread(threadGroup, this::renderRun, threadGroup.getName() + ":render");
 
+		updateThread.setDaemon(true);
+		renderThread.setDaemon(true);
 		this.updateThread.start();
 		this.renderThread.start();
 

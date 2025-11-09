@@ -6,7 +6,6 @@ import java.util.Map;
 
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
-import lu.kbra.standalone.gameengine.objs.entity.components.LightComponent;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 
 public class Scene2D extends Scene implements Iterable<Entity> {
@@ -77,6 +76,7 @@ public class Scene2D extends Scene implements Iterable<Entity> {
 	public Object getEntitiesLock() {
 		return entitiesLock;
 	}
+
 
 	@Override
 	public Iterator<Entity> iterator() {

@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
+import org.joml.Vector4f;
 
 import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
@@ -30,6 +31,10 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	public static final String STRING = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
+	public static final Vector4f DEFAULT_FG_COLOR = new Vector4f(1);
+	public static final Vector4f DEFAULT_BG_COLOR = new Vector4f(0, 0, 0, 1);
+	public static final boolean DEFAULT_TRANSPARENT = true;
+
 	public static int TAB_SIZE = 4;
 	public static String TAB_CHARS = PCUtils.repeatString(" ", TAB_SIZE);
 
@@ -48,6 +53,10 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 	private boolean correctTransform = false; // swaps the y axis for opengl
 	private Vector2f boxSize = new Vector2f(1); // the size of the bounding box if using boxed = true
 	private Vector2f charOffset = new Vector2f(0);
+
+	private Vector4f fgColor;
+	private Vector4f bgColor;
+	private Boolean transparent;
 
 	public TextEmitter(String name, TextMaterial material, int bufferSize, String text, Vector2f charSize) {
 		this.name = name;
@@ -116,33 +125,29 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	private void updateTextContentAbsCenter(Matrix4f[] transforms, Integer[] chars) {
 		final int[] widthCount = computeWidthCounts();
-		// final int widthMax = boxed ? (int) (boxSize.x / charSize.x) :
-		// Arrays.stream(widthCount).max().getAsInt();
 
 		int line = 0;
 		int character = 0;
 
 		int charIndex = 0;
 		for (int i = 0; i < text.length(); i++) {
-			char currentChar = text.charAt(i);
+			final char currentChar = text.charAt(i);
 
-			if (currentChar == '\n') {
+			switch (currentChar) {
+			case '\n' -> {
 				line++;
 				character = 0;
-			} else if (currentChar == '\t') {
-				character += TAB_SIZE;
-			} else if (currentChar == ' ') {
-				character++;
-			} else {
+			}
+			case '\t' -> character += TAB_SIZE;
+			case ' ' -> character++;
+			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-
-				final float translationX = (character - widthCount[line] / 2) * (charSize.x + charOffset.x) - charSize.x;
+				final float translationX = (character - (float) (widthCount[line] - 1) / 2) * (charSize.x + charOffset.x) - charSize.x;
 				final float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2 + charOffset.y;
-
 				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
-
 				charIndex++;
+			}
 			}
 		}
 	}
@@ -283,14 +288,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 	}
 
 	public int[] computeWidthCounts() {
-		String[] lines = text.split("\n");
-		int[] max = new int[lines.length];
-
-		for (int i = 0; i < lines.length; i++) {
-			max[i] = lines[i].length();
-		}
-
-		return max;
+		return Arrays.stream(getDisplayedText().split("\n")).mapToInt(String::length).toArray();
 	}
 
 	public Vector2f getTextBounds() {
@@ -311,11 +309,15 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	public int getLineCount() {
 		final String text = getDisplayedText();
-		return text.length() - text.replace("\n", "").length();
+		return text.length() - text.replace("\n", "").length() + 1;
 	}
 
 	public String getText() {
 		return text;
+	}
+
+	public int getCharCount() {
+		return getText().length();
 	}
 
 	public TextEmitter setText(String text) {
@@ -369,6 +371,30 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	public void setCorrectTransform(boolean correctTransform) {
 		this.correctTransform = correctTransform;
+	}
+
+	public Vector4f getForegroundColor() {
+		return fgColor;
+	}
+
+	public Vector4f getBackgroundColor() {
+		return bgColor;
+	}
+
+	public Boolean isTransparent() {
+		return transparent;
+	}
+
+	public void setForegroundColor(Vector4f fgColor) {
+		this.fgColor = fgColor;
+	}
+
+	public void setBackgroundColor(Vector4f bgColor) {
+		this.bgColor = bgColor;
+	}
+
+	public void setTransparent(Boolean transparent) {
+		this.transparent = transparent;
 	}
 
 	@Override
