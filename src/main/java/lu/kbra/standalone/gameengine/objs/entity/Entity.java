@@ -9,10 +9,10 @@ import lu.pcy113.pclib.PCUtils;
 
 public class Entity implements SceneEntity {
 
-	private boolean active = true;
+	protected boolean active = true;
 
-	private String name = "undefined";
-	private Map<Class<? extends Component>, Component> components = new HashMap<>();
+	protected String name = "undefined";
+	protected Map<Class<? extends Component>, Component> components = new HashMap<>();
 
 	public Entity(String str, Component... cs) {
 		this.name = str;

@@ -1,5 +1,6 @@
 package lu.kbra.standalone.gameengine.utils;
 
+import java.awt.Color;
 import java.awt.geom.Rectangle2D;
 import java.util.stream.IntStream;
 
@@ -487,6 +488,22 @@ public final class GameEngineUtils {
 		}
 
 		return new BoundingBox(min, max);
+	}
+
+	public static Vector4f hexToColorToVec4f(String hex) {
+		return colorToVec4f(PCUtils.hexToColor(hex));
+	}
+
+	public static Vector4f hexToColorToVec4f(String hex, Vector4f v) {
+		return colorToVec4f(PCUtils.hexToColor(hex), v);
+	}
+
+	public static Vector4f colorToVec4f(Color c) {
+		return new Vector4f(c.getRed() / 255.0f, c.getGreen() / 255.0f, c.getBlue() / 255.0f, c.getAlpha() / 255.0f);
+	}
+
+	public static Vector4f colorToVec4f(Color c, Vector4f v) {
+		return v.set(c.getRed() / 255.0f, c.getGreen() / 255.0f, c.getBlue() / 255.0f, c.getAlpha() / 255.0f);
 	}
 
 }

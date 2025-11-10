@@ -7,6 +7,7 @@ import java.util.logging.Level;
 
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
+import org.joml.Vector2f;
 import org.joml.Vector3f;
 import org.lwjgl.glfw.GLFW;
 
@@ -30,12 +31,13 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
 public class GameEngine implements Cleanupable, UniqueID {
 
 	public static final Vector3f X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0), Y_POS = new Vector3f(0, 1, 0),
-			Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1), Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0),
-			IDENTITY_VECTOR3F = new Vector3f(1);
+			Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1), Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0);
 
 	public static final Vector3f UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
 			RIGHT = new Vector3f(X_POS), FORWARD = new Vector3f(Z_POS), BACK = new Vector3f(X_POS);
 
+	public static final Vector2f IDENTITY_VECTOR2F = new Vector2f(1);
+	public static final Vector3f IDENTITY_VECTOR3F = new Vector3f(1);
 	public static final Matrix4f IDENTITY_MATRIX4F = new Matrix4f().identity();
 	public static final Quaternionf IDENTITY_QUATERNIONF = new Quaternionf().identity();
 

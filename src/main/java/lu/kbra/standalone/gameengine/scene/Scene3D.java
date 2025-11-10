@@ -74,6 +74,14 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 		}
 	}
 
+	public <T extends Entity> void addEntities(T... entities) {
+		synchronized (entitiesLock) {
+			for (Entity entity : entities) {
+				this.addEntity(entity);
+			}
+		}
+	}
+
 	public void addEntities(String[] names, Entity[] entities) {
 		synchronized (entitiesLock) {
 			for (int i = 0; i < Math.min(names.length, entities.length); i++) {

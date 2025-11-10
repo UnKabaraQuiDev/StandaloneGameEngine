@@ -10,7 +10,7 @@ import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
-import lu.kbra.standalone.gameengine.geom.QuadMesh;
+import lu.kbra.standalone.gameengine.geom.LoadedQuadMesh;
 import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
 import lu.kbra.standalone.gameengine.graph.material.text.TextShader;
 import lu.kbra.standalone.gameengine.graph.material.text.TextShader.TextMaterial;
@@ -74,7 +74,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_INDEX, 1, new int[setupData.bufferSize], false, 1);
 		// quad mesh ownership goes to the InstanceEmitter
-		this.instances = new InstanceEmitter(name, new QuadMesh(name, setupData.material, charSize), setupData.bufferSize,
+		this.instances = new InstanceEmitter(name, new LoadedQuadMesh(name, setupData.material, charSize), setupData.bufferSize,
 				new Transform3D(), charBuffer);
 
 		updateText();

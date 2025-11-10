@@ -36,6 +36,87 @@ public class Transform3D extends Transform {
 		this(new Vector3f(0), rot, new Vector3f(1));
 	}
 
+	/** chaining methods for scale */
+
+	public Transform3D scaleAdd(Vector3f v) {
+		scale.add(v);
+		return this;
+	}
+
+	public Transform3D scaleAdd(float x, float y, float z) {
+		scale.add(x, y, z);
+		return this;
+	}
+
+	public Transform3D scaleSet(Vector3f v) {
+		scale.set(v.x, v.y, v.z);
+		return this;
+	}
+
+	public Transform3D scaleSet(float x, float y, float z) {
+		scale.set(x, y, z);
+		return this;
+	}
+
+	public Transform3D scaleMul(Vector3f v) {
+		scale.mul(v);
+		return this;
+	}
+
+	public Transform3D scaleMul(float x, float y, float z) {
+		scale.mul(x, y, z);
+		return this;
+	}
+
+	public Transform3D scaleSet(float length) {
+		this.scale.set(length);
+		return this;
+	}
+
+	public Transform3D setScale(Vector3f scale) {
+		this.scale = scale;
+		return this;
+	}
+
+	/** chaining methods for translation */
+
+	public Transform3D translationAdd(Vector3f v) {
+		translation.add(v);
+		return this;
+	}
+
+	public Transform3D translationAdd(float x, float y, float z) {
+		translation.add(x, y, z);
+		return this;
+	}
+
+	public Transform3D translationSet(Vector3f v) {
+		translation.set(v.x, v.y, v.z);
+		return this;
+	}
+
+	public Transform3D translationSet(float x, float y, float z) {
+		translation.set(x, y, z);
+		return this;
+	}
+
+	public Transform3D translationMul(Vector3f v) {
+		translation.mul(v);
+		return this;
+	}
+
+	public Transform3D translationMul(float x, float y, float z) {
+		translation.mul(x, y, z);
+		return this;
+	}
+
+	public Transform3D setTranslation(Vector3f translation) {
+		this.translation = translation;
+		return this;
+	}
+
+	/** chaining methods for rotation */
+
 	public Transform3D translateAdd(Vector3f v) {
 		translation.add(v);
 		return this;
@@ -69,40 +150,31 @@ public class Transform3D extends Transform {
 	}
 
 	public Transform3D rotate(float x, float y, float z) {
-		// Use modulus to fix values to below 360 then convert values to radians
-		float newX = (float) Math.toRadians(x % 360);
-		float newY = (float) Math.toRadians(y % 360);
-		float newZ = (float) Math.toRadians(z % 360);
+		final float newX = (float) Math.toRadians(x % 360);
+		final float newY = (float) Math.toRadians(y % 360);
+		final float newZ = (float) Math.toRadians(z % 360);
 
-		// Create a quaternion with the delta rotation values
-		Quaternionf rotationDelta = new Quaternionf();
+		final Quaternionf rotationDelta = new Quaternionf();
 		rotationDelta.rotationXYZ(newX, newY, newZ);
 
-		// Calculate the inverse of the delta quaternion
-		Quaternionf conjugate = rotationDelta.conjugate();
+		final Quaternionf conjugate = rotationDelta.conjugate();
 
-		// Multiply this transform by the rotation delta quaternion and its inverse
 		rotation.mul(rotationDelta).mul(conjugate);
 		return this;
 	}
 
-	public Transform3D scaleAdd(Vector3f v) {
-		scale.add(v);
+	public Transform3D rotationSet(float x, float y, float z) {
+		this.rotation.rotationXYZ(x, y, z);
 		return this;
 	}
 
-	public Transform3D scaleAdd(float x, float y, float z) {
-		scale.add(x, y, z);
+	public Transform3D rotationSet(Vector3f v) {
+		this.rotation.rotationXYZ(v.x, v.y, v.z);
 		return this;
 	}
 
-	public Transform3D scaleMul(Vector3f v) {
-		scale.mul(v);
-		return this;
-	}
-
-	public Transform3D scaleMul(float x, float y, float z) {
-		scale.mul(x, y, z);
+	public Transform3D setRotation(Quaternionf rotation) {
+		this.rotation = rotation;
 		return this;
 	}
 
@@ -123,26 +195,6 @@ public class Transform3D extends Transform {
 		return scale;
 	}
 
-	public Transform3D setTranslation(Vector3f translation) {
-		this.translation = translation;
-		return this;
-	}
-
-	public Transform3D setRotation(Quaternionf rotation) {
-		this.rotation = rotation;
-		return this;
-	}
-
-	public Transform3D setScale(Vector3f scale) {
-		this.scale = scale;
-		return this;
-	}
-
-	public Transform3D setScale(float length) {
-		this.scale.set(length);
-		return this;
-	}
-
 	@Override
 	public Transform clone() {
 		return new Transform3D(translation.get(new Vector3f()), rotation.get(new Quaternionf()), scale.get(new Vector3f()));
@@ -150,7 +202,7 @@ public class Transform3D extends Transform {
 
 	@Override
 	public String toString() {
-		return "Transform:3D[t" + translation + ", r" + rotation + ", s" + scale + "]";
+		return "Transform3D [translation=" + translation + ", rotation=" + rotation + ", scale=" + scale + "]";
 	}
-	
+
 }

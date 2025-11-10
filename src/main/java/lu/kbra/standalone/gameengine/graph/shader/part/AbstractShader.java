@@ -29,6 +29,9 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject {
 
+	public static final String DEBUG_PROPERTY = AbstractShader.class.getName() + ".debug";
+	public static boolean DEBUG = Boolean.getBoolean(DEBUG_PROPERTY);
+
 	protected final String name;
 	protected int spid = -1;
 	protected Map<Integer, AbstractShaderPart> parts;
@@ -93,6 +96,10 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 	public void setUniform(String key, Object value) {
 		if (getUniformLocation(key) == -1) {
 			return;
+		}
+
+		if (DEBUG) {
+			GlobalLogger.info("[" + name + "] " + key + " = " + value);
 		}
 
 		final Pair<Property<Object>, Integer> unif = uniforms.get(key);
@@ -168,6 +175,10 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 	public void setUniformUnsigned(String key, Object value) {
 		if (getUniformLocation(key) == -1) {
 			return;
+		}
+
+		if (DEBUG) {
+			GlobalLogger.info("[" + name + "] (u) " + key + " = " + value);
 		}
 
 		final Pair<Property<Object>, Integer> unif = uniforms.get(key);

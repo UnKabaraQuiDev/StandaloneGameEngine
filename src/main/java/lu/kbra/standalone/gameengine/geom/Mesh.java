@@ -24,6 +24,8 @@ public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
 	int ATTRIB_INDICES_ID = -1;
 	int ATTRIB_NORMALS_ID = 1;
 	int ATTRIB_UVS_ID = 2;
+	
+	Vector2f UV_RANGE = new Vector2f(0, 1);
 
 	void addAttribArray(AttribArray data);
 
@@ -41,12 +43,12 @@ public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
 
 	BoundingBox getBoundingBox();
 
-	public static QuadMesh newQuad(String name, Material material2, Vector2f size) {
-		return new QuadMesh(name, material2, size);
+	public static LoadedQuadMesh newQuad(String name, Material material2, Vector2f size) {
+		return new LoadedQuadMesh(name, material2, size);
 	}
 
-	public static QuadMesh newQuad(GeoPlane plane, String name, Material material2, Vector2f size) {
-		return new QuadMesh(name, material2, size, plane);
+	public static LoadedQuadMesh newQuad(GeoPlane plane, String name, Material material2, Vector2f size) {
+		return new LoadedQuadMesh(name, material2, size, plane);
 	}
 
 	public static CubeMesh newCube(String name, Material material2, Vector3f size) {

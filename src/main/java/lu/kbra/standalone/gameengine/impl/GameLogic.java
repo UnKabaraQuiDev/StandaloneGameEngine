@@ -13,7 +13,7 @@ public abstract class GameLogic {
 	protected Window window;
 	protected AudioMaster audio;
 
-	protected Dispatcher MAIN_DISPATCHER, RENDER_DISPATCHER, UPDATE_DISPATCHER;
+	public Dispatcher MAIN_DISPATCHER, RENDER_DISPATCHER, UPDATE_DISPATCHER;
 
 	public void register(GameEngine e) {
 		this.engine = e;
