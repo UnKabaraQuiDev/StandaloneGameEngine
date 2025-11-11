@@ -3,6 +3,7 @@ package lu.kbra.standalone.gameengine.graph.render;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map.Entry;
 
 import lu.kbra.standalone.gameengine.GameEngine;
@@ -12,8 +13,8 @@ import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
 import lu.kbra.standalone.gameengine.objs.entity.components.InstanceEmitterComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.MeshComponent;
-import lu.kbra.standalone.gameengine.objs.entity.components.RenderPriorityComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.RenderConditionComponent;
+import lu.kbra.standalone.gameengine.objs.entity.components.RenderPriorityComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.SubEntitiesComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.TextEmitterComponent;
 import lu.kbra.standalone.gameengine.objs.text.TextEmitter;
@@ -89,7 +90,7 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 
 		if (e.hasComponentMatching(SubEntitiesComponent.class)) {
 			e.getComponent(SubEntitiesComponent.class).getEntities().sort(PRIORITY_COMPARATOR_ENTITY);
-			for (Entity en : e.getComponent(SubEntitiesComponent.class).getEntities()) {
+			for (Entity en : (List<Entity>) e.getComponent(SubEntitiesComponent.class).getEntities()) {
 				if (!en.isActive()) {
 					return;
 				}
