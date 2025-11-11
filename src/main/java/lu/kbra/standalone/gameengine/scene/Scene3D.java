@@ -49,9 +49,9 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 
 		synchronized (entitiesLock) {
 			this.entities.put(str, entity);
-		}
-		if (entity.hasComponentMatching(LightComponent.class)) {
-			this.lightEmittors.add(str);
+			if (entity.hasComponentMatching(LightComponent.class)) {
+				this.lightEmittors.add(str);
+			}
 		}
 		return entity;
 	}
