@@ -27,6 +27,10 @@ public class Dispatcher {
 		queue.add(task);
 	}
 
+	public void post(Runnable task) {
+		queue.add(new ScheduledTask(task, DEFAULT_PRIORITY));
+	}
+
 	// duplicated for optimisation
 	public int pump(long timeBudgetNanos) {
 		if (timeBudgetNanos <= 0)

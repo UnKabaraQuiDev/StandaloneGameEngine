@@ -83,6 +83,10 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 	}
 
 	public boolean updateText() {
+		System.err.println(text + ".");
+		System.err.println(text.length());
+		System.err.println(getCharCount());
+
 		if (charBuffer.getLength() < text.length()) {
 			GlobalLogger
 					.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length() + ") for length: "

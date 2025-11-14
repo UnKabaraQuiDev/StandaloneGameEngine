@@ -14,6 +14,7 @@ import org.joml.Vector2i;
 import org.joml.Vector4f;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.glfw.GLFW;
+import org.lwjgl.glfw.GLFWCharCallback;
 import org.lwjgl.glfw.GLFWCursorPosCallback;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWFramebufferSizeCallback;
@@ -25,11 +26,10 @@ import org.lwjgl.glfw.GLFWScrollCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.system.MemoryUtil;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class Window implements Cleanupable {
 
@@ -62,6 +62,8 @@ public abstract class Window implements Cleanupable {
 	protected GLFWCursorPosCallback cursorPosCallback;
 	protected KeyState[] mouseButtonStates = new KeyState[GLFW.GLFW_MOUSE_BUTTON_LAST + 1];
 	protected GLFWMouseButtonCallback mouseButtonCallback;
+	protected Character character;
+	protected GLFWCharCallback charCallback;
 
 	protected int width, height;
 
@@ -100,15 +102,13 @@ public abstract class Window implements Cleanupable {
 	}
 
 	protected void createCallbacks() {
-		keyCallback = GLFWKeyCallback
-				.create((window, key, scancode, action, mods) -> callback_key(window, key, scancode, action, mods));
+		keyCallback = GLFWKeyCallback.create((window, key, scancode, action, mods) -> callback_key(window, key, scancode, action, mods));
 		GLFW.glfwSetKeyCallback(handle, keyCallback);
 
 		joystickCallback = GLFWJoystickCallback.create((jid, event) -> callback_joystick(jid, event));
 		GLFW.glfwSetJoystickCallback(joystickCallback);
 
-		frameBufferCallback = GLFWFramebufferSizeCallback
-				.create((window, width, height) -> callback_frameBuffer(window, width, height));
+		frameBufferCallback = GLFWFramebufferSizeCallback.create((window, width, height) -> callback_frameBuffer(window, width, height));
 		GLFW.glfwSetFramebufferSizeCallback(handle, frameBufferCallback);
 
 		scrollCallback = GLFWScrollCallback.create((window, sx, sy) -> callback_scroll(window, sx, sy));
@@ -120,6 +120,70 @@ public abstract class Window implements Cleanupable {
 		mouseButtonCallback = GLFWMouseButtonCallback
 				.create((window, button, action, mods) -> callback_mouse_button(window, button, action, mods));
 		GLFW.glfwSetMouseButtonCallback(handle, mouseButtonCallback);
+
+		charCallback = GLFWCharCallback.create((window, codepoint) -> callback_char(window, codepoint));
+		GLFW.glfwSetCharCallback(handle, charCallback);
+	}
+
+	protected void callback_char(long window, int codepoint) {
+		character = decodeChar(codepoint);
+	}
+
+	private Character decodeChar(int code) {
+		if (code >= GLFW.GLFW_KEY_A && code <= GLFW.GLFW_KEY_Z) {
+			return (char) ('a' + (code - GLFW.GLFW_KEY_A));
+		}
+		if (code >= GLFW.GLFW_KEY_0 && code <= GLFW.GLFW_KEY_9) {
+			return (char) ('0' + (code - GLFW.GLFW_KEY_0));
+		}
+
+		switch (code) {
+		case GLFW.GLFW_KEY_SPACE:
+			return ' ';
+		case GLFW.GLFW_KEY_PERIOD:
+			return '.';
+		case GLFW.GLFW_KEY_COMMA:
+			return ',';
+		case GLFW.GLFW_KEY_MINUS:
+			return '-';
+		case GLFW.GLFW_KEY_EQUAL:
+			return '=';
+		case GLFW.GLFW_KEY_SEMICOLON:
+			return ';';
+		case GLFW.GLFW_KEY_APOSTROPHE:
+			return '\'';
+		case GLFW.GLFW_KEY_SLASH:
+			return '/';
+		case GLFW.GLFW_KEY_BACKSLASH:
+			return '\\';
+		case GLFW.GLFW_KEY_LEFT_BRACKET:
+			return '[';
+		case GLFW.GLFW_KEY_RIGHT_BRACKET:
+			return ']';
+
+		// Special control keys
+		case GLFW.GLFW_KEY_ENTER:
+			return '\n';
+		case GLFW.GLFW_KEY_TAB:
+			return '\t';
+		case GLFW.GLFW_KEY_BACKSPACE:
+			return '\b';
+		case GLFW.GLFW_KEY_ESCAPE:
+			return 27; // ASCII ESC
+
+		// Arrow keys can use placeholder chars
+		case GLFW.GLFW_KEY_LEFT:
+			return '←';
+		case GLFW.GLFW_KEY_RIGHT:
+			return '→';
+		case GLFW.GLFW_KEY_UP:
+			return '↑';
+		case GLFW.GLFW_KEY_DOWN:
+			return '↓';
+
+		default:
+			return '\0';
+		}
 	}
 
 	protected void callback_mouse_button(long window, int button, int action, int mods) {
@@ -165,10 +229,11 @@ public abstract class Window implements Cleanupable {
 				GLFWGamepadState state = GLFWGamepadState.create();
 				gamepadStates.put(jid, state);
 			}
-			GlobalLogger.log(Level.INFO,
-					"Joystick connected: jid:" + jid + ", name:" + GLFW.glfwGetJoystickName(jid) + ", guid:"
-							+ GLFW.glfwGetJoystickGUID(jid) + " -> name:" + GLFW.glfwGetGamepadName(jid)
-							+ ", joystick as gamepad:" + GLFW.glfwJoystickIsGamepad(jid));
+			GlobalLogger
+					.log(Level.INFO,
+							"Joystick connected: jid:" + jid + ", name:" + GLFW.glfwGetJoystickName(jid) + ", guid:"
+									+ GLFW.glfwGetJoystickGUID(jid) + " -> name:" + GLFW.glfwGetGamepadName(jid) + ", joystick as gamepad:"
+									+ GLFW.glfwJoystickIsGamepad(jid));
 		} else if (event == GLFW.GLFW_DISCONNECTED) {
 			connectedGamepads.remove(jid);
 			gamepadStates.remove(jid);
@@ -333,9 +398,14 @@ public abstract class Window implements Cleanupable {
 		GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, options.resizable ? GLFW.GLFW_TRUE : GLFW.GLFW_FALSE);
 		GLFW.glfwSwapInterval(options.vsync ? 1 : 0);
 		GLFWVidMode vidMode = GLFW.glfwGetVideoMode(monitor);
-		GLFW.glfwSetWindowMonitor(handle, options.fullscreen ? monitor : MemoryUtil.NULL, 0, 0,
-				!options.fullscreen ? options.windowSize.x : vidMode.width(),
-				!options.fullscreen ? options.windowSize.y : vidMode.height(), options.fps);
+		GLFW
+				.glfwSetWindowMonitor(handle,
+						options.fullscreen ? monitor : MemoryUtil.NULL,
+						0,
+						0,
+						!options.fullscreen ? options.windowSize.x : vidMode.width(),
+						!options.fullscreen ? options.windowSize.y : vidMode.height(),
+						options.fps);
 
 		this.width = !options.fullscreen ? options.windowSize.x : vidMode.width();
 		this.height = !options.fullscreen ? options.windowSize.y : vidMode.height();
@@ -351,6 +421,14 @@ public abstract class Window implements Cleanupable {
 
 	public WindowOptions getOptions() {
 		return options;
+	}
+
+	public Character getCharacter() {
+		return character;
+	}
+
+	public void clearCharacter() {
+		character = null;
 	}
 
 	public int getWidth() {
