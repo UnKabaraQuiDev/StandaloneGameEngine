@@ -9,6 +9,7 @@ import org.joml.Vector4f;
 import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
+import lu.kbra.standalone.gameengine.cache.attrib.Mat4fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.geom.LoadedQuadMesh;
 import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
@@ -100,7 +101,9 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 			material.setProperty(TextShader.TXT_LENGTH, text.length());
 		}
 
-		final Matrix4f[] transforms = new Matrix4f[instances.getParticleCount()];
+		final Matrix4f[] transforms = ((Mat4fAttribArray) instances.getParticleTransforms()).isLoaded()
+				? ((Mat4fAttribArray) instances.getParticleTransforms()).getData()
+				: new Matrix4f[instances.getParticleCount()];
 		final Integer[] chars = new Integer[instances.getParticleCount()];
 		Arrays.fill(chars, 0);
 
@@ -112,17 +115,17 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 	}
 
 	private void updateTextContent(Matrix4f[] transforms, Integer[] chars) {
-		if (TextAlignment.LEFT.equals(alignment)) {
+		if (TextAlignment.LEFT == alignment) {
 			updateTextContentLeft(transforms, chars);
-		} else if (TextAlignment.TEXT_LEFT.equals(alignment)) { // same as LEFT
+		} else if (TextAlignment.TEXT_LEFT == alignment) { // same as LEFT
 			updateTextContentLeft(transforms, chars);
-		} else if (TextAlignment.RIGHT.equals(alignment)) {
+		} else if (TextAlignment.RIGHT == alignment) {
 			updateTextContentRight(transforms, chars);
-		} else if (TextAlignment.TEXT_RIGHT.equals(alignment)) {
+		} else if (TextAlignment.TEXT_RIGHT == alignment) {
 			updateTextContentAbsRight(transforms, chars);
-		} else if (TextAlignment.CENTER.equals(alignment)) {
+		} else if (TextAlignment.CENTER == alignment) {
 			updateTextContentCenter(transforms, chars);
-		} else if (TextAlignment.TEXT_CENTER.equals(alignment)) {
+		} else if (TextAlignment.TEXT_CENTER == alignment) {
 			updateTextContentAbsCenter(transforms, chars);
 		}
 	}
@@ -147,9 +150,14 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
+
 				final float translationX = (character - (float) (widthCount[line] - 1) / 2) * (charSize.x + charOffset.x) - charSize.x;
 				final float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2 + charOffset.y;
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+
 				charIndex++;
 			}
 			}
@@ -167,23 +175,23 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 		for (int i = 0; i < text.length(); i++) {
 			char currentChar = text.charAt(i);
 
-			if (currentChar == '\n') {
+			switch (currentChar) {
+			case '\n' -> {
 				line++;
 				character = 0;
-			} else if (currentChar == '\t') {
-				character += TAB_SIZE;
-			} else if (currentChar == ' ') {
-				character++;
-			} else {
+			}
+			case '\t' -> character += TAB_SIZE;
+			case ' ' -> character++;
+			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-
 				float translationX = (character - widthCount[line] / 2) * (charSize.x + charOffset.x) + widthMax / 2 - charSize.x;
 				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
-
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
-
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
+			}
 			}
 		}
 	}
@@ -199,23 +207,23 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 		for (int i = 0; i < text.length(); i++) {
 			char currentChar = text.charAt(i);
 
-			if (currentChar == '\n') {
+			switch (currentChar) {
+			case '\n' -> {
 				line++;
 				character = 0;
-			} else if (currentChar == '\t') {
-				character += TAB_SIZE;
-			} else if (currentChar == ' ') {
-				character++;
-			} else {
+			}
+			case '\t' -> character += TAB_SIZE;
+			case ' ' -> character++;
+			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-
 				final float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x + charOffset.x) - charSize.x;
 				final float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
-
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
-
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
+			}
 			}
 		}
 	}
@@ -231,23 +239,23 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 		for (int i = 0; i < text.length(); i++) {
 			char currentChar = text.charAt(i);
 
-			if (currentChar == '\n') {
+			switch (currentChar) {
+			case '\n' -> {
 				line++;
 				character = 0;
-			} else if (currentChar == '\t') {
-				character += TAB_SIZE;
-			} else if (currentChar == ' ') {
-				character++;
-			} else {
+			}
+			case '\t' -> character += TAB_SIZE;
+			case ' ' -> character++;
+			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-
 				float translationX = (character - widthCount[line]) * (charSize.x + charOffset.x) - charSize.x / 2;
 				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
-
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
-
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
+			}
 			}
 		}
 	}
@@ -260,23 +268,23 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 		for (int i = 0; i < text.length(); i++) {
 			char currentChar = text.charAt(i);
 
-			if (currentChar == '\n') {
+			switch (currentChar) {
+			case '\n' -> {
 				line++;
 				character = 0;
-			} else if (currentChar == '\t') {
-				character += TAB_SIZE;
-			} else if (currentChar == ' ') {
-				character++;
-			} else {
+			}
+			case '\t' -> character += TAB_SIZE;
+			case ' ' -> character++;
+			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-
 				float translationX = character * (charSize.x + charOffset.x) - charSize.x / 2;
 				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
-
-				transforms[charIndex] = new Matrix4f().identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
-
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
+			}
 			}
 		}
 	}

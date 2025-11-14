@@ -26,10 +26,11 @@ import org.lwjgl.glfw.GLFWScrollCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.system.MemoryUtil;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class Window implements Cleanupable {
 
@@ -126,63 +127,8 @@ public abstract class Window implements Cleanupable {
 	}
 
 	protected void callback_char(long window, int codepoint) {
-		character = decodeChar(codepoint);
-	}
-
-	private Character decodeChar(int code) {
-		if (code >= GLFW.GLFW_KEY_A && code <= GLFW.GLFW_KEY_Z) {
-			return (char) ('a' + (code - GLFW.GLFW_KEY_A));
-		}
-		if (code >= GLFW.GLFW_KEY_0 && code <= GLFW.GLFW_KEY_9) {
-			return (char) ('0' + (code - GLFW.GLFW_KEY_0));
-		}
-
-		switch (code) {
-		case GLFW.GLFW_KEY_SPACE:
-			return ' ';
-		case GLFW.GLFW_KEY_PERIOD:
-			return '.';
-		case GLFW.GLFW_KEY_COMMA:
-			return ',';
-		case GLFW.GLFW_KEY_MINUS:
-			return '-';
-		case GLFW.GLFW_KEY_EQUAL:
-			return '=';
-		case GLFW.GLFW_KEY_SEMICOLON:
-			return ';';
-		case GLFW.GLFW_KEY_APOSTROPHE:
-			return '\'';
-		case GLFW.GLFW_KEY_SLASH:
-			return '/';
-		case GLFW.GLFW_KEY_BACKSLASH:
-			return '\\';
-		case GLFW.GLFW_KEY_LEFT_BRACKET:
-			return '[';
-		case GLFW.GLFW_KEY_RIGHT_BRACKET:
-			return ']';
-
-		// Special control keys
-		case GLFW.GLFW_KEY_ENTER:
-			return '\n';
-		case GLFW.GLFW_KEY_TAB:
-			return '\t';
-		case GLFW.GLFW_KEY_BACKSPACE:
-			return '\b';
-		case GLFW.GLFW_KEY_ESCAPE:
-			return 27; // ASCII ESC
-
-		// Arrow keys can use placeholder chars
-		case GLFW.GLFW_KEY_LEFT:
-			return '←';
-		case GLFW.GLFW_KEY_RIGHT:
-			return '→';
-		case GLFW.GLFW_KEY_UP:
-			return '↑';
-		case GLFW.GLFW_KEY_DOWN:
-			return '↓';
-
-		default:
-			return '\0';
+		if (codepoint > 0) {
+			character = (char) codepoint;
 		}
 	}
 
@@ -194,7 +140,7 @@ public abstract class Window implements Cleanupable {
 				mouseButtonStates[button] = KeyState.RELEASE;
 			}
 		} else {
-			GlobalLogger.severe("Unsuppored mouse button: " + button);
+			GlobalLogger.severe("Unsupported mouse button: " + button);
 		}
 	}
 
@@ -203,7 +149,6 @@ public abstract class Window implements Cleanupable {
 	}
 
 	protected void callback_scroll(long window, double sx, double sy) {
-		// System.err.println("scroll: " + sx + ", " + sy + " handle" + window);
 		if (window != handle)
 			return;
 		scroll.add(sx, sy);
@@ -242,8 +187,9 @@ public abstract class Window implements Cleanupable {
 	}
 
 	protected void callback_key(long window, int key, int scancode, int action, int mods) {
-		if (window != handle)
+		if (window != handle) {
 			return;
+		}
 
 		if (key == GLFW.GLFW_KEY_ESCAPE && action == GLFW.GLFW_PRESS) {
 			setWindowShouldClose(true);

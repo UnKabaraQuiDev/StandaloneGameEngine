@@ -103,6 +103,10 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		return !isLoaded() ? null : data[i];
 	}
 
+	public Matrix4f[] getData() {
+		return data;
+	}
+
 	@Override
 	public int getMinIndex() {
 		return index;
