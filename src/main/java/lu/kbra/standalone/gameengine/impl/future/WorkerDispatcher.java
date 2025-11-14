@@ -17,13 +17,14 @@ public class WorkerDispatcher extends Dispatcher implements Runnable {
 			workers[i] = ThreadBuilder.create(group, this).name("Worker-" + name + "-" + index).daemon(true).start();
 		}
 	}
-	
+
 	@Override
 	public void run() {
 		while (!Thread.currentThread().isInterrupted()) {
 			try {
 				final ScheduledTask task = queue.take();
 				task.run();
+				task.setRan(true);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 				Thread.currentThread().interrupt();
@@ -34,12 +35,27 @@ public class WorkerDispatcher extends Dispatcher implements Runnable {
 		}
 	}
 
-	public void post(Runnable task) {
-		queue.add(new ScheduledTask(task, ScheduledTask.DEFAULT_PRIORITY));
+	public ScheduledTask post(Runnable task, int priority) {
+		final ScheduledTask task2 = new ScheduledTask(task, priority);
+		queue.add(task2);
+		return task2;
 	}
 
-	public void post(Runnable task, int priority) {
-		queue.add(new ScheduledTask(task, priority));
+	public ScheduledTask post(Runnable task, int priority, String source) {
+		final ScheduledTask task2 = new ScheduledTask(task, priority, source);
+		queue.add(task2);
+		return task2;
+	}
+
+	public ScheduledTask post(ScheduledTask task) {
+		queue.add(task);
+		return task;
+	}
+
+	public ScheduledTask post(Runnable task) {
+		final ScheduledTask task2 = new ScheduledTask(task, DEFAULT_PRIORITY);
+		queue.add(task2);
+		return task2;
 	}
 
 	public void shutdown() {

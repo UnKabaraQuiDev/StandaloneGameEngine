@@ -70,6 +70,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	public abstract boolean isLoaded();
 
+	public abstract Object getData();
+
 	public void enable() {
 		GL_W.glEnableVertexAttribArray(index);
 		assert GL_W.checkError("EnableVertexAttribArray(" + index + ") (" + name + ")");
@@ -174,7 +176,7 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
 	}
 
-	public static <T> boolean update(AttribArray arr, T[] data) {
+	public static boolean update(AttribArray arr, Object data) {
 		if (arr == null) {
 			GlobalLogger.log();
 			GlobalLogger.warning("AttribArray is null!");
@@ -197,6 +199,34 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 			return ((Vec3fAttribArray) arr).update((Vector3f[]) data);
 		} else if (arr instanceof Mat3x2fAttribArray) {
 			return ((Mat3x2fAttribArray) arr).update(GameEngineUtils.castArrayMat3x2f(data));
+		}
+
+		return false;
+	}
+
+	public static boolean resize(AttribArray arr, Object data) {
+		if (arr == null) {
+			GlobalLogger.log();
+			GlobalLogger.warning("AttribArray is null!");
+			return false;
+		}
+
+		arr.bind();
+
+		if (arr instanceof IntAttribArray) {
+			return ((IntAttribArray) arr).resize(PCUtils.toPrimitiveInt(data));
+		} else if (arr instanceof UIntAttribArray) {
+			return ((UIntAttribArray) arr).resize(PCUtils.toPrimitiveInt(data));
+		} else if (arr instanceof FloatAttribArray) {
+			return ((FloatAttribArray) arr).resize(PCUtils.toPrimitiveFloat(data));
+		} else if (arr instanceof Mat4fAttribArray) {
+			return ((Mat4fAttribArray) arr).resize(GameEngineUtils.castArrayMat4f(data));
+		} else if (arr instanceof Vec4fAttribArray) {
+			return ((Vec4fAttribArray) arr).resize((Vector4f[]) data);
+		} else if (arr instanceof Vec3fAttribArray) {
+			return ((Vec3fAttribArray) arr).resize((Vector3f[]) data);
+		} else if (arr instanceof Mat3x2fAttribArray) {
+			return ((Mat3x2fAttribArray) arr).resize(GameEngineUtils.castArrayMat3x2f(data));
 		}
 
 		return false;

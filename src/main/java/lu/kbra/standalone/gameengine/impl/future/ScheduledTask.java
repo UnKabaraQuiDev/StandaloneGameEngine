@@ -7,6 +7,7 @@ public class ScheduledTask implements Comparable<ScheduledTask>, Runnable {
 	private final Runnable task;
 	private final int priority;
 	private final String sourceString;
+	private volatile boolean ran;
 
 	public ScheduledTask(Runnable task, int priority, String source) {
 		this.task = task;
@@ -36,6 +37,14 @@ public class ScheduledTask implements Comparable<ScheduledTask>, Runnable {
 
 	public String getSourceString() {
 		return sourceString;
+	}
+
+	public boolean wasRan() {
+		return ran;
+	}
+
+	public void setRan(boolean ran) {
+		this.ran = ran;
 	}
 
 }

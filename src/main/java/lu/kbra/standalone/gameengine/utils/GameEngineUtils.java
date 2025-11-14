@@ -2,6 +2,7 @@ package lu.kbra.standalone.gameengine.utils;
 
 import java.awt.Color;
 import java.awt.geom.Rectangle2D;
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 import javax.swing.GroupLayout.Alignment;
@@ -276,18 +277,18 @@ public final class GameEngineUtils {
 		return result;
 	}
 
-	public static Matrix4f[] castArrayMat4f(Object[] transforms) {
-		Matrix4f[] t = new Matrix4f[transforms.length];
-		for (int i = 0; i < transforms.length; i++)
-			t[i] = (Matrix4f) transforms[i];
-		return t;
+	public static Matrix4f[] castArrayMat4f(Object transforms) {
+		if (transforms instanceof Matrix4f[]) {
+			return (Matrix4f[]) transforms;
+		}
+		return Arrays.stream((Object[]) transforms).map(c -> (Matrix4f) c).toArray(Matrix4f[]::new);
 	}
 
-	public static Matrix3x2f[] castArrayMat3x2f(Object[] transforms) {
-		Matrix3x2f[] t = new Matrix3x2f[transforms.length];
-		for (int i = 0; i < transforms.length; i++)
-			t[i] = (Matrix3x2f) transforms[i];
-		return t;
+	public static Matrix3x2f[] castArrayMat3x2f(Object transforms) {
+		if (transforms instanceof Matrix4f[]) {
+			return (Matrix3x2f[]) transforms;
+		}
+		return Arrays.stream((Object[]) transforms).map(c -> (Matrix3x2f) c).toArray(Matrix3x2f[]::new);
 	}
 
 	public static Vector3f[] floatArrayToVec3f(float[] arr) {
@@ -441,6 +442,27 @@ public final class GameEngineUtils {
 				flatArray[i * 4 + 2] = cdata.z;
 				flatArray[i * 4 + 3] = cdata.z;
 			}
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Matrix4f[] data) {
+		float[] flatArray = new float[data.length * 16];
+		for (int i = 0; i < data.length; i++) {
+			final float[] dat = new float[16];
+			if (data[i] != null)
+				data[i].get(dat);
+			System.arraycopy(dat, 0, flatArray, i * 16, 16);
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Matrix3x2f[] data) {
+		final float[] flatArray = new float[data.length * 6];
+		for (int i = 0; i < data.length; i++) {
+			float[] dat = new float[3 * 2];
+			data[i].get(dat);
+			System.arraycopy(dat, 0, flatArray, i * 6, 6);
 		}
 		return flatArray;
 	}

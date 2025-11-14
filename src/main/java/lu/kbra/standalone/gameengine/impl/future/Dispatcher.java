@@ -15,26 +15,34 @@ public class Dispatcher {
 		this.name = name;
 	}
 
-	public void post(Runnable task, int priority) {
-		queue.add(new ScheduledTask(task, priority));
+	public ScheduledTask post(Runnable task, int priority) {
+		final ScheduledTask task2 = new ScheduledTask(task, priority);
+		queue.add(task2);
+		return task2;
 	}
 
-	public void post(Runnable task, int priority, String source) {
-		queue.add(new ScheduledTask(task, priority, source));
+	public ScheduledTask post(Runnable task, int priority, String source) {
+		final ScheduledTask task2 = new ScheduledTask(task, priority, source);
+		queue.add(task2);
+		return task2;
 	}
 
-	public void post(ScheduledTask task) {
+	public ScheduledTask post(ScheduledTask task) {
 		queue.add(task);
+		return task;
 	}
 
-	public void post(Runnable task) {
-		queue.add(new ScheduledTask(task, DEFAULT_PRIORITY));
+	public ScheduledTask post(Runnable task) {
+		final ScheduledTask task2 = new ScheduledTask(task, DEFAULT_PRIORITY);
+		queue.add(task2);
+		return task2;
 	}
 
-	// duplicated for optimisation
+	// duplicated for optimization
 	public int pump(long timeBudgetNanos) {
-		if (timeBudgetNanos <= 0)
+		if (timeBudgetNanos <= 0) {
 			return 0;
+		}
 
 		int count = 0;
 		final long deadline = System.nanoTime() + timeBudgetNanos;
@@ -43,6 +51,7 @@ public class Dispatcher {
 			if (task == null)
 				break;
 			task.run();
+			task.setRan(true);
 			count++;
 		}
 
@@ -52,8 +61,9 @@ public class Dispatcher {
 	public int pump(long timeBudgetNanos, List<String> list) {
 		list.clear();
 
-		if (timeBudgetNanos <= 0)
+		if (timeBudgetNanos <= 0) {
 			return 0;
+		}
 
 		int count = 0;
 		final long deadline = System.nanoTime() + timeBudgetNanos;
@@ -62,6 +72,7 @@ public class Dispatcher {
 			if (task == null)
 				break;
 			task.run();
+			task.setRan(true);
 			list.add(task.getSourceString());
 			count++;
 		}

@@ -53,6 +53,7 @@ public class FloatAttribArray extends AttribArray {
 		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 
+	@Override
 	public float[] getData() {
 		return data;
 	}
@@ -67,7 +68,25 @@ public class FloatAttribArray extends AttribArray {
 		return data != null;
 	}
 
+	@Override
 	public Float get(int i) {
 		return !isLoaded() ? null : data[i];
 	}
+
+	public boolean resize(float[] nPos) {
+		data = nPos;
+
+		if (nPos.length == data.length) {
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
+		} else {
+			GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		}
+
+		if (bufferType != BufferType.ELEMENT_ARRAY) {
+			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
+		}
+
+		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
+	}
+
 }

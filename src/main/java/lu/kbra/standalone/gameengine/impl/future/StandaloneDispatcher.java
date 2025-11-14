@@ -18,6 +18,7 @@ public class StandaloneDispatcher extends Dispatcher implements Runnable {
 			try {
 				final ScheduledTask task = queue.take();
 				task.run();
+				task.setRan(true);
 			} catch (InterruptedException e) {
 				Thread.currentThread().interrupt();
 				break;

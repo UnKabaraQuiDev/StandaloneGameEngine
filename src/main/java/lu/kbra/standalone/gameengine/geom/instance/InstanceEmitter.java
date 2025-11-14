@@ -1,5 +1,6 @@
 package lu.kbra.standalone.gameengine.geom.instance;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.logging.Level;
@@ -30,7 +31,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 	protected Mat4fAttribArray instancesTransforms;
 	protected AttribArray[] instancesAttribs;
-	protected final int count;
+	protected int count;
 
 	protected Mesh instanceMesh;
 
@@ -38,23 +39,13 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		this.name = name;
 		this.count = count;
 
-		this.particles = new Instance[count];
-		Matrix4f[] transforms = new Matrix4f[count];
-		for (int i = 0; i < count; i++) {
-			Object[] atts = new Object[attribs.length];
-			for (int a = 0; a < attribs.length; a++) {
-				atts[a] = attribs[a].get(i);
-			}
-			this.particles[i] = new Instance(i, baseTransform.clone(), atts);
+		this.instancesAttribs = attribs;
+		this.instanceMesh = mesh;
 
-			transforms[i] = this.particles[i].getTransform().getMatrix();
-		}
+		final Matrix4f[] transforms = resize(count, baseTransform);
 
 		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME, TRANSFORM_BUFFER_INDEX, 1, transforms, BufferType.ARRAY,
 				false, 1);
-
-		this.instancesAttribs = attribs;
-		this.instanceMesh = mesh;
 
 		mesh.bind();
 
@@ -173,6 +164,55 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 	public void unbind() {
 		this.instanceMesh.unbind();
+	}
+
+	public Matrix4f[] resize(int newCount, Transform baseTransform) {
+		this.count = newCount;
+		final Matrix4f[] transforms;
+
+		if (particles != null && particles.length > count) { // reduce the array (data loss)
+			final Instance[] newParts = new Instance[count];
+			System.arraycopy(this.particles, 0, newParts, 0, count);
+			this.particles = newParts;
+
+			transforms = Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new);
+
+			for (AttribArray arr : instancesAttribs) {
+				final Object nData = Array.newInstance(arr.getData().getClass().getComponentType(), newCount);
+				System.arraycopy(arr.getData(), 0, nData, 0, newCount);
+				AttribArray.resize(arr, nData);
+			}
+		} else { // add new ones
+
+			final Instance[] newParts = new Instance[count];
+			if (this.particles != null) {
+				System.arraycopy(this.particles, 0, newParts, 0, this.particles.length);
+			}
+			for (int i = this.particles == null ? 0 : this.particles.length; i < count; i++) {
+				final Object[] atts = new Object[this.instancesAttribs.length];
+				for (int a = 0; a < instancesAttribs.length; a++) {
+					atts[a] = instancesAttribs[a].get(i);
+				}
+				newParts[i] = new Instance(i, baseTransform.clone(), this.instancesAttribs);
+			}
+			this.particles = newParts;
+
+			transforms = Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new);
+		}
+
+		if (instancesTransforms != null) {
+			instancesTransforms.resize(transforms);
+		}
+
+		for (AttribArray arr : instancesAttribs) {
+			final Object nData = Array.newInstance(arr.getData().getClass().getComponentType(), newCount);
+			System.arraycopy(arr.getData(), 0, nData, 0, Math.min(Array.getLength(arr.getData()), newCount));
+			AttribArray.resize(arr, nData);
+		}
+
+		this.count = newCount;
+
+		return transforms;
 	}
 
 	@Override

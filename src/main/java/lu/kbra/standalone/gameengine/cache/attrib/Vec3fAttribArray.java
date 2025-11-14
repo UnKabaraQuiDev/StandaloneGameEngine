@@ -56,6 +56,25 @@ public class Vec3fAttribArray extends AttribArray {
 		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 
+	public boolean resize(Vector3f[] nPos) {
+		data = nPos;
+
+		if (nPos.length == data.length) {
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
+		} else {
+			GL_W
+					.glBufferData(bufferType.getGlId(),
+							GameEngineUtils.toFlatArray(data),
+							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		}
+
+		if (bufferType != BufferType.ELEMENT_ARRAY) {
+			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
+		}
+
+		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
+	}
+
 	public FloatAttribArray toFloatAttribArray() {
 		return new FloatAttribArray(name, index, dataSize * 3, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}

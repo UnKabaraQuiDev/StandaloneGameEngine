@@ -6,6 +6,7 @@ import java.util.Arrays;
 import org.joml.Matrix4f;
 import org.lwjgl.BufferUtils;
 
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
@@ -45,7 +46,7 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 
 	@Override
 	public void init() {
-		GL_W.glBufferData(bufferType.getGlId(), toFloatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 	}
 
 	public boolean update(Matrix4f[] nPos) {
@@ -54,7 +55,7 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		}
 		data = nPos;
 
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFloatArray());
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
 		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 
@@ -74,19 +75,8 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		return fb;
 	}
 
-	public float[] toFloatArray() {
-		float[] flatArray = new float[data.length * 16];
-		for (int i = 0; i < data.length; i++) {
-			float[] dat = new float[16];
-			if (data[i] != null)
-				data[i].get(dat);
-			System.arraycopy(dat, 0, flatArray, i * 16, 16);
-		}
-		return flatArray;
-	}
-
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, dataSize * 16, toFloatArray(), bufferType, iStatic);
+		return new FloatAttribArray(name, index, dataSize * 16, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	@Override
@@ -115,6 +105,25 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 	@Override
 	public int getMaxIndex() {
 		return index + 3;
+	}
+
+	public boolean resize(Matrix4f[] nPos) {
+		data = nPos;
+
+		if (nPos.length == data.length) {
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
+		} else {
+			GL_W
+					.glBufferData(bufferType.getGlId(),
+							GameEngineUtils.toFlatArray(data),
+							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		}
+
+		if (bufferType != BufferType.ELEMENT_ARRAY) {
+			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
+		}
+
+		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 
 	@Override
