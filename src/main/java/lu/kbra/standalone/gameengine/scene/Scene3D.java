@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
+import lu.kbra.standalone.gameengine.objs.entity.ParentAware;
 import lu.kbra.standalone.gameengine.objs.entity.components.LightComponent;
 import lu.kbra.standalone.gameengine.objs.entity.components.PointLightComponent;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
@@ -44,8 +45,9 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 	}
 
 	public Entity addEntity(String str, Entity entity) {
-		if (entity == null)
+		if (entity == null) {
 			return null;
+		}
 
 		synchronized (entitiesLock) {
 			this.entities.put(str, entity);
@@ -53,6 +55,11 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 				this.lightEmittors.add(str);
 			}
 		}
+
+		if (entity instanceof ParentAware pa) {
+			pa.setParent(this);
+		}
+
 		return entity;
 	}
 
