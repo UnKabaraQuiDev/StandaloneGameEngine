@@ -29,7 +29,7 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject {
 
-	public static final String DEBUG_PROPERTY = AbstractShader.class.getName() + ".debug";
+	public static final String DEBUG_PROPERTY = AbstractShader.class.getSimpleName() + ".debug";
 	public static boolean DEBUG = Boolean.getBoolean(DEBUG_PROPERTY);
 
 	protected final String name;
