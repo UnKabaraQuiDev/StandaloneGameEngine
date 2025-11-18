@@ -6,6 +6,13 @@ public abstract class Transform implements Cloneable {
 
 	protected Matrix4f matrix;
 
+	public Transform() {
+	}
+
+	protected Transform(boolean _noAction) {
+		matrix = new Matrix4f();
+	}
+
 	public abstract Matrix4f updateMatrix();
 
 	public Matrix4f getMatrix() {

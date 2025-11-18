@@ -10,6 +10,10 @@ public class Transform3D extends Transform {
 	protected Quaternionf rotation;
 	protected Vector3f scale;
 
+	protected Transform3D(boolean _noAction) {
+		super(_noAction);
+	}
+
 	public Transform3D() {
 		this(new Vector3f(0), new Quaternionf().identity(), new Vector3f(1));
 	}
@@ -197,7 +201,8 @@ public class Transform3D extends Transform {
 
 	@Override
 	public Transform clone() {
-		return new Transform3D(translation.get(new Vector3f()), rotation.get(new Quaternionf()), scale.get(new Vector3f()));
+		return new Transform3D(translation.get(new Vector3f()), rotation.get(new Quaternionf()),
+				scale.get(new Vector3f()));
 	}
 
 	@Override
