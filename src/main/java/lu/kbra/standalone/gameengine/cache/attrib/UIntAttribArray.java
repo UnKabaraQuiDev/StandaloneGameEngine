@@ -1,5 +1,7 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
+import java.util.Arrays;
+
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
@@ -27,7 +29,8 @@ public class UIntAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static, int divisor) {
+	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static,
+			int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -62,8 +65,9 @@ public class UIntAttribArray extends AttribArray {
 	}
 
 	public boolean update(int[] nPos) {
-		if (!iStatic && nPos.length != data.length)
+		if (!iStatic && nPos.length != data.length) {
 			return false;
+		}
 		data = nPos;
 
 		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
@@ -71,13 +75,17 @@ public class UIntAttribArray extends AttribArray {
 	}
 
 	public boolean resize(int[] nPos) {
-		data = nPos;
+		bind();
 
 		if (nPos.length == data.length) {
-			GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
+			assert GL_W.checkError("BufferSubData(" + bufferType + ", 0, " + nPos.length + ")");
 		} else {
-			GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			GL_W.glBufferData(bufferType.getGlId(), nPos, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			assert GL_W.checkError("BufferData(" + bufferType + ", " + nPos.length + ", " + iStatic + ")");
 		}
+
+		data = nPos;
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
 			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);

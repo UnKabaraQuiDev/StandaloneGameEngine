@@ -1,9 +1,9 @@
 package lu.kbra.standalone.gameengine.geom;
 
-import org.joml.Vector2f;
+import org.joml.Vector2fc;
 
 public interface QuadMesh extends Mesh {
 
-	Vector2f getSize();
+	Vector2fc getSize();
 
 }

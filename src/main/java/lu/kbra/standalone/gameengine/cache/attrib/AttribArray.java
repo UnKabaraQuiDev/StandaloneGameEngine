@@ -173,7 +173,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	@Override
 	public String toString() {
-		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
+		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "="
+				+ getDataCount();
 	}
 
 	public static boolean update(AttribArray arr, Object data) {
@@ -199,6 +200,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 			return ((Vec3fAttribArray) arr).update((Vector3f[]) data);
 		} else if (arr instanceof Mat3x2fAttribArray) {
 			return ((Mat3x2fAttribArray) arr).update(GameEngineUtils.castArrayMat3x2f(data));
+		} else {
+			PCUtils.throwUnsupported(arr.getClass().toString());
 		}
 
 		return false;
@@ -211,22 +214,12 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 			return false;
 		}
 
-		arr.bind();
-
-		if (arr instanceof IntAttribArray) {
-			return ((IntAttribArray) arr).resize(PCUtils.toPrimitiveInt(data));
-		} else if (arr instanceof UIntAttribArray) {
-			return ((UIntAttribArray) arr).resize(PCUtils.toPrimitiveInt(data));
-		} else if (arr instanceof FloatAttribArray) {
-			return ((FloatAttribArray) arr).resize(PCUtils.toPrimitiveFloat(data));
-		} else if (arr instanceof Mat4fAttribArray) {
-			return ((Mat4fAttribArray) arr).resize(GameEngineUtils.castArrayMat4f(data));
-		} else if (arr instanceof Vec4fAttribArray) {
-			return ((Vec4fAttribArray) arr).resize((Vector4f[]) data);
-		} else if (arr instanceof Vec3fAttribArray) {
-			return ((Vec3fAttribArray) arr).resize((Vector3f[]) data);
-		} else if (arr instanceof Mat3x2fAttribArray) {
-			return ((Mat3x2fAttribArray) arr).resize(GameEngineUtils.castArrayMat3x2f(data));
+		if (arr instanceof Mat4fAttribArray marr) {
+			return marr.resize(GameEngineUtils.castArrayMat4f(data));
+		} else if (arr instanceof UIntAttribArray uarr) {
+			return uarr.resize(PCUtils.toPrimitiveInt(data));
+		} else{
+			PCUtils.throwUnsupported(arr.getClass().toString());
 		}
 
 		return false;

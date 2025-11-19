@@ -42,17 +42,25 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		this.instancesAttribs = attribs;
 		this.instanceMesh = mesh;
 
-		final Matrix4f[] transforms = resize(count, baseTransform);
+		this.particles = new Instance[count];
 
-		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME, TRANSFORM_BUFFER_INDEX, 1, transforms, BufferType.ARRAY,
-				false, 1);
+		for (int i = 0; i < count; i++) {
+			final Object[] atts = new Object[this.instancesAttribs.length];
+
+			particles[i] = new Instance(i, baseTransform.clone(), atts);
+		}
+
+		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME, TRANSFORM_BUFFER_INDEX, 1,
+				Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new),
+				BufferType.ARRAY, false, 1);
 
 		mesh.bind();
 
 		mesh.addAttribArray(this.instancesTransforms);
 		for (AttribArray a : this.instancesAttribs) {
 			if (mesh.getVbo().containsKey(a.getIndex())) {
-				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
+				GlobalLogger.log(Level.WARNING,
+						"Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
 			}
 			mesh.addAttribArray(a);
@@ -60,20 +68,16 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 		mesh.unbind();
 
-		// System.err.println(this.instancesTransforms);
-
-		GlobalLogger
-				.log(Level.INFO,
-						"ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo() + "); count:" + count + "; attribs: "
-								+ Arrays.toString(attribs));
+		GlobalLogger.log(Level.INFO, "ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo()
+				+ "); count:" + count + "; attribs: " + Arrays.toString(attribs));
 	}
 
 	/**
 	 * <h3>DOES NOT CALL Transform#updateMatrix()</h3>
 	 */
 	public void update(Consumer<Instance> update) {
-		Matrix4f[] transforms = new Matrix4f[this.count];
-		Object[][] atts = new Object[this.instancesAttribs.length][this.count];
+		final Matrix4f[] transforms = new Matrix4f[this.count];
+		final Object[][] atts = new Object[this.instancesAttribs.length][this.count];
 
 		for (int i = 0; i < this.count; i++) {
 			update.accept(this.particles[i]);
@@ -95,6 +99,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			}
 		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
+		assert GL_W.checkError("BindBuffer(ARRAY, 0)");
 	}
 
 	public void updateDirect(Matrix4f[] transforms, Object[][] atts) {
@@ -110,10 +115,8 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 		for (int c = 0; c < this.instancesAttribs.length; c++) {
 			if (!AttribArray.update(this.instancesAttribs[c], atts[c])) {
-				GlobalLogger
-						.log(Level.WARNING,
-								"Failed to update attrib array: " + this.instancesAttribs[c].getName() + " ("
-										+ this.instancesAttribs[c].getIndex() + ")");
+				GlobalLogger.log(Level.WARNING, "Failed to update attrib array: " + this.instancesAttribs[c].getName()
+						+ " (" + this.instancesAttribs[c].getIndex() + ")");
 			}
 		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
@@ -121,8 +124,8 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 	}
 
 	public void updateParticles() {
-		Matrix4f[] transforms = new Matrix4f[this.count];
-		Object[][] atts = new Object[this.instancesAttribs.length][this.count];
+		final Matrix4f[] transforms = new Matrix4f[this.count];
+		final Object[][] atts = new Object[this.instancesAttribs.length][this.count];
 
 		for (int i = 0; i < this.count; i++) {
 			transforms[i] = this.particles[i].getTransform().getMatrix();
@@ -142,10 +145,11 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			}
 		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
+		assert GL_W.checkError("BindBuffer(ARRAY, 0)");
 	}
 
 	public void updateParticlesTransforms() {
-		Matrix4f[] transforms = new Matrix4f[this.count];
+		final Matrix4f[] transforms = new Matrix4f[this.count];
 
 		for (int i = 0; i < this.count; i++) {
 			transforms[i] = this.particles[i].getTransform().getMatrix();
@@ -156,6 +160,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		}
 
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
+		assert GL_W.checkError("BindBuffer(ARRAY, 0)");
 	}
 
 	public void bind() {
@@ -170,7 +175,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		this.count = newCount;
 		final Matrix4f[] transforms;
 
-		if (particles != null && particles.length > count) { // reduce the array (data loss)
+		if (particles != null && particles.length > count) { // reduce the array
 			final Instance[] newParts = new Instance[count];
 			System.arraycopy(this.particles, 0, newParts, 0, count);
 			this.particles = newParts;
@@ -182,18 +187,18 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 				System.arraycopy(arr.getData(), 0, nData, 0, newCount);
 				AttribArray.resize(arr, nData);
 			}
+
 		} else { // add new ones
 
-			final Instance[] newParts = new Instance[count];
+			final Instance[] newParts = new Instance[newCount];
 			if (this.particles != null) {
 				System.arraycopy(this.particles, 0, newParts, 0, this.particles.length);
 			}
+
 			for (int i = this.particles == null ? 0 : this.particles.length; i < count; i++) {
 				final Object[] atts = new Object[this.instancesAttribs.length];
-				for (int a = 0; a < instancesAttribs.length; a++) {
-					atts[a] = instancesAttribs[a].get(i);
-				}
-				newParts[i] = new Instance(i, baseTransform.clone(), this.instancesAttribs);
+
+				newParts[i] = new Instance(i, baseTransform.clone(), atts);
 			}
 			this.particles = newParts;
 

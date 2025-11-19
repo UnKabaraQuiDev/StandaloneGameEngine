@@ -1,6 +1,6 @@
 package lu.kbra.standalone.gameengine.utils;
 
-import org.joml.Quaternionf;
+import org.joml.Quaternionfc;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
@@ -24,7 +24,7 @@ public final class MathUtils {
 		return Math.abs(a - b) <= epsilon;
 	}
 
-	public static Vector3f vec3fromQuatf(Quaternionf rotation) {
+	public static Vector3f vec3fromQuatf(Quaternionfc rotation) {
 		return rotation.transform(GameEngine.Z_POS, new Vector3f());
 	}
 

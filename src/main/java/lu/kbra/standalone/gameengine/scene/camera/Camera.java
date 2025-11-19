@@ -6,8 +6,8 @@ import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
-import lu.kbra.standalone.gameengine.GameEngine;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 import lu.kbra.standalone.gameengine.utils.geo.Ray;
@@ -54,13 +54,13 @@ public abstract class Camera {
 		return projectPlane(ray, p1, p2, normal);
 	}
 
-	public Vector3f projectPlane(Ray ray, Vector3f p1, Vector3f p2, Vector3f normal) {
+	public Vector3f projectPlane(Ray ray, Vector3fc p1, Vector3fc p2, Vector3fc normal) {
 		float d = -normal.dot(p1); // Calculate plane distance
 
 		// Create plane equation: ax + by + cz + d = 0
-		float a = normal.x;
-		float b = normal.y;
-		float c = normal.z;
+		float a = normal.x();
+		float b = normal.y();
+		float c = normal.z();
 
 		Vector3f origin = ray.getOrigin();
 		Vector3f direction = ray.getDir();

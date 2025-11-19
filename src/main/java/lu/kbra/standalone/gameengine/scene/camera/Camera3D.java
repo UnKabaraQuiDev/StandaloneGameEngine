@@ -5,15 +5,15 @@ import java.io.PrintStream;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 import lu.kbra.standalone.gameengine.GameEngine;
 
 public class Camera3D extends Camera {
 
 	protected Vector3f position;
-	// protected float pitch = 0, yaw = 0, roll = 0;
 	protected Quaternionf rotation;
-	protected Vector3f up = GameEngine.UP;
+	protected Vector3f up = new Vector3f(GameEngine.UP);
 
 	public Camera3D(Vector3f position, Quaternionf rot, Projection proj) {
 		super(proj);
@@ -25,7 +25,7 @@ public class Camera3D extends Camera {
 		updateMatrix();
 	}
 
-	public Camera3D lookAt(Vector3f from, Vector3f to) {
+	public Camera3D lookAt(Vector3fc from, Vector3fc to) {
 		Vector3f forward = new Vector3f(to).sub(from).normalize();
 		Vector3f right = forward.cross(up, new Vector3f()).normalize();
 
@@ -35,11 +35,6 @@ public class Camera3D extends Camera {
 
 		position = new Vector3f(from);
 
-		return this;
-	}
-
-	public Camera3D roll(float z) {
-		rotation.rotateLocalZ(z);
 		return this;
 	}
 

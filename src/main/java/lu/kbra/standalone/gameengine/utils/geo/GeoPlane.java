@@ -4,29 +4,32 @@ import static lu.kbra.standalone.gameengine.GameEngine.X_POS;
 import static lu.kbra.standalone.gameengine.GameEngine.Y_POS;
 import static lu.kbra.standalone.gameengine.GameEngine.Z_POS;
 
-import org.joml.Quaternionf;
+import org.joml.Quaternionfc;
 import org.joml.Vector2f;
+import org.joml.Vector2fc;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 import lu.kbra.standalone.gameengine.utils.MathUtils;
 
 public enum GeoPlane {
 
-	XY(new Vector3f[] { X_POS, Y_POS }, Z_POS), XZ(new Vector3f[] { X_POS, Z_POS }, Y_POS), YZ(new Vector3f[] { Y_POS, Z_POS }, X_POS);
+	XY(new Vector3fc[] { X_POS, Y_POS }, Z_POS), XZ(new Vector3fc[] { X_POS, Z_POS }, Y_POS),
+	YZ(new Vector3fc[] { Y_POS, Z_POS }, X_POS);
 
-	private Vector3f[] points;
-	private Vector3f normal;
+	private Vector3fc[] points;
+	private Vector3fc normal;
 
-	private GeoPlane(Vector3f[] p, Vector3f n) {
+	private GeoPlane(Vector3fc[] p, Vector3fc n) {
 		this.points = p;
 		this.normal = n;
 	}
 
-	public Vector3f[] getPoints() {
+	public Vector3fc[] getPoints() {
 		return points;
 	}
 
-	public Vector3f getNormal() {
+	public Vector3fc getNormal() {
 		return normal;
 	}
 
@@ -72,36 +75,36 @@ public enum GeoPlane {
 		return null;
 	}
 
-	public Vector3f project(Vector2f pos) {
+	public Vector3f project(Vector2fc pos) {
 		switch (this) {
 		case XY:
-			return new Vector3f(pos.x, pos.y, 0);
+			return new Vector3f(pos.x(), pos.y(), 0);
 		case XZ:
-			return new Vector3f(pos.x, 0, pos.y);
+			return new Vector3f(pos.x(), 0, pos.y());
 		case YZ:
-			return new Vector3f(0, pos.x, pos.y);
+			return new Vector3f(0, pos.x(), pos.y());
 		}
 		return null;
 	}
 
-	public Vector2f projectToPlane(Vector3f pos) {
+	public Vector2f projectToPlane(Vector3fc pos) {
 		return projectToPlane(pos, this);
 	}
 
-	public static Vector2f projectToPlane(Vector3f pos, GeoPlane plane) {
+	public static Vector2f projectToPlane(Vector3fc pos, GeoPlane plane) {
 		switch (plane) {
 		case XY:
-			return new Vector2f(pos.x, pos.y);
+			return new Vector2f(pos.x(), pos.y());
 		case XZ:
-			return new Vector2f(pos.x, pos.z);
+			return new Vector2f(pos.x(), pos.z());
 		case YZ:
-			return new Vector2f(pos.y, pos.z);
+			return new Vector2f(pos.y(), pos.z());
 		default:
 			throw new IllegalArgumentException("Unsupported plane type");
 		}
 	}
 
-	public static GeoPlane getByNormal(Quaternionf rotation) {
+	public static GeoPlane getByNormal(Quaternionfc rotation) {
 		return getByNormal(MathUtils.vec3fromQuatf(rotation));
 	}
 

@@ -6,9 +6,13 @@ import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 
 import org.joml.Matrix4f;
+import org.joml.Matrix4fc;
 import org.joml.Quaternionf;
+import org.joml.Quaternionfc;
 import org.joml.Vector2f;
+import org.joml.Vector2fc;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 import org.lwjgl.glfw.GLFW;
 
 import lu.pcy113.pclib.PCUtils;
@@ -30,16 +34,20 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
 
 public class GameEngine implements Cleanupable, UniqueID {
 
-	public static final Vector3f X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0), Y_POS = new Vector3f(0, 1, 0),
-			Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1), Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0);
+	public static final String DEBUG_RENDER_REPORT_PROPERTY = GameEngine.class.getSimpleName() + ".debug_render_report";
+	public static boolean DEBUG_RENDER_REPORT = Boolean.getBoolean(DEBUG_RENDER_REPORT_PROPERTY);
 
-	public static final Vector3f UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
+	public static final Vector3fc X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0),
+			Y_POS = new Vector3f(0, 1, 0), Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1),
+			Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0);
+
+	public static final Vector3fc UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
 			RIGHT = new Vector3f(X_POS), FORWARD = new Vector3f(Z_POS), BACK = new Vector3f(X_POS);
 
-	public static final Vector2f IDENTITY_VECTOR2F = new Vector2f(1);
-	public static final Vector3f IDENTITY_VECTOR3F = new Vector3f(1);
-	public static final Matrix4f IDENTITY_MATRIX4F = new Matrix4f().identity();
-	public static final Quaternionf IDENTITY_QUATERNIONF = new Quaternionf().identity();
+	public static final Vector2fc IDENTITY_VECTOR2F = new Vector2f(1);
+	public static final Vector3fc IDENTITY_VECTOR3F = new Vector3f(1);
+	public static final Matrix4fc IDENTITY_MATRIX4F = new Matrix4f().identity();
+	public static final Quaternionfc IDENTITY_QUATERNIONF = new Quaternionf().identity();
 
 	public static final long POLL_EVENT_TIMEOUT = 500, BUFFER_SWAP_TIMEOUT = 500, WAIT_FRAME_END_TIMEOUT = 500,
 			WAIT_FRAME_START_TIMEOUT = 500, WAIT_UPDATE_END_TIMEOUT = 500, WAIT_UPDATE_START_TIMEOUT = 500; // ms
@@ -68,8 +76,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 	private ThreadGroup threadGroup;
 	private Thread renderThread, updateThread, mainThread;
 
-	private final Object waitForFrameEnd = new Object(), waitForUpdateEnd = new Object(), waitForFrameStart = new Object(),
-			waitForUpdateStart = new Object();
+	private final Object waitForFrameEnd = new Object(), waitForUpdateEnd = new Object(),
+			waitForFrameStart = new Object(), waitForUpdateStart = new Object();
 
 	public GameEngine(String name, GameLogic game, WindowOptions options) {
 		this.name = name;
@@ -181,22 +189,25 @@ public class GameEngine implements Cleanupable, UniqueID {
 						waitForFrameEnd.notifyAll();
 					}
 
-					long frameRenderDurationNano = System.nanoTime() - frameStartTime;
-					double frameRenderDurationMs = (double) frameRenderDurationNano / 1_000_000;
-					long dispatcherTimeBudgetNanos = Math.max(0, targetNanoPerFps - frameRenderDurationNano);
+					final long frameRenderDurationNano = System.nanoTime() - frameStartTime;
+					final double frameRenderDurationMs = (double) frameRenderDurationNano / 1_000_000;
+					final long dispatcherTimeBudgetNanos = Math.max(0, targetNanoPerFps - frameRenderDurationNano);
 
 					// Pump the render dispatcher
 					final long dispatcherStartNano = System.nanoTime();
 					renderDispatcher.pump((long) (dispatcherTimeBudgetNanos * 0.9f), tasks);
 					final long dispatcherUsedNano = System.nanoTime() - dispatcherStartNano;
 
-					GlobalLogger
-							.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
-									+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
-									+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
-									+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
-									+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + tasks.size() + ") "
-									+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true) + " " + tasks);
+					if (DEBUG_RENDER_REPORT) {
+						GlobalLogger.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
+								+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms"
+								+ " | Render loop: " + PCUtils.roundFill(frameRenderDurationMs, 5)
+								+ " ms | Dispatcher budget: "
+								+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
+								+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + tasks.size()
+								+ ") " + PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true) + " "
+								+ tasks);
+					}
 				}
 
 				// Stop loop if window requests closure

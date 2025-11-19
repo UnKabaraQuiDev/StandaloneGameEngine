@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
+import org.joml.Vector2fc;
 import org.joml.Vector4f;
 
 import lu.pcy113.pclib.PCUtils;
@@ -19,6 +20,7 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextAlignment;
 import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 
@@ -41,7 +43,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	private final String name;
 
-	private final Vector2f charSize;
+	private final Vector2fc charSize;
 	private String text;
 
 	private SetupData setupData;
@@ -59,7 +61,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 	private Vector4f bgColor;
 	private Boolean transparent;
 
-	public TextEmitter(String name, TextMaterial material, int bufferSize, String text, Vector2f charSize) {
+	public TextEmitter(String name, TextMaterial material, int bufferSize, String text, Vector2fc charSize) {
 		this.name = name;
 
 		this.text = text;
@@ -110,6 +112,10 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 		return true;
 	}
 
+	public void resize(int newSize) {
+		instances.resize(newSize, new Transform3D());
+	}
+
 	private void updateTextContent(Matrix4f[] transforms, Integer[] chars) {
 		if (TextAlignment.LEFT == alignment) {
 			updateTextContentLeft(transforms, chars);
@@ -148,8 +154,8 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 				chars[charIndex] = (int) currentChar;
 
 				final float translationX = (character - (float) (widthCount[line] - 1) / 2)
-						* (charSize.x + charOffset.x) - charSize.x;
-				final float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2 + charOffset.y;
+						* (charSize.x() + charOffset.x) - charSize.x();
+				final float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2 + charOffset.y;
 
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
 						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
@@ -162,7 +168,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	private void updateTextContentCenter(Matrix4f[] transforms, Integer[] chars) {
 		final int[] widthCount = computeWidthCounts();
-		final float widthMax = boxed ? boxSize.x : Arrays.stream(widthCount).max().getAsInt() * charSize.x;
+		final float widthMax = boxed ? boxSize.x : Arrays.stream(widthCount).max().getAsInt() * charSize.x();
 
 		int line = 0;
 		int character = 0;
@@ -181,9 +187,9 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-				float translationX = (character - widthCount[line] / 2) * (charSize.x + charOffset.x) + widthMax / 2
-						- charSize.x;
-				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
+				float translationX = (character - widthCount[line] / 2) * (charSize.x() + charOffset.x) + widthMax / 2
+						- charSize.x();
+				float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
 						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
@@ -213,9 +219,9 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-				final float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x + charOffset.x)
-						- charSize.x;
-				final float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
+				final float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x() + charOffset.x)
+						- charSize.x();
+				final float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
 						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
@@ -245,8 +251,8 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-				float translationX = (character - widthCount[line]) * (charSize.x + charOffset.x) - charSize.x / 2;
-				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
+				float translationX = (character - widthCount[line]) * (charSize.x() + charOffset.x) - charSize.x() / 2;
+				float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
 						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
@@ -273,8 +279,8 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-				float translationX = character * (charSize.x + charOffset.x) - charSize.x / 2;
-				float translationY = line * (charSize.y + charOffset.y) + charSize.y / 2;
+				float translationX = character * (charSize.x() + charOffset.x) - charSize.x() / 2;
+				float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
 						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
@@ -375,6 +381,10 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 		this.charOffset = charSpace;
 	}
 
+	public Vector2fc getCharSize() {
+		return this.charSize;
+	}
+
 	public void setCorrectTransform(boolean correctTransform) {
 		this.correctTransform = correctTransform;
 	}
@@ -421,7 +431,6 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 		return Math.min(text.length(), charBuffer.getLength());
 	}
 
-	
 	public int getBufferLength() {
 		return charBuffer.getLength();
 	}
