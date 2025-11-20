@@ -30,6 +30,7 @@ public class SubEntitiesComponent<T extends Entity> extends Component {
 	}
 
 	public <B extends T> B addEntity(B entity) {
+		assert entity != parent;
 		synchronized (entitiesLock) {
 			entities.add(entity);
 		}

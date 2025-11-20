@@ -2,7 +2,7 @@ package lu.kbra.standalone.gameengine.objs.entity;
 
 public abstract class Component {
 
-	private Entity parent;
+	protected Entity parent;
 
 	public boolean attach(Entity parent) {
 		if (this.parent != null)
