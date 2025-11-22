@@ -501,7 +501,14 @@ public final class GameEngineUtils {
 		final Vector3f min = new Vector3f(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY);
 		final Vector3f max = new Vector3f(Float.NEGATIVE_INFINITY, Float.NEGATIVE_INFINITY, Float.NEGATIVE_INFINITY);
 
+		boolean nonNull = false;
 		for (Vector3f v : vertices.getData()) {
+			if (v == null) {
+				continue;
+			}
+
+			nonNull = true;
+
 			min.x = Math.min(min.x, v.x);
 			min.y = Math.min(min.y, v.y);
 			min.z = Math.min(min.z, v.z);
@@ -510,8 +517,12 @@ public final class GameEngineUtils {
 			max.y = Math.max(max.y, v.y);
 			max.z = Math.max(max.z, v.z);
 		}
-
-		return new BoundingBox(min, max);
+		
+		if (nonNull) {
+			return new BoundingBox(min, max);
+		} else {
+			return new BoundingBox(new Vector3f(0), new Vector3f(0));
+		}
 	}
 
 	public static Vector4f hexToColorToVec4f(String hex) {

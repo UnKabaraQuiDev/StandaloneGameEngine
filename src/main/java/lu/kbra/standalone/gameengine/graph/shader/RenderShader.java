@@ -3,7 +3,7 @@ package lu.kbra.standalone.gameengine.graph.shader;
 import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShader;
 import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShaderPart;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BeginMode;
-import lu.kbra.standalone.gameengine.utils.gl.consts.FaceMode;
+import lu.kbra.standalone.gameengine.utils.gl.consts.PolygonMode;
 
 public abstract class RenderShader extends AbstractShader {
 
@@ -14,7 +14,7 @@ public abstract class RenderShader extends AbstractShader {
 
 	protected boolean transparent;
 	protected BeginMode beginMode = BeginMode.TRIANGLES;
-	protected FaceMode faceMode = FaceMode.FRONT_AND_BACK;
+	protected PolygonMode faceMode = PolygonMode.FRONT_AND_BACK;
 
 	public RenderShader(AbstractShaderPart... parts) {
 		this(null, false, parts);
@@ -58,11 +58,11 @@ public abstract class RenderShader extends AbstractShader {
 		this.beginMode = beginMode;
 	}
 
-	public FaceMode getFaceMode() {
+	public PolygonMode getFaceMode() {
 		return faceMode;
 	}
 
-	public void setFaceMode(FaceMode faceMode) {
+	public void setFaceMode(PolygonMode faceMode) {
 		this.faceMode = faceMode;
 	}
 

@@ -12,6 +12,9 @@ import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
+import lu.kbra.standalone.gameengine.utils.gl.consts.BeginMode;
+import lu.kbra.standalone.gameengine.utils.gl.consts.PolygonDrawMode;
+import lu.kbra.standalone.gameengine.utils.gl.consts.PolygonMode;
 
 public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
 
@@ -24,7 +27,7 @@ public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
 	int ATTRIB_INDICES_ID = -1;
 	int ATTRIB_NORMALS_ID = 1;
 	int ATTRIB_UVS_ID = 2;
-	
+
 	Vector2f UV_RANGE = new Vector2f(0, 1);
 
 	void addAttribArray(AttribArray data);
@@ -42,6 +45,18 @@ public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
 	Material getMaterial();
 
 	BoundingBox getBoundingBox();
+
+	default PolygonMode getPolygonMode() {
+		return PolygonMode.FRONT;
+	}
+
+	default PolygonDrawMode getPolygonDrawMode() {
+		return PolygonDrawMode.FILL;
+	}
+
+	default BeginMode getBeginMode() {
+		return BeginMode.TRIANGLES;
+	}
 
 	public static LoadedQuadMesh newQuad(String name, Material material2, Vector2f size) {
 		return new LoadedQuadMesh(name, material2, size);

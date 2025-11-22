@@ -3,7 +3,7 @@ package lu.kbra.standalone.gameengine.graph.material.wireframe;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShaderPart;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BeginMode;
-import lu.kbra.standalone.gameengine.utils.gl.consts.FaceMode;
+import lu.kbra.standalone.gameengine.utils.gl.consts.PolygonMode;
 
 public class WireframeShader extends RenderShader {
 
@@ -14,7 +14,7 @@ public class WireframeShader extends RenderShader {
 	public WireframeShader() {
 		super(NAME, AbstractShaderPart.load("./resources/shaders/debug/debug.vert"), AbstractShaderPart.load("./resources/shaders/debug/debug.frag"));
 
-		super.setFaceMode(FaceMode.FRONT_AND_BACK);
+		super.setFaceMode(PolygonMode.FRONT_AND_BACK);
 		super.setBeginMode(BeginMode.LINES);
 	}
 

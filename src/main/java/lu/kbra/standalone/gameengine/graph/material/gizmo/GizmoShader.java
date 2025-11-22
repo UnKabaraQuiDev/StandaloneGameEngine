@@ -4,7 +4,7 @@ import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShaderPart;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BeginMode;
-import lu.kbra.standalone.gameengine.utils.gl.consts.FaceMode;
+import lu.kbra.standalone.gameengine.utils.gl.consts.PolygonMode;
 
 public class GizmoShader extends RenderShader {
 
@@ -14,7 +14,7 @@ public class GizmoShader extends RenderShader {
 		super(NAME, AbstractShaderPart.load("./resources/shaders/gizmo/gizmo.vert"), AbstractShaderPart.load("./resources/shaders/gizmo/gizmo.frag"));
 		
 		super.setBeginMode(BeginMode.LINES);
-		super.setFaceMode(FaceMode.FRONT_AND_BACK);
+		super.setFaceMode(PolygonMode.FRONT_AND_BACK);
 	}
 
 	@Override
