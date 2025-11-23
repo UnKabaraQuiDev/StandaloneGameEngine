@@ -26,7 +26,7 @@ public class WorkerDispatcher extends Dispatcher implements Runnable {
 				task.run();
 				task.setRan(true);
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				// e.printStackTrace();
 				Thread.currentThread().interrupt();
 				break;
 			} catch (Exception e) {
