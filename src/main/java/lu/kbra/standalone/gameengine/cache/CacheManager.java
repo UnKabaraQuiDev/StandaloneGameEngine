@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.audio.Sound;
 import lu.kbra.standalone.gameengine.geom.Gizmo;
 import lu.kbra.standalone.gameengine.geom.Mesh;
@@ -22,7 +25,6 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.objs.lights.PointLight;
 import lu.kbra.standalone.gameengine.objs.text.TextEmitter;
 import lu.kbra.standalone.gameengine.scene.Scene;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class CacheManager implements Cleanupable, UniqueID {
 
@@ -135,8 +137,11 @@ public class CacheManager implements Cleanupable, UniqueID {
 	public boolean addMesh(Mesh m) {
 		if (m == null)
 			return false;
-		if (this.meshes.containsKey(m.getId()) && !this.meshes.get(m.getId()).equals(m))
+		if (this.meshes.containsKey(m.getId()) && !this.meshes.get(m.getId()).equals(m)) {
+			GlobalLogger.severe(
+					"Overwriting Mesh: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
 			this.meshes.remove(m.getId()).cleanup();
+		}
 		return this.meshes.putIfAbsent(m.getId(), m) == null;
 	}
 
@@ -168,8 +173,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 		if (m == null)
 			return false;
 		if (this.abstractShaders.containsKey(m.getId()) && !this.abstractShaders.get(m.getId()).equals(m)) {
-			GlobalLogger.log();
-			GlobalLogger.warning("Overwriting shader: " + m.getId());
+			GlobalLogger.severe("Overwriting AbstractShader: " + m + " from "
+					+ PCUtils.getCallerClassName(true, false, CacheManager.class));
 			this.abstractShaders.remove(m.getId()).cleanup();
 		}
 		return this.abstractShaders.putIfAbsent(m.getId(), m) == null;
@@ -218,8 +223,11 @@ public class CacheManager implements Cleanupable, UniqueID {
 	public boolean addInstanceEmitter(InstanceEmitter m) {
 		if (m == null)
 			return false;
-		if (this.instanceEmitters.containsKey(m.getId()) && !this.instanceEmitters.get(m.getId()).equals(m))
+		if (this.instanceEmitters.containsKey(m.getId()) && !this.instanceEmitters.get(m.getId()).equals(m)) {
+			GlobalLogger.severe("Overwriting InstanceEmitter: " + m + " from "
+					+ PCUtils.getCallerClassName(true, false, CacheManager.class));
 			this.instanceEmitters.remove(m.getId()).cleanup();
+		}
 		return this.instanceEmitters.putIfAbsent(m.getId(), m) == null;
 	}
 
@@ -249,8 +257,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public Renderer<?, ?> getRenderer(String name) {
 		/*
-		 * if (name != null && !renderers.containsKey(name)) GlobalLogger.log("No renderer found for: " +
-		 * name);
+		 * if (name != null && !renderers.containsKey(name))
+		 * GlobalLogger.log("No renderer found for: " + name);
 		 */
 		return this.renderers.getOrDefault(name, parent == null ? null : parent.getRenderer(name));
 	}

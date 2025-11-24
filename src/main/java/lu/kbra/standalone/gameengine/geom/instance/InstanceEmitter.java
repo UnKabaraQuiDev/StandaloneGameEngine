@@ -3,6 +3,7 @@ package lu.kbra.standalone.gameengine.geom.instance;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.logging.Level;
 
 import org.joml.Matrix4f;
@@ -36,6 +37,11 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 	protected Mesh instanceMesh;
 
 	public InstanceEmitter(String name, Mesh mesh, int count, Transform baseTransform, AttribArray... attribs) {
+		this(name, mesh, count, i -> baseTransform.clone(), attribs);
+	}
+
+	public InstanceEmitter(String name, Mesh mesh, int count, Function<Integer, Transform> baseTransform,
+			AttribArray... attribs) {
 		this.name = name;
 		this.count = count;
 
@@ -47,7 +53,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		for (int i = 0; i < count; i++) {
 			final Object[] atts = new Object[this.instancesAttribs.length];
 
-			particles[i] = new Instance(i, baseTransform.clone(), atts);
+			particles[i] = new Instance(i, baseTransform.apply(i), atts);
 		}
 
 		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME, TRANSFORM_BUFFER_INDEX, 1,
@@ -172,6 +178,10 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 	}
 
 	public Matrix4f[] resize(int newCount, Transform baseTransform) {
+		return this.resize(newCount, i -> baseTransform.clone());
+	}
+
+	public Matrix4f[] resize(int newCount, Function<Integer, Transform> baseTransform) {
 		this.count = newCount;
 		final Matrix4f[] transforms;
 
@@ -198,7 +208,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			for (int i = this.particles == null ? 0 : this.particles.length; i < count; i++) {
 				final Object[] atts = new Object[this.instancesAttribs.length];
 
-				newParts[i] = new Instance(i, baseTransform.clone(), atts);
+				newParts[i] = new Instance(i, baseTransform.apply(i), atts);
 			}
 			this.particles = newParts;
 
@@ -222,6 +232,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 	@Override
 	public void cleanup() {
+		GlobalLogger.log();
 		GlobalLogger.log("Cleaning up: " + name);
 
 		if (instanceMesh == null) {

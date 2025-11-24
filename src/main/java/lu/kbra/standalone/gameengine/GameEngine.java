@@ -37,6 +37,16 @@ public class GameEngine implements Cleanupable, UniqueID {
 	public static final String DEBUG_RENDER_REPORT_PROPERTY = GameEngine.class.getSimpleName() + ".debug_render_report";
 	public static boolean DEBUG_RENDER_REPORT = Boolean.getBoolean(DEBUG_RENDER_REPORT_PROPERTY);
 
+	public static final String MIN_RENDER_DISPATCHER_BUDGET_NANO_PROPERTY = GameEngine.class.getSimpleName()
+			+ ".min_render_dispatcher_budget_nano";
+	public static long MIN_RENDER_DISPATCHER_BUDGET_NANO = Long.getLong(MIN_RENDER_DISPATCHER_BUDGET_NANO_PROPERTY,
+			500_000);
+
+	public static final String MIN_UPDATE_DISPATCHER_BUDGET_NANO_PROPERTY = GameEngine.class.getSimpleName()
+			+ ".min_update_dispatcher_budget_nano";
+	public static long MIN_UPDATE_DISPATCHER_BUDGET_NANO = Long.getLong(MIN_UPDATE_DISPATCHER_BUDGET_NANO_PROPERTY,
+			500_000);
+
 	public static final Vector3fc X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0),
 			Y_POS = new Vector3f(0, 1, 0), Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1),
 			Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0);
@@ -126,7 +136,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 						waitForUpdateEnd.notifyAll();
 					}
 
-					final long dispatcherBudgetNanos = Math.max(0, targetPerUps - deltaUpdate);
+					final long dispatcherBudgetNanos = Math.max(MIN_UPDATE_DISPATCHER_BUDGET_NANO,
+							targetPerUps - deltaUpdate);
 					updateDispatcher.pump((long) (dispatcherBudgetNanos * 1e6));
 				}
 			}
@@ -191,7 +202,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 					final long frameRenderDurationNano = System.nanoTime() - frameStartTime;
 					final double frameRenderDurationMs = (double) frameRenderDurationNano / 1_000_000;
-					final long dispatcherTimeBudgetNanos = Math.max(0, targetNanoPerFps - frameRenderDurationNano);
+					final long dispatcherTimeBudgetNanos = Math.max(MIN_RENDER_DISPATCHER_BUDGET_NANO,
+							targetNanoPerFps - frameRenderDurationNano);
 
 					// Pump the render dispatcher
 					final long dispatcherStartNano = System.nanoTime();

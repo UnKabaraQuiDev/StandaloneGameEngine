@@ -8,6 +8,7 @@ import lu.pcy113.pclib.impl.ThrowingConsumer;
 import lu.pcy113.pclib.impl.ThrowingFunction;
 import lu.pcy113.pclib.impl.ThrowingRunnable;
 import lu.pcy113.pclib.impl.ThrowingSupplier;
+import lu.pcy113.pclib.logger.GlobalLogger;
 import lu.pcy113.pclib.pointer.prim.BooleanPointer;
 
 public class TaskFuture<I, O> {
@@ -16,9 +17,14 @@ public class TaskFuture<I, O> {
 
 		private final BooleanPointer started = new BooleanPointer(false);
 		private final BooleanPointer ongoing = new BooleanPointer(false);
-		private volatile boolean done = false;
+		private final BooleanPointer done = new BooleanPointer(false);
 
 		private V result;
+		private String source;
+
+		public TaskState(TaskFuture<?, ?> first) {
+			this.source = first.currentSource;
+		}
 
 		public boolean isStarted() {
 			return started.get();
@@ -29,15 +35,11 @@ public class TaskFuture<I, O> {
 		}
 
 		public boolean isDone() {
-			return done;
+			return done.get();
 		}
 
 		public V getResult() {
 			return result;
-		}
-
-		void setDone() {
-			ongoing.set(false);
 		}
 
 		public V join() {
@@ -54,7 +56,9 @@ public class TaskFuture<I, O> {
 
 		@Override
 		public String toString() {
-			return "TaskState [started=" + started + ", ongoing=" + ongoing + ", done=" + done + ", result=" + result + "]";
+			return "TaskState@" + Integer.toHexString(System.identityHashCode(this)) + " [started="
+					+ this.started.toSafeString() + ", ongoing=" + this.ongoing.toSafeString() + ", done="
+					+ this.done.toSafeString() + ", result=" + this.result + ", source=" + this.source + "]";
 		}
 
 	}
@@ -113,7 +117,8 @@ public class TaskFuture<I, O> {
 		return then(nextDispatcher, function, 0);
 	}
 
-	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, ThrowingFunction<O, N, Throwable> function, int priority) {
+	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, ThrowingFunction<O, N, Throwable> function,
+			int priority) {
 		final TaskFuture<O, N> nextFuture = new TaskFuture<O, N>(nextDispatcher, function, priority);
 		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
@@ -183,7 +188,7 @@ public class TaskFuture<I, O> {
 	}
 
 	public TaskState<O> push() {
-		final TaskState<O> state = new TaskState<>();
+		final TaskState<O> state = new TaskState<>(first);
 		state.started.set(true);
 		first.pushInternal(null, state);
 		return state;
@@ -200,7 +205,7 @@ public class TaskFuture<I, O> {
 					next.pushInternal(result, state);
 				} else {
 					state.result = result;
-					state.done = true;
+					state.done.set(true);
 					state.ongoing.set(false);
 				}
 			} catch (SkipThen st) {
@@ -221,7 +226,7 @@ public class TaskFuture<I, O> {
 					current.next.pushInternal(st.getObj(), state);
 				} else {
 					state.result = st.getObj();
-					state.done = true;
+					state.done.set(true);
 					state.ongoing.set(false);
 				}
 			} catch (Throwable e) {
