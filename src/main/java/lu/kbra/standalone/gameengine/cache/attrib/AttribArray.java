@@ -1,16 +1,18 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
+import org.joml.Vector2f;
 import org.joml.Vector3f;
+import org.joml.Vector3i;
 import org.joml.Vector4f;
-
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
+import org.joml.Vector4i;
 
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class AttribArray implements Cleanupable, GLObject {
 
@@ -71,6 +73,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 	public abstract boolean isLoaded();
 
 	public abstract Object getData();
+
+	public abstract void update();
 
 	public void enable() {
 		GL_W.glEnableVertexAttribArray(index);
@@ -173,56 +177,82 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	@Override
 	public String toString() {
-		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "="
-				+ getDataCount();
+		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
 	}
 
-	public static boolean update(AttribArray arr, Object data) {
+	public static void update(AttribArray arr, Object data) {
 		if (arr == null) {
 			GlobalLogger.log();
-			GlobalLogger.warning("AttribArray is null!");
-			return false;
+			throw new NullPointerException("AttribArray is null !");
 		}
 
 		arr.bind();
 
-		if (arr instanceof IntAttribArray) {
-			return ((IntAttribArray) arr).update(PCUtils.toPrimitiveInt(data));
-		} else if (arr instanceof UIntAttribArray) {
-			return ((UIntAttribArray) arr).update(PCUtils.toPrimitiveInt(data));
-		} else if (arr instanceof FloatAttribArray) {
-			return ((FloatAttribArray) arr).update(PCUtils.toPrimitiveFloat(data));
-		} else if (arr instanceof Mat4fAttribArray) {
-			return ((Mat4fAttribArray) arr).update(GameEngineUtils.castArrayMat4f(data));
-		} else if (arr instanceof Vec4fAttribArray) {
-			return ((Vec4fAttribArray) arr).update((Vector4f[]) data);
-		} else if (arr instanceof Vec3fAttribArray) {
-			return ((Vec3fAttribArray) arr).update((Vector3f[]) data);
-		} else if (arr instanceof Mat3x2fAttribArray) {
-			return ((Mat3x2fAttribArray) arr).update(GameEngineUtils.castArrayMat3x2f(data));
+		if (arr instanceof IntAttribArray intArr) {
+			intArr.update(PCUtils.toPrimitiveInt(data));
+		} else if (arr instanceof UIntAttribArray uintArr) {
+			uintArr.update(PCUtils.toPrimitiveInt(data));
+		} else if (arr instanceof UByteAttribArray ubyteArr) {
+			ubyteArr.update(PCUtils.toPrimitiveByte(data));
+
+		} else if (arr instanceof FloatAttribArray floatArr) {
+			floatArr.update(PCUtils.toPrimitiveFloat(data));
+
+		} else if (arr instanceof Vec2fAttribArray vec2fArr) {
+			vec2fArr.update((Vector2f[]) data);
+		} else if (arr instanceof Vec3fAttribArray vec3fArr) {
+			vec3fArr.update((Vector3f[]) data);
+		} else if (arr instanceof Vec4fAttribArray vec4fArr) {
+			vec4fArr.update((Vector4f[]) data);
+
+		} else if (arr instanceof Vec3iAttribArray vec3iArr) {
+			vec3iArr.update((Vector3i[]) data);
+		} else if (arr instanceof Vec4iAttribArray vec4iArr) {
+			vec4iArr.update((Vector4i[]) data);
+
+		} else if (arr instanceof Mat3x2fAttribArray mat3x2fArr) {
+			mat3x2fArr.update(GameEngineUtils.castArrayMat3x2f(data));
+		} else if (arr instanceof Mat4fAttribArray mat4fArr) {
+			mat4fArr.update(GameEngineUtils.castArrayMat4f(data));
 		} else {
 			PCUtils.throwUnsupported(arr.getClass().toString());
 		}
-
-		return false;
 	}
 
-	public static boolean resize(AttribArray arr, Object data) {
+	public static void resize(AttribArray arr, Object data) {
 		if (arr == null) {
 			GlobalLogger.log();
-			GlobalLogger.warning("AttribArray is null!");
-			return false;
+			throw new NullPointerException("AttribArray is null !");
 		}
+		if (arr instanceof IntAttribArray intArr) {
+			intArr.resize(PCUtils.toPrimitiveInt(data));
+		} else if (arr instanceof UIntAttribArray uintArr) {
+			uintArr.resize(PCUtils.toPrimitiveInt(data));
+		} else if (arr instanceof UByteAttribArray ubyteArr) {
+			ubyteArr.resize(PCUtils.toPrimitiveByte(data));
 
-		if (arr instanceof Mat4fAttribArray marr) {
-			return marr.resize(GameEngineUtils.castArrayMat4f(data));
-		} else if (arr instanceof UIntAttribArray uarr) {
-			return uarr.resize(PCUtils.toPrimitiveInt(data));
-		} else{
+		} else if (arr instanceof FloatAttribArray floatArr) {
+			floatArr.resize(PCUtils.toPrimitiveFloat(data));
+
+		} else if (arr instanceof Vec2fAttribArray vec2fArr) {
+			vec2fArr.resize((Vector2f[]) data);
+		} else if (arr instanceof Vec3fAttribArray vec3fArr) {
+			vec3fArr.resize((Vector3f[]) data);
+		} else if (arr instanceof Vec4fAttribArray vec4fArr) {
+			vec4fArr.resize((Vector4f[]) data);
+
+		} else if (arr instanceof Vec3iAttribArray vec3iArr) {
+			vec3iArr.resize((Vector3i[]) data);
+		} else if (arr instanceof Vec4iAttribArray vec4iArr) {
+			vec4iArr.resize((Vector4i[]) data);
+
+		} else if (arr instanceof Mat3x2fAttribArray mat3x2fArr) {
+			mat3x2fArr.resize(GameEngineUtils.castArrayMat3x2f(data));
+		} else if (arr instanceof Mat4fAttribArray mat4fArr) {
+			mat4fArr.resize(GameEngineUtils.castArrayMat4f(data));
+		} else {
 			PCUtils.throwUnsupported(arr.getClass().toString());
 		}
-
-		return false;
 	}
 
 }

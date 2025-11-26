@@ -1,6 +1,5 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
-import org.joml.Matrix4f;
 import org.joml.Vector4f;
 
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
@@ -8,6 +7,8 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Vec4fAttribArray extends AttribArray {
+
+	public static final int DATA_SIZE = 3;
 
 	private Vector4f[] data;
 
@@ -29,41 +30,57 @@ public class Vec4fAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		assert GL_W.checkError("BufferData(" + bufferType + ", " + data.length * DATA_SIZE + ", " + iStatic + ")");
 
-		if (bufferType != BufferType.ELEMENT_ARRAY)
-			GL_W.glVertexAttribPointer(index, dataSize * 4, GL_W.GL_FLOAT, false, 0, 0);
-	}
+		if (bufferType != BufferType.ELEMENT_ARRAY) {
+			GL_W.glVertexAttribPointer(index, dataSize * DATA_SIZE, GL_W.GL_FLOAT, false, 0, 0);
+			assert GL_W.checkError("VertexAttribPointer(" + index + ", " + dataSize * DATA_SIZE + ", FLOAT)");
 
-	public boolean update(Vector4f[] nPos) {
-		if (!iStatic && nPos.length != data.length)
-			return false;
-		data = nPos;
-
-		GL_W.glBufferSubData(GL_W.GL_ARRAY_BUFFER, 0, GameEngineUtils.toFlatArray(data));
-		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
+		}
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, dataSize * 4, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new FloatAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
-	public boolean resize(Vector4f[] nPos) {
+	@Override
+	public void update() {
+		update(data);
+	}
+
+	public void update(Vector4f[] nPos) {
+		if (iStatic) {
+			throw new UnsupportedOperationException("Array is static.");
+		} else if (nPos.length != data.length) {
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+		}
+
+		bind();
 		data = nPos;
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
+		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + data.length * DATA_SIZE + ")");
+	}
+
+	public void resize(Vector4f[] nPos) {
+		bind();
 
 		if (nPos.length == data.length) {
 			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
+			assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + nPos.length * DATA_SIZE + ")");
 		} else {
 			GL_W
 					.glBufferData(bufferType.getGlId(),
 							GameEngineUtils.toFlatArray(data),
 							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			assert GL_W.checkError("BufferData(" + bufferType + ", " + nPos.length * DATA_SIZE + ", " + iStatic + ")");
 		}
+
+		data = nPos;
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
+			GL_W.glVertexAttribPointer(index, dataSize * DATA_SIZE, GL_W.GL_FLOAT, false, 0, 0);
+			assert GL_W.checkError("VertexAttribPointer(" + index + ", " + dataSize * DATA_SIZE + ", FLOAT)");
 		}
-
-		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 
 	@Override

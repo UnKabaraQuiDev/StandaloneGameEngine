@@ -8,6 +8,8 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Vec3iAttribArray extends AttribArray {
 
+	public static final int DATA_SIZE = 3;
+
 	private Vector3i[] data;
 
 	public Vec3iAttribArray(String name, int index, int dataSize, Vector3i[] data) {
@@ -38,31 +40,60 @@ public class Vec3iAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		assert GL_W.checkError("BufferData(" + bufferType + ", " + data.length * 3 + ", " + iStatic + ")");
+		assert GL_W.checkError("BufferData(" + bufferType + ", " + data.length * DATA_SIZE + ", " + iStatic + ")");
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribIPointer(index, dataSize * 3, GL_W.GL_UNSIGNED_INT, 0, 0);
-			assert GL_W.checkError("VertexAttribIPointer(" + index + ", " + dataSize + ", GL_UNSIGNED_INT, 0, 0)");
+			GL_W.glVertexAttribIPointer(index, dataSize * DATA_SIZE, GL_W.GL_INT, 0, 0);
+			assert GL_W.checkError("VertexAttribIPointer(" + index + ", " + dataSize * DATA_SIZE + ", GL_INT)");
 		}
 	}
 
-	public boolean update(Vector3i[] nPos) {
-		if (!iStatic && nPos.length != data.length)
-			throw new IllegalArgumentException("Array's size cannot change");
+	@Override
+	public void update() {
+		update(data);
+	}
+
+	public void update(Vector3i[] nPos) {
+		if (iStatic) {
+			throw new UnsupportedOperationException("Array is static.");
+		} else if (nPos.length != data.length) {
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+		}
+
+		bind();
+		data = nPos;
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
+		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0, " + data.length * DATA_SIZE + ")");
+	}
+
+	public void resize(Vector3i[] nPos) {
+		bind();
+
+		if (nPos.length == data.length) {
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
+			assert GL_W.checkError("BufferSubData(" + bufferType + ", 0, " + nPos.length + ")");
+		} else {
+			GL_W
+					.glBufferData(bufferType.getGlId(),
+							GameEngineUtils.toFlatArray(nPos),
+							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			assert GL_W.checkError("BufferData(" + bufferType + ", " + nPos.length + ", " + iStatic + ")");
+		}
+
 		data = nPos;
 
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
-		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0, " + data.length * 3 + ")");
-
-		return true;
+		if (bufferType != BufferType.ELEMENT_ARRAY) {
+			GL_W.glVertexAttribIPointer(index, dataSize * DATA_SIZE, GL_W.GL_INT, 0, 0);
+			assert GL_W.checkError("VertexAttribIPointer(" + index + ", " + dataSize * DATA_SIZE + ", FLOAT)");
+		}
 	}
 
 	public IntAttribArray toIntAttribArray() {
-		return new IntAttribArray(name, index, dataSize * 3, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new IntAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	public UIntAttribArray toUIntAttribArray() {
-		return new UIntAttribArray(name, index, dataSize * 3, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new UIntAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	@Override

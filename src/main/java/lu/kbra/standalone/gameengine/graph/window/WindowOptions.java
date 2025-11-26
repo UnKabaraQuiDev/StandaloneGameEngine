@@ -26,6 +26,7 @@ public class WindowOptions {
 		this.ups = PCUtils.parseInteger(props.getProperty(pathPrefix + ".fps"), Consts.DEFAULT_UPS);
 		this.fullscreen = PCUtils.parseBoolean(props.getProperty(pathPrefix + ".fullscreen"), Consts.DEFAULT_FULLSCREEN);
 		this.vsync = PCUtils.parseBoolean(props.getProperty(pathPrefix + ".vsync"), Consts.DEFAULT_VSYNC);
+		System.err.println("vsync: " + vsync);
 		this.resizable = PCUtils.parseBoolean(props.getProperty(pathPrefix + ".resizable"), Consts.DEFAULT_RESIZABLE);
 		this.windowSize = GameEngineUtils.parseVec2i(props.getProperty(pathPrefix + ".windowSize"), Consts.DEFAULT_WINDOW_SIZE);
 		this.title = props.getProperty(pathPrefix + ".title", Consts.DEFAULT_TITLE);

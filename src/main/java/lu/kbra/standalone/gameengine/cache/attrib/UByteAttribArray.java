@@ -62,10 +62,14 @@ public class UByteAttribArray extends AttribArray {
 		return data;
 	}
 
-	public boolean update(byte[] nPos) {
-		if (!iStatic && nPos.length != data.length)
-			return false;
+	public void update(byte[] nPos) {
+		if (iStatic) {
+			throw new UnsupportedOperationException("Array is static.");
+		} else if (nPos.length != data.length) {
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+		}
 
+		bind();
 		data = nPos;
 
 		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(data.length);
@@ -73,7 +77,30 @@ public class UByteAttribArray extends AttribArray {
 		bbuffer.flip();
 
 		GL_W.glBufferSubData(bufferType.getGlId(), 0, bbuffer);
-		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
+		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + data.length + ")");
+	}
+
+	public void resize(byte[] nPos) {
+		bind();
+
+		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(data.length);
+		bbuffer.put(data);
+		bbuffer.flip();
+
+		if (nPos.length == data.length) {
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, bbuffer);
+			assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + nPos.length + ")");
+		} else {
+			GL_W.glBufferData(bufferType.getGlId(), bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			assert GL_W.checkError("BufferData(" + bufferType + ", " + nPos.length + ", " + iStatic + ")");
+		}
+
+		data = nPos;
+
+		if (bufferType != BufferType.ELEMENT_ARRAY) {
+			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_BYTE, 0, 0);
+			assert GL_W.checkError("VertexAttribIPointer(" + index + ", " + dataSize + ", UBYTE)");
+		}
 	}
 
 }

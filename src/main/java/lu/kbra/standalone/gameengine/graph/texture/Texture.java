@@ -78,6 +78,7 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 	}
 
 	public void genMipMaps() {
+		bind();
 		GL_W.glGenerateMipmap(txtType.getGlId());
 		assert GL_W.checkError("GenerateMipmap[" + txtType + "]");
 	}

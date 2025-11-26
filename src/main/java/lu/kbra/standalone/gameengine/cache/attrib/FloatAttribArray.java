@@ -40,17 +40,48 @@ public class FloatAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM)
+		assert GL_W.checkError("BufferData(" + bufferType + ", 0..." + data.length + ", " + iStatic + ")");
+
+		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
 			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_FLOAT, false, 0, 0);
+			assert GL_W.checkError("VertexAttribIPointer(" + index + ", " + dataSize + ", FLOAT)");
+		}
 	}
 
-	public boolean update(float[] nPos) {
-		if (!iStatic && nPos.length != data.length)
-			return false;
+	@Override
+	public void update() {
+		update(data);
+	}
+	
+	public void update(float[] nPos) {
+		if (iStatic) {
+			throw new UnsupportedOperationException("Array is static.");
+		} else if (nPos.length != data.length) {
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+		}
+
 		data = nPos;
 		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
+		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + data.length + ")");
+	}
 
-		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
+	public void resize(float[] nPos) {
+		bind();
+
+		if (nPos.length == data.length) {
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
+			assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + nPos.length + ")");
+		} else {
+			GL_W.glBufferData(bufferType.getGlId(), nPos, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			assert GL_W.checkError("BufferData(" + bufferType + ", 0..." + nPos.length + ", " + iStatic + ")");
+		}
+
+		data = nPos;
+
+		if (bufferType != BufferType.ELEMENT_ARRAY) {
+			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_FLOAT, false, 0, 0);
+			assert GL_W.checkError("VertexAttribPointer(" + index + ", " + dataSize + ", FLOAT)");
+		}
 	}
 
 	@Override
@@ -71,22 +102,6 @@ public class FloatAttribArray extends AttribArray {
 	@Override
 	public Float get(int i) {
 		return !isLoaded() ? null : data[i];
-	}
-
-	public boolean resize(float[] nPos) {
-		data = nPos;
-
-		if (nPos.length == data.length) {
-			GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
-		} else {
-			GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
-
-		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
-		}
-
-		return GL_W.glGetError() == GL_W.GL_NO_ERROR;
 	}
 
 }

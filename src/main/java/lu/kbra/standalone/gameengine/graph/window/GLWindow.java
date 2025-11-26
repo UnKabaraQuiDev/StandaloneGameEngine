@@ -49,7 +49,9 @@ public class GLWindow extends Window {
 		// TODO: add option to disable debug output
 		if (GL_W.WRAPPER instanceof GL_W_GL43 || capabilities.GL_KHR_debug) {
 			GL_W.glEnable(GL_W.GL_DEBUG_OUTPUT);
+			assert GL_W.checkError("Enable(DEBUG_OUTPUT)");
 			GL_W.glEnable(GL_W.GL_DEBUG_OUTPUT_SYNCHRONOUS);
+			assert GL_W.checkError("Enable(DEBUG_OUTPUT_SYNCHRONOUS)");
 
 			// Register callback
 			GL_W.glDebugMessageCallback((GLDebugMessageCallbackI) (source, type, id, severity, length, message, userParam) -> {
@@ -58,6 +60,7 @@ public class GLWindow extends Window {
 						.severe("GL DEBUG: " + msg + " (source=" + source + ", type=" + type + ", id=" + id + ", severity=" + severity
 								+ ")");
 			}, 0);
+			assert GL_W.checkError("DebugMessageCallback(...)");
 		}
 
 		try {
@@ -69,14 +72,13 @@ public class GLWindow extends Window {
 		GLFW.glfwDefaultWindowHints();
 		GLFW.glfwWindowHint(GLFW.GLFW_VISIBLE, GLFW.GLFW_FALSE);
 		GLFW.glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MAJOR, 4);
-		GLFW.glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 0);
-		// GLFW.glfwWindowHint(GLFW.GLFW_OPENGL_PROFILE, GLFW.GLFW_OPENGL_CORE_PROFILE);
+		GLFW.glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 6);
+		GLFW.glfwWindowHint(GLFW.GLFW_OPENGL_PROFILE, GLFW.GLFW_OPENGL_CORE_PROFILE);
 		GLFW.glfwWindowHint(GLFW.GLFW_OPENGL_FORWARD_COMPAT, GLFW.GLFW_TRUE);
 		if (options.windowMultisample > 1) {
 			GL_W.glEnable(GL_W.GL_MULTISAMPLE);
 			GLFW.glfwWindowHint(GLFW.GLFW_SAMPLES, options.windowMultisample);
 		}
-		GL_W.glEnable(GL_W.GL_DEPTH_TEST);
 
 		updateOptions();
 
