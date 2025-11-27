@@ -15,6 +15,9 @@ import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public abstract class AbstractShaderPart implements UniqueID, Cleanupable, GLObject {
 
+	public static final String DEBUG_PROPERTY = AbstractShaderPart.class.getSimpleName() + ".debug";
+	public static boolean DEBUG = Boolean.getBoolean(DEBUG_PROPERTY);
+
 	private final String file;
 	private int sid;
 	private final int type;
@@ -70,6 +73,9 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable, GLObj
 				}
 				source = source.replace(eso.getKey(), eso.getValue().toString());
 			}
+		}
+		if (DEBUG) {
+			GlobalLogger.logRaw(Level.INFO, source);
 		}
 		return source;
 	}
