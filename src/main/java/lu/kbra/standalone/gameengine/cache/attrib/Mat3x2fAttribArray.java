@@ -47,8 +47,15 @@ public class Mat3x2fAttribArray extends AttribArray {
 
 	@Override
 	public void init() {
+		bind();
+		
 		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", " + data.length * 6 + ", " + iStatic + ")");
+	}
+	
+	@Override
+	public void update() {
+		update(data);
 	}
 
 	public void update(Matrix3x2f[] nPos) {

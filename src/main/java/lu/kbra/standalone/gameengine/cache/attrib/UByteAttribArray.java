@@ -31,6 +31,8 @@ public class UByteAttribArray extends AttribArray {
 
 	@Override
 	public void init() {
+		bind();
+		
 		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(data.length);
 		bbuffer.put(data);
 		bbuffer.flip();
@@ -62,6 +64,11 @@ public class UByteAttribArray extends AttribArray {
 		return data;
 	}
 
+	@Override
+	public void update() {
+		update(data);
+	}
+	
 	public void update(byte[] nPos) {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");

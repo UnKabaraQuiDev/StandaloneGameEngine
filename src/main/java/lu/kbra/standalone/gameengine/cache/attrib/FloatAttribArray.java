@@ -39,6 +39,8 @@ public class FloatAttribArray extends AttribArray {
 
 	@Override
 	public void init() {
+		bind();
+		
 		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", 0..." + data.length + ", " + iStatic + ")");
 
@@ -59,6 +61,7 @@ public class FloatAttribArray extends AttribArray {
 		} else if (nPos.length != data.length) {
 			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
+		bind();
 
 		data = nPos;
 		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);

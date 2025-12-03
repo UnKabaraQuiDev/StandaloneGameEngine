@@ -1,5 +1,7 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
+import java.util.Arrays;
+
 import org.joml.Matrix4f;
 
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
@@ -44,7 +46,10 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 
 	@Override
 	public void init() {
+		bind();
+		
 		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		assert GL_W.checkError("BufferData(" + bufferType + ", " + Arrays.toString(data) + ", " + iStatic + ")");
 	}
 	
 	@Override
@@ -67,6 +72,8 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 
 	@Override
 	public void enable() {
+		bind();
+		
 		for (int i = 0; i < 4; i++) {
 			GL_W.glEnableVertexAttribArray(index + i);
 			GL_W.checkError("EnableVertexAttribArray(" + index + i + ")");

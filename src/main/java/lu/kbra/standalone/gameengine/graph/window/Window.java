@@ -26,11 +26,10 @@ import org.lwjgl.glfw.GLFWScrollCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.system.MemoryUtil;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
 import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class Window implements Cleanupable {
 
@@ -330,6 +329,8 @@ public abstract class Window implements Cleanupable {
 		if (handle == MemoryUtil.NULL) {
 			throw new IllegalStateException("Window wasn't initialized");
 		}
+		GL_W.glBindFramebuffer(GL_W.GL_FRAMEBUFFER, 0);
+		assert GL_W.checkError("BindFramebuffer");
 		GLFW.glfwSwapBuffers(handle);
 	}
 

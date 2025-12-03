@@ -36,6 +36,8 @@ public class IntAttribArray extends AttribArray {
 
 	@Override
 	public void init() {
+		bind();
+		
 		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", " + Arrays.toString(data) + ", " + iStatic + ")");
 

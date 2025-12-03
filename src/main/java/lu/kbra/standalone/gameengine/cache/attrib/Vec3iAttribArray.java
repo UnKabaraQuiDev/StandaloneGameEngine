@@ -39,6 +39,8 @@ public class Vec3iAttribArray extends AttribArray {
 
 	@Override
 	public void init() {
+		bind();
+		
 		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", " + data.length * DATA_SIZE + ", " + iStatic + ")");
 

@@ -77,6 +77,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 	public abstract void update();
 
 	public void enable() {
+		bind();
+		
 		GL_W.glEnableVertexAttribArray(index);
 		assert GL_W.checkError("EnableVertexAttribArray(" + index + ") (" + name + ")");
 		GL_W.glVertexAttribDivisor(index, divisor);
@@ -84,6 +86,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 	}
 
 	public void disable() {
+		bind();
+		
 		GL_W.glDisableVertexAttribArray(index);
 		assert GL_W.checkError("DisableVertexAttribArray(" + index + ") (" + name + ")");
 	}
