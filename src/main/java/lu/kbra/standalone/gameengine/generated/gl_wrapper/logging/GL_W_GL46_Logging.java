@@ -1,8 +1,5 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper.logging;
 
-import java.lang.CharSequence;
-import java.lang.Override;
-import java.lang.String;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
@@ -10,14 +7,17 @@ import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
 import java.util.logging.Level;
-import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
-import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
-import lu.pcy113.pclib.logger.PCLogger;
+
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.opengl.GL46;
 import org.lwjgl.opengl.GLDebugMessageCallbackI;
+
+import lu.pcy113.pclib.logger.GlobalLogger;
+import lu.pcy113.pclib.logger.PCLogger;
+
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 
 public class GL_W_GL46_Logging implements GL_W_Call {
 	private static PCLogger LOGGER = GlobalLogger.getLogger();
@@ -1836,7 +1836,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglMultiDrawElementsIndirect(int arg0, int arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.nglMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -1999,7 +2000,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetActiveUniformName(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetActiveUniformName(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -2111,43 +2113,50 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glClearNamedBufferData(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearNamedBufferData(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearNamedBufferData(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearNamedBufferData(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearNamedBufferData(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearNamedBufferData(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearNamedBufferData(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -2282,7 +2291,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetProgramBinary(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetProgramBinary(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -2295,7 +2305,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL46.nglGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
@@ -2356,10 +2367,13 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, long arg11) {
-		org.lwjgl.opengl.GL46.nglGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
-		LOGGER.log(Level.INFO, "nglGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ")");
+	public void nglGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int arg10, long arg11) {
+		org.lwjgl.opengl.GL46.nglGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10,
+				arg11);
+		LOGGER.log(Level.INFO,
+				"nglGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+						+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ")");
 	}
 
 	@Override
@@ -2441,17 +2455,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4,
-			IntBuffer arg5) {
+	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4, IntBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, int[] arg3, int[] arg4,
-			int[] arg5) {
+	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, int[] arg3, int[] arg4, int[] arg5) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -2708,31 +2722,33 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL46.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
+		LOGGER.log(Level.INFO, "glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
 	public void glGetActiveUniform(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
 	public String glGetActiveUniform_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL46.glGetActiveUniform(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
@@ -2757,25 +2773,29 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glMultiDrawElementsIndirect(int arg0, int arg1, IntBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glMultiDrawElementsIndirect(int arg0, int arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glMultiDrawElementsIndirect(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glMultiDrawElementsIndirect(int arg0, int arg1, int[] arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -2980,18 +3000,20 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetDebugMessageLog(int arg0, IntBuffer arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, IntBuffer arg5, ByteBuffer arg6) {
+	public int glGetDebugMessageLog(int arg0, IntBuffer arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
+			IntBuffer arg5, ByteBuffer arg6) {
 		int ret = org.lwjgl.opengl.GL46.glGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") = " + ret);
+		LOGGER.log(Level.INFO, "glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
-	public int glGetDebugMessageLog(int arg0, int[] arg1, int[] arg2, int[] arg3, int[] arg4,
-			int[] arg5, ByteBuffer arg6) {
+	public int glGetDebugMessageLog(int arg0, int[] arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5,
+			ByteBuffer arg6) {
 		int ret = org.lwjgl.opengl.GL46.glGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") = " + ret);
+		LOGGER.log(Level.INFO, "glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ") = " + ret);
 		return ret;
 	}
 
@@ -3020,10 +3042,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glBindImageTexture(int arg0, int arg1, int arg2, boolean arg3, int arg4, int arg5,
-			int arg6) {
+	public void glBindImageTexture(int arg0, int arg1, int arg2, boolean arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.glBindImageTexture(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glBindImageTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glBindImageTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -3090,7 +3112,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glProgramUniform3ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glProgramUniform3ui(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glProgramUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glProgramUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -3154,10 +3177,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureView(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	public void glTextureView(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengl.GL46.glTextureView(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTextureView(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTextureView(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -3211,7 +3234,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glNamedFramebufferRenderbuffer(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL46.glNamedFramebufferRenderbuffer(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glNamedFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glNamedFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
@@ -3370,7 +3394,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetActiveSubroutineUniformiv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetActiveSubroutineUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "nglGetActiveSubroutineUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ")");
 	}
 
 	@Override
@@ -3419,13 +3444,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -3449,19 +3476,22 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glDrawTransformFeedbackStreamInstanced(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL46.glDrawTransformFeedbackStreamInstanced(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glDrawTransformFeedbackStreamInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawTransformFeedbackStreamInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
 	public void glVertexAttribL4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribL4d(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribL4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribL4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glTexStorage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glTexStorage3D(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glTexStorage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexStorage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -3514,16 +3544,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3,
-			IntBuffer arg4) {
+	public void glGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformiv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetActiveSubroutineUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformiv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetActiveSubroutineUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -3595,17 +3626,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3,
-			IntBuffer arg4) {
+	public void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3,
-			int[] arg4) {
+	public void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3, int[] arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -3687,10 +3718,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4,
-			double arg5) {
+	public void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL46.glFrustum(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glFrustum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glFrustum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -3737,10 +3768,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.nglDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -3788,7 +3819,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glGetnColorTable(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glGetnColorTable(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetnColorTable(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetnColorTable(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -3834,10 +3866,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, long arg6) {
+	public void nglClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -4024,7 +4056,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetTextureImage(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetTextureImage(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -4066,7 +4099,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetnTexImage(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetnTexImage(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglGetnTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetnTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -4084,7 +4118,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glNamedFramebufferTextureLayer(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glNamedFramebufferTextureLayer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glNamedFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glNamedFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -4176,7 +4211,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1, long arg2, ByteBuffer arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL46.glMapBuffer(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
@@ -4319,7 +4355,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglBindVertexBuffers(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglBindVertexBuffers(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglBindVertexBuffers(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglBindVertexBuffers(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -4337,7 +4374,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexArrayVertexBuffer(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glVertexArrayVertexBuffer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexArrayVertexBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexArrayVertexBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -4410,7 +4448,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public int glGetNamedFramebufferAttachmentParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL46.glGetNamedFramebufferAttachmentParameteri(arg0, arg1, arg2);
-		LOGGER.log(Level.INFO, "glGetNamedFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetNamedFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret);
 		return ret;
 	}
 
@@ -4441,7 +4480,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix2x4dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix2x4dv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix2x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix2x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -4469,10 +4509,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL46.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -4502,7 +4543,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glBindBufferRange(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glBindBufferRange(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -4560,10 +4602,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.nglCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -4607,7 +4650,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix3x2dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix3x2dv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix3x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix3x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -4631,14 +4675,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix2x4fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix2x4fv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		org.lwjgl.opengl.GL46.nglDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -4725,19 +4770,22 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglMultiDrawArraysIndirectCount(int arg0, long arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.nglMultiDrawArraysIndirectCount(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "nglMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glDebugMessageInsert(int arg0, int arg1, int arg2, int arg3, CharSequence arg4) {
 		org.lwjgl.opengl.GL46.glDebugMessageInsert(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDebugMessageInsert(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDebugMessageInsert(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glDebugMessageInsert(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glDebugMessageInsert(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDebugMessageInsert(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDebugMessageInsert(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -4773,27 +4821,29 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glMultiDrawArraysIndirectCount(int arg0, int[] arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawArraysIndirectCount(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glMultiDrawArraysIndirectCount(int arg0, IntBuffer arg1, long arg2, int arg3,
-			int arg4) {
+	public void glMultiDrawArraysIndirectCount(int arg0, IntBuffer arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawArraysIndirectCount(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glMultiDrawArraysIndirectCount(int arg0, ByteBuffer arg1, long arg2, int arg3,
-			int arg4) {
+	public void glMultiDrawArraysIndirectCount(int arg0, ByteBuffer arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawArraysIndirectCount(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glMultiDrawArraysIndirectCount(int arg0, long arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawArraysIndirectCount(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiDrawArraysIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -4897,7 +4947,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix3x2fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix3x2fv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -4907,10 +4958,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	public void nglGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglGetActiveSubroutineUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglGetActiveSubroutineUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -5020,7 +5071,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix3dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix3dv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -5054,73 +5106,83 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, double[] arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, float[] arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int[] arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, short[] arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -5280,91 +5342,104 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, short[] arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, double[] arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			double[] arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, float[] arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int[] arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, ShortBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, IntBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, ByteBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, DoubleBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, FloatBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
 	public void glDebugMessageControl(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		org.lwjgl.opengl.GL46.glDebugMessageControl(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glDebugMessageControl(int arg0, int arg1, int arg2, int[] arg3, boolean arg4) {
 		org.lwjgl.opengl.GL46.glDebugMessageControl(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glDebugMessageControl(int arg0, int arg1, int arg2, IntBuffer arg3, boolean arg4) {
 		org.lwjgl.opengl.GL46.glDebugMessageControl(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -5470,28 +5545,31 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix3fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix3fv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public int glGetActiveSubroutineUniformi(int arg0, int arg1, int arg2, int arg3) {
 		int ret = org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformi(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetActiveSubroutineUniformi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
-	public void glInvalidateTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glInvalidateTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7) {
 		org.lwjgl.opengl.GL46.glInvalidateTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glInvalidateTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glInvalidateTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -5507,73 +5585,73 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			double[] arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, double[] arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int[] arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			DoubleBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, DoubleBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -5685,7 +5763,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glGetnMinmax(int arg0, boolean arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.glGetnMinmax(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetnMinmax(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetnMinmax(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -5848,7 +5927,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glCopyNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glCopyNamedBufferSubData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glCopyNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glCopyNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -5936,24 +6016,26 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			long arg6) {
+	public void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+				+ ", " + arg6 + ")");
 	}
 
 	@Override
@@ -6013,24 +6095,24 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -6076,17 +6158,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -6104,33 +6186,36 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glDrawElementsInstancedBaseVertex(int arg0, IntBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
 	public void glDrawElementsInstancedBaseVertex(int arg0, ByteBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3,
-			int arg4) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glDrawElementsInstancedBaseVertex(int arg0, ShortBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
@@ -6155,7 +6240,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglDrawElementsBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL46.nglDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -6167,7 +6253,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glProgramUniform4i(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glProgramUniform4i(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glProgramUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glProgramUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -6214,17 +6301,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform4d(int arg0, int arg1, double arg2, double arg3, double arg4,
-			double arg5) {
+	public void glProgramUniform4d(int arg0, int arg1, double arg2, double arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL46.glProgramUniform4d(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glProgramUniform4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glProgramUniform4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glProgramUniform4f(int arg0, int arg1, float arg2, float arg3, float arg4,
-			float arg5) {
+	public void glProgramUniform4f(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5) {
 		org.lwjgl.opengl.GL46.glProgramUniform4f(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glProgramUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glProgramUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -6302,43 +6389,50 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -6361,29 +6455,34 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, ByteBuffer arg9) {
+	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL46.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL46.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
+		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
 	public void glCopyBufferSubData(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glCopyBufferSubData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void nglVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -6395,13 +6494,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL46.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL46.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
@@ -6477,10 +6578,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetProgramResourceName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	public void nglGetProgramResourceName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetProgramResourceName(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -6552,13 +6653,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glProgramUniform3f(int arg0, int arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL46.glProgramUniform3f(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glProgramUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glProgramUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glProgramUniform3i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glProgramUniform3i(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glProgramUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glProgramUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -6583,13 +6686,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glProgramUniform3d(int arg0, int arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL46.glProgramUniform3d(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glProgramUniform3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glProgramUniform3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void nglDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL46.nglDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -6667,10 +6772,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramResourceName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	public void glGetProgramResourceName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceName(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -6683,13 +6788,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glGetProgramResourceName(int arg0, int arg1, int arg2, int[] arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceName(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public String glGetProgramResourceName_String(int arg0, int arg1, int arg2, int arg3) {
 		String ret = org.lwjgl.opengl.GL46.glGetProgramResourceName(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetProgramResourceName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetProgramResourceName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
@@ -6754,17 +6861,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glBindBuffersRange(int arg0, int arg1, int[] arg2, PointerBuffer arg3,
-			PointerBuffer arg4) {
+	public void glBindBuffersRange(int arg0, int arg1, int[] arg2, PointerBuffer arg3, PointerBuffer arg4) {
 		org.lwjgl.opengl.GL46.glBindBuffersRange(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glBindBuffersRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glBindBuffersRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glBindBuffersRange(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3,
-			PointerBuffer arg4) {
+	public void glBindBuffersRange(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3, PointerBuffer arg4) {
 		org.lwjgl.opengl.GL46.glBindBuffersRange(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glBindBuffersRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glBindBuffersRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -6817,10 +6924,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -6844,7 +6951,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglVertexAttribLPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglVertexAttribLPointer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -6898,7 +7006,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglBindBuffersRange(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglBindBuffersRange(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglBindBuffersRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglBindBuffersRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -7054,73 +7163,73 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			double[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, double[] arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			DoubleBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, DoubleBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -7233,73 +7342,83 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, DoubleBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, double[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			double[] arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -7395,77 +7514,88 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glScissorIndexed(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glScissorIndexed(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glScissorIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glScissorIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, float[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, int[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, short[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, double[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -7515,7 +7645,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetActiveUniformsiv(int arg0, int arg1, long arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetActiveUniformsiv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -7721,7 +7852,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glFramebufferTexture1D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glFramebufferTexture1D(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glFramebufferTexture1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glFramebufferTexture1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -7749,10 +7881,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			boolean arg6) {
+	public void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		org.lwjgl.opengl.GL46.glTexImage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexImage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -7788,7 +7920,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix2fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix2fv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -7812,7 +7945,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexAttribI4ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribI4ui(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -7886,10 +8020,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -7945,7 +8080,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glFramebufferTexture3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glFramebufferTexture3D(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glFramebufferTexture3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glFramebufferTexture3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -8035,10 +8171,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.nglTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -8056,7 +8193,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix4x3dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix4x3dv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix4x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix4x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -8080,14 +8218,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glFramebufferTexture2D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glFramebufferTexture2D(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void nglMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5) {
+	public void nglMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.nglMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -8148,7 +8287,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glTextureBufferRange(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glTextureBufferRange(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glTextureBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glTextureBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -8210,57 +8350,59 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -8309,46 +8451,51 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix4x3fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix4x3fv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glDrawElementsInstancedBaseInstance(int arg0, ShortBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
 	public void glDrawElementsInstancedBaseInstance(int arg0, IntBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void glDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseInstance(int arg0, int arg1, ByteBuffer arg2, int arg3,
-			int arg4) {
+	public void glDrawElementsInstancedBaseInstance(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glDrawElementsInstancedBaseInstance(int arg0, ByteBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
-	public void nglInvalidateNamedFramebufferSubData(int arg0, int arg1, long arg2, int arg3, int arg4,
-			int arg5, int arg6) {
+	public void nglInvalidateNamedFramebufferSubData(int arg0, int arg1, long arg2, int arg3, int arg4, int arg5,
+			int arg6) {
 		org.lwjgl.opengl.GL46.nglInvalidateNamedFramebufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglInvalidateNamedFramebufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglInvalidateNamedFramebufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -8439,49 +8586,53 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
 			IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
 			FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			int[] arg6) {
+	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
 			ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearNamedBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -8525,7 +8676,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public int glGetFramebufferAttachmentParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL46.glGetFramebufferAttachmentParameteri(arg0, arg1, arg2);
-		LOGGER.log(Level.INFO, "glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret);
 		return ret;
 	}
 
@@ -8683,7 +8835,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glRenderbufferStorageMultisample(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ")");
 	}
 
 	@Override
@@ -8909,25 +9062,29 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetNamedFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL46.nglGetNamedFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "nglGetNamedFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetNamedFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
 	public void nglGetnHistogram(int arg0, boolean arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetnHistogram(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglGetnHistogram(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetnHistogram(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
 	public void nglBindFragDataLocationIndexed(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL46.nglBindFragDataLocationIndexed(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "nglBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"nglBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
 	public void nglClearBufferData(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglClearBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -9057,79 +9214,90 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, double[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			double[] arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, DoubleBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
 	public void nglProgramUniformMatrix2x3dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix2x3dv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix2x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix2x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -9147,7 +9315,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetActiveUniformBlockName(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetActiveUniformBlockName(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -9181,10 +9350,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			boolean arg6) {
+	public void glTexStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		org.lwjgl.opengl.GL46.glTexStorage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexStorage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTexStorage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -9255,80 +9424,91 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void nglTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.nglTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "nglTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "nglTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, short[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			short[] arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			int[] arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, DoubleBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, double[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			double[] arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, float[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			float[] arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ShortBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			ShortBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			long arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ByteBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			ByteBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, IntBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			IntBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			FloatBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -9398,16 +9578,18 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.nglTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "nglTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
 	public void nglProgramUniformMatrix2x3fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix2x3fv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -9491,7 +9673,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetActiveAtomicCounterBufferiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL46.nglGetActiveAtomicCounterBufferiv(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "nglGetActiveAtomicCounterBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetActiveAtomicCounterBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
@@ -9609,17 +9792,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -9635,73 +9818,73 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ByteBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ShortBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ShortBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			IntBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, IntBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			FloatBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, FloatBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int[] arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			short[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, short[] arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			double[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, double[] arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			float[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, float[] arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			DoubleBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, DoubleBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -9884,7 +10067,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix2dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix2dv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -10094,10 +10278,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -10119,38 +10303,38 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			FloatBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ShortBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -10178,10 +10362,12 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL46.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL46.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
+		LOGGER.log(Level.INFO, "nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -10204,10 +10390,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL46.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -10462,52 +10649,52 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			int[] arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -10553,73 +10740,84 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, DoubleBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, ByteBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, FloatBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, IntBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, ShortBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, float[] arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, float[] arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int[] arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int[] arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, short[] arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, short[] arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, double[] arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, double[] arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, long arg9) {
-		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, long arg9) {
+		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8,
+				arg9);
+		LOGGER.log(Level.INFO, "glGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -10685,7 +10883,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glOrtho(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL46.glOrtho(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glOrtho(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glOrtho(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -10828,7 +11027,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglClearNamedBufferData(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglClearNamedBufferData(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglClearNamedBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -10923,10 +11123,12 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, long arg9) {
-		org.lwjgl.opengl.GL46.nglGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "nglGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+	public void nglGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, long arg9) {
+		org.lwjgl.opengl.GL46.nglGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8,
+				arg9);
+		LOGGER.log(Level.INFO, "nglGetCompressedTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -11049,7 +11251,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -11170,7 +11373,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glMapGrid2d(int arg0, double arg1, double arg2, int arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL46.glMapGrid2d(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMapGrid2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glMapGrid2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -11183,7 +11387,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glMapGrid2f(int arg0, float arg1, float arg2, int arg3, float arg4, float arg5) {
 		org.lwjgl.opengl.GL46.glMapGrid2f(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMapGrid2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glMapGrid2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -11278,17 +11483,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			long arg6) {
+	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+				+ ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			ByteBuffer arg6) {
+	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+				+ ", " + arg6 + ")");
 	}
 
 	@Override
@@ -11374,7 +11579,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglClearTexImage(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglClearTexImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglClearTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglClearTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -11528,17 +11734,20 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, ByteBuffer arg9) {
+	public void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glCompressedTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL46.glCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glCompressedTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+	public void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL46.glCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
+		LOGGER.log(Level.INFO, "glCompressedTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -11566,10 +11775,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglVertexArrayVertexBuffers(int arg0, int arg1, int arg2, long arg3, long arg4,
-			long arg5) {
+	public void nglVertexArrayVertexBuffers(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglVertexArrayVertexBuffers(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglVertexArrayVertexBuffers(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglVertexArrayVertexBuffers(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -11609,10 +11818,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexArrayAttribFormat(int arg0, int arg1, int arg2, int arg3, boolean arg4,
-			int arg5) {
+	public void glVertexArrayAttribFormat(int arg0, int arg1, int arg2, int arg3, boolean arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glVertexArrayAttribFormat(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glVertexArrayAttribFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glVertexArrayAttribFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -11624,7 +11833,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexArrayAttribIFormat(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glVertexArrayAttribIFormat(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexArrayAttribIFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexArrayAttribIFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -11671,17 +11881,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexArrayVertexBuffers(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3,
-			IntBuffer arg4) {
+	public void glVertexArrayVertexBuffers(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glVertexArrayVertexBuffers(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexArrayVertexBuffers(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexArrayVertexBuffers(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glVertexArrayVertexBuffers(int arg0, int arg1, int[] arg2, PointerBuffer arg3,
-			int[] arg4) {
+	public void glVertexArrayVertexBuffers(int arg0, int arg1, int[] arg2, PointerBuffer arg3, int[] arg4) {
 		org.lwjgl.opengl.GL46.glVertexArrayVertexBuffers(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexArrayVertexBuffers(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexArrayVertexBuffers(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -11770,10 +11980,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6) {
+	public void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.glCopyTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glCopyTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glCopyTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -11822,27 +12032,29 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glTransformFeedbackBufferRange(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glTransformFeedbackBufferRange(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glTransformFeedbackBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glTransformFeedbackBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glViewportIndexedf(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL46.glViewportIndexedf(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glViewportIndexedf(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glViewportIndexedf(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glCompressedTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, long arg6) {
+	public void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glCompressedTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -11888,10 +12100,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengl.GL46.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -12010,17 +12222,19 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, long arg8) {
+	public void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glCompressedTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, ByteBuffer arg7) {
+	public void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCompressedTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -12057,7 +12271,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glMultiTexCoord4s(int arg0, short arg1, short arg2, short arg3, short arg4) {
 		org.lwjgl.opengl.GL46.glMultiTexCoord4s(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -12118,7 +12333,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glMultiTexCoord4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL46.glMultiTexCoord4d(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -12166,7 +12382,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glMultiTexCoord4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiTexCoord4i(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -12184,7 +12401,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glDrawElementsBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -12202,7 +12420,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glMultiTexCoord4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL46.glMultiTexCoord4f(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMultiTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glMultiTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -12250,10 +12469,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, long arg7) {
+	public void nglGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL46.nglGetnSeparableFilter(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglGetnSeparableFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "nglGetnSeparableFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -12263,10 +12483,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4,
-			long arg5, long arg6) {
+	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL46.nglGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -12367,10 +12588,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetProgramResourceiv(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, long arg7) {
+	public void nglGetProgramResourceiv(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL46.nglGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "nglGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -12486,10 +12708,13 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glBlitNamedFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
-		org.lwjgl.opengl.GL46.glBlitNamedFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
-		LOGGER.log(Level.INFO, "glBlitNamedFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ")");
+	public void glBlitNamedFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int arg10, int arg11) {
+		org.lwjgl.opengl.GL46.glBlitNamedFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10,
+				arg11);
+		LOGGER.log(Level.INFO,
+				"glBlitNamedFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+						+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ")");
 	}
 
 	@Override
@@ -12561,16 +12786,18 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3,
-			int arg4, int arg5, int arg6) {
+	public void nglDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4,
+			int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.nglDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2
+				+ ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void nglGetnConvolutionFilter(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetnConvolutionFilter(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetnConvolutionFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetnConvolutionFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -12586,10 +12813,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4,
-			int arg5, int arg6) {
+	public void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.nglInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -12643,7 +12870,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glGetnHistogram(int arg0, boolean arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.glGetnHistogram(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetnHistogram(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetnHistogram(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -12655,13 +12883,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glGetActiveAtomicCounterBufferiv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL46.glGetActiveAtomicCounterBufferiv(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetActiveAtomicCounterBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetActiveAtomicCounterBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
 	public void glGetActiveAtomicCounterBufferiv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL46.glGetActiveAtomicCounterBufferiv(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetActiveAtomicCounterBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetActiveAtomicCounterBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
@@ -12799,10 +13029,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveSubroutineName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	public void nglGetActiveSubroutineName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetActiveSubroutineName(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglGetActiveSubroutineName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglGetActiveSubroutineName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -12866,10 +13096,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, long arg6) {
+	public void nglCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglCompressedTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglCompressedTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglCompressedTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -12906,66 +13136,75 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int[] arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, short[] arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, double[] arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, float[] arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -12989,36 +13228,38 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glFramebufferTextureLayer(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glFramebufferTextureLayer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
+		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, ByteBuffer arg5) {
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2,
-			IntBuffer arg3) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ") = " + ret);
 		return ret;
 	}
 
@@ -13061,7 +13302,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix4x2dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix4x2dv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix4x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix4x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -13113,10 +13355,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, long arg8) {
+	public void nglCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL46.nglCompressedTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglCompressedTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "nglCompressedTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -13134,7 +13377,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix3x4dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix3x4dv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix3x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix3x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -13193,10 +13437,12 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL46.nglCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "nglCompressedTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+	public void nglCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL46.nglCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
+		LOGGER.log(Level.INFO, "nglCompressedTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -13221,7 +13467,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexArrayAttribLFormat(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glVertexArrayAttribLFormat(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexArrayAttribLFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexArrayAttribLFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -13263,14 +13510,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix4x2fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix4x2fv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -13294,7 +13542,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix3x4fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix3x4fv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -13319,7 +13568,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglDebugMessageInsert(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglDebugMessageInsert(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglDebugMessageInsert(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglDebugMessageInsert(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -13366,10 +13616,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8) {
+	public void glCopyTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8) {
 		org.lwjgl.opengl.GL46.glCopyTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glCopyTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glCopyTextureSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -13419,61 +13670,71 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, DoubleBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
 	public void glGetTextureImage(int arg0, int arg1, int arg2, int arg3, double[] arg4) {
 		org.lwjgl.opengl.GL46.glGetTextureImage(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTextureImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -13485,7 +13746,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public long nglMapNamedBufferRange(int arg0, long arg1, long arg2, int arg3) {
 		long ret = org.lwjgl.opengl.GL46.nglMapNamedBufferRange(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "nglMapNamedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"nglMapNamedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
@@ -13508,10 +13770,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glCopyTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7) {
 		org.lwjgl.opengl.GL46.glCopyTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCopyTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glCopyTextureSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -13674,7 +13937,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glCopyTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glCopyTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glCopyTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glCopyTextureSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -13837,25 +14101,29 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, double[] arg5) {
 		org.lwjgl.opengl.GL46.glMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
 	public void glMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, DoubleBuffer arg5) {
 		org.lwjgl.opengl.GL46.glMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
 	public void glMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengl.GL46.glMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
 	public void glMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, float[] arg5) {
 		org.lwjgl.opengl.GL46.glMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -13907,17 +14175,19 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, double[] arg9) {
+	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
+			int arg8, double[] arg9) {
 		org.lwjgl.opengl.GL46.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+				+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, DoubleBuffer arg9) {
+	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
+			int arg8, DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL46.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+				+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -13927,17 +14197,19 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, float[] arg9) {
+	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
+			int arg8, float[] arg9) {
 		org.lwjgl.opengl.GL46.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+				+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
+			int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengl.GL46.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+				+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -14057,37 +14329,38 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3,
-			int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, IntBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		org.lwjgl.opengl.GL46.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4,
-			int arg5) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3,
-			int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -14097,10 +14370,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -14136,13 +14409,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glTexBufferRange(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glTexBufferRange(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glTexBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void nglSpecializeShader(int arg0, long arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglSpecializeShader(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglSpecializeShader(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglSpecializeShader(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -14166,13 +14441,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glDrawArraysInstancedBaseInstance(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawArraysInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawArraysInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glDrawArraysInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glVertexAttrib4Nub(int arg0, byte arg1, byte arg2, byte arg3, byte arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttrib4Nub(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttrib4Nub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -14225,16 +14502,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetNamedFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2,
-			IntBuffer arg3) {
+	public void glGetNamedFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL46.glGetNamedFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetNamedFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetNamedFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
 	public void glGetNamedFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL46.glGetNamedFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetNamedFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetNamedFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")");
 	}
 
 	@Override
@@ -14244,73 +14522,85 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, long arg11) {
-		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ")");
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int arg10, long arg11) {
+		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10,
+				arg11);
+		LOGGER.log(Level.INFO,
+				"glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+						+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ")");
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, double[] arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, float[] arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, short[] arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int[] arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "glGetTextureSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -14332,10 +14622,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void nglDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.nglDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -14351,24 +14641,24 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateNamedFramebufferSubData(int arg0, IntBuffer arg1, int arg2, int arg3,
-			int arg4, int arg5) {
+	public void glInvalidateNamedFramebufferSubData(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateNamedFramebufferSubData(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glInvalidateNamedFramebufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glInvalidateNamedFramebufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glInvalidateNamedFramebufferSubData(int arg0, int[] arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateNamedFramebufferSubData(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateNamedFramebufferSubData(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glInvalidateNamedFramebufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glInvalidateNamedFramebufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glInvalidateNamedFramebufferSubData(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateNamedFramebufferSubData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateNamedFramebufferSubData(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glInvalidateNamedFramebufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glInvalidateNamedFramebufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -14445,31 +14735,31 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5) {
+	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, int[] arg2, long arg3, int arg4,
-			int arg5) {
+	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, int[] arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, IntBuffer arg2, long arg3,
-			int arg4, int arg5) {
+	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, IntBuffer arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, ByteBuffer arg2, long arg3,
-			int arg4, int arg5) {
+	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, ByteBuffer arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glMultiDrawElementsIndirectCount(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -14592,10 +14882,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4,
-			long arg5) {
+	public void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -14763,13 +15053,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglMultiDrawElements(int arg0, long arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL46.nglMultiDrawElements(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glProgramUniform4ui(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glProgramUniform4ui(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glProgramUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glProgramUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -14890,30 +15182,32 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	public void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int[] arg3,
-			ByteBuffer arg4) {
+	public void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int[] arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ")");
 	}
 
 	@Override
 	public String glGetActiveSubroutineUniformName_String(int arg0, int arg1, int arg2, int arg3) {
 		String ret = org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+				+ arg3 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
 	public String glGetActiveSubroutineUniformName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformName(arg0, arg1, arg2);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetActiveSubroutineUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret);
 		return ret;
 	}
 
@@ -15082,10 +15376,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9) {
+	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9) {
 		org.lwjgl.opengl.GL46.glBlitFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -15131,10 +15426,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void nglClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.nglClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "nglClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO, "nglClearTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -15182,7 +15478,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glGetnConvolutionFilter(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glGetnConvolutionFilter(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetnConvolutionFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetnConvolutionFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -15199,10 +15496,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public int nglGetDebugMessageLog(int arg0, int arg1, long arg2, long arg3, long arg4, long arg5,
-			long arg6, long arg7) {
+	public int nglGetDebugMessageLog(int arg0, int arg1, long arg2, long arg3, long arg4, long arg5, long arg6,
+			long arg7) {
 		int ret = org.lwjgl.opengl.GL46.nglGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") = " + ret);
+		LOGGER.log(Level.INFO, "nglGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") = " + ret);
 		return ret;
 	}
 
@@ -15227,21 +15525,23 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexAttribI4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribI4i(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glTextureStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, boolean arg6) {
+	public void glTextureStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			boolean arg6) {
 		org.lwjgl.opengl.GL46.glTextureStorage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTextureStorage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glTextureStorage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glTextureStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	public void glTextureStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		org.lwjgl.opengl.GL46.glTextureStorage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glTextureStorage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glTextureStorage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -15261,7 +15561,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public ByteBuffer glMapNamedBuffer_ByteBuffer(int arg0, int arg1, long arg2, ByteBuffer arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL46.glMapNamedBuffer(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glMapNamedBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glMapNamedBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
@@ -15383,10 +15684,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	public void glTexStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		org.lwjgl.opengl.GL46.glTexStorage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glTexStorage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glTexStorage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -15667,10 +15968,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDebugMessageControl(int arg0, int arg1, int arg2, int arg3, long arg4,
-			boolean arg5) {
+	public void nglDebugMessageControl(int arg0, int arg1, int arg2, int arg3, long arg4, boolean arg5) {
 		org.lwjgl.opengl.GL46.nglDebugMessageControl(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -15805,13 +16106,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexAttribLPointer(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribLPointer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glVertexAttribLPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribLPointer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -15829,7 +16132,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetInternalformati64v(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetInternalformati64v(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetInternalformati64v(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetInternalformati64v(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -15854,7 +16158,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -15864,10 +16169,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -15975,30 +16280,31 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public String glGetActiveAttrib_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL46.glGetActiveAttrib(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
-	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL46.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
+		LOGGER.log(Level.INFO, "glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -16162,7 +16468,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glTextureStorage2D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glTextureStorage2D(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glTextureStorage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glTextureStorage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -16172,16 +16479,18 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			long arg9) {
 		org.lwjgl.opengl.GL46.nglTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
 	public void glBlendFuncSeparatei(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glBlendFuncSeparatei(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glBlendFuncSeparatei(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glBlendFuncSeparatei(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -16216,17 +16525,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void nglReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL46.nglReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "nglReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	public void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		org.lwjgl.opengl.GL46.glTexImage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glTexImage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glTexImage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -16250,13 +16559,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexAttrib4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttrib4f(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glVertexAttrib4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttrib4d(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttrib4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttrib4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -16298,7 +16609,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexAttrib4s(int arg0, short arg1, short arg2, short arg3, short arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttrib4s(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttrib4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttrib4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -16341,7 +16653,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetObjectLabel(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetObjectLabel(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetObjectLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetObjectLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -16446,7 +16759,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glTextureStorage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glTextureStorage3D(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glTextureStorage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glTextureStorage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -16474,17 +16788,18 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public ByteBuffer glMapNamedBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
-			ByteBuffer arg4) {
+	public ByteBuffer glMapNamedBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
 		ByteBuffer ret = org.lwjgl.opengl.GL46.glMapNamedBufferRange(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMapNamedBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
+		LOGGER.log(Level.INFO, "glMapNamedBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
 	public ByteBuffer glMapNamedBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL46.glMapNamedBufferRange(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glMapNamedBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glMapNamedBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
@@ -16515,14 +16830,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glClearNamedFramebufferfi(int arg0, int arg1, int arg2, float arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glClearNamedFramebufferfi(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glClearNamedFramebufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glClearNamedFramebufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glNamedRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3,
-			int arg4) {
+	public void glNamedRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glNamedRenderbufferStorageMultisample(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glNamedRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glNamedRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+				+ ", " + arg4 + ")");
 	}
 
 	@Override
@@ -16558,27 +16874,31 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"nglMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
 	public void nglMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"nglMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -16701,13 +17021,15 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glGetnTexImage(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.glGetnTexImage(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetnTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetnTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
 	public void nglReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -16747,10 +17069,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, long arg9) {
+	public void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
+			int arg8, long arg9) {
 		org.lwjgl.opengl.GL46.nglMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "nglMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "nglMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+				+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -16766,10 +17089,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, long arg9) {
+	public void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
+			int arg8, long arg9) {
 		org.lwjgl.opengl.GL46.nglMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "nglMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO, "nglMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+				+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -16811,7 +17135,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetInternalformativ(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetInternalformativ(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -16853,21 +17178,23 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public String glGetActiveSubroutineName_String(int arg0, int arg1, int arg2, int arg3) {
 		String ret = org.lwjgl.opengl.GL46.glGetActiveSubroutineName(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetActiveSubroutineName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
 	public void glGetActiveSubroutineName(int arg0, int arg1, int arg2, int[] arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineName(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetActiveSubroutineName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glGetActiveSubroutineName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	public void glGetActiveSubroutineName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineName(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetActiveSubroutineName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetActiveSubroutineName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -16884,17 +17211,18 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
-			ByteBuffer arg4) {
+	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
 		ByteBuffer ret = org.lwjgl.opengl.GL46.glMapBufferRange(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
+		LOGGER.log(Level.INFO, "glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+				+ arg4 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
 	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL46.glMapBufferRange(arg0, arg1, arg2, arg3);
-		LOGGER.log(Level.INFO, "glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
 	}
 
@@ -16955,17 +17283,17 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -17123,17 +17451,18 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -17229,10 +17558,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8) {
+	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8) {
 		org.lwjgl.opengl.GL46.glCopyTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -17248,17 +17578,18 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, ByteBuffer arg7) {
+	public void glGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glGetnSeparableFilter(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glGetnSeparableFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glGetnSeparableFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glGetnSeparableFilter(int arg0, int arg1, int arg2, ByteBuffer arg3, ByteBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetnSeparableFilter(int arg0, int arg1, int arg2, ByteBuffer arg3, ByteBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetnSeparableFilter(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetnSeparableFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glGetnSeparableFilter(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -17276,7 +17607,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetnMinmax(int arg0, boolean arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetnMinmax(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglGetnMinmax(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetnMinmax(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -17310,38 +17642,41 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3,
-			int arg4, int arg5, int arg6) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4,
+			int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2
+				+ ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, ByteBuffer arg2,
-			int arg3, int arg4, int arg5) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4,
+			int arg5) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2
+				+ ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, IntBuffer arg1, int arg2,
-			int arg3, int arg4) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2
+				+ ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ShortBuffer arg1, int arg2,
-			int arg3, int arg4) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ShortBuffer arg1, int arg2, int arg3,
+			int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2
+				+ ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ByteBuffer arg1, int arg2,
-			int arg3, int arg4) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ByteBuffer arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2
+				+ ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -17529,7 +17864,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glCopyTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glCopyTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glCopyTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO, "glCopyTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ")");
 	}
 
 	@Override
@@ -17577,7 +17913,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix4dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix4dv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -17635,10 +17972,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengl.GL46.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+				+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -17710,58 +18047,59 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -17828,7 +18166,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglGetnColorTable(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglGetnColorTable(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglGetnColorTable(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetnColorTable(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -17852,7 +18191,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void nglProgramUniformMatrix4fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL46.nglProgramUniformMatrix4fv(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "nglProgramUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"nglProgramUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -18062,10 +18402,10 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL46.nglTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO, "nglTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ")");
 	}
 
 	@Override
@@ -18137,25 +18477,29 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override
@@ -18191,10 +18535,14 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyImageSubData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14) {
-		org.lwjgl.opengl.GL46.glCopyImageSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
-		LOGGER.log(Level.INFO, "glCopyImageSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ", " + arg12 + ", " + arg13 + ", " + arg14 + ")");
+	public void glCopyImageSubData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14) {
+		org.lwjgl.opengl.GL46.glCopyImageSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10,
+				arg11, arg12, arg13, arg14);
+		LOGGER.log(Level.INFO,
+				"glCopyImageSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+						+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ", "
+						+ arg12 + ", " + arg13 + ", " + arg14 + ")");
 	}
 
 	@Override
@@ -18223,10 +18571,11 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO, "nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+				+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -18292,7 +18641,8 @@ public class GL_W_GL46_Logging implements GL_W_Call {
 	@Override
 	public void glVertexAttribFormat(int arg0, int arg1, int arg2, boolean arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glVertexAttribFormat(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glVertexAttribFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
+		LOGGER.log(Level.INFO,
+				"glVertexAttribFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
 
 	@Override

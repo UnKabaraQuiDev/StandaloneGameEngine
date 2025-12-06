@@ -35,7 +35,6 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 
 	public void resize() {
 		GL_W.glRenderbufferStorage(GL_W.GL_RENDERBUFFER, texelInternalFormat.getGlId(), width, height);
-		assert GL_W.checkError("RenderbufferStorage[" + texelInternalFormat + "]=(" + width + "," + height + ")");
 	}
 
 	public void bind() {
@@ -48,17 +47,14 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 
 	public void active(int i) {
 		GL_W.glActiveTexture(GL_W.GL_TEXTURE0 + i);
-		assert GL_W.checkError("ActiveTexture[" + (GL_W.GL_TEXTURE0 + i) + "]");
 	}
 
 	public void bind(int target) {
 		GL_W.glBindRenderbuffer(target, rbid);
-		assert GL_W.checkError("BindRenderbuffer[" + target + "] = " + rbid);
 	}
 
 	public void unbind(int target) {
 		GL_W.glBindRenderbuffer(target, 0);
-		assert GL_W.checkError("BindRenderbuffer[" + target + "] = " + rbid);
 	}
 
 	public int gen() {
@@ -106,7 +102,6 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 			return;
 
 		GL_W.glDeleteRenderbuffers(rbid);
-		assert GL_W.checkError("DeleteRenderbuffers(" + rbid + ")");
 		rbid = -1;
 	}
 

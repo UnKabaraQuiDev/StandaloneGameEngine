@@ -50,9 +50,7 @@ public class GLWindow extends Window {
 		// TODO: add option to disable debug output
 		if (GL_W.WRAPPER instanceof GL_W_GL43 || capabilities.GL_KHR_debug) {
 			GL_W.glEnable(GL_W.GL_DEBUG_OUTPUT);
-			assert GL_W.checkError("Enable(DEBUG_OUTPUT)");
 			GL_W.glEnable(GL_W.GL_DEBUG_OUTPUT_SYNCHRONOUS);
-			assert GL_W.checkError("Enable(DEBUG_OUTPUT_SYNCHRONOUS)");
 
 			// Register callback
 			GL_W.glDebugMessageCallback(
@@ -61,7 +59,6 @@ public class GLWindow extends Window {
 						GlobalLogger.severe("GL DEBUG: " + msg + " (source=" + source + ", type=" + type + ", id=" + id
 								+ ", severity=" + severity + ")");
 					}, 0);
-			assert GL_W.checkError("DebugMessageCallback(...)");
 		}
 
 		try {

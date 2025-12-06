@@ -42,7 +42,6 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 		this.name = name_ == null ? this.getClass().getName() : name_;
 
 		this.spid = GL_W.glCreateProgram();
-		assert GL_W.checkError("CreateProgram() (" + name + ")");
 		if (this.spid == -1) {
 			GameEngineUtils.throwGLError(name + ": Failed to create shader program!");
 		}
@@ -50,10 +49,8 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 		for (AbstractShaderPart sp : parts) {
 			this.parts.put(sp.getType(), sp);
 			GL_W.glAttachShader(this.spid, sp.getGlId());
-			assert GL_W.checkError("AttachShader(" + this.spid + ")");
 		}
 		GL_W.glLinkProgram(this.spid);
-		assert GL_W.checkError("LinkProgram(" + this.spid + ")");
 
 		final int logLen = GL_W.glGetProgrami(this.spid, GL_W.GL_INFO_LOG_LENGTH);
 		if (logLen > 1) {
@@ -84,7 +81,6 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 				return false;
 		}
 		GL_W.glLinkProgram(this.spid);
-		assert GL_W.checkError("LinkProgram(" + this.spid + ")");
 
 		knownNotExistsUniforms.clear();
 		uniforms.clear();
@@ -268,7 +264,6 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 		}
 
 		final int loc = GL_W.glGetUniformLocation(this.spid, name);
-		assert GL_W.checkError("GetUniformLocation(" + this.spid + ", " + name + ")");
 
 		if (loc != -1) {
 			this.uniforms.put(name, new Pair<>(new Property<>(), loc));
@@ -287,12 +282,10 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 			return;
 		}
 		GL_W.glUseProgram(this.spid);
-		assert GL_W.checkError("UseProgram(" + spid + ") (" + name + ").");
 	}
 
 	public void unbind() {
 		GL_W.glUseProgram(0);
-		assert GL_W.checkError("UseProgram(0) (" + name + ").");
 	}
 
 	@Override
@@ -306,7 +299,6 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 		this.parts.values().forEach(AbstractShaderPart::cleanup);
 		this.parts = null;
 		GL_W.glDeleteProgram(this.spid);
-		assert GL_W.checkError("DeleteProgram(" + spid + ") (" + name + ")");
 		this.spid = -1;
 	}
 

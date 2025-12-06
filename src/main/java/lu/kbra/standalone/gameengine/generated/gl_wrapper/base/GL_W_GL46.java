@@ -1,20 +1,19 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper.base;
 
-import java.lang.CharSequence;
-import java.lang.Override;
-import java.lang.String;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
-import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
-import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
+
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.opengl.GL46;
 import org.lwjgl.opengl.GLDebugMessageCallbackI;
+
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 
 public class GL_W_GL46 implements GL_W_Call {
 	public void init() {
@@ -2252,9 +2251,10 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, long arg11) {
-		org.lwjgl.opengl.GL46.nglGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
+	public void nglGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int arg10, long arg11) {
+		org.lwjgl.opengl.GL46.nglGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10,
+				arg11);
 	}
 
 	@Override
@@ -2323,14 +2323,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4,
-			IntBuffer arg5) {
+	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4, IntBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, int[] arg3, int[] arg4,
-			int[] arg5) {
+	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, int[] arg3, int[] arg4, int[] arg5) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -2540,14 +2538,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		return org.lwjgl.opengl.GL46.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -2763,14 +2759,14 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetDebugMessageLog(int arg0, IntBuffer arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, IntBuffer arg5, ByteBuffer arg6) {
+	public int glGetDebugMessageLog(int arg0, IntBuffer arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
+			IntBuffer arg5, ByteBuffer arg6) {
 		return org.lwjgl.opengl.GL46.glGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public int glGetDebugMessageLog(int arg0, int[] arg1, int[] arg2, int[] arg3, int[] arg4,
-			int[] arg5, ByteBuffer arg6) {
+	public int glGetDebugMessageLog(int arg0, int[] arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5,
+			ByteBuffer arg6) {
 		return org.lwjgl.opengl.GL46.glGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -2795,8 +2791,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBindImageTexture(int arg0, int arg1, int arg2, boolean arg3, int arg4, int arg5,
-			int arg6) {
+	public void glBindImageTexture(int arg0, int arg1, int arg2, boolean arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.glBindImageTexture(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -2906,8 +2901,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureView(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	public void glTextureView(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengl.GL46.glTextureView(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -3202,8 +3196,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3,
-			IntBuffer arg4) {
+	public void glGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformiv(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -3268,14 +3261,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3,
-			IntBuffer arg4) {
+	public void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3,
-			int[] arg4) {
+	public void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3, int[] arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -3345,8 +3336,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4,
-			double arg5) {
+	public void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL46.glFrustum(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -3386,8 +3376,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.nglDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -3467,8 +3456,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, long arg6) {
+	public void nglClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -3988,8 +3976,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL46.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -4064,8 +4052,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.nglCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -4125,8 +4113,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		org.lwjgl.opengl.GL46.nglDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -4241,14 +4228,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiDrawArraysIndirectCount(int arg0, IntBuffer arg1, long arg2, int arg3,
-			int arg4) {
+	public void glMultiDrawArraysIndirectCount(int arg0, IntBuffer arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawArraysIndirectCount(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glMultiDrawArraysIndirectCount(int arg0, ByteBuffer arg1, long arg2, int arg3,
-			int arg4) {
+	public void glMultiDrawArraysIndirectCount(int arg0, ByteBuffer arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glMultiDrawArraysIndirectCount(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -4348,8 +4333,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	public void nglGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -4469,62 +4453,62 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, double[] arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, float[] arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int[] arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, short[] arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
@@ -4659,62 +4643,62 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, short[] arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, double[] arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			double[] arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, float[] arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int[] arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, ShortBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, IntBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, ByteBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, DoubleBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, FloatBuffer arg8) {
+	public void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -4819,8 +4803,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -4830,8 +4813,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glInvalidateTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7) {
 		org.lwjgl.opengl.GL46.glInvalidateTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -4846,62 +4829,52 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			double[] arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, double[] arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int[] arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			DoubleBuffer arg6) {
+	public void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, DoubleBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -5201,20 +5174,19 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			long arg6) {
+	public void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -5264,20 +5236,17 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -5317,14 +5286,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -5344,8 +5311,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -5355,8 +5321,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3,
-			int arg4) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -5431,14 +5396,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform4d(int arg0, int arg1, double arg2, double arg3, double arg4,
-			double arg5) {
+	public void glProgramUniform4d(int arg0, int arg1, double arg2, double arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL46.glProgramUniform4d(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glProgramUniform4f(int arg0, int arg1, float arg2, float arg3, float arg4,
-			float arg5) {
+	public void glProgramUniform4f(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5) {
 		org.lwjgl.opengl.GL46.glProgramUniform4f(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -5553,15 +5516,16 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, ByteBuffer arg9) {
+	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL46.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL46.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL46.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
 	}
 
 	@Override
@@ -5650,8 +5614,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetProgramResourceName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	public void nglGetProgramResourceName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetProgramResourceName(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -5806,8 +5769,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramResourceName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	public void glGetProgramResourceName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetProgramResourceName(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -5877,14 +5839,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBindBuffersRange(int arg0, int arg1, int[] arg2, PointerBuffer arg3,
-			PointerBuffer arg4) {
+	public void glBindBuffersRange(int arg0, int arg1, int[] arg2, PointerBuffer arg3, PointerBuffer arg4) {
 		org.lwjgl.opengl.GL46.glBindBuffersRange(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glBindBuffersRange(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3,
-			PointerBuffer arg4) {
+	public void glBindBuffersRange(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3, PointerBuffer arg4) {
 		org.lwjgl.opengl.GL46.glBindBuffersRange(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -5929,8 +5889,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -6125,62 +6084,52 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			double[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, double[] arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			DoubleBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, DoubleBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -6275,62 +6224,62 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, DoubleBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, double[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			double[] arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -6415,62 +6364,62 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, float[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, int[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, short[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, double[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL46.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
@@ -6705,8 +6654,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			boolean arg6) {
+	public void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		org.lwjgl.opengl.GL46.glTexImage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -6816,8 +6764,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -6937,8 +6885,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.nglTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
@@ -6978,8 +6926,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5) {
+	public void nglMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.nglMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -7079,26 +7026,22 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -7113,14 +7056,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -7175,14 +7116,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void glDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseInstance(int arg0, int arg1, ByteBuffer arg2, int arg3,
-			int arg4) {
+	public void glDrawElementsInstancedBaseInstance(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -7192,8 +7131,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglInvalidateNamedFramebufferSubData(int arg0, int arg1, long arg2, int arg3, int arg4,
-			int arg5, int arg6) {
+	public void nglInvalidateNamedFramebufferSubData(int arg0, int arg1, long arg2, int arg3, int arg4, int arg5,
+			int arg6) {
 		org.lwjgl.opengl.GL46.nglInvalidateNamedFramebufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -7286,20 +7225,17 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			int[] arg6) {
+	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glClearNamedBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -7780,62 +7716,62 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, double[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			double[] arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, DoubleBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengl.GL46.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -7885,8 +7821,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			boolean arg6) {
+	public void glTexStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		org.lwjgl.opengl.GL46.glTexStorage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -7946,68 +7881,68 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void nglTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.nglTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, short[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			short[] arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			int[] arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, DoubleBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, double[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			double[] arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, float[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			float[] arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ShortBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			ShortBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			long arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ByteBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			ByteBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, IntBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			IntBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			FloatBuffer arg9) {
 		org.lwjgl.opengl.GL46.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -8067,8 +8002,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.nglTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -8243,14 +8178,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -8265,62 +8198,52 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ByteBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ShortBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ShortBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			IntBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, IntBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			FloatBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, FloatBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int[] arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			short[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, short[] arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			double[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, double[] arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			float[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, float[] arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			DoubleBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, DoubleBuffer arg7) {
 		org.lwjgl.opengl.GL46.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -8645,8 +8568,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -8666,32 +8588,27 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			FloatBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ShortBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -8716,9 +8633,10 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL46.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL46.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
 	}
 
 	@Override
@@ -8737,8 +8655,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL46.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -8948,44 +8866,37 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			int[] arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -9025,63 +8936,64 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, DoubleBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, ByteBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, FloatBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, IntBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, ShortBuffer arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, float[] arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, float[] arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int[] arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int[] arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, short[] arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, short[] arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, double[] arg8) {
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, double[] arg8) {
 		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, long arg9) {
-		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
+	public void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, long arg9) {
+		org.lwjgl.opengl.GL46.glGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8,
+				arg9);
 	}
 
 	@Override
@@ -9330,9 +9242,10 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, long arg9) {
-		org.lwjgl.opengl.GL46.nglGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
+	public void nglGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, long arg9) {
+		org.lwjgl.opengl.GL46.nglGetCompressedTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8,
+				arg9);
 	}
 
 	@Override
@@ -9621,14 +9534,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			long arg6) {
+	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			ByteBuffer arg6) {
+	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -9828,15 +9739,16 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, ByteBuffer arg9) {
+	public void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL46.glCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+	public void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL46.glCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
 	}
 
 	@Override
@@ -9860,8 +9772,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglVertexArrayVertexBuffers(int arg0, int arg1, int arg2, long arg3, long arg4,
-			long arg5) {
+	public void nglVertexArrayVertexBuffers(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglVertexArrayVertexBuffers(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -9896,8 +9807,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexArrayAttribFormat(int arg0, int arg1, int arg2, int arg3, boolean arg4,
-			int arg5) {
+	public void glVertexArrayAttribFormat(int arg0, int arg1, int arg2, int arg3, boolean arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glVertexArrayAttribFormat(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -9947,14 +9857,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexArrayVertexBuffers(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3,
-			IntBuffer arg4) {
+	public void glVertexArrayVertexBuffers(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL46.glVertexArrayVertexBuffers(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glVertexArrayVertexBuffers(int arg0, int arg1, int[] arg2, PointerBuffer arg3,
-			int[] arg4) {
+	public void glVertexArrayVertexBuffers(int arg0, int arg1, int[] arg2, PointerBuffer arg3, int[] arg4) {
 		org.lwjgl.opengl.GL46.glVertexArrayVertexBuffers(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -10029,8 +9937,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6) {
+	public void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.glCopyTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -10080,14 +9987,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, long arg6) {
+	public void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -10127,8 +10032,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengl.GL46.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -10228,14 +10132,14 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, long arg8) {
+	public void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, ByteBuffer arg7) {
+	public void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glCompressedTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -10425,8 +10329,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, long arg7) {
+	public void nglGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL46.nglGetnSeparableFilter(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -10436,8 +10340,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4,
-			long arg5, long arg6) {
+	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL46.nglGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -10522,8 +10426,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetProgramResourceiv(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, long arg7) {
+	public void nglGetProgramResourceiv(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL46.nglGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -10618,9 +10522,10 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBlitNamedFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
-		org.lwjgl.opengl.GL46.glBlitNamedFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
+	public void glBlitNamedFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int arg10, int arg11) {
+		org.lwjgl.opengl.GL46.glBlitNamedFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10,
+				arg11);
 	}
 
 	@Override
@@ -10679,8 +10584,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3,
-			int arg4, int arg5, int arg6) {
+	public void nglDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4,
+			int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.nglDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -10700,8 +10605,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4,
-			int arg5, int arg6) {
+	public void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.nglInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -10876,8 +10780,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveSubroutineName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	public void nglGetActiveSubroutineName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglGetActiveSubroutineName(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -10932,8 +10835,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, long arg6) {
+	public void nglCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglCompressedTextureSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -10963,56 +10865,56 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int[] arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, short[] arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, double[] arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, float[] arg10) {
+	public void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL46.glClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
@@ -11037,26 +10939,23 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
+		org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
+	}
+
+	@Override
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
+		return org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
+	}
+
+	@Override
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
-		return org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
-	}
-
-	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, ByteBuffer arg5) {
-		org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
-	}
-
-	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2,
-			IntBuffer arg3) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		return org.lwjgl.opengl.GL46.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3);
 	}
 
@@ -11136,8 +11035,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, long arg8) {
+	public void nglCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL46.nglCompressedTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -11202,9 +11101,10 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL46.nglCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+	public void nglCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL46.nglCompressedTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
 	}
 
 	@Override
@@ -11263,8 +11163,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -11344,8 +11243,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8) {
+	public void glCopyTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8) {
 		org.lwjgl.opengl.GL46.glCopyTextureSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -11460,8 +11359,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glCopyTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7) {
 		org.lwjgl.opengl.GL46.glCopyTextureSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -11791,14 +11690,14 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, double[] arg9) {
+	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
+			int arg8, double[] arg9) {
 		org.lwjgl.opengl.GL46.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, DoubleBuffer arg9) {
+	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
+			int arg8, DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL46.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -11808,14 +11707,14 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, float[] arg9) {
+	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
+			int arg8, float[] arg9) {
 		org.lwjgl.opengl.GL46.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
+			int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengl.GL46.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -11915,8 +11814,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3,
-			int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -11926,20 +11824,17 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		org.lwjgl.opengl.GL46.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4,
-			int arg5) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3,
-			int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -11949,8 +11844,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -12055,8 +11949,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetNamedFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2,
-			IntBuffer arg3) {
+	public void glGetNamedFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL46.glGetNamedFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 	}
 
@@ -12071,62 +11964,63 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, long arg11) {
-		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int arg10, long arg11) {
+		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10,
+				arg11);
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, double[] arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, float[] arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, short[] arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int[] arg10) {
+	public void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL46.glGetTextureSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
@@ -12146,8 +12040,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void nglDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.nglDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -12162,20 +12055,17 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateNamedFramebufferSubData(int arg0, IntBuffer arg1, int arg2, int arg3,
-			int arg4, int arg5) {
+	public void glInvalidateNamedFramebufferSubData(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateNamedFramebufferSubData(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glInvalidateNamedFramebufferSubData(int arg0, int[] arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateNamedFramebufferSubData(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateNamedFramebufferSubData(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glInvalidateNamedFramebufferSubData(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateNamedFramebufferSubData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glInvalidateNamedFramebufferSubData(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -12240,26 +12130,22 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5) {
+	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, int[] arg2, long arg3, int arg4,
-			int arg5) {
+	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, int[] arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, IntBuffer arg2, long arg3,
-			int arg4, int arg5) {
+	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, IntBuffer arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, ByteBuffer arg2, long arg3,
-			int arg4, int arg5) {
+	public void glMultiDrawElementsIndirectCount(int arg0, int arg1, ByteBuffer arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL46.glMultiDrawElementsIndirectCount(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -12359,8 +12245,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4,
-			long arg5) {
+	public void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL46.nglMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -12605,14 +12490,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	public void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int[] arg3,
-			ByteBuffer arg4) {
+	public void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int[] arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -12762,8 +12645,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9) {
+	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9) {
 		org.lwjgl.opengl.GL46.glBlitFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -12803,8 +12686,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void nglClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL46.nglClearTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
@@ -12859,8 +12742,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public int nglGetDebugMessageLog(int arg0, int arg1, long arg2, long arg3, long arg4, long arg5,
-			long arg6, long arg7) {
+	public int nglGetDebugMessageLog(int arg0, int arg1, long arg2, long arg3, long arg4, long arg5, long arg6,
+			long arg7) {
 		return org.lwjgl.opengl.GL46.nglGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -12885,14 +12768,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTextureStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, boolean arg6) {
+	public void glTextureStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			boolean arg6) {
 		org.lwjgl.opengl.GL46.glTextureStorage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTextureStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	public void glTextureStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		org.lwjgl.opengl.GL46.glTextureStorage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -13007,8 +12889,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	public void glTexStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		org.lwjgl.opengl.GL46.glTexStorage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -13243,8 +13124,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDebugMessageControl(int arg0, int arg1, int arg2, int arg3, long arg4,
-			boolean arg5) {
+	public void nglDebugMessageControl(int arg0, int arg1, int arg2, int arg3, long arg4, boolean arg5) {
 		org.lwjgl.opengl.GL46.nglDebugMessageControl(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -13404,8 +13284,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengl.GL46.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -13500,20 +13379,17 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		return org.lwjgl.opengl.GL46.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -13658,8 +13534,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			long arg9) {
 		org.lwjgl.opengl.GL46.nglTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -13694,14 +13570,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void nglReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL46.nglReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	public void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		org.lwjgl.opengl.GL46.glTexImage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -13906,8 +13780,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public ByteBuffer glMapNamedBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
-			ByteBuffer arg4) {
+	public ByteBuffer glMapNamedBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
 		return org.lwjgl.opengl.GL46.glMapNamedBufferRange(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -13942,8 +13815,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glNamedRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3,
-			int arg4) {
+	public void glNamedRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glNamedRenderbufferStorageMultisample(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -13983,14 +13855,14 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -14130,8 +14002,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, long arg9) {
+	public void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
+			int arg8, long arg9) {
 		org.lwjgl.opengl.GL46.nglMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -14146,8 +14018,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, long arg9) {
+	public void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
+			int arg8, long arg9) {
 		org.lwjgl.opengl.GL46.nglMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -14227,8 +14099,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetActiveSubroutineName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	public void glGetActiveSubroutineName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL46.glGetActiveSubroutineName(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -14243,8 +14114,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
-			ByteBuffer arg4) {
+	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
 		return org.lwjgl.opengl.GL46.glMapBufferRange(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -14299,14 +14169,12 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -14436,14 +14304,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL46.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -14523,8 +14390,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8) {
+	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8) {
 		org.lwjgl.opengl.GL46.glCopyTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -14539,14 +14406,13 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, ByteBuffer arg7) {
+	public void glGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL46.glGetnSeparableFilter(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glGetnSeparableFilter(int arg0, int arg1, int arg2, ByteBuffer arg3, ByteBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetnSeparableFilter(int arg0, int arg1, int arg2, ByteBuffer arg3, ByteBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL46.glGetnSeparableFilter(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -14591,32 +14457,30 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3,
-			int arg4, int arg5, int arg6) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4,
+			int arg5, int arg6) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, ByteBuffer arg2,
-			int arg3, int arg4, int arg5) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4,
+			int arg5) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, IntBuffer arg1, int arg2,
-			int arg3, int arg4) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ShortBuffer arg1, int arg2,
-			int arg3, int arg4) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ShortBuffer arg1, int arg2, int arg3,
+			int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ByteBuffer arg1, int arg2,
-			int arg3, int arg4) {
+	public void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ByteBuffer arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL46.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -14861,8 +14725,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengl.GL46.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -14922,20 +14785,17 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -14945,26 +14805,22 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL46.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -15214,8 +15070,7 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL46.nglTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -15320,9 +15175,10 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyImageSubData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14) {
-		org.lwjgl.opengl.GL46.glCopyImageSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
+	public void glCopyImageSubData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14) {
+		org.lwjgl.opengl.GL46.glCopyImageSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10,
+				arg11, arg12, arg13, arg14);
 	}
 
 	@Override
@@ -15346,8 +15202,8 @@ public class GL_W_GL46 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL46.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 

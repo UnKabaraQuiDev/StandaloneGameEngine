@@ -127,12 +127,10 @@ public class LoadedMesh implements Mesh {
 
 	public void bind() {
 		GL_W.glBindVertexArray(vao);
-		assert GL_W.checkError("BindVertexArray(" + vao + ") (" + name + ")");
 	}
 
 	public void unbind() {
 		GL_W.glBindVertexArray(0);
-		assert GL_W.checkError("BindVertexArray(" + 0 + ") (" + name + ")");
 	}
 
 	@Override

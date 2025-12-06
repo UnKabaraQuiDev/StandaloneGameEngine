@@ -38,11 +38,9 @@ public class UByteAttribArray extends AttribArray {
 		bbuffer.flip();
 
 		GL_W.glBufferData(bufferType.getGlId(), bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		assert GL_W.checkError("BufferData(" + bufferType + ", " + bbuffer.remaining() + ", " + iStatic + ")");
 
 		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
 			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_BYTE, 0, 0);
-			assert GL_W.checkError("VertexAttribIPointer(" + index + ", " + dataSize + ", GL_UNSIGNED_INT, 0, 0)");
 		}
 	}
 
@@ -85,7 +83,6 @@ public class UByteAttribArray extends AttribArray {
 		bbuffer.flip();
 
 		GL_W.glBufferSubData(bufferType.getGlId(), 0, bbuffer);
-		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + data.length + ")");
 	}
 
 	public void resize(byte[] nPos) {
@@ -97,17 +94,14 @@ public class UByteAttribArray extends AttribArray {
 
 		if (nPos.length == data.length) {
 			GL_W.glBufferSubData(bufferType.getGlId(), 0, bbuffer);
-			assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + nPos.length + ")");
 		} else {
 			GL_W.glBufferData(bufferType.getGlId(), bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-			assert GL_W.checkError("BufferData(" + bufferType + ", " + nPos.length + ", " + iStatic + ")");
 		}
 
 		data = nPos;
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
 			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_BYTE, 0, 0);
-			assert GL_W.checkError("VertexAttribIPointer(" + index + ", " + dataSize + ", UBYTE)");
 		}
 	}
 

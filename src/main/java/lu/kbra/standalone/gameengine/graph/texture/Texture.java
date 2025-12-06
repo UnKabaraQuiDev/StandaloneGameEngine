@@ -46,7 +46,6 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 	protected int gen() {
 		this.glId = GL_W.glGenTextures();
-		assert GL_W.checkError("GenTextures");
 		return glId;
 	}
 
@@ -54,7 +53,6 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 		if (i > 31)
 			return;
 		GL_W.glActiveTexture(GL_W.GL_TEXTURE0 + i);
-		assert GL_W.checkError("ActiveTexture[" + (GL_W.GL_TEXTURE0 + i) + "] (" + glId + ") (" + name + ")");
 	}
 
 	public void bind(int i) {
@@ -66,7 +64,6 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 		if (glId == -1)
 			return;
 		GL_W.glBindTexture(txtType.getGlId(), glId);
-		assert GL_W.checkError("BindTexture[" + txtType + "]=" + glId);
 	}
 
 	public void unbind(int i) {
@@ -76,29 +73,22 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 	public void unbind() {
 		GL_W.glBindTexture(txtType.getGlId(), 0);
-		assert GL_W.checkError("BindTexture[" + txtType + "]=0");
 	}
 
 	public void genMipMaps() {
 		bind();
 		GL_W.glGenerateMipmap(txtType.getGlId());
-		assert GL_W.checkError("GenerateMipmap[" + txtType + "]");
 	}
 
 	public void applyFilter() {
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.MIN_FILTER.getGlId(), minFilter.getGlId());
-		assert GL_W.checkError("TexParameter[" + txtType + "].MinFilter=" + minFilter);
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.MAG_FILTER.getGlId(), magFilter.getGlId());
-		assert GL_W.checkError("TexParameter[" + txtType + "].MagFilter=" + magFilter);
 	}
 
 	public void applyWrap() {
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_HORIZONTAL.getGlId(), hWrap.getGlId());
-		assert GL_W.checkError("TexParameter[" + txtType + "].WrapHorizontal=" + hWrap);
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_VERTICAL.getGlId(), vWrap.getGlId());
-		assert GL_W.checkError("TexParameter[" + txtType + "].WrapVertical=" + vWrap);
 		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_DEPTH.getGlId(), dWrap.getGlId());
-		assert GL_W.checkError("TexParameter[" + txtType + "].WrapDepth=" + dWrap);
 	}
 
 	@Override
@@ -109,7 +99,6 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 			return;
 
 		GL_W.glDeleteTextures(glId);
-		assert GL_W.checkError("DeleteTextures[" + glId + "] (" + name + ")");
 		glId = -1;
 	}
 

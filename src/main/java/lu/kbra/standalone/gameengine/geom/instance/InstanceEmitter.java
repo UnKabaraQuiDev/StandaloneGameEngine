@@ -101,7 +101,6 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			AttribArray.update(this.instancesAttribs[c], atts[c]);
 		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
-		assert GL_W.checkError("BindBuffer(ARRAY, 0)");
 	}
 
 	public void updateDirect(Matrix4f[] transforms, Object[][] atts) {
@@ -117,7 +116,6 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			AttribArray.update(this.instancesAttribs[c], atts[c]);
 		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
-		assert GL_W.checkError("BindBuffer(ARRAY, 0)");
 	}
 
 	public void updateParticles() {
@@ -138,7 +136,6 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			AttribArray.update(this.instancesAttribs[c], atts[c]);
 		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
-		assert GL_W.checkError("BindBuffer(ARRAY, 0)");
 	}
 
 	public void updateParticlesTransforms() {
@@ -151,7 +148,6 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		instancesTransforms.update(transforms);
 
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
-		assert GL_W.checkError("BindBuffer(ARRAY, 0)");
 	}
 
 	public void bind() {

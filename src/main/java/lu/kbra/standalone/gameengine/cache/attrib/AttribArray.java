@@ -81,32 +81,26 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 		bind();
 
 		GL_W.glEnableVertexAttribArray(index);
-		assert GL_W.checkError("EnableVertexAttribArray(" + index + ") (" + name + ")");
 		GL_W.glVertexAttribDivisor(index, divisor);
-		assert GL_W.checkError("VertexAttribDivisor(" + index + ", " + divisor + ") (" + name + ")");
 	}
 
 	public void disable() {
 		bind();
 
 		GL_W.glDisableVertexAttribArray(index);
-		assert GL_W.checkError("DisableVertexAttribArray(" + index + ") (" + name + ")");
 	}
 
 	public int gen() {
 		bid = GL_W.glGenBuffers();
-		assert GL_W.checkError("GenBuffers() (" + name + ")");
 		return bid;
 	}
 
 	public void bind() {
 		GL_W.glBindBuffer(bufferType.getGlId(), bid);
-		assert GL_W.checkError("BindBuffer(" + bufferType + ", " + bid + ") (" + name + ")");
 	}
 
 	public void unbind() {
 		GL_W.glBindBuffer(bufferType.getGlId(), 0);
-		assert GL_W.checkError("BindBuffer(" + bufferType + ", 0) (" + name + ")");
 	}
 
 	@Override
@@ -117,7 +111,6 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 			return;
 
 		GL_W.glDeleteBuffers(bid);
-		assert GL_W.checkError("DeleteBuffers(" + bid + ") (" + name + ")");
 		bid = -1;
 	}
 

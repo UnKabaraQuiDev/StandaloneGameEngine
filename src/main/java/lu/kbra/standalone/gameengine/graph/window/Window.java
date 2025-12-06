@@ -332,7 +332,6 @@ public abstract class Window implements Cleanupable {
 			throw new IllegalStateException("Window wasn't initialized");
 		}
 		GL_W.glBindFramebuffer(GL_W.GL_FRAMEBUFFER, 0);
-		assert GL_W.checkError("BindFramebuffer");
 		GLFW.glfwSwapBuffers(handle);
 	}
 

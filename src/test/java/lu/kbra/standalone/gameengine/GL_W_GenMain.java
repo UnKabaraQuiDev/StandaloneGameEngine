@@ -277,8 +277,7 @@ public class GL_W_GenMain extends GenMainConsts {
 				mb.addStatement("return ret");
 			} else {
 				mb.addStatement(
-						"LOGGER.log($T.INFO, \"" + buildLogPrefix(methodName)
-								+ "\" + (err != 0 ? $S + err : $S))",
+						"LOGGER.log($T.INFO, \"" + buildLogPrefix(methodName) + "\" + (err != 0 ? $S + err : $S))",
 						Level.class, " !! ERROR: ", "");
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
 						+ " !! ERROR: \" + err)", implClazz, RuntimeException.class);

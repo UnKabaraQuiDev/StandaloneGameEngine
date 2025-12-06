@@ -39,9 +39,7 @@ public class Material implements UniqueID {
 
 		if (shader.isTransparent()) {
 			GL_W.glEnable(GL_W.GL_BLEND);
-			assert GL_W.checkError("Enable(BLEND)");
 			GL_W.glBlendFunc(GL_W.GL_SRC_ALPHA, GL_W.GL_ONE_MINUS_SRC_ALPHA);
-			assert GL_W.checkError("BlendFunc(SRC_ALPHA, ONE_MINUS_SRC_ALPHA)");
 		}
 	}
 

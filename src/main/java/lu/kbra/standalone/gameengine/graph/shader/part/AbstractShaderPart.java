@@ -41,12 +41,9 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable, GLObj
 		final String source = loadSource();
 
 		this.sid = GL_W.glCreateShader(type);
-		assert GL_W.checkError("CreateShader(" + type + ") (" + file + ")");
 		// TODO: add gl version
 		GL_W.glShaderSource(sid, source);
-		assert GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
 		GL_W.glCompileShader(sid);
-		assert GL_W.checkError("CompileShader(" + sid + ") (" + file + ")");
 
 		if (GL_W.glGetShaderi(sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
 			final int logLen = GL_W.glGetShaderi(this.sid, GL_W.GL_INFO_LOG_LENGTH);
@@ -102,9 +99,7 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable, GLObj
 		final String source = loadSource();
 
 		GL_W.glShaderSource(sid, source);
-		assert GL_W.checkError("ShaderSource(" + sid + ") (" + file + ")");
 		GL_W.glCompileShader(sid);
-		assert GL_W.checkError("CompileShader(" + sid + ") (" + file + ")");
 
 		if (GL_W.glGetShaderi(sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
 			final int logLen = GL_W.glGetShaderi(this.sid, GL_W.GL_INFO_LOG_LENGTH);
@@ -125,7 +120,6 @@ public abstract class AbstractShaderPart implements UniqueID, Cleanupable, GLObj
 			return;
 
 		GL_W.glDeleteShader(sid);
-		assert GL_W.checkError("DeleteShader(" + file + ")");
 		sid = -1;
 	}
 

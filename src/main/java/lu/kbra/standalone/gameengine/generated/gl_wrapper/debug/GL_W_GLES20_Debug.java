@@ -1,18 +1,16 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper.debug;
 
-import java.lang.CharSequence;
-import java.lang.Override;
-import java.lang.RuntimeException;
-import java.lang.String;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
+
+import org.lwjgl.PointerBuffer;
+import org.lwjgl.opengles.GLES20;
+
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.opengles.GLES20;
 
 public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void init() {
@@ -324,35 +322,41 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void nglDeleteRenderbuffers(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglDeleteRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindRenderbuffer(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glBindRenderbuffer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetRenderbufferParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetRenderbufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -360,28 +364,33 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void nglGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2
+					+ ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenFramebuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenFramebuffers(IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenFramebuffers() {
 		int ret = org.lwjgl.opengles.GLES20.glGenFramebuffers();
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -389,7 +398,9 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public long glGetVertexAttribPointer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengles.GLES20.glGetVertexAttribPointer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -397,88 +408,101 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glHint(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glHint(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteFramebuffers(int arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteFramebuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteFramebuffers(IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetAttachedShaders(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglGetAttachedShaders(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetProgrami(int arg0, int arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetProgrami(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -486,14 +510,18 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveUniform_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -501,42 +529,50 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glColorMask(boolean arg0, boolean arg1, boolean arg2, boolean arg3) {
 		org.lwjgl.opengles.GLES20.glColorMask(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindTexture(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glBindTexture(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPolygonOffset(float arg0, float arg1) {
 		org.lwjgl.opengles.GLES20.glPolygonOffset(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int nglGetUniformLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengles.GLES20.nglGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -544,42 +580,49 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glUniformMatrix3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglUniformMatrix3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFlush() {
 		org.lwjgl.opengles.GLES20.glFlush();
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFlush() !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glFlush() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengles.GLES20.glTexParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsBuffer(int arg0) {
 		boolean ret = org.lwjgl.opengles.GLES20.glIsBuffer(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -587,42 +630,48 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void nglVertexAttrib1fv(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glValidateProgram(int arg0) {
 		org.lwjgl.opengles.GLES20.glValidateProgram(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenTextures(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglGenTextures(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform1fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglUniform1fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameteri(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glTexParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glCreateProgram() {
 		int ret = org.lwjgl.opengles.GLES20.glCreateProgram();
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -630,106 +679,124 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glCullFace(int arg0) {
 		org.lwjgl.opengles.GLES20.glCullFace(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengles.GLES20.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform1iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglUniform1iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDepthRangef(float arg0, float arg1) {
 		org.lwjgl.opengles.GLES20.glDepthRangef(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDepthRangef(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDepthRangef(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDisable(int arg0) {
 		org.lwjgl.opengles.GLES20.glDisable(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengles.GLES20.glUniform4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenFramebuffers(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglGenFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES20.glUniform4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteRenderbuffers(IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteRenderbuffers(int arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteRenderbuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetProgramiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetProgramiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenTextures(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glGenTextures(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenTextures() {
 		int ret = org.lwjgl.opengles.GLES20.glGenTextures();
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -737,28 +804,34 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glGenTextures(IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glGenTextures(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderPrecisionFormat(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		org.lwjgl.opengles.GLES20.glGetShaderPrecisionFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderPrecisionFormat(int arg0, int arg1, int[] arg2, int[] arg3) {
 		org.lwjgl.opengles.GLES20.glGetShaderPrecisionFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsProgram(int arg0) {
 		boolean ret = org.lwjgl.opengles.GLES20.glIsProgram(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -766,128 +839,155 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void nglGetProgramInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglGetProgramInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindAttribLocation(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindAttribLocation(int arg0, int arg1, CharSequence arg2) {
 		org.lwjgl.opengles.GLES20.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetVertexAttribPointerv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEnableVertexAttribArray(int arg0) {
 		org.lwjgl.opengles.GLES20.glEnableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetIntegerv(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClear(int arg0) {
 		org.lwjgl.opengles.GLES20.glClear(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenBuffers(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglGenBuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengles.GLES20.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2
+					+ ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengles.GLES20.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2
+					+ ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenRenderbuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenRenderbuffers(IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenRenderbuffers() {
 		int ret = org.lwjgl.opengles.GLES20.glGenRenderbuffers();
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -895,14 +995,16 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glCompileShader(int arg0) {
 		org.lwjgl.opengles.GLES20.glCompileShader(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsRenderbuffer(int arg0) {
 		boolean ret = org.lwjgl.opengles.GLES20.glIsRenderbuffer(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -910,226 +1012,270 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void nglUniformMatrix4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglUniformMatrix4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4fv(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glViewport(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES20.glViewport(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDeleteFramebuffers(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglDeleteFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES20.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetUniformiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDepthMask(boolean arg0) {
 		org.lwjgl.opengles.GLES20.glDepthMask(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUseProgram(int arg0) {
 		org.lwjgl.opengles.GLES20.glUseProgram(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetUniformfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSampleCoverage(float arg0, boolean arg1) {
 		org.lwjgl.opengles.GLES20.glSampleCoverage(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteShader(int arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteShader(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetShaderInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglGetShaderInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawArrays(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int nglGetAttribLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengles.GLES20.nglGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1137,14 +1283,16 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glStencilOp(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glStencilOp(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetUniformf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengles.GLES20.glGetUniformf(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1152,7 +1300,8 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public int glGetUniformi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetUniformi(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1160,22 +1309,26 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glBindBuffer(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glBindBuffer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengles.GLES20.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsTexture(int arg0) {
 		boolean ret = org.lwjgl.opengles.GLES20.glIsTexture(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1183,118 +1336,138 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glFramebufferTexture2D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES20.glFramebufferTexture2D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEnable(int arg0) {
 		org.lwjgl.opengles.GLES20.glEnable(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform2fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglUniform2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFloatv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFloatv(int arg0, float[] arg1) {
 		org.lwjgl.opengles.GLES20.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFrontFace(int arg0) {
 		org.lwjgl.opengles.GLES20.glFrontFace(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform2iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglUniform2iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetFramebufferAttachmentParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengles.GLES20.glGetFramebufferAttachmentParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2
+					+ ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1302,211 +1475,253 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glGetAttachedShaders(int arg0, int[] arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetAttachedShaders(int arg0, IntBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearStencil(int arg0) {
 		org.lwjgl.opengles.GLES20.glClearStencil(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderBinary(IntBuffer arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glShaderBinary(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderBinary(int[] arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glShaderBinary(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDeleteTextures(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglDeleteTextures(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES20.glBlendFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, float[] arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, long arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, int[] arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, short[] arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, FloatBuffer arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDetachShader(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glDetachShader(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetProgramInfoLog_String(int arg0) {
 		String ret = org.lwjgl.opengles.GLES20.glGetProgramInfoLog(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1514,7 +1729,9 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public String glGetProgramInfoLog_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengles.GLES20.glGetProgramInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1522,28 +1739,34 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glGetProgramInfoLog(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetProgramInfoLog(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilMaskSeparate(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glStencilMaskSeparate(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glGetBoolean(int arg0) {
 		boolean ret = org.lwjgl.opengles.GLES20.glGetBoolean(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1551,203 +1774,238 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void nglGetVertexAttribiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLineWidth(float arg0) {
 		org.lwjgl.opengles.GLES20.glLineWidth(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglGetShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			FloatBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ShortBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetShaderi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetShaderi(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.glDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glDrawElements(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendFunc(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glBlendFunc(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglBindAttribLocation(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteProgram(int arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteProgram(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetIntegerv(int arg0, int[] arg1) {
 		org.lwjgl.opengles.GLES20.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetIntegerv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glReleaseShaderCompiler() {
 		org.lwjgl.opengles.GLES20.glReleaseShaderCompiler();
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReleaseShaderCompiler() !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReleaseShaderCompiler() !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetVertexAttribfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengles.GLES20.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glCheckFramebufferStatus(int arg0) {
 		int ret = org.lwjgl.opengles.GLES20.glCheckFramebufferStatus(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1755,28 +2013,32 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glBindFramebuffer(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glBindFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsShader(int arg0) {
 		boolean ret = org.lwjgl.opengles.GLES20.glIsShader(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1784,14 +2046,17 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void nglGetTexParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetShaderInfoLog_String(int arg0) {
 		String ret = org.lwjgl.opengles.GLES20.glGetShaderInfoLog(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1799,21 +2064,25 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glGetShaderInfoLog(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderInfoLog(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetShaderInfoLog_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengles.GLES20.glGetShaderInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1821,49 +2090,56 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glDepthFunc(int arg0) {
 		org.lwjgl.opengles.GLES20.glDepthFunc(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilMask(int arg0) {
 		org.lwjgl.opengles.GLES20.glStencilMask(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetInteger(int arg0) {
 		int ret = org.lwjgl.opengles.GLES20.glGetInteger(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1871,78 +2147,90 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glGetVertexAttribPointerv(int arg0, int arg1, PointerBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendEquationSeparate(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glBlendEquationSeparate(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengles.GLES20.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteTextures(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteTextures(int arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteTextures(IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib3fv(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetFloatv(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetString(int arg0) {
 		String ret = org.lwjgl.opengles.GLES20.glGetString(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1950,14 +2238,17 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glRenderbufferStorage(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES20.glRenderbufferStorage(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetFloat(int arg0) {
 		float ret = org.lwjgl.opengles.GLES20.glGetFloat(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1965,21 +2256,24 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void nglUniform3fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglUniform3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenBuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glGenBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenBuffers() {
 		int ret = org.lwjgl.opengles.GLES20.glGenBuffers();
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1987,51 +2281,58 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glGenBuffers(IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glGenBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDeleteBuffers(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglDeleteBuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform3iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglUniform3iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenRenderbuffers(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglGenRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long nglGetString(int arg0) {
 		long ret = org.lwjgl.opengles.GLES20.nglGetString(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES20.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetError() {
 		int ret = org.lwjgl.opengles.GLES20.glGetError();
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2039,63 +2340,78 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glScissor(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES20.glScissor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetBooleanv(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglShaderBinary(int arg0, long arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengles.GLES20.nglShaderBinary(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glAttachShader(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glAttachShader(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetRenderbufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetShaderiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetUniformLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2103,7 +2419,9 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public int glGetUniformLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2111,84 +2429,98 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glGetTexParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengles.GLES20.glUniform2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glUniform2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, short[] arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, ShortBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, float[] arg2) {
 		org.lwjgl.opengles.GLES20.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsEnabled(int arg0) {
 		boolean ret = org.lwjgl.opengles.GLES20.glIsEnabled(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2196,161 +2528,192 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glUniform3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengles.GLES20.glUniform3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES20.glUniform3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearDepthf(float arg0) {
 		org.lwjgl.opengles.GLES20.glClearDepthf(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glClearDepthf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glClearDepthf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDisableVertexAttribArray(int arg0) {
 		org.lwjgl.opengles.GLES20.glDisableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengles.GLES20.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBooleanv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1f(int arg0, float arg1) {
 		org.lwjgl.opengles.GLES20.glUniform1f(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1i(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glUniform1i(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetBufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenerateMipmap(int arg0) {
 		org.lwjgl.opengles.GLES20.glGenerateMipmap(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendEquation(int arg0) {
 		org.lwjgl.opengles.GLES20.glBlendEquation(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengles.GLES20.glClearColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilFunc(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengles.GLES20.glStencilFunc(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglUniformMatrix2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib2fv(int arg0, long arg1) {
 		org.lwjgl.opengles.GLES20.nglVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetAttribLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2358,7 +2721,9 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public int glGetAttribLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2366,161 +2731,190 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public int glCreateShader(int arg0) {
 		int ret = org.lwjgl.opengles.GLES20.glCreateShader(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES20.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveAttrib_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderSource(int arg0, PointerBuffer arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderSource(int arg0, CharSequence[] arg1) {
 		org.lwjgl.opengles.GLES20.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderSource(int arg0, PointerBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderSource(int arg0, CharSequence arg1) {
 		org.lwjgl.opengles.GLES20.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform4fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglUniform4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetProgramiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengles.GLES20.glBlendColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform4iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES20.nglUniform4iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglBufferSubData(int arg0, long arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglBufferSubData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengles.GLES20.nglReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsFramebuffer(int arg0) {
 		boolean ret = org.lwjgl.opengles.GLES20.glIsFramebuffer(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2528,21 +2922,25 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glGetShaderSource(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderSource(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetShaderSource_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengles.GLES20.glGetShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2550,7 +2948,8 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public String glGetShaderSource_String(int arg0) {
 		String ret = org.lwjgl.opengles.GLES20.glGetShaderSource(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2558,108 +2957,131 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glGetVertexAttribiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES20.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES20.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilOpSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES20.glStencilOpSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengles.GLES20.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteBuffers(int[] arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteBuffers(int arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteBuffers(IntBuffer arg0) {
 		org.lwjgl.opengles.GLES20.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES20.glStencilFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelStorei(int arg0, int arg1) {
 		org.lwjgl.opengles.GLES20.glPixelStorei(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengles.GLES20.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1f(int arg0, float arg1) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib1f(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglBufferData(int arg0, long arg1, long arg2, int arg3) {
 		org.lwjgl.opengles.GLES20.nglBufferData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetShaderPrecisionFormat(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES20.nglGetShaderPrecisionFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetBufferParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetBufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2667,21 +3089,25 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public void glVertexAttrib3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengles.GLES20.glVertexAttrib2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetTexParameterf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengles.GLES20.glGetTexParameterf(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2689,44 +3115,52 @@ public class GL_W_GLES20_Debug implements GL_W_Call {
 	public int glGetTexParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengles.GLES20.glGetTexParameteri(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengles.GLES20.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFinish() {
 		org.lwjgl.opengles.GLES20.glFinish();
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFinish() !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glFinish() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFramebufferRenderbuffer(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES20.glFramebufferRenderbuffer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glActiveTexture(int arg0) {
 		org.lwjgl.opengles.GLES20.glActiveTexture(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLinkProgram(int arg0) {
 		org.lwjgl.opengles.GLES20.glLinkProgram(arg0);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override

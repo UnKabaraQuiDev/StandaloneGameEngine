@@ -10,7 +10,6 @@ public interface FramebufferAttachment extends Cleanupable {
 		bind(i);
 
 		GL_W.glUniform1i(loc, i);
-		assert GL_W.checkError("Uniform1i[" + loc + "] = " + i);
 	}
 
 }

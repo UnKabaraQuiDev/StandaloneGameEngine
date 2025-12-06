@@ -1,20 +1,18 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper.debug;
 
-import java.lang.CharSequence;
-import java.lang.Override;
-import java.lang.RuntimeException;
-import java.lang.String;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
+
+import org.lwjgl.PointerBuffer;
+import org.lwjgl.opengl.GL32;
+
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.opengl.GL32;
 
 public class GL_W_GL32_Debug implements GL_W_Call {
 	public void init() {
@@ -1258,126 +1256,145 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglDeleteRenderbuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglDeleteRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglLightiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos3dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogCoorddv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glFogCoorddv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoorddv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoorddv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogCoorddv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glFogCoorddv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoorddv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoorddv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI1uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindRenderbuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glBindRenderbuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos3fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetActiveUniformName(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL32.nglGetActiveUniformName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglClipPlane(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord1dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPopAttrib() {
 		org.lwjgl.opengl.GL32.glPopAttrib();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPopAttrib() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPopAttrib() !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI4sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glAccum(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glAccum(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glAccum(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glAccum(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShadeModel(int arg0) {
 		org.lwjgl.opengl.GL32.glShadeModel(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glShadeModel(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glShadeModel(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetMultisamplef(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL32.glGetMultisamplef(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMultisamplef(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMultisamplef(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1385,7 +1402,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public int glGetTexParameterIi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetTexParameterIi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1393,14 +1412,17 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglLightfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetRenderbufferParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetRenderbufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1408,7 +1430,8 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public String glGetStringi(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL32.glGetStringi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1416,42 +1439,48 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glVertex3dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPolygonStipple(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glGetPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL32.glGetPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglFogCoordfv(long arg0) {
 		org.lwjgl.opengl.GL32.nglFogCoordfv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglFogCoordfv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglFogCoordfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetTexEnvi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetTexEnvi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexEnvi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1459,21 +1488,24 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glRasterPos2dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetTexEnvf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL32.glGetTexEnvf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexEnvf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1481,14 +1513,16 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGenVertexArrays(int[] arg0) {
 		org.lwjgl.opengl.GL32.glGenVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenVertexArrays() {
 		int ret = org.lwjgl.opengl.GL32.glGenVertexArrays();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays() = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenVertexArrays() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1496,70 +1530,81 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGenVertexArrays(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glGenVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglNormalPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadTransposeMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL32.glLoadTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadTransposeMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glLoadTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2
+					+ ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadTransposeMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glLoadTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadTransposeMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL32.glLoadTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenFramebuffers(int[] arg0) {
 		org.lwjgl.opengl.GL32.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenFramebuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenFramebuffers() {
 		int ret = org.lwjgl.opengl.GL32.glGenFramebuffers();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1567,112 +1612,139 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glVertex3fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, short[] arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInterleavedArrays(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMatrixMode(int arg0) {
 		org.lwjgl.opengl.GL32.glMatrixMode(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMatrixMode(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMatrixMode(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClientActiveTexture(int arg0) {
 		org.lwjgl.opengl.GL32.glClientActiveTexture(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClientActiveTexture(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClientActiveTexture(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform1uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetActiveUniformsi(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL32.glGetActiveUniformsi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsi(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformsi(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1680,7 +1752,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public long glGetVertexAttribPointer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL32.glGetVertexAttribPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1688,133 +1762,155 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetTexEnviv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexEnviv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteVertexArrays(int[] arg0) {
 		org.lwjgl.opengl.GL32.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteVertexArrays(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteVertexArrays(int arg0) {
 		org.lwjgl.opengl.GL32.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glHint(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glHint(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogCoordfv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glFogCoordfv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoordfv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoordfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogCoordfv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glFogCoordfv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoordfv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoordfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteFramebuffers(int arg0) {
 		org.lwjgl.opengl.GL32.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteFramebuffers(int[] arg0) {
 		org.lwjgl.opengl.GL32.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteFramebuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetAttachedShaders(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetAttachedShaders(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetProgrami(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetProgrami(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1822,38 +1918,45 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glBindFragDataLocation(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glBindFragDataLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindFragDataLocation(int arg0, int arg1, CharSequence arg2) {
 		org.lwjgl.opengl.GL32.glBindFragDataLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor4usv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor4usv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor4usv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor4usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL32.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1861,14 +1964,18 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveUniform_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL32.glGetActiveUniform(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1876,168 +1983,195 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glVertex3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex3iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColorMask(boolean arg0, boolean arg1, boolean arg2, boolean arg3) {
 		org.lwjgl.opengl.GL32.glColorMask(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexEnviv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexEnviv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetCompressedTexImage(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glGetCompressedTexImage(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetCompressedTexImage(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetCompressedTexImage(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindVertexArray(int arg0) {
 		org.lwjgl.opengl.GL32.glBindVertexArray(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindVertexArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBindVertexArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBeginQuery(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glBeginQuery(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBeginQuery(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBeginQuery(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex3dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindTexture(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glBindTexture(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPolygonOffset(float arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glPolygonOffset(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexMask(int arg0) {
 		org.lwjgl.opengl.GL32.glIndexMask(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexMask(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsEnabledi(int arg0, int arg1) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsEnabledi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsEnabledi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsEnabledi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2045,175 +2179,201 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglMultiTexCoord3sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor4sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL32.nglPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglPolygonStipple(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWaitSync(long arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEdgeFlagPointer(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.glEdgeFlagPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEdgeFlagPointer(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glEdgeFlagPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexEnvfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexEnvfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenQueries(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGenQueries(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGenQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGenQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex3iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord1fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos3iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetPixelMapfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib1dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI4usv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPointerv(int arg0, PointerBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetPointerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPointerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPointerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int nglGetUniformLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL32.nglGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2221,28 +2381,33 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glEndTransformFeedback() {
 		org.lwjgl.opengl.GL32.glEndTransformFeedback();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEndTransformFeedback() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEndTransformFeedback() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetUniformIndices(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetUniformIndices(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformIndices(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2250,28 +2415,35 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetUniformIndices(int arg0, PointerBuffer arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformIndices(int arg0, PointerBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformIndices(int arg0, CharSequence[] arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long nglGetStringi(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL32.nglGetStringi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2279,91 +2451,110 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglGetTexGeniv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord1iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord1iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL32.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL32.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL32.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL32.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglUniformMatrix3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenQueries(int[] arg0) {
 		org.lwjgl.opengl.GL32.glGenQueries(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenQueries(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glGenQueries(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenQueries() {
 		int ret = org.lwjgl.opengl.GL32.glGenQueries();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenQueries() = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenQueries() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2371,129 +2562,154 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glFlush() {
 		org.lwjgl.opengl.GL32.glFlush();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFlush() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFlush() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix2x4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix2x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix2x4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix2x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex3fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3,
-			IntBuffer arg4) {
+	public void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL32.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3,
-			int[] arg4) {
+	public void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3, int[] arg4) {
 		org.lwjgl.opengl.GL32.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix3x2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix3x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix3x2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix3x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglPrioritizeTextures(int arg0, long arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglPrioritizeTextures(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglPrioritizeTextures(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglPrioritizeTextures(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMaterialfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMaterialfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformBlockiv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL32.glGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformBlockiv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4,
-			double arg5) {
+	public void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL32.glFrustum(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFrustum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFrustum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos2sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long nglMapBuffer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL32.nglMapBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMapBuffer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMapBuffer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2501,92 +2717,109 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglColor4iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL32.nglDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix2x3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglUniformMatrix2x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexGenfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexLevelParameterfv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMapdv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetMapdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMapdv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL32.glGetMapdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetMultisamplefv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetMultisamplefv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor4uiv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor4uiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor4uiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor4uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glTexParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Nbv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Nbv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoordPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsBuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsBuffer(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2594,161 +2827,185 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglGetUniformuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPrioritizeTextures(int[] arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glPrioritizeTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPrioritizeTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPrioritizeTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPrioritizeTextures(IntBuffer arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glPrioritizeTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPrioritizeTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPrioritizeTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex2iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI4bv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib1fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex3sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glValidateProgram(int arg0) {
 		org.lwjgl.opengl.GL32.glValidateProgram(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMapfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMapfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexGendv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glLoadMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL32.glLoadMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL32.glLoadMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glLoadMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI4iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDepthRange(double arg0, double arg1) {
 		org.lwjgl.opengl.GL32.glDepthRange(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDepthRange(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDepthRange(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenTextures(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGenTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Nusv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Nusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Nusv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Nusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glUniform1ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1, ByteBuffer arg2) {
 		ByteBuffer ret = org.lwjgl.opengl.GL32.glMapBuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2756,7 +3013,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1) {
 		ByteBuffer ret = org.lwjgl.opengl.GL32.glMapBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2764,7 +3023,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1, long arg2, ByteBuffer arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL32.glMapBuffer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2772,56 +3033,65 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glClearBufferuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearBufferuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform1fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform1fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameteri(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTexParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMapiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetMapiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMapiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetMapiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetVertexAttribIi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetVertexAttribIi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2829,14 +3099,16 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglMultiTexCoord4dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetQueryi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetQueryi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2844,77 +3116,88 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glBindBufferBase(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBindBufferBase(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindBufferBase(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBindBufferBase(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetDoublev(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glGetDoublev(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetDoublev(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetDoublev(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Niv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Niv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Niv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Niv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMaterialiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMaterialiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glListBase(int arg0) {
 		org.lwjgl.opengl.GL32.glListBase(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glListBase(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glListBase(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glCreateProgram() {
 		int ret = org.lwjgl.opengl.GL32.glCreateProgram();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2922,318 +3205,373 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglColor4ubv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor4ubv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor4ubv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor4ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferPointerv(int arg0, int arg1, PointerBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFeedbackBuffer(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glFeedbackBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFeedbackBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFeedbackBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFeedbackBuffer(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glFeedbackBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFeedbackBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFeedbackBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCullFace(int arg0) {
 		org.lwjgl.opengl.GL32.glCullFace(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL32.glMultMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glMultMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix4x3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglUniformMatrix4x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL32.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetBooleani_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetBooleani_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord4fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindBufferRange(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL32.glBindBufferRange(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform1iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform1iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glMultMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL32.glMultMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetDoublev(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetDoublev(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDisable(int arg0) {
 		org.lwjgl.opengl.GL32.glDisable(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglLightModelfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglLightModelfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL32.nglCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor4bv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor4bv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor4bv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor4bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glLightf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex2sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLighti(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glLighti(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLighti(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLighti(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		org.lwjgl.opengl.GL32.nglDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglFogCoorddv(long arg0) {
 		org.lwjgl.opengl.GL32.nglFogCoorddv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglFogCoorddv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglFogCoorddv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL32.glUniform4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenFramebuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGenFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glUniform4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferParameteri64v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferParameteri64v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord2dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPopClientAttrib() {
 		org.lwjgl.opengl.GL32.glPopClientAttrib();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPopClientAttrib() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPopClientAttrib() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteRenderbuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteRenderbuffers(int arg0) {
 		org.lwjgl.opengl.GL32.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteRenderbuffers(int[] arg0) {
 		org.lwjgl.opengl.GL32.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI1ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI1ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPushClientAttrib(int arg0) {
 		org.lwjgl.opengl.GL32.glPushClientAttrib(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPushClientAttrib(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPushClientAttrib(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long nglMapBufferRange(int arg0, long arg1, long arg2, int arg3) {
 		long ret = org.lwjgl.opengl.GL32.nglMapBufferRange(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = "
+					+ ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3241,105 +3579,120 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetTexEnvfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexEnvfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Nuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Nuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Nuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Nuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor4dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetProgramiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetProgramiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglLightModeliv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglLightModeliv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglPixelMapusv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglPixelMapusv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClipPlane(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClipPlane(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord2fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenTextures(int[] arg0) {
 		org.lwjgl.opengl.GL32.glGenTextures(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenTextures() {
 		int ret = org.lwjgl.opengl.GL32.glGenTextures();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3347,126 +3700,147 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGenTextures(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glGenTextures(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglSelectBuffer(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglSelectBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSelectBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSelectBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLineStipple(int arg0, short arg1) {
 		org.lwjgl.opengl.GL32.glLineStipple(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLineStipple(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLineStipple(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEdgeFlag(boolean arg0) {
 		org.lwjgl.opengl.GL32.glEdgeFlag(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEdgeFlag(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEdgeFlag(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMaterialf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glMaterialf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMaterialf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMaterialf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord4iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMateriali(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glMateriali(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMateriali(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMateriali(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor4fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexLevelParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib1sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformBlockName(int arg0, int arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetActiveUniformBlockName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveUniformBlockName_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL32.glGetActiveUniformBlockName(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3474,14 +3848,18 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetActiveUniformBlockName(int arg0, int arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetActiveUniformBlockName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveUniformBlockName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL32.glGetActiveUniformBlockName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = "
+					+ ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3489,100 +3867,117 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glCallList(int arg0) {
 		org.lwjgl.opengl.GL32.glCallList(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCallList(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCallList(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetClipPlane(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetClipPlane(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glGetClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglFogiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglFogiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsProgram(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsProgram(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL32.nglCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI4ubv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetProgramInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetProgramInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTransformFeedbackVaryings(int arg0, int arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL32.nglTransformFeedbackVaryings(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos4fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord2dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetSynci(long arg0, int arg1, IntBuffer arg2) {
 		int ret = org.lwjgl.opengl.GL32.glGetSynci(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetSynci(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetSynci(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3590,7 +3985,8 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public boolean glIsVertexArray(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsVertexArray(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsVertexArray(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsVertexArray(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3598,42 +3994,49 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glTexEnvf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glTexEnvf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexEnvf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexEnvf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexEnvi(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTexEnvi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexEnvi(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexEnvi(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglSecondaryColor3ubv(long arg0) {
 		org.lwjgl.opengl.GL32.nglSecondaryColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3ubv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSecondaryColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogi(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glFogi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogi(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogi(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long glFenceSync(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL32.glFenceSync(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFenceSync(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFenceSync(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3641,255 +4044,301 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glClearBufferfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearBufferfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindAttribLocation(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindAttribLocation(int arg0, int arg1, CharSequence arg2) {
 		org.lwjgl.opengl.GL32.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3b(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL32.glNormal3b(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glNormal3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glNormal3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearBufferfi(int arg0, int arg1, float arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glClearBufferfi(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearBufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glClearBufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord2iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glFogf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightModeli(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glLightModeli(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightModeli(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightModeli(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexLevelParameterfv(int arg0, int arg1, int arg2, float[] arg3) {
 		org.lwjgl.opengl.GL32.glGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexLevelParameterfv(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglFogfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglFogfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearBufferiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearBufferiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord2fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glNormal3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos4iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDeleteSync(long arg0) {
 		org.lwjgl.opengl.GL32.nglDeleteSync(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDeleteSync(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteSync(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetBufferPointerv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetBufferPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glNormal3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPolygonMode(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glPolygonMode(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPolygonMode(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPolygonMode(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			long arg6) {
+	public void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
 		org.lwjgl.opengl.GL32.nglBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightModelf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glLightModelf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightModelf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightModelf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSampleMaski(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glSampleMaski(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSampleMaski(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSampleMaski(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetLighti(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetLighti(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetLighti(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetLighti(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3897,7 +4346,8 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public float glGetLightf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL32.glGetLightf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetLightf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetLightf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3905,377 +4355,450 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glTexParameterIui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTexParameterIui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameterIui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterIui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4bv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetMaterialiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsInstancedBaseVertex(int arg0, IntBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsInstancedBaseVertex(int arg0, ByteBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3,
-			int arg4) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsInstancedBaseVertex(int arg0, ShortBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDrawElementsBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL32.nglDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexf(float arg0) {
 		org.lwjgl.opengl.GL32.glIndexf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexi(int arg0) {
 		org.lwjgl.opengl.GL32.glIndexi(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexi(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexi(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4bv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetVertexAttribPointerv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexd(double arg0) {
 		org.lwjgl.opengl.GL32.glIndexd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glNormal3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glNormal3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEnableVertexAttribArray(int arg0) {
 		org.lwjgl.opengl.GL32.glEnableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexGendv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexs(short arg0) {
 		org.lwjgl.opengl.GL32.glIndexs(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexs(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexs(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetIntegerv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClear(int arg0) {
 		org.lwjgl.opengl.GL32.glClear(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4Niv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4Niv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, ByteBuffer arg9) {
+	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+							+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL32.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL32.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCopyBufferSubData(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL32.glCopyBufferSubData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL32.nglVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenBuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGenBuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2
+					+ ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL32.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2
+					+ ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glReadBuffer(int arg0) {
 		org.lwjgl.opengl.GL32.glReadBuffer(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glReadBuffer(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glReadBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos4dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadName(int arg0) {
 		org.lwjgl.opengl.GL32.glLoadName(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadName(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadName(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawArraysInstanced(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glDrawArraysInstanced(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawArraysInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawArraysInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawBuffer(int arg0) {
 		org.lwjgl.opengl.GL32.glDrawBuffer(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawBuffer(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetQueryObjectuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetQueryObjectuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetQueryObjectuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexLevelParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL32.glGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexLevelParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4Nusv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4Nusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetMaterialfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenRenderbuffers(int[] arg0) {
 		org.lwjgl.opengl.GL32.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenRenderbuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenRenderbuffers() {
 		int ret = org.lwjgl.opengl.GL32.glGenRenderbuffers();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4283,28 +4806,34 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL32.nglDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglClearBufferfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCompileShader(int arg0) {
 		org.lwjgl.opengl.GL32.glCompileShader(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int nglGetUniformBlockIndex(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL32.nglGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4312,14 +4841,16 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglGetInteger64v(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsRenderbuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsRenderbuffer(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4327,176 +4858,204 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglUniformMatrix4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglUniformMatrix4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4ubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor4ubv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4ubv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex4fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglSecondaryColor3uiv(long arg0) {
 		org.lwjgl.opengl.GL32.nglSecondaryColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glViewport(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glViewport(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDeleteFramebuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglDeleteFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglWindowPos3sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglWindowPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetMapfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform4uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengl.GL32.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetUniformiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetVertexAttribIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long glGetInteger64(int arg0) {
 		long ret = org.lwjgl.opengl.GL32.glGetInteger64(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetInteger64(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4504,506 +5063,609 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glDepthMask(boolean arg0) {
 		org.lwjgl.opengl.GL32.glDepthMask(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex4dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglEdgeFlagPointer(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglEdgeFlagPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexGenfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetBufferParameteri64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUseProgram(int arg0) {
 		org.lwjgl.opengl.GL32.glUseProgram(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord2sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetMapdv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetMapdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor3sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			double[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, double[] arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			DoubleBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, DoubleBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPushMatrix() {
 		org.lwjgl.opengl.GL32.glPushMatrix();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPushMatrix() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPushMatrix() !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord2iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetMapiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetMapiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetUniformfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4Nbv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4Nbv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix2x3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix2x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix2x3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix2x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSampleCoverage(float arg0, boolean arg1) {
 		org.lwjgl.opengl.GL32.glSampleCoverage(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglClearBufferiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, DoubleBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, double[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			double[] arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteShader(int arg0) {
 		org.lwjgl.opengl.GL32.glDeleteShader(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetShaderInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetShaderInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI1iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexGeniv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawArrays(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex4iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, float[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, int[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, short[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, double[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetActiveUniformsiv(int arg0, int arg1, long arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL32.nglGetActiveUniformsiv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDeleteVertexArrays(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglDeleteVertexArrays(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDeleteVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glRenderMode(int arg0) {
 		int ret = org.lwjgl.opengl.GL32.glRenderMode(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRenderMode(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRenderMode(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5011,190 +5673,231 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glTexCoord1dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNewList(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glNewList(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNewList(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNewList(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, DoubleBuffer arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, double[] arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL32.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFramebufferTexture1D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glFramebufferTexture1D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFramebufferTexture1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPassThrough(float arg0) {
 		org.lwjgl.opengl.GL32.glPassThrough(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPassThrough(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPassThrough(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelMapfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelMapfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glPixelMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelMapfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			boolean arg6) {
+	public void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		org.lwjgl.opengl.GL32.glTexImage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord1sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord1sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglClearBufferuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglIndexPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglIndexPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4ui(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int nglGetAttribLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL32.nglGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5202,21 +5905,25 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glFlushMappedBufferRange(int arg0, long arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glFlushMappedBufferRange(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFlushMappedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glFlushMappedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilOp(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glStencilOp(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetUniformf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL32.glGetUniformf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5224,7 +5931,8 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public int glGetUniformi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetUniformi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5232,43 +5940,53 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glBindBuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glBindBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL32.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTransformFeedbackVaryings(int arg0, CharSequence arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTransformFeedbackVaryings(int arg0, CharSequence[] arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTransformFeedbackVaryings(int arg0, PointerBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsTexture(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsTexture(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5276,155 +5994,181 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glFramebufferTexture3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL32.glFramebufferTexture3D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFramebufferTexture3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4uiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor4uiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4uiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4uiv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glColor4uiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4uiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormalPointer(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormalPointer(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormalPointer(int arg0, int arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL32.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormalPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormalPointer(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glScalef(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glScalef(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glScalef(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glScalef(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor3iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glScaled(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glScaled(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glScaled(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glScaled(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL32.nglTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFramebufferTexture2D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glFramebufferTexture2D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBegin(int arg0) {
 		org.lwjgl.opengl.GL32.glBegin(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBegin(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBegin(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEnable(int arg0) {
 		org.lwjgl.opengl.GL32.glEnable(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform2fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetTexGenf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL32.glGetTexGenf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexGenf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexGenf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5432,7 +6176,8 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public int glGetTexGeni(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetTexGeni(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexGeni(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexGeni(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5440,182 +6185,210 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glFogCoordf(float arg0) {
 		org.lwjgl.opengl.GL32.glFogCoordf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoordf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoordf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFloatv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFloatv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogCoordd(double arg0) {
 		org.lwjgl.opengl.GL32.glFogCoordd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoordd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoordd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public double glGetTexGend(int arg0, int arg1) {
 		double ret = org.lwjgl.opengl.GL32.glGetTexGend(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexGend(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexGend(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDrawBuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglDrawBuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDrawBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL32.glPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPolygonStipple(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPolygonStipple(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPolygonStipple(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFrontFace(int arg0) {
 		org.lwjgl.opengl.GL32.glFrontFace(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glAlphaFunc(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glAlphaFunc(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glAlphaFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glAlphaFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos3sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform2iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform2iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetVertexAttribIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenLists(int arg0) {
 		int ret = org.lwjgl.opengl.GL32.glGenLists(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenLists(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenLists(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5623,28 +6396,33 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglSecondaryColor3usv(long arg0) {
 		org.lwjgl.opengl.GL32.nglSecondaryColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectsv(short[] arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glRectsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectsv(ShortBuffer arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glRectsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetActiveUniformBlocki(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL32.glGetActiveUniformBlocki(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlocki(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformBlocki(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret
+					+ " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5652,7 +6430,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public int glGetFramebufferAttachmentParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL32.glGetFramebufferAttachmentParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2
+					+ ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5660,112 +6440,133 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetTexParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4Nubv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4Nubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexImage(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL32.nglGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL32.nglGetPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetClipPlane(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glRenderbufferStorageMultisample(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord3dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL32.glRasterPos4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRasterPos4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4usv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glColor4usv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4usv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4usv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor4usv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4usv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetMapf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL32.glGetMapf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMapf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMapf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5773,28 +6574,34 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glRasterPos4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glRasterPos4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRasterPos4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glRasterPos4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRasterPos4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenVertexArrays(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGenVertexArrays(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGenVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGenVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public double glGetMapd(int arg0, int arg1) {
 		double ret = org.lwjgl.opengl.GL32.glGetMapd(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMapd(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMapd(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5802,7 +6609,8 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public int glGetMapi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetMapi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMapi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMapi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5810,787 +6618,937 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glRasterPos4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL32.glRasterPos4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRasterPos4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL32.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL32.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL32.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL32.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL32.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL32.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL32.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL32.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3b(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3b(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glRasterPos3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetAttachedShaders(int arg0, int[] arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetAttachedShaders(int arg0, IntBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearStencil(int arg0) {
 		org.lwjgl.opengl.GL32.glClearStencil(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glRasterPos3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformsiv(int arg0, int[] arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL32.glGetActiveUniformsiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformsiv(int arg0, IntBuffer arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetActiveUniformsiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glRasterPos3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glRasterPos3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, double[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			double[] arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			float[] arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, DoubleBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int[] arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			short[] arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ByteBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			ShortBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			IntBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			FloatBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix4x2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglUniformMatrix4x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetActiveUniformBlockName(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL32.nglGetActiveUniformBlockName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL32.glRasterPos2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord3fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix3x4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglUniformMatrix3x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDeleteTextures(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglDeleteTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglIndexubv(long arg0) {
 		org.lwjgl.opengl.GL32.nglIndexubv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglIndexubv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglIndexubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glRasterPos2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glRasterPos2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL32.glRasterPos2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiDrawElements(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3) {
 		org.lwjgl.opengl.GL32.glMultiDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiDrawElements(int arg0, int[] arg1, int arg2, PointerBuffer arg3) {
 		org.lwjgl.opengl.GL32.glMultiDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, short[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			short[] arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			int[] arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, DoubleBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, double[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			double[] arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, float[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			float[] arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ShortBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			ShortBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			long arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ByteBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			ByteBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, IntBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			IntBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			FloatBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEnablei(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glEnablei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEnablei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEnablei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCallLists(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glCallLists(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCallLists(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glCallLists(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCallLists(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCallLists(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glCallLists(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCallLists(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glCallLists(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex3sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor3bv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor3bv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColorMaski(int arg0, boolean arg1, boolean arg2, boolean arg3, boolean arg4) {
 		org.lwjgl.opengl.GL32.glColorMaski(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColorMaski(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColorMaski(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glBlendFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord1dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord1dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4Nuiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4Nuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, float[] arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, double[] arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, long arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, long[] arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, int[] arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, short[] arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, LongBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, FloatBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferData(int arg0, DoubleBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexBuffer(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTexBuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDetachShader(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glDetachShader(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetIntegeri_v(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetIntegeri_v(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL32.nglTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ByteBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ShortBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ShortBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			IntBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, IntBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			FloatBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, FloatBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int[] arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			short[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, short[] arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			double[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, double[] arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			float[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, float[] arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			DoubleBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, DoubleBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL32.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawBuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawBuffers(int arg0) {
 		org.lwjgl.opengl.GL32.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalPoint2(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glEvalPoint2(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalPoint2(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalPoint2(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalPoint1(int arg0) {
 		org.lwjgl.opengl.GL32.glEvalPoint1(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalPoint1(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalPoint1(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetProgramInfoLog_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL32.glGetProgramInfoLog(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -6598,7 +7556,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public String glGetProgramInfoLog_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL32.glGetProgramInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -6606,21 +7566,26 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetProgramInfoLog(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetProgramInfoLog(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean nglIsSync(long arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.nglIsSync(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -6628,63 +7593,72 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglColor3dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilMaskSeparate(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glStencilMaskSeparate(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord1fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord1fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glGetBoolean(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glGetBoolean(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -6692,14 +7666,17 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glUniform4ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glUniform4ui(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public double glGetDouble(int arg0) {
 		double ret = org.lwjgl.opengl.GL32.glGetDouble(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetDouble(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetDouble(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -6707,252 +7684,297 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glVertexPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL32.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL32.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL32.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord3iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor3fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetVertexAttribiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexGendv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL32.glTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexGendv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL32.glTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPointParameteriv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glPointParameteriv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPointParameteriv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glPointParameteriv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord3fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4usv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLineWidth(float arg0) {
 		org.lwjgl.opengl.GL32.glLineWidth(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL32.nglCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultMatrixd(long arg0) {
 		org.lwjgl.opengl.GL32.nglMultMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultMatrixf(long arg0) {
 		org.lwjgl.opengl.GL32.nglMultMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			FloatBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ShortBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexGenfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexGenfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClampColor(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glClampColor(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClampColor(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClampColor(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL32.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL32.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
+				arg10);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetShaderi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetShaderi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -6960,386 +7982,456 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglTexCoord3iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetIntegeri_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMaterialiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.glDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glDrawElements(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElements(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEnd() {
 		org.lwjgl.opengl.GL32.glEnd();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEnd() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEnd() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPointParameterfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glPointParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPointParameterfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glPointParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord1iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glFogiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glFogiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendFunc(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glBlendFunc(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRecti(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glRecti(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRecti(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRecti(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3ubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3ubv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL32.glTexCoord4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRects(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL32.glRects(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRects(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRects(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglBindAttribLocation(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglSecondaryColor3bv(long arg0) {
 		org.lwjgl.opengl.GL32.nglSecondaryColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3bv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSecondaryColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glTexCoord4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL32.glTexCoord4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexGeniv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexGeniv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectfv(FloatBuffer arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glRectfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectfv(float[] arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glRectfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetVertexAttribdv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetVertexAttribdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glTexCoord4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glProvokingVertex(int arg0) {
 		org.lwjgl.opengl.GL32.glProvokingVertex(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glProvokingVertex(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glProvokingVertex(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteProgram(int arg0) {
 		org.lwjgl.opengl.GL32.glDeleteProgram(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMaterialfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMaterialfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetIntegerv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetIntegerv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glOrtho(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL32.glOrtho(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glOrtho(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glOrtho(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelMapuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelMapuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glPixelMapuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelMapuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectd(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL32.glRectd(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectd(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRectd(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectf(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glRectf(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectf(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRectf(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEnableClientState(int arg0) {
 		org.lwjgl.opengl.GL32.glEnableClientState(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEnableClientState(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEnableClientState(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglSecondaryColor3dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglSecondaryColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMaterialfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetFragDataLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7347,7 +8439,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public int glGetFragDataLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7355,14 +8449,17 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglTexCoord3dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glAreTexturesResident_boolean(int[] arg0, ByteBuffer arg1) {
 		boolean ret = org.lwjgl.opengl.GL32.glAreTexturesResident(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7370,7 +8467,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public boolean glAreTexturesResident_boolean(IntBuffer arg0, ByteBuffer arg1) {
 		boolean ret = org.lwjgl.opengl.GL32.glAreTexturesResident(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7378,7 +8477,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public boolean glAreTexturesResident_boolean(int arg0, ByteBuffer arg1) {
 		boolean ret = org.lwjgl.opengl.GL32.glAreTexturesResident(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7386,56 +8487,64 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglGetInteger64i_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos4fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glFogfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glFogfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPushName(int arg0) {
 		org.lwjgl.opengl.GL32.glPushName(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPushName(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPushName(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglLoadMatrixf(long arg0) {
 		org.lwjgl.opengl.GL32.nglLoadMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetIntegeri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetIntegeri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegeri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7443,63 +8552,75 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglLoadMatrixd(long arg0) {
 		org.lwjgl.opengl.GL32.nglLoadMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectdv(DoubleBuffer arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glRectdv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectdv(double[] arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glRectdv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetVertexAttribfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformBlockBinding(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glUniformBlockBinding(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformBlockBinding(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformBlockBinding(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glCheckFramebufferStatus(int arg0) {
 		int ret = org.lwjgl.opengl.GL32.glCheckFramebufferStatus(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7507,42 +8628,51 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetLightiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetLightiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLoadIdentity() {
 		org.lwjgl.opengl.GL32.glLoadIdentity();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLoadIdentity() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLoadIdentity() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformName(int arg0, int arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetActiveUniformName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformName(int arg0, int arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetActiveUniformName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveUniformName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL32.glGetActiveUniformName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = "
+					+ ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7550,7 +8680,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public String glGetActiveUniformName_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL32.glGetActiveUniformName(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7558,290 +8690,339 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glDrawElementsInstanced(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsInstanced(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsInstanced(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsInstanced(int arg0, int arg1, ByteBuffer arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstanced(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEdgeFlagv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glEdgeFlagv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEdgeFlagv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEdgeFlagv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor3ubv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor3ubv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMaterialiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMaterialiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI2iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glColor4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMapGrid2d(int arg0, double arg1, double arg2, int arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL32.glMapGrid2d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMapGrid2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMapGrid2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMapGrid2f(int arg0, float arg1, float arg2, int arg3, float arg4, float arg5) {
 		org.lwjgl.opengl.GL32.glMapGrid2f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMapGrid2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMapGrid2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindFramebuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glBindFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1s(int arg0, short arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteQueries(int arg0) {
 		org.lwjgl.opengl.GL32.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteQueries(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteQueries(int[] arg0) {
 		org.lwjgl.opengl.GL32.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib3dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetQueryiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexGenfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexGenfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1s(short arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1s(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1s(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1s(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsShader(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsShader(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			long arg6) {
+	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
 		org.lwjgl.opengl.GL32.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			ByteBuffer arg6) {
+	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL32.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1f(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1d(int arg0, double arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetShaderInfoLog_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL32.glGetShaderInfoLog(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7849,21 +9030,25 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetShaderInfoLog(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderInfoLog(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetShaderInfoLog_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL32.glGetShaderInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -7871,344 +9056,400 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glTexCoord1d(double arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1d(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1d(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1d(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4usv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4usv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectiv(IntBuffer arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glRectiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRectiv(int[] arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glRectiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRectsv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglRectsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearAccum(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glClearAccum(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearAccum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glClearAccum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1i(int arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1i(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1i(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1i(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord1f(float arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord1f(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord1f(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord1f(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glColor4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFramebufferTexture(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glFramebufferTexture(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glFramebufferTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL32.glTexCoord2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3uiv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3uiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDepthFunc(int arg0) {
 		org.lwjgl.opengl.GL32.glDepthFunc(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetLightfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetLightfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexiv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glIndexiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glIndexiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix4x3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix4x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix4x3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix4x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexGeniv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexGeniv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glTexCoord2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetUniformIndices(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetUniformIndices(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL32.glTexCoord2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glTexCoord2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glTexCoord3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetBufferSubData(int arg0, long arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetBufferSubData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMapGrid1d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glMapGrid1d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMapGrid1d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMapGrid1d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glTexCoord3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMapGrid1f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glMapGrid1f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMapGrid1f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMapGrid1f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glTexCoord3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglWindowPos2sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglWindowPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTexCoord3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilMask(int arg0) {
 		org.lwjgl.opengl.GL32.glStencilMask(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6) {
+	public void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengl.GL32.glCopyTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCopyTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform3uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor4bv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4bv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetInteger(int arg0) {
 		int ret = org.lwjgl.opengl.GL32.glGetInteger(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -8216,204 +9457,236 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetVertexAttribPointerv(int arg0, int arg1, PointerBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendEquationSeparate(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glBlendEquationSeparate(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3ubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3ubv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengl.GL32.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, double[] arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, long[] arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, short[] arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferSubData(int arg0, long arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexdv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glIndexdv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexdv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexdv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexdv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glIndexdv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexdv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexdv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearDepth(double arg0) {
 		org.lwjgl.opengl.GL32.glClearDepth(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearDepth(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClearDepth(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteTextures(int[] arg0) {
 		org.lwjgl.opengl.GL32.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteTextures(int arg0) {
 		org.lwjgl.opengl.GL32.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteTextures(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4s(int arg0, short arg1, short arg2, short arg3, short arg4) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4s(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3uiv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3uiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3uiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3uiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long glGetBufferParameteri64(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL32.glGetBufferParameteri64(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferParameteri64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -8421,183 +9694,222 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglBindFragDataLocation(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglBindFragDataLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord1sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4d(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetUniformfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glDrawElementsBaseVertex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsBaseVertex(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glDrawElementsBaseVertex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glDrawElementsBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsBaseVertex(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glDrawElementsBaseVertex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3s(int arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glMultiTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetPixelMapusv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4,
-			long arg5, long arg6) {
+	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.nglGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib3fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3d(int arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glMultiTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexGendv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL32.glGetTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexGendv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPopName() {
 		org.lwjgl.opengl.GL32.glPopName();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPopName() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPopName() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glMultiTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexfv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glIndexfv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexfv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexfv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glIndexfv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexfv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsList(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsList(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsList(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsList(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -8605,28 +9917,33 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glMultiTexCoord3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glMultiTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetFloatv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2s(int arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetString(int arg0) {
 		String ret = org.lwjgl.opengl.GL32.glGetString(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -8634,84 +9951,98 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glVertexAttrib4dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetActiveUniformBlockiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRenderbufferStorage(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glRenderbufferStorage(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRectiv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglRectiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelZoom(float arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glPixelZoom(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelZoom(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelZoom(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexGenf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glTexGenf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexGenf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexGenf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexGeni(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTexGeni(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexGeni(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexGeni(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglCallLists(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglCallLists(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglCallLists(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglCallLists(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetFloat(int arg0) {
 		float ret = org.lwjgl.opengl.GL32.glGetFloat(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -8719,21 +10050,25 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glNormal3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glNormal3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glNormal3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetTexParameterIui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetTexParameterIui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -8741,140 +10076,162 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glTexGend(int arg0, int arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glTexGend(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexGend(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexGend(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBooleani_v(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetBooleani_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetQueryiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetQueryiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4ubv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetInteger64v(int arg0, long[] arg1) {
 		org.lwjgl.opengl.GL32.glGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetInteger64v(int arg0, LongBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPixelMapuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPixelMapuiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.glGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPixelMapuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetSynciv(long arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glGetSynciv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetSynciv(long arg0, int arg1, int[] arg2, int[] arg3) {
 		org.lwjgl.opengl.GL32.glGetSynciv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4bv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform3fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL32.glGenBuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGenBuffers() {
 		int ret = org.lwjgl.opengl.GL32.glGenBuffers();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -8882,166 +10239,192 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGenBuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glGenBuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDeleteBuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglDeleteBuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalMesh1(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glEvalMesh1(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalMesh1(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalMesh1(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalMesh2(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glEvalMesh2(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalMesh2(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalMesh2(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glNormal3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glNormal3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex4sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glNormal3bv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3bv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexPointer(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glIndexPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexPointer(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glIndexPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glIndexPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexPointer(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glIndexPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexPointer(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glIndexPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos4sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform3iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform3iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEndList() {
 		org.lwjgl.opengl.GL32.glEndList();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEndList() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEndList() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFramebufferTextureLayer(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glFramebufferTextureLayer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, ByteBuffer arg5) {
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2,
-			IntBuffer arg3) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9049,70 +10432,85 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglSecondaryColor3sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglSecondaryColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGenRenderbuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGenRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRectfv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglRectfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColorPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColorPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL32.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColorPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL32.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColorPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL32.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglIndexdv(long arg0) {
 		org.lwjgl.opengl.GL32.nglIndexdv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglIndexdv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglIndexdv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long nglGetString(int arg0) {
 		long ret = org.lwjgl.opengl.GL32.nglGetString(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9120,42 +10518,49 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglInterleavedArrays(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glNormal3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glNormal3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glNormal3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glNormal3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glNormal3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long glGetInteger64i(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL32.glGetInteger64i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64i(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9163,71 +10568,82 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglTexCoord2sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRectdv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglRectdv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glColor4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglIndexfv(long arg0) {
 		org.lwjgl.opengl.GL32.nglIndexfv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglIndexfv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglIndexfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL32.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglWindowPos3iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglWindowPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI3ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glVertexAttribI3ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttribI3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglEdgeFlagv(long arg0) {
 		org.lwjgl.opengl.GL32.nglEdgeFlagv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglEdgeFlagv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglEdgeFlagv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetError() {
 		int ret = org.lwjgl.opengl.GL32.glGetError();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9235,126 +10651,149 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglLoadTransposeMatrixd(long arg0) {
 		org.lwjgl.opengl.GL32.nglLoadTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglLoadTransposeMatrixf(long arg0) {
 		org.lwjgl.opengl.GL32.nglLoadTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglWindowPos3dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglWindowPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglSecondaryColor3fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglSecondaryColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLogicOp(int arg0) {
 		org.lwjgl.opengl.GL32.glLogicOp(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLogicOp(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLogicOp(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glUniform3ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glScissor(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glScissor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetBooleanv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glColor4ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColor4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultTransposeMatrixd(long arg0) {
 		org.lwjgl.opengl.GL32.nglMultTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib3sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4ub(byte arg0, byte arg1, byte arg2, byte arg3) {
 		org.lwjgl.opengl.GL32.glColor4ub(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4ub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColor4ub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultTransposeMatrixf(long arg0) {
 		org.lwjgl.opengl.GL32.nglMultTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexEnviv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexParameterIi(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glTexParameterIi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexParameterIi(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterIi(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglWindowPos3fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglWindowPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord2dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glClientWaitSync(long arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL32.glClientWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9362,133 +10801,156 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglSecondaryColor3iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglSecondaryColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4us(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL32.glColor4us(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4us(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColor4us(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglPointParameterfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglPointParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI1uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI1uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3usv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3usv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3usv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3usv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPixelMapusv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPixelMapusv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPixelMapusv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.glGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglSecondaryColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelMapusv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelMapusv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelMapusv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glPixelMapusv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexsv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glIndexsv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexsv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexsv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexsv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glIndexsv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexsv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexsv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetUniformui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetUniformui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9496,309 +10958,370 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglWaitSync(long arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI2uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib4Nsv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib4Nsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glColor4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord2fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, double[] arg5) {
 		org.lwjgl.opengl.GL32.glMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, DoubleBuffer arg5) {
 		org.lwjgl.opengl.GL32.glMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengl.GL32.glMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, float[] arg5) {
 		org.lwjgl.opengl.GL32.glMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glAttachShader(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glAttachShader(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetRenderbufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearIndex(float arg0) {
 		org.lwjgl.opengl.GL32.glClearIndex(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearIndex(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glClearIndex(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexub(byte arg0) {
 		org.lwjgl.opengl.GL32.glIndexub(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexub(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexub(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglEvalCoord1fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglEvalCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, double[] arg9) {
+	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
+			int arg8, double[] arg9) {
 		org.lwjgl.opengl.GL32.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, DoubleBuffer arg9) {
+	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
+			int arg8, DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL32.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, float[] arg9) {
+	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
+			int arg8, float[] arg9) {
 		org.lwjgl.opengl.GL32.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
+			int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengl.GL32.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL32.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL32.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL32.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglPointParameteriv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglPointParameteriv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3,
-			int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, IntBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		org.lwjgl.opengl.GL32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4,
-			int arg5) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4, int arg5) {
 		org.lwjgl.opengl.GL32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3,
-			int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetTexEnvfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBeginTransformFeedback(int arg0) {
 		org.lwjgl.opengl.GL32.glBeginTransformFeedback(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBeginTransformFeedback(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBeginTransformFeedback(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglEvalCoord1dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglEvalCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Nub(int arg0, byte arg1, byte arg2, byte arg3, byte arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Nub(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Nub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsQuery(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsQuery(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsQuery(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsQuery(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9806,63 +11329,72 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glSelectBuffer(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glSelectBuffer(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSelectBuffer(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSelectBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSelectBuffer(int[] arg0) {
 		org.lwjgl.opengl.GL32.glSelectBuffer(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSelectBuffer(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSelectBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglNormal3sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglNormal3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglNormal3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglNormal3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Nsv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Nsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Nsv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Nsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglIndexsv(long arg0) {
 		org.lwjgl.opengl.GL32.nglIndexsv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglIndexsv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglIndexsv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetQueryObjectui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetQueryObjectui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryObjectui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9870,35 +11402,41 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglRasterPos2dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4Nubv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4Nubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4ubv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetShaderiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetVertexAttribIui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetVertexAttribIui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9906,49 +11444,57 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglUniform2uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightModeliv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glLightModeliv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightModeliv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glLightModeliv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord4iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetUniformLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9956,7 +11502,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public int glGetUniformLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -9964,204 +11512,237 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetTexParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos2fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4,
-			long arg5) {
+	public void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL32.nglMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
+					+ arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightModelfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glLightModelfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLightModelfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glLightModelfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord4dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glUniform2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMultisamplefv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetMultisamplefv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetMultisamplefv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetMultisamplefv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glUniform2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, double[] arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, short[] arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, long[] arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBufferSubData(int arg0, long arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetQueryObjectiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiDrawElements(int arg0, long arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL32.nglMultiDrawElements(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsEnabled(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsEnabled(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -10169,14 +11750,18 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glUniform3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glUniform3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int nglGetFragDataLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL32.nglGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -10184,133 +11769,155 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glUniform2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glUniform3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDisableVertexAttribArray(int arg0) {
 		org.lwjgl.opengl.GL32.glDisableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex4iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord4fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord4fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetTexParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBooleanv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEndQuery(int arg0) {
 		org.lwjgl.opengl.GL32.glEndQuery(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEndQuery(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEndQuery(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1f(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glUniform1f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glGetBooleani(int arg0, int arg1) {
 		boolean ret = org.lwjgl.opengl.GL32.glGetBooleani(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBooleani(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBooleani(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -10318,281 +11925,328 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glDisablei(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glDisablei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDisablei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDisablei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9) {
+	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8, int arg9) {
 		org.lwjgl.opengl.GL32.glBlitFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+							+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glUniform1i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord4sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetBufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglIndexiv(long arg0) {
 		org.lwjgl.opengl.GL32.nglIndexiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglIndexiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglIndexiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPushAttrib(int arg0) {
 		org.lwjgl.opengl.GL32.glPushAttrib(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPushAttrib(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPushAttrib(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3bv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3bv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI3iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBeginConditionalRender(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glBeginConditionalRender(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBeginConditionalRender(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBeginConditionalRender(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glUniform1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform1uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glUniform1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGenerateMipmap(int arg0) {
 		org.lwjgl.opengl.GL32.glGenerateMipmap(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendEquation(int arg0) {
 		org.lwjgl.opengl.GL32.glBlendEquation(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglPixelMapuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglPixelMapuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glClearColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord4sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilFunc(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glStencilFunc(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glVertexAttribI2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiDrawArrays(int arg0, long arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL32.nglMultiDrawArrays(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteSync(long arg0) {
 		org.lwjgl.opengl.GL32.glDeleteSync(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteSync(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteSync(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos3iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glVertexAttribI3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttribI3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetPointerv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetPointerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetPointerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetPointerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long glGetPointer(int arg0) {
 		long ret = org.lwjgl.opengl.GL32.glGetPointer(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPointer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPointer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -10600,84 +12254,102 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glVertexAttrib2dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRotated(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL32.glRotated(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRotated(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRotated(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glIndexubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL32.glIndexubv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIndexubv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIndexubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRotatef(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glRotatef(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRotatef(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glRotatef(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix4x2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix4x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix4x2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix4x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiDrawArrays(int arg0, int[] arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glMultiDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiDrawArrays(int arg0, IntBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glMultiDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglUniformMatrix2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib2fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetAttribLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -10685,7 +12357,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public int glGetAttribLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -10693,21 +12367,24 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glWindowPos2sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glCreateShader(int arg0) {
 		int ret = org.lwjgl.opengl.GL32.glCreateShader(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -10715,181 +12392,208 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglVertex2fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL32.nglDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI1i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI1i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengl.GL32.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glWindowPos2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glWindowPos2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL32.glWindowPos2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord3iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglRasterPos2iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglRasterPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib2dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glWindowPos3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveAttrib_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL32.glGetActiveAttrib(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL32.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertex2dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglVertex2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertex2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertex2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glWindowPos3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glWindowPos3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glWindowPos3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long glGetBufferPointer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL32.glGetBufferPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -10897,21 +12601,27 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glGetVertexAttribIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int nglClientWaitSync(long arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL32.nglClientWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -10919,184 +12629,217 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glWindowPos2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL32.glWindowPos2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPointSize(float arg0) {
 		org.lwjgl.opengl.GL32.glPointSize(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPointSize(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPointSize(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderSource(int arg0, PointerBuffer arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderSource(int arg0, CharSequence[] arg1) {
 		org.lwjgl.opengl.GL32.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderSource(int arg0, PointerBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glShaderSource(int arg0, CharSequence arg1) {
 		org.lwjgl.opengl.GL32.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform4fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglNormal3bv(long arg0) {
 		org.lwjgl.opengl.GL32.nglNormal3bv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglNormal3bv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglNormal3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
+			long arg9) {
 		org.lwjgl.opengl.GL32.nglTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	public void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		org.lwjgl.opengl.GL32.glTexImage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexImage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glVertex4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glVertex4sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4d(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribdv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribdv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetCompressedTexImage(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetCompressedTexImage(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetProgramiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglWindowPos2iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglWindowPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4s(int arg0, short arg1, short arg2, short arg3, short arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4s(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glArrayElement(int arg0) {
 		org.lwjgl.opengl.GL32.glArrayElement(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glArrayElement(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glArrayElement(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4usv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4usv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetVertexAttribi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetVertexAttribi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11104,49 +12847,59 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glMultiTexCoord1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor3uiv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor3uiv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glBlendColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDrawPixels(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL32.nglDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniform4iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglUniform4iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetUniformBlockIndex(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11154,7 +12907,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public int glGetUniformBlockIndex(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11162,100 +12917,124 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglGetLightfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglBufferSubData(int arg0, long arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglBufferSubData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix3x4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix3x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniformMatrix3x4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glUniformMatrix3x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL32.nglMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL32.nglMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glUnmapBuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glUnmapBuffer(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUnmapBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUnmapBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11263,7 +13042,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public float glGetTexLevelParameterf(int arg0, int arg1, int arg2) {
 		float ret = org.lwjgl.opengl.GL32.glGetTexLevelParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexLevelParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11271,14 +13052,17 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void nglWindowPos2fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglWindowPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetTexLevelParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL32.glGetTexLevelParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetTexLevelParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11286,129 +13070,150 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glPointParameteri(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glPointParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPointParameteri(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPointParameteri(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPointParameterf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glPointParameterf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPointParameterf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPointParameterf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL32.nglReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexCoord3sv(long arg0) {
 		org.lwjgl.opengl.GL32.nglTexCoord3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, long arg9) {
+	public void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
+			int arg8, long arg9) {
 		org.lwjgl.opengl.GL32.nglMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, long arg9) {
+	public void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
+			int arg8, long arg9) {
 		org.lwjgl.opengl.GL32.nglMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3iv(int[] arg0) {
 		org.lwjgl.opengl.GL32.glColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetPixelMapuiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glInitNames() {
 		org.lwjgl.opengl.GL32.glInitNames();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glInitNames() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glInitNames() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexCoord4dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glTexCoord4dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI2ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glVertexAttribI2ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPrimitiveRestartIndex(int arg0) {
 		org.lwjgl.opengl.GL32.glPrimitiveRestartIndex(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPrimitiveRestartIndex(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPrimitiveRestartIndex(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTranslatef(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glTranslatef(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTranslatef(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTranslatef(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPopMatrix() {
 		org.lwjgl.opengl.GL32.glPopMatrix();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPopMatrix() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPopMatrix() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTranslated(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glTranslated(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glTranslated(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glTranslated(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
-			ByteBuffer arg4) {
+	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
 		ByteBuffer ret = org.lwjgl.opengl.GL32.glMapBufferRange(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11416,7 +13221,9 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL32.glMapBufferRange(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11424,7 +13231,8 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public boolean glIsFramebuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsFramebuffer(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11432,79 +13240,91 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glColor3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glColor3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glColor3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetLightiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3fv(float[] arg0) {
 		org.lwjgl.opengl.GL32.glColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glColor3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderSource(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderSource(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetShaderSource_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL32.glGetShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11512,7 +13332,8 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public String glGetShaderSource_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL32.glGetShaderSource(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11520,170 +13341,207 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glColor3b(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL32.glColor3b(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glColor3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix3x2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglUniformMatrix3x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetVertexAttribiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilOpSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glStencilOpSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRasterPos2sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glRasterPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix2x4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL32.nglUniformMatrix2x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL32.glColor4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColor4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glColor4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColor4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glColor4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColor4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetQueryObjectiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL32.glGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetQueryObjectiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetQueryObjectiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4b(byte arg0, byte arg1, byte arg2, byte arg3) {
 		org.lwjgl.opengl.GL32.glColor4b(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4b(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColor4b(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCopyPixels(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL32.glCopyPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCopyPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCopyPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL32.glColor4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glColor4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL32.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteBuffers(int arg0) {
 		org.lwjgl.opengl.GL32.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteBuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL32.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean nglAreTexturesResident(int arg0, long arg1, long arg2) {
 		boolean ret = org.lwjgl.opengl.GL32.nglAreTexturesResident(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglAreTexturesResident(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglAreTexturesResident(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -11691,317 +13549,372 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glColor3ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glColor3ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8) {
+	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			int arg8) {
 		org.lwjgl.opengl.GL32.glCopyTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttrib2sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttrib2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3ub(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL32.glColor3ub(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3us(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glColor3us(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL32.glVertex2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glVertex2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglColor3usv(long arg0) {
 		org.lwjgl.opengl.GL32.nglColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglColor3usv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glVertex2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4ubv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttribI4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelStoref(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glPixelStoref(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelStoref(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelStoref(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglNormal3iv(long arg0) {
 		org.lwjgl.opengl.GL32.nglNormal3iv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglNormal3iv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglNormal3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglPixelMapfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglPixelMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glStencilFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetQueryObjectuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL32.glVertex2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelStorei(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glPixelStorei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetInteger64i_v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL32.glGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetInteger64i_v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL32.glGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglEvalCoord2dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglEvalCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glVertex3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glVertex3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glVertex3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglFeedbackBuffer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglFeedbackBuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglFeedbackBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglFeedbackBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCopyTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL32.glCopyTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glVertex3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertex3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglWindowPos2dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglWindowPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3sv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColor3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColor3sv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPixelMapfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.glGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPixelMapfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetPixelMapfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL32.glVertex4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertex4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glVertex4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertex4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glVertex4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertex4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glColorMaterial(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glColorMaterial(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glColorMaterial(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glColorMaterial(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribI3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglVertexAttribI3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengl.GL32.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertex4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL32.glVertex4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertex4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertex4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3ub(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3ub(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glSecondaryColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform2ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glUniform2ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glUniform2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glSecondaryColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetQueryObjecti(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetQueryObjecti(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryObjecti(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -12009,126 +13922,148 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glSecondaryColor3us(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3us(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glSecondaryColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1d(int arg0, double arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib1d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglNormal3fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglNormal3fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglNormal3fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglNormal3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1f(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib1f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord1dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib1s(int arg0, short arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib1s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEndConditionalRender() {
 		org.lwjgl.opengl.GL32.glEndConditionalRender();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEndConditionalRender() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEndConditionalRender() !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglBufferData(int arg0, long arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL32.nglBufferData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetSynciv(long arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL32.nglGetSynciv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDeleteLists(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glDeleteLists(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDeleteLists(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteLists(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexEnvfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglFogCoordPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glWindowPos3dv(double[] arg0) {
 		org.lwjgl.opengl.GL32.glWindowPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3usv(short[] arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColor3usv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL32.glSecondaryColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord1d(double arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord1d(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1d(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord1d(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetBufferParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetBufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -12136,225 +14071,269 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glEvalCoord1f(float arg0) {
 		org.lwjgl.opengl.GL32.glEvalCoord1f(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1f(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord1f(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL32.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL32.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL32.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL32.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL32.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL32.glVertexAttrib3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3d(int arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL32.glVertexAttrib3d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttrib3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelTransferf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glPixelTransferf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelTransferf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelTransferf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glPixelTransferi(int arg0, int arg1) {
 		org.lwjgl.opengl.GL32.glPixelTransferi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glPixelTransferi(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glPixelTransferi(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogCoordPointer(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL32.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogCoordPointer(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL32.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogCoordPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFogCoordPointer(int arg0, int arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL32.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglNormal3dv(long arg0) {
 		org.lwjgl.opengl.GL32.nglNormal3dv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglNormal3dv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglNormal3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTexEnviv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL32.nglTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengl.GL32.nglTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglMultiTexCoord1fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglMultiTexCoord1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib3s(int arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL32.glVertexAttrib3s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttrib3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDeleteQueries(int arg0, long arg1) {
 		org.lwjgl.opengl.GL32.nglDeleteQueries(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglDeleteQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultTransposeMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL32.glMultTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultTransposeMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL32.glMultTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL32.glEvalCoord2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glEvalCoord2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL32.glEvalCoord2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glEvalCoord2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL32.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL32.glVertexAttrib2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public float glGetTexParameterf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL32.glGetTexParameterf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -12362,14 +14341,16 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glVertexAttrib2d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL32.glVertexAttrib2d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetTexParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL32.glGetTexParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -12377,107 +14358,124 @@ public class GL_W_GL32_Debug implements GL_W_Call {
 	public void glMultTransposeMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL32.glMultTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultTransposeMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL32.glMultTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public boolean glIsSync(long arg0) {
 		boolean ret = org.lwjgl.opengl.GL32.glIsSync(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
+			long arg8) {
 		org.lwjgl.opengl.GL32.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFinish() {
 		org.lwjgl.opengl.GL32.glFinish();
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFinish() !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFinish() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL32.glVertexAttrib2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFramebufferRenderbuffer(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL32.glFramebufferRenderbuffer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib2s(int arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL32.glVertexAttrib2s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glMultiTexCoord1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL32.glMultiTexCoord1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglEvalCoord2fv(long arg0) {
 		org.lwjgl.opengl.GL32.nglEvalCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("nglEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glActiveTexture(int arg0) {
 		org.lwjgl.opengl.GL32.glActiveTexture(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDisableClientState(int arg0) {
 		org.lwjgl.opengl.GL32.glDisableClientState(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glDisableClientState(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glDisableClientState(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glLinkProgram(int arg0) {
 		org.lwjgl.opengl.GL32.glLinkProgram(arg0);
 		int err = org.lwjgl.opengl.GL32.glGetError();
-		if (err != GL32.GL_NO_ERROR) throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GL32.GL_NO_ERROR)
+			throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override

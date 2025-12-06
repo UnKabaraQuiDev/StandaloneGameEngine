@@ -159,7 +159,6 @@ public class SingleTexture extends Texture {
 		}
 
 		GL_W.glPixelStorei(GL_W.GL_UNPACK_ALIGNMENT, 1);
-		assert GL_W.checkError("PixelStoreI.UnpackAlignment=1");
 		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
 			GL_W.glTexImage2D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, 0, format.getGlId(),
 					dataType.getGlId(), buffer.getBuffer());
@@ -167,7 +166,6 @@ public class SingleTexture extends Texture {
 			GL_W.glTexImage3D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, depth, 0, format.getGlId(),
 					dataType.getGlId(), buffer.getBuffer());
 		}
-		assert GL_W.checkError("TexImage_" + txtType);
 		applyFilter();
 		applyWrap();
 
@@ -189,7 +187,6 @@ public class SingleTexture extends Texture {
 
 		if (generateMipmaps) {
 			GL_W.glGenerateMipmap(txtType.getGlId());
-			assert GL_W.checkError("GenerateMipmap[" + txtType + "]");
 		}
 
 		unbind();
@@ -203,7 +200,6 @@ public class SingleTexture extends Texture {
 			GL_W.glTexImage3D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, depth, 0, format.getGlId(),
 					dataType.getGlId(), MemoryUtil.NULL);
 		}
-		assert GL_W.checkError("TexImage_" + txtType);
 	}
 
 	public MemImage getStoredImage() {
@@ -212,14 +208,11 @@ public class SingleTexture extends Texture {
 		int channelCount = getChannelsByFormat(format.getGlId());
 		final ByteBuffer buffer = MemoryUtil.memAlloc(width * height * channelCount);
 		GL_W.glPixelStorei(GL_W.GL_PACK_ALIGNMENT, 1);
-		assert GL_W.checkError("PixelStorei(PACK_ALIGNMENT, 1)");
 		GL_W.glGetTexImage(txtType.getGlId(), 0, format.getGlId(), dataType.getGlId(), buffer);
 		assert GL_W.checkError(
 				"ReadPixels(0, 0, " + width + ", " + height + ", " + internalFormat + ", " + dataType + ")");
 		GL_W.glFlush();
-		assert GL_W.checkError("Flush()");
 		GL_W.glFinish();
-		assert GL_W.checkError("Finish()");
 
 		unbind();
 

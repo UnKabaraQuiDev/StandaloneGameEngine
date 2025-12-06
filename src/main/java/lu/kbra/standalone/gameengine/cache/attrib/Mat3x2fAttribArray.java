@@ -48,7 +48,6 @@ public class Mat3x2fAttribArray extends AttribArray {
 
 		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data),
 				iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		assert GL_W.checkError("BufferData(" + bufferType + ", " + data.length * 6 + ", " + iStatic + ")");
 	}
 
 	@Override
@@ -67,7 +66,6 @@ public class Mat3x2fAttribArray extends AttribArray {
 		bind();
 		data = nPos;
 		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
-		assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + data.length * 6 + ")");
 	}
 
 	public void resize(Matrix3x2f[] nPos) {
@@ -75,18 +73,15 @@ public class Mat3x2fAttribArray extends AttribArray {
 
 		if (nPos.length == data.length) {
 			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
-			assert GL_W.checkError("BufferSubData(" + bufferType + ", 0..." + nPos.length * 6 + ")");
 		} else {
 			GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(nPos),
 					iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-			assert GL_W.checkError("BufferData(" + bufferType + ", " + nPos.length + ", " + iStatic + ")");
 		}
 
 		data = nPos;
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
 			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_FLOAT, false, 0, 0);
-			assert GL_W.checkError("VertexAttribPointer(" + index + ", " + dataSize + ", FLOAT)");
 		}
 	}
 
@@ -94,11 +89,8 @@ public class Mat3x2fAttribArray extends AttribArray {
 	public void enable() {
 		for (int i = 0; i < 3; i++) {
 			GL_W.glEnableVertexAttribArray(index + i);
-			assert GL_W.checkError("EnableVertexAttribArray(" + index + i + ")");
 			GL_W.glVertexAttribPointer(index + i, 2, GL_W.GL_FLOAT, false, 6 * 3, i * 2 * 4);
-			assert GL_W.checkError("VertexAttribPointer(" + index + ", " + dataSize + ", FLOAT)");
 			GL_W.glVertexAttribDivisor(index + i, divisor);
-			assert GL_W.checkError("VertexAttribDivisor(" + index + i + ", " + divisor + ")");
 		}
 	}
 
