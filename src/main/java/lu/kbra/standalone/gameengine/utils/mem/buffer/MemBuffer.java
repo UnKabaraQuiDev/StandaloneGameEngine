@@ -25,21 +25,21 @@ public class MemBuffer<T extends Buffer> implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		if(buffer == null)
+		if (buffer == null)
 			return;
-		
+
 		if (MemBufferOrigin.STBV.equals(origin)) {
-			if(buffer instanceof ShortBuffer) {
+			if (buffer instanceof ShortBuffer) {
 				LibCStdlib.free((ShortBuffer) buffer);
-			}else if(buffer instanceof ByteBuffer) {
+			} else if (buffer instanceof ByteBuffer) {
 				LibCStdlib.free((ByteBuffer) buffer);
-			}else if(buffer instanceof IntBuffer) {
+			} else if (buffer instanceof IntBuffer) {
 				LibCStdlib.free((IntBuffer) buffer);
-			}else if(buffer instanceof DoubleBuffer) {
+			} else if (buffer instanceof DoubleBuffer) {
 				LibCStdlib.free((DoubleBuffer) buffer);
-			}else if(buffer instanceof FloatBuffer) {
+			} else if (buffer instanceof FloatBuffer) {
 				LibCStdlib.free((FloatBuffer) buffer);
-			}else if(buffer instanceof LongBuffer) {
+			} else if (buffer instanceof LongBuffer) {
 				LibCStdlib.free((LongBuffer) buffer);
 			}
 			buffer = null;

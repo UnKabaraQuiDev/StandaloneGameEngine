@@ -7,11 +7,11 @@ import java.util.logging.Level;
 import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public abstract class AbstractShaderPart implements UniqueID, Cleanupable, GLObject {
 

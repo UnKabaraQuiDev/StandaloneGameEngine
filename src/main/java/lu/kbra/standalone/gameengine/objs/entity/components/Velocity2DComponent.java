@@ -19,18 +19,19 @@ public class Velocity2DComponent extends VelocityComponent {
 
 	public void update() {
 		Entity e = this.getParent();
-		if (e == null)if (e == null) {
-			throw new RuntimeException("No parent attached.");
-		}
+		if (e == null)
+			if (e == null) {
+				throw new RuntimeException("No parent attached.");
+			}
 
 		Transform2DComponent t2De = e.getComponent(Transform2DComponent.class);
 		if (t2De != null) {
 			t2De.getTransform().getTranslation().add(this.velocity);
-		}else {
+		} else {
 			Transform3DComponent t3De = e.getComponent(Transform3DComponent.class);
 			if (t3De != null) {
 				t3De.getTransform().getTranslation().add(GeoPlane.XY.project(this.velocity));
-			}else {
+			} else {
 				throw new RuntimeException("No transform attached to parent.");
 			}
 		}

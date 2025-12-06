@@ -64,13 +64,8 @@ public final class FileUtils {
 			throw new IllegalArgumentException("The buffer: " + image + " isn't direct.");
 		}
 		STBImageWrite.stbi_flip_vertically_on_write(image.isFromOGL());
-		return STBImageWrite
-				.stbi_write_png(file.getAbsolutePath(),
-						image.getWidth(),
-						image.getHeight(),
-						image.getChannels(),
-						image.getBuffer(),
-						image.getWidth() * image.getChannels());
+		return STBImageWrite.stbi_write_png(file.getAbsolutePath(), image.getWidth(), image.getHeight(),
+				image.getChannels(), image.getBuffer(), image.getWidth() * image.getChannels());
 	}
 
 	public static void STBIFree(ByteBuffer buffer) {

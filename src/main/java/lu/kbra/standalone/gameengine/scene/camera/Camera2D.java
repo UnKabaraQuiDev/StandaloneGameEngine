@@ -45,11 +45,11 @@ public class Camera2D extends Camera {
 		viewMatrix.translate(-position.x, -position.y, 0);
 		return viewMatrix;
 	}
-	
+
 	@Override
 	public void dump(PrintStream out) {
-		out.println("Position: "+position);
-		out.println("Rotation: "+rotation);
+		out.println("Position: " + position);
+		out.println("Rotation: " + rotation);
 		projection.dump(out);
 	}
 

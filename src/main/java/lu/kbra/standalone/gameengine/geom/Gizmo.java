@@ -13,11 +13,11 @@ import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Gizmo implements UniqueID, Cleanupable, Renderable {
 
@@ -100,11 +100,11 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: "+name+" ("+vao+")");
-		
+		GlobalLogger.log("Cleaning up: " + name + " (" + vao + ")");
+
 		if (vao == -1)
 			return;
-		
+
 		GL_W.glDeleteVertexArrays(vao);
 		vbo = null;
 		vertices.cleanup();
@@ -152,8 +152,12 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 	}
 
 	public static Gizmo newRect(String name, Vector2f scale, Vector4f textBoxColor) {
-		return new Gizmo(name, new Vec3fAttribArray("pos", 0, 1, new Vector3f[] { new Vector3f(0, 0, 0), new Vector3f(scale.x, 0, 0), new Vector3f(scale.x, scale.y, 0), new Vector3f(0, scale.y, 0) }),
-				new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 1, 2, 2, 3, 3, 0 }), new Vec4fAttribArray("color", 1, 1, new Vector4f[] { textBoxColor, textBoxColor, textBoxColor, textBoxColor }));
+		return new Gizmo(name,
+				new Vec3fAttribArray("pos", 0, 1,
+						new Vector3f[] { new Vector3f(0, 0, 0), new Vector3f(scale.x, 0, 0),
+								new Vector3f(scale.x, scale.y, 0), new Vector3f(0, scale.y, 0) }),
+				new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 1, 2, 2, 3, 3, 0 }), new Vec4fAttribArray("color",
+						1, 1, new Vector4f[] { textBoxColor, textBoxColor, textBoxColor, textBoxColor }));
 	}
 
 }

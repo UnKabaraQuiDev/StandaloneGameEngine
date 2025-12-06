@@ -20,7 +20,8 @@ public class Projection {
 		out.println("Fov: " + fov + ", size: " + size);
 	}
 
-	public Projection(int width, int height, float nearPlane, float farPlane, float fov, float size, boolean perspective) {
+	public Projection(int width, int height, float nearPlane, float farPlane, float fov, float size,
+			boolean perspective) {
 		this.width = width;
 		this.height = height;
 		this.nearPlane = nearPlane;
@@ -53,9 +54,8 @@ public class Projection {
 			final float halfHeight = 1f;
 			final float halfWidth = halfHeight * aspectRatio;
 
-			projectionMatrix
-					.identity()
-					.ortho(-halfWidth / size, halfWidth / size, -halfHeight / size, halfHeight / size, nearPlane, farPlane);
+			projectionMatrix.identity().ortho(-halfWidth / size, halfWidth / size, -halfHeight / size,
+					halfHeight / size, nearPlane, farPlane);
 		}
 		return this;
 	}

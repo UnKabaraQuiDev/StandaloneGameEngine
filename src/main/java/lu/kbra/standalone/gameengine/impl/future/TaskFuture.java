@@ -8,7 +8,6 @@ import lu.pcy113.pclib.impl.ThrowingConsumer;
 import lu.pcy113.pclib.impl.ThrowingFunction;
 import lu.pcy113.pclib.impl.ThrowingRunnable;
 import lu.pcy113.pclib.impl.ThrowingSupplier;
-import lu.pcy113.pclib.logger.GlobalLogger;
 import lu.pcy113.pclib.pointer.prim.BooleanPointer;
 
 public class TaskFuture<I, O> {

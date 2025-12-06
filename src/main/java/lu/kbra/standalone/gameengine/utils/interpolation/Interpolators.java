@@ -9,6 +9,7 @@ public enum Interpolators implements Interpolator {
 		public float evaluate(float x) {
 			return Math.clamp(0, 1, x);
 		}
+
 		@Override
 		public float inverse(float y) {
 			return Math.clamp(0, 1, y);
@@ -21,6 +22,7 @@ public enum Interpolators implements Interpolator {
 			x = Math.clamp(0, 1, x);
 			return x * x;
 		}
+
 		@Override
 		public float inverse(float y) {
 			return (float) (Math.sqrt(y));
@@ -46,10 +48,10 @@ public enum Interpolators implements Interpolator {
 			x = Math.clamp(0, 1, x);
 			return x < 0.5 ? 2 * x * x : 1 - 2 * (1 - x) * (1 - x);
 		}
-		/*@Override
-		public float inverse(float y) {
-			return y < 0.5 ? Math.sqrt(y/2) : (2-2*Math.sqrt(2-2*y))/2;
-		}*/
+		/*
+		 * @Override public float inverse(float y) { return y < 0.5 ? Math.sqrt(y/2) :
+		 * (2-2*Math.sqrt(2-2*y))/2; }
+		 */
 	},
 
 	CUBIC_IN {
@@ -58,6 +60,7 @@ public enum Interpolators implements Interpolator {
 			x = Math.clamp(0, 1, x);
 			return x * x * x;
 		}
+
 		@Override
 		public float inverse(float y) {
 			return (float) java.lang.Math.cbrt(y);
@@ -70,10 +73,10 @@ public enum Interpolators implements Interpolator {
 			x = Math.clamp(0, 1, x);
 			return 1 - (1 - x) * (1 - x) * (1 - x);
 		}
-		/*@Override
-		public float inverse(float y) {
-			return 1-java.lang.Math.cbrt(1-x);
-		}*/
+		/*
+		 * @Override public float inverse(float y) { return 1-java.lang.Math.cbrt(1-x);
+		 * }
+		 */
 	},
 
 	CUBIC_IN_OUT {
@@ -82,10 +85,10 @@ public enum Interpolators implements Interpolator {
 			x = Math.clamp(0, 1, x);
 			return x < 0.5 ? 4 * x * x * x : 1 - 4 * (1 - x) * (1 - x) * (1 - x);
 		}
-		/*@Override
-		public float inverse(float y) {
-			return y < 0.5 ? java.lang.Math.cbrt(y/4) : 1-java.lang.Math.cbrt((1-y)/4);
-		}*/
+		/*
+		 * @Override public float inverse(float y) { return y < 0.5 ?
+		 * java.lang.Math.cbrt(y/4) : 1-java.lang.Math.cbrt((1-y)/4); }
+		 */
 	},
 
 	SINE_IN_OUT {

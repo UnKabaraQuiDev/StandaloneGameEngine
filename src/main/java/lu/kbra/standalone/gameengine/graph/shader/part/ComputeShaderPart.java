@@ -2,7 +2,7 @@ package lu.kbra.standalone.gameengine.graph.shader.part;
 
 import java.util.Map;
 
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 
 public class ComputeShaderPart extends AbstractShaderPart {
 

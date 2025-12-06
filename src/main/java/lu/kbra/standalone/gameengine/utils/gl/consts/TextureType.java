@@ -1,6 +1,6 @@
 package lu.kbra.standalone.gameengine.utils.gl.consts;
 
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 
 public enum TextureType implements GLConstant {
 
@@ -10,8 +10,10 @@ public enum TextureType implements GLConstant {
 	ARRAY2D(GL_W.GL_TEXTURE_2D_ARRAY, TXT2D),
 
 	// Cubemaps
-	CM_PX(GL_W.GL_TEXTURE_CUBE_MAP_POSITIVE_X, null), CM_NX(GL_W.GL_TEXTURE_CUBE_MAP_NEGATIVE_X, null), CM_PY(GL_W.GL_TEXTURE_CUBE_MAP_POSITIVE_Y, null), CM_NY(GL_W.GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, null),
-	CM_PZ(GL_W.GL_TEXTURE_CUBE_MAP_POSITIVE_Z, null), CM_NZ(GL_W.GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, null), CUBE_MAP(GL_W.GL_TEXTURE_CUBE_MAP, null);
+	CM_PX(GL_W.GL_TEXTURE_CUBE_MAP_POSITIVE_X, null), CM_NX(GL_W.GL_TEXTURE_CUBE_MAP_NEGATIVE_X, null),
+	CM_PY(GL_W.GL_TEXTURE_CUBE_MAP_POSITIVE_Y, null), CM_NY(GL_W.GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, null),
+	CM_PZ(GL_W.GL_TEXTURE_CUBE_MAP_POSITIVE_Z, null), CM_NZ(GL_W.GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, null),
+	CUBE_MAP(GL_W.GL_TEXTURE_CUBE_MAP, null);
 
 	private int glId;
 	private TextureType base;
@@ -39,7 +41,8 @@ public enum TextureType implements GLConstant {
 	}
 
 	public static boolean isCubemap(TextureType txtType) {
-		return txtType == CM_PX || txtType == CM_NX || txtType == CM_PY || txtType == CM_NY || txtType == CM_PZ || txtType == CM_NZ;
+		return txtType == CM_PX || txtType == CM_NX || txtType == CM_PY || txtType == CM_NY || txtType == CM_PZ
+				|| txtType == CM_NZ;
 	}
 
 }

@@ -11,8 +11,9 @@ public class GizmoShader extends RenderShader {
 	public static final String NAME = GizmoShader.class.getName();
 
 	public GizmoShader() {
-		super(NAME, AbstractShaderPart.load("./resources/shaders/gizmo/gizmo.vert"), AbstractShaderPart.load("./resources/shaders/gizmo/gizmo.frag"));
-		
+		super(NAME, AbstractShaderPart.load("./resources/shaders/gizmo/gizmo.vert"),
+				AbstractShaderPart.load("./resources/shaders/gizmo/gizmo.frag"));
+
 		super.setBeginMode(BeginMode.LINES);
 		super.setFaceMode(PolygonMode.FRONT_AND_BACK);
 	}

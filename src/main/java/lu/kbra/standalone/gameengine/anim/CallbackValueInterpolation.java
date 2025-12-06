@@ -48,16 +48,16 @@ public abstract class CallbackValueInterpolation<T, D> {
 	public synchronized CallbackValueInterpolation<T, D> mod() {
 		return mod(1);
 	}
-	
+
 	public synchronized CallbackValueInterpolation<T, D> mod(float period) {
 		this.progress %= period;
 		return this;
 	}
-	
+
 	public synchronized CallbackValueInterpolation<T, D> zigzag() {
 		return zigzag(1);
 	}
-	
+
 	public synchronized CallbackValueInterpolation<T, D> zigzag(float period) {
 		this.progress = MathUtils.zigzag(progress, period);
 		return this;

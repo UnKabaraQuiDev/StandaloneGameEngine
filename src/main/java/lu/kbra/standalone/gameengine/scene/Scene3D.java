@@ -106,8 +106,7 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 	}
 
 	public List<LightComponent> getLights() {
-		return getLightEmittors()
-				.stream()
+		return getLightEmittors().stream()
 				.map((String e) -> (PointLightComponent) entities.get(e).getComponent(PointLightComponent.class))
 				.collect(Collectors.toList());
 	}

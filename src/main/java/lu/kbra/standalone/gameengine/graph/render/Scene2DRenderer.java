@@ -27,7 +27,8 @@ public class Scene2DRenderer extends Renderer<GameEngine, Scene2D> {
 		GlobalLogger.log(Level.INFO, "Scene2D : " + scene.getId());
 
 		MeshRenderer meshRenderer = (MeshRenderer) cache.getRenderer(Mesh.class.getName());
-		InstanceEmitterRenderer instanceEmitterRenderer = (InstanceEmitterRenderer) cache.getRenderer(InstanceEmitter.class.getName());
+		InstanceEmitterRenderer instanceEmitterRenderer = (InstanceEmitterRenderer) cache
+				.getRenderer(InstanceEmitter.class.getName());
 		TextEmitterRenderer textEmitterRenderer = (TextEmitterRenderer) cache.getRenderer(TextEmitter.class.getName());
 
 		for (Entity e : scene.getEntities().values()) {

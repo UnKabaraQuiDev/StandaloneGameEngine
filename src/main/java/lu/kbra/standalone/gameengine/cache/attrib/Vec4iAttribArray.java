@@ -2,9 +2,9 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import org.joml.Vector4i;
 
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Vec4iAttribArray extends AttribArray {
 
@@ -32,7 +32,8 @@ public class Vec4iAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType, boolean _static, int divisor) {
+	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType,
+			boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -40,8 +41,9 @@ public class Vec4iAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		bind();
-		
-		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+
+		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data),
+				iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", 0, " + data.length * DATA_SIZE + ")");
 
 		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
@@ -59,7 +61,8 @@ public class Vec4iAttribArray extends AttribArray {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException(
+					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
 		bind();
@@ -75,10 +78,8 @@ public class Vec4iAttribArray extends AttribArray {
 			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
 			assert GL_W.checkError("BufferSubData(" + bufferType + ", 0, " + nPos.length + ")");
 		} else {
-			GL_W
-					.glBufferData(bufferType.getGlId(),
-							GameEngineUtils.toFlatArray(nPos),
-							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(nPos),
+					iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 			assert GL_W.checkError("BufferData(" + bufferType + ", " + nPos.length + ", " + iStatic + ")");
 		}
 
@@ -91,11 +92,13 @@ public class Vec4iAttribArray extends AttribArray {
 	}
 
 	public IntAttribArray toIntAttribArray() {
-		return new IntAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new IntAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType,
+				iStatic);
 	}
 
 	public UIntAttribArray toUIntAttribArray() {
-		return new UIntAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new UIntAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType,
+				iStatic);
 	}
 
 	@Override

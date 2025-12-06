@@ -7,6 +7,7 @@ import org.joml.Matrix4f;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.cache.CacheManager;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
 import lu.kbra.standalone.gameengine.graph.material.Material;
@@ -20,7 +21,6 @@ import lu.kbra.standalone.gameengine.scene.Scene;
 import lu.kbra.standalone.gameengine.scene.Scene3D;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 import lu.kbra.standalone.gameengine.scene.camera.Camera3D;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class TextEmitterRenderer extends Renderer<Scene, TextEmitterComponent> {
 
@@ -101,12 +101,8 @@ public class TextEmitterRenderer extends Renderer<Scene, TextEmitterComponent> {
 
 		pe.bind();
 
-		GL_W
-				.glDrawElementsInstanced(shader.getBeginMode().getGlId(),
-						mesh.getIndicesCount(),
-						GL_W.GL_UNSIGNED_INT,
-						0,
-						pe.getParticleCount());
+		GL_W.glDrawElementsInstanced(shader.getBeginMode().getGlId(), mesh.getIndicesCount(), GL_W.GL_UNSIGNED_INT, 0,
+				pe.getParticleCount());
 
 		GL_W.glDisable(GL_W.GL_BLEND);
 

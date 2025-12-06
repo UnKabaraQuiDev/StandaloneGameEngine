@@ -30,7 +30,8 @@ public class MaterialFactory {
 	public <T extends Material> T newMaterial_(Class<T> materialClazz, Object... args) {
 		MATERIAL_2_SHADERS.computeIfAbsent(materialClazz, k -> {
 			if (!k.isAnnotationPresent(AssociatedShader.class)) {
-				throw new IllegalStateException("Class: " + k + " doesn't have @" + AssociatedShader.class.getSimpleName() + ".");
+				throw new IllegalStateException(
+						"Class: " + k + " doesn't have @" + AssociatedShader.class.getSimpleName() + ".");
 			}
 			return k.getAnnotation(AssociatedShader.class).value();
 		});
@@ -40,8 +41,8 @@ public class MaterialFactory {
 		if (!cache.hasAbstractShader(shaderClazz.getName())) {
 			try {
 				cache.addAbstractShader(shaderClazz.getConstructor().newInstance());
-			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-					| NoSuchMethodException | SecurityException e) {
+			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException
+					| InvocationTargetException | NoSuchMethodException | SecurityException e) {
 				throw new RuntimeException("Exception while creating render shader.", e);
 			}
 		}
@@ -50,11 +51,9 @@ public class MaterialFactory {
 
 		try {
 			if (!SHADERS_CONSTRUCTORS.containsKey(materialClazz)) {
-				final Constructor<T> constructor = PCUtils
-						.findCompatibleConstructor(materialClazz,
-								PCUtils
-										.combineArrays(new Class<?>[] { shaderClazz },
-												Arrays.stream(args).map(Object::getClass).toArray(Class<?>[]::new)));
+				final Constructor<T> constructor = PCUtils.findCompatibleConstructor(materialClazz,
+						PCUtils.combineArrays(new Class<?>[] { shaderClazz },
+								Arrays.stream(args).map(Object::getClass).toArray(Class<?>[]::new)));
 				SHADERS_CONSTRUCTORS.put(materialClazz, constructor);
 			}
 			final Constructor<T> constructor = (Constructor<T>) SHADERS_CONSTRUCTORS.get(materialClazz);

@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 import org.joml.Matrix4f;
 
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 
@@ -39,7 +39,8 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		this.data = data;
 	}
 
-	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, BufferType bufferType, boolean iStatic, int divisor) {
+	public Mat4fAttribArray(String name, int index, int dataSize, Matrix4f[] data, BufferType bufferType,
+			boolean iStatic, int divisor) {
 		super(name, index, dataSize, bufferType, iStatic, divisor);
 		this.data = data;
 	}
@@ -47,11 +48,12 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 	@Override
 	public void init() {
 		bind();
-		
-		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+
+		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data),
+				iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", " + Arrays.toString(data) + ", " + iStatic + ")");
 	}
-	
+
 	@Override
 	public void update() {
 		update(data);
@@ -61,7 +63,8 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException(
+					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
 		bind();
@@ -73,7 +76,7 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 	@Override
 	public void enable() {
 		bind();
-		
+
 		for (int i = 0; i < 4; i++) {
 			GL_W.glEnableVertexAttribArray(index + i);
 			GL_W.checkError("EnableVertexAttribArray(" + index + i + ")");
@@ -85,7 +88,8 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new FloatAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType,
+				iStatic);
 	}
 
 	@Override
@@ -123,10 +127,8 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
 			assert GL_W.checkError("BufferSubData(" + bufferType + ", 0, " + nPos.length + ")");
 		} else {
-			GL_W
-					.glBufferData(bufferType.getGlId(),
-							GameEngineUtils.toFlatArray(nPos),
-							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(nPos),
+					iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 			assert GL_W.checkError("BufferData(" + bufferType + ", " + nPos.length + ", " + iStatic + ")");
 		}
 
@@ -140,8 +142,8 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 
 	@Override
 	public String toString() {
-		return getGlId() + "|" + getMaxIndex() + "-" + getMaxIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "="
-				+ getDataCount();
+		return getGlId() + "|" + getMaxIndex() + "-" + getMaxIndex() + ") " + getName() + ": " + getLength() + "/"
+				+ getDataSize() + "=" + getDataCount();
 	}
 
 }

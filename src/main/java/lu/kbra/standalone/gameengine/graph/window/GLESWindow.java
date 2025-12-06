@@ -19,9 +19,9 @@ import org.lwjgl.system.MemoryUtil;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.exceptions.egl.EGLNoDisplayException;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class GLESWindow extends Window {
 
@@ -77,7 +77,8 @@ public class GLESWindow extends Window {
 			e.printStackTrace();
 		}
 
-		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL, MemoryUtil.NULL);
+		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL,
+				MemoryUtil.NULL);
 		if (handle == MemoryUtil.NULL) {
 			PointerBuffer pb = PointerBuffer.allocateDirect(1024);
 			GLFW.glfwGetError(pb);
@@ -101,7 +102,7 @@ public class GLESWindow extends Window {
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
-		
+
 		if (options.windowMultisample > 1) {
 			GLFW.glfwWindowHint(GLFW.GLFW_SAMPLES, options.windowMultisample);
 		}
@@ -121,8 +122,13 @@ public class GLESWindow extends Window {
 		GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, options.resizable ? GLFW.GLFW_TRUE : GLFW.GLFW_FALSE);
 		GLFW.glfwSwapInterval(options.vsync ? 1 : 0);
 		/*
-		 * GLFWVidMode vidMode = GLFW.glfwGetVideoMode(monitor); GLFW.glfwSetWindowMonitor(handle, options.fullscreen ? monitor : MemoryUtil.NULL, 0, 0, !options.fullscreen ? options.windowSize.x : vidMode.width(), !options.fullscreen ?
-		 * options.windowSize.y : vidMode.height(), options.fps); this.width = !options.fullscreen ? options.windowSize.x : vidMode.width(); this.height = !options.fullscreen ? options.windowSize.y : vidMode.height();
+		 * GLFWVidMode vidMode = GLFW.glfwGetVideoMode(monitor);
+		 * GLFW.glfwSetWindowMonitor(handle, options.fullscreen ? monitor :
+		 * MemoryUtil.NULL, 0, 0, !options.fullscreen ? options.windowSize.x :
+		 * vidMode.width(), !options.fullscreen ? options.windowSize.y :
+		 * vidMode.height(), options.fps); this.width = !options.fullscreen ?
+		 * options.windowSize.x : vidMode.width(); this.height = !options.fullscreen ?
+		 * options.windowSize.y : vidMode.height();
 		 */
 	}
 

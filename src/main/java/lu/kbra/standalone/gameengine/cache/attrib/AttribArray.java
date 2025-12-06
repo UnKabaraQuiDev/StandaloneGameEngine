@@ -6,13 +6,14 @@ import org.joml.Vector3i;
 import org.joml.Vector4f;
 import org.joml.Vector4i;
 
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
+
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class AttribArray implements Cleanupable, GLObject {
 
@@ -78,7 +79,7 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	public void enable() {
 		bind();
-		
+
 		GL_W.glEnableVertexAttribArray(index);
 		assert GL_W.checkError("EnableVertexAttribArray(" + index + ") (" + name + ")");
 		GL_W.glVertexAttribDivisor(index, divisor);
@@ -87,7 +88,7 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	public void disable() {
 		bind();
-		
+
 		GL_W.glDisableVertexAttribArray(index);
 		assert GL_W.checkError("DisableVertexAttribArray(" + index + ") (" + name + ")");
 	}
@@ -181,7 +182,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	@Override
 	public String toString() {
-		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
+		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "="
+				+ getDataCount();
 	}
 
 	public static void update(AttribArray arr, Object data) {

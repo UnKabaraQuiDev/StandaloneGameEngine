@@ -2,8 +2,8 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import java.nio.ByteBuffer;
 
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class UByteAttribArray extends AttribArray {
 
@@ -32,7 +32,7 @@ public class UByteAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		bind();
-		
+
 		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(data.length);
 		bbuffer.put(data);
 		bbuffer.flip();
@@ -68,12 +68,13 @@ public class UByteAttribArray extends AttribArray {
 	public void update() {
 		update(data);
 	}
-	
+
 	public void update(byte[] nPos) {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException(
+					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
 		bind();

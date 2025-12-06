@@ -1,5 +1,8 @@
 package lu.kbra.standalone.gameengine.graph.texture;
 
+import lu.pcy113.pclib.logger.GlobalLogger;
+
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.GLObject;
@@ -11,8 +14,6 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.TextureFilter;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureParameter;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureWrap;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttachment, GLObject {
 
@@ -24,7 +25,8 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 	protected int glId = -1;
 	protected TextureFilter minFilter = TextureFilter.LINEAR, magFilter = TextureFilter.LINEAR;
 	protected TextureType txtType = TextureType.TXT2D;
-	protected TextureWrap hWrap = TextureWrap.CLAMP_TO_EDGE, vWrap = TextureWrap.CLAMP_TO_EDGE, dWrap = TextureWrap.CLAMP_TO_EDGE;
+	protected TextureWrap hWrap = TextureWrap.CLAMP_TO_EDGE, vWrap = TextureWrap.CLAMP_TO_EDGE,
+			dWrap = TextureWrap.CLAMP_TO_EDGE;
 	protected DataType dataType = DataType.UBYTE;
 	protected TexelFormat format = TexelFormat.RGB;
 	protected TexelInternalFormat internalFormat = TexelInternalFormat.RGB;
@@ -245,11 +247,12 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + " [path=" + path + ", name=" + name + ", tid=" + glId + ", minFilter=" + minFilter
-				+ ", magFilter=" + magFilter + ", txtType=" + txtType + ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap
-				+ ", dataType=" + dataType + ", format=" + format + ", internalFormat=" + internalFormat + ", generateMipmaps="
-				+ generateMipmaps + ", fixedSampleLocation=" + fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation="
-				+ textureOperation + ", isValid()=" + isValid() + "]";
+		return getClass().getSimpleName() + " [path=" + path + ", name=" + name + ", tid=" + glId + ", minFilter="
+				+ minFilter + ", magFilter=" + magFilter + ", txtType=" + txtType + ", hWrap=" + hWrap + ", vWrap="
+				+ vWrap + ", dWrap=" + dWrap + ", dataType=" + dataType + ", format=" + format + ", internalFormat="
+				+ internalFormat + ", generateMipmaps=" + generateMipmaps + ", fixedSampleLocation="
+				+ fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation=" + textureOperation
+				+ ", isValid()=" + isValid() + "]";
 	}
 
 	public static TexelFormat getFormatByChannels(int channels) {

@@ -30,7 +30,7 @@ public final class SoundLoaderUtils {
 
 		MemoryUtil.memFree(channels);
 		MemoryUtil.memFree(sampleRate);
-		
+
 		MemBuffer<ShortBuffer> mb = new MemBuffer<ShortBuffer>(vorbis, MemBufferOrigin.STBV);
 
 		return new Triplet<MemBuffer<ShortBuffer>, Integer, Integer>(mb, ch, sr);

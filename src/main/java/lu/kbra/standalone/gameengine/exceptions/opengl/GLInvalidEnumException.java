@@ -14,5 +14,4 @@ public class GLInvalidEnumException extends GLRuntimeException {
 		super(str);
 	}
 
-
 }

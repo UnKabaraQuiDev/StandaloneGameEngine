@@ -11,10 +11,10 @@ import org.lwjgl.system.MemoryUtil;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.base.GL_W_GL43;
 import lu.kbra.standalone.gameengine.utils.GameEngineLoggerUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL43;
 
 public class GLWindow extends Window {
 
@@ -36,7 +36,8 @@ public class GLWindow extends Window {
 
 		monitor = getQualifiedMonitor();
 
-		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL, MemoryUtil.NULL);
+		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL,
+				MemoryUtil.NULL);
 		if (handle == MemoryUtil.NULL) {
 			throw new RuntimeException("Failed to create GLFW Window");
 		}
@@ -54,12 +55,12 @@ public class GLWindow extends Window {
 			assert GL_W.checkError("Enable(DEBUG_OUTPUT_SYNCHRONOUS)");
 
 			// Register callback
-			GL_W.glDebugMessageCallback((GLDebugMessageCallbackI) (source, type, id, severity, length, message, userParam) -> {
-				final String msg = GLDebugMessageCallback.getMessage(length, message);
-				GlobalLogger
-						.severe("GL DEBUG: " + msg + " (source=" + source + ", type=" + type + ", id=" + id + ", severity=" + severity
-								+ ")");
-			}, 0);
+			GL_W.glDebugMessageCallback(
+					(GLDebugMessageCallbackI) (source, type, id, severity, length, message, userParam) -> {
+						final String msg = GLDebugMessageCallback.getMessage(length, message);
+						GlobalLogger.severe("GL DEBUG: " + msg + " (source=" + source + ", type=" + type + ", id=" + id
+								+ ", severity=" + severity + ")");
+					}, 0);
 			assert GL_W.checkError("DebugMessageCallback(...)");
 		}
 

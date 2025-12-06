@@ -20,8 +20,8 @@ import org.lwjgl.system.MemoryUtil;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.GameEngineLoggerUtils;
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 
 public class AudioMaster implements Cleanupable {
 
@@ -66,7 +66,8 @@ public class AudioMaster implements Cleanupable {
 		alContext = ALC10.alcCreateContext(device, (IntBuffer) null);
 		GameEngineUtils.checkAlcError(device);
 
-		useTLC = deviceCapabilities.ALC_EXT_thread_local_context && EXTThreadLocalContext.alcSetThreadContext(alContext);
+		useTLC = deviceCapabilities.ALC_EXT_thread_local_context
+				&& EXTThreadLocalContext.alcSetThreadContext(alContext);
 		if (!useTLC) {
 			if (!ALC11.alcMakeContextCurrent(alContext)) {
 				throw new RuntimeException("Could not set context as thread context.");
@@ -142,7 +143,8 @@ public class AudioMaster implements Cleanupable {
 
 	public void checkAccessThrow() {
 		if (!checkAccess()) {
-			throw new IllegalAccessError(Thread.currentThread().getName() + " cannot access the audio context in " + getThreadName());
+			throw new IllegalAccessError(
+					Thread.currentThread().getName() + " cannot access the audio context in " + getThreadName());
 		}
 	}
 
@@ -167,7 +169,9 @@ public class AudioMaster implements Cleanupable {
 	}
 
 	public String getDefaultDevice() {
-		return GameEngineUtils.alcNullError(alcGetString(ALC11.ALC_DEFAULT_DEVICE_SPECIFIER, "Could not get default device."), "Default device is null");
+		return GameEngineUtils.alcNullError(
+				alcGetString(ALC11.ALC_DEFAULT_DEVICE_SPECIFIER, "Could not get default device."),
+				"Default device is null");
 	}
 
 	public String getDeviceName() {
@@ -175,7 +179,8 @@ public class AudioMaster implements Cleanupable {
 	}
 
 	public List<String> getDeviceNames() {
-		return GameEngineUtils.alcNullError(ALUtil.getStringList(MemoryUtil.NULL, ALC11.ALC_ALL_DEVICES_SPECIFIER), "Could not get devices.");
+		return GameEngineUtils.alcNullError(ALUtil.getStringList(MemoryUtil.NULL, ALC11.ALC_ALL_DEVICES_SPECIFIER),
+				"Could not get devices.");
 	}
 
 	public long getDevice() {
@@ -192,11 +197,11 @@ public class AudioMaster implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: "+getClass().getName()+" in "+thread.getName());
-		
-		if(device == -1)
+		GlobalLogger.log("Cleaning up: " + getClass().getName() + " in " + thread.getName());
+
+		if (device == -1)
 			return;
-		
+
 		ALC10.alcDestroyContext(alContext);
 		alContext = -1;
 		// ALC11.alcMakeContextCurrent(MemoryUtil.NULL);

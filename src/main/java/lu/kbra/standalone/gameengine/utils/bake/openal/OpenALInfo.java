@@ -124,7 +124,8 @@ public class OpenALInfo {
 		}
 
 		if (caps.ALC_ENUMERATE_ALL_EXT) {
-			System.out.println("Default playback device: " + alcGetString(0, EnumerateAllExt.ALC_DEFAULT_ALL_DEVICES_SPECIFIER));
+			System.out.println(
+					"Default playback device: " + alcGetString(0, EnumerateAllExt.ALC_DEFAULT_ALL_DEVICES_SPECIFIER));
 		} else {
 			System.out.println("Default playback device: " + alcGetString(0, ALC_DEFAULT_DEVICE_SPECIFIER));
 		}
@@ -183,7 +184,8 @@ public class OpenALInfo {
 		filters.put("High-pass", AL_FILTER_HIGHPASS);
 		filters.put("Band-pass", AL_FILTER_BANDPASS);
 
-		filters.entrySet().stream().filter(entry -> EFXUtil.isFilterSupported(entry.getValue())).forEach(entry -> System.out.println("    " + entry.getKey()));
+		filters.entrySet().stream().filter(entry -> EFXUtil.isFilterSupported(entry.getValue()))
+				.forEach(entry -> System.out.println("    " + entry.getKey()));
 
 		System.out.println("Supported effects: ");
 		HashMap<String, Integer> effects = new HashMap<>();
@@ -201,7 +203,8 @@ public class OpenALInfo {
 		effects.put("Compressor", AL_EFFECT_COMPRESSOR);
 		effects.put("Equalizer", AL_EFFECT_EQUALIZER);
 
-		effects.entrySet().stream().filter(e -> EFXUtil.isEffectSupported(e.getValue())).forEach(e -> System.out.println("    " + e.getKey()));
+		effects.entrySet().stream().filter(e -> EFXUtil.isEffectSupported(e.getValue()))
+				.forEach(e -> System.out.println("    " + e.getKey()));
 	}
 
 	private static void printDevices(int which, String kind) {

@@ -61,8 +61,8 @@ public class MemImage implements Cleanupable {
 
 	@Override
 	public String toString() {
-		return "MemImage [width=" + width + ", height=" + height + ", channels=" + channels + ", buffer=" + buffer + ", origin=" + origin
-				+ ", direct=" + (buffer != null ? buffer.isDirect() : false) + "]";
+		return "MemImage [width=" + width + ", height=" + height + ", channels=" + channels + ", buffer=" + buffer
+				+ ", origin=" + origin + ", direct=" + (buffer != null ? buffer.isDirect() : false) + "]";
 	}
 
 }

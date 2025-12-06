@@ -15,8 +15,19 @@ import org.joml.Vector3f;
 import org.joml.Vector3fc;
 import org.lwjgl.glfw.GLFW;
 
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
+
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.base.GL_W_GL46;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.base.GL_W_GLES30;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.debug.GL_W_GL46_Debug;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.debug.GL_W_GLES30_Debug;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.logging.GL_W_GL46_Logging;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.logging.GL_W_GLES30_Logging;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.logging_debug.GL_W_GL46_LoggingDebug;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.logging_debug.GL_W_GLES30_LoggingDebug;
 import lu.kbra.standalone.gameengine.graph.MaterialFactory;
 import lu.kbra.standalone.gameengine.graph.window.GLESWindow;
 import lu.kbra.standalone.gameengine.graph.window.GLWindow;
@@ -26,10 +37,6 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GameLogic;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GL46;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W_GLES30;
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class GameEngine implements Cleanupable, UniqueID {
 
@@ -38,14 +45,17 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 	public static final String MIN_RENDER_DISPATCHER_BUDGET_NANO_PROPERTY = GameEngine.class.getSimpleName()
 			+ ".min_render_dispatcher_budget_nano";
-	public static long MIN_RENDER_DISPATCHER_BUDGET_NANO = Long.getLong(MIN_RENDER_DISPATCHER_BUDGET_NANO_PROPERTY, 500_000);
+	public static long MIN_RENDER_DISPATCHER_BUDGET_NANO = Long.getLong(MIN_RENDER_DISPATCHER_BUDGET_NANO_PROPERTY,
+			500_000);
 
 	public static final String MIN_UPDATE_DISPATCHER_BUDGET_NANO_PROPERTY = GameEngine.class.getSimpleName()
 			+ ".min_update_dispatcher_budget_nano";
-	public static long MIN_UPDATE_DISPATCHER_BUDGET_NANO = Long.getLong(MIN_UPDATE_DISPATCHER_BUDGET_NANO_PROPERTY, 500_000);
+	public static long MIN_UPDATE_DISPATCHER_BUDGET_NANO = Long.getLong(MIN_UPDATE_DISPATCHER_BUDGET_NANO_PROPERTY,
+			500_000);
 
-	public static final Vector3fc X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0), Y_POS = new Vector3f(0, 1, 0),
-			Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1), Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0);
+	public static final Vector3fc X_POS = new Vector3f(1, 0, 0), X_NEG = new Vector3f(-1, 0, 0),
+			Y_POS = new Vector3f(0, 1, 0), Y_NEG = new Vector3f(0, -1, 0), Z_POS = new Vector3f(0, 0, 1),
+			Z_NEG = new Vector3f(0, 0, -1), ZERO = new Vector3f(0);
 
 	public static final Vector3fc UP = new Vector3f(Y_POS), DOWN = new Vector3f(Z_NEG), LEFT = new Vector3f(X_NEG),
 			RIGHT = new Vector3f(X_POS), FORWARD = new Vector3f(Z_POS), BACK = new Vector3f(X_POS);
@@ -82,8 +92,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 	private ThreadGroup threadGroup;
 	private Thread renderThread, updateThread, mainThread;
 
-	private final Object waitForFrameEnd = new Object(), waitForUpdateEnd = new Object(), waitForFrameStart = new Object(),
-			waitForUpdateStart = new Object();
+	private final Object waitForFrameEnd = new Object(), waitForUpdateEnd = new Object(),
+			waitForFrameStart = new Object(), waitForUpdateStart = new Object();
 
 	public GameEngine(String name, GameLogic game, WindowOptions options) {
 		this.name = name;
@@ -132,7 +142,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 						waitForUpdateEnd.notifyAll();
 					}
 
-					final long dispatcherBudgetNanos = Math.max(MIN_UPDATE_DISPATCHER_BUDGET_NANO, targetPerUps - deltaUpdate);
+					final long dispatcherBudgetNanos = Math.max(MIN_UPDATE_DISPATCHER_BUDGET_NANO,
+							targetPerUps - deltaUpdate);
 					updateDispatcher.pump((long) (dispatcherBudgetNanos * 1e6));
 				}
 			}
@@ -197,8 +208,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 					final long frameRenderDurationNano = System.nanoTime() - frameStartTime;
 					final double frameRenderDurationMs = (double) frameRenderDurationNano / 1_000_000;
-					final long dispatcherTimeBudgetNanos = Math
-							.max(MIN_RENDER_DISPATCHER_BUDGET_NANO, targetNanoPerFps - frameRenderDurationNano);
+					final long dispatcherTimeBudgetNanos = Math.max(MIN_RENDER_DISPATCHER_BUDGET_NANO,
+							targetNanoPerFps - frameRenderDurationNano);
 
 					// Pump the render dispatcher
 					final long dispatcherStartNano = System.nanoTime();
@@ -206,13 +217,14 @@ public class GameEngine implements Cleanupable, UniqueID {
 					final long dispatcherUsedNano = System.nanoTime() - dispatcherStartNano;
 
 					if (DEBUG_RENDER_REPORT) {
-						GlobalLogger
-								.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
-										+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
-										+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
-										+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
-										+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + tasks.size() + ") "
-										+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true) + " " + tasks);
+						GlobalLogger.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
+								+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms"
+								+ " | Render loop: " + PCUtils.roundFill(frameRenderDurationMs, 5)
+								+ " ms | Dispatcher budget: "
+								+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
+								+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + tasks.size()
+								+ ") " + PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true) + " "
+								+ tasks);
 					}
 				}
 
@@ -238,12 +250,38 @@ public class GameEngine implements Cleanupable, UniqueID {
 		MaterialFactory.INSTANCE = new MaterialFactory(cache);
 
 		GlobalLogger.info("Starting using GLES: " + windowOptions.gles);
-		if (windowOptions.gles) {
-			new GL_W_GLES30().init();
-			this.window = new GLESWindow(this.windowOptions);
+		if (windowOptions.logging && windowOptions.debug) {
+			if (windowOptions.gles) {
+				new GL_W_GLES30_LoggingDebug().init();
+				this.window = new GLESWindow(this.windowOptions);
+			} else {
+				new GL_W_GL46_LoggingDebug().init();
+				this.window = new GLWindow(this.windowOptions);
+			}
+		} else if (windowOptions.debug) {
+			if (windowOptions.gles) {
+				new GL_W_GLES30_Debug().init();
+				this.window = new GLESWindow(this.windowOptions);
+			} else {
+				new GL_W_GL46_Debug().init();
+				this.window = new GLWindow(this.windowOptions);
+			}
+		} else if (windowOptions.logging) {
+			if (windowOptions.gles) {
+				new GL_W_GLES30_Logging().init();
+				this.window = new GLESWindow(this.windowOptions);
+			} else {
+				new GL_W_GL46_Logging().init();
+				this.window = new GLWindow(this.windowOptions);
+			}
 		} else {
-			new GL_W_GL46().init();
-			this.window = new GLWindow(this.windowOptions);
+			if (windowOptions.gles) {
+				new GL_W_GLES30().init();
+				this.window = new GLESWindow(this.windowOptions);
+			} else {
+				new GL_W_GL46().init();
+				this.window = new GLWindow(this.windowOptions);
+			}
 		}
 
 		this.window.runCallbacks();

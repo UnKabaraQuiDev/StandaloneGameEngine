@@ -38,7 +38,8 @@ public class ShaderManager {
 			Files.walkFileTree(root, new SimpleFileVisitor<Path>() {
 				@Override
 				public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
-					dir.register(watchService, StandardWatchEventKinds.ENTRY_MODIFY, StandardWatchEventKinds.ENTRY_CREATE);
+					dir.register(watchService, StandardWatchEventKinds.ENTRY_MODIFY,
+							StandardWatchEventKinds.ENTRY_CREATE);
 					return FileVisitResult.CONTINUE;
 				}
 			});
@@ -61,7 +62,8 @@ public class ShaderManager {
 
 			for (WatchEvent<?> event : key.pollEvents()) {
 
-				if (event.kind() == StandardWatchEventKinds.ENTRY_MODIFY || event.kind() == StandardWatchEventKinds.ENTRY_CREATE) {
+				if (event.kind() == StandardWatchEventKinds.ENTRY_MODIFY
+						|| event.kind() == StandardWatchEventKinds.ENTRY_CREATE) {
 					WatchEvent<Path> ev = (WatchEvent<Path>) event;
 					Path filename = ev.context();
 					Path child = ((Path) key.watchable()).resolve(filename);

@@ -68,8 +68,8 @@ import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidIndexExcepti
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidOperationException;
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESInvalidValueException;
 import lu.kbra.standalone.gameengine.exceptions.opengles.GLESOutOfMemoryException;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.geom.BoundingBox;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public final class GameEngineUtils {
 
@@ -217,7 +217,7 @@ public final class GameEngineUtils {
 		if (status == GL_W.GL_NO_ERROR)
 			return true;
 
-		GL_W.glGetError(); // to clear
+		// GL_W.glGetError(); // to clear
 
 		switch (status) {
 		case GL40.GL_INVALID_OPERATION:
@@ -517,7 +517,7 @@ public final class GameEngineUtils {
 			max.y = Math.max(max.y, v.y);
 			max.z = Math.max(max.z, v.z);
 		}
-		
+
 		if (nonNull) {
 			return new BoundingBox(min, max);
 		} else {

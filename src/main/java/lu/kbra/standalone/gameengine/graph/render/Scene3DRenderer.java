@@ -31,20 +31,23 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 	}
 
 	public static final Comparator<Entry<String, Entity>> PRIORITY_COMPARATOR = (a, b) -> {
-		return Float
-				.compare(
-						a.getValue().hasComponentMatching(RenderPriorityComponent.class)
-								? a.getValue().getComponent(RenderPriorityComponent.class).getPriority()
-								: 0,
-						b.getValue().hasComponentMatching(RenderPriorityComponent.class)
-								? b.getValue().getComponent(RenderPriorityComponent.class).getPriority()
-								: 0);
+		return Float.compare(
+				a.getValue().hasComponentMatching(RenderPriorityComponent.class)
+						? a.getValue().getComponent(RenderPriorityComponent.class).getPriority()
+						: 0,
+				b.getValue().hasComponentMatching(RenderPriorityComponent.class)
+						? b.getValue().getComponent(RenderPriorityComponent.class).getPriority()
+						: 0);
 	};
 
 	public static final Comparator<Entity> PRIORITY_COMPARATOR_ENTITY = (a, b) -> {
-		return Float
-				.compare(a.hasComponentMatching(RenderPriorityComponent.class) ? a.getComponent(RenderPriorityComponent.class).getPriority() : 0,
-						b.hasComponentMatching(RenderPriorityComponent.class) ? b.getComponent(RenderPriorityComponent.class).getPriority() : 0);
+		return Float.compare(
+				a.hasComponentMatching(RenderPriorityComponent.class)
+						? a.getComponent(RenderPriorityComponent.class).getPriority()
+						: 0,
+				b.hasComponentMatching(RenderPriorityComponent.class)
+						? b.getComponent(RenderPriorityComponent.class).getPriority()
+						: 0);
 	};
 
 	@Override
@@ -53,11 +56,7 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 		instanceEmitterRenderer = (InstanceEmitterRenderer) cache.getRenderer(InstanceEmitter.class.getName());
 		textEmitterRenderer = (TextEmitterRenderer) cache.getRenderer(TextEmitter.class.getName());
 
-		LinkedHashMap<String, Entity> sortedMap = scene
-				.getEntities()
-				.entrySet()
-				.stream()
-				.sorted(PRIORITY_COMPARATOR)
+		LinkedHashMap<String, Entity> sortedMap = scene.getEntities().entrySet().stream().sorted(PRIORITY_COMPARATOR)
 				.collect(LinkedHashMap::new,
 						(linkedHashMap, entry) -> linkedHashMap.put(entry.getKey(), entry.getValue()),
 						LinkedHashMap::putAll);
@@ -69,7 +68,8 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 				return;
 			}
 
-			if (e.hasComponentMatching(RenderConditionComponent.class) && !e.getComponent(RenderConditionComponent.class).get()) {
+			if (e.hasComponentMatching(RenderConditionComponent.class)
+					&& !e.getComponent(RenderConditionComponent.class).get()) {
 				return;
 			}
 
@@ -82,7 +82,8 @@ public class Scene3DRenderer extends Renderer<GameEngine, Scene3D> {
 			meshRenderer.render(cache, scene, (MeshComponent) e.getComponent(MeshComponent.class));
 		}
 		if (instanceEmitterRenderer != null && e.hasComponentMatching(InstanceEmitterComponent.class)) {
-			instanceEmitterRenderer.render(cache, scene, (InstanceEmitterComponent) e.getComponent(InstanceEmitterComponent.class));
+			instanceEmitterRenderer.render(cache, scene,
+					(InstanceEmitterComponent) e.getComponent(InstanceEmitterComponent.class));
 		}
 		if (textEmitterRenderer != null && e.hasComponentMatching(TextEmitterComponent.class)) {
 			textEmitterRenderer.render(cache, scene, (TextEmitterComponent) e.getComponent(TextEmitterComponent.class));

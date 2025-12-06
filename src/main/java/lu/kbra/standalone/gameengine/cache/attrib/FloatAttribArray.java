@@ -1,7 +1,7 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class FloatAttribArray extends AttribArray {
 
@@ -17,12 +17,14 @@ public class FloatAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static) {
+	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType,
+			boolean _static) {
 		super(name, index, dataSize, bufferType, _static);
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static, int divisor) {
+	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static,
+			int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -40,7 +42,7 @@ public class FloatAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		bind();
-		
+
 		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", 0..." + data.length + ", " + iStatic + ")");
 
@@ -54,12 +56,13 @@ public class FloatAttribArray extends AttribArray {
 	public void update() {
 		update(data);
 	}
-	
+
 	public void update(float[] nPos) {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException(
+					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 		bind();
 

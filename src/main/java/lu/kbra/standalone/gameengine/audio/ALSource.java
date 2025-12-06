@@ -204,11 +204,11 @@ public class ALSource implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: "+sourceId);
-		
-		if(sourceId == -1)
+		GlobalLogger.log("Cleaning up: " + sourceId);
+
+		if (sourceId == -1)
 			return;
-		
+
 		stop();
 		AL11.alDeleteSources(sourceId);
 		GameEngineUtils.checkAlError("DeleteSources(" + sourceId + ")");

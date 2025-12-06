@@ -8,6 +8,7 @@ import org.joml.Vector2i;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.texture.SingleTexture;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
@@ -16,7 +17,6 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.FrameBufferAttachment;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Framebuffer implements UniqueID, Cleanupable, GLObject {
 
@@ -51,7 +51,8 @@ public class Framebuffer implements UniqueID, Cleanupable, GLObject {
 		}
 
 		if (TextureType.TXT2D.equals(txtType)) {
-			GL_W.glFramebufferTexture2D(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, txtType.getGlId(), texture.getGlId(), 0);
+			GL_W.glFramebufferTexture2D(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, txtType.getGlId(),
+					texture.getGlId(), 0);
 		} else if (TextureType.TXT3D.equals(txtType)) {
 			GameEngineUtils.throwGLESError("Cannot attach TXT3D to Framebuffer");
 		}
@@ -66,9 +67,11 @@ public class Framebuffer implements UniqueID, Cleanupable, GLObject {
 	}
 
 	public boolean attachRenderBuffer(FrameBufferAttachment attach, int offset, RenderBuffer texture) {
-		GL_W.glFramebufferRenderbuffer(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, GL_W.GL_RENDERBUFFER, texture.getRbid());
+		GL_W.glFramebufferRenderbuffer(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, GL_W.GL_RENDERBUFFER,
+				texture.getRbid());
 		this.attachments.put(attach.getGlId() + offset, texture);
-		assert GL_W.checkError("FrameBufferRenderbuffer[" + attach + "+" + offset + "][" + name + "]=" + texture.getId());
+		assert GL_W
+				.checkError("FrameBufferRenderbuffer[" + attach + "+" + offset + "][" + name + "]=" + texture.getId());
 		return true;
 	}
 
@@ -98,14 +101,10 @@ public class Framebuffer implements UniqueID, Cleanupable, GLObject {
 	}
 
 	public void setup() {
-		final int[] bfs = attachments
-				.entrySet()
-				.stream()
+		final int[] bfs = attachments.entrySet().stream()
 				.filter(e -> e.getKey() >= FrameBufferAttachment.COLOR_FIRST.getGlId()
 						&& e.getKey() <= FrameBufferAttachment.COLOR_LAST.getGlId())
-				.sorted((a, b) -> a.getKey() - b.getKey())
-				.mapToInt(a -> a.getKey())
-				.toArray();
+				.sorted((a, b) -> a.getKey() - b.getKey()).mapToInt(a -> a.getKey()).toArray();
 		GL_W.glDrawBuffers(bfs);
 		assert GL_W.checkError("DrawBuffers(" + Arrays.toString(bfs) + ")");
 		if (!isComplete()) {

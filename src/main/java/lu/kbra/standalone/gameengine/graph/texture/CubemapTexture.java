@@ -5,9 +5,9 @@ import java.nio.file.Paths;
 
 import lu.pcy113.pclib.PCUtils;
 
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.file.FileUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;
 
 public class CubemapTexture extends Texture {
@@ -69,7 +69,8 @@ public class CubemapTexture extends Texture {
 			}
 
 			// if (image != null) {
-			GL_W.glTexImage2D(TextureType.CM_PX.getGlId() + i, 0, internalFormat.getGlId(), image.getWidth(), image.getHeight(), 0, format.getGlId(), dataType.getGlId(), image.getBuffer());
+			GL_W.glTexImage2D(TextureType.CM_PX.getGlId() + i, 0, internalFormat.getGlId(), image.getWidth(),
+					image.getHeight(), 0, format.getGlId(), dataType.getGlId(), image.getBuffer());
 			assert GL_W.checkError("TexImage2D[" + (TextureType.values()[TextureType.CM_PX.ordinal() + i]) + "]");
 			// image.free();
 			/*
@@ -117,7 +118,8 @@ public class CubemapTexture extends Texture {
 			}
 
 			// if (image != null) {
-			GL_W.glTexImage2D(TextureType.CM_PX.getGlId() + i, 0, internalFormat.getGlId(), image.getWidth(), image.getHeight(), 0, format.getGlId(), dataType.getGlId(), image.getBuffer());
+			GL_W.glTexImage2D(TextureType.CM_PX.getGlId() + i, 0, internalFormat.getGlId(), image.getWidth(),
+					image.getHeight(), 0, format.getGlId(), dataType.getGlId(), image.getBuffer());
 			assert GL_W.checkError("TexImage2D[" + (TextureType.values()[TextureType.CM_PX.ordinal() + i]) + "]");
 			image.cleanup();
 			/*

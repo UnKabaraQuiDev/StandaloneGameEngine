@@ -35,7 +35,7 @@ public final class IOUtil {
 	/**
 	 * Reads the specified resource and returns the raw data as a ByteBuffer.
 	 *
-	 * @param resource the resource to read
+	 * @param resource   the resource to read
 	 * @param bufferSize the initial buffer size
 	 *
 	 * @return the resource data
@@ -54,7 +54,9 @@ public final class IOUtil {
 				}
 			}
 		} else {
-			try (InputStream source = resource.startsWith("http") ? new URL(resource).openStream() : IOUtil.class.getClassLoader().getResourceAsStream(resource); ReadableByteChannel rbc = Channels.newChannel(source)) {
+			try (InputStream source = resource.startsWith("http") ? new URL(resource).openStream()
+					: IOUtil.class.getClassLoader().getResourceAsStream(resource);
+					ReadableByteChannel rbc = Channels.newChannel(source)) {
 				buffer = createByteBuffer(bufferSize);
 
 				while (true) {

@@ -5,10 +5,8 @@ import org.lwjgl.glfw.GLFW;
 
 public enum Button {
 
-	NORTH(new Vector2f(0, 1), 0, GLFW.GLFW_GAMEPAD_BUTTON_X),
-	EAST(new Vector2f(1, 0), 1, GLFW.GLFW_GAMEPAD_BUTTON_A),
-	SOUTH(new Vector2f(0, -1), 2, GLFW.GLFW_GAMEPAD_BUTTON_B),
-	WEST(new Vector2f(-1, 0), 3, GLFW.GLFW_GAMEPAD_BUTTON_Y),
+	NORTH(new Vector2f(0, 1), 0, GLFW.GLFW_GAMEPAD_BUTTON_X), EAST(new Vector2f(1, 0), 1, GLFW.GLFW_GAMEPAD_BUTTON_A),
+	SOUTH(new Vector2f(0, -1), 2, GLFW.GLFW_GAMEPAD_BUTTON_B), WEST(new Vector2f(-1, 0), 3, GLFW.GLFW_GAMEPAD_BUTTON_Y),
 	NONE(new Vector2f(0, 0), -1, -1);
 
 	private Vector2f dir;

@@ -60,9 +60,10 @@ public class SoundGenerator {
 
 				double noteFrequency = notes[note];
 
-				System.out.println("amplitude: " + (time/sampleRate) + " " + amplitude + " : " + (Math.sin(noteFrequency * (time/sampleRate)) * Short.MAX_VALUE));
+				System.out.println("amplitude: " + (time / sampleRate) + " " + amplitude + " : "
+						+ (Math.sin(noteFrequency * (time / sampleRate)) * Short.MAX_VALUE));
 
-				buffer.put((short) (Math.sin(noteFrequency * (time/sampleRate)) * Short.MAX_VALUE));
+				buffer.put((short) (Math.sin(noteFrequency * (time / sampleRate)) * Short.MAX_VALUE));
 			}
 
 			buffer.position(buffer.position() + sampleRate / 2);

@@ -14,9 +14,9 @@ import lu.kbra.standalone.gameengine.scene.Scene2D;
 import lu.kbra.standalone.gameengine.scene.Scene3D;
 
 public class SceneRenderLayer extends RenderLayer<GameEngine, Framebuffer, Scene> {
-	
+
 	private Supplier<CacheManager> cache;
-	
+
 	public SceneRenderLayer(String name, Scene target, Supplier<CacheManager> cache) {
 		super(name, target);
 		this.cache = cache;
@@ -25,7 +25,7 @@ public class SceneRenderLayer extends RenderLayer<GameEngine, Framebuffer, Scene
 	@Override
 	public void render(GameEngine parent, Framebuffer fb) {
 		CacheManager cc = cache.get();
-		
+
 		Renderer<GameEngine, Scene> renderer = null;
 		if (this.target instanceof Scene3D) {
 			renderer = (Renderer<GameEngine, Scene>) cc.getRenderer(Scene3D.NAME);

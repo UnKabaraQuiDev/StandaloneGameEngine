@@ -5,5 +5,5 @@ import lu.kbra.standalone.gameengine.impl.Renderable;
 public interface RenderableComponent {
 
 	Renderable getRenderable();
-	
+
 }

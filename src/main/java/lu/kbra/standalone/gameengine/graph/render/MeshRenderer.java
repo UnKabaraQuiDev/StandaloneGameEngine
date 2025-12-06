@@ -7,6 +7,7 @@ import org.joml.Matrix4f;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.cache.CacheManager;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
@@ -16,7 +17,6 @@ import lu.kbra.standalone.gameengine.objs.entity.components.TransformComponent;
 import lu.kbra.standalone.gameengine.scene.Scene;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 import lu.kbra.standalone.gameengine.scene.camera.Camera3D;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 
@@ -35,9 +35,8 @@ public class MeshRenderer extends Renderer<Scene, MeshComponent> {
 			return;
 		}
 
-		GlobalLogger
-				.log(Level.FINE,
-						"Mesh : " + mesh.getId() + ", vao:" + mesh.getGlId() + ", vec:" + mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
+		GlobalLogger.log(Level.FINE, "Mesh : " + mesh.getId() + ", vao:" + mesh.getGlId() + ", vec:"
+				+ mesh.getVertexCount() + ", vbo:" + mesh.getVbo());
 
 		mesh.bind();
 

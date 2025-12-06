@@ -9,12 +9,12 @@ import org.joml.Vector3i;
 import org.lwjgl.system.MemoryUtil;
 
 import lu.kbra.standalone.gameengine.cache.CacheManager;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.file.FileUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureFilter;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureWrap;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImageOrigin;
 
@@ -86,7 +86,8 @@ public class SingleTexture extends Texture {
 		// Invalid value (glTexImage2DMultisample)
 		if ((width > MAX_TEXTURE_SIZE || width < 0) || (height > MAX_TEXTURE_SIZE || height < 0)
 				|| (depth > MAX_TEXTURE_SIZE || depth < 0)) {
-			GameEngineUtils.throwGLESError("Invalid texture size: " + width + "x" + height + "x" + depth + ", max is " + MAX_TEXTURE_SIZE);
+			GameEngineUtils.throwGLESError(
+					"Invalid texture size: " + width + "x" + height + "x" + depth + ", max is " + MAX_TEXTURE_SIZE);
 		}
 
 		return true;
@@ -122,8 +123,8 @@ public class SingleTexture extends Texture {
 		format = getFormatByChannels(channels);
 		internalFormat = getInternalFormatByChannels(channels);
 		if (format == null || internalFormat == null)
-			throw new RuntimeException(
-					"Invalid channel count: " + channels + " to format:" + format + " & internalFormat:" + internalFormat);
+			throw new RuntimeException("Invalid channel count: " + channels + " to format:" + format
+					+ " & internalFormat:" + internalFormat);
 
 		if (buffer.getBuffer() == null)
 			throw new RuntimeException("Failed to load texture buffer.");
@@ -149,8 +150,8 @@ public class SingleTexture extends Texture {
 		format = getFormatByChannels(channels);
 		internalFormat = getInternalFormatByChannels(channels);
 		if (format == null || internalFormat == null) {
-			throw new RuntimeException(
-					"Invalid channel count: " + channels + " to format:" + format + " & internalFormat:" + internalFormat);
+			throw new RuntimeException("Invalid channel count: " + channels + " to format:" + format
+					+ " & internalFormat:" + internalFormat);
 		}
 
 		if (buffer.getBuffer() == null) {
@@ -160,28 +161,11 @@ public class SingleTexture extends Texture {
 		GL_W.glPixelStorei(GL_W.GL_UNPACK_ALIGNMENT, 1);
 		assert GL_W.checkError("PixelStoreI.UnpackAlignment=1");
 		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
-			GL_W
-					.glTexImage2D(txtType.getGlId(),
-							0,
-							internalFormat.getGlId(),
-							width,
-							height,
-							0,
-							format.getGlId(),
-							dataType.getGlId(),
-							buffer.getBuffer());
+			GL_W.glTexImage2D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, 0, format.getGlId(),
+					dataType.getGlId(), buffer.getBuffer());
 		} else if (TextureType.TXT3D.equals(txtType)) {
-			GL_W
-					.glTexImage3D(txtType.getGlId(),
-							0,
-							internalFormat.getGlId(),
-							width,
-							height,
-							depth,
-							0,
-							format.getGlId(),
-							dataType.getGlId(),
-							buffer.getBuffer());
+			GL_W.glTexImage3D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, depth, 0, format.getGlId(),
+					dataType.getGlId(), buffer.getBuffer());
 		}
 		assert GL_W.checkError("TexImage_" + txtType);
 		applyFilter();
@@ -213,28 +197,11 @@ public class SingleTexture extends Texture {
 
 	public void resize() {
 		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
-			GL_W
-					.glTexImage2D(txtType.getGlId(),
-							0,
-							internalFormat.getGlId(),
-							width,
-							height,
-							0,
-							format.getGlId(),
-							dataType.getGlId(),
-							MemoryUtil.NULL);
+			GL_W.glTexImage2D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, 0, format.getGlId(),
+					dataType.getGlId(), MemoryUtil.NULL);
 		} else if (TextureType.TXT3D.equals(txtType)) {
-			GL_W
-					.glTexImage3D(txtType.getGlId(),
-							0,
-							internalFormat.getGlId(),
-							width,
-							height,
-							depth,
-							0,
-							format.getGlId(),
-							dataType.getGlId(),
-							MemoryUtil.NULL);
+			GL_W.glTexImage3D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, depth, 0, format.getGlId(),
+					dataType.getGlId(), MemoryUtil.NULL);
 		}
 		assert GL_W.checkError("TexImage_" + txtType);
 	}
@@ -247,7 +214,8 @@ public class SingleTexture extends Texture {
 		GL_W.glPixelStorei(GL_W.GL_PACK_ALIGNMENT, 1);
 		assert GL_W.checkError("PixelStorei(PACK_ALIGNMENT, 1)");
 		GL_W.glGetTexImage(txtType.getGlId(), 0, format.getGlId(), dataType.getGlId(), buffer);
-		assert GL_W.checkError("ReadPixels(0, 0, " + width + ", " + height + ", " + internalFormat + ", " + dataType + ")");
+		assert GL_W.checkError(
+				"ReadPixels(0, 0, " + width + ", " + height + ", " + internalFormat + ", " + dataType + ")");
 		GL_W.glFlush();
 		assert GL_W.checkError("Flush()");
 		GL_W.glFinish();
@@ -312,13 +280,8 @@ public class SingleTexture extends Texture {
 		return depth;
 	}
 
-	public static SingleTexture loadSingleTexture(
-			CacheManager cache,
-			String name,
-			String path,
-			TextureFilter filter,
-			TextureType type,
-			TextureWrap wrap) {
+	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter,
+			TextureType type, TextureWrap wrap) {
 		SingleTexture texture = new SingleTexture(name, path);
 		texture.setFilters(filter);
 		texture.setTextureType(type);
@@ -328,7 +291,8 @@ public class SingleTexture extends Texture {
 		return texture;
 	}
 
-	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter, TextureType type) {
+	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter,
+			TextureType type) {
 		SingleTexture texture = new SingleTexture(name, path);
 		texture.setFilters(filter);
 		texture.setTextureType(type);
@@ -361,12 +325,13 @@ public class SingleTexture extends Texture {
 
 	@Override
 	public String toString() {
-		return "SingleTexture [width=" + width + ", height=" + height + ", depth=" + depth + ", buffer=" + buffer + ", path=" + path
-				+ ", name=" + name + ", tid=" + glId + ", minFilter=" + minFilter + ", magFilter=" + magFilter + ", txtType=" + txtType
-				+ ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap + ", dataType=" + dataType + ", format=" + format
-				+ ", internalFormat=" + internalFormat + ", generateMipmaps=" + generateMipmaps + ", fixedSampleLocation="
-				+ fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation=" + textureOperation + ", isValid()="
-				+ isValid() + "]";
+		return "SingleTexture [width=" + width + ", height=" + height + ", depth=" + depth + ", buffer=" + buffer
+				+ ", path=" + path + ", name=" + name + ", tid=" + glId + ", minFilter=" + minFilter + ", magFilter="
+				+ magFilter + ", txtType=" + txtType + ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap
+				+ ", dataType=" + dataType + ", format=" + format + ", internalFormat=" + internalFormat
+				+ ", generateMipmaps=" + generateMipmaps + ", fixedSampleLocation=" + fixedSampleLocation
+				+ ", sampleCount=" + sampleCount + ", textureOperation=" + textureOperation + ", isValid()=" + isValid()
+				+ "]";
 	}
 
 }

@@ -77,7 +77,6 @@ public class Scene2D extends Scene implements Iterable<Entity> {
 		return entitiesLock;
 	}
 
-
 	@Override
 	public Iterator<Entity> iterator() {
 		return this.entities.values().iterator();

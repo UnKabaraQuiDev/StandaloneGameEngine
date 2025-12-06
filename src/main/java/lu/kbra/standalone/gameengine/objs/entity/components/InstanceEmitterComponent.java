@@ -19,7 +19,7 @@ public class InstanceEmitterComponent extends Component implements Renderable, R
 	public void setInstanceEmitter(InstanceEmitter instanceEmitter) {
 		this.instanceEmitter = instanceEmitter;
 	}
-	
+
 	@Override
 	public Renderable getRenderable() {
 		return instanceEmitter;

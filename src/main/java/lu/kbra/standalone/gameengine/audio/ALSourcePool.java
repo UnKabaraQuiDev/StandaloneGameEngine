@@ -21,7 +21,8 @@ public class ALSourcePool {
 		this.usedSources = new ArrayList<ALSource>();
 
 		if (!audio.checkAccess()) {
-			throw new ALRuntimeException("Could not create ALSourcePool in thread: " + Thread.currentThread().getName() + ", should be in Audio thread: " + audio.getThreadName());
+			throw new ALRuntimeException("Could not create ALSourcePool in thread: " + Thread.currentThread().getName()
+					+ ", should be in Audio thread: " + audio.getThreadName());
 		}
 	}
 

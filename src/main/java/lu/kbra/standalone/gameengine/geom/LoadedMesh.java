@@ -14,11 +14,11 @@ import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.MultiAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class LoadedMesh implements Mesh {
 
@@ -45,9 +45,11 @@ public class LoadedMesh implements Mesh {
 	protected final BoundingBox boundingBox;
 
 	/**
-	 * Positions are stored as attribArray 0, normals as attribArray 1, uvs as attribArray 2
+	 * Positions are stored as attribArray 0, normals as attribArray 1, uvs as
+	 * attribArray 2
 	 */
-	public LoadedMesh(String name, Material material, Vec3fAttribArray vertices, UIntAttribArray indices, AttribArray... attribs) {
+	public LoadedMesh(String name, Material material, Vec3fAttribArray vertices, UIntAttribArray indices,
+			AttribArray... attribs) {
 		this.name = name;
 		this.vertices = vertices;
 		indices.setBufferType(BufferType.ELEMENT_ARRAY);
@@ -67,7 +69,8 @@ public class LoadedMesh implements Mesh {
 
 		for (AttribArray a : attribs) {
 			if (vbo.containsKey(a.getIndex())) {
-				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
+				GlobalLogger.log(Level.WARNING,
+						"Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
 			}
 			storeAttribArray(a);
@@ -212,9 +215,10 @@ public class LoadedMesh implements Mesh {
 
 	@Override
 	public String toString() {
-		return "LoadedMesh [name=" + name + ", vao=" + vao + ", vbo=" + vbo + ", material=" + material + ", vertices=" + vertices
-				+ ", indices=" + indices + ", attribs=" + Arrays.toString(attribs) + ", vertexCount=" + vertexCount + ", indicesCount="
-				+ indicesCount + ", isValid()=" + isValid() + ", boundingBox=" + boundingBox + "]";
+		return "LoadedMesh [name=" + name + ", vao=" + vao + ", vbo=" + vbo + ", material=" + material + ", vertices="
+				+ vertices + ", indices=" + indices + ", attribs=" + Arrays.toString(attribs) + ", vertexCount="
+				+ vertexCount + ", indicesCount=" + indicesCount + ", isValid()=" + isValid() + ", boundingBox="
+				+ boundingBox + "]";
 	}
 
 	public static LoadedQuadMesh newQuad(String name, Material material2, Vector2f size) {

@@ -8,11 +8,11 @@ import java.util.stream.Collectors;
 import lu.pcy113.pclib.PCUtils;
 
 import lu.kbra.standalone.gameengine.cache.CacheManager;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.components.MaterialComponent;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class Material implements UniqueID {
 

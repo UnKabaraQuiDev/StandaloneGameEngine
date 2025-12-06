@@ -14,7 +14,7 @@ public class RenderConditionComponent extends Component implements Supplier<Bool
 	public RenderConditionComponent(Supplier<Boolean> sup) {
 		this.supplier = sup;
 	}
-	
+
 	@Override
 	public Boolean get() {
 		return supplier.get();

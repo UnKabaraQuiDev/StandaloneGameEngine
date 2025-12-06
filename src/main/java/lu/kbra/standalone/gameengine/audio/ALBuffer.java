@@ -29,41 +29,47 @@ public class ALBuffer implements Cleanupable {
 
 	public void setData(short[] data, int format, int sampleRate) {
 		AL11.alBufferData(bufferId, format, data, sampleRate);
-		GameEngineUtils.checkAlError("BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", short[" + data.length + "])");
+		GameEngineUtils.checkAlError(
+				"BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", short[" + data.length + "])");
 	}
 
 	public void setData(int[] data, int format, int sampleRate) {
 		AL11.alBufferData(bufferId, format, data, sampleRate);
-		GameEngineUtils.checkAlError("BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", int[" + data.length + "])");
+		GameEngineUtils.checkAlError(
+				"BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", int[" + data.length + "])");
 	}
 
 	public void setData(float[] data, int format, int sampleRate) {
 		AL11.alBufferData(bufferId, format, data, sampleRate);
-		GameEngineUtils.checkAlError("BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", float[" + data.length + "])");
+		GameEngineUtils.checkAlError(
+				"BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", float[" + data.length + "])");
 	}
 
 	public void setData(ShortBuffer data, int format, int sampleRate) {
 		AL11.alBufferData(bufferId, format, data, sampleRate);
-		GameEngineUtils.checkAlError("BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", short[" + data.capacity() + "])");
+		GameEngineUtils.checkAlError(
+				"BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", short[" + data.capacity() + "])");
 	}
 
 	public void setData(IntBuffer data, int format, int sampleRate) {
 		AL11.alBufferData(bufferId, format, data, sampleRate);
-		GameEngineUtils.checkAlError("BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", int[" + data.capacity() + "])");
+		GameEngineUtils.checkAlError(
+				"BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", int[" + data.capacity() + "])");
 	}
 
 	public void setData(FloatBuffer data, int format, int sampleRate) {
 		AL11.alBufferData(bufferId, format, data, sampleRate);
-		GameEngineUtils.checkAlError("BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", float[" + data.capacity() + "])");
+		GameEngineUtils.checkAlError(
+				"BufferData(" + bufferId + ", " + format + ", " + sampleRate + ", float[" + data.capacity() + "])");
 	}
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: "+bufferId);
-		
-		if(bufferId == -1)
+		GlobalLogger.log("Cleaning up: " + bufferId);
+
+		if (bufferId == -1)
 			return;
-		
+
 		AL11.alDeleteBuffers(bufferId);
 		bufferId = -1;
 	}

@@ -38,7 +38,7 @@ public abstract class RenderLayer<K, J, O extends Renderable> implements Rendera
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: "+name);
+		GlobalLogger.log("Cleaning up: " + name);
 	}
 
 	@Override

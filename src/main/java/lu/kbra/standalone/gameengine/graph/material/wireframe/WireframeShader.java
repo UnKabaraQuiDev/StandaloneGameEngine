@@ -12,7 +12,8 @@ public class WireframeShader extends RenderShader {
 	public static final String COLOR = "color";
 
 	public WireframeShader() {
-		super(NAME, AbstractShaderPart.load("./resources/shaders/debug/debug.vert"), AbstractShaderPart.load("./resources/shaders/debug/debug.frag"));
+		super(NAME, AbstractShaderPart.load("./resources/shaders/debug/debug.vert"),
+				AbstractShaderPart.load("./resources/shaders/debug/debug.frag"));
 
 		super.setFaceMode(PolygonMode.FRONT_AND_BACK);
 		super.setBeginMode(BeginMode.LINES);

@@ -2,8 +2,8 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import java.util.Arrays;
 
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
 
 public class IntAttribArray extends AttribArray {
 
@@ -29,7 +29,8 @@ public class IntAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public IntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static, int divisor) {
+	public IntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static,
+			int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -37,7 +38,7 @@ public class IntAttribArray extends AttribArray {
 	@Override
 	public void init() {
 		bind();
-		
+
 		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		assert GL_W.checkError("BufferData(" + bufferType + ", " + Arrays.toString(data) + ", " + iStatic + ")");
 
@@ -55,7 +56,8 @@ public class IntAttribArray extends AttribArray {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException(
+					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
 		bind();

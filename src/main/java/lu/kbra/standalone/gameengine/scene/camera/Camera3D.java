@@ -21,7 +21,7 @@ public class Camera3D extends Camera {
 		this.rotation = rot;
 
 		lookAt(position, new Vector3f(0));
-		
+
 		updateMatrix();
 	}
 
@@ -98,9 +98,9 @@ public class Camera3D extends Camera {
 
 	@Override
 	public void dump(PrintStream out) {
-		out.println("Position: "+position);
-		out.println("Rotation: "+rotation);
-		out.println("Up: "+up);
+		out.println("Position: " + position);
+		out.println("Rotation: " + rotation);
+		out.println("Up: " + up);
 		projection.dump(out);
 	}
 

@@ -66,7 +66,8 @@ public abstract class Camera {
 		Vector3f direction = ray.getDir();
 
 		// Calculate intersection point
-		float t = -(a * origin.x + b * origin.y + c * origin.z + d) / (a * direction.x + b * direction.y + c * direction.z);
+		float t = -(a * origin.x + b * origin.y + c * origin.z + d)
+				/ (a * direction.x + b * direction.y + c * direction.z);
 
 		Vector3f intersectionPoint = new Vector3f(origin).add(direction.mul(t, new Vector3f()));
 
@@ -86,12 +87,14 @@ public abstract class Camera {
 	}
 
 	public static final Camera3D perspectiveCamera3D() {
-		return new Camera3D(new Vector3f(0), new Quaternionf().identity().rotateTo(new Vector3f(-1, 0, 0), new Vector3f(1, 0, 0)),
+		return new Camera3D(new Vector3f(0),
+				new Quaternionf().identity().rotateTo(new Vector3f(-1, 0, 0), new Vector3f(1, 0, 0)),
 				new Projection(720, 480, 0.1f, 1000f, (float) Math.toRadians(60), 100, true));
 	}
 
 	public static final Camera3D orthographicCamera3D() {
-		return new Camera3D(new Vector3f(0), new Quaternionf().identity().rotateTo(new Vector3f(-1, 0, 0), new Vector3f(1, 0, 0)),
+		return new Camera3D(new Vector3f(0),
+				new Quaternionf().identity().rotateTo(new Vector3f(-1, 0, 0), new Vector3f(1, 0, 0)),
 				new Projection(720, 480, 0.1f, 1000f, (float) Math.toRadians(60), 100, false));
 	}
 

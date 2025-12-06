@@ -71,7 +71,8 @@ public class Transform2D extends Transform {
 
 	@Override
 	public Matrix4f updateMatrix() {
-		return new Matrix4f().identity().translate(translation.x, translation.y, 0f).rotate(rotation, GameEngine.UP).scale(scale.x, scale.y, 1f);
+		return new Matrix4f().identity().translate(translation.x, translation.y, 0f).rotate(rotation, GameEngine.UP)
+				.scale(scale.x, scale.y, 1f);
 	}
 
 	public Vector2f getTranslation() {

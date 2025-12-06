@@ -1,6 +1,6 @@
 package lu.kbra.standalone.gameengine.utils.gl.consts;
 
-import lu.kbra.standalone.gameengine.utils.gl.wrapper.GL_W;
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 
 public enum FrameBufferAttachment implements GLConstant {
 

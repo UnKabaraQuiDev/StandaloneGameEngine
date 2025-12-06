@@ -103,7 +103,7 @@ public final class MathUtils {
 		float xNew = v.x * cos - v.y * sin;
 		float yNew = v.x * sin + v.y * cos;
 		v.set(xNew, yNew);
-		
+
 		return v;
 	}
 

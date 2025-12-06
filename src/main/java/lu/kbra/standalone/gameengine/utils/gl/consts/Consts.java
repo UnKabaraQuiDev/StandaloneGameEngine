@@ -31,7 +31,8 @@ public class Consts {
 	public static final File TEXTURES_RES_DIR = new File(RES_DIR, "textures/");
 	public static final File FONTS_RES_DIR = new File(RES_DIR, "fonts/");
 	public static final File FONTS_TEXTURES_RES_DIR = new File(TEXTURES_RES_DIR, "fonts/");
-	public static final File MONOSPACED_30_FONTS_TEXTURES_RES_DIR = new File(FONTS_TEXTURES_RES_DIR, "monospaced-30.png");
+	public static final File MONOSPACED_30_FONTS_TEXTURES_RES_DIR = new File(FONTS_TEXTURES_RES_DIR,
+			"monospaced-30.png");
 	public static final File UI_TEXTURES_RES_DIR = new File(TEXTURES_RES_DIR, "ui/");
 
 	public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();

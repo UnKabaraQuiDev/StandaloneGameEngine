@@ -20,7 +20,8 @@ public class PointLight implements UniqueID {
 	private float constant, linear, quadratic;
 	private Vector3f ambient, diffuse, specular;
 
-	public PointLight(String name, Vector3f position, float constant, float linear, float quadratic, Vector3f ambient, Vector3f diffuse, Vector3f specular) {
+	public PointLight(String name, Vector3f position, float constant, float linear, float quadratic, Vector3f ambient,
+			Vector3f diffuse, Vector3f specular) {
 		this.name = name;
 		this.constant = constant;
 		this.linear = linear;
