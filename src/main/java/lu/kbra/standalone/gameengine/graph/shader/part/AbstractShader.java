@@ -6,15 +6,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
-import org.joml.Matrix3f;
-import org.joml.Matrix3x2f;
-import org.joml.Matrix4f;
+import org.joml.Matrix3fc;
+import org.joml.Matrix3x2fc;
+import org.joml.Matrix4fc;
 import org.joml.Vector2f;
+import org.joml.Vector2fc;
 import org.joml.Vector2i;
+import org.joml.Vector2ic;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 import org.joml.Vector3i;
+import org.joml.Vector3ic;
 import org.joml.Vector4f;
+import org.joml.Vector4fc;
 import org.joml.Vector4i;
+import org.joml.Vector4ic;
 import org.lwjgl.system.MemoryStack;
 
 import lu.pcy113.pclib.datastructure.pair.Pair;
@@ -117,12 +123,18 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 	private void storeUniform(int unifLoc, Object value, String key) {
 		if (value instanceof Float val) {
 			GL_W.glUniform1f(unifLoc, val);
-		} else if (value instanceof Vector2f val) {
-			GL_W.glUniform2f(unifLoc, val.x, val.y);
-		} else if (value instanceof Vector3f val) {
-			GL_W.glUniform3f(unifLoc, val.x, val.y, val.z);
-		} else if (value instanceof Vector4f val) {
-			GL_W.glUniform4f(unifLoc, val.x, val.y, val.z, val.w);
+		} else if (value instanceof Vector2fc val) {
+			GL_W.glUniform2f(unifLoc, val.x(), val.y());
+		} else if (value instanceof Vector3fc val) {
+			GL_W.glUniform3f(unifLoc, val.x(), val.y(), val.z());
+		} else if (value instanceof Vector4fc val) {
+			GL_W.glUniform4f(unifLoc, val.x(), val.y(), val.z(), val.w());
+		} else if (value instanceof Vector2fc[] val) {
+			GL_W.glUniform2fv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector3fc[] val) {
+			GL_W.glUniform3fv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector4fc[] val) {
+			GL_W.glUniform4fv(unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector2f[] val) {
 			GL_W.glUniform2fv(unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector3f[] val) {
@@ -131,27 +143,33 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 			GL_W.glUniform4fv(unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Integer val) {
 			GL_W.glUniform1i(unifLoc, val);
-		} else if (value instanceof Vector2i val) {
-			GL_W.glUniform2i(unifLoc, val.x, val.y);
-		} else if (value instanceof Vector3i val) {
-			GL_W.glUniform3i(unifLoc, val.x, val.y, val.z);
-		} else if (value instanceof Vector4i val) {
-			GL_W.glUniform4i(unifLoc, val.x, val.y, val.z, val.w);
+		} else if (value instanceof Vector2ic val) {
+			GL_W.glUniform2i(unifLoc, val.x(), val.y());
+		} else if (value instanceof Vector3ic val) {
+			GL_W.glUniform3i(unifLoc, val.x(), val.y(), val.z());
+		} else if (value instanceof Vector4ic val) {
+			GL_W.glUniform4i(unifLoc, val.x(), val.y(), val.z(), val.w());
+		} else if (value instanceof Vector2ic[] val) {
+			GL_W.glUniform2iv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector3ic[] val) {
+			GL_W.glUniform3iv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector4ic[] val) {
+			GL_W.glUniform4iv(unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector2i[] val) {
 			GL_W.glUniform2iv(unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector3i[] val) {
 			GL_W.glUniform3iv(unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector4i[] val) {
 			GL_W.glUniform4iv(unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Matrix4f val) {
+		} else if (value instanceof Matrix4fc val) {
 			try (MemoryStack stack = MemoryStack.stackPush()) {
 				GL_W.glUniformMatrix4fv(unifLoc, false, val.get(stack.mallocFloat(16)));
 			}
-		} else if (value instanceof Matrix3f val) {
+		} else if (value instanceof Matrix3fc val) {
 			try (MemoryStack stack = MemoryStack.stackPush()) {
 				GL_W.glUniformMatrix3fv(unifLoc, false, val.get(stack.mallocFloat(9)));
 			}
-		} else if (value instanceof Matrix3x2f val) {
+		} else if (value instanceof Matrix3x2fc val) {
 			try (MemoryStack stack = MemoryStack.stackPush()) {
 				GL_W.glUniformMatrix3x2fv(unifLoc, false, val.get(stack.mallocFloat(6)));
 			}
@@ -164,9 +182,6 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 		} else {
 			throw new UnsupportedOperationException(value.getClass().getName() + " not supported.");
 		}
-
-		assert GL_W.checkError("Uniform(" + unifLoc + ", " + value + ") (" + key + ", " + value.getClass().getName()
-				+ ") (" + getId() + ")");
 	}
 
 	public void setUniformUnsigned(String key, Object value) {
@@ -196,12 +211,18 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 	private void storeUniformUnsigned(int unifLoc, Object value, String key) {
 		if (value instanceof Integer val) {
 			GL_W.glUniform1ui(unifLoc, val);
-		} else if (value instanceof Vector2i val) {
-			GL_W.glUniform2ui(unifLoc, val.x, val.y);
-		} else if (value instanceof Vector3i val) {
-			GL_W.glUniform3ui(unifLoc, val.x, val.y, val.z);
-		} else if (value instanceof Vector4i val) {
-			GL_W.glUniform4ui(unifLoc, val.x, val.y, val.z, val.w);
+		} else if (value instanceof Vector2ic val) {
+			GL_W.glUniform2ui(unifLoc, val.x(), val.y());
+		} else if (value instanceof Vector3ic val) {
+			GL_W.glUniform3ui(unifLoc, val.x(), val.y(), val.z());
+		} else if (value instanceof Vector4ic val) {
+			GL_W.glUniform4ui(unifLoc, val.x(), val.y(), val.z(), val.w());
+		} else if (value instanceof Vector2ic[] val) {
+			GL_W.glUniform2uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector3ic[] val) {
+			GL_W.glUniform3uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+		} else if (value instanceof Vector4ic[] val) {
+			GL_W.glUniform4uiv(unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector2i[] val) {
 			GL_W.glUniform2uiv(unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector3i[] val) {
@@ -213,9 +234,6 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 		} else {
 			throw new UnsupportedOperationException(value.getClass().getName() + " not supported.");
 		}
-
-		assert GL_W.checkError("UniformU(" + unifLoc + ", " + value + ") (" + key + ", " + value.getClass().getName()
-				+ ") (" + getId() + ")");
 	}
 
 	public void storeUniform(int unifLoc, Object value) {

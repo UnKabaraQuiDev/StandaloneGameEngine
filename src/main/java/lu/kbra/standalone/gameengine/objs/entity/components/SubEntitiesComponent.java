@@ -2,10 +2,12 @@ package lu.kbra.standalone.gameengine.objs.entity.components;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
+import lu.kbra.standalone.gameengine.objs.entity.ParentAware;
 
 public class SubEntitiesComponent<T extends Entity> extends Component {
 
@@ -18,11 +20,11 @@ public class SubEntitiesComponent<T extends Entity> extends Component {
 
 	@SafeVarargs
 	public SubEntitiesComponent(T... entity) {
-		Arrays.stream(entity).forEach(entities::add);
+		Arrays.stream(entity).forEach(this::addEntity);
 	}
 
 	public SubEntitiesComponent(T entity) {
-		entities.add(entity);
+		addEntity(entity);
 	}
 
 	public List<T> getEntities() {
@@ -34,6 +36,9 @@ public class SubEntitiesComponent<T extends Entity> extends Component {
 		synchronized (entitiesLock) {
 			entities.add(entity);
 		}
+		if (entity instanceof ParentAware pa) {
+			pa.setParent(this);
+		}
 		return entity;
 	}
 
@@ -41,6 +46,10 @@ public class SubEntitiesComponent<T extends Entity> extends Component {
 		synchronized (entitiesLock) {
 			for (T e : entity) {
 				this.entities.add(e);
+
+				if (e instanceof ParentAware pa) {
+					pa.setParent(this);
+				}
 			}
 		}
 		return this;
@@ -48,6 +57,36 @@ public class SubEntitiesComponent<T extends Entity> extends Component {
 
 	public Object getEntitiesLock() {
 		return entitiesLock;
+	}
+
+	public <S extends T> Optional<S> remove(S e) {
+		synchronized (entitiesLock) {
+			if (e != null && this.entities.remove(e)) {
+				if (e instanceof ParentAware pa) {
+					pa.setParent(null);
+				}
+				return Optional.of(e);
+			}
+		}
+		return Optional.empty();
+	}
+
+	public <S extends T> Optional<S> replace(S old, S new_) {
+		if (new_ instanceof ParentAware pa) {
+			pa.setParent(this);
+		}
+		synchronized (entitiesLock) {
+			if (old != null && this.entities.remove(old)) {
+				if (old instanceof ParentAware pa) {
+					pa.setParent(null);
+				}
+				this.entities.add(new_);
+				return Optional.of(old);
+			} else {
+				this.entities.add(new_);
+				return Optional.empty();
+			}
+		}
 	}
 
 	@Override

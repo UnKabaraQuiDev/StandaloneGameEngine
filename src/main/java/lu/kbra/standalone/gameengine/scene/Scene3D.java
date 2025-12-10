@@ -6,7 +6,10 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
+
+import lu.pcy113.pclib.PCUtils;
 
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
@@ -127,6 +130,36 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 	@Override
 	public Iterator<Entity> iterator() {
 		return this.entities.values().iterator();
+	}
+
+	public Optional<Entity> remove(Entity e) {
+		synchronized (entitiesLock) {
+			if (e != null && (e = this.entities.remove(e.getId())) != null) {
+				if (e instanceof ParentAware pa) {
+					pa.setParent(null);
+				}
+				return Optional.of(e);
+			}
+		}
+		return Optional.empty();
+	}
+
+	public Optional<Entity> replace(Entity old, Entity new_) {
+		synchronized (entitiesLock) {
+			if (old != null && entities.containsKey(old.getId())) {
+				final Entity aValue = entities.remove(old.getId());
+				if (aValue != old) {
+					throw new IllegalStateException(
+							"Found value and given old values do not match (" + PCUtils.toSimpleIdentityString(aValue)
+									+ " <>" + PCUtils.toSimpleIdentityString(old) + ").");
+				}
+				this.addEntity(new_);
+				return Optional.of(aValue);
+			} else {
+				addEntity(new_);
+				return Optional.empty();
+			}
+		}
 	}
 
 }

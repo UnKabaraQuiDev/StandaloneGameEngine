@@ -2,7 +2,9 @@ package lu.kbra.standalone.gameengine.utils.transform;
 
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
+import org.joml.Quaternionfc;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 public class Transform3D extends Transform {
 
@@ -42,7 +44,7 @@ public class Transform3D extends Transform {
 
 	/** chaining methods for scale */
 
-	public Transform3D scaleAdd(Vector3f v) {
+	public Transform3D scaleAdd(Vector3fc v) {
 		scale.add(v);
 		return this;
 	}
@@ -52,8 +54,8 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
-	public Transform3D scaleSet(Vector3f v) {
-		scale.set(v.x, v.y, v.z);
+	public Transform3D scaleSet(Vector3fc v) {
+		scale.set(v.x(), v.y(), v.z());
 		return this;
 	}
 
@@ -62,7 +64,7 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
-	public Transform3D scaleMul(Vector3f v) {
+	public Transform3D scaleMul(Vector3fc v) {
 		scale.mul(v);
 		return this;
 	}
@@ -84,7 +86,7 @@ public class Transform3D extends Transform {
 
 	/** chaining methods for translation */
 
-	public Transform3D translationAdd(Vector3f v) {
+	public Transform3D translationAdd(Vector3fc v) {
 		translation.add(v);
 		return this;
 	}
@@ -93,9 +95,19 @@ public class Transform3D extends Transform {
 		translation.add(x, y, z);
 		return this;
 	}
+	
+	public Transform3D translationSub(Vector3fc v) {
+		translation.sub(v);
+		return this;
+	}
 
-	public Transform3D translationSet(Vector3f v) {
-		translation.set(v.x, v.y, v.z);
+	public Transform3D translationSub(float x, float y, float z) {
+		translation.sub(x, y, z);
+		return this;
+	}
+
+	public Transform3D translationSet(Vector3fc v) {
+		translation.set(v.x(), v.y(), v.z());
 		return this;
 	}
 
@@ -104,13 +116,25 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
-	public Transform3D translationMul(Vector3f v) {
+	public Transform3D translationMul(Vector3fc v) {
 		translation.mul(v);
 		return this;
 	}
 
 	public Transform3D translationMul(float x, float y, float z) {
 		translation.mul(x, y, z);
+		return this;
+	}
+
+	public Transform3D translationMul(float f) {
+		translation.mul(f);
+		return this;
+	}
+
+	public Transform3D translationMul(Vector3fc center, float x, float y, float z) {
+		translation.add(-center.x(), -center.y(), -center.z());
+		translation.mul(x, y, z);
+		translation.add(center);
 		return this;
 	}
 
@@ -121,24 +145,7 @@ public class Transform3D extends Transform {
 
 	/** chaining methods for rotation */
 
-	public Transform3D translateAdd(Vector3f v) {
-		translation.add(v);
-		return this;
-	}
-
-	public Transform3D translateAdd(float x, float y, float z) {
-		translation.add(x, y, z);
-		return this;
-	}
-
-	public Transform3D translateMul(Vector3f center, float x, float y, float z) {
-		translation.add(center.negate());
-		translation.mul(x, y, z);
-		translation.add(center);
-		return this;
-	}
-
-	public Transform3D rotateFromAxisAngleRad(Vector3f v, float angle) {
+	public Transform3D rotateFromAxisAngleRad(Vector3fc v, float angle) {
 		rotation.fromAxisAngleRad(v, angle);
 		return this;
 	}
@@ -148,7 +155,7 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
-	public Transform3D rotate(Quaternionf q) {
+	public Transform3D rotate(Quaternionfc q) {
 		rotation.add(q);
 		return this;
 	}
@@ -172,8 +179,8 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
-	public Transform3D rotationSet(Vector3f v) {
-		this.rotation.rotationXYZ(v.x, v.y, v.z);
+	public Transform3D rotationSet(Vector3fc v) {
+		this.rotation.rotationXYZ(v.x(), v.y(), v.z());
 		return this;
 	}
 

@@ -11,8 +11,12 @@ import org.joml.Quaternionf;
 import org.joml.Quaternionfc;
 import org.joml.Vector2f;
 import org.joml.Vector2fc;
+import org.joml.Vector2i;
+import org.joml.Vector2ic;
 import org.joml.Vector3f;
 import org.joml.Vector3fc;
+import org.joml.Vector3i;
+import org.joml.Vector3ic;
 import org.lwjgl.glfw.GLFW;
 
 import lu.pcy113.pclib.PCUtils;
@@ -62,6 +66,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 	public static final Vector2fc IDENTITY_VECTOR2F = new Vector2f(1);
 	public static final Vector3fc IDENTITY_VECTOR3F = new Vector3f(1);
+	public static final Vector2ic IDENTITY_VECTOR2I = new Vector2i(1);
+	public static final Vector3ic IDENTITY_VECTOR3I = new Vector3i(1);
 	public static final Matrix4fc IDENTITY_MATRIX4F = new Matrix4f().identity();
 	public static final Quaternionfc IDENTITY_QUATERNIONF = new Quaternionf().identity();
 

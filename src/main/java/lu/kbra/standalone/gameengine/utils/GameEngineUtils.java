@@ -8,17 +8,22 @@ import java.util.stream.IntStream;
 import javax.swing.GroupLayout.Alignment;
 
 import org.joml.Matrix3x2f;
+import org.joml.Matrix3x2fc;
 import org.joml.Matrix4f;
+import org.joml.Matrix4fc;
 import org.joml.Quaternionf;
 import org.joml.Vector2f;
 import org.joml.Vector2fc;
 import org.joml.Vector2i;
+import org.joml.Vector2ic;
 import org.joml.Vector3f;
 import org.joml.Vector3fc;
 import org.joml.Vector3i;
+import org.joml.Vector3ic;
 import org.joml.Vector4f;
 import org.joml.Vector4fc;
 import org.joml.Vector4i;
+import org.joml.Vector4ic;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.lwjgl.egl.EGL10;
@@ -460,6 +465,107 @@ public final class GameEngineUtils {
 	}
 
 	public static float[] toFlatArray(Matrix3x2f[] data) {
+		final float[] flatArray = new float[data.length * 6];
+		for (int i = 0; i < data.length; i++) {
+			float[] dat = new float[3 * 2];
+			data[i].get(dat);
+			System.arraycopy(dat, 0, flatArray, i * 6, 6);
+		}
+		return flatArray;
+	}
+
+	// --
+
+	public static int[] toFlatArray(Vector2ic[] data) {
+		int[] flatArray = new int[data.length * 2];
+		for (int i = 0; i < data.length; i++) {
+			Vector2ic cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 2] = cdata.x();
+				flatArray[i * 2 + 1] = cdata.y();
+			}
+		}
+		return flatArray;
+	}
+
+	public static int[] toFlatArray(Vector3ic[] data) {
+		int[] flatArray = new int[data.length * 3];
+		for (int i = 0; i < data.length; i++) {
+			Vector3ic cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 3] = cdata.x();
+				flatArray[i * 3 + 1] = cdata.y();
+				flatArray[i * 3 + 2] = cdata.z();
+			}
+		}
+		return flatArray;
+	}
+
+	public static int[] toFlatArray(Vector4ic[] data) {
+		int[] flatArray = new int[data.length * 4];
+		for (int i = 0; i < data.length; i++) {
+			Vector4ic cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 4] = cdata.x();
+				flatArray[i * 4 + 1] = cdata.y();
+				flatArray[i * 4 + 2] = cdata.z();
+				flatArray[i * 4 + 3] = cdata.w();
+			}
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Vector2fc[] data) {
+		float[] flatArray = new float[data.length * 2];
+		for (int i = 0; i < data.length; i++) {
+			Vector2fc cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 2] = cdata.x();
+				flatArray[i * 2 + 1] = cdata.y();
+			}
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Vector3fc[] data) {
+		float[] flatArray = new float[data.length * 3];
+		for (int i = 0; i < data.length; i++) {
+			Vector3fc cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 3] = cdata.x();
+				flatArray[i * 3 + 1] = cdata.y();
+				flatArray[i * 3 + 2] = cdata.z();
+			}
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Vector4fc[] data) {
+		float[] flatArray = new float[data.length * 4];
+		for (int i = 0; i < data.length; i++) {
+			Vector4fc cdata = data[i];
+			if (cdata != null) {
+				flatArray[i * 4] = cdata.x();
+				flatArray[i * 4 + 1] = cdata.y();
+				flatArray[i * 4 + 2] = cdata.z();
+				flatArray[i * 4 + 3] = cdata.w();
+			}
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Matrix4fc[] data) {
+		float[] flatArray = new float[data.length * 16];
+		for (int i = 0; i < data.length; i++) {
+			final float[] dat = new float[16];
+			if (data[i] != null)
+				data[i].get(dat);
+			System.arraycopy(dat, 0, flatArray, i * 16, 16);
+		}
+		return flatArray;
+	}
+
+	public static float[] toFlatArray(Matrix3x2fc[] data) {
 		final float[] flatArray = new float[data.length * 6];
 		for (int i = 0; i < data.length; i++) {
 			float[] dat = new float[3 * 2];
