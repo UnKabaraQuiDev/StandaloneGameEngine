@@ -1,18 +1,19 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper.base;
 
+import java.lang.CharSequence;
+import java.lang.Override;
+import java.lang.String;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
-
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.opengl.GL32;
-
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
+import org.lwjgl.PointerBuffer;
+import org.lwjgl.opengl.GL32;
 
 public class GL_W_GL32 implements GL_W_Call {
 	public void init() {
@@ -1663,12 +1664,14 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
+	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
+			IntBuffer arg4) {
 		return org.lwjgl.opengl.GL32.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -2064,12 +2067,14 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3, IntBuffer arg4) {
+	public void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3,
+			IntBuffer arg4) {
 		org.lwjgl.opengl.GL32.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3, int[] arg4) {
+	public void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3,
+			int[] arg4) {
 		org.lwjgl.opengl.GL32.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -2109,7 +2114,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
+	public void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4,
+			double arg5) {
 		org.lwjgl.opengl.GL32.glFrustum(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -2129,7 +2135,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
+	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
+			int arg5) {
 		org.lwjgl.opengl.GL32.nglDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -2459,8 +2466,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, long arg7) {
 		org.lwjgl.opengl.GL32.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -2520,8 +2527,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.nglCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -2556,7 +2563,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
+	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
+			long arg5, int arg6) {
 		org.lwjgl.opengl.GL32.nglDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -2846,7 +2854,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
+	public void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.nglCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -3076,19 +3085,20 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ByteBuffer arg7) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
+	public void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.nglBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -3133,12 +3143,14 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
+	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
+	public void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -3153,7 +3165,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
+			int arg5) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -3163,7 +3176,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3,
+			int arg4) {
 		org.lwjgl.opengl.GL32.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -3258,16 +3272,15 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ByteBuffer arg9) {
+	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL32.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL32.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
-				arg10);
+	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL32.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
@@ -3481,7 +3494,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
+	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -3591,52 +3605,62 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, double[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			double[] arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			float[] arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int[] arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			short[] arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			IntBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			FloatBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, DoubleBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			DoubleBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			ShortBuffer arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
+	public void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -3696,62 +3720,62 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			short[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, short[] arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int[] arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			ShortBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			IntBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			DoubleBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			float[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, float[] arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			double[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, double[] arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -3821,62 +3845,62 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, float[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, int[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, FloatBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, short[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, ByteBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, long arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, ShortBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, IntBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, DoubleBuffer arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, double[] arg10) {
+	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
@@ -4001,7 +4025,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
+	public void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			boolean arg6) {
 		org.lwjgl.opengl.GL32.glTexImage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -4056,8 +4081,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -4137,8 +4162,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9, long arg10) {
+	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL32.nglTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
@@ -4223,22 +4248,26 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			FloatBuffer arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			short[] arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			float[] arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -4253,12 +4282,14 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			IntBuffer arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			ShortBuffer arg6) {
 		org.lwjgl.opengl.GL32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -4578,62 +4609,62 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			double[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, double[] arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			float[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, float[] arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			DoubleBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int[] arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			short[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, short[] arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			ByteBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			ShortBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			IntBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			FloatBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengl.GL32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -4708,62 +4739,62 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			short[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, short[] arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			int[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int[] arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			DoubleBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			double[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, double[] arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			float[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, float[] arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			ShortBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, ShortBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			long arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			ByteBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			IntBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, IntBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			FloatBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengl.GL32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -4918,57 +4949,68 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
+	public void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.nglTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ShortBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			ShortBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, IntBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			IntBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, FloatBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			FloatBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int[] arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, short[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			short[] arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, double[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			double[] arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, float[] arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			float[] arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, DoubleBuffer arg7) {
+	public void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			DoubleBuffer arg7) {
 		org.lwjgl.opengl.GL32.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -5198,7 +5240,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
+	public void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.nglCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -5213,27 +5256,32 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			FloatBuffer arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			long arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			IntBuffer arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			ShortBuffer arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -5253,10 +5301,9 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
-		org.lwjgl.opengl.GL32.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9,
-				arg10);
+	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, int arg8, int arg9, long arg10) {
+		org.lwjgl.opengl.GL32.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 	}
 
 	@Override
@@ -5270,8 +5317,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -5856,12 +5903,14 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
+	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, ByteBuffer arg6) {
+	public void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
+			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL32.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -6131,7 +6180,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6) {
 		org.lwjgl.opengl.GL32.glCopyTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -6186,7 +6236,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7) {
 		org.lwjgl.opengl.GL32.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -6376,8 +6427,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4,
+			long arg5, long arg6) {
 		org.lwjgl.opengl.GL32.nglGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -6717,23 +6768,26 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
-		org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
-	}
-
-	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
-		return org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
-	}
-
-	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3,
+			IntBuffer arg4) {
+		return org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
+	}
+
+	@Override
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3,
+			IntBuffer arg4, ByteBuffer arg5) {
+		org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
+	}
+
+	@Override
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2,
+			IntBuffer arg3) {
 		return org.lwjgl.opengl.GL32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3);
 	}
 
@@ -6843,7 +6897,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
+	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			long arg5) {
 		org.lwjgl.opengl.GL32.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -7138,26 +7193,26 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
-			int arg8, double[] arg9) {
+	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
+			double arg6, int arg7, int arg8, double[] arg9) {
 		org.lwjgl.opengl.GL32.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
-			int arg8, DoubleBuffer arg9) {
+	public void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
+			double arg6, int arg7, int arg8, DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL32.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
-			int arg8, float[] arg9) {
+	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
+			int arg7, int arg8, float[] arg9) {
 		org.lwjgl.opengl.GL32.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
-			int arg8, FloatBuffer arg9) {
+	public void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
+			int arg7, int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengl.GL32.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -7202,7 +7257,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3, int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3,
+			int arg4) {
 		org.lwjgl.opengl.GL32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -7212,17 +7268,20 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
+			long arg5, int arg6) {
 		org.lwjgl.opengl.GL32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4, int arg5) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4,
+			int arg5) {
 		org.lwjgl.opengl.GL32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3, int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3,
+			int arg4) {
 		org.lwjgl.opengl.GL32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -7397,7 +7456,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4, long arg5) {
+	public void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4,
+			long arg5) {
 		org.lwjgl.opengl.GL32.nglMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -7637,8 +7697,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8, int arg9) {
+	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, int arg9) {
 		org.lwjgl.opengl.GL32.glBlitFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -7928,7 +7988,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
+	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -7988,17 +8049,20 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
+	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
+			IntBuffer arg4) {
 		return org.lwjgl.opengl.GL32.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -8093,8 +8157,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8,
-			long arg9) {
+	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL32.nglTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -8109,7 +8173,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
+			boolean arg5) {
 		org.lwjgl.opengl.GL32.glTexImage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -8279,14 +8344,14 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ByteBuffer arg7) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -8331,14 +8396,14 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7,
-			int arg8, long arg9) {
+	public void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
+			double arg6, int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL32.nglMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
 	@Override
-	public void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7,
-			int arg8, long arg9) {
+	public void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
+			int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL32.nglMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 	}
 
@@ -8398,7 +8463,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
+	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
+			ByteBuffer arg4) {
 		return org.lwjgl.opengl.GL32.glMapBufferRange(arg0, arg1, arg2, arg3, arg4);
 	}
 
@@ -8443,12 +8509,14 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
+	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			long arg6) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
+	public void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -8548,13 +8616,14 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, long arg7) {
 		org.lwjgl.opengl.GL32.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -8599,8 +8668,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int arg8) {
+	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, int arg8) {
 		org.lwjgl.opengl.GL32.glCopyTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -8790,7 +8859,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7) {
 		org.lwjgl.opengl.GL32.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -9000,7 +9070,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
+	public void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			long arg7) {
 		org.lwjgl.opengl.GL32.nglTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -9095,8 +9166,8 @@ public class GL_W_GL32 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengl.GL32.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 

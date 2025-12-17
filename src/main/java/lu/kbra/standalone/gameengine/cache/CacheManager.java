@@ -4,10 +4,8 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
-
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 import lu.kbra.standalone.gameengine.audio.Sound;
 import lu.kbra.standalone.gameengine.geom.Gizmo;
@@ -25,6 +23,8 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.objs.lights.PointLight;
 import lu.kbra.standalone.gameengine.objs.text.TextEmitter;
 import lu.kbra.standalone.gameengine.scene.Scene;
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class CacheManager implements Cleanupable, UniqueID {
 
@@ -58,19 +58,19 @@ public class CacheManager implements Cleanupable, UniqueID {
 		this.parent = parent;
 		this.name = name;
 
-		this.meshes = new HashMap<>();
-		this.scenes = new HashMap<>();
-		this.renderers = new HashMap<>();
-		this.materials = new HashMap<>();
-		this.abstractShaders = new HashMap<>();
-		this.textures = new HashMap<>();
-		this.pointLights = new HashMap<>();
-		this.gizmos = new HashMap<>();
-		this.renderLayers = new HashMap<>();
-		this.textEmitters = new HashMap<>();
-		this.instanceEmitters = new HashMap<>();
-		this.sounds = new HashMap<>();
-		this.framebuffers = new HashMap<>();
+		this.meshes = new ConcurrentHashMap<>();
+		this.scenes = new ConcurrentHashMap<>();
+		this.renderers = new ConcurrentHashMap<>();
+		this.materials = new ConcurrentHashMap<>();
+		this.abstractShaders = new ConcurrentHashMap<>();
+		this.textures = new ConcurrentHashMap<>();
+		this.pointLights = new ConcurrentHashMap<>();
+		this.gizmos = new ConcurrentHashMap<>();
+		this.renderLayers = new ConcurrentHashMap<>();
+		this.textEmitters = new ConcurrentHashMap<>();
+		this.instanceEmitters = new ConcurrentHashMap<>();
+		this.sounds = new ConcurrentHashMap<>();
+		this.framebuffers = new ConcurrentHashMap<>();
 	}
 
 	@Override
@@ -138,8 +138,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 		if (m == null)
 			return false;
 		if (this.meshes.containsKey(m.getId()) && !this.meshes.get(m.getId()).equals(m)) {
-			GlobalLogger.severe(
-					"Overwriting Mesh: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
+			GlobalLogger.severe("Overwriting Mesh: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
 			this.meshes.remove(m.getId()).cleanup();
 		}
 		return this.meshes.putIfAbsent(m.getId(), m) == null;
@@ -173,8 +172,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 		if (m == null)
 			return false;
 		if (this.abstractShaders.containsKey(m.getId()) && !this.abstractShaders.get(m.getId()).equals(m)) {
-			GlobalLogger.severe("Overwriting AbstractShader: " + m + " from "
-					+ PCUtils.getCallerClassName(true, false, CacheManager.class));
+			GlobalLogger
+					.severe("Overwriting AbstractShader: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
 			this.abstractShaders.remove(m.getId()).cleanup();
 		}
 		return this.abstractShaders.putIfAbsent(m.getId(), m) == null;
@@ -224,8 +223,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 		if (m == null)
 			return false;
 		if (this.instanceEmitters.containsKey(m.getId()) && !this.instanceEmitters.get(m.getId()).equals(m)) {
-			GlobalLogger.severe("Overwriting InstanceEmitter: " + m + " from "
-					+ PCUtils.getCallerClassName(true, false, CacheManager.class));
+			GlobalLogger
+					.severe("Overwriting InstanceEmitter: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
 			this.instanceEmitters.remove(m.getId()).cleanup();
 		}
 		return this.instanceEmitters.putIfAbsent(m.getId(), m) == null;
@@ -257,8 +256,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public Renderer<?, ?> getRenderer(String name) {
 		/*
-		 * if (name != null && !renderers.containsKey(name))
-		 * GlobalLogger.log("No renderer found for: " + name);
+		 * if (name != null && !renderers.containsKey(name)) GlobalLogger.log("No renderer found for: " +
+		 * name);
 		 */
 		return this.renderers.getOrDefault(name, parent == null ? null : parent.getRenderer(name));
 	}

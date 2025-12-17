@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.generated.gl_wrapper.logging_debug;
+package lu.kbra.standalone.gameengine.generated.gl_wrapper.logging_debug_flush;
 
 import java.lang.CharSequence;
 import java.lang.Override;
@@ -10,15 +10,15 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
-import java.util.logging.Level;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
 import lu.pcy113.pclib.logger.PCLogger;
 import org.lwjgl.PointerBuffer;
+import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL33;
 
-public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
+public class GL_W_GL33_LoggingDebugFlush extends GL_W_GL32_LoggingDebugFlush {
 	private static PCLogger LOGGER = GlobalLogger.getLogger();
 
 	public void init() {
@@ -1278,7 +1278,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDeleteRenderbuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglDeleteRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1286,7 +1286,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglLightiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1294,7 +1294,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos3dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1302,7 +1302,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexP2ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glVertexP2ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexP2ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexP2ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1310,7 +1310,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1318,7 +1318,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1326,7 +1326,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoorddv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glFogCoorddv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoorddv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoorddv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1334,7 +1334,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoorddv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glFogCoorddv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoorddv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoorddv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1342,7 +1342,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI1uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1350,7 +1350,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindRenderbuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glBindRenderbuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindRenderbuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1358,7 +1358,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos3fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1366,7 +1366,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetActiveUniformName(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL33.nglGetActiveUniformName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -1374,7 +1374,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglClipPlane(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglClipPlane(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1382,7 +1382,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord1dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord1dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1390,7 +1390,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPopAttrib() {
 		org.lwjgl.opengl.GL33.glPopAttrib();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPopAttrib()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPopAttrib() !! ERROR: " + err);
 	}
 
@@ -1398,7 +1398,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI4sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI4sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1406,7 +1406,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glAccum(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glAccum(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glAccum(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glAccum(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1414,7 +1414,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glShadeModel(int arg0) {
 		org.lwjgl.opengl.GL33.glShadeModel(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glShadeModel(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glShadeModel(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1422,7 +1422,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetMultisamplef(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL33.glGetMultisamplef(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMultisamplef(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMultisamplef(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1431,7 +1431,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexP4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexP4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1439,7 +1439,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetTexParameterIi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetTexParameterIi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameterIi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1448,7 +1448,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglLightfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1456,7 +1456,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetRenderbufferParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetRenderbufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1465,7 +1465,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetStringi(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL33.glGetStringi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1474,7 +1474,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1482,7 +1482,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1490,7 +1490,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPolygonStipple(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glGetPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPolygonStipple(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1498,7 +1498,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL33.glGetPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPolygonStipple(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1506,7 +1506,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoordP1uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglTexCoordP1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoordP1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoordP1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1514,7 +1514,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglFogCoordfv(long arg0) {
 		org.lwjgl.opengl.GL33.nglFogCoordfv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglFogCoordfv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglFogCoordfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1522,7 +1522,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetTexEnvi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetTexEnvi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexEnvi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1531,7 +1531,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1539,7 +1539,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1547,7 +1547,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetTexEnvf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL33.glGetTexEnvf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexEnvf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1556,7 +1556,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenVertexArrays(int[] arg0) {
 		org.lwjgl.opengl.GL33.glGenVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1564,7 +1564,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGenVertexArrays() {
 		int ret = org.lwjgl.opengl.GL33.glGenVertexArrays();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenVertexArrays() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1573,7 +1573,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenVertexArrays(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glGenVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1581,7 +1581,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglNormalPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1589,7 +1589,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadTransposeMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL33.glLoadTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadTransposeMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1597,7 +1597,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadTransposeMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glLoadTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadTransposeMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1605,7 +1605,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -1613,7 +1613,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadTransposeMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glLoadTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadTransposeMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1621,7 +1621,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadTransposeMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL33.glLoadTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadTransposeMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1629,7 +1629,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenFramebuffers(int[] arg0) {
 		org.lwjgl.opengl.GL33.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1637,7 +1637,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenFramebuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1645,7 +1645,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGenFramebuffers() {
 		int ret = org.lwjgl.opengl.GL33.glGenFramebuffers();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenFramebuffers() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1654,7 +1654,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1662,7 +1662,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1670,7 +1670,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1678,7 +1678,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1686,7 +1686,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1694,7 +1694,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, short[] arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1702,7 +1702,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1710,7 +1710,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1718,7 +1718,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1726,7 +1726,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1734,7 +1734,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1742,7 +1742,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInterleavedArrays(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1750,7 +1750,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMatrixMode(int arg0) {
 		org.lwjgl.opengl.GL33.glMatrixMode(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMatrixMode(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMatrixMode(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1758,7 +1758,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClientActiveTexture(int arg0) {
 		org.lwjgl.opengl.GL33.glClientActiveTexture(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClientActiveTexture(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClientActiveTexture(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1766,7 +1766,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform1uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1774,7 +1774,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetActiveUniformsi(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL33.glGetActiveUniformsi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformsi(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsi(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1783,7 +1783,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long glGetVertexAttribPointer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL33.glGetVertexAttribPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1792,7 +1792,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexEnviv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1800,7 +1800,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexEnviv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1808,7 +1808,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteVertexArrays(int[] arg0) {
 		org.lwjgl.opengl.GL33.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1816,7 +1816,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteVertexArrays(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1824,7 +1824,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteVertexArrays(int arg0) {
 		org.lwjgl.opengl.GL33.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1832,7 +1832,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1840,7 +1840,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1848,7 +1848,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glHint(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glHint(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glHint(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1856,7 +1856,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoordfv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glFogCoordfv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoordfv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoordfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1864,7 +1864,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoordfv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glFogCoordfv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoordfv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoordfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1872,7 +1872,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteFramebuffers(int arg0) {
 		org.lwjgl.opengl.GL33.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1880,7 +1880,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteFramebuffers(int[] arg0) {
 		org.lwjgl.opengl.GL33.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1888,7 +1888,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteFramebuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1896,7 +1896,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetAttachedShaders(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetAttachedShaders(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -1904,7 +1904,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1912,7 +1912,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1920,7 +1920,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1928,7 +1928,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1936,7 +1936,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetShaderiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1944,7 +1944,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetShaderiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1952,7 +1952,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetProgrami(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetProgrami(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1961,7 +1961,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindFragDataLocation(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glBindFragDataLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1969,7 +1969,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindFragDataLocation(int arg0, int arg1, CharSequence arg2) {
 		org.lwjgl.opengl.GL33.glBindFragDataLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1977,7 +1977,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor4usv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor4usv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor4usv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor4usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1985,7 +1985,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetSamplerParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1994,7 +1994,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL33.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2004,7 +2004,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL33.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -2013,7 +2013,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL33.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -2021,7 +2021,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetActiveUniform_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL33.glGetActiveUniform(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2030,7 +2030,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2038,7 +2038,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2046,7 +2046,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorMask(boolean arg0, boolean arg1, boolean arg2, boolean arg3) {
 		org.lwjgl.opengl.GL33.glColorMask(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2054,7 +2054,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP3ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP3ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2062,7 +2062,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexEnviv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2070,7 +2070,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexEnviv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2078,7 +2078,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetCompressedTexImage(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glGetCompressedTexImage(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2086,7 +2086,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetCompressedTexImage(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetCompressedTexImage(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2094,7 +2094,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2102,7 +2102,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2110,7 +2110,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2118,7 +2118,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2126,7 +2126,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2134,7 +2134,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2142,7 +2142,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindVertexArray(int arg0) {
 		org.lwjgl.opengl.GL33.glBindVertexArray(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindVertexArray(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindVertexArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2150,7 +2150,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBeginQuery(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glBeginQuery(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBeginQuery(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBeginQuery(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2158,7 +2158,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex3dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2166,7 +2166,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindTexture(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glBindTexture(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindTexture(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2174,7 +2174,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2182,7 +2182,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2190,7 +2190,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPolygonOffset(float arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glPolygonOffset(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPolygonOffset(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2198,7 +2198,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2206,7 +2206,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2214,7 +2214,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexMask(int arg0) {
 		org.lwjgl.opengl.GL33.glIndexMask(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexMask(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2222,7 +2222,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsEnabledi(int arg0, int arg1) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsEnabledi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsEnabledi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsEnabledi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2231,7 +2231,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord3sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord3sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2239,7 +2239,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2247,7 +2247,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2255,7 +2255,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib1dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib1dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2263,7 +2263,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib1dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib1dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2271,7 +2271,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor4sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2279,7 +2279,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL33.nglPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglPolygonStipple(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2287,7 +2287,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWaitSync(long arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2295,7 +2295,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2303,7 +2303,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2311,7 +2311,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEdgeFlagPointer(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.glEdgeFlagPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEdgeFlagPointer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2319,7 +2319,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEdgeFlagPointer(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glEdgeFlagPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEdgeFlagPointer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2327,7 +2327,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexEnvfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2335,7 +2335,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexEnvfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2343,7 +2343,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2351,7 +2351,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2359,7 +2359,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGenQueries(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGenQueries(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGenQueries(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGenQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2367,7 +2367,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2375,7 +2375,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2383,7 +2383,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex3iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2391,7 +2391,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP1ui(int arg0, int arg1, boolean arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP1ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP1ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP1ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2399,7 +2399,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord1fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord1fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2407,7 +2407,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos3iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2415,7 +2415,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetPixelMapfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetPixelMapfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2423,7 +2423,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColorP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glSecondaryColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColorP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2431,7 +2431,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColorP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glSecondaryColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColorP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2439,7 +2439,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib1dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib1dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2447,7 +2447,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI4usv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI4usv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2455,7 +2455,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPointerv(int arg0, PointerBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetPointerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPointerv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPointerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2463,7 +2463,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int nglGetUniformLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL33.nglGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2472,7 +2472,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEndTransformFeedback() {
 		org.lwjgl.opengl.GL33.glEndTransformFeedback();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEndTransformFeedback()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEndTransformFeedback() !! ERROR: " + err);
 	}
 
@@ -2480,7 +2480,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribP4uiv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglVertexAttribP4uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2488,7 +2488,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2496,7 +2496,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2504,7 +2504,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetUniformIndices(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetUniformIndices(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformIndices(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2513,7 +2513,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetUniformIndices(int arg0, PointerBuffer arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2521,7 +2521,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetUniformIndices(int arg0, PointerBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2529,7 +2529,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetUniformIndices(int arg0, CharSequence[] arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2537,7 +2537,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long nglGetStringi(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL33.nglGetStringi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2546,7 +2546,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexGeniv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2554,7 +2554,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoordP2uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoordP2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoordP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoordP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2562,7 +2562,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord1iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord1iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord1iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2570,7 +2570,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2578,7 +2578,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL33.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -2586,7 +2586,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL33.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -2594,7 +2594,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2602,7 +2602,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL33.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2610,7 +2610,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniformMatrix3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglUniformMatrix3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2618,7 +2618,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2626,7 +2626,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2634,7 +2634,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenQueries(int[] arg0) {
 		org.lwjgl.opengl.GL33.glGenQueries(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2642,7 +2642,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenQueries(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glGenQueries(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2650,7 +2650,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGenQueries() {
 		int ret = org.lwjgl.opengl.GL33.glGenQueries();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenQueries() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenQueries() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2659,7 +2659,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexP2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexP2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2667,7 +2667,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexP2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexP2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2675,7 +2675,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFlush() {
 		org.lwjgl.opengl.GL33.glFlush();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFlush()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFlush() !! ERROR: " + err);
 	}
 
@@ -2683,7 +2683,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix2x4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix2x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2691,7 +2691,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix2x4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix2x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2699,7 +2699,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex3fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2707,7 +2707,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2715,7 +2715,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2724,7 +2724,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg4) {
 		org.lwjgl.opengl.GL33.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -2733,7 +2733,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int[] arg4) {
 		org.lwjgl.opengl.GL33.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -2741,7 +2741,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix3x2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix3x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2749,7 +2749,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix3x2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix3x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2757,7 +2757,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglPrioritizeTextures(int arg0, long arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglPrioritizeTextures(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglPrioritizeTextures(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglPrioritizeTextures(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2765,7 +2765,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP4ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP4ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP4ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP4ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2773,7 +2773,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMaterialfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2781,7 +2781,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMaterialfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2789,7 +2789,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetActiveUniformBlockiv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL33.glGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2797,7 +2797,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetActiveUniformBlockiv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2806,7 +2806,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			double arg5) {
 		org.lwjgl.opengl.GL33.glFrustum(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFrustum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFrustum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -2814,7 +2814,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos2sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2822,7 +2822,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSamplerParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2830,7 +2830,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long nglMapBuffer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL33.nglMapBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMapBuffer(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMapBuffer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2839,7 +2839,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor4iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2848,7 +2848,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg5) {
 		org.lwjgl.opengl.GL33.nglDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -2856,7 +2856,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniformMatrix2x3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglUniformMatrix2x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2864,7 +2864,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexGenfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2872,7 +2872,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexLevelParameterfv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2880,7 +2880,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMapdv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetMapdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2888,7 +2888,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMapdv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL33.glGetMapdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2896,7 +2896,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetMultisamplefv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetMultisamplefv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2904,7 +2904,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor4uiv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor4uiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor4uiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor4uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2912,7 +2912,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameterf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glTexParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2920,7 +2920,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Nbv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Nbv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2928,7 +2928,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoordPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2936,7 +2936,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsBuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsBuffer(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsBuffer(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2945,7 +2945,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetUniformuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2953,7 +2953,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPrioritizeTextures(int[] arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glPrioritizeTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPrioritizeTextures(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPrioritizeTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2961,7 +2961,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPrioritizeTextures(IntBuffer arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glPrioritizeTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPrioritizeTextures(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPrioritizeTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2969,7 +2969,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex2iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2977,7 +2977,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI4bv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI4bv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2985,7 +2985,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib1fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2993,7 +2993,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3001,7 +3001,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3009,7 +3009,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glValidateProgram(int arg0) {
 		org.lwjgl.opengl.GL33.glValidateProgram(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glValidateProgram(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3017,7 +3017,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMapfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3025,7 +3025,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMapfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3033,7 +3033,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexGendv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3041,7 +3041,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glLoadMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3049,7 +3049,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL33.glLoadMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3057,7 +3057,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL33.glLoadMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3065,7 +3065,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glLoadMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3073,7 +3073,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI4iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3081,7 +3081,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDepthRange(double arg0, double arg1) {
 		org.lwjgl.opengl.GL33.glDepthRange(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDepthRange(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDepthRange(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3089,7 +3089,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGenTextures(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGenTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGenTextures(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3097,7 +3097,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Nusv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Nusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3105,7 +3105,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Nusv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Nusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3113,7 +3113,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform1ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glUniform1ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform1ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3121,7 +3121,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glColorP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorP3ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3129,7 +3129,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1, ByteBuffer arg2) {
 		ByteBuffer ret = org.lwjgl.opengl.GL33.glMapBuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3138,7 +3138,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1) {
 		ByteBuffer ret = org.lwjgl.opengl.GL33.glMapBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3147,7 +3147,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1, long arg2, ByteBuffer arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL33.glMapBuffer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3156,7 +3156,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP3uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3164,7 +3164,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP3uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3172,7 +3172,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearBufferuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3180,7 +3180,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearBufferuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3188,7 +3188,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3196,7 +3196,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform1fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform1fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3204,7 +3204,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameteri(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTexParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3212,7 +3212,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMapiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetMapiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3220,7 +3220,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMapiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetMapiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3228,7 +3228,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetVertexAttribIi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetVertexAttribIi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribIi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3237,7 +3237,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord4dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord4dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3245,7 +3245,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetQueryi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetQueryi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3254,7 +3254,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindBufferBase(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBindBufferBase(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindBufferBase(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindBufferBase(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3262,7 +3262,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetDoublev(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glGetDoublev(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetDoublev(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3270,7 +3270,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetDoublev(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetDoublev(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetDoublev(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3278,7 +3278,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3286,7 +3286,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3294,7 +3294,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Niv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Niv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3302,7 +3302,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Niv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Niv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3310,7 +3310,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMaterialiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3318,7 +3318,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMaterialiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3326,7 +3326,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glListBase(int arg0) {
 		org.lwjgl.opengl.GL33.glListBase(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glListBase(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glListBase(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3334,7 +3334,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glCreateProgram() {
 		int ret = org.lwjgl.opengl.GL33.glCreateProgram();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCreateProgram() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3343,7 +3343,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor4ubv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor4ubv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor4ubv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor4ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3351,7 +3351,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferPointerv(int arg0, int arg1, PointerBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3359,7 +3359,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFeedbackBuffer(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glFeedbackBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFeedbackBuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFeedbackBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3367,7 +3367,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFeedbackBuffer(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glFeedbackBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFeedbackBuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFeedbackBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3375,7 +3375,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCullFace(int arg0) {
 		org.lwjgl.opengl.GL33.glCullFace(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCullFace(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3383,7 +3383,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL33.glMultMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3391,7 +3391,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glMultMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3399,7 +3399,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniformMatrix4x3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglUniformMatrix4x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3408,7 +3408,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, long arg7) {
 		org.lwjgl.opengl.GL33.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -3416,7 +3416,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetBooleani_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetBooleani_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3424,7 +3424,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3432,7 +3432,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3440,7 +3440,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord4fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3448,7 +3448,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindBufferRange(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL33.glBindBufferRange(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3456,7 +3456,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform1iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform1iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3464,7 +3464,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glMultMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3472,7 +3472,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL33.glMultMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3480,7 +3480,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetDoublev(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetDoublev(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetDoublev(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3488,7 +3488,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDisable(int arg0) {
 		org.lwjgl.opengl.GL33.glDisable(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDisable(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3496,7 +3496,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglLightModelfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglLightModelfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglLightModelfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3505,7 +3505,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL33.nglCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -3513,7 +3513,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor4bv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor4bv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor4bv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor4bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3521,7 +3521,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glLightf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightf(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3529,7 +3529,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex2sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3537,7 +3537,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLighti(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glLighti(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLighti(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLighti(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3545,7 +3545,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3553,7 +3553,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3562,7 +3562,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg5, int arg6) {
 		org.lwjgl.opengl.GL33.nglDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -3570,7 +3570,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglFogCoorddv(long arg0) {
 		org.lwjgl.opengl.GL33.nglFogCoorddv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglFogCoorddv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglFogCoorddv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3578,7 +3578,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL33.glUniform4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3586,7 +3586,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGenFramebuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGenFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGenFramebuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3594,7 +3594,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3602,7 +3602,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3610,7 +3610,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glUniform4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3618,7 +3618,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferParameteri64v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3626,7 +3626,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferParameteri64v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3634,7 +3634,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetFragDataIndex(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetFragDataIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFragDataIndex(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFragDataIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3643,7 +3643,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetFragDataIndex(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetFragDataIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFragDataIndex(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFragDataIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3652,7 +3652,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3660,7 +3660,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord2dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3668,7 +3668,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPopClientAttrib() {
 		org.lwjgl.opengl.GL33.glPopClientAttrib();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPopClientAttrib()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPopClientAttrib() !! ERROR: " + err);
 	}
 
@@ -3676,7 +3676,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteRenderbuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3684,7 +3684,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteRenderbuffers(int arg0) {
 		org.lwjgl.opengl.GL33.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3692,7 +3692,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteRenderbuffers(int[] arg0) {
 		org.lwjgl.opengl.GL33.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3700,7 +3700,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI1ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI1ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI1ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3708,7 +3708,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPushClientAttrib(int arg0) {
 		org.lwjgl.opengl.GL33.glPushClientAttrib(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPushClientAttrib(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPushClientAttrib(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3716,7 +3716,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long nglMapBufferRange(int arg0, long arg1, long arg2, int arg3) {
 		long ret = org.lwjgl.opengl.GL33.nglMapBufferRange(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3725,7 +3725,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexEnvfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3733,7 +3733,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexEnvfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3741,7 +3741,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Nuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Nuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3749,7 +3749,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Nuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Nuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3757,7 +3757,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor4dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3765,7 +3765,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int nglGetFragDataIndex(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL33.nglGetFragDataIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetFragDataIndex(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetFragDataIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3774,7 +3774,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetProgramiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3782,7 +3782,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetProgramiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3790,7 +3790,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglLightModeliv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglLightModeliv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglLightModeliv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3798,7 +3798,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglPixelMapusv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglPixelMapusv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3806,7 +3806,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClipPlane(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClipPlane(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3814,7 +3814,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClipPlane(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClipPlane(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3822,7 +3822,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord2fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3830,7 +3830,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3838,7 +3838,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenTextures(int[] arg0) {
 		org.lwjgl.opengl.GL33.glGenTextures(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3846,7 +3846,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGenTextures() {
 		int ret = org.lwjgl.opengl.GL33.glGenTextures();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenTextures() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3855,7 +3855,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenTextures(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glGenTextures(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3863,7 +3863,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSelectBuffer(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglSelectBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSelectBuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSelectBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3871,7 +3871,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3879,7 +3879,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3887,7 +3887,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLineStipple(int arg0, short arg1) {
 		org.lwjgl.opengl.GL33.glLineStipple(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLineStipple(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLineStipple(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3895,7 +3895,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3903,7 +3903,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3911,7 +3911,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib1sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib1sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3919,7 +3919,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib1sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib1sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3927,7 +3927,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEdgeFlag(boolean arg0) {
 		org.lwjgl.opengl.GL33.glEdgeFlag(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEdgeFlag(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEdgeFlag(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3935,7 +3935,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMaterialf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glMaterialf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMaterialf(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMaterialf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3943,7 +3943,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord4iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3951,7 +3951,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMateriali(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glMateriali(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMateriali(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMateriali(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3959,7 +3959,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor4fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3967,7 +3967,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjectui64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjectui64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3975,7 +3975,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjectui64v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjectui64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3983,7 +3983,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjectui64v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjectui64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3991,7 +3991,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexLevelParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3999,7 +3999,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib1sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib1sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4007,7 +4007,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetActiveUniformBlockName(int arg0, int arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetActiveUniformBlockName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4015,7 +4015,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetActiveUniformBlockName_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL33.glGetActiveUniformBlockName(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4024,7 +4024,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetActiveUniformBlockName(int arg0, int arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetActiveUniformBlockName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4032,7 +4032,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetActiveUniformBlockName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL33.glGetActiveUniformBlockName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4041,7 +4041,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCallList(int arg0) {
 		org.lwjgl.opengl.GL33.glCallList(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCallList(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCallList(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4049,7 +4049,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetClipPlane(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetClipPlane(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4057,7 +4057,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetClipPlane(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glGetClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetClipPlane(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4065,7 +4065,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglFogiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglFogiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglFogiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4073,7 +4073,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsProgram(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsProgram(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsProgram(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4083,7 +4083,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.nglCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -4091,7 +4091,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI4ubv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI4ubv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4099,7 +4099,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetProgramInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetProgramInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4107,7 +4107,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4115,7 +4115,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4123,7 +4123,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTransformFeedbackVaryings(int arg0, int arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL33.nglTransformFeedbackVaryings(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4131,7 +4131,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos4fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4139,7 +4139,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord2dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4147,7 +4147,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetSynci(long arg0, int arg1, IntBuffer arg2) {
 		int ret = org.lwjgl.opengl.GL33.glGetSynci(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSynci(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSynci(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4156,7 +4156,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsVertexArray(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsVertexArray(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsVertexArray(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsVertexArray(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4165,7 +4165,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexEnvf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glTexEnvf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexEnvf(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexEnvf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4173,7 +4173,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexEnvi(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTexEnvi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexEnvi(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexEnvi(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4181,7 +4181,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColor3ubv(long arg0) {
 		org.lwjgl.opengl.GL33.nglSecondaryColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColor3ubv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4189,7 +4189,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4197,7 +4197,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogi(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glFogi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogi(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogi(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4205,7 +4205,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSamplerParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4213,7 +4213,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSamplerParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4221,7 +4221,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long glFenceSync(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL33.glFenceSync(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFenceSync(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFenceSync(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4230,7 +4230,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearBufferfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4238,7 +4238,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearBufferfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4246,7 +4246,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindAttribLocation(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4254,7 +4254,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindAttribLocation(int arg0, int arg1, CharSequence arg2) {
 		org.lwjgl.opengl.GL33.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4262,7 +4262,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4270,7 +4270,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4278,7 +4278,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3b(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL33.glNormal3b(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3b(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4286,7 +4286,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glNormal3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4294,7 +4294,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4302,7 +4302,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glNormal3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4310,7 +4310,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearBufferfi(int arg0, int arg1, float arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glClearBufferfi(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearBufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearBufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4318,7 +4318,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord2iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4326,7 +4326,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glFogf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogf(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4334,7 +4334,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4342,7 +4342,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightModeli(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glLightModeli(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightModeli(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightModeli(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4350,7 +4350,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexLevelParameterfv(int arg0, int arg1, int arg2, float[] arg3) {
 		org.lwjgl.opengl.GL33.glGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4358,7 +4358,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexLevelParameterfv(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4366,7 +4366,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglFogfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglFogfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglFogfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4374,7 +4374,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4382,7 +4382,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4390,7 +4390,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearBufferiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4398,7 +4398,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearBufferiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4406,7 +4406,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColorP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColorP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4414,7 +4414,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord2fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4422,7 +4422,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glNormal3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4430,7 +4430,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos4iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4438,7 +4438,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDeleteSync(long arg0) {
 		org.lwjgl.opengl.GL33.nglDeleteSync(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDeleteSync(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDeleteSync(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4446,7 +4446,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetBufferPointerv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetBufferPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4454,7 +4454,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColorP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglSecondaryColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColorP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4462,7 +4462,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4470,7 +4470,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glNormal3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3s(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4478,7 +4478,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPolygonMode(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glPolygonMode(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPolygonMode(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPolygonMode(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4487,7 +4487,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengl.GL33.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -4496,7 +4496,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL33.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -4505,7 +4505,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.nglBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -4513,7 +4513,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightModelf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glLightModelf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightModelf(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightModelf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4521,7 +4521,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSampleMaski(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glSampleMaski(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSampleMaski(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSampleMaski(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4529,7 +4529,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP4uiv(int arg0, int arg1, boolean arg2, int[] arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP4uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4537,7 +4537,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP4uiv(int arg0, int arg1, boolean arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP4uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4545,7 +4545,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetLighti(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetLighti(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetLighti(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetLighti(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4554,7 +4554,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetLightf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL33.glGetLightf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetLightf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetLightf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4563,7 +4563,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameterIui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTexParameterIui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameterIui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameterIui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4571,7 +4571,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4579,7 +4579,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4587,7 +4587,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4bv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4bv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4595,7 +4595,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSamplerParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4603,7 +4603,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSamplerParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4612,7 +4612,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL33.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -4621,7 +4621,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -4629,7 +4629,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetMaterialiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4637,7 +4637,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsInstancedBaseVertex(int arg0, IntBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4646,7 +4646,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg5) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -4654,7 +4654,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsInstancedBaseVertex(int arg0, ByteBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4663,7 +4663,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg4) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4671,7 +4671,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsInstancedBaseVertex(int arg0, ShortBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4679,7 +4679,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDrawElementsBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL33.nglDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4687,7 +4687,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexf(float arg0) {
 		org.lwjgl.opengl.GL33.glIndexf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4695,7 +4695,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexi(int arg0) {
 		org.lwjgl.opengl.GL33.glIndexi(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexi(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexi(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4703,7 +4703,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4bv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4bv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4711,7 +4711,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetVertexAttribPointerv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4719,7 +4719,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoordP4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglTexCoordP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoordP4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoordP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4727,7 +4727,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexd(double arg0) {
 		org.lwjgl.opengl.GL33.glIndexd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4735,7 +4735,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glNormal3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4743,7 +4743,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glNormal3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4751,7 +4751,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEnableVertexAttribArray(int arg0) {
 		org.lwjgl.opengl.GL33.glEnableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEnableVertexAttribArray(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4759,7 +4759,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4767,7 +4767,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4775,7 +4775,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4783,7 +4783,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexGendv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4791,7 +4791,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexs(short arg0) {
 		org.lwjgl.opengl.GL33.glIndexs(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexs(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexs(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4799,7 +4799,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetIntegerv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetIntegerv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4807,7 +4807,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClear(int arg0) {
 		org.lwjgl.opengl.GL33.glClear(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClear(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4815,7 +4815,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4Niv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4Niv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4Niv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4824,7 +4824,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL33.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -4833,7 +4833,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL33.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -4841,7 +4841,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCopyBufferSubData(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL33.glCopyBufferSubData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4849,7 +4849,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL33.nglVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4857,7 +4857,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGenBuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGenBuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGenBuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4865,7 +4865,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4873,7 +4873,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL33.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4881,7 +4881,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glReadBuffer(int arg0) {
 		org.lwjgl.opengl.GL33.glReadBuffer(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glReadBuffer(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glReadBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4889,7 +4889,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos4dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4897,7 +4897,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadName(int arg0) {
 		org.lwjgl.opengl.GL33.glLoadName(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadName(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadName(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4905,7 +4905,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSamplerParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4913,7 +4913,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawArraysInstanced(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glDrawArraysInstanced(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawArraysInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawArraysInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4921,7 +4921,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawBuffer(int arg0) {
 		org.lwjgl.opengl.GL33.glDrawBuffer(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawBuffer(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4929,7 +4929,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjectuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4937,7 +4937,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjectuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4945,7 +4945,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjectuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4953,7 +4953,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexLevelParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL33.glGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4961,7 +4961,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexLevelParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4969,7 +4969,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4Nusv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4Nusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4977,7 +4977,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4985,7 +4985,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4993,7 +4993,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetMaterialfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5001,7 +5001,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenRenderbuffers(int[] arg0) {
 		org.lwjgl.opengl.GL33.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5009,7 +5009,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenRenderbuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5017,7 +5017,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGenRenderbuffers() {
 		int ret = org.lwjgl.opengl.GL33.glGenRenderbuffers();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenRenderbuffers() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5026,7 +5026,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL33.nglDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5034,7 +5034,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglClearBufferfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5042,7 +5042,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribP3uiv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglVertexAttribP3uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5050,7 +5050,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCompileShader(int arg0) {
 		org.lwjgl.opengl.GL33.glCompileShader(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompileShader(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5058,7 +5058,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int nglGetUniformBlockIndex(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL33.nglGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5067,7 +5067,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetInteger64v(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetInteger64v(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5075,7 +5075,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsRenderbuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsRenderbuffer(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsRenderbuffer(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5084,7 +5084,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniformMatrix4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglUniformMatrix4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5092,7 +5092,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5100,7 +5100,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4ubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor4ubv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4ubv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5108,7 +5108,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex4fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5116,7 +5116,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5124,7 +5124,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5132,7 +5132,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColor3uiv(long arg0) {
 		org.lwjgl.opengl.GL33.nglSecondaryColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColor3uiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5140,7 +5140,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glViewport(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glViewport(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5148,7 +5148,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDeleteFramebuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglDeleteFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5156,7 +5156,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglWindowPos3sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglWindowPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglWindowPos3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5164,7 +5164,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetMapfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5172,7 +5172,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform4uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5180,7 +5180,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5188,7 +5188,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5197,7 +5197,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5205,7 +5205,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetUniformiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5213,7 +5213,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5221,7 +5221,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5229,7 +5229,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP4ui(int arg0, int arg1, boolean arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP4ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5237,7 +5237,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5245,7 +5245,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5253,7 +5253,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP2ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP2ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5261,7 +5261,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetVertexAttribIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5269,7 +5269,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5277,7 +5277,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5285,7 +5285,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5293,7 +5293,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long glGetInteger64(int arg0) {
 		long ret = org.lwjgl.opengl.GL33.glGetInteger64(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetInteger64(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetInteger64(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5302,7 +5302,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDepthMask(boolean arg0) {
 		org.lwjgl.opengl.GL33.glDepthMask(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDepthMask(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5310,7 +5310,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoordP3uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoordP3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoordP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoordP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5318,7 +5318,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex4dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5326,7 +5326,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglEdgeFlagPointer(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglEdgeFlagPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglEdgeFlagPointer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5334,7 +5334,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexGenfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5342,7 +5342,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetBufferParameteri64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5350,7 +5350,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUseProgram(int arg0) {
 		org.lwjgl.opengl.GL33.glUseProgram(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUseProgram(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5358,7 +5358,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5366,7 +5366,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5374,7 +5374,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord2sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord2sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5382,7 +5382,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetMapdv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetMapdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5390,7 +5390,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetQueryObjectui64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetQueryObjectui64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5398,7 +5398,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor3sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5407,7 +5407,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5416,7 +5416,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			double[] arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5425,7 +5425,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			float[] arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5434,7 +5434,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int[] arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5443,7 +5443,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			short[] arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5452,7 +5452,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5461,7 +5461,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			FloatBuffer arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5470,7 +5470,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			DoubleBuffer arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5479,7 +5479,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ShortBuffer arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5488,7 +5488,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5496,7 +5496,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPushMatrix() {
 		org.lwjgl.opengl.GL33.glPushMatrix();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPushMatrix()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPushMatrix() !! ERROR: " + err);
 	}
 
@@ -5504,7 +5504,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord2iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5512,7 +5512,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetMapiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetMapiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5520,7 +5520,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5528,7 +5528,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5536,7 +5536,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetUniformfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5544,7 +5544,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4Nbv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4Nbv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5552,7 +5552,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix2x3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix2x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5560,7 +5560,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix2x3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix2x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5568,7 +5568,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSampleCoverage(float arg0, boolean arg1) {
 		org.lwjgl.opengl.GL33.glSampleCoverage(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSampleCoverage(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5576,7 +5576,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglClearBufferiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5584,7 +5584,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5592,7 +5592,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5601,7 +5601,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, short[] arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5610,7 +5610,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int[] arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5619,7 +5619,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5628,7 +5628,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5637,7 +5637,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5646,7 +5646,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5655,7 +5655,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, float[] arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5664,7 +5664,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, double[] arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5673,7 +5673,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5682,7 +5682,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, long arg8) {
 		org.lwjgl.opengl.GL33.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5690,7 +5690,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteShader(int arg0) {
 		org.lwjgl.opengl.GL33.glDeleteShader(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteShader(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5698,7 +5698,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5706,7 +5706,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5714,7 +5714,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5722,7 +5722,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5730,7 +5730,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5738,7 +5738,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5746,7 +5746,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5754,7 +5754,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetShaderInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetShaderInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5762,7 +5762,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI1iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5770,7 +5770,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexGeniv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5778,7 +5778,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawArrays(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5786,7 +5786,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex4iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5795,7 +5795,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5804,7 +5804,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5813,7 +5813,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5822,7 +5822,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5831,7 +5831,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5840,7 +5840,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5849,7 +5849,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5858,7 +5858,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5867,7 +5867,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5876,7 +5876,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL33.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5884,7 +5884,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameteri(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5892,7 +5892,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameterf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5900,7 +5900,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetActiveUniformsiv(int arg0, int arg1, long arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL33.nglGetActiveUniformsiv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5908,7 +5908,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDeleteVertexArrays(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglDeleteVertexArrays(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDeleteVertexArrays(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDeleteVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5916,7 +5916,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glRenderMode(int arg0) {
 		int ret = org.lwjgl.opengl.GL33.glRenderMode(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRenderMode(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRenderMode(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5925,7 +5925,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5933,7 +5933,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5941,7 +5941,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5949,7 +5949,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNewList(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glNewList(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNewList(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNewList(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5957,7 +5957,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5965,7 +5965,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5973,7 +5973,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5981,7 +5981,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5989,7 +5989,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, DoubleBuffer arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5997,7 +5997,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, double[] arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6005,7 +6005,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6013,7 +6013,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6021,7 +6021,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6029,7 +6029,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6037,7 +6037,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6045,7 +6045,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL33.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6053,7 +6053,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFramebufferTexture1D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glFramebufferTexture1D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFramebufferTexture1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6061,7 +6061,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPassThrough(float arg0) {
 		org.lwjgl.opengl.GL33.glPassThrough(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPassThrough(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPassThrough(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6069,7 +6069,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelMapfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelMapfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6077,7 +6077,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelMapfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glPixelMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6085,7 +6085,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelMapfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelMapfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6094,7 +6094,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			boolean arg6) {
 		org.lwjgl.opengl.GL33.glTexImage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6102,7 +6102,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord1sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord1sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord1sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6110,7 +6110,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglClearBufferuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6118,7 +6118,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglIndexPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglIndexPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6126,7 +6126,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4ui(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6134,7 +6134,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int nglGetAttribLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL33.nglGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6143,7 +6143,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFlushMappedBufferRange(int arg0, long arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glFlushMappedBufferRange(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFlushMappedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFlushMappedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6151,7 +6151,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glStencilOp(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glStencilOp(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6159,7 +6159,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetUniformf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL33.glGetUniformf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6168,7 +6168,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetUniformi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetUniformi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6177,7 +6177,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindBuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glBindBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindBuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6186,7 +6186,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, long arg8) {
 		org.lwjgl.opengl.GL33.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6194,7 +6194,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP3ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6202,7 +6202,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTransformFeedbackVaryings(int arg0, CharSequence arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6210,7 +6210,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTransformFeedbackVaryings(int arg0, CharSequence[] arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6218,7 +6218,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTransformFeedbackVaryings(int arg0, PointerBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6226,7 +6226,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsTexture(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsTexture(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsTexture(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6235,7 +6235,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP4uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6243,7 +6243,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP4uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6251,7 +6251,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFramebufferTexture3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL33.glFramebufferTexture3D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFramebufferTexture3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -6259,7 +6259,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4uiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor4uiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4uiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6267,7 +6267,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4uiv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glColor4uiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4uiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6275,7 +6275,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormalPointer(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6283,7 +6283,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormalPointer(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6291,7 +6291,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormalPointer(int arg0, int arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL33.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6299,7 +6299,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormalPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6307,7 +6307,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormalPointer(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6315,7 +6315,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glScalef(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glScalef(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glScalef(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glScalef(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6323,7 +6323,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor3iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6331,7 +6331,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glScaled(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glScaled(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glScaled(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glScaled(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6340,7 +6340,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL33.nglTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6348,7 +6348,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6356,7 +6356,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6364,7 +6364,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFramebufferTexture2D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glFramebufferTexture2D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6372,7 +6372,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBegin(int arg0) {
 		org.lwjgl.opengl.GL33.glBegin(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBegin(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBegin(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6380,7 +6380,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6388,7 +6388,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6396,7 +6396,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEnable(int arg0) {
 		org.lwjgl.opengl.GL33.glEnable(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEnable(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6404,7 +6404,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform2fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6412,7 +6412,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6420,7 +6420,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetTexGenf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL33.glGetTexGenf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexGenf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexGenf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6429,7 +6429,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetTexGeni(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetTexGeni(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexGeni(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexGeni(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6438,7 +6438,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoordf(float arg0) {
 		org.lwjgl.opengl.GL33.glFogCoordf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoordf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoordf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6446,7 +6446,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetFloatv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFloatv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6454,7 +6454,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetFloatv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFloatv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6462,7 +6462,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoordd(double arg0) {
 		org.lwjgl.opengl.GL33.glFogCoordd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoordd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoordd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6470,7 +6470,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public double glGetTexGend(int arg0, int arg1) {
 		double ret = org.lwjgl.opengl.GL33.glGetTexGend(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexGend(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexGend(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6480,7 +6480,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL33.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6489,7 +6489,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			FloatBuffer arg6) {
 		org.lwjgl.opengl.GL33.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6498,7 +6498,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			short[] arg6) {
 		org.lwjgl.opengl.GL33.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6507,7 +6507,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			float[] arg6) {
 		org.lwjgl.opengl.GL33.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6515,7 +6515,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL33.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6523,7 +6523,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL33.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6532,7 +6532,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg6) {
 		org.lwjgl.opengl.GL33.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6541,7 +6541,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ShortBuffer arg6) {
 		org.lwjgl.opengl.GL33.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6549,7 +6549,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglNormalP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglNormalP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglNormalP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglNormalP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6557,7 +6557,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6565,7 +6565,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6573,7 +6573,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDrawBuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglDrawBuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawBuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDrawBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6581,7 +6581,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL33.glPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPolygonStipple(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6589,7 +6589,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPolygonStipple(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPolygonStipple(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6597,7 +6597,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFrontFace(int arg0) {
 		org.lwjgl.opengl.GL33.glFrontFace(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFrontFace(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6605,7 +6605,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6613,7 +6613,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glAlphaFunc(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glAlphaFunc(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glAlphaFunc(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glAlphaFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6621,7 +6621,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos3sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6629,7 +6629,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform2iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform2iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6637,7 +6637,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetVertexAttribIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6645,7 +6645,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGenLists(int arg0) {
 		int ret = org.lwjgl.opengl.GL33.glGenLists(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenLists(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenLists(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6654,7 +6654,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColor3usv(long arg0) {
 		org.lwjgl.opengl.GL33.nglSecondaryColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColor3usv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6662,7 +6662,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectsv(short[] arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glRectsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectsv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6670,7 +6670,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectsv(ShortBuffer arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glRectsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectsv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6678,7 +6678,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetActiveUniformBlocki(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL33.glGetActiveUniformBlocki(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlocki(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlocki(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6687,7 +6687,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetFramebufferAttachmentParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL33.glGetFramebufferAttachmentParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6696,7 +6696,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6704,7 +6704,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6712,7 +6712,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4Nubv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4Nubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6720,7 +6720,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6728,7 +6728,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6736,7 +6736,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP1uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6744,7 +6744,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP1uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6752,7 +6752,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColorP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glSecondaryColorP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColorP3ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6760,7 +6760,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexImage(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL33.nglGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6768,7 +6768,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6776,7 +6776,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6784,7 +6784,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL33.nglGetPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetPolygonStipple(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6792,7 +6792,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP1uiv(int arg0, int arg1, boolean arg2, int[] arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP1uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6800,7 +6800,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP1uiv(int arg0, int arg1, boolean arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP1uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6808,7 +6808,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6816,7 +6816,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6824,7 +6824,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetClipPlane(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetClipPlane(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6832,7 +6832,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glRenderbufferStorageMultisample(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6840,7 +6840,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord3dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord3dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6848,7 +6848,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL33.glRasterPos4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6856,7 +6856,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsSampler(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsSampler(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsSampler(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsSampler(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6865,7 +6865,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjecti64v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjecti64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6873,7 +6873,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjecti64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjecti64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6881,7 +6881,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjecti64v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjecti64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6889,7 +6889,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4usv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glColor4usv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4usv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6897,7 +6897,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4usv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor4usv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4usv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6905,7 +6905,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6913,7 +6913,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6921,7 +6921,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetMapf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL33.glGetMapf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMapf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMapf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6930,7 +6930,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glRasterPos4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6938,7 +6938,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glRasterPos4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6946,7 +6946,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGenVertexArrays(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGenVertexArrays(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGenVertexArrays(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGenVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6954,7 +6954,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public double glGetMapd(int arg0, int arg1) {
 		double ret = org.lwjgl.opengl.GL33.glGetMapd(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMapd(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMapd(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6963,7 +6963,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetMapi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetMapi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMapi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMapi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6972,7 +6972,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL33.glRasterPos4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6980,7 +6980,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL33.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6988,7 +6988,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL33.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6996,7 +6996,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL33.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7004,7 +7004,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL33.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7012,7 +7012,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL33.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7020,7 +7020,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL33.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7028,7 +7028,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL33.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7036,7 +7036,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL33.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7044,7 +7044,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7052,7 +7052,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7060,7 +7060,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3b(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3b(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7068,7 +7068,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glRasterPos3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7076,7 +7076,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetAttachedShaders(int arg0, int[] arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7084,7 +7084,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetAttachedShaders(int arg0, IntBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7092,7 +7092,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7100,7 +7100,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7108,7 +7108,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearStencil(int arg0) {
 		org.lwjgl.opengl.GL33.glClearStencil(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearStencil(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7116,7 +7116,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglBindFragDataLocationIndexed(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglBindFragDataLocationIndexed(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7124,7 +7124,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glRasterPos3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7132,7 +7132,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetActiveUniformsiv(int arg0, int[] arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL33.glGetActiveUniformsiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7140,7 +7140,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetActiveUniformsiv(int arg0, IntBuffer arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetActiveUniformsiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7148,7 +7148,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glRasterPos3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7156,7 +7156,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7164,7 +7164,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7172,7 +7172,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glRasterPos3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7181,7 +7181,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, double[] arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7190,7 +7190,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, float[] arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7199,7 +7199,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7208,7 +7208,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int[] arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7217,7 +7217,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, short[] arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7226,7 +7226,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7235,7 +7235,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, long arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7244,7 +7244,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7253,7 +7253,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7262,7 +7262,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengl.GL33.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7270,7 +7270,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniformMatrix4x2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglUniformMatrix4x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7278,7 +7278,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetActiveUniformBlockName(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL33.nglGetActiveUniformBlockName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7286,7 +7286,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7294,7 +7294,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7302,7 +7302,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL33.glRasterPos2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2s(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7310,7 +7310,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord3fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7318,7 +7318,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniformMatrix3x4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglUniformMatrix3x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7326,7 +7326,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDeleteTextures(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglDeleteTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDeleteTextures(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7334,7 +7334,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglIndexubv(long arg0) {
 		org.lwjgl.opengl.GL33.nglIndexubv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglIndexubv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglIndexubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7342,7 +7342,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glRasterPos2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2i(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7350,7 +7350,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glRasterPos2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7358,7 +7358,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL33.glRasterPos2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2d(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7366,7 +7366,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiDrawElements(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3) {
 		org.lwjgl.opengl.GL33.glMultiDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7374,7 +7374,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiDrawElements(int arg0, int[] arg1, int arg2, PointerBuffer arg3) {
 		org.lwjgl.opengl.GL33.glMultiDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7383,7 +7383,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, short[] arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7392,7 +7392,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int[] arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7401,7 +7401,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7410,7 +7410,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, double[] arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7419,7 +7419,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, float[] arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7428,7 +7428,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, ShortBuffer arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7437,7 +7437,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7446,7 +7446,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7455,7 +7455,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, IntBuffer arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7464,7 +7464,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengl.GL33.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -7472,7 +7472,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEnablei(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glEnablei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEnablei(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEnablei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7480,7 +7480,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSamplerParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7488,7 +7488,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSamplerParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7496,7 +7496,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCallLists(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glCallLists(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCallLists(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7504,7 +7504,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCallLists(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glCallLists(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCallLists(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7512,7 +7512,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCallLists(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glCallLists(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCallLists(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7520,7 +7520,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCallLists(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glCallLists(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCallLists(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7528,7 +7528,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex3sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7536,7 +7536,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor3bv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor3bv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7544,7 +7544,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorMaski(int arg0, boolean arg1, boolean arg2, boolean arg3, boolean arg4) {
 		org.lwjgl.opengl.GL33.glColorMaski(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorMaski(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorMaski(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7552,7 +7552,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7560,7 +7560,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7568,7 +7568,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBlendFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glBlendFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7576,7 +7576,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord1dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord1dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7584,7 +7584,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord1dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord1dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7592,7 +7592,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4Nuiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4Nuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7600,7 +7600,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, float[] arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7608,7 +7608,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, double[] arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7616,7 +7616,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, long arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7624,7 +7624,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7632,7 +7632,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, long[] arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7640,7 +7640,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, int[] arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7648,7 +7648,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, short[] arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7656,7 +7656,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7664,7 +7664,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, LongBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7672,7 +7672,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, FloatBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7680,7 +7680,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7688,7 +7688,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferData(int arg0, DoubleBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7696,7 +7696,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexBuffer(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTexBuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7704,7 +7704,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDetachShader(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glDetachShader(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDetachShader(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7712,7 +7712,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetIntegeri_v(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7720,7 +7720,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetIntegeri_v(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7729,7 +7729,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.nglTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7738,7 +7738,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7747,7 +7747,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7756,7 +7756,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ShortBuffer arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7765,7 +7765,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7774,7 +7774,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			FloatBuffer arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7783,7 +7783,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int[] arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7792,7 +7792,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			short[] arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7801,7 +7801,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			double[] arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7810,7 +7810,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			float[] arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7819,7 +7819,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			DoubleBuffer arg7) {
 		org.lwjgl.opengl.GL33.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -7827,7 +7827,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7835,7 +7835,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7843,7 +7843,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL33.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7851,7 +7851,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawBuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7859,7 +7859,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawBuffers(int arg0) {
 		org.lwjgl.opengl.GL33.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7867,7 +7867,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalPoint2(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glEvalPoint2(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalPoint2(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalPoint2(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7875,7 +7875,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalPoint1(int arg0) {
 		org.lwjgl.opengl.GL33.glEvalPoint1(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalPoint1(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalPoint1(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7883,7 +7883,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetProgramInfoLog_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL33.glGetProgramInfoLog(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetProgramInfoLog_String(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7892,7 +7892,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetProgramInfoLog_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL33.glGetProgramInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7901,7 +7901,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetProgramInfoLog(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7909,7 +7909,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetProgramInfoLog(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7917,7 +7917,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean nglIsSync(long arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.nglIsSync(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglIsSync(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7926,7 +7926,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor3dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7934,7 +7934,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glStencilMaskSeparate(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glStencilMaskSeparate(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glStencilMaskSeparate(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7942,7 +7942,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7950,7 +7950,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7958,7 +7958,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord1fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord1fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7966,7 +7966,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord1fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord1fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7974,7 +7974,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7982,7 +7982,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7990,7 +7990,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glGetBoolean(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glGetBoolean(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBoolean(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7999,7 +7999,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform4ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glUniform4ui(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8007,7 +8007,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public double glGetDouble(int arg0) {
 		double ret = org.lwjgl.opengl.GL33.glGetDouble(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetDouble(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetDouble(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8016,7 +8016,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL33.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8024,7 +8024,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8032,7 +8032,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL33.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8040,7 +8040,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8048,7 +8048,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8056,7 +8056,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord3iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8064,7 +8064,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor3fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8072,7 +8072,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetVertexAttribiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8080,7 +8080,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexGendv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL33.glTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8088,7 +8088,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexGendv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL33.glTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8096,7 +8096,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPointParameteriv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glPointParameteriv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPointParameteriv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8104,7 +8104,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPointParameteriv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glPointParameteriv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPointParameteriv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8112,7 +8112,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8120,7 +8120,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8128,7 +8128,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord3fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8136,7 +8136,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4usv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4usv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8144,7 +8144,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8152,7 +8152,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8160,7 +8160,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLineWidth(float arg0) {
 		org.lwjgl.opengl.GL33.glLineWidth(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLineWidth(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8168,7 +8168,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8176,7 +8176,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib3sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8184,7 +8184,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib3sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8193,7 +8193,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.nglCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -8201,7 +8201,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultMatrixd(long arg0) {
 		org.lwjgl.opengl.GL33.nglMultMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8209,7 +8209,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultMatrixf(long arg0) {
 		org.lwjgl.opengl.GL33.nglMultMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8218,7 +8218,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			FloatBuffer arg5) {
 		org.lwjgl.opengl.GL33.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -8227,7 +8227,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg5) {
 		org.lwjgl.opengl.GL33.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -8236,7 +8236,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg5) {
 		org.lwjgl.opengl.GL33.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -8245,7 +8245,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ShortBuffer arg5) {
 		org.lwjgl.opengl.GL33.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -8254,7 +8254,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL33.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -8262,7 +8262,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoordP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglTexCoordP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoordP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoordP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8270,7 +8270,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexGenfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8278,7 +8278,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexGenfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8286,7 +8286,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClampColor(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glClampColor(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClampColor(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClampColor(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8295,7 +8295,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL33.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -8303,7 +8303,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetShaderi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetShaderi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8312,7 +8312,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord3iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8321,7 +8321,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL33.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8329,7 +8329,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetIntegeri_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8337,7 +8337,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8345,7 +8345,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8353,7 +8353,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetSamplerParameterf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL33.glGetSamplerParameterf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameterf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8362,7 +8362,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetSamplerParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetSamplerParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameteri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8371,7 +8371,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormalP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glNormalP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormalP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormalP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8379,7 +8379,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormalP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glNormalP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormalP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormalP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8387,7 +8387,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMaterialiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8395,7 +8395,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.glDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8403,7 +8403,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElements(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glDrawElements(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8411,7 +8411,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElements(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8419,7 +8419,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElements(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8427,7 +8427,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElements(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8435,7 +8435,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEnd() {
 		org.lwjgl.opengl.GL33.glEnd();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEnd()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEnd() !! ERROR: " + err);
 	}
 
@@ -8443,7 +8443,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPointParameterfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glPointParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPointParameterfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8451,7 +8451,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPointParameterfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glPointParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPointParameterfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8459,7 +8459,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord1iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8467,7 +8467,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long glGetQueryObjecti64(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL33.glGetQueryObjecti64(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjecti64(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8476,7 +8476,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glFogiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8484,7 +8484,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glFogiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8492,7 +8492,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBlendFunc(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glBlendFunc(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBlendFunc(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8500,7 +8500,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRecti(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glRecti(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRecti(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRecti(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8508,7 +8508,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3ubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3ubv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8516,7 +8516,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL33.glTexCoord4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8524,7 +8524,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8532,7 +8532,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8540,7 +8540,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8548,7 +8548,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRects(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL33.glRects(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRects(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRects(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8556,7 +8556,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglBindAttribLocation(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8564,7 +8564,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColor3bv(long arg0) {
 		org.lwjgl.opengl.GL33.nglSecondaryColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColor3bv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8572,7 +8572,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glTexCoord4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8580,7 +8580,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL33.glTexCoord4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8588,7 +8588,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetSamplerParameterIi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetSamplerParameterIi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameterIi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8597,7 +8597,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexGeniv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8605,7 +8605,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexGeniv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8613,7 +8613,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectfv(FloatBuffer arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glRectfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8621,7 +8621,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectfv(float[] arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glRectfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8629,7 +8629,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindSampler(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glBindSampler(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindSampler(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindSampler(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8637,7 +8637,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetVertexAttribdv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetVertexAttribdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8645,7 +8645,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glTexCoord4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8653,7 +8653,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glProvokingVertex(int arg0) {
 		org.lwjgl.opengl.GL33.glProvokingVertex(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glProvokingVertex(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glProvokingVertex(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8661,7 +8661,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteProgram(int arg0) {
 		org.lwjgl.opengl.GL33.glDeleteProgram(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteProgram(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8669,7 +8669,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMaterialfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8677,7 +8677,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMaterialfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8685,7 +8685,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColorP4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglColorP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColorP4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColorP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8693,7 +8693,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8701,7 +8701,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8709,7 +8709,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetIntegerv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetIntegerv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8717,7 +8717,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetIntegerv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetIntegerv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8725,7 +8725,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glOrtho(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL33.glOrtho(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glOrtho(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glOrtho(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -8733,7 +8733,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelMapuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelMapuiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8741,7 +8741,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelMapuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glPixelMapuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8749,7 +8749,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelMapuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelMapuiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8757,7 +8757,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectd(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL33.glRectd(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectd(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectd(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8765,7 +8765,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectf(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glRectf(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectf(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectf(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8773,7 +8773,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP3uiv(int arg0, int arg1, boolean arg2, int[] arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP3uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8781,7 +8781,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP3uiv(int arg0, int arg1, boolean arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP3uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8789,7 +8789,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEnableClientState(int arg0) {
 		org.lwjgl.opengl.GL33.glEnableClientState(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEnableClientState(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEnableClientState(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8797,7 +8797,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8805,7 +8805,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8813,7 +8813,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColor3dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglSecondaryColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColor3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8821,7 +8821,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMaterialfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8829,7 +8829,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetFragDataLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8838,7 +8838,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetFragDataLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8847,7 +8847,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord3dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8855,7 +8855,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glAreTexturesResident_boolean(int[] arg0, ByteBuffer arg1) {
 		boolean ret = org.lwjgl.opengl.GL33.glAreTexturesResident(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8864,7 +8864,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glAreTexturesResident_boolean(IntBuffer arg0, ByteBuffer arg1) {
 		boolean ret = org.lwjgl.opengl.GL33.glAreTexturesResident(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8873,7 +8873,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glAreTexturesResident_boolean(int arg0, ByteBuffer arg1) {
 		boolean ret = org.lwjgl.opengl.GL33.glAreTexturesResident(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8882,7 +8882,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetInteger64i_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8890,7 +8890,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8898,7 +8898,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos4fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8906,7 +8906,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glFogfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8914,7 +8914,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glFogfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8922,7 +8922,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPushName(int arg0) {
 		org.lwjgl.opengl.GL33.glPushName(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPushName(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPushName(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8930,7 +8930,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglLoadMatrixf(long arg0) {
 		org.lwjgl.opengl.GL33.nglLoadMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglLoadMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8938,7 +8938,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetIntegeri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetIntegeri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetIntegeri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8947,7 +8947,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglLoadMatrixd(long arg0) {
 		org.lwjgl.opengl.GL33.nglLoadMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglLoadMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8955,7 +8955,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectdv(DoubleBuffer arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glRectdv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectdv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8963,7 +8963,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectdv(double[] arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glRectdv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectdv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8971,7 +8971,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8979,7 +8979,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetVertexAttribfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8987,7 +8987,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8995,7 +8995,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9003,7 +9003,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformBlockBinding(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glUniformBlockBinding(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformBlockBinding(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformBlockBinding(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9011,7 +9011,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetSamplerParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9019,7 +9019,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribP2uiv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglVertexAttribP2uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9027,7 +9027,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glCheckFramebufferStatus(int arg0) {
 		int ret = org.lwjgl.opengl.GL33.glCheckFramebufferStatus(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCheckFramebufferStatus(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9036,7 +9036,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetLightiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9044,7 +9044,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetLightiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9052,7 +9052,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLoadIdentity() {
 		org.lwjgl.opengl.GL33.glLoadIdentity();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLoadIdentity()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLoadIdentity() !! ERROR: " + err);
 	}
 
@@ -9060,7 +9060,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetActiveUniformName(int arg0, int arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetActiveUniformName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9068,7 +9068,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetActiveUniformName(int arg0, int arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetActiveUniformName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9076,7 +9076,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetActiveUniformName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL33.glGetActiveUniformName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9085,7 +9085,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetActiveUniformName_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL33.glGetActiveUniformName(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9094,7 +9094,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsInstanced(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9102,7 +9102,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsInstanced(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9110,7 +9110,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsInstanced(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9118,7 +9118,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -9126,7 +9126,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsInstanced(int arg0, int arg1, ByteBuffer arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glDrawElementsInstanced(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9134,7 +9134,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9142,7 +9142,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9150,7 +9150,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEdgeFlagv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glEdgeFlagv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEdgeFlagv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEdgeFlagv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9158,7 +9158,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9166,7 +9166,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor3ubv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor3ubv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9174,7 +9174,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMaterialiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9182,7 +9182,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMaterialiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9190,7 +9190,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9198,7 +9198,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9206,7 +9206,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP3ui(int arg0, int arg1, boolean arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP3ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9214,7 +9214,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI2iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9222,7 +9222,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9230,7 +9230,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9238,7 +9238,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glColor4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9246,7 +9246,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9254,7 +9254,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMapGrid2d(int arg0, double arg1, double arg2, int arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL33.glMapGrid2d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMapGrid2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMapGrid2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -9262,7 +9262,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMapGrid2f(int arg0, float arg1, float arg2, int arg3, float arg4, float arg5) {
 		org.lwjgl.opengl.GL33.glMapGrid2f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMapGrid2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMapGrid2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -9270,7 +9270,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindFramebuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glBindFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindFramebuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9278,7 +9278,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1s(int arg0, short arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1s(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9286,7 +9286,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteQueries(int arg0) {
 		org.lwjgl.opengl.GL33.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9294,7 +9294,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteQueries(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9302,7 +9302,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteQueries(int[] arg0) {
 		org.lwjgl.opengl.GL33.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9310,7 +9310,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib3dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib3dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9318,7 +9318,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetQueryiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9326,7 +9326,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetUniformiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9334,7 +9334,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetUniformiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9342,7 +9342,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexGenfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9350,7 +9350,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexGenfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9358,7 +9358,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1s(short arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1s(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1s(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1s(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9366,7 +9366,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsShader(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsShader(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsShader(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9376,7 +9376,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -9385,7 +9385,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL33.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -9393,7 +9393,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1f(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9401,7 +9401,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1d(int arg0, double arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1d(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9409,7 +9409,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexP2uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexP2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9417,7 +9417,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1i(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9425,7 +9425,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9433,7 +9433,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetShaderInfoLog_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL33.glGetShaderInfoLog(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderInfoLog_String(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9442,7 +9442,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetShaderInfoLog(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9450,7 +9450,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetShaderInfoLog(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9458,7 +9458,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetShaderInfoLog_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL33.glGetShaderInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9467,7 +9467,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1d(double arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1d(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1d(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1d(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9475,7 +9475,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4usv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4usv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9483,7 +9483,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4usv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4usv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9491,7 +9491,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectiv(IntBuffer arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glRectiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9499,7 +9499,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRectiv(int[] arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glRectiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRectiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9507,7 +9507,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRectsv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglRectsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRectsv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9515,7 +9515,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearAccum(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glClearAccum(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearAccum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearAccum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9523,7 +9523,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1i(int arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1i(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1i(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1i(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9531,7 +9531,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord1f(float arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord1f(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord1f(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord1f(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9539,7 +9539,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glColor4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9547,7 +9547,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9555,7 +9555,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9563,7 +9563,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFramebufferTexture(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glFramebufferTexture(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFramebufferTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9571,7 +9571,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL33.glTexCoord2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2s(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9579,7 +9579,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetSamplerParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9587,7 +9587,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3uiv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3uiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9595,7 +9595,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3uiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3uiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9603,7 +9603,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDepthFunc(int arg0) {
 		org.lwjgl.opengl.GL33.glDepthFunc(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDepthFunc(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9611,7 +9611,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetLightfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9619,7 +9619,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetLightfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9627,7 +9627,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexiv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glIndexiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9635,7 +9635,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glIndexiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9643,7 +9643,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix4x3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix4x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9651,7 +9651,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix4x3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix4x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9659,7 +9659,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexGeniv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9667,7 +9667,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexGeniv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9675,7 +9675,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glTexCoord2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9683,7 +9683,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetUniformIndices(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetUniformIndices(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9691,7 +9691,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL33.glTexCoord2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2d(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9699,7 +9699,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glTexCoord2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord2i(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9707,7 +9707,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9715,7 +9715,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glTexCoord3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9723,7 +9723,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9731,7 +9731,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9739,7 +9739,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetBufferSubData(int arg0, long arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetBufferSubData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9747,7 +9747,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMapGrid1d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glMapGrid1d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMapGrid1d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMapGrid1d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9755,7 +9755,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glTexCoord3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9763,7 +9763,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMapGrid1f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glMapGrid1f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMapGrid1f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMapGrid1f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9771,7 +9771,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glTexCoord3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9779,7 +9779,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9787,7 +9787,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9795,7 +9795,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP1uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9803,7 +9803,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP1uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9811,7 +9811,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglWindowPos2sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglWindowPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglWindowPos2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9819,7 +9819,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTexCoord3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9827,7 +9827,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9835,7 +9835,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9843,7 +9843,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glStencilMask(int arg0) {
 		org.lwjgl.opengl.GL33.glStencilMask(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glStencilMask(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9852,7 +9852,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6) {
 		org.lwjgl.opengl.GL33.glCopyTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCopyTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCopyTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -9860,7 +9860,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform3uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9868,7 +9868,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor4bv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4bv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9876,7 +9876,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetInteger(int arg0) {
 		int ret = org.lwjgl.opengl.GL33.glGetInteger(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetInteger(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9885,7 +9885,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribPointerv(int arg0, int arg1, PointerBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9893,7 +9893,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBlendEquationSeparate(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glBlendEquationSeparate(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBlendEquationSeparate(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9901,7 +9901,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetUniformuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9909,7 +9909,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetUniformuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9917,7 +9917,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9925,7 +9925,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9933,7 +9933,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP1ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP1ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP1ui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP1ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9941,7 +9941,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3ubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3ubv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9950,7 +9950,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7) {
 		org.lwjgl.opengl.GL33.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9958,7 +9958,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9966,7 +9966,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9974,7 +9974,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, double[] arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9982,7 +9982,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, long[] arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9990,7 +9990,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, short[] arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9998,7 +9998,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10006,7 +10006,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10014,7 +10014,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10022,7 +10022,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10030,7 +10030,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10038,7 +10038,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBufferSubData(int arg0, long arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10046,7 +10046,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexdv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glIndexdv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexdv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexdv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10054,7 +10054,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexdv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glIndexdv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexdv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexdv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10062,7 +10062,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearDepth(double arg0) {
 		org.lwjgl.opengl.GL33.glClearDepth(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearDepth(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearDepth(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10070,7 +10070,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteTextures(int[] arg0) {
 		org.lwjgl.opengl.GL33.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10078,7 +10078,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteTextures(int arg0) {
 		org.lwjgl.opengl.GL33.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10086,7 +10086,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteTextures(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10094,7 +10094,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4s(int arg0, short arg1, short arg2, short arg3, short arg4) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4s(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -10102,7 +10102,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3uiv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3uiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10110,7 +10110,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3uiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3uiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10118,7 +10118,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long glGetBufferParameteri64(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL33.glGetBufferParameteri64(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferParameteri64(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10127,7 +10127,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglBindFragDataLocation(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglBindFragDataLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10135,7 +10135,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord1sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord1sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10143,7 +10143,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4d(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -10151,7 +10151,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetUniformfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10159,7 +10159,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetUniformfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10167,7 +10167,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib3dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10175,7 +10175,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib3dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10183,7 +10183,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -10191,7 +10191,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glDrawElementsBaseVertex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10199,7 +10199,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsBaseVertex(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glDrawElementsBaseVertex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10207,7 +10207,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -10215,7 +10215,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glDrawElementsBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10223,7 +10223,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawElementsBaseVertex(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glDrawElementsBaseVertex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10231,7 +10231,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -10239,7 +10239,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3s(int arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10247,7 +10247,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetPixelMapusv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetPixelMapusv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10256,7 +10256,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg5, long arg6) {
 		org.lwjgl.opengl.GL33.nglGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -10264,7 +10264,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib3fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10272,7 +10272,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3d(int arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10280,7 +10280,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexGendv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL33.glGetTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10288,7 +10288,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexGendv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10296,7 +10296,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPopName() {
 		org.lwjgl.opengl.GL33.glPopName();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPopName()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPopName() !! ERROR: " + err);
 	}
 
@@ -10304,7 +10304,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10312,7 +10312,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexfv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glIndexfv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexfv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10320,7 +10320,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexfv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glIndexfv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexfv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10328,7 +10328,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsList(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsList(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsList(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsList(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10337,7 +10337,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10345,7 +10345,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetFloatv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetFloatv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10353,7 +10353,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2s(int arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2s(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10361,7 +10361,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetString(int arg0) {
 		String ret = org.lwjgl.opengl.GL33.glGetString(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetString(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10370,7 +10370,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDeleteSamplers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglDeleteSamplers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDeleteSamplers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDeleteSamplers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10378,7 +10378,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10386,7 +10386,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10394,7 +10394,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetActiveUniformBlockiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10402,7 +10402,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRenderbufferStorage(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glRenderbufferStorage(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10410,7 +10410,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRectiv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglRectiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRectiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10418,7 +10418,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelZoom(float arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glPixelZoom(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelZoom(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelZoom(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10426,7 +10426,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexGenf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glTexGenf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexGenf(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexGenf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10434,7 +10434,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexGeni(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTexGeni(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexGeni(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexGeni(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10442,7 +10442,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10450,7 +10450,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10458,7 +10458,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglCallLists(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglCallLists(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglCallLists(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglCallLists(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10466,7 +10466,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetFloat(int arg0) {
 		float ret = org.lwjgl.opengl.GL33.glGetFloat(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetFloat(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10475,7 +10475,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glNormal3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10483,7 +10483,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glNormal3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10491,7 +10491,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetTexParameterIui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetTexParameterIui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameterIui(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10500,7 +10500,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexGend(int arg0, int arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glTexGend(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexGend(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexGend(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10508,7 +10508,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBooleani_v(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetBooleani_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10516,7 +10516,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10524,7 +10524,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10532,7 +10532,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4ubv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4ubv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10540,7 +10540,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10548,7 +10548,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10556,7 +10556,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetInteger64v(int arg0, long[] arg1) {
 		org.lwjgl.opengl.GL33.glGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetInteger64v(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10564,7 +10564,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetInteger64v(int arg0, LongBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetInteger64v(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10572,7 +10572,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPixelMapuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPixelMapuiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10580,7 +10580,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPixelMapuiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.glGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPixelMapuiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10588,7 +10588,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPixelMapuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPixelMapuiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10596,7 +10596,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10604,7 +10604,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10612,7 +10612,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSynciv(long arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glGetSynciv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10620,7 +10620,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSynciv(long arg0, int arg1, int[] arg2, int[] arg3) {
 		org.lwjgl.opengl.GL33.glGetSynciv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10628,7 +10628,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4bv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4bv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10636,7 +10636,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform3fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10644,7 +10644,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL33.glGenBuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10652,7 +10652,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGenBuffers() {
 		int ret = org.lwjgl.opengl.GL33.glGenBuffers();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenBuffers() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10661,7 +10661,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenBuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glGenBuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10669,7 +10669,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDeleteBuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglDeleteBuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDeleteBuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10677,7 +10677,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10685,7 +10685,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10693,7 +10693,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalMesh1(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glEvalMesh1(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalMesh1(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalMesh1(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10701,7 +10701,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalMesh2(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glEvalMesh2(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalMesh2(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalMesh2(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -10709,7 +10709,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glNormal3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10717,7 +10717,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glNormal3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10725,7 +10725,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex4sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10733,7 +10733,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP2ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP2ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP2ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP2ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10741,7 +10741,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glNormal3bv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3bv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10749,7 +10749,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexPointer(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glIndexPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexPointer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10757,7 +10757,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexPointer(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glIndexPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexPointer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10765,7 +10765,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glIndexPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10773,7 +10773,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexPointer(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glIndexPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10781,7 +10781,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexPointer(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glIndexPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexPointer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10789,7 +10789,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos4sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10797,7 +10797,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform3iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform3iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10805,7 +10805,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEndList() {
 		org.lwjgl.opengl.GL33.glEndList();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEndList()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEndList() !! ERROR: " + err);
 	}
 
@@ -10813,7 +10813,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFramebufferTextureLayer(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glFramebufferTextureLayer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -10822,7 +10822,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL33.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -10831,7 +10831,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL33.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10841,7 +10841,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL33.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -10850,7 +10850,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL33.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10859,7 +10859,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColor3sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglSecondaryColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColor3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10867,7 +10867,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexP4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexP4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10875,7 +10875,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexP4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexP4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10883,7 +10883,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGenRenderbuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGenRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGenRenderbuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10891,7 +10891,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRectfv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglRectfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRectfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10899,7 +10899,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10907,7 +10907,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL33.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10915,7 +10915,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL33.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10923,7 +10923,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10931,7 +10931,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10939,7 +10939,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglIndexdv(long arg0) {
 		org.lwjgl.opengl.GL33.nglIndexdv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglIndexdv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglIndexdv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10947,7 +10947,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSamplerParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10955,7 +10955,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetSamplerParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10963,7 +10963,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long nglGetString(int arg0) {
 		long ret = org.lwjgl.opengl.GL33.nglGetString(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetString(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10972,7 +10972,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglInterleavedArrays(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10980,7 +10980,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glNormal3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10988,7 +10988,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormal3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glNormal3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormal3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormal3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10996,7 +10996,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11004,7 +11004,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11012,7 +11012,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long glGetInteger64i(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL33.glGetInteger64i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetInteger64i(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11021,7 +11021,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord2sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11029,7 +11029,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRectdv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglRectdv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRectdv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11037,7 +11037,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11045,7 +11045,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glColor4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11053,7 +11053,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglIndexfv(long arg0) {
 		org.lwjgl.opengl.GL33.nglIndexfv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglIndexfv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglIndexfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11062,7 +11062,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg5) {
 		org.lwjgl.opengl.GL33.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -11070,7 +11070,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglWindowPos3iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglWindowPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglWindowPos3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11078,7 +11078,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI3ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribI3ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11086,7 +11086,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglEdgeFlagv(long arg0) {
 		org.lwjgl.opengl.GL33.nglEdgeFlagv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglEdgeFlagv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglEdgeFlagv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11094,7 +11094,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetError() {
 		int ret = org.lwjgl.opengl.GL33.glGetError();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetError() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11103,7 +11103,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglLoadTransposeMatrixd(long arg0) {
 		org.lwjgl.opengl.GL33.nglLoadTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglLoadTransposeMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11111,7 +11111,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglLoadTransposeMatrixf(long arg0) {
 		org.lwjgl.opengl.GL33.nglLoadTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglLoadTransposeMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11119,7 +11119,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglWindowPos3dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglWindowPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglWindowPos3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11127,7 +11127,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColor3fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglSecondaryColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColor3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11135,7 +11135,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLogicOp(int arg0) {
 		org.lwjgl.opengl.GL33.glLogicOp(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLogicOp(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLogicOp(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11143,7 +11143,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform3ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glUniform3ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11151,7 +11151,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glScissor(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glScissor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11159,7 +11159,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long glGetQueryObjectui64(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL33.glGetQueryObjectui64(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectui64(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11168,7 +11168,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetBooleanv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetBooleanv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11176,7 +11176,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glColor4ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11184,7 +11184,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultTransposeMatrixd(long arg0) {
 		org.lwjgl.opengl.GL33.nglMultTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultTransposeMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11192,7 +11192,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib3sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib3sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11200,7 +11200,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4ub(byte arg0, byte arg1, byte arg2, byte arg3) {
 		org.lwjgl.opengl.GL33.glColor4ub(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4ub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4ub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11208,7 +11208,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultTransposeMatrixf(long arg0) {
 		org.lwjgl.opengl.GL33.nglMultTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultTransposeMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11216,7 +11216,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexEnviv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11224,7 +11224,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexParameterIi(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glTexParameterIi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexParameterIi(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexParameterIi(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11232,7 +11232,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglWindowPos3fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglWindowPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglWindowPos3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11240,7 +11240,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord2dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord2dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11248,7 +11248,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11256,7 +11256,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11264,7 +11264,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glClientWaitSync(long arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL33.glClientWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11273,7 +11273,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColor3iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglSecondaryColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColor3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11281,7 +11281,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4us(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL33.glColor4us(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4us(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4us(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11289,7 +11289,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglPointParameterfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglPointParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglPointParameterfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11297,7 +11297,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI1uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11305,7 +11305,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI1uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11313,7 +11313,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3usv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3usv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11321,7 +11321,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3usv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3usv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11329,7 +11329,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPixelMapusv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPixelMapusv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11337,7 +11337,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPixelMapusv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPixelMapusv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11345,7 +11345,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPixelMapusv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.glGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPixelMapusv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11353,7 +11353,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11361,7 +11361,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11369,7 +11369,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSecondaryColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11377,7 +11377,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelMapusv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelMapusv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11385,7 +11385,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelMapusv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelMapusv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11393,7 +11393,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelMapusv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glPixelMapusv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11401,7 +11401,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexsv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glIndexsv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexsv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexsv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11409,7 +11409,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexsv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glIndexsv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexsv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexsv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11417,7 +11417,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetUniformui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetUniformui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformui(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11426,7 +11426,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglWaitSync(long arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11434,7 +11434,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI2uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11442,7 +11442,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11450,7 +11450,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11458,7 +11458,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib4Nsv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib4Nsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11466,7 +11466,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glColor4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11474,7 +11474,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11482,7 +11482,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord2fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11490,7 +11490,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, double[] arg5) {
 		org.lwjgl.opengl.GL33.glMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -11498,7 +11498,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, DoubleBuffer arg5) {
 		org.lwjgl.opengl.GL33.glMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -11506,7 +11506,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengl.GL33.glMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -11514,7 +11514,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, float[] arg5) {
 		org.lwjgl.opengl.GL33.glMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -11522,7 +11522,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glAttachShader(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glAttachShader(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glAttachShader(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11530,7 +11530,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetRenderbufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11538,7 +11538,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearIndex(float arg0) {
 		org.lwjgl.opengl.GL33.glClearIndex(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearIndex(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearIndex(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11546,7 +11546,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexub(byte arg0) {
 		org.lwjgl.opengl.GL33.glIndexub(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexub(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexub(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11554,7 +11554,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglEvalCoord1fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglEvalCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglEvalCoord1fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11563,7 +11563,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			double arg6, int arg7, int arg8, double[] arg9) {
 		org.lwjgl.opengl.GL33.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -11572,7 +11572,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			double arg6, int arg7, int arg8, DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL33.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -11580,7 +11580,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexP4ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glVertexP4ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexP4ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexP4ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11589,7 +11589,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, float[] arg9) {
 		org.lwjgl.opengl.GL33.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -11598,7 +11598,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengl.GL33.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -11606,7 +11606,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL33.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11614,7 +11614,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11622,7 +11622,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11630,7 +11630,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL33.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11638,7 +11638,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11646,7 +11646,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11654,7 +11654,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11662,7 +11662,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglPointParameteriv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglPointParameteriv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglPointParameteriv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11671,7 +11671,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg4) {
 		org.lwjgl.opengl.GL33.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11679,7 +11679,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, IntBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11688,7 +11688,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg5, int arg6) {
 		org.lwjgl.opengl.GL33.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -11697,7 +11697,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg5) {
 		org.lwjgl.opengl.GL33.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -11706,7 +11706,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg4) {
 		org.lwjgl.opengl.GL33.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11714,7 +11714,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetTexEnvfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11722,7 +11722,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBeginTransformFeedback(int arg0) {
 		org.lwjgl.opengl.GL33.glBeginTransformFeedback(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBeginTransformFeedback(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBeginTransformFeedback(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11730,7 +11730,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11738,7 +11738,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11746,7 +11746,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglEvalCoord1dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglEvalCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglEvalCoord1dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11754,7 +11754,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Nub(int arg0, byte arg1, byte arg2, byte arg3, byte arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Nub(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11762,7 +11762,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11770,7 +11770,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11778,7 +11778,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsQuery(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsQuery(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsQuery(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsQuery(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11787,7 +11787,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSelectBuffer(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glSelectBuffer(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSelectBuffer(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSelectBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11795,7 +11795,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSelectBuffer(int[] arg0) {
 		org.lwjgl.opengl.GL33.glSelectBuffer(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSelectBuffer(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSelectBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11803,7 +11803,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglNormal3sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglNormal3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglNormal3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglNormal3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11811,7 +11811,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Nsv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Nsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11819,7 +11819,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Nsv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Nsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11827,7 +11827,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11835,7 +11835,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11843,7 +11843,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglIndexsv(long arg0) {
 		org.lwjgl.opengl.GL33.nglIndexsv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglIndexsv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglIndexsv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11851,7 +11851,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetQueryObjectui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetQueryObjectui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectui(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11860,7 +11860,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos2dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11868,7 +11868,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4Nubv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4Nubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11876,7 +11876,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4ubv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4ubv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11884,7 +11884,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetShaderiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11892,7 +11892,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetVertexAttribIui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetVertexAttribIui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribIui(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11901,7 +11901,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform2uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11909,7 +11909,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11917,7 +11917,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11925,7 +11925,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightModeliv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glLightModeliv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightModeliv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11933,7 +11933,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightModeliv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glLightModeliv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightModeliv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11941,7 +11941,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord4iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11949,7 +11949,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetUniformLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11958,7 +11958,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetUniformLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11967,7 +11967,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glVertexP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexP3ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11975,7 +11975,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11983,7 +11983,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11991,7 +11991,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos2fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12000,7 +12000,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg5) {
 		org.lwjgl.opengl.GL33.nglMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -12008,7 +12008,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightModelfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glLightModelfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightModelfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12016,7 +12016,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLightModelfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glLightModelfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLightModelfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12024,7 +12024,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12032,7 +12032,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12040,7 +12040,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord4dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12048,7 +12048,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glUniform2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12056,7 +12056,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMultisamplefv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetMultisamplefv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12064,7 +12064,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetMultisamplefv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetMultisamplefv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12072,7 +12072,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glUniform2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12080,7 +12080,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, double[] arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12088,7 +12088,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, short[] arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12096,7 +12096,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12104,7 +12104,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, long[] arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12112,7 +12112,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12120,7 +12120,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12128,7 +12128,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12136,7 +12136,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12144,7 +12144,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12152,7 +12152,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12160,7 +12160,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBufferSubData(int arg0, long arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12168,7 +12168,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12176,7 +12176,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12184,7 +12184,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetQueryObjectiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12192,7 +12192,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiDrawElements(int arg0, long arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL33.nglMultiDrawElements(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -12200,7 +12200,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsEnabled(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsEnabled(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsEnabled(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12209,7 +12209,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP2uiv(int arg0, int arg1, boolean arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP2uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12217,7 +12217,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP2uiv(int arg0, int arg1, boolean arg2, int[] arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP2uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12225,7 +12225,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glUniform3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12233,7 +12233,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int nglGetFragDataLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL33.nglGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12242,7 +12242,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12250,7 +12250,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12258,7 +12258,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glUniform3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12266,7 +12266,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12274,7 +12274,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12282,7 +12282,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDisableVertexAttribArray(int arg0) {
 		org.lwjgl.opengl.GL33.glDisableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDisableVertexAttribArray(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12290,7 +12290,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribP1uiv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglVertexAttribP1uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12298,7 +12298,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12306,7 +12306,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12314,7 +12314,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12322,7 +12322,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex4iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12330,7 +12330,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord4fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord4fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord4fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12338,7 +12338,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindFragDataLocationIndexed(int arg0, int arg1, int arg2, CharSequence arg3) {
 		org.lwjgl.opengl.GL33.glBindFragDataLocationIndexed(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12346,7 +12346,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBindFragDataLocationIndexed(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glBindFragDataLocationIndexed(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12354,7 +12354,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12362,7 +12362,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12370,7 +12370,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP4ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP4ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12378,7 +12378,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12386,7 +12386,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetTexParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12394,7 +12394,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetBooleanv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBooleanv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12402,7 +12402,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEndQuery(int arg0) {
 		org.lwjgl.opengl.GL33.glEndQuery(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEndQuery(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEndQuery(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12410,7 +12410,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform1f(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glUniform1f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform1f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12418,7 +12418,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glGetBooleani(int arg0, int arg1) {
 		boolean ret = org.lwjgl.opengl.GL33.glGetBooleani(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBooleani(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBooleani(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12427,7 +12427,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDisablei(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glDisablei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDisablei(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDisablei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12436,7 +12436,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, int arg9) {
 		org.lwjgl.opengl.GL33.glBlitFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -12444,7 +12444,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform1i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glUniform1i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform1i(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12452,7 +12452,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord4sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord4sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12460,7 +12460,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetBufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12468,7 +12468,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12476,7 +12476,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12484,7 +12484,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglIndexiv(long arg0) {
 		org.lwjgl.opengl.GL33.nglIndexiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglIndexiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglIndexiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12492,7 +12492,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetSamplerParameterIui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetSamplerParameterIui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetSamplerParameterIui(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12501,7 +12501,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP2uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12509,7 +12509,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoordP2uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glMultiTexCoordP2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoordP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12517,7 +12517,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -12525,7 +12525,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPushAttrib(int arg0) {
 		org.lwjgl.opengl.GL33.glPushAttrib(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPushAttrib(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPushAttrib(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12533,7 +12533,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3bv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12541,7 +12541,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12549,7 +12549,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12557,7 +12557,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3bv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12565,7 +12565,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSamplerParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12573,7 +12573,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI3iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12581,7 +12581,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBeginConditionalRender(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glBeginConditionalRender(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBeginConditionalRender(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBeginConditionalRender(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12589,7 +12589,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform1uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glUniform1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12597,7 +12597,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform1uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glUniform1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12605,7 +12605,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenerateMipmap(int arg0) {
 		org.lwjgl.opengl.GL33.glGenerateMipmap(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenerateMipmap(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12613,7 +12613,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBlendEquation(int arg0) {
 		org.lwjgl.opengl.GL33.glBlendEquation(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBlendEquation(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12621,7 +12621,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribDivisor(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribDivisor(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribDivisor(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribDivisor(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12629,7 +12629,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglPixelMapuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglPixelMapuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12637,7 +12637,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glClearColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glClearColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12645,7 +12645,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12653,7 +12653,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSamplerParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12661,7 +12661,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord4sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12669,7 +12669,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glStencilFunc(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glStencilFunc(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12677,7 +12677,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glVertexAttribI2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI2i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12685,7 +12685,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiDrawArrays(int arg0, long arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL33.nglMultiDrawArrays(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12693,7 +12693,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12701,7 +12701,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12709,7 +12709,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteSync(long arg0) {
 		org.lwjgl.opengl.GL33.glDeleteSync(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteSync(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteSync(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12717,7 +12717,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12725,7 +12725,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12733,7 +12733,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12741,7 +12741,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos3iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12749,7 +12749,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12757,7 +12757,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12765,7 +12765,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12773,7 +12773,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12781,7 +12781,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorP4ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glColorP4ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorP4ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorP4ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12789,7 +12789,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12797,7 +12797,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12805,7 +12805,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribI3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12813,7 +12813,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetPointerv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetPointerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetPointerv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetPointerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12821,7 +12821,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long glGetPointer(int arg0) {
 		long ret = org.lwjgl.opengl.GL33.glGetPointer(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPointer(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPointer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12830,7 +12830,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib2dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib2dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12838,7 +12838,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib2dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib2dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12846,7 +12846,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRotated(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL33.glRotated(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRotated(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRotated(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12854,7 +12854,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glIndexubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL33.glIndexubv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIndexubv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIndexubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12862,7 +12862,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRotatef(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glRotatef(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRotatef(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRotatef(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12870,7 +12870,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix4x2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix4x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12878,7 +12878,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix4x2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix4x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12886,7 +12886,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteSamplers(int arg0) {
 		org.lwjgl.opengl.GL33.glDeleteSamplers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12894,7 +12894,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteSamplers(int[] arg0) {
 		org.lwjgl.opengl.GL33.glDeleteSamplers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12902,7 +12902,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteSamplers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glDeleteSamplers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12910,7 +12910,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiDrawArrays(int arg0, int[] arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glMultiDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12918,7 +12918,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiDrawArrays(int arg0, IntBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glMultiDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12926,7 +12926,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniformMatrix2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglUniformMatrix2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12934,7 +12934,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib2fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12942,7 +12942,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetAttribLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12951,7 +12951,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetAttribLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12960,7 +12960,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12968,7 +12968,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12976,7 +12976,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glCreateShader(int arg0) {
 		int ret = org.lwjgl.opengl.GL33.glCreateShader(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCreateShader(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12985,7 +12985,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglSamplerParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12993,7 +12993,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex2fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13001,7 +13001,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoordP1uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoordP1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoordP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoordP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13009,7 +13009,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL33.nglDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13017,7 +13017,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI1i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI1i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI1i(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13026,7 +13026,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -13034,7 +13034,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13042,7 +13042,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glWindowPos2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2i(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13050,7 +13050,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13058,7 +13058,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13066,7 +13066,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glWindowPos2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13074,7 +13074,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribP2ui(int arg0, int arg1, boolean arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttribP2ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribP2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13082,7 +13082,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL33.glWindowPos2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2d(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13090,7 +13090,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13098,7 +13098,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord3iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13106,7 +13106,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglRasterPos2iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglRasterPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglRasterPos2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13114,7 +13114,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib2dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib2dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13122,7 +13122,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glWindowPos3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13130,7 +13130,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetActiveAttrib_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL33.glGetActiveAttrib(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13140,7 +13140,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL33.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13150,7 +13150,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL33.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13159,7 +13159,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL33.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13167,7 +13167,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertex2dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglVertex2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertex2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertex2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13175,7 +13175,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glWindowPos3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13183,7 +13183,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glWindowPos3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13191,7 +13191,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glWindowPos3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13199,7 +13199,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13207,7 +13207,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13215,7 +13215,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public long glGetBufferPointer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL33.glGetBufferPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferPointer(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13224,7 +13224,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glQueryCounter(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glQueryCounter(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glQueryCounter(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glQueryCounter(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13232,7 +13232,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13240,7 +13240,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13248,7 +13248,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int nglClientWaitSync(long arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL33.nglClientWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13257,7 +13257,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL33.glWindowPos2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos2s(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13265,7 +13265,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPointSize(float arg0) {
 		org.lwjgl.opengl.GL33.glPointSize(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPointSize(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPointSize(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13273,7 +13273,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glShaderSource(int arg0, PointerBuffer arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13281,7 +13281,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glShaderSource(int arg0, CharSequence[] arg1) {
 		org.lwjgl.opengl.GL33.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glShaderSource(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13289,7 +13289,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glShaderSource(int arg0, PointerBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13297,7 +13297,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glShaderSource(int arg0, CharSequence arg1) {
 		org.lwjgl.opengl.GL33.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glShaderSource(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13305,7 +13305,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform4fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13313,7 +13313,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglNormal3bv(long arg0) {
 		org.lwjgl.opengl.GL33.nglNormal3bv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglNormal3bv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglNormal3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13322,7 +13322,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL33.nglTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -13330,7 +13330,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13338,7 +13338,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13347,7 +13347,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			boolean arg5) {
 		org.lwjgl.opengl.GL33.glTexImage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexImage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13355,7 +13355,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glVertex4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13363,7 +13363,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glVertex4sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13371,7 +13371,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13379,7 +13379,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4d(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13387,7 +13387,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribdv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13395,7 +13395,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribdv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13403,7 +13403,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetCompressedTexImage(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetCompressedTexImage(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13411,7 +13411,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetProgramiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13419,7 +13419,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglWindowPos2iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglWindowPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglWindowPos2iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13427,7 +13427,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4s(int arg0, short arg1, short arg2, short arg3, short arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4s(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13435,7 +13435,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13443,7 +13443,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexP3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13451,7 +13451,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glArrayElement(int arg0) {
 		org.lwjgl.opengl.GL33.glArrayElement(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glArrayElement(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glArrayElement(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13459,7 +13459,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4usv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4usv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13467,7 +13467,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib4usv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4usv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13475,7 +13475,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetVertexAttribi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetVertexAttribi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13484,7 +13484,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13492,7 +13492,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13500,7 +13500,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor3uiv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor3uiv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13508,7 +13508,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glBlendColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glBlendColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13516,7 +13516,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDrawPixels(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL33.nglDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13524,7 +13524,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniform4iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglUniform4iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13532,7 +13532,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetUniformBlockIndex(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13541,7 +13541,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetUniformBlockIndex(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13550,7 +13550,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetLightfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13558,7 +13558,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglBufferSubData(int arg0, long arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglBufferSubData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13566,7 +13566,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13574,7 +13574,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13582,7 +13582,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13590,7 +13590,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13598,7 +13598,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13606,7 +13606,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix3x4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix3x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13614,7 +13614,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniformMatrix3x4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glUniformMatrix3x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13622,7 +13622,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL33.nglMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13630,7 +13630,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL33.nglMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13639,7 +13639,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL33.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -13648,7 +13648,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengl.GL33.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -13656,7 +13656,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glUnmapBuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glUnmapBuffer(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUnmapBuffer(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUnmapBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13665,7 +13665,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetTexLevelParameterf(int arg0, int arg1, int arg2) {
 		float ret = org.lwjgl.opengl.GL33.glGetTexLevelParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexLevelParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13674,7 +13674,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglWindowPos2fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglWindowPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglWindowPos2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13682,7 +13682,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoordP4uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoordP4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoordP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoordP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13690,7 +13690,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetTexLevelParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL33.glGetTexLevelParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexLevelParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13699,7 +13699,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPointParameteri(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glPointParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPointParameteri(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPointParameteri(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13707,7 +13707,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPointParameterf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glPointParameterf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPointParameterf(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPointParameterf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13715,7 +13715,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL33.nglReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -13723,7 +13723,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoord3sv(long arg0) {
 		org.lwjgl.opengl.GL33.nglTexCoord3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoord3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13732,7 +13732,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			double arg6, int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL33.nglMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -13741,7 +13741,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL33.nglMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -13749,7 +13749,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13757,7 +13757,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3iv(int[] arg0) {
 		org.lwjgl.opengl.GL33.glColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13765,7 +13765,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetPixelMapuiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetPixelMapuiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13773,7 +13773,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glInitNames() {
 		org.lwjgl.opengl.GL33.glInitNames();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glInitNames()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glInitNames() !! ERROR: " + err);
 	}
 
@@ -13781,7 +13781,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13789,7 +13789,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoord4dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glTexCoord4dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoord4dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13797,7 +13797,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI2ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glVertexAttribI2ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13805,7 +13805,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPrimitiveRestartIndex(int arg0) {
 		org.lwjgl.opengl.GL33.glPrimitiveRestartIndex(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPrimitiveRestartIndex(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPrimitiveRestartIndex(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13813,7 +13813,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTranslatef(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glTranslatef(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTranslatef(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTranslatef(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13821,7 +13821,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPopMatrix() {
 		org.lwjgl.opengl.GL33.glPopMatrix();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPopMatrix()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPopMatrix() !! ERROR: " + err);
 	}
 
@@ -13829,7 +13829,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTranslated(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glTranslated(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTranslated(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTranslated(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13838,7 +13838,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg4) {
 		ByteBuffer ret = org.lwjgl.opengl.GL33.glMapBufferRange(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13847,7 +13847,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL33.glMapBufferRange(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13856,7 +13856,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsFramebuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsFramebuffer(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsFramebuffer(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13865,7 +13865,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glColor3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13873,7 +13873,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glColor3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13881,7 +13881,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glTexCoordP1ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glTexCoordP1ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glTexCoordP1ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glTexCoordP1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13889,7 +13889,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetLightiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13897,7 +13897,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13905,7 +13905,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3fv(float[] arg0) {
 		org.lwjgl.opengl.GL33.glColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13913,7 +13913,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glColor3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13922,7 +13922,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg6) {
 		org.lwjgl.opengl.GL33.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -13931,7 +13931,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL33.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13939,7 +13939,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetShaderSource(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13947,7 +13947,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetShaderSource(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13955,7 +13955,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetShaderSource_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL33.glGetShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13964,7 +13964,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public String glGetShaderSource_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL33.glGetShaderSource(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderSource_String(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13973,7 +13973,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3b(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL33.glColor3b(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13981,7 +13981,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glColor3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13989,7 +13989,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniformMatrix3x2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglUniformMatrix3x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13997,7 +13997,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14005,7 +14005,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetVertexAttribiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14013,7 +14013,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glStencilOpSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glStencilOpSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14021,7 +14021,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14029,7 +14029,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glRasterPos2sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glRasterPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glRasterPos2sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14037,7 +14037,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglUniformMatrix2x4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL33.nglUniformMatrix2x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14045,7 +14045,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL33.glColor4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14053,7 +14053,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glColor4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14061,7 +14061,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glColor4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14069,7 +14069,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjectiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14077,7 +14077,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjectiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14085,7 +14085,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetQueryObjectiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14094,7 +14094,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL33.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -14103,7 +14103,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, long arg7) {
 		org.lwjgl.opengl.GL33.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -14111,7 +14111,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorP4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL33.glColorP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorP4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14119,7 +14119,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorP4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL33.glColorP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorP4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14127,7 +14127,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4b(byte arg0, byte arg1, byte arg2, byte arg3) {
 		org.lwjgl.opengl.GL33.glColor4b(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4b(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4b(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14135,7 +14135,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCopyPixels(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL33.glCopyPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCopyPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCopyPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14143,7 +14143,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL33.glColor4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14151,7 +14151,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL33.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14159,7 +14159,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteBuffers(int arg0) {
 		org.lwjgl.opengl.GL33.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14167,7 +14167,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteBuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14175,7 +14175,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean nglAreTexturesResident(int arg0, long arg1, long arg2) {
 		boolean ret = org.lwjgl.opengl.GL33.nglAreTexturesResident(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglAreTexturesResident(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglAreTexturesResident(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14184,7 +14184,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glColor3ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14193,7 +14193,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, int arg7, int arg8) {
 		org.lwjgl.opengl.GL33.glCopyTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -14201,7 +14201,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glNormalP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glNormalP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glNormalP3ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glNormalP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14209,7 +14209,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttrib2sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttrib2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttrib2sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14217,7 +14217,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3ub(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL33.glColor3ub(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14225,7 +14225,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3us(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glColor3us(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14233,7 +14233,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL33.glVertex2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2d(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14241,7 +14241,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glVertex2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14249,7 +14249,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglColor3usv(long arg0) {
 		org.lwjgl.opengl.GL33.nglColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglColor3usv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14257,7 +14257,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glVertex2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2i(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14265,7 +14265,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribI4ubv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttribI4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4ubv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14273,7 +14273,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelStoref(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glPixelStoref(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelStoref(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelStoref(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14281,7 +14281,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglNormal3iv(long arg0) {
 		org.lwjgl.opengl.GL33.nglNormal3iv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglNormal3iv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglNormal3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14289,7 +14289,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglPixelMapfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglPixelMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14297,7 +14297,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glStencilFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glStencilFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14305,7 +14305,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetQueryObjectuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14313,7 +14313,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL33.glVertex2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex2s(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14321,7 +14321,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelStorei(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glPixelStorei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelStorei(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14329,7 +14329,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetInteger64i_v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL33.glGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14337,7 +14337,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetInteger64i_v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL33.glGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14345,7 +14345,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglEvalCoord2dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglEvalCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglEvalCoord2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14353,7 +14353,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glVertex3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14361,7 +14361,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glVertex3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14369,7 +14369,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glVertex3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14377,7 +14377,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14385,7 +14385,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14393,7 +14393,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglFeedbackBuffer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglFeedbackBuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglFeedbackBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglFeedbackBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14401,7 +14401,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glCopyTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL33.glCopyTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCopyTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -14409,7 +14409,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glVertex3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex3s(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14417,7 +14417,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglWindowPos2dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglWindowPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglWindowPos2dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14425,7 +14425,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3sv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14433,7 +14433,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColor3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColor3sv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14441,7 +14441,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPixelMapfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.glGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPixelMapfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14449,7 +14449,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPixelMapfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPixelMapfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14457,7 +14457,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGetPixelMapfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetPixelMapfv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14465,7 +14465,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL33.glVertex4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14473,7 +14473,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glVertex4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14481,7 +14481,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glVertex4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14489,7 +14489,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glColorMaterial(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glColorMaterial(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glColorMaterial(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glColorMaterial(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14497,7 +14497,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglVertexAttribI3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglVertexAttribI3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribI3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14506,7 +14506,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg6, int arg7) {
 		org.lwjgl.opengl.GL33.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -14514,7 +14514,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGenSamplers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglGenSamplers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGenSamplers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGenSamplers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14522,7 +14522,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertex4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL33.glVertex4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertex4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertex4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14530,7 +14530,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3ub(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3ub(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14538,7 +14538,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glUniform2ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glUniform2ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glUniform2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glUniform2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14546,7 +14546,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14554,7 +14554,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetQueryObjecti(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetQueryObjecti(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetQueryObjecti(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14563,7 +14563,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetQueryObjecti64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetQueryObjecti64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14571,7 +14571,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3us(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3us(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14579,7 +14579,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib1d(int arg0, double arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib1d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib1d(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14587,7 +14587,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglNormal3fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglNormal3fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglNormal3fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglNormal3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14595,7 +14595,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib1f(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib1f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib1f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14603,7 +14603,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord1dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord1dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14611,7 +14611,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib1s(int arg0, short arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib1s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib1s(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14619,7 +14619,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEndConditionalRender() {
 		org.lwjgl.opengl.GL33.glEndConditionalRender();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEndConditionalRender()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEndConditionalRender() !! ERROR: " + err);
 	}
 
@@ -14627,7 +14627,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglBufferData(int arg0, long arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL33.nglBufferData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14635,7 +14635,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetSynciv(long arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL33.nglGetSynciv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14643,7 +14643,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDeleteLists(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glDeleteLists(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDeleteLists(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDeleteLists(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14651,7 +14651,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexEnvfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14659,7 +14659,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenSamplers(int[] arg0) {
 		org.lwjgl.opengl.GL33.glGenSamplers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14667,7 +14667,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glGenSamplers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL33.glGenSamplers(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14675,7 +14675,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGenSamplers() {
 		int ret = org.lwjgl.opengl.GL33.glGenSamplers();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGenSamplers() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGenSamplers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14684,7 +14684,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglFogCoordPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14692,7 +14692,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14700,7 +14700,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glWindowPos3dv(double[] arg0) {
 		org.lwjgl.opengl.GL33.glWindowPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glWindowPos3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14708,7 +14708,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3usv(short[] arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3usv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14716,7 +14716,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColor3usv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL33.glSecondaryColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColor3usv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14724,7 +14724,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord1d(double arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord1d(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord1d(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1d(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14732,7 +14732,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetBufferParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetBufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14741,7 +14741,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord1f(float arg0) {
 		org.lwjgl.opengl.GL33.glEvalCoord1f(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord1f(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1f(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14749,7 +14749,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL33.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14757,7 +14757,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL33.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14765,7 +14765,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL33.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14773,7 +14773,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL33.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14781,7 +14781,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL33.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14789,7 +14789,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttrib3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14797,7 +14797,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib3d(int arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttrib3d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14805,7 +14805,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelTransferf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glPixelTransferf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelTransferf(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelTransferf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14813,7 +14813,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glPixelTransferi(int arg0, int arg1) {
 		org.lwjgl.opengl.GL33.glPixelTransferi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glPixelTransferi(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glPixelTransferi(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14821,7 +14821,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoordPointer(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL33.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14829,7 +14829,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoordPointer(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL33.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14837,7 +14837,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoordPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14845,7 +14845,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFogCoordPointer(int arg0, int arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL33.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14853,7 +14853,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14861,7 +14861,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14869,7 +14869,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglNormal3dv(long arg0) {
 		org.lwjgl.opengl.GL33.nglNormal3dv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglNormal3dv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglNormal3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14877,7 +14877,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexEnviv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14886,7 +14886,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			long arg7) {
 		org.lwjgl.opengl.GL33.nglTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -14894,7 +14894,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglGetSamplerParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL33.nglGetSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglGetSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14902,7 +14902,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglMultiTexCoord1fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglMultiTexCoord1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglMultiTexCoord1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14910,7 +14910,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib3s(int arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL33.glVertexAttrib3s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14918,7 +14918,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglDeleteQueries(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglDeleteQueries(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglDeleteQueries(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglDeleteQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14926,7 +14926,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultTransposeMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL33.glMultTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultTransposeMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14934,7 +14934,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultTransposeMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL33.glMultTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultTransposeMatrixf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14942,7 +14942,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL33.glEvalCoord2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord2d(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14950,7 +14950,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glEvalCoord2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL33.glEvalCoord2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glEvalCoord2f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14958,7 +14958,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglTexCoordP2uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL33.nglTexCoordP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexCoordP2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexCoordP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14966,7 +14966,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14974,7 +14974,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14982,7 +14982,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14990,7 +14990,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL33.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14998,7 +14998,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL33.glVertexAttrib2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15006,7 +15006,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public float glGetTexParameterf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL33.glGetTexParameterf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15015,7 +15015,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib2d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL33.glVertexAttrib2d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib2d(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15023,7 +15023,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public int glGetTexParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL33.glGetTexParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15032,7 +15032,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultTransposeMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL33.glMultTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultTransposeMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15040,7 +15040,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultTransposeMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL33.glMultTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultTransposeMatrixd(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15048,7 +15048,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public boolean glIsSync(long arg0) {
 		boolean ret = org.lwjgl.opengl.GL33.glIsSync(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glIsSync(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15058,7 +15058,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 			int arg7, long arg8) {
 		org.lwjgl.opengl.GL33.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -15066,7 +15066,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFinish() {
 		org.lwjgl.opengl.GL33.glFinish();
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFinish()" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFinish() !! ERROR: " + err);
 	}
 
@@ -15074,7 +15074,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib2sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib2sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15082,7 +15082,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib2sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL33.glVertexAttrib2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib2sv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15090,7 +15090,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glFramebufferRenderbuffer(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL33.glFramebufferRenderbuffer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15098,7 +15098,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glVertexAttrib2s(int arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL33.glVertexAttrib2s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib2s(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15106,7 +15106,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15114,7 +15114,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glMultiTexCoord1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL33.glMultiTexCoord1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15122,7 +15122,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void nglEvalCoord2fv(long arg0) {
 		org.lwjgl.opengl.GL33.nglEvalCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "nglEvalCoord2fv(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15130,7 +15130,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glActiveTexture(int arg0) {
 		org.lwjgl.opengl.GL33.glActiveTexture(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glActiveTexture(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15138,7 +15138,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glDisableClientState(int arg0) {
 		org.lwjgl.opengl.GL33.glDisableClientState(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glDisableClientState(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glDisableClientState(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15146,7 +15146,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	public void glLinkProgram(int arg0) {
 		org.lwjgl.opengl.GL33.glLinkProgram(arg0);
 		int err = org.lwjgl.opengl.GL33.glGetError();
-		LOGGER.log(Level.INFO, "glLinkProgram(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		GL11.glFlush();
 		if (err != GL33.GL_NO_ERROR) throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 

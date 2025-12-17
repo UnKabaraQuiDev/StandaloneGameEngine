@@ -1,16 +1,17 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper.base;
 
+import java.lang.CharSequence;
+import java.lang.Override;
+import java.lang.String;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
-
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.opengles.GLES20;
-
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
+import org.lwjgl.PointerBuffer;
+import org.lwjgl.opengles.GLES20;
 
 public class GL_W_GLES20 implements GL_W_Call {
 	public void init() {
@@ -419,12 +420,14 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
+	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
+			IntBuffer arg4) {
 		return org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -535,8 +538,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, long arg7) {
 		org.lwjgl.opengles.GLES20.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -651,14 +654,14 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ByteBuffer arg7) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -758,7 +761,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
+	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
+			long arg6) {
 		org.lwjgl.opengles.GLES20.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -808,50 +812,50 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			short[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, short[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			ShortBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			IntBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			float[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, float[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -911,8 +915,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -947,22 +951,26 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			FloatBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			short[] arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			float[] arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -977,12 +985,14 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			IntBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			ShortBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -1037,50 +1047,50 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			float[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, float[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			int[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, int[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			short[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, short[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			ByteBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			ShortBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			IntBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			FloatBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -1195,27 +1205,32 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			FloatBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			long arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			IntBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			ShortBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -1225,8 +1240,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 
@@ -1411,7 +1426,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7) {
 		org.lwjgl.opengles.GLES20.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -1506,7 +1522,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
+	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
+			long arg5) {
 		org.lwjgl.opengles.GLES20.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -1751,7 +1768,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
+	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
+			long arg6) {
 		org.lwjgl.opengles.GLES20.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -1761,17 +1779,20 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
+	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
+			IntBuffer arg4) {
 		return org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
+			ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -1891,13 +1912,14 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, long arg7) {
 		org.lwjgl.opengles.GLES20.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -1927,7 +1949,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+			int arg6, int arg7) {
 		org.lwjgl.opengles.GLES20.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -1972,8 +1995,8 @@ public class GL_W_GLES20 implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7,
-			long arg8) {
+	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
+			int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 	}
 

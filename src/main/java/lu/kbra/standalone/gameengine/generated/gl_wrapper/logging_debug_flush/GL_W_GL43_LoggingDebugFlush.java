@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.generated.gl_wrapper.debug;
+package lu.kbra.standalone.gameengine.generated.gl_wrapper.logging_debug_flush;
 
 import java.lang.CharSequence;
 import java.lang.Override;
@@ -13,11 +13,16 @@ import java.nio.ShortBuffer;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
+import lu.pcy113.pclib.logger.PCLogger;
 import org.lwjgl.PointerBuffer;
+import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL43;
 import org.lwjgl.opengl.GLDebugMessageCallbackI;
 
-public class GL_W_GL43_Debug implements GL_W_Call {
+public class GL_W_GL43_LoggingDebugFlush implements GL_W_Call {
+	private static PCLogger LOGGER = GlobalLogger.getLogger();
+
 	public void init() {
 		GL_W.WRAPPER = this;
 		GL_W.GL_NUM_SHADING_LANGUAGE_VERSIONS = GL43.GL_NUM_SHADING_LANGUAGE_VERSIONS;
@@ -1758,6 +1763,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteRenderbuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDeleteRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1765,6 +1771,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiDrawElementsIndirect(int arg0, int arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.nglMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -1772,6 +1779,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglLightiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1779,6 +1787,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos3dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1786,6 +1795,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexP2ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glVertexP2ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexP2ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1793,6 +1803,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1800,6 +1811,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1807,6 +1819,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoorddv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glFogCoorddv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoorddv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1814,6 +1827,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoorddv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glFogCoorddv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoorddv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1821,6 +1835,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI1uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1828,6 +1843,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindRenderbuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBindRenderbuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1835,6 +1851,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUseProgramStages(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glUseProgramStages(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUseProgramStages(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1842,6 +1859,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos3fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1849,6 +1867,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform4uiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform4uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -1856,6 +1875,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetActiveUniformName(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetActiveUniformName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -1863,6 +1883,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglClipPlane(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1870,6 +1891,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribL1dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribL1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribL1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1877,6 +1899,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord1dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1884,6 +1907,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPopAttrib() {
 		org.lwjgl.opengl.GL43.glPopAttrib();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPopAttrib() !! ERROR: " + err);
 	}
 
@@ -1891,6 +1915,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI4sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1898,6 +1923,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glAccum(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glAccum(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glAccum(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1905,6 +1931,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glShadeModel(int arg0) {
 		org.lwjgl.opengl.GL43.glShadeModel(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glShadeModel(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1912,6 +1939,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetMultisamplef(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL43.glGetMultisamplef(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMultisamplef(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1920,6 +1948,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexP4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1927,6 +1956,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetTexParameterIi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetTexParameterIi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1935,6 +1965,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglLightfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -1942,6 +1973,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetRenderbufferParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetRenderbufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1950,6 +1982,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetStringi(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL43.glGetStringi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -1958,6 +1991,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1965,6 +1999,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1972,6 +2007,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPolygonStipple(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGetPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1979,6 +2015,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL43.glGetPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -1986,6 +2023,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoordP1uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglTexCoordP1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoordP1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -1993,6 +2031,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglFogCoordfv(long arg0) {
 		org.lwjgl.opengl.GL43.nglFogCoordfv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglFogCoordfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2000,6 +2039,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetTexEnvi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetTexEnvi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2008,6 +2048,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2015,6 +2056,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2022,6 +2064,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetTexEnvf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL43.glGetTexEnvf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2030,6 +2073,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenVertexArrays(int[] arg0) {
 		org.lwjgl.opengl.GL43.glGenVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2037,6 +2081,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenVertexArrays() {
 		int ret = org.lwjgl.opengl.GL43.glGenVertexArrays();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2045,6 +2090,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenVertexArrays(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGenVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2052,6 +2098,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglNormalPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2059,6 +2106,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadTransposeMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL43.glLoadTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2066,6 +2114,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadTransposeMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glLoadTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2073,6 +2122,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetProgramBinary(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetProgramBinary(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -2080,6 +2130,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2087,6 +2138,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadTransposeMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glLoadTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2094,6 +2146,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadTransposeMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL43.glLoadTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2101,6 +2154,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenFramebuffers(int[] arg0) {
 		org.lwjgl.opengl.GL43.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2108,6 +2162,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenFramebuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2115,6 +2170,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenFramebuffers() {
 		int ret = org.lwjgl.opengl.GL43.glGenFramebuffers();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2123,6 +2179,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2130,6 +2187,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2137,6 +2195,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2144,6 +2203,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2151,6 +2211,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2158,6 +2219,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2165,6 +2227,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2172,6 +2235,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, short[] arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2179,6 +2243,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2186,6 +2251,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2193,6 +2259,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2200,6 +2267,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2207,6 +2275,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2214,6 +2283,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInterleavedArrays(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2222,6 +2292,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg5) {
 		org.lwjgl.opengl.GL43.glGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -2230,6 +2301,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int[] arg5) {
 		org.lwjgl.opengl.GL43.glGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -2237,6 +2309,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGenProgramPipelines(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGenProgramPipelines(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGenProgramPipelines(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2244,6 +2317,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMatrixMode(int arg0) {
 		org.lwjgl.opengl.GL43.glMatrixMode(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMatrixMode(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2251,6 +2325,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClientActiveTexture(int arg0) {
 		org.lwjgl.opengl.GL43.glClientActiveTexture(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClientActiveTexture(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2258,6 +2333,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform1uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2265,6 +2341,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetActiveUniformsi(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetActiveUniformsi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsi(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2273,6 +2350,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glGetVertexAttribPointer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL43.glGetVertexAttribPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2281,6 +2359,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetProgramResourceIndex(int arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL43.nglGetProgramResourceIndex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramResourceIndex(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2289,6 +2368,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexEnviv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2296,6 +2376,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexEnviv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2303,6 +2384,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteVertexArrays(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2310,6 +2392,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteVertexArrays(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2317,6 +2400,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteVertexArrays(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2324,6 +2408,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformSubroutineuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformSubroutineuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformSubroutineuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2331,6 +2416,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformSubroutineuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformSubroutineuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformSubroutineuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2338,6 +2424,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2345,6 +2432,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2352,6 +2440,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glHint(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glHint(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2359,6 +2448,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoordfv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glFogCoordfv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoordfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2366,6 +2456,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoordfv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glFogCoordfv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoordfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2373,6 +2464,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteFramebuffers(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2380,6 +2472,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteFramebuffers(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2387,6 +2480,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteFramebuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2394,6 +2488,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetAttachedShaders(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetAttachedShaders(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2401,6 +2496,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2408,6 +2504,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2415,6 +2512,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2422,6 +2520,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2429,6 +2528,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglScissorIndexedv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglScissorIndexedv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglScissorIndexedv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2436,6 +2536,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetShaderiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2443,6 +2544,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetShaderiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2450,6 +2552,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDebugMessageCallback(long arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDebugMessageCallback(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDebugMessageCallback(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2457,6 +2560,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgrami(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgrami(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2465,6 +2569,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindFragDataLocation(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glBindFragDataLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2472,6 +2577,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindFragDataLocation(int arg0, int arg1, CharSequence arg2) {
 		org.lwjgl.opengl.GL43.glBindFragDataLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2479,6 +2585,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor4usv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor4usv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor4usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2486,6 +2593,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetSamplerParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2494,6 +2602,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2503,6 +2612,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL43.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -2511,6 +2621,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL43.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -2518,6 +2629,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveUniform_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveUniform(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2526,6 +2638,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2533,6 +2646,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2540,6 +2654,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorMask(boolean arg0, boolean arg1, boolean arg2, boolean arg3) {
 		org.lwjgl.opengl.GL43.glColorMask(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2547,6 +2662,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawElementsIndirect(int arg0, int arg1, IntBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -2554,6 +2670,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawElementsIndirect(int arg0, int arg1, long arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -2561,6 +2678,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawElementsIndirect(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -2568,6 +2686,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawElementsIndirect(int arg0, int arg1, int[] arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glMultiDrawElementsIndirect(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -2575,6 +2694,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP3ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP3ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2582,6 +2702,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexEnviv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2589,6 +2710,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexEnviv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2596,6 +2718,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetCompressedTexImage(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glGetCompressedTexImage(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2603,6 +2726,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetCompressedTexImage(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetCompressedTexImage(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2610,6 +2734,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetObjectPtrLabel(long arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetObjectPtrLabel(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetObjectPtrLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2617,6 +2742,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetObjectPtrLabel_String(long arg0) {
 		String ret = org.lwjgl.opengl.GL43.glGetObjectPtrLabel(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetObjectPtrLabel_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2625,6 +2751,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetObjectPtrLabel_String(long arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL43.glGetObjectPtrLabel(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetObjectPtrLabel_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2633,6 +2760,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetObjectPtrLabel(long arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetObjectPtrLabel(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetObjectPtrLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2640,6 +2768,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2647,6 +2776,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2654,6 +2784,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix3dv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -2661,6 +2792,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2668,6 +2800,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2675,6 +2808,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2682,6 +2816,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2689,6 +2824,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindVertexArray(int arg0) {
 		org.lwjgl.opengl.GL43.glBindVertexArray(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindVertexArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2696,6 +2832,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBeginQuery(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBeginQuery(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBeginQuery(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2703,6 +2840,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetFloati_v(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetFloati_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFloati_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2710,6 +2848,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetFloati_v(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetFloati_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFloati_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2717,6 +2856,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex3dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2724,6 +2864,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindTexture(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBindTexture(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2731,6 +2872,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2738,6 +2880,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2745,6 +2888,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPolygonOffset(float arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glPolygonOffset(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2752,6 +2896,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2759,6 +2904,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2766,6 +2912,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexMask(int arg0) {
 		org.lwjgl.opengl.GL43.glIndexMask(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2773,6 +2920,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsEnabledi(int arg0, int arg1) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsEnabledi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsEnabledi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2781,6 +2929,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord3sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2789,6 +2938,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg4, IntBuffer arg5, ByteBuffer arg6) {
 		int ret = org.lwjgl.opengl.GL43.glGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2798,6 +2948,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int[] arg5, ByteBuffer arg6) {
 		int ret = org.lwjgl.opengl.GL43.glGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -2806,6 +2957,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2813,6 +2965,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2820,6 +2973,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib1dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2827,6 +2981,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib1dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2835,6 +2990,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6) {
 		org.lwjgl.opengl.GL43.glBindImageTexture(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindImageTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -2842,6 +2998,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor4sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2849,6 +3006,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL43.nglPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2856,6 +3014,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformSubroutinesuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniformSubroutinesuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformSubroutinesuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2863,6 +3022,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWaitSync(long arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2870,6 +3030,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2877,6 +3038,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2884,6 +3046,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEdgeFlagPointer(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.glEdgeFlagPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2891,6 +3054,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEdgeFlagPointer(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glEdgeFlagPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2898,6 +3062,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glProgramUniform3ui(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -2905,6 +3070,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2912,6 +3078,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2919,6 +3086,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexEnvfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2926,6 +3094,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexEnvfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2933,6 +3102,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3dv(int arg0, boolean arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2940,6 +3110,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3dv(int arg0, boolean arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -2948,6 +3119,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7) {
 		org.lwjgl.opengl.GL43.glTextureView(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTextureView(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -2955,6 +3127,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2962,6 +3135,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2969,6 +3143,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGenQueries(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGenQueries(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGenQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -2976,6 +3151,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2983,6 +3159,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2990,6 +3167,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex3iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -2997,6 +3175,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP1ui(int arg0, int arg1, boolean arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP1ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP1ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3004,6 +3183,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord1fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3011,6 +3191,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos3iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3018,6 +3199,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetPixelMapfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3025,6 +3207,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColorP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glSecondaryColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3032,6 +3215,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColorP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glSecondaryColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3039,6 +3223,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexStorage1D(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glTexStorage1D(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexStorage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3046,6 +3231,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib1dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3053,6 +3239,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawArraysIndirect(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glDrawArraysIndirect(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawArraysIndirect(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3060,6 +3247,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawArraysIndirect(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glDrawArraysIndirect(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawArraysIndirect(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3067,6 +3255,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawArraysIndirect(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glDrawArraysIndirect(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawArraysIndirect(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3074,6 +3263,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawArraysIndirect(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.glDrawArraysIndirect(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawArraysIndirect(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3081,6 +3271,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI4usv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3088,6 +3279,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPointerv(int arg0, PointerBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetPointerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPointerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3095,6 +3287,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetUniformLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL43.nglGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3103,6 +3296,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEndTransformFeedback() {
 		org.lwjgl.opengl.GL43.glEndTransformFeedback();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEndTransformFeedback() !! ERROR: " + err);
 	}
 
@@ -3110,6 +3304,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribP4uiv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglVertexAttribP4uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3117,6 +3312,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glActiveShaderProgram(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glActiveShaderProgram(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glActiveShaderProgram(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3124,6 +3320,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3131,6 +3328,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3138,6 +3336,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexStorage2D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glTexStorage2D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexStorage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3145,6 +3344,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetUniformIndices(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetUniformIndices(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3153,6 +3353,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformIndices(int arg0, PointerBuffer arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3160,6 +3361,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformIndices(int arg0, PointerBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3167,6 +3369,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformIndices(int arg0, CharSequence[] arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3174,6 +3377,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long nglGetStringi(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL43.nglGetStringi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3182,6 +3386,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetActiveSubroutineUniformiv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveSubroutineUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3189,6 +3394,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsTransformFeedback(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsTransformFeedback(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsTransformFeedback(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3197,6 +3403,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexGeniv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3204,6 +3411,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoordP2uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoordP2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoordP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3211,6 +3419,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord1iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord1iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3218,6 +3427,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3225,6 +3435,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL43.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -3232,6 +3443,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3239,6 +3451,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3246,6 +3459,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL43.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3253,6 +3467,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3260,6 +3475,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawTransformFeedbackStreamInstanced(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawTransformFeedbackStreamInstanced(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawTransformFeedbackStreamInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3267,6 +3483,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribL4d(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3274,6 +3491,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexStorage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL43.glTexStorage3D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexStorage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -3281,6 +3499,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3288,6 +3507,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3295,6 +3515,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenQueries(int[] arg0) {
 		org.lwjgl.opengl.GL43.glGenQueries(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3302,6 +3523,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenQueries(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGenQueries(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3309,6 +3531,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenQueries() {
 		int ret = org.lwjgl.opengl.GL43.glGenQueries();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenQueries() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3317,6 +3540,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexP2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3324,6 +3548,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexP2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3331,6 +3556,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFlush() {
 		org.lwjgl.opengl.GL43.glFlush();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFlush() !! ERROR: " + err);
 	}
 
@@ -3339,6 +3565,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetActiveSubroutineUniformiv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3346,6 +3573,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL43.glGetActiveSubroutineUniformiv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3353,6 +3581,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetProgramInterfaceiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetProgramInterfaceiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramInterfaceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3360,6 +3589,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2x4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3367,6 +3597,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2x4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3374,6 +3605,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex3fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3381,6 +3613,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3388,6 +3621,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3396,6 +3630,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg4) {
 		org.lwjgl.opengl.GL43.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3404,6 +3639,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int[] arg4) {
 		org.lwjgl.opengl.GL43.glMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -3411,6 +3647,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3x2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3418,6 +3655,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3x2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3425,6 +3663,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglPrioritizeTextures(int arg0, long arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglPrioritizeTextures(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglPrioritizeTextures(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3432,6 +3671,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInvalidateFramebuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glInvalidateFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3439,6 +3679,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInvalidateFramebuffer(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glInvalidateFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3446,6 +3687,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInvalidateFramebuffer(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glInvalidateFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3453,6 +3695,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP4ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP4ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP4ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3460,6 +3703,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMaterialfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3467,6 +3711,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMaterialfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3474,6 +3719,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveUniformBlockiv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3481,6 +3727,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveUniformBlockiv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3488,6 +3735,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteTransformFeedbacks(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDeleteTransformFeedbacks(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteTransformFeedbacks(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3496,6 +3744,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			double arg5) {
 		org.lwjgl.opengl.GL43.glFrustum(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFrustum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -3503,6 +3752,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2fv(int arg0, int arg1, boolean arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3510,6 +3760,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2fv(int arg0, int arg1, boolean arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3517,6 +3768,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos2sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3524,6 +3776,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSamplerParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3531,6 +3784,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long nglMapBuffer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL43.nglMapBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMapBuffer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3539,6 +3793,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor4iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3547,6 +3802,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg5) {
 		org.lwjgl.opengl.GL43.nglDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -3554,6 +3810,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix2x3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix2x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3561,6 +3818,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexGenfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3568,6 +3826,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexLevelParameterfv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3575,6 +3834,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMapdv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetMapdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3582,6 +3842,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMapdv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glGetMapdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3589,6 +3850,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetMultisamplefv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetMultisamplefv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3596,6 +3858,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor4uiv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor4uiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor4uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3603,6 +3866,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameterf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glTexParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3610,6 +3874,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Nbv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Nbv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3617,6 +3882,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoordPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3624,6 +3890,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsBuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsBuffer(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3632,6 +3899,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetUniformuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3639,6 +3907,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPrioritizeTextures(int[] arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glPrioritizeTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPrioritizeTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3646,6 +3915,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPrioritizeTextures(IntBuffer arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glPrioritizeTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPrioritizeTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3653,6 +3923,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL2dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribL2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3660,6 +3931,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL2dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribL2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3667,6 +3939,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex2iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3674,6 +3947,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMinSampleShading(float arg0) {
 		org.lwjgl.opengl.GL43.glMinSampleShading(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMinSampleShading(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3681,6 +3955,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI4bv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3688,6 +3963,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2dv(int arg0, int arg1, boolean arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3695,6 +3971,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2dv(int arg0, int arg1, boolean arg2, double[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -3702,6 +3979,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib1fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3709,6 +3987,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3716,6 +3995,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3723,6 +4003,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glValidateProgram(int arg0) {
 		org.lwjgl.opengl.GL43.glValidateProgram(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3730,6 +4011,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMapfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3737,6 +4019,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMapfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3744,6 +4027,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexGendv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3751,6 +4035,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glLoadMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3758,6 +4043,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL43.glLoadMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3765,6 +4051,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL43.glLoadMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3772,6 +4059,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glLoadMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -3779,6 +4067,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI4iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3786,6 +4075,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglViewportArrayv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglViewportArrayv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglViewportArrayv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3793,6 +4083,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform1dv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform1dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform1dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3800,6 +4091,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDepthRange(double arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glDepthRange(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDepthRange(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3807,6 +4099,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGenTextures(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGenTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3814,6 +4107,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Nusv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Nusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3821,6 +4115,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Nusv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Nusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3828,6 +4123,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramParameteri(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glProgramParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3835,6 +4131,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glUniform1ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3842,6 +4139,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glColorP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3849,6 +4147,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1, ByteBuffer arg2) {
 		ByteBuffer ret = org.lwjgl.opengl.GL43.glMapBuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3857,6 +4156,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1) {
 		ByteBuffer ret = org.lwjgl.opengl.GL43.glMapBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3865,6 +4165,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public ByteBuffer glMapBuffer_ByteBuffer(int arg0, int arg1, long arg2, ByteBuffer arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL43.glMapBuffer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3873,6 +4174,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP3uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3880,6 +4182,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP3uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3887,6 +4190,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3894,6 +4198,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3901,6 +4206,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3908,6 +4214,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform1fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform1fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3915,6 +4222,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameteri(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTexParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3922,6 +4230,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMapiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetMapiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3929,6 +4238,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMapiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetMapiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3936,6 +4246,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetVertexAttribIi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetVertexAttribIi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3944,6 +4255,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public double glGetDoublei(int arg0, int arg1) {
 		double ret = org.lwjgl.opengl.GL43.glGetDoublei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetDoublei(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3952,6 +4264,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord4dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3959,6 +4272,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetQueryi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetQueryi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -3967,6 +4281,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindBufferBase(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBindBufferBase(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindBufferBase(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -3974,6 +4289,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetDoublev(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glGetDoublev(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3981,6 +4297,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetDoublev(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetDoublev(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3988,6 +4305,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -3995,6 +4313,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4002,6 +4321,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Niv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Niv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4009,6 +4329,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Niv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Niv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4016,6 +4337,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMaterialiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4023,6 +4345,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMaterialiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4030,6 +4353,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix2x3dv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix2x3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4037,6 +4361,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glListBase(int arg0) {
 		org.lwjgl.opengl.GL43.glListBase(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glListBase(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4044,6 +4369,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglScissorArrayv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglScissorArrayv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglScissorArrayv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4051,6 +4377,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glCreateProgram() {
 		int ret = org.lwjgl.opengl.GL43.glCreateProgram();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4059,6 +4386,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor4ubv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor4ubv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor4ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4066,6 +4394,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferPointerv(int arg0, int arg1, PointerBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4073,6 +4402,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFeedbackBuffer(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glFeedbackBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFeedbackBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4080,6 +4410,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFeedbackBuffer(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glFeedbackBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFeedbackBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4087,6 +4418,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3fv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4094,6 +4426,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3fv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4101,6 +4434,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix2x4dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix2x4dv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix2x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4108,6 +4442,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCullFace(int arg0) {
 		org.lwjgl.opengl.GL43.glCullFace(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4115,6 +4450,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL43.glMultMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4122,6 +4458,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glMultMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4129,6 +4466,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix4x3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix4x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4137,6 +4475,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, long arg7) {
 		org.lwjgl.opengl.GL43.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -4144,6 +4483,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetBooleani_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetBooleani_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4151,6 +4491,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4158,6 +4499,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4165,6 +4507,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord4fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4172,6 +4515,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindBufferRange(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL43.glBindBufferRange(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4179,6 +4523,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform1iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform1iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4186,6 +4531,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glMultMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4193,6 +4539,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL43.glMultMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4200,6 +4547,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetDoublev(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetDoublev(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetDoublev(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4207,6 +4555,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformSubroutinesui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glUniformSubroutinesui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformSubroutinesui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4214,6 +4563,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDepthRangef(float arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glDepthRangef(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDepthRangef(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4221,6 +4571,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDisable(int arg0) {
 		org.lwjgl.opengl.GL43.glDisable(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4228,6 +4579,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramBinary(int arg0, int arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL43.nglProgramBinary(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4235,6 +4587,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglLightModelfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglLightModelfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4243,6 +4596,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL43.nglCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -4250,6 +4604,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetActiveAtomicCounterBufferi(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetActiveAtomicCounterBufferi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveAtomicCounterBufferi(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4258,6 +4613,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor4bv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor4bv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor4bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4265,6 +4621,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glLightf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4272,6 +4629,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex2sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4279,6 +4637,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLighti(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glLighti(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLighti(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4286,6 +4645,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetFramebufferParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetFramebufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4294,6 +4654,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix3x2dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix3x2dv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix3x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4301,6 +4662,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4308,6 +4670,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4315,6 +4678,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix2x4fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix2x4fv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4323,6 +4687,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg5, int arg6) {
 		org.lwjgl.opengl.GL43.nglDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -4330,6 +4695,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglFogCoorddv(long arg0) {
 		org.lwjgl.opengl.GL43.nglFogCoorddv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglFogCoorddv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4337,6 +4703,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgramInterfacei(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgramInterfacei(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramInterfacei(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4345,6 +4712,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL43.glUniform4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4352,6 +4720,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGenFramebuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGenFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4359,6 +4728,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4366,6 +4736,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4373,6 +4744,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glUniform4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4380,6 +4752,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferParameteri64v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4387,6 +4760,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferParameteri64v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4394,6 +4768,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetFragDataIndex(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetFragDataIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFragDataIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4402,6 +4777,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetFragDataIndex(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetFragDataIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFragDataIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4410,6 +4786,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4417,6 +4794,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord2dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4424,6 +4802,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDebugMessageInsert(int arg0, int arg1, int arg2, int arg3, CharSequence arg4) {
 		org.lwjgl.opengl.GL43.glDebugMessageInsert(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDebugMessageInsert(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4431,6 +4810,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDebugMessageInsert(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glDebugMessageInsert(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDebugMessageInsert(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4438,6 +4818,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3dv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform3dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4445,6 +4826,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3dv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform3dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4452,6 +4834,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPopClientAttrib() {
 		org.lwjgl.opengl.GL43.glPopClientAttrib();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPopClientAttrib() !! ERROR: " + err);
 	}
 
@@ -4459,6 +4842,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform2iv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform2iv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4466,6 +4850,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteRenderbuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4473,6 +4858,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteRenderbuffers(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4480,6 +4866,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteRenderbuffers(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4487,6 +4874,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI1ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI1ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4494,6 +4882,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglPatchParameterfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglPatchParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglPatchParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4501,6 +4890,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPushClientAttrib(int arg0) {
 		org.lwjgl.opengl.GL43.glPushClientAttrib(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPushClientAttrib(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4508,6 +4898,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long nglMapBufferRange(int arg0, long arg1, long arg2, int arg3) {
 		long ret = org.lwjgl.opengl.GL43.nglMapBufferRange(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4516,6 +4907,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexEnvfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4523,6 +4915,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexEnvfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4530,6 +4923,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Nuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Nuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4537,6 +4931,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Nuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Nuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4544,6 +4939,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor4dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4551,6 +4947,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetFragDataIndex(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL43.nglGetFragDataIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetFragDataIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4559,6 +4956,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4566,6 +4964,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4573,6 +4972,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix3x2fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix3x2fv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4580,6 +4980,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglLightModeliv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglLightModeliv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4588,6 +4989,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg5) {
 		org.lwjgl.opengl.GL43.nglGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveSubroutineUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -4595,6 +4997,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglPixelMapusv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglPixelMapusv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4602,6 +5005,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform2fv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4609,6 +5013,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClipPlane(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4616,6 +5021,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClipPlane(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4623,6 +5029,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4630,6 +5037,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4637,6 +5045,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord2fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4644,6 +5053,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4651,6 +5061,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenTextures(int[] arg0) {
 		org.lwjgl.opengl.GL43.glGenTextures(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4658,6 +5069,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenTextures() {
 		int ret = org.lwjgl.opengl.GL43.glGenTextures();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4666,6 +5078,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenTextures(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGenTextures(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4673,6 +5086,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSelectBuffer(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglSelectBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSelectBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4680,6 +5094,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetShaderPrecisionFormat(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetShaderPrecisionFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4687,6 +5102,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetShaderPrecisionFormat(int arg0, int arg1, IntBuffer arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetShaderPrecisionFormat(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4695,6 +5111,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetShaderPrecisionFormat(int arg0, int arg1, int[] arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetShaderPrecisionFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4702,6 +5119,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4709,6 +5127,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4716,6 +5135,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix3dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix3dv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4723,6 +5143,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLineStipple(int arg0, short arg1) {
 		org.lwjgl.opengl.GL43.glLineStipple(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLineStipple(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4730,6 +5151,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPopDebugGroup() {
 		org.lwjgl.opengl.GL43.glPopDebugGroup();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPopDebugGroup() !! ERROR: " + err);
 	}
 
@@ -4737,6 +5159,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramStageiv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetProgramStageiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramStageiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4744,6 +5167,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramStageiv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetProgramStageiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramStageiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4751,6 +5175,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetDoublei_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetDoublei_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetDoublei_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4758,6 +5183,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4765,6 +5191,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4772,6 +5199,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib1sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4779,6 +5207,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib1sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4786,6 +5215,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEdgeFlag(boolean arg0) {
 		org.lwjgl.opengl.GL43.glEdgeFlag(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEdgeFlag(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4793,6 +5223,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMaterialf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glMaterialf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMaterialf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4800,6 +5231,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord4iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4807,6 +5239,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMateriali(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glMateriali(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMateriali(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4814,6 +5247,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor4fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4821,6 +5255,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjectui64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjectui64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4828,6 +5263,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjectui64v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjectui64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4835,6 +5271,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjectui64v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjectui64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4842,6 +5279,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix4x3dv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix4x3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4849,6 +5287,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexLevelParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4856,6 +5295,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDebugMessageControl(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		org.lwjgl.opengl.GL43.glDebugMessageControl(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4863,6 +5303,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDebugMessageControl(int arg0, int arg1, int arg2, int[] arg3, boolean arg4) {
 		org.lwjgl.opengl.GL43.glDebugMessageControl(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4870,6 +5311,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDebugMessageControl(int arg0, int arg1, int arg2, IntBuffer arg3, boolean arg4) {
 		org.lwjgl.opengl.GL43.glDebugMessageControl(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4877,6 +5319,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib1sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4884,6 +5327,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteProgramPipelines(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDeleteProgramPipelines(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteProgramPipelines(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4891,6 +5335,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteProgramPipelines(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDeleteProgramPipelines(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteProgramPipelines(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4898,6 +5343,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteProgramPipelines(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteProgramPipelines(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteProgramPipelines(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4905,6 +5351,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveUniformBlockName(int arg0, int arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveUniformBlockName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4912,6 +5359,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveUniformBlockName_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveUniformBlockName(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4920,6 +5368,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveUniformBlockName(int arg0, int arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveUniformBlockName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -4927,6 +5376,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveUniformBlockName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveUniformBlockName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4935,6 +5385,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCallList(int arg0) {
 		org.lwjgl.opengl.GL43.glCallList(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCallList(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -4942,6 +5393,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetClipPlane(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4949,6 +5401,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetClipPlane(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glGetClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4956,6 +5409,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglFogiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglFogiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -4963,6 +5417,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3iv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform3iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4970,6 +5425,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3iv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform3iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -4977,6 +5433,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsProgram(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsProgram(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -4985,6 +5442,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix3fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix3fv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -4993,6 +5451,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.nglCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5000,6 +5459,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetActiveSubroutineUniformi(int arg0, int arg1, int arg2, int arg3) {
 		int ret = org.lwjgl.opengl.GL43.glGetActiveSubroutineUniformi(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineUniformi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5009,6 +5469,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7) {
 		org.lwjgl.opengl.GL43.glInvalidateTexSubImage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateTexSubImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -5016,6 +5477,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI4ubv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5023,6 +5485,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetProgramInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetProgramInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5030,6 +5493,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetProgramPipelineInfoLog_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL43.glGetProgramPipelineInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramPipelineInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5038,6 +5502,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetProgramPipelineInfoLog_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL43.glGetProgramPipelineInfoLog(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramPipelineInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5046,6 +5511,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramPipelineInfoLog(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetProgramPipelineInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramPipelineInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5053,6 +5519,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramPipelineInfoLog(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetProgramPipelineInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramPipelineInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5060,6 +5527,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5067,6 +5535,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5074,6 +5543,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTransformFeedbackVaryings(int arg0, int arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL43.nglTransformFeedbackVaryings(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5081,6 +5551,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform2dv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5088,6 +5559,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos4fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5095,6 +5567,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord2dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5102,6 +5575,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetSynci(long arg0, int arg1, IntBuffer arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetSynci(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSynci(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5110,6 +5584,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsVertexArray(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsVertexArray(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsVertexArray(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5118,6 +5593,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexEnvf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glTexEnvf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexEnvf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5125,6 +5601,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexEnvi(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTexEnvi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexEnvi(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5132,6 +5609,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColor3ubv(long arg0) {
 		org.lwjgl.opengl.GL43.nglSecondaryColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5139,6 +5617,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5146,6 +5625,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogi(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glFogi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogi(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5153,6 +5633,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSamplerParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5160,6 +5641,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSamplerParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5167,6 +5649,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glFenceSync(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL43.glFenceSync(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFenceSync(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5175,6 +5658,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5182,6 +5666,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5189,6 +5674,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindAttribLocation(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5196,6 +5682,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindAttribLocation(int arg0, int arg1, CharSequence arg2) {
 		org.lwjgl.opengl.GL43.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5203,6 +5690,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5210,6 +5698,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5217,6 +5706,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3b(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL43.glNormal3b(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5224,6 +5714,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glNormal3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5231,6 +5722,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5238,6 +5730,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glNormal3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5245,6 +5738,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferfi(int arg0, int arg1, float arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glClearBufferfi(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5252,6 +5746,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord2iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5259,6 +5754,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glFogf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5266,6 +5762,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5273,6 +5770,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightModeli(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glLightModeli(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightModeli(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5280,6 +5778,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexLevelParameterfv(int arg0, int arg1, int arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5287,6 +5786,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexLevelParameterfv(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5294,6 +5794,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglFogfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglFogfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5301,6 +5802,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5308,6 +5810,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5315,6 +5818,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5322,6 +5826,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5329,6 +5834,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColorP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5336,6 +5842,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord2fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5343,6 +5850,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform3uiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform3uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5350,6 +5858,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glNormal3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5357,6 +5866,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteTransformFeedbacks(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDeleteTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5364,6 +5874,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteTransformFeedbacks(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5371,6 +5882,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteTransformFeedbacks(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDeleteTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5378,6 +5890,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos4iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5385,6 +5898,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteSync(long arg0) {
 		org.lwjgl.opengl.GL43.nglDeleteSync(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteSync(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5392,6 +5906,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetBufferPointerv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetBufferPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5399,6 +5914,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColorP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglSecondaryColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5406,6 +5922,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexParameterIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5413,6 +5930,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glNormal3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5420,6 +5938,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPolygonMode(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glPolygonMode(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPolygonMode(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5428,6 +5947,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengl.GL43.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -5436,6 +5956,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL43.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -5444,6 +5965,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.nglBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5451,6 +5973,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightModelf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glLightModelf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightModelf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5458,6 +5981,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSampleMaski(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glSampleMaski(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSampleMaski(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5465,6 +5989,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP4uiv(int arg0, int arg1, boolean arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP4uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5472,6 +5997,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP4uiv(int arg0, int arg1, boolean arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP4uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5479,6 +6005,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetLighti(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetLighti(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetLighti(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5487,6 +6014,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetLightf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL43.glGetLightf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetLightf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5495,6 +6023,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameterIui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTexParameterIui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameterIui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5503,6 +6032,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg5) {
 		org.lwjgl.opengl.GL43.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -5511,6 +6041,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg5) {
 		org.lwjgl.opengl.GL43.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -5519,6 +6050,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg5) {
 		org.lwjgl.opengl.GL43.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -5526,6 +6058,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5533,6 +6066,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5540,6 +6074,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4bv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5547,6 +6082,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSamplerParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5554,6 +6090,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSamplerParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5562,6 +6099,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL43.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -5570,6 +6108,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -5577,6 +6116,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindProgramPipeline(int arg0) {
 		org.lwjgl.opengl.GL43.glBindProgramPipeline(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindProgramPipeline(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5584,6 +6124,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetMaterialiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5591,6 +6132,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstancedBaseVertex(int arg0, IntBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5599,6 +6141,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg5) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -5606,6 +6149,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstancedBaseVertex(int arg0, ByteBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5614,6 +6158,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg4) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5621,6 +6166,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstancedBaseVertex(int arg0, ShortBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5628,6 +6174,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDrawElementsBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL43.nglDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5635,6 +6182,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexf(float arg0) {
 		org.lwjgl.opengl.GL43.glIndexf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5642,6 +6190,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4i(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL43.glProgramUniform4i(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -5649,6 +6198,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexi(int arg0) {
 		org.lwjgl.opengl.GL43.glIndexi(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexi(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5656,6 +6206,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4bv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5663,6 +6214,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetVertexAttribPointerv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5670,6 +6222,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoordP4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglTexCoordP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoordP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5678,6 +6231,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			double arg5) {
 		org.lwjgl.opengl.GL43.glProgramUniform4d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -5686,6 +6240,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			float arg5) {
 		org.lwjgl.opengl.GL43.glProgramUniform4f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -5693,6 +6248,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexd(double arg0) {
 		org.lwjgl.opengl.GL43.glIndexd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5700,6 +6256,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteProgramPipelines(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDeleteProgramPipelines(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteProgramPipelines(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5707,6 +6264,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glNormal3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5714,6 +6272,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glNormal3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5721,6 +6280,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEnableVertexAttribArray(int arg0) {
 		org.lwjgl.opengl.GL43.glEnableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5728,6 +6288,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5735,6 +6296,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5742,6 +6304,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5749,6 +6312,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexGendv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5756,6 +6320,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglPushDebugGroup(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglPushDebugGroup(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglPushDebugGroup(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5763,6 +6328,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexs(short arg0) {
 		org.lwjgl.opengl.GL43.glIndexs(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexs(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5770,6 +6336,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetIntegerv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5777,6 +6344,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL43.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5784,6 +6352,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL43.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5791,6 +6360,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL43.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5798,6 +6368,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5805,6 +6376,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL43.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5812,6 +6384,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL43.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5819,6 +6392,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearBufferData(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL43.glClearBufferData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5826,6 +6400,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetProgramResourceLocationIndex(int arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL43.nglGetProgramResourceLocationIndex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramResourceLocationIndex(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -5834,6 +6409,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClear(int arg0) {
 		org.lwjgl.opengl.GL43.glClear(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5841,6 +6417,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4Niv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4Niv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Niv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5849,6 +6426,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL43.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -5857,6 +6435,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL43.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -5864,6 +6443,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCopyBufferSubData(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL43.glCopyBufferSubData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5871,6 +6451,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -5878,6 +6459,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGenBuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGenBuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -5885,6 +6467,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5892,6 +6475,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5899,6 +6483,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glReadBuffer(int arg0) {
 		org.lwjgl.opengl.GL43.glReadBuffer(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReadBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5906,6 +6491,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos4dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5913,6 +6499,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5920,6 +6507,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5927,6 +6515,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDispatchComputeIndirect(long arg0) {
 		org.lwjgl.opengl.GL43.glDispatchComputeIndirect(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDispatchComputeIndirect(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5934,6 +6523,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2f(int arg0, int arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniform2f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5941,6 +6531,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadName(int arg0) {
 		org.lwjgl.opengl.GL43.glLoadName(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadName(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5948,6 +6539,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniform2i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5955,6 +6547,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSamplerParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5962,6 +6555,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawArraysInstanced(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawArraysInstanced(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawArraysInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5970,6 +6564,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg5) {
 		org.lwjgl.opengl.GL43.nglGetProgramResourceName(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -5977,6 +6572,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2d(int arg0, int arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniform2d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -5984,6 +6580,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawBuffer(int arg0) {
 		org.lwjgl.opengl.GL43.glDrawBuffer(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -5991,6 +6588,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjectuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -5998,6 +6596,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjectuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6005,6 +6604,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjectuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6012,6 +6612,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexLevelParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6019,6 +6620,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexLevelParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6026,6 +6628,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4Nusv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4Nusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6033,6 +6636,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6040,6 +6644,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6047,6 +6652,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetMaterialfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6054,6 +6660,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3f(int arg0, int arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL43.glProgramUniform3f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6061,6 +6668,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glProgramUniform3i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6068,6 +6676,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenRenderbuffers(int[] arg0) {
 		org.lwjgl.opengl.GL43.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6075,6 +6684,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenRenderbuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6082,6 +6692,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenRenderbuffers() {
 		int ret = org.lwjgl.opengl.GL43.glGenRenderbuffers();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6090,6 +6701,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3d(int arg0, int arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL43.glProgramUniform3d(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6097,6 +6709,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL43.nglDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6104,6 +6717,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglClearBufferfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6111,6 +6725,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribP3uiv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglVertexAttribP3uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6118,6 +6733,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCompileShader(int arg0) {
 		org.lwjgl.opengl.GL43.glCompileShader(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6125,6 +6741,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetUniformBlockIndex(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL43.nglGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6133,6 +6750,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetInteger64v(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6140,6 +6758,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsRenderbuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsRenderbuffer(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6148,6 +6767,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6155,6 +6775,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6162,6 +6783,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniform2ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6169,6 +6791,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4ubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor4ubv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6176,6 +6799,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex4fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6184,6 +6808,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetProgramResourceName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6191,6 +6816,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetProgramResourceName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL43.glGetProgramResourceName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6199,6 +6825,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramResourceName(int arg0, int arg1, int arg2, int[] arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetProgramResourceName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6206,6 +6833,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetProgramResourceName_String(int arg0, int arg1, int arg2, int arg3) {
 		String ret = org.lwjgl.opengl.GL43.glGetProgramResourceName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6214,6 +6842,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6221,6 +6850,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6228,6 +6858,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColor3uiv(long arg0) {
 		org.lwjgl.opengl.GL43.nglSecondaryColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6235,6 +6866,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glViewport(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glViewport(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6242,6 +6874,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteFramebuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDeleteFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6249,6 +6882,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDrawElementsIndirect(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglDrawElementsIndirect(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6256,6 +6890,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4dv(int arg0, boolean arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6263,6 +6898,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4dv(int arg0, boolean arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6270,6 +6906,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglWindowPos3sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglWindowPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6277,6 +6914,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDrawArraysIndirect(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDrawArraysIndirect(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawArraysIndirect(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6284,6 +6922,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetMapfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6291,6 +6930,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform4uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6298,6 +6938,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glShaderStorageBlockBinding(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glShaderStorageBlockBinding(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glShaderStorageBlockBinding(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6305,6 +6946,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6312,6 +6954,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6320,6 +6963,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6327,6 +6971,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetUniformiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6334,6 +6979,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetUniformSubroutineuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetUniformSubroutineuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetUniformSubroutineuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6341,6 +6987,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBeginQueryIndexed(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBeginQueryIndexed(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBeginQueryIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6348,6 +6995,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribLPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglVertexAttribLPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6355,6 +7003,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6362,6 +7011,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6369,6 +7019,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP4ui(int arg0, int arg1, boolean arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP4ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6376,6 +7027,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6383,6 +7035,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6390,6 +7043,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP2ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP2ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6397,6 +7051,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetVertexAttribIuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6404,6 +7059,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6411,6 +7067,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6418,6 +7075,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6425,6 +7083,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix4dv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6432,6 +7091,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glGetInteger64(int arg0) {
 		long ret = org.lwjgl.opengl.GL43.glGetInteger64(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInteger64(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6440,6 +7100,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDepthMask(boolean arg0) {
 		org.lwjgl.opengl.GL43.glDepthMask(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6447,6 +7108,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoordP3uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoordP3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoordP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6454,6 +7116,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex4dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6461,6 +7124,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglEdgeFlagPointer(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglEdgeFlagPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglEdgeFlagPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6468,6 +7132,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexGenfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6475,6 +7140,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetBufferParameteri64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6482,6 +7148,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUseProgram(int arg0) {
 		org.lwjgl.opengl.GL43.glUseProgram(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6489,6 +7156,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramInterfaceiv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetProgramInterfaceiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramInterfaceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6496,6 +7164,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramInterfaceiv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetProgramInterfaceiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramInterfaceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6503,6 +7172,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6510,6 +7180,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6517,6 +7188,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetUniformSubroutineui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetUniformSubroutineui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformSubroutineui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6525,6 +7197,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord2sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6532,6 +7205,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetMapdv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetMapdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetMapdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6539,6 +7213,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribL2dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribL2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribL2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6546,6 +7221,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetQueryObjectui64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetQueryObjectui64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjectui64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6553,6 +7229,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor3sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6561,6 +7238,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6569,6 +7247,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			double[] arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6577,6 +7256,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			float[] arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6585,6 +7265,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int[] arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6593,6 +7274,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			short[] arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6601,6 +7283,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6609,6 +7292,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			FloatBuffer arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6617,6 +7301,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			DoubleBuffer arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6625,6 +7310,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ShortBuffer arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6633,6 +7319,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -6640,6 +7327,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPushMatrix() {
 		org.lwjgl.opengl.GL43.glPushMatrix();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPushMatrix() !! ERROR: " + err);
 	}
 
@@ -6647,6 +7335,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord2iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6654,6 +7343,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetMapiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetMapiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetMapiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6661,6 +7351,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6668,6 +7359,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6675,6 +7367,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetUniformfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6682,6 +7375,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4Nbv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4Nbv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nbv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6689,6 +7383,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2x3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6696,6 +7391,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2x3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6703,6 +7399,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSampleCoverage(float arg0, boolean arg1) {
 		org.lwjgl.opengl.GL43.glSampleCoverage(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6710,6 +7407,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglClearBufferiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6717,6 +7415,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6724,6 +7423,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6732,6 +7432,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, short[] arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6740,6 +7441,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int[] arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6748,6 +7450,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6756,6 +7459,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6764,6 +7468,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6772,6 +7477,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6780,6 +7486,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, float[] arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6788,6 +7495,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, double[] arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6796,6 +7504,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6804,6 +7513,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, long arg8) {
 		org.lwjgl.opengl.GL43.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -6811,6 +7521,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteShader(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteShader(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6818,6 +7529,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6825,6 +7537,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6832,6 +7545,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6839,6 +7553,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6846,6 +7561,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6853,6 +7569,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6860,6 +7577,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6867,6 +7585,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetShaderInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetShaderInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -6874,6 +7593,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI1iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -6881,6 +7601,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexGeniv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6888,6 +7609,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawArrays(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -6895,6 +7617,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex4iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -6902,6 +7625,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glScissorIndexed(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glScissorIndexed(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glScissorIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -6910,6 +7634,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, float[] arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6918,6 +7643,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, int[] arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6926,6 +7652,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, FloatBuffer arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6934,6 +7661,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, short[] arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6942,6 +7670,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, ByteBuffer arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6950,6 +7679,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6958,6 +7688,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, ShortBuffer arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6966,6 +7697,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, IntBuffer arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6974,6 +7706,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, DoubleBuffer arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6982,6 +7715,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, double[] arg10) {
 		org.lwjgl.opengl.GL43.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -6989,6 +7723,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglCreateShaderProgramv(int arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL43.nglCreateShaderProgramv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglCreateShaderProgramv(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -6997,6 +7732,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetUniformdv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetUniformdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetUniformdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7004,6 +7740,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameteri(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7011,6 +7748,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameterf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7018,6 +7756,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetActiveUniformsiv(int arg0, int arg1, long arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetActiveUniformsiv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7025,6 +7764,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2x3dv(int arg0, boolean arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2x3dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7032,6 +7772,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2x3dv(int arg0, boolean arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2x3dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7039,6 +7780,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteVertexArrays(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDeleteVertexArrays(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7046,6 +7788,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glRenderMode(int arg0) {
 		int ret = org.lwjgl.opengl.GL43.glRenderMode(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRenderMode(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7054,6 +7797,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawTransformFeedbackStream(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDrawTransformFeedbackStream(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawTransformFeedbackStream(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7061,6 +7805,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetFloati_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetFloati_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetFloati_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7068,6 +7813,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7075,6 +7821,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7082,6 +7829,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglInvalidateFramebuffer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglInvalidateFramebuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglInvalidateFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7089,6 +7837,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7096,6 +7845,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7103,6 +7853,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEndQueryIndexed(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glEndQueryIndexed(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEndQueryIndexed(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7110,6 +7861,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7117,6 +7869,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNewList(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glNewList(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNewList(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7124,6 +7877,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7131,6 +7885,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7138,6 +7893,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7145,6 +7901,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7152,6 +7909,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, DoubleBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7159,6 +7917,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, double[] arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7166,6 +7925,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7173,6 +7933,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7180,6 +7941,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7187,6 +7949,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7194,6 +7957,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7201,6 +7965,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexImage(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7208,6 +7973,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetSubroutineIndex(int arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL43.nglGetSubroutineIndex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetSubroutineIndex(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7216,6 +7982,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2x4dv(int arg0, int arg1, boolean arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2x4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7223,6 +7990,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2x4dv(int arg0, int arg1, boolean arg2, double[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2x4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7230,6 +7998,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL1dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribL1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7237,6 +8006,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL1dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribL1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7244,6 +8014,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFramebufferTexture1D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glFramebufferTexture1D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7251,6 +8022,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPassThrough(float arg0) {
 		org.lwjgl.opengl.GL43.glPassThrough(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPassThrough(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7258,6 +8030,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelMapfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7265,6 +8038,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelMapfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glPixelMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7272,6 +8046,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelMapfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7280,6 +8055,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			boolean arg6) {
 		org.lwjgl.opengl.GL43.glTexImage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7287,6 +8063,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL2d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glVertexAttribL2d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7294,6 +8071,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord1sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord1sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7301,6 +8079,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3x2dv(int arg0, int arg1, boolean arg2, double[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3x2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7308,6 +8087,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3x2dv(int arg0, int arg1, boolean arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3x2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7315,6 +8095,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglClearBufferuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7322,6 +8103,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix2fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix2fv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7329,6 +8111,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglIndexPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglIndexPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7336,6 +8119,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2x4dv(int arg0, boolean arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2x4dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7343,6 +8127,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2x4dv(int arg0, boolean arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2x4dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7350,6 +8135,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4ui(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7357,6 +8143,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL3d(int arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribL3d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7364,6 +8151,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetAttribLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL43.nglGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7372,6 +8160,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFlushMappedBufferRange(int arg0, long arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glFlushMappedBufferRange(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFlushMappedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7379,6 +8168,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3x2dv(int arg0, boolean arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3x2dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7386,6 +8176,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3x2dv(int arg0, boolean arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3x2dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7393,6 +8184,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glStencilOp(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glStencilOp(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7400,6 +8192,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetUniformf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL43.glGetUniformf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7408,6 +8201,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public double glGetUniformd(int arg0, int arg1) {
 		double ret = org.lwjgl.opengl.GL43.glGetUniformd(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformd(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7416,6 +8210,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetUniformi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetUniformi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7424,6 +8219,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindBuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBindBuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7431,6 +8227,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform2dv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform2dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7439,6 +8236,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, long arg8) {
 		org.lwjgl.opengl.GL43.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -7446,6 +8244,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7453,6 +8252,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTransformFeedbackVaryings(int arg0, CharSequence arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7460,6 +8260,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTransformFeedbackVaryings(int arg0, CharSequence[] arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7467,6 +8268,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTransformFeedbackVaryings(int arg0, PointerBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7474,6 +8276,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsTexture(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsTexture(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7482,6 +8285,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP4uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7489,6 +8293,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP4uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7496,6 +8301,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFramebufferTexture3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL43.glFramebufferTexture3D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -7503,6 +8309,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3fv(int arg0, int arg1, boolean arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7510,6 +8317,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3fv(int arg0, int arg1, boolean arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7517,6 +8325,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4uiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor4uiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7524,6 +8333,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4uiv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glColor4uiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7531,6 +8341,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormalPointer(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7538,6 +8349,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormalPointer(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7545,6 +8357,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormalPointer(int arg0, int arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL43.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7552,6 +8365,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormalPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7559,6 +8373,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormalPointer(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glNormalPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormalPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7566,6 +8381,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glScalef(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glScalef(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glScalef(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7573,6 +8389,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor3iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7580,6 +8397,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glScaled(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glScaled(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glScaled(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7588,6 +8406,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL43.nglTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -7595,6 +8414,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7602,6 +8422,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7609,6 +8430,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix4x3dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix4x3dv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix4x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7616,6 +8438,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFramebufferTexture2D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glFramebufferTexture2D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7623,6 +8446,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBegin(int arg0) {
 		org.lwjgl.opengl.GL43.glBegin(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBegin(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7630,6 +8454,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7637,6 +8462,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7644,6 +8470,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEnable(int arg0) {
 		org.lwjgl.opengl.GL43.glEnable(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7651,6 +8478,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL1d(int arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribL1d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7658,6 +8486,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform2fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7665,6 +8494,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7672,6 +8502,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetTexGenf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL43.glGetTexGenf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexGenf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7680,6 +8511,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetTexGeni(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetTexGeni(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexGeni(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7688,6 +8520,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetQueryIndexedi(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetQueryIndexedi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryIndexedi(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7696,6 +8529,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoordf(float arg0) {
 		org.lwjgl.opengl.GL43.glFogCoordf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoordf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7703,6 +8537,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetFloatv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7710,6 +8545,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetFloatv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7717,6 +8553,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoordd(double arg0) {
 		org.lwjgl.opengl.GL43.glFogCoordd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoordd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7724,6 +8561,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public double glGetTexGend(int arg0, int arg1) {
 		double ret = org.lwjgl.opengl.GL43.glGetTexGend(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexGend(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7733,6 +8571,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL43.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7741,6 +8580,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			FloatBuffer arg6) {
 		org.lwjgl.opengl.GL43.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7749,6 +8589,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			short[] arg6) {
 		org.lwjgl.opengl.GL43.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7757,6 +8598,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			float[] arg6) {
 		org.lwjgl.opengl.GL43.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7764,6 +8606,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengl.GL43.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7771,6 +8614,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL43.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7779,6 +8623,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg6) {
 		org.lwjgl.opengl.GL43.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7787,6 +8632,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ShortBuffer arg6) {
 		org.lwjgl.opengl.GL43.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -7794,6 +8640,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3dv(int arg0, int arg1, boolean arg2, double[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7801,6 +8648,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3dv(int arg0, int arg1, boolean arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7808,6 +8656,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglNormalP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglNormalP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglNormalP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7815,6 +8664,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7822,6 +8672,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7829,6 +8680,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetFloati(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL43.glGetFloati(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFloati(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7837,6 +8689,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDrawBuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDrawBuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7844,6 +8697,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix4x3fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix4x3fv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7851,6 +8705,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstancedBaseInstance(int arg0, ShortBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7858,6 +8713,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstancedBaseInstance(int arg0, IntBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7866,6 +8722,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg5) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -7874,6 +8731,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg4) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -7881,6 +8739,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstancedBaseInstance(int arg0, ByteBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7888,6 +8747,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL43.glPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7895,6 +8755,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPolygonStipple(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7902,6 +8763,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFrontFace(int arg0) {
 		org.lwjgl.opengl.GL43.glFrontFace(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7909,6 +8771,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDispatchCompute(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDispatchCompute(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDispatchCompute(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7916,6 +8779,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2x4fv(int arg0, int arg1, boolean arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7923,6 +8787,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2x4fv(int arg0, int arg1, boolean arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7930,6 +8795,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3x2fv(int arg0, int arg1, boolean arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7937,6 +8803,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3x2fv(int arg0, int arg1, boolean arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -7944,6 +8811,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7951,6 +8819,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glAlphaFunc(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glAlphaFunc(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glAlphaFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -7958,6 +8827,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos3sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7965,6 +8835,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform2iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform2iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7972,6 +8843,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetVertexAttribIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -7979,6 +8851,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenLists(int arg0) {
 		int ret = org.lwjgl.opengl.GL43.glGenLists(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenLists(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -7987,6 +8860,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColor3usv(long arg0) {
 		org.lwjgl.opengl.GL43.nglSecondaryColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -7994,6 +8868,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectsv(short[] arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glRectsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8001,6 +8876,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectsv(ShortBuffer arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glRectsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8008,6 +8884,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetActiveUniformBlocki(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetActiveUniformBlocki(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlocki(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8016,6 +8893,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetFramebufferAttachmentParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetFramebufferAttachmentParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8024,6 +8902,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindVertexBuffer(int arg0, int arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glBindVertexBuffer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindVertexBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8031,6 +8910,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8038,6 +8918,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetTexParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8045,6 +8926,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribBinding(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribBinding(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribBinding(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8052,6 +8934,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4Nubv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4Nubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8059,6 +8942,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8066,6 +8950,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8073,6 +8958,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP1uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8080,6 +8966,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP1uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8087,6 +8974,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColorP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glSecondaryColorP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8094,6 +8982,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenProgramPipelines() {
 		int ret = org.lwjgl.opengl.GL43.glGenProgramPipelines();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenProgramPipelines() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8102,6 +8991,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenProgramPipelines(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGenProgramPipelines(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenProgramPipelines(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8109,6 +8999,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenProgramPipelines(int[] arg0) {
 		org.lwjgl.opengl.GL43.glGenProgramPipelines(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenProgramPipelines(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8116,6 +9007,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2dv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform2dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8123,6 +9015,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2dv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform2dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8130,6 +9023,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexImage(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetTexImage(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8137,6 +9031,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8144,6 +9039,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8151,6 +9047,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetPolygonStipple(long arg0) {
 		org.lwjgl.opengl.GL43.nglGetPolygonStipple(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetPolygonStipple(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8158,6 +9055,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix4x2dv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix4x2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8165,6 +9063,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP1uiv(int arg0, int arg1, boolean arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP1uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8172,6 +9071,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP1uiv(int arg0, int arg1, boolean arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP1uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8179,6 +9079,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8186,6 +9087,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8193,6 +9095,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetClipPlane(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetClipPlane(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetClipPlane(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8200,6 +9103,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glRenderbufferStorageMultisample(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8207,6 +9111,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord3dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8214,6 +9119,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL43.glRasterPos4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8221,6 +9127,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsSampler(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsSampler(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsSampler(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8229,6 +9136,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix3x4dv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix3x4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8236,6 +9144,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjecti64v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjecti64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8243,6 +9152,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjecti64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjecti64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8250,6 +9160,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjecti64v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjecti64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8257,6 +9168,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4usv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glColor4usv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8264,6 +9176,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4usv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor4usv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8271,6 +9184,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8278,6 +9192,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8285,6 +9200,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetMapf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL43.glGetMapf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMapf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8293,6 +9209,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glRasterPos4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8300,6 +9217,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glRasterPos4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8307,6 +9225,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGenVertexArrays(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGenVertexArrays(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGenVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8314,6 +9233,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public double glGetMapd(int arg0, int arg1) {
 		double ret = org.lwjgl.opengl.GL43.glGetMapd(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMapd(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8322,6 +9242,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetMapi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetMapi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMapi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8330,6 +9251,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glRasterPos4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8337,6 +9259,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, float[] arg4) {
 		org.lwjgl.opengl.GL43.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8344,6 +9267,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, short[] arg4) {
 		org.lwjgl.opengl.GL43.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8351,6 +9275,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, int[] arg4) {
 		org.lwjgl.opengl.GL43.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8358,6 +9283,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, FloatBuffer arg4) {
 		org.lwjgl.opengl.GL43.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8365,6 +9291,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL43.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8372,6 +9299,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8379,6 +9307,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8386,6 +9315,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawPixels(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL43.glDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8393,6 +9323,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8400,6 +9331,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8407,6 +9339,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform1iv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform1iv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8414,6 +9347,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3b(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3b(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8421,6 +9355,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glRasterPos3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8428,6 +9363,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetAttachedShaders(int arg0, int[] arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8435,6 +9371,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetAttachedShaders(int arg0, IntBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8442,6 +9379,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8449,6 +9387,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8456,6 +9395,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearStencil(int arg0) {
 		org.lwjgl.opengl.GL43.glClearStencil(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8463,6 +9403,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglBindFragDataLocationIndexed(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglBindFragDataLocationIndexed(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8470,6 +9411,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglClearBufferData(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglClearBufferData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglClearBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8477,6 +9419,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glRasterPos3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8484,6 +9427,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveUniformsiv(int arg0, int[] arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveUniformsiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8491,6 +9435,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveUniformsiv(int arg0, IntBuffer arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveUniformsiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8498,6 +9443,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glRasterPos3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8505,6 +9451,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8512,6 +9459,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8519,6 +9467,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glRasterPos3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8526,6 +9475,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glShaderBinary(IntBuffer arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glShaderBinary(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8533,6 +9483,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glShaderBinary(int[] arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glShaderBinary(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8541,6 +9492,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, double[] arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8549,6 +9501,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, float[] arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8557,6 +9510,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, DoubleBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8565,6 +9519,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int[] arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8573,6 +9528,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, short[] arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8581,6 +9537,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8589,6 +9546,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, long arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8597,6 +9555,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8605,6 +9564,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, IntBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8613,6 +9573,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengl.GL43.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -8620,6 +9581,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix2x3dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix2x3dv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix2x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8627,6 +9589,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix4x2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix4x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8634,6 +9597,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform1fv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform1fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8641,6 +9605,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetActiveUniformBlockName(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetActiveUniformBlockName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8648,6 +9613,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8655,6 +9621,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8662,6 +9629,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL43.glRasterPos2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8670,6 +9638,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			boolean arg6) {
 		org.lwjgl.opengl.GL43.glTexStorage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexStorage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -8677,6 +9646,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord3fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8684,6 +9654,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix3x4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix3x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8691,6 +9662,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetProgramPipelineInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetProgramPipelineInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramPipelineInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8698,6 +9670,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteTextures(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDeleteTextures(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8705,6 +9678,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetInternalformati(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetInternalformati(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInternalformati(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -8713,6 +9687,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglIndexubv(long arg0) {
 		org.lwjgl.opengl.GL43.nglIndexubv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglIndexubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8720,6 +9695,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glRasterPos2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8727,6 +9703,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glRasterPos2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8734,6 +9711,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glRasterPos2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8741,6 +9719,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawElements(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3) {
 		org.lwjgl.opengl.GL43.glMultiDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8748,6 +9727,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawElements(int arg0, int[] arg1, int arg2, PointerBuffer arg3) {
 		org.lwjgl.opengl.GL43.glMultiDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8756,6 +9736,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, short[] arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8764,6 +9745,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int[] arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8772,6 +9754,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8780,6 +9763,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, double[] arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8788,6 +9772,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, float[] arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8796,6 +9781,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, ShortBuffer arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8804,6 +9790,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8812,6 +9799,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8820,6 +9808,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, IntBuffer arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8828,6 +9817,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengl.GL43.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -8835,6 +9825,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEnablei(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glEnablei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEnablei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8842,6 +9833,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSamplerParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8849,6 +9841,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSamplerParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8856,6 +9849,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCallLists(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glCallLists(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8863,6 +9857,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCallLists(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glCallLists(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8870,6 +9865,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCallLists(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glCallLists(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8877,6 +9873,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCallLists(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glCallLists(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCallLists(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8884,6 +9881,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex3sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8891,6 +9889,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor3bv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8898,6 +9897,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorMaski(int arg0, boolean arg1, boolean arg2, boolean arg3, boolean arg4) {
 		org.lwjgl.opengl.GL43.glColorMaski(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorMaski(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8905,6 +9905,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix2x3fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix2x3fv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -8912,6 +9913,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8919,6 +9921,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8926,6 +9929,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBlendFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glBlendFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8933,6 +9937,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetActiveAtomicCounterBufferiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetActiveAtomicCounterBufferiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveAtomicCounterBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -8940,6 +9945,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord1dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8947,6 +9953,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord1dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -8954,6 +9961,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4Nuiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4Nuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -8961,6 +9969,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, float[] arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8968,6 +9977,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, double[] arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8975,6 +9985,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, long arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8982,6 +9993,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8989,6 +10001,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, long[] arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -8996,6 +10009,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, int[] arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9003,6 +10017,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, short[] arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9010,6 +10025,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9017,6 +10033,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, LongBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9024,6 +10041,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, FloatBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9031,6 +10049,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9038,6 +10057,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferData(int arg0, DoubleBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9045,6 +10065,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexBuffer(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTexBuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9052,6 +10073,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDetachShader(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glDetachShader(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9059,6 +10081,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetIntegeri_v(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9066,6 +10089,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetIntegeri_v(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9074,6 +10098,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.nglTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -9081,6 +10106,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2iv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform2iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9088,6 +10114,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2iv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform2iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9096,6 +10123,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9104,6 +10132,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9112,6 +10141,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ShortBuffer arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9120,6 +10150,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9128,6 +10159,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			FloatBuffer arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9136,6 +10168,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int[] arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9144,6 +10177,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			short[] arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9152,6 +10186,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			double[] arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9160,6 +10195,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			float[] arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9168,6 +10204,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			DoubleBuffer arg7) {
 		org.lwjgl.opengl.GL43.glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -9175,6 +10212,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9182,6 +10220,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9189,6 +10228,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9196,6 +10236,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawBuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9203,6 +10244,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawBuffers(int arg0) {
 		org.lwjgl.opengl.GL43.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9210,6 +10252,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalPoint2(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glEvalPoint2(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalPoint2(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9217,6 +10260,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalPoint1(int arg0) {
 		org.lwjgl.opengl.GL43.glEvalPoint1(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalPoint1(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9224,6 +10268,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInvalidateBufferSubData(int arg0, long arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glInvalidateBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9231,6 +10276,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetProgramInfoLog_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL43.glGetProgramInfoLog(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9239,6 +10285,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetProgramInfoLog_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL43.glGetProgramInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9247,6 +10294,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramInfoLog(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9254,6 +10302,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramInfoLog(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9261,6 +10310,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean nglIsSync(long arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.nglIsSync(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9269,6 +10319,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform1dv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform1dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform1dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9276,6 +10327,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor3dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9283,6 +10335,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glStencilMaskSeparate(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glStencilMaskSeparate(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9290,6 +10343,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2fv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9297,6 +10351,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform2fv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9304,6 +10359,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9311,6 +10367,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9318,6 +10375,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord1fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9325,6 +10383,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord1fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9332,6 +10391,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetDoublei_v(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glGetDoublei_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetDoublei_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9339,6 +10399,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetDoublei_v(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetDoublei_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetDoublei_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9346,6 +10407,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9353,6 +10415,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9360,6 +10423,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix2dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix2dv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -9367,6 +10431,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glGetBoolean(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glGetBoolean(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9375,6 +10440,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawTransformFeedback(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glDrawTransformFeedback(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawTransformFeedback(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9382,6 +10448,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glUniform4ui(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -9389,6 +10456,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public double glGetDouble(int arg0) {
 		double ret = org.lwjgl.opengl.GL43.glGetDouble(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetDouble(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9397,6 +10465,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL43.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9404,6 +10473,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9411,6 +10481,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9418,6 +10489,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9425,6 +10497,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9432,6 +10505,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord3iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9439,6 +10513,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor3fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9446,6 +10521,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetVertexAttribiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9453,6 +10529,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexGendv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9460,6 +10537,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexGendv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9467,6 +10545,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPointParameteriv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glPointParameteriv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9474,6 +10553,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPointParameteriv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glPointParameteriv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9481,6 +10561,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9488,6 +10569,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9495,6 +10577,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord3fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9502,6 +10585,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4usv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9509,6 +10593,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9516,6 +10601,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9523,6 +10609,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPushDebugGroup(int arg0, int arg1, CharSequence arg2) {
 		org.lwjgl.opengl.GL43.glPushDebugGroup(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPushDebugGroup(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9530,6 +10617,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPushDebugGroup(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glPushDebugGroup(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPushDebugGroup(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9537,6 +10625,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLineWidth(float arg0) {
 		org.lwjgl.opengl.GL43.glLineWidth(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9544,6 +10633,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9551,6 +10641,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9558,6 +10649,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform3uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9565,6 +10657,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib3sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9572,6 +10665,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib3sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9580,6 +10674,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.nglCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -9587,6 +10682,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultMatrixd(long arg0) {
 		org.lwjgl.opengl.GL43.nglMultMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9594,6 +10690,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultMatrixf(long arg0) {
 		org.lwjgl.opengl.GL43.nglMultMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9601,6 +10698,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform4fv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9609,6 +10707,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			FloatBuffer arg5) {
 		org.lwjgl.opengl.GL43.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -9617,6 +10716,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg5) {
 		org.lwjgl.opengl.GL43.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -9625,6 +10725,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg5) {
 		org.lwjgl.opengl.GL43.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -9633,6 +10734,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ShortBuffer arg5) {
 		org.lwjgl.opengl.GL43.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -9641,6 +10743,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL43.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -9648,6 +10751,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoordP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglTexCoordP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoordP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9655,6 +10759,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexGenfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9662,6 +10767,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexGenfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9669,6 +10775,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClampColor(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glClampColor(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClampColor(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9677,6 +10784,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7, int arg8, int arg9, long arg10) {
 		org.lwjgl.opengl.GL43.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
@@ -9684,6 +10792,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetShaderi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetShaderi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9692,6 +10801,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord3iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9700,6 +10810,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL43.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -9707,6 +10818,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetIntegeri_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9714,6 +10826,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9721,6 +10834,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9728,6 +10842,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetSamplerParameterf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL43.glGetSamplerParameterf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9736,6 +10851,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetSamplerParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetSamplerParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9744,6 +10860,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormalP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glNormalP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormalP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9751,6 +10868,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormalP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glNormalP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormalP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9758,6 +10876,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMaterialiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9765,6 +10884,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1iv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9772,6 +10892,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1iv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9779,6 +10900,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.glDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9786,6 +10908,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElements(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glDrawElements(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9793,6 +10916,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElements(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9800,6 +10924,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElements(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9807,6 +10932,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElements(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9814,6 +10940,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEnd() {
 		org.lwjgl.opengl.GL43.glEnd();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEnd() !! ERROR: " + err);
 	}
 
@@ -9821,6 +10948,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPointParameterfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glPointParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9828,6 +10956,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPointParameterfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glPointParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9835,6 +10964,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord1iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9842,6 +10972,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glGetQueryObjecti64(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL43.glGetQueryObjecti64(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9850,6 +10981,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform4dv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9857,6 +10989,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glFogiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9864,6 +10997,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glFogiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9871,6 +11005,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBlendFunc(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBlendFunc(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9878,6 +11013,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRecti(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glRecti(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRecti(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9885,6 +11021,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3ubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9892,6 +11029,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL43.glTexCoord4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9899,6 +11037,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9906,6 +11045,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -9913,6 +11053,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9920,6 +11061,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRects(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL43.glRects(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRects(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9927,6 +11069,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglBindAttribLocation(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -9934,6 +11077,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColor3bv(long arg0) {
 		org.lwjgl.opengl.GL43.nglSecondaryColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -9941,6 +11085,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glTexCoord4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9948,6 +11093,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glTexCoord4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -9955,6 +11101,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetSamplerParameterIi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetSamplerParameterIi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -9964,6 +11111,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			short[] arg6) {
 		org.lwjgl.opengl.GL43.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -9972,6 +11120,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int[] arg6) {
 		org.lwjgl.opengl.GL43.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -9980,6 +11129,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			float[] arg6) {
 		org.lwjgl.opengl.GL43.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -9988,6 +11138,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			FloatBuffer arg6) {
 		org.lwjgl.opengl.GL43.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -9996,6 +11147,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg6) {
 		org.lwjgl.opengl.GL43.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -10004,6 +11156,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ShortBuffer arg6) {
 		org.lwjgl.opengl.GL43.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -10012,6 +11165,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL43.glClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -10019,6 +11173,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexGeniv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10026,6 +11181,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexGeniv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10033,6 +11189,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectfv(FloatBuffer arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glRectfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10040,6 +11197,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectfv(float[] arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glRectfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10047,6 +11205,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindSampler(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBindSampler(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindSampler(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10054,6 +11213,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetVertexAttribdv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetVertexAttribdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10061,6 +11221,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glTexCoord4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10068,6 +11229,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProvokingVertex(int arg0) {
 		org.lwjgl.opengl.GL43.glProvokingVertex(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProvokingVertex(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10075,6 +11237,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteProgram(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteProgram(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10082,6 +11245,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMaterialfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10089,6 +11253,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMaterialfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10096,6 +11261,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColorP4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglColorP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColorP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10103,6 +11269,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10110,6 +11277,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10117,6 +11285,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetIntegerv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10124,6 +11293,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetIntegerv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10131,6 +11301,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glOrtho(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL43.glOrtho(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glOrtho(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -10138,6 +11309,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelMapuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10145,6 +11317,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelMapuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glPixelMapuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10152,6 +11325,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelMapuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10159,6 +11333,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectd(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glRectd(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectd(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10166,6 +11341,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectf(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glRectf(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectf(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10173,6 +11349,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP3uiv(int arg0, int arg1, boolean arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP3uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10180,6 +11357,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP3uiv(int arg0, int arg1, boolean arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP3uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10187,6 +11365,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEnableClientState(int arg0) {
 		org.lwjgl.opengl.GL43.glEnableClientState(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEnableClientState(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10194,6 +11373,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10201,6 +11381,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10208,6 +11389,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColor3dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglSecondaryColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10215,6 +11397,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMaterialfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglMaterialfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMaterialfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10222,6 +11405,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetFragDataLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10230,6 +11414,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetFragDataLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10238,6 +11423,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord3dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10245,6 +11431,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetFramebufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetFramebufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetFramebufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10252,6 +11439,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glAreTexturesResident_boolean(int[] arg0, ByteBuffer arg1) {
 		boolean ret = org.lwjgl.opengl.GL43.glAreTexturesResident(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10260,6 +11448,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glAreTexturesResident_boolean(IntBuffer arg0, ByteBuffer arg1) {
 		boolean ret = org.lwjgl.opengl.GL43.glAreTexturesResident(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10268,6 +11457,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glAreTexturesResident_boolean(int arg0, ByteBuffer arg1) {
 		boolean ret = org.lwjgl.opengl.GL43.glAreTexturesResident(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glAreTexturesResident_boolean(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10276,6 +11466,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetInteger64i_v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10283,6 +11474,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10290,6 +11482,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos4fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10297,6 +11490,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glFogfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10304,6 +11498,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glFogfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10311,6 +11506,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawTransformFeedbackInstanced(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDrawTransformFeedbackInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawTransformFeedbackInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10318,6 +11514,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glReleaseShaderCompiler() {
 		org.lwjgl.opengl.GL43.glReleaseShaderCompiler();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glReleaseShaderCompiler() !! ERROR: " + err);
 	}
 
@@ -10325,6 +11522,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPushName(int arg0) {
 		org.lwjgl.opengl.GL43.glPushName(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPushName(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10332,6 +11530,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglLoadMatrixf(long arg0) {
 		org.lwjgl.opengl.GL43.nglLoadMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglLoadMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10339,6 +11538,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetIntegeri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetIntegeri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10347,6 +11547,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglLoadMatrixd(long arg0) {
 		org.lwjgl.opengl.GL43.nglLoadMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglLoadMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10354,6 +11555,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectdv(DoubleBuffer arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glRectdv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10361,6 +11563,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectdv(double[] arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glRectdv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10368,6 +11571,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10375,6 +11579,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetVertexAttribfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10382,6 +11587,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10389,6 +11595,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10396,6 +11603,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformBlockBinding(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glUniformBlockBinding(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformBlockBinding(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10403,6 +11611,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetSamplerParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10410,6 +11619,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribP2uiv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglVertexAttribP2uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10417,6 +11627,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glCheckFramebufferStatus(int arg0) {
 		int ret = org.lwjgl.opengl.GL43.glCheckFramebufferStatus(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10425,6 +11636,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetLightiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10432,6 +11644,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetLightiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10439,6 +11652,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLoadIdentity() {
 		org.lwjgl.opengl.GL43.glLoadIdentity();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLoadIdentity() !! ERROR: " + err);
 	}
 
@@ -10446,6 +11660,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveUniformName(int arg0, int arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveUniformName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10453,6 +11668,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveUniformName(int arg0, int arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveUniformName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10460,6 +11676,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveUniformName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveUniformName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10468,6 +11685,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveUniformName_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveUniformName(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10476,6 +11694,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstanced(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10483,6 +11702,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstanced(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10490,6 +11710,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstanced(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10497,6 +11718,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -10504,6 +11726,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsInstanced(int arg0, int arg1, ByteBuffer arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstanced(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10511,6 +11734,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10518,6 +11742,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glResumeTransformFeedback() {
 		org.lwjgl.opengl.GL43.glResumeTransformFeedback();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glResumeTransformFeedback() !! ERROR: " + err);
 	}
 
@@ -10525,6 +11750,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10532,6 +11758,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEdgeFlagv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glEdgeFlagv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEdgeFlagv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10539,6 +11766,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10546,6 +11774,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor3ubv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10553,6 +11782,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMaterialiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10560,6 +11790,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMaterialiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glMaterialiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMaterialiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10567,6 +11798,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10574,6 +11806,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10581,6 +11814,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP3ui(int arg0, int arg1, boolean arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP3ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10588,6 +11822,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI2iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10595,6 +11830,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI3iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10602,6 +11838,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI3iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10609,6 +11846,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glColor4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10616,6 +11854,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10623,6 +11862,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMapGrid2d(int arg0, double arg1, double arg2, int arg3, double arg4, double arg5) {
 		org.lwjgl.opengl.GL43.glMapGrid2d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMapGrid2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -10630,6 +11870,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMapGrid2f(int arg0, float arg1, float arg2, int arg3, float arg4, float arg5) {
 		org.lwjgl.opengl.GL43.glMapGrid2f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMapGrid2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -10637,6 +11878,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4x3dv(int arg0, boolean arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4x3dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10644,6 +11886,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4x3dv(int arg0, boolean arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4x3dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10651,6 +11894,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindFramebuffer(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBindFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10658,6 +11902,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1s(int arg0, short arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10665,6 +11910,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteQueries(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10672,6 +11918,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteQueries(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10679,6 +11926,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteQueries(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10686,6 +11934,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib3dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10693,6 +11942,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetQueryiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10700,6 +11950,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10707,6 +11958,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10714,6 +11966,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexGenfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10721,6 +11974,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexGenfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetTexGenfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexGenfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10728,6 +11982,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1s(short arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1s(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1s(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10735,6 +11990,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsShader(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsShader(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10744,6 +12000,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -10752,6 +12009,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL43.glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBitmap(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -10759,6 +12017,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1f(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10766,6 +12025,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBlendFunci(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBlendFunci(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlendFunci(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10773,6 +12033,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1d(int arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10780,6 +12041,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexP2uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10787,6 +12049,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10794,6 +12057,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10801,6 +12065,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10808,6 +12073,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10815,6 +12081,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetShaderInfoLog_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL43.glGetShaderInfoLog(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10823,6 +12090,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetShaderInfoLog(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10830,6 +12098,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetShaderInfoLog(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10837,6 +12106,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetShaderInfoLog_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL43.glGetShaderInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -10845,6 +12115,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1d(double arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1d(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1d(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10852,6 +12123,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4usv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10859,6 +12131,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4usv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10866,6 +12139,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectiv(IntBuffer arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glRectiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10873,6 +12147,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRectiv(int[] arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glRectiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10880,6 +12155,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRectsv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglRectsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRectsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10887,6 +12163,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearAccum(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glClearAccum(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearAccum(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10894,6 +12171,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1i(int arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1i(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1i(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10901,6 +12179,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord1f(float arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord1f(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord1f(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10908,6 +12187,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetInternalformati64v(int arg0, int arg1, int arg2, LongBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetInternalformati64v(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInternalformati64v(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10915,6 +12195,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetInternalformati64v(int arg0, int arg1, int arg2, long[] arg3) {
 		org.lwjgl.opengl.GL43.glGetInternalformati64v(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInternalformati64v(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10922,6 +12203,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glColor4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10929,6 +12211,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10936,6 +12219,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglVertexPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10943,6 +12227,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFramebufferTexture(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glFramebufferTexture(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -10950,6 +12235,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL43.glTexCoord2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -10957,6 +12243,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetSamplerParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10964,6 +12251,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3uiv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10971,6 +12259,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3uiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10978,6 +12267,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDepthFunc(int arg0) {
 		org.lwjgl.opengl.GL43.glDepthFunc(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -10985,6 +12275,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetLightfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10992,6 +12283,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetLightfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -10999,6 +12291,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexiv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glIndexiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11006,6 +12299,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glIndexiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11013,6 +12307,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4x3fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11020,6 +12315,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4x3fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11027,6 +12323,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexGeniv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11034,6 +12331,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexGeniv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetTexGeniv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexGeniv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11041,6 +12339,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glTexCoord2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11048,6 +12347,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetUniformIndices(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetUniformIndices(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11055,6 +12355,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glTexCoord2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11062,6 +12363,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glTexCoord2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11069,6 +12371,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11076,6 +12379,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexBindingDivisor(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glVertexBindingDivisor(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexBindingDivisor(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11083,6 +12387,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glTexCoord3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11090,6 +12395,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11097,6 +12403,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11104,6 +12411,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetBufferSubData(int arg0, long arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetBufferSubData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11111,6 +12419,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMapGrid1d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glMapGrid1d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMapGrid1d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11118,6 +12427,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glTexCoord3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11125,6 +12435,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMapGrid1f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glMapGrid1f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMapGrid1f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11132,6 +12443,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glTexCoord3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11139,6 +12451,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11146,6 +12459,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11153,6 +12467,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenTransformFeedbacks(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGenTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11160,6 +12475,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenTransformFeedbacks(int[] arg0) {
 		org.lwjgl.opengl.GL43.glGenTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11167,6 +12483,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenTransformFeedbacks() {
 		int ret = org.lwjgl.opengl.GL43.glGenTransformFeedbacks();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenTransformFeedbacks() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11175,6 +12492,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP1uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11182,6 +12500,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP1uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11189,6 +12508,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglWindowPos2sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglWindowPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11196,6 +12516,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTexCoord3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11203,6 +12524,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib3fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11210,6 +12532,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib3fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11217,6 +12540,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glStencilMask(int arg0) {
 		org.lwjgl.opengl.GL43.glStencilMask(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11225,6 +12549,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6) {
 		org.lwjgl.opengl.GL43.glCopyTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCopyTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -11232,6 +12557,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform3uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11239,6 +12565,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor4bv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11246,6 +12573,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetInteger(int arg0) {
 		int ret = org.lwjgl.opengl.GL43.glGetInteger(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11254,6 +12582,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformdv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11261,6 +12590,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformdv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11268,6 +12598,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribPointerv(int arg0, int arg1, PointerBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11275,6 +12606,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBlendEquationSeparate(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBlendEquationSeparate(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11282,6 +12614,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glViewportIndexedf(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL43.glViewportIndexedf(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glViewportIndexedf(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11289,6 +12622,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPauseTransformFeedback() {
 		org.lwjgl.opengl.GL43.glPauseTransformFeedback();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPauseTransformFeedback() !! ERROR: " + err);
 	}
 
@@ -11296,6 +12630,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11303,6 +12638,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11310,6 +12646,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11317,6 +12654,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11324,6 +12662,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP1ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP1ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP1ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11331,6 +12670,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3ubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3ubv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3ubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11339,6 +12679,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7) {
 		org.lwjgl.opengl.GL43.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -11346,6 +12687,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4x3fv(int arg0, int arg1, boolean arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11353,6 +12695,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4x3fv(int arg0, int arg1, boolean arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11360,6 +12703,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11367,6 +12711,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11374,6 +12719,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11381,6 +12727,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, long[] arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11388,6 +12735,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, short[] arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11395,6 +12743,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11402,6 +12751,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11409,6 +12759,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11416,6 +12767,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11423,6 +12775,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11430,6 +12783,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBufferSubData(int arg0, long arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11437,6 +12791,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexdv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glIndexdv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexdv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11444,6 +12799,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexdv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glIndexdv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexdv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11451,6 +12807,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearDepth(double arg0) {
 		org.lwjgl.opengl.GL43.glClearDepth(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearDepth(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11458,6 +12815,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteTextures(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11465,6 +12823,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteTextures(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11472,6 +12831,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteTextures(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11479,6 +12839,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4s(int arg0, short arg1, short arg2, short arg3, short arg4) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4s(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11486,6 +12847,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3uiv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11493,6 +12855,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3uiv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11500,6 +12863,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glGetBufferParameteri64(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL43.glGetBufferParameteri64(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11508,6 +12872,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglBindFragDataLocation(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglBindFragDataLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglBindFragDataLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11515,6 +12880,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord1sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord1sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11522,6 +12888,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform4dv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform4dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11529,6 +12896,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4d(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11536,6 +12904,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribL3dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribL3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribL3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11543,6 +12912,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11550,6 +12920,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetUniformfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11557,6 +12928,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib3dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11564,6 +12936,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib3dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11571,6 +12944,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11578,6 +12952,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsBaseVertex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11585,6 +12960,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsBaseVertex(int arg0, ShortBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsBaseVertex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11592,6 +12968,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11599,6 +12976,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glDrawElementsBaseVertex(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11606,6 +12984,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsBaseVertex(int arg0, ByteBuffer arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsBaseVertex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11613,6 +12992,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -11620,6 +13000,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL4dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribL4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11627,6 +13008,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL4dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribL4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11634,6 +13016,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetSubroutineIndex(int arg0, int arg1, ByteBuffer arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetSubroutineIndex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSubroutineIndex(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11642,6 +13025,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetSubroutineIndex(int arg0, int arg1, CharSequence arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetSubroutineIndex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSubroutineIndex(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11650,6 +13034,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3s(int arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11657,6 +13042,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetPixelMapusv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11665,6 +13051,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg5, long arg6) {
 		org.lwjgl.opengl.GL43.nglGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -11672,6 +13059,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib3fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11679,6 +13067,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11686,6 +13075,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3d(int arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11693,6 +13083,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexGendv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glGetTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11700,6 +13091,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexGendv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetTexGendv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexGendv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11707,6 +13099,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPopName() {
 		org.lwjgl.opengl.GL43.glPopName();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPopName() !! ERROR: " + err);
 	}
 
@@ -11714,6 +13107,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11721,6 +13115,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4x3dv(int arg0, int arg1, boolean arg2, double[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4x3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11728,6 +13123,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4x3dv(int arg0, int arg1, boolean arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4x3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11735,6 +13131,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexfv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glIndexfv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11742,6 +13139,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexfv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glIndexfv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11749,6 +13147,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsList(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsList(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsList(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11757,6 +13156,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11764,6 +13164,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetFloatv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11771,6 +13172,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2s(int arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11778,6 +13180,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform2uiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform2uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11786,6 +13189,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6, long arg7) {
 		org.lwjgl.opengl.GL43.nglGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -11793,6 +13197,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetString(int arg0) {
 		String ret = org.lwjgl.opengl.GL43.glGetString(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11801,6 +13206,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteSamplers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDeleteSamplers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteSamplers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11808,6 +13214,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform3dv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform3dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11815,6 +13222,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11822,6 +13230,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11829,6 +13238,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetActiveUniformBlockiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11836,6 +13246,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRenderbufferStorage(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glRenderbufferStorage(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -11843,6 +13254,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRectiv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglRectiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRectiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11850,6 +13262,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelZoom(float arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glPixelZoom(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelZoom(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11857,6 +13270,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetSubroutineUniformLocation(int arg0, int arg1, CharSequence arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetSubroutineUniformLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSubroutineUniformLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11865,6 +13279,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetSubroutineUniformLocation(int arg0, int arg1, ByteBuffer arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetSubroutineUniformLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSubroutineUniformLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11873,6 +13288,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexGenf(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glTexGenf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexGenf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11880,6 +13296,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexGeni(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTexGeni(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexGeni(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11887,6 +13304,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11894,6 +13312,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11901,6 +13320,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglCallLists(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglCallLists(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglCallLists(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11908,6 +13328,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetFloat(int arg0) {
 		float ret = org.lwjgl.opengl.GL43.glGetFloat(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11916,6 +13337,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glNormal3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11923,6 +13345,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glNormal3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11930,6 +13353,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetSubroutineUniformLocation(int arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL43.nglGetSubroutineUniformLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetSubroutineUniformLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11938,6 +13362,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetTexParameterIui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetTexParameterIui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -11946,6 +13371,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexGend(int arg0, int arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glTexGend(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexGend(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11953,6 +13379,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBooleani_v(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetBooleani_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBooleani_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11960,6 +13387,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11967,6 +13395,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -11974,6 +13403,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4ubv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -11981,6 +13411,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11988,6 +13419,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -11996,6 +13428,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg4, int arg5, int arg6) {
 		org.lwjgl.opengl.GL43.nglDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -12003,6 +13436,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetInteger64v(int arg0, long[] arg1) {
 		org.lwjgl.opengl.GL43.glGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12010,6 +13444,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetInteger64v(int arg0, LongBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12018,6 +13453,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg5, int arg6) {
 		org.lwjgl.opengl.GL43.nglInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -12025,6 +13461,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPixelMapuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12032,6 +13469,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPixelMapuiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.glGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12039,6 +13477,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPixelMapuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12046,6 +13485,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12053,6 +13493,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12060,6 +13501,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSynciv(long arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetSynciv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12067,6 +13509,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSynciv(long arg0, int arg1, int[] arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetSynciv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12074,6 +13517,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveAtomicCounterBufferiv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveAtomicCounterBufferiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveAtomicCounterBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12081,6 +13525,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveAtomicCounterBufferiv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetActiveAtomicCounterBufferiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveAtomicCounterBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12088,6 +13533,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetProgramPipelineiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetProgramPipelineiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramPipelineiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12095,6 +13541,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4bv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4bv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4bv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12102,6 +13549,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform3fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12109,6 +13557,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL43.glGenBuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12116,6 +13565,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenBuffers() {
 		int ret = org.lwjgl.opengl.GL43.glGenBuffers();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12124,6 +13574,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenBuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGenBuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12131,6 +13582,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetProgramResourceLocation(int arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL43.nglGetProgramResourceLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramResourceLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12139,6 +13591,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetObjectPtrLabel(long arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetObjectPtrLabel(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetObjectPtrLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12146,6 +13599,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteBuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDeleteBuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12153,6 +13607,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12160,6 +13615,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12167,6 +13623,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalMesh1(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glEvalMesh1(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalMesh1(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12174,6 +13631,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalMesh2(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glEvalMesh2(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalMesh2(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -12181,6 +13639,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFramebufferParameteri(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glFramebufferParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFramebufferParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12188,6 +13647,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glViewportArrayv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glViewportArrayv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glViewportArrayv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12195,6 +13655,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glViewportArrayv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glViewportArrayv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glViewportArrayv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12202,6 +13663,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glNormal3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12209,6 +13671,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glNormal3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12216,6 +13679,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2x3fv(int arg0, int arg1, boolean arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12223,6 +13687,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2x3fv(int arg0, int arg1, boolean arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12231,6 +13696,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg5) {
 		org.lwjgl.opengl.GL43.nglGetActiveSubroutineName(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveSubroutineName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -12238,6 +13704,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex4sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12245,6 +13712,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP2ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP2ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP2ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12252,6 +13720,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glNormal3bv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12259,6 +13728,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexPointer(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glIndexPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12266,6 +13736,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexPointer(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glIndexPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12273,6 +13744,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glIndexPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12280,6 +13752,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexPointer(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glIndexPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12287,6 +13760,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexPointer(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glIndexPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexPointer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12294,6 +13768,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glCreateShaderProgramv(int arg0, CharSequence[] arg1) {
 		int ret = org.lwjgl.opengl.GL43.glCreateShaderProgramv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCreateShaderProgramv(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12302,6 +13777,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glCreateShaderProgramv(int arg0, PointerBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL43.glCreateShaderProgramv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCreateShaderProgramv(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12310,6 +13786,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glCreateShaderProgramv(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL43.glCreateShaderProgramv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCreateShaderProgramv(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12318,6 +13795,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos4sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12325,6 +13803,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform3iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform3iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12332,6 +13811,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEndList() {
 		org.lwjgl.opengl.GL43.glEndList();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEndList() !! ERROR: " + err);
 	}
 
@@ -12339,6 +13819,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4fv(int arg0, int arg1, boolean arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12346,6 +13827,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4fv(int arg0, int arg1, boolean arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12353,6 +13835,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFramebufferTextureLayer(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glFramebufferTextureLayer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -12361,6 +13844,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL43.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -12369,6 +13853,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL43.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12378,6 +13863,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengl.GL43.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -12386,6 +13872,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL43.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12394,6 +13881,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColor3sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglSecondaryColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12401,6 +13889,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribLdv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribLdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribLdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12408,6 +13897,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribLdv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribLdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribLdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12415,6 +13905,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexP4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12422,6 +13913,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexP4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12429,6 +13921,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGenRenderbuffers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGenRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12436,6 +13929,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix4x2dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix4x2dv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix4x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -12443,6 +13937,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRectfv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglRectfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRectfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12450,6 +13945,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribLFormat(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribLFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribLFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12457,6 +13953,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12464,6 +13961,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL43.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12471,6 +13969,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12478,6 +13977,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12485,6 +13985,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12492,6 +13993,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglIndexdv(long arg0) {
 		org.lwjgl.opengl.GL43.nglIndexdv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglIndexdv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12499,6 +14001,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSamplerParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12506,6 +14009,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetSamplerParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12513,6 +14017,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix3x4dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix3x4dv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix3x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -12520,6 +14025,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4dv(int arg0, int arg1, boolean arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12527,6 +14033,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4dv(int arg0, int arg1, boolean arg2, double[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12534,6 +14041,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long nglGetString(int arg0) {
 		long ret = org.lwjgl.opengl.GL43.nglGetString(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12542,6 +14050,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglInterleavedArrays(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglInterleavedArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglInterleavedArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12549,6 +14058,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2x3dv(int arg0, int arg1, boolean arg2, double[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2x3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12556,6 +14066,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix2x3dv(int arg0, int arg1, boolean arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix2x3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix2x3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12563,6 +14074,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glNormal3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12570,6 +14082,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormal3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glNormal3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormal3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12577,6 +14090,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12584,6 +14098,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12591,6 +14106,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glGetInteger64i(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL43.glGetInteger64i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12599,6 +14115,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord2sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12606,6 +14123,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRectdv(long arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglRectdv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRectdv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12613,6 +14131,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12620,6 +14139,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glColor4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12627,6 +14147,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglIndexfv(long arg0) {
 		org.lwjgl.opengl.GL43.nglIndexfv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglIndexfv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12634,6 +14155,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix4x2fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix4x2fv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -12642,6 +14164,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg5) {
 		org.lwjgl.opengl.GL43.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -12649,6 +14172,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglWindowPos3iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglWindowPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12656,6 +14180,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI3ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribI3ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12663,6 +14188,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix3x4fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix3x4fv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -12670,6 +14196,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglEdgeFlagv(long arg0) {
 		org.lwjgl.opengl.GL43.nglEdgeFlagv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglEdgeFlagv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12677,6 +14204,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetError() {
 		int ret = org.lwjgl.opengl.GL43.glGetError();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12685,6 +14213,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglLoadTransposeMatrixd(long arg0) {
 		org.lwjgl.opengl.GL43.nglLoadTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglLoadTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12692,6 +14221,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDebugMessageInsert(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL43.nglDebugMessageInsert(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDebugMessageInsert(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -12699,6 +14229,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPatchParameteri(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glPatchParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPatchParameteri(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12706,6 +14237,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglLoadTransposeMatrixf(long arg0) {
 		org.lwjgl.opengl.GL43.nglLoadTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglLoadTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12713,6 +14245,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglWindowPos3dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglWindowPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12720,6 +14253,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColor3fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglSecondaryColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12727,6 +14261,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLogicOp(int arg0) {
 		org.lwjgl.opengl.GL43.glLogicOp(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLogicOp(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12734,6 +14269,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glUniform3ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12741,6 +14277,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glScissor(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glScissor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12748,6 +14285,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glGetQueryObjectui64(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL43.glGetQueryObjectui64(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12756,6 +14294,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1d(int arg0, int arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12763,6 +14302,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1f(int arg0, int arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12770,6 +14310,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12777,6 +14318,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetBooleanv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12784,6 +14326,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glColor4ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12791,6 +14334,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultTransposeMatrixd(long arg0) {
 		org.lwjgl.opengl.GL43.nglMultTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12798,6 +14342,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib3sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib3sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12805,6 +14350,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4ub(byte arg0, byte arg1, byte arg2, byte arg3) {
 		org.lwjgl.opengl.GL43.glColor4ub(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4ub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12812,6 +14358,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultTransposeMatrixf(long arg0) {
 		org.lwjgl.opengl.GL43.nglMultTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12819,6 +14366,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexEnviv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12826,6 +14374,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexParameterIi(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glTexParameterIi(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexParameterIi(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12833,6 +14382,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglWindowPos3fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglWindowPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12840,6 +14390,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord2dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12847,6 +14398,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12854,6 +14406,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glColorP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12861,6 +14414,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glClientWaitSync(long arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL43.glClientWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -12869,6 +14423,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColor3iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglSecondaryColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12876,6 +14431,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4us(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL43.glColor4us(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4us(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12883,6 +14439,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glViewportIndexedfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glViewportIndexedfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glViewportIndexedfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12890,6 +14447,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glViewportIndexedfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glViewportIndexedfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glViewportIndexedfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12897,6 +14455,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBlendEquationSeparatei(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glBlendEquationSeparatei(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlendEquationSeparatei(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12904,6 +14463,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglShaderBinary(int arg0, long arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL43.nglShaderBinary(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -12911,6 +14471,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglPointParameterfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglPointParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglPointParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12918,6 +14479,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI1uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12925,6 +14487,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI1uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12932,6 +14495,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3usv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12939,6 +14503,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3usv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -12946,6 +14511,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPixelMapusv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12953,6 +14519,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPixelMapusv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12960,6 +14527,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPixelMapusv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.glGetPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12967,6 +14535,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12974,6 +14543,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -12981,6 +14551,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSecondaryColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -12988,6 +14559,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelMapusv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -12995,6 +14567,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelMapusv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glPixelMapusv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13002,6 +14575,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelMapusv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glPixelMapusv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelMapusv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13009,6 +14583,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1fv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13016,6 +14591,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1fv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13023,6 +14599,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexsv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glIndexsv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexsv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13030,6 +14607,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexsv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glIndexsv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexsv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13037,6 +14615,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetUniformui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetUniformui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13045,6 +14624,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglWaitSync(long arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13052,6 +14632,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI2uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13059,6 +14640,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13066,6 +14648,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13073,6 +14656,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib4Nsv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib4Nsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13080,6 +14664,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glColor4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13087,6 +14672,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13094,6 +14680,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord2fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13101,6 +14688,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, double[] arg5) {
 		org.lwjgl.opengl.GL43.glMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13108,6 +14696,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, DoubleBuffer arg5) {
 		org.lwjgl.opengl.GL43.glMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13115,6 +14704,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengl.GL43.glMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13122,6 +14712,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, float[] arg5) {
 		org.lwjgl.opengl.GL43.glMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13129,6 +14720,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glAttachShader(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glAttachShader(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13136,6 +14728,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetRenderbufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13143,6 +14736,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPatchParameterfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glPatchParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPatchParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13150,6 +14744,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPatchParameterfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glPatchParameterfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPatchParameterfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13157,6 +14752,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearIndex(float arg0) {
 		org.lwjgl.opengl.GL43.glClearIndex(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearIndex(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13164,6 +14760,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexub(byte arg0) {
 		org.lwjgl.opengl.GL43.glIndexub(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexub(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13171,6 +14768,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglEvalCoord1fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglEvalCoord1fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord1fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13179,6 +14777,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			double arg6, int arg7, int arg8, double[] arg9) {
 		org.lwjgl.opengl.GL43.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -13187,6 +14786,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			double arg6, int arg7, int arg8, DoubleBuffer arg9) {
 		org.lwjgl.opengl.GL43.glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -13194,6 +14794,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexP4ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glVertexP4ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexP4ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13202,6 +14803,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, float[] arg9) {
 		org.lwjgl.opengl.GL43.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -13210,6 +14812,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengl.GL43.glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -13217,6 +14820,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetVertexAttribLdv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetVertexAttribLdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribLdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13224,6 +14828,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgramResourceLocation(int arg0, int arg1, CharSequence arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgramResourceLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13232,6 +14837,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgramResourceLocation(int arg0, int arg1, ByteBuffer arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgramResourceLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13240,6 +14846,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13247,6 +14854,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13254,6 +14862,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13261,6 +14870,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL43.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13268,6 +14878,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glTexCoordPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13275,6 +14886,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1dv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13282,6 +14894,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform1dv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform1dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform1dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13289,6 +14902,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13296,6 +14910,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13303,6 +14918,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetFramebufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetFramebufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13310,6 +14926,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetFramebufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetFramebufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13317,6 +14934,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglPointParameteriv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglPointParameteriv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglPointParameteriv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13325,6 +14943,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg4) {
 		org.lwjgl.opengl.GL43.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13332,6 +14951,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, IntBuffer arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13340,6 +14960,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg5, int arg6) {
 		org.lwjgl.opengl.GL43.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -13348,6 +14969,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg5) {
 		org.lwjgl.opengl.GL43.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13356,6 +14978,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg4) {
 		org.lwjgl.opengl.GL43.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13363,6 +14986,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetTexEnvfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13371,6 +14995,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.nglClearBufferSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglClearBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -13378,6 +15003,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform4iv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform4iv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13385,6 +15011,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBeginTransformFeedback(int arg0) {
 		org.lwjgl.opengl.GL43.glBeginTransformFeedback(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBeginTransformFeedback(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13392,6 +15019,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glObjectPtrLabel(long arg0, CharSequence arg1) {
 		org.lwjgl.opengl.GL43.glObjectPtrLabel(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glObjectPtrLabel(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13399,6 +15027,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glObjectPtrLabel(long arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glObjectPtrLabel(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glObjectPtrLabel(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13406,6 +15035,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexBufferRange(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL43.glTexBufferRange(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13413,6 +15043,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexParameterIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13420,6 +15051,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexParameterIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetTexParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13427,6 +15059,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglEvalCoord1dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglEvalCoord1dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord1dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13434,6 +15067,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawArraysInstancedBaseInstance(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glDrawArraysInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawArraysInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13441,6 +15075,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Nub(int arg0, byte arg1, byte arg2, byte arg3, byte arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Nub(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nub(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13448,6 +15083,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13455,6 +15091,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13462,6 +15099,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsQuery(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsQuery(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsQuery(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13470,6 +15108,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSelectBuffer(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glSelectBuffer(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSelectBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13477,6 +15116,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSelectBuffer(int[] arg0) {
 		org.lwjgl.opengl.GL43.glSelectBuffer(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSelectBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13484,6 +15124,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglNormal3sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglNormal3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglNormal3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13491,6 +15132,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Nsv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Nsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13498,6 +15140,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Nsv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Nsv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nsv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13506,6 +15149,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg5) {
 		org.lwjgl.opengl.GL43.nglDrawElementsInstancedBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsInstancedBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13513,6 +15157,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13520,6 +15165,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13527,6 +15173,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform3dv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform3dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform3dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13534,6 +15181,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglIndexsv(long arg0) {
 		org.lwjgl.opengl.GL43.nglIndexsv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglIndexsv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13541,6 +15189,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetQueryObjectui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetQueryObjectui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13549,6 +15198,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos2dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13556,6 +15206,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glScissorArrayv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glScissorArrayv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glScissorArrayv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13563,6 +15214,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glScissorArrayv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glScissorArrayv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glScissorArrayv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13570,6 +15222,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4Nubv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4Nubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4Nubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13577,6 +15230,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4ubv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13584,6 +15238,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetShaderiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13591,6 +15246,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgramResourceIndex(int arg0, int arg1, ByteBuffer arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgramResourceIndex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceIndex(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13599,6 +15255,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgramResourceIndex(int arg0, int arg1, CharSequence arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgramResourceIndex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceIndex(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13607,6 +15264,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetVertexAttribIui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetVertexAttribIui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13615,6 +15273,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform2uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13622,6 +15281,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13629,6 +15289,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13636,6 +15297,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightModeliv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glLightModeliv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13643,6 +15305,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightModeliv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glLightModeliv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightModeliv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13650,6 +15313,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord4iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13657,6 +15321,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetUniformLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13665,6 +15330,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetUniformLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13673,6 +15339,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glVertexP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13680,6 +15347,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13687,6 +15355,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13694,6 +15363,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos2fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13702,6 +15372,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg5) {
 		org.lwjgl.opengl.GL43.nglMultiDrawElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13709,6 +15380,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightModelfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glLightModelfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13716,6 +15388,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLightModelfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glLightModelfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLightModelfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13723,6 +15396,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13730,6 +15404,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13737,6 +15412,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribIFormat(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribIFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13744,6 +15420,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glUniform2d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13751,6 +15428,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord4dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13758,6 +15436,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glUniform2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13765,6 +15444,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMultisamplefv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetMultisamplefv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13772,6 +15452,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetMultisamplefv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetMultisamplefv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetMultisamplefv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13779,6 +15460,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetInternalformativ(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetInternalformativ(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13786,6 +15468,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetInternalformativ(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetInternalformativ(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13793,6 +15476,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glUniform2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13800,6 +15484,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13807,6 +15492,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, short[] arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13814,6 +15500,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13821,6 +15508,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, long[] arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13828,6 +15516,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13835,6 +15524,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13842,6 +15532,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13849,6 +15540,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13856,6 +15548,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13863,6 +15556,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13870,6 +15564,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBufferSubData(int arg0, long arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13877,6 +15572,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13884,6 +15580,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13891,6 +15588,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetQueryObjectiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -13898,6 +15596,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiDrawElements(int arg0, long arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengl.GL43.nglMultiDrawElements(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -13905,6 +15604,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4ui(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL43.glProgramUniform4ui(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -13912,6 +15612,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsEnabled(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsEnabled(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13920,6 +15621,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glGetInternalformati64(int arg0, int arg1, int arg2) {
 		long ret = org.lwjgl.opengl.GL43.glGetInternalformati64(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInternalformati64(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13928,6 +15630,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP2uiv(int arg0, int arg1, boolean arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP2uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13935,6 +15638,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP2uiv(int arg0, int arg1, boolean arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP2uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13942,6 +15646,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3d(int arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glUniform3d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13949,6 +15654,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glUniform3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13956,6 +15662,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglGetFragDataLocation(int arg0, long arg1) {
 		int ret = org.lwjgl.opengl.GL43.nglGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -13964,6 +15671,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13971,6 +15679,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -13978,6 +15687,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glUniform3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -13985,6 +15695,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13992,6 +15703,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -13999,6 +15711,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearDepthf(float arg0) {
 		org.lwjgl.opengl.GL43.glClearDepthf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearDepthf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14006,6 +15719,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDisableVertexAttribArray(int arg0) {
 		org.lwjgl.opengl.GL43.glDisableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14013,6 +15727,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribP1uiv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglVertexAttribP1uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14020,6 +15735,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL43.glUniform4d(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14027,6 +15743,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryIndexediv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengl.GL43.glGetQueryIndexediv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryIndexediv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14034,6 +15751,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryIndexediv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetQueryIndexediv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryIndexediv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14042,6 +15760,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14050,6 +15769,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineUniformName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14057,6 +15777,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveSubroutineUniformName_String(int arg0, int arg1, int arg2, int arg3) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveSubroutineUniformName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14065,6 +15786,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveSubroutineUniformName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveSubroutineUniformName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineUniformName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14073,6 +15795,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14080,6 +15803,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14087,6 +15811,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14094,6 +15819,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex4iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14101,6 +15827,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord4fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord4fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14108,6 +15835,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindFragDataLocationIndexed(int arg0, int arg1, int arg2, CharSequence arg3) {
 		org.lwjgl.opengl.GL43.glBindFragDataLocationIndexed(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14115,6 +15843,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindFragDataLocationIndexed(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glBindFragDataLocationIndexed(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindFragDataLocationIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14122,6 +15851,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDepthRangeArrayv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglDepthRangeArrayv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDepthRangeArrayv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14129,6 +15859,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14136,6 +15867,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14143,6 +15875,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP4ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP4ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14150,6 +15883,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexParameterfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14157,6 +15891,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetTexParameterfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14164,6 +15899,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInvalidateTexImage(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glInvalidateTexImage(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateTexImage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14171,6 +15907,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetBooleanv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14178,6 +15915,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEndQuery(int arg0) {
 		org.lwjgl.opengl.GL43.glEndQuery(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEndQuery(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14185,6 +15923,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1d(int arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glUniform1d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14192,6 +15931,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1f(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glUniform1f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14199,6 +15939,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glGetBooleani(int arg0, int arg1) {
 		boolean ret = org.lwjgl.opengl.GL43.glGetBooleani(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBooleani(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14207,6 +15948,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDisablei(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glDisablei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDisablei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14215,6 +15957,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, int arg9) {
 		org.lwjgl.opengl.GL43.glBlitFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -14222,6 +15965,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glUniform1i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14229,6 +15973,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformSubroutinesuiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniformSubroutinesuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformSubroutinesuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14236,6 +15981,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformSubroutinesuiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glUniformSubroutinesuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformSubroutinesuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14243,6 +15989,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord4sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord4sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord4sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14250,6 +15997,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribL4dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribL4dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribL4dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14257,6 +16005,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetBufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14264,6 +16013,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14271,6 +16021,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14278,6 +16029,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glScissorIndexedv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glScissorIndexedv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glScissorIndexedv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14285,6 +16037,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glScissorIndexedv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glScissorIndexedv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glScissorIndexedv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14292,6 +16045,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglIndexiv(long arg0) {
 		org.lwjgl.opengl.GL43.nglIndexiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglIndexiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14299,6 +16053,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetSamplerParameterIui(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetSamplerParameterIui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14308,6 +16063,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6, long arg7) {
 		int ret = org.lwjgl.opengl.GL43.nglGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14316,6 +16072,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform1uiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform1uiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14323,6 +16080,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP2uiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14330,6 +16088,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoordP2uiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glMultiTexCoordP2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoordP2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14337,6 +16096,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14344,6 +16104,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPushAttrib(int arg0) {
 		org.lwjgl.opengl.GL43.glPushAttrib(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPushAttrib(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14351,6 +16112,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetObjectLabel(int arg0, int arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetObjectLabel(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetObjectLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14358,6 +16120,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetObjectLabel_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL43.glGetObjectLabel(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetObjectLabel_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14366,6 +16129,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetObjectLabel_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL43.glGetObjectLabel(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetObjectLabel_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14374,6 +16138,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetObjectLabel(int arg0, int arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetObjectLabel(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetObjectLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14381,6 +16146,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14388,6 +16154,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14395,6 +16162,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14402,6 +16170,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3bv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor3bv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14409,6 +16178,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSamplerParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14416,6 +16186,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI3iv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI3iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14423,6 +16194,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBeginConditionalRender(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBeginConditionalRender(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBeginConditionalRender(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14430,6 +16202,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14437,6 +16210,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform1uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform1uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14444,6 +16218,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenerateMipmap(int arg0) {
 		org.lwjgl.opengl.GL43.glGenerateMipmap(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14451,6 +16226,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBlendEquation(int arg0) {
 		org.lwjgl.opengl.GL43.glBlendEquation(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14458,6 +16234,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMemoryBarrier(int arg0) {
 		org.lwjgl.opengl.GL43.glMemoryBarrier(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMemoryBarrier(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14465,6 +16242,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribDivisor(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribDivisor(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribDivisor(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14473,6 +16251,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			boolean arg5) {
 		org.lwjgl.opengl.GL43.glTexStorage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexStorage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -14480,6 +16259,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglPixelMapuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglPixelMapuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglPixelMapuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14487,6 +16267,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4x2dv(int arg0, boolean arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4x2dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14494,6 +16275,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4x2dv(int arg0, boolean arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4x2dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14501,6 +16283,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glClearColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glClearColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14508,6 +16291,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameterIuiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14515,6 +16299,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSamplerParameterIuiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glSamplerParameterIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14522,6 +16307,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord4sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14529,6 +16315,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glStencilFunc(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glStencilFunc(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14536,6 +16323,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI2i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glVertexAttribI2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14543,6 +16331,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiDrawArrays(int arg0, long arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL43.nglMultiDrawArrays(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14550,6 +16339,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP2uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14557,6 +16347,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP2uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14564,6 +16355,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteSync(long arg0) {
 		org.lwjgl.opengl.GL43.glDeleteSync(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteSync(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14571,6 +16363,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib2fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14578,6 +16371,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib2fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14585,6 +16379,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14592,6 +16387,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos3iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14599,6 +16395,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glUniform2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14606,6 +16403,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glUniform2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14613,6 +16411,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14620,6 +16419,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14627,6 +16427,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14634,6 +16435,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14641,6 +16443,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorP4ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glColorP4ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorP4ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14648,6 +16451,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14655,6 +16459,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14662,6 +16467,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribI3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14669,6 +16475,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetPointerv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetPointerv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetPointerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14676,6 +16483,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glGetPointer(int arg0) {
 		long ret = org.lwjgl.opengl.GL43.glGetPointer(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPointer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14684,6 +16492,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib2dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14691,6 +16500,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib2dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14698,6 +16508,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRotated(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glRotated(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRotated(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14705,6 +16516,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glIndexubv(ByteBuffer arg0) {
 		org.lwjgl.opengl.GL43.glIndexubv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIndexubv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14712,6 +16524,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRotatef(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glRotatef(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRotatef(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14719,6 +16532,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL3dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribL3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14726,6 +16540,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribL3dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribL3dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribL3dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14733,6 +16548,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4x2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14740,6 +16556,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix4x2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix4x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14747,6 +16564,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteSamplers(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteSamplers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14754,6 +16572,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteSamplers(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDeleteSamplers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14761,6 +16580,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteSamplers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDeleteSamplers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14769,6 +16589,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			boolean arg5) {
 		org.lwjgl.opengl.GL43.nglDebugMessageControl(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -14776,6 +16597,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawArrays(int arg0, int[] arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glMultiDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14783,6 +16605,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawArrays(int arg0, IntBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glMultiDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14790,6 +16613,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14797,6 +16621,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib2fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14804,6 +16629,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3x4dv(int arg0, int arg1, boolean arg2, double[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3x4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14811,6 +16637,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3x4dv(int arg0, int arg1, boolean arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3x4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14818,6 +16645,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetAttribLocation(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14826,6 +16654,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetAttribLocation(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14834,6 +16663,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14841,6 +16671,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14848,6 +16679,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glCreateShader(int arg0) {
 		int ret = org.lwjgl.opengl.GL43.glCreateShader(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14856,6 +16688,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglSamplerParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14863,6 +16696,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4x2dv(int arg0, int arg1, boolean arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4x2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14870,6 +16704,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4x2dv(int arg0, int arg1, boolean arg2, double[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4x2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14877,6 +16712,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex2fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -14884,6 +16720,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawArraysIndirect(int arg0, ByteBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glMultiDrawArraysIndirect(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArraysIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14891,6 +16728,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawArraysIndirect(int arg0, long arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glMultiDrawArraysIndirect(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArraysIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14898,6 +16736,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawArraysIndirect(int arg0, IntBuffer arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glMultiDrawArraysIndirect(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArraysIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14905,6 +16744,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiDrawArraysIndirect(int arg0, int[] arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glMultiDrawArraysIndirect(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiDrawArraysIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14912,6 +16752,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribLPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribLPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14919,6 +16760,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribLPointer(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribLPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14926,6 +16768,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribLPointer(int arg0, int arg1, int arg2, DoubleBuffer arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribLPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribLPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -14933,6 +16776,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoordP1uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoordP1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoordP1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14940,6 +16784,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetInternalformati64v(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetInternalformati64v(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetInternalformati64v(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -14947,6 +16792,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2dv(int arg0, boolean arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14954,6 +16800,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2dv(int arg0, boolean arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -14961,6 +16808,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgramStagei(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgramStagei(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramStagei(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -14969,6 +16817,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL43.nglDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -14976,6 +16825,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI1i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI1i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14984,6 +16834,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -14991,6 +16842,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexP3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -14998,6 +16850,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glWindowPos2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15005,6 +16858,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramBinary(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramBinary(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15012,6 +16866,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI2iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15019,6 +16874,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI2iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI2iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15026,6 +16882,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glWindowPos2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15033,6 +16890,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribP2ui(int arg0, int arg1, boolean arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttribP2ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribP2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15040,6 +16898,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glWindowPos2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15047,6 +16906,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15054,6 +16914,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord3iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15061,6 +16922,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglRasterPos2iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglRasterPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglRasterPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15068,6 +16930,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix2dv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15075,6 +16938,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib2dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib2dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15082,6 +16946,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glWindowPos3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15089,6 +16954,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveAttrib_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveAttrib(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15098,6 +16964,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			IntBuffer arg4) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15107,6 +16974,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL43.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -15115,6 +16983,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL43.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -15122,6 +16991,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertex2dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglVertex2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertex2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15129,6 +16999,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glWindowPos3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15136,6 +17007,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glWindowPos3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15143,6 +17015,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glWindowPos3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15150,6 +17023,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15157,6 +17031,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix2fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15164,6 +17039,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsIndirect(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsIndirect(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15171,6 +17047,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsIndirect(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsIndirect(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15178,6 +17055,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsIndirect(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsIndirect(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15185,6 +17063,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDrawElementsIndirect(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glDrawElementsIndirect(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15192,6 +17071,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public long glGetBufferPointer(int arg0, int arg1) {
 		long ret = org.lwjgl.opengl.GL43.glGetBufferPointer(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15200,6 +17080,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glQueryCounter(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glQueryCounter(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glQueryCounter(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15207,6 +17088,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGenTransformFeedbacks(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGenTransformFeedbacks(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGenTransformFeedbacks(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15214,6 +17096,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribIiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15221,6 +17104,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribIiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15228,6 +17112,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int nglClientWaitSync(long arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengl.GL43.nglClientWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15236,6 +17121,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL43.glWindowPos2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15243,6 +17129,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPointSize(float arg0) {
 		org.lwjgl.opengl.GL43.glPointSize(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPointSize(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15250,6 +17137,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glShaderSource(int arg0, PointerBuffer arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15257,6 +17145,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glShaderSource(int arg0, CharSequence[] arg1) {
 		org.lwjgl.opengl.GL43.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15264,6 +17153,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glShaderSource(int arg0, PointerBuffer arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15271,6 +17161,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glShaderSource(int arg0, CharSequence arg1) {
 		org.lwjgl.opengl.GL43.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15278,6 +17169,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform4fv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15285,6 +17177,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglObjectLabel(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglObjectLabel(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglObjectLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15292,6 +17185,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglNormal3bv(long arg0) {
 		org.lwjgl.opengl.GL43.nglNormal3bv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglNormal3bv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15300,6 +17194,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL43.nglTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -15307,6 +17202,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBlendFuncSeparatei(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glBlendFuncSeparatei(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlendFuncSeparatei(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -15314,6 +17210,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15321,6 +17218,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15329,6 +17227,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			boolean arg5) {
 		org.lwjgl.opengl.GL43.glTexImage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexImage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -15336,6 +17235,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglObjectPtrLabel(long arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglObjectPtrLabel(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglObjectPtrLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15343,6 +17243,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glVertex4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15350,6 +17251,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glVertex4sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15357,6 +17259,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -15364,6 +17267,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4d(int arg0, double arg1, double arg2, double arg3, double arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4d(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -15371,6 +17275,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribdv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15378,6 +17283,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribdv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribdv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribdv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15385,6 +17291,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetCompressedTexImage(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetCompressedTexImage(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetCompressedTexImage(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15392,6 +17299,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetProgramiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15399,6 +17307,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglWindowPos2iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglWindowPos2iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15406,6 +17315,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4s(int arg0, short arg1, short arg2, short arg3, short arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4s(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -15413,6 +17323,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexP3uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15420,6 +17331,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexP3uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexP3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexP3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15427,6 +17339,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glArrayElement(int arg0) {
 		org.lwjgl.opengl.GL43.glArrayElement(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glArrayElement(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15434,6 +17347,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4usv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15441,6 +17355,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib4usv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib4usv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4usv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15448,6 +17363,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetVertexAttribi(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetVertexAttribi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15456,6 +17372,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetObjectLabel(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetObjectLabel(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetObjectLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -15463,6 +17380,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1iv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15470,6 +17388,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1iv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1iv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15477,6 +17396,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor3uiv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor3uiv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor3uiv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15484,6 +17404,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBlendColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glBlendColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15491,6 +17412,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDrawPixels(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglDrawPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDrawPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -15498,6 +17420,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3x4fv(int arg0, int arg1, boolean arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15505,6 +17428,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix3x4fv(int arg0, int arg1, boolean arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix3x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15512,6 +17436,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniform4iv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglUniform4iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15519,6 +17444,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetUniformBlockIndex(int arg0, ByteBuffer arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15527,6 +17453,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetUniformBlockIndex(int arg0, CharSequence arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15535,6 +17462,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetLightfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetLightfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetLightfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15542,6 +17470,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInvalidateBufferData(int arg0) {
 		org.lwjgl.opengl.GL43.glInvalidateBufferData(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInvalidateBufferData(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15549,6 +17478,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4x2fv(int arg0, int arg1, boolean arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15556,6 +17486,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniformMatrix4x2fv(int arg0, int arg1, boolean arg2, float[] arg3) {
 		org.lwjgl.opengl.GL43.glProgramUniformMatrix4x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15563,6 +17494,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglBufferSubData(int arg0, long arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglBufferSubData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15570,6 +17502,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15577,6 +17510,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15584,6 +17518,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15591,6 +17526,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribfv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15598,6 +17534,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribfv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15605,6 +17542,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3x4fv(int arg0, boolean arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15612,6 +17550,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3x4fv(int arg0, boolean arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15619,6 +17558,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMap1d(int arg0, double arg1, double arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL43.nglMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMap1d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -15626,6 +17566,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMap1f(int arg0, float arg1, float arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengl.GL43.nglMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMap1f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -15634,6 +17575,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7, long arg8) {
 		org.lwjgl.opengl.GL43.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -15642,6 +17584,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengl.GL43.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -15649,6 +17592,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glUnmapBuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glUnmapBuffer(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUnmapBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15657,6 +17601,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetTexLevelParameterf(int arg0, int arg1, int arg2) {
 		float ret = org.lwjgl.opengl.GL43.glGetTexLevelParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15665,6 +17610,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglWindowPos2fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglWindowPos2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15672,6 +17618,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoordP4uiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoordP4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoordP4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15679,6 +17626,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetTexLevelParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetTexLevelParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexLevelParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15687,6 +17635,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPointParameteri(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glPointParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPointParameteri(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15694,6 +17643,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix3x2dv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix3x2dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x2dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15701,6 +17651,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPointParameterf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glPointParameterf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPointParameterf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15708,6 +17659,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDepthRangeArrayv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glDepthRangeArrayv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDepthRangeArrayv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15715,6 +17667,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDepthRangeArrayv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glDepthRangeArrayv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDepthRangeArrayv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15722,6 +17675,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengl.GL43.nglReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -15729,6 +17683,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoord3sv(long arg0) {
 		org.lwjgl.opengl.GL43.nglTexCoord3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoord3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15736,6 +17691,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetQueryIndexediv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetQueryIndexediv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetQueryIndexediv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15743,6 +17699,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4dv(int arg0, int arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform4dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15750,6 +17707,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4dv(int arg0, int arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform4dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15757,6 +17715,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix2x4dv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix2x4dv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -15765,6 +17724,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			double arg6, int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL43.nglMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMap2d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -15772,6 +17732,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3x4dv(int arg0, boolean arg1, DoubleBuffer arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3x4dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15779,6 +17740,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniformMatrix3x4dv(int arg0, boolean arg1, double[] arg2) {
 		org.lwjgl.opengl.GL43.glUniformMatrix3x4dv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15787,6 +17749,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, int arg8, long arg9) {
 		org.lwjgl.opengl.GL43.nglMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMap2f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
@@ -15794,6 +17757,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3iv(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15801,6 +17765,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3iv(int[] arg0) {
 		org.lwjgl.opengl.GL43.glColor3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15808,6 +17773,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetPixelMapuiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGetPixelMapuiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetPixelMapuiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15815,6 +17781,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glInitNames() {
 		org.lwjgl.opengl.GL43.glInitNames();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glInitNames() !! ERROR: " + err);
 	}
 
@@ -15822,6 +17789,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15829,6 +17797,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoord4dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glTexCoord4dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoord4dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15836,6 +17805,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetInternalformativ(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetInternalformativ(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -15843,6 +17813,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI2ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glVertexAttribI2ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15850,6 +17821,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPrimitiveRestartIndex(int arg0) {
 		org.lwjgl.opengl.GL43.glPrimitiveRestartIndex(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPrimitiveRestartIndex(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15857,6 +17829,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTranslatef(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glTranslatef(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTranslatef(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15864,6 +17837,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPopMatrix() {
 		org.lwjgl.opengl.GL43.glPopMatrix();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPopMatrix() !! ERROR: " + err);
 	}
 
@@ -15871,6 +17845,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveSubroutineName_String(int arg0, int arg1, int arg2, int arg3) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveSubroutineName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15879,6 +17854,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetActiveSubroutineName(int arg0, int arg1, int arg2, int[] arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetActiveSubroutineName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -15887,6 +17863,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glGetActiveSubroutineName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -15894,6 +17871,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetActiveSubroutineName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengl.GL43.glGetActiveSubroutineName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetActiveSubroutineName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15902,6 +17880,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTranslated(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glTranslated(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTranslated(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15910,6 +17889,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg4) {
 		ByteBuffer ret = org.lwjgl.opengl.GL43.glMapBufferRange(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15918,6 +17898,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3) {
 		ByteBuffer ret = org.lwjgl.opengl.GL43.glMapBufferRange(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15926,6 +17907,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsFramebuffer(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsFramebuffer(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -15934,6 +17916,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glColor3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15941,6 +17924,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glColor3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15948,6 +17932,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glTexCoordP1ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glTexCoordP1ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glTexCoordP1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -15955,6 +17940,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetLightiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetLightiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetLightiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15962,6 +17948,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3fv(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15969,6 +17956,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3fv(float[] arg0) {
 		org.lwjgl.opengl.GL43.glColor3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -15976,6 +17964,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glColor3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -15984,6 +17973,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg6) {
 		org.lwjgl.opengl.GL43.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -15992,6 +17982,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg5) {
 		org.lwjgl.opengl.GL43.glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -15999,6 +17990,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetShaderSource(int arg0, IntBuffer arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16006,6 +17998,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetShaderSource(int arg0, int[] arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16013,6 +18006,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetShaderSource_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengl.GL43.glGetShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16021,6 +18015,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public String glGetShaderSource_String(int arg0) {
 		String ret = org.lwjgl.opengl.GL43.glGetShaderSource(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16029,6 +18024,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3b(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL43.glColor3b(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3b(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16036,6 +18032,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glColor3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16043,6 +18040,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix3x2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix3x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16050,6 +18048,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16057,6 +18056,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetVertexAttribiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16064,6 +18064,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glStencilOpSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glStencilOpSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16071,6 +18072,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16078,6 +18080,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glRasterPos2sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glRasterPos2sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glRasterPos2sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16085,6 +18088,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglUniformMatrix2x4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglUniformMatrix2x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16092,6 +18096,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL43.glColor4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16099,6 +18104,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramBinary(int arg0, IntBuffer arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetProgramBinary(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16106,6 +18112,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramBinary(int arg0, int[] arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glGetProgramBinary(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16113,6 +18120,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glColor4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16120,6 +18128,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glColor4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16127,6 +18136,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjectiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16134,6 +18144,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjectiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16141,6 +18152,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetQueryObjectiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glGetQueryObjectiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16149,6 +18161,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			ByteBuffer arg6) {
 		org.lwjgl.opengl.GL43.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -16157,6 +18170,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, long arg7) {
 		org.lwjgl.opengl.GL43.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -16164,6 +18178,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDepthRangeIndexed(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glDepthRangeIndexed(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDepthRangeIndexed(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16171,6 +18186,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorP4uiv(int arg0, int[] arg1) {
 		org.lwjgl.opengl.GL43.glColorP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16178,6 +18194,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorP4uiv(int arg0, IntBuffer arg1) {
 		org.lwjgl.opengl.GL43.glColorP4uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorP4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16185,6 +18202,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4b(byte arg0, byte arg1, byte arg2, byte arg3) {
 		org.lwjgl.opengl.GL43.glColor4b(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4b(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16192,6 +18210,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCopyPixels(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glCopyPixels(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCopyPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -16199,6 +18218,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glColor4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16206,6 +18226,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBindTransformFeedback(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBindTransformFeedback(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBindTransformFeedback(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16213,6 +18234,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgramPipelinei(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgramPipelinei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramPipelinei(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16221,6 +18243,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteBuffers(int[] arg0) {
 		org.lwjgl.opengl.GL43.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16228,6 +18251,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteBuffers(int arg0) {
 		org.lwjgl.opengl.GL43.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16235,6 +18259,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteBuffers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16242,6 +18267,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean nglAreTexturesResident(int arg0, long arg1, long arg2) {
 		boolean ret = org.lwjgl.opengl.GL43.nglAreTexturesResident(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglAreTexturesResident(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16250,6 +18276,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glColor3ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16258,6 +18285,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7, int arg8) {
 		org.lwjgl.opengl.GL43.glCopyTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -16265,6 +18293,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glNormalP3ui(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glNormalP3ui(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glNormalP3ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16272,6 +18301,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttrib2sv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttrib2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16279,6 +18309,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3ub(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL43.glColor3ub(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16286,6 +18317,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glObjectLabel(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glObjectLabel(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glObjectLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16293,6 +18325,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glObjectLabel(int arg0, int arg1, CharSequence arg2) {
 		org.lwjgl.opengl.GL43.glObjectLabel(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glObjectLabel(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16300,6 +18333,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3us(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glColor3us(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16307,6 +18341,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glVertex2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16315,6 +18350,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg4, int arg5, int arg6) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
@@ -16323,6 +18359,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -16331,6 +18368,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -16339,6 +18377,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -16347,6 +18386,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glDrawElementsInstancedBaseVertexBaseInstance(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstancedBaseVertexBaseInstance(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -16354,6 +18394,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glVertex2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16361,6 +18402,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglColor3usv(long arg0) {
 		org.lwjgl.opengl.GL43.nglColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16368,6 +18410,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2i(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glVertex2i(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16375,6 +18418,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribI4ubv(int arg0, ByteBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttribI4ubv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4ubv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16382,6 +18426,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4iv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform4iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16389,6 +18434,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4iv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform4iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16396,6 +18442,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelStoref(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glPixelStoref(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelStoref(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16403,6 +18450,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglNormal3iv(long arg0) {
 		org.lwjgl.opengl.GL43.nglNormal3iv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglNormal3iv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16410,6 +18458,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglPixelMapfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglPixelMapfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglPixelMapfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16417,6 +18466,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glStencilFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glStencilFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16424,6 +18474,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetQueryObjectuiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16431,6 +18482,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex2s(short arg0, short arg1) {
 		org.lwjgl.opengl.GL43.glVertex2s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex2s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16438,6 +18490,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelStorei(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glPixelStorei(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16445,6 +18498,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetInteger64i_v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16452,6 +18506,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetInteger64i_v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengl.GL43.glGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16459,6 +18514,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgramResourceLocationIndex(int arg0, int arg1, CharSequence arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgramResourceLocationIndex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceLocationIndex(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16467,6 +18523,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetProgramResourceLocationIndex(int arg0, int arg1, ByteBuffer arg2) {
 		int ret = org.lwjgl.opengl.GL43.glGetProgramResourceLocationIndex(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramResourceLocationIndex(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16475,6 +18532,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglEvalCoord2dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglEvalCoord2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16482,6 +18540,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3d(double arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glVertex3d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16489,6 +18548,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3f(float arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glVertex3f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16496,6 +18556,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3i(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glVertex3i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16503,6 +18564,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4fv(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16510,6 +18572,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glProgramUniform4fv(int arg0, int arg1, float[] arg2) {
 		org.lwjgl.opengl.GL43.glProgramUniform4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glProgramUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16517,6 +18580,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16524,6 +18588,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16531,6 +18596,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglFeedbackBuffer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglFeedbackBuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglFeedbackBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16538,6 +18604,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glCopyTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengl.GL43.glCopyTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
@@ -16545,6 +18612,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex3s(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glVertex3s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex3s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16552,6 +18620,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglWindowPos2dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglWindowPos2dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglWindowPos2dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16559,6 +18628,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3sv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16566,6 +18636,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColor3sv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glColor3sv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColor3sv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16573,6 +18644,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPixelMapfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.glGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16580,6 +18652,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPixelMapfv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16587,6 +18660,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetPixelMapfv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glGetPixelMapfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetPixelMapfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16594,6 +18668,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix4dv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix4dv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix4dv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -16601,6 +18676,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4d(double arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glVertex4d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16608,6 +18684,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4f(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glVertex4f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16615,6 +18692,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiDrawArraysIndirect(int arg0, long arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.nglMultiDrawArraysIndirect(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiDrawArraysIndirect(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16622,6 +18700,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glVertex4i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16629,6 +18708,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glColorMaterial(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glColorMaterial(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glColorMaterial(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16636,6 +18716,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glValidateProgramPipeline(int arg0) {
 		org.lwjgl.opengl.GL43.glValidateProgramPipeline(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glValidateProgramPipeline(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16643,6 +18724,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramPipelineiv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengl.GL43.glGetProgramPipelineiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramPipelineiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16650,6 +18732,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGetProgramPipelineiv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengl.GL43.glGetProgramPipelineiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetProgramPipelineiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16657,6 +18740,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglVertexAttribI3uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglVertexAttribI3uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16665,6 +18749,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7) {
 		org.lwjgl.opengl.GL43.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -16672,6 +18757,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGenSamplers(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglGenSamplers(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGenSamplers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16679,6 +18765,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertex4s(short arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL43.glVertex4s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertex4s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16686,6 +18773,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3ub(byte arg0, byte arg1, byte arg2) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3ub(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3ub(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16693,6 +18781,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glUniform2ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glUniform2ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glUniform2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16700,6 +18789,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3ui(int arg0, int arg1, int arg2) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16707,6 +18797,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetQueryObjecti(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetQueryObjecti(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjecti(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16715,6 +18806,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetQueryObjecti64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetQueryObjecti64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjecti64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16722,6 +18814,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glBlendEquationi(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glBlendEquationi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glBlendEquationi(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16729,6 +18822,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3us(short arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3us(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3us(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16736,6 +18830,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsProgramPipeline(int arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsProgramPipeline(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsProgramPipeline(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16744,6 +18839,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib1d(int arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib1d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16751,6 +18847,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglNormal3fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglNormal3fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglNormal3fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16758,6 +18855,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib1f(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib1f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16765,6 +18863,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord1dv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16772,6 +18871,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib1s(int arg0, short arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib1s(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1s(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16779,6 +18879,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEndConditionalRender() {
 		org.lwjgl.opengl.GL43.glEndConditionalRender();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEndConditionalRender() !! ERROR: " + err);
 	}
 
@@ -16786,6 +18887,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglBufferData(int arg0, long arg1, long arg2, int arg3) {
 		org.lwjgl.opengl.GL43.nglBufferData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16793,6 +18895,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniformMatrix4fv(int arg0, int arg1, int arg2, boolean arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglProgramUniformMatrix4fv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -16800,6 +18903,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetSynciv(long arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengl.GL43.nglGetSynciv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -16807,6 +18911,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDeleteLists(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glDeleteLists(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDeleteLists(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16814,6 +18919,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexEnvfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglTexEnvfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexEnvfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16821,6 +18927,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenSamplers(int[] arg0) {
 		org.lwjgl.opengl.GL43.glGenSamplers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16828,6 +18935,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glGenSamplers(IntBuffer arg0) {
 		org.lwjgl.opengl.GL43.glGenSamplers(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16835,6 +18943,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGenSamplers() {
 		int ret = org.lwjgl.opengl.GL43.glGenSamplers();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGenSamplers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16843,6 +18952,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform3iv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform3iv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16850,6 +18960,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetShaderPrecisionFormat(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetShaderPrecisionFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16857,6 +18968,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglFogCoordPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16864,6 +18976,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3dv(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16871,6 +18984,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glWindowPos3dv(double[] arg0) {
 		org.lwjgl.opengl.GL43.glWindowPos3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glWindowPos3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16878,6 +18992,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3usv(short[] arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16885,6 +19000,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColor3usv(ShortBuffer arg0) {
 		org.lwjgl.opengl.GL43.glSecondaryColor3usv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColor3usv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16892,6 +19008,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord1d(double arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord1d(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1d(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16899,6 +19016,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetBufferParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetBufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -16907,6 +19025,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDebugMessageCallback(GLDebugMessageCallbackI arg0, long arg1) {
 		org.lwjgl.opengl.GL43.glDebugMessageCallback(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDebugMessageCallback(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16914,6 +19033,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord1f(float arg0) {
 		org.lwjgl.opengl.GL43.glEvalCoord1f(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord1f(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -16921,6 +19041,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16928,6 +19049,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, FloatBuffer arg3) {
 		org.lwjgl.opengl.GL43.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16935,6 +19057,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengl.GL43.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16942,6 +19065,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengl.GL43.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16949,6 +19073,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glSecondaryColorPointer(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengl.GL43.glSecondaryColorPointer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glSecondaryColorPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16956,6 +19081,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttrib3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16963,6 +19089,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib3d(int arg0, double arg1, double arg2, double arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttrib3d(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3d(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -16970,6 +19097,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelTransferf(int arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glPixelTransferf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelTransferf(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16977,6 +19105,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glPixelTransferi(int arg0, int arg1) {
 		org.lwjgl.opengl.GL43.glPixelTransferi(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glPixelTransferi(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -16984,6 +19113,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoordPointer(int arg0, int arg1, FloatBuffer arg2) {
 		org.lwjgl.opengl.GL43.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16991,6 +19121,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoordPointer(int arg0, int arg1, ByteBuffer arg2) {
 		org.lwjgl.opengl.GL43.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -16998,6 +19129,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoordPointer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -17005,6 +19137,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFogCoordPointer(int arg0, int arg1, ShortBuffer arg2) {
 		org.lwjgl.opengl.GL43.glFogCoordPointer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFogCoordPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -17012,6 +19145,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1dv(int arg0, double[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17019,6 +19153,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1dv(int arg0, DoubleBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1dv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1dv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17026,6 +19161,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglNormal3dv(long arg0) {
 		org.lwjgl.opengl.GL43.nglNormal3dv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglNormal3dv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -17033,6 +19169,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexEnviv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglTexEnviv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexEnviv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -17041,6 +19178,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			long arg7) {
 		org.lwjgl.opengl.GL43.nglTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
@@ -17048,6 +19186,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetSamplerParameterIiv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengl.GL43.nglGetSamplerParameterIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameterIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -17055,6 +19194,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglMultiTexCoord1fv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglMultiTexCoord1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17062,6 +19202,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib3s(int arg0, short arg1, short arg2, short arg3) {
 		org.lwjgl.opengl.GL43.glVertexAttrib3s(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3s(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -17069,6 +19210,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglDeleteQueries(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglDeleteQueries(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglDeleteQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17076,6 +19218,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultTransposeMatrixf(FloatBuffer arg0) {
 		org.lwjgl.opengl.GL43.glMultTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -17083,6 +19226,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultTransposeMatrixf(float[] arg0) {
 		org.lwjgl.opengl.GL43.glMultTransposeMatrixf(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixf(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -17090,6 +19234,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord2d(double arg0, double arg1) {
 		org.lwjgl.opengl.GL43.glEvalCoord2d(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2d(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17097,6 +19242,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glEvalCoord2f(float arg0, float arg1) {
 		org.lwjgl.opengl.GL43.glEvalCoord2f(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glEvalCoord2f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17104,6 +19250,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglTexCoordP2uiv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglTexCoordP2uiv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexCoordP2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17111,6 +19258,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -17118,6 +19266,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -17125,6 +19274,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -17132,6 +19282,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -17139,6 +19290,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib2f(int arg0, float arg1, float arg2) {
 		org.lwjgl.opengl.GL43.glVertexAttrib2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -17146,6 +19298,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public float glGetTexParameterf(int arg0, int arg1) {
 		float ret = org.lwjgl.opengl.GL43.glGetTexParameterf(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -17154,6 +19307,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglGetProgramStageiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglGetProgramStageiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglGetProgramStageiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -17161,6 +19315,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib2d(int arg0, double arg1, double arg2) {
 		org.lwjgl.opengl.GL43.glVertexAttrib2d(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2d(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -17168,6 +19323,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public int glGetTexParameteri(int arg0, int arg1) {
 		int ret = org.lwjgl.opengl.GL43.glGetTexParameteri(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -17177,6 +19333,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14) {
 		org.lwjgl.opengl.GL43.glCopyImageSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glCopyImageSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ", " + arg12 + ", " + arg13 + ", " + arg14 + ") !! ERROR: " + err);
 	}
 
@@ -17184,6 +19341,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglViewportIndexedfv(int arg0, long arg1) {
 		org.lwjgl.opengl.GL43.nglViewportIndexedfv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglViewportIndexedfv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17191,6 +19349,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultTransposeMatrixd(double[] arg0) {
 		org.lwjgl.opengl.GL43.glMultTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -17198,6 +19357,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultTransposeMatrixd(DoubleBuffer arg0) {
 		org.lwjgl.opengl.GL43.glMultTransposeMatrixd(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultTransposeMatrixd(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -17205,6 +19365,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public boolean glIsSync(long arg0) {
 		boolean ret = org.lwjgl.opengl.GL43.glIsSync(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
@@ -17214,6 +19375,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 			int arg7, long arg8) {
 		org.lwjgl.opengl.GL43.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
@@ -17221,6 +19383,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFinish() {
 		org.lwjgl.opengl.GL43.glFinish();
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFinish() !! ERROR: " + err);
 	}
 
@@ -17228,6 +19391,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib2sv(int arg0, short[] arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17235,6 +19399,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib2sv(int arg0, ShortBuffer arg1) {
 		org.lwjgl.opengl.GL43.glVertexAttrib2sv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2sv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17242,6 +19407,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glFramebufferRenderbuffer(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengl.GL43.glFramebufferRenderbuffer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -17249,6 +19415,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttrib2s(int arg0, short arg1, short arg2) {
 		org.lwjgl.opengl.GL43.glVertexAttrib2s(arg0, arg1, arg2);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2s(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
@@ -17256,6 +19423,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1fv(int arg0, float[] arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17263,6 +19431,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glMultiTexCoord1fv(int arg0, FloatBuffer arg1) {
 		org.lwjgl.opengl.GL43.glMultiTexCoord1fv(arg0, arg1);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glMultiTexCoord1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
@@ -17270,6 +19439,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglEvalCoord2fv(long arg0) {
 		org.lwjgl.opengl.GL43.nglEvalCoord2fv(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglEvalCoord2fv(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -17277,6 +19447,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void nglProgramUniform3fv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengl.GL43.nglProgramUniform3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("nglProgramUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
@@ -17284,6 +19455,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glActiveTexture(int arg0) {
 		org.lwjgl.opengl.GL43.glActiveTexture(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -17291,6 +19463,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glVertexAttribFormat(int arg0, int arg1, int arg2, boolean arg3, int arg4) {
 		org.lwjgl.opengl.GL43.glVertexAttribFormat(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glVertexAttribFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
@@ -17298,6 +19471,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glDisableClientState(int arg0) {
 		org.lwjgl.opengl.GL43.glDisableClientState(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glDisableClientState(" + arg0 + ") !! ERROR: " + err);
 	}
 
@@ -17305,6 +19479,7 @@ public class GL_W_GL43_Debug implements GL_W_Call {
 	public void glLinkProgram(int arg0) {
 		org.lwjgl.opengl.GL43.glLinkProgram(arg0);
 		int err = org.lwjgl.opengl.GL43.glGetError();
+		GL11.glFlush();
 		if (err != GL43.GL_NO_ERROR) throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
