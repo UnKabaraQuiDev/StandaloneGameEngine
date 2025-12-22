@@ -29,8 +29,8 @@ public class SingleTexture extends Texture {
 		setTextureType(TextureType.TXT2D);
 	}
 
-	public SingleTexture(String string, Vector2i outputResolution) {
-		this(string, outputResolution.x, outputResolution.y);
+	public SingleTexture(String string, Vector2i res) {
+		this(string, res.x, res.y);
 	}
 
 	/**
@@ -42,8 +42,8 @@ public class SingleTexture extends Texture {
 		setTextureType(TextureType.TXT3D);
 	}
 
-	public SingleTexture(String string, Vector3i outputResolution) {
-		this(string, outputResolution.x, outputResolution.y, outputResolution.z);
+	public SingleTexture(String string, Vector3i res) {
+		this(string, res.x, res.y, res.z);
 	}
 
 	// BUFFER LOAD
@@ -126,8 +126,9 @@ public class SingleTexture extends Texture {
 			throw new RuntimeException("Invalid channel count: " + channels + " to format:" + format
 					+ " & internalFormat:" + internalFormat);
 
-		if (buffer.getBuffer() == null)
-			throw new RuntimeException("Failed to load texture buffer.");
+		if (buffer.isFromJVM()) {
+			throw new RuntimeException("Buffer is from memory.");
+		}
 
 		setSize(wi, he, 0);
 		setTextureType(TextureType.TXT2D);
@@ -154,8 +155,8 @@ public class SingleTexture extends Texture {
 					+ " & internalFormat:" + internalFormat);
 		}
 
-		if (buffer.getBuffer() == null) {
-			throw new RuntimeException("Failed to load texture buffer.");
+		if (buffer.isFromJVM()) {
+			throw new RuntimeException("Buffer is from memory.");
 		}
 
 		GL_W.glPixelStorei(GL_W.GL_UNPACK_ALIGNMENT, 1);

@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.utils.gl.consts;
+package lu.kbra.standalone.gameengine.utils.consts;
 
 import org.joml.Vector2f;
 import org.lwjgl.glfw.GLFW;

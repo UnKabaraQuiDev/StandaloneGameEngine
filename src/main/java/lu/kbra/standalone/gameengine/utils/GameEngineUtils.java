@@ -647,14 +647,17 @@ public final class GameEngineUtils {
 		return v.set(c.getRed() / 255.0f, c.getGreen() / 255.0f, c.getBlue() / 255.0f, c.getAlpha() / 255.0f);
 	}
 
+	@Deprecated
 	public static Vector2f clone(Vector2fc vec) {
 		return vec instanceof Vector4f ? (Vector2f) vec : new Vector2f(vec);
 	}
 
+	@Deprecated
 	public static Vector3f clone(Vector3fc vec) {
 		return vec instanceof Vector3f ? (Vector3f) vec : new Vector3f(vec);
 	}
 
+	@Deprecated
 	public static Vector4f clone(Vector4fc vec) {
 		return vec instanceof Vector4f ? (Vector4f) vec : new Vector4f(vec);
 	}

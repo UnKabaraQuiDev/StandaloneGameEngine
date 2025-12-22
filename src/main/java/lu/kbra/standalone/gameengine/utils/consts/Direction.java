@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.utils.gl.consts;
+package lu.kbra.standalone.gameengine.utils.consts;
 
 import org.joml.Quaternionf;
 import org.joml.Vector2f;
@@ -88,6 +88,14 @@ public enum Direction {
 		case WEST -> first.rotateY((float) Math.toRadians(-90), target);
 		default -> target;
 		};
+	}
+
+	public boolean isVertical() {
+		return this == NORTH || this == SOUTH;
+	}
+
+	public boolean isHorizontal() {
+		return this == EAST || this == WEST;
 	}
 
 }
