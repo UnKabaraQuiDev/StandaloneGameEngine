@@ -5,7 +5,7 @@ import lu.kbra.standalone.gameengine.scene.Scene;
 public interface SceneParentAware extends ParentAware {
 
 	default boolean hasSceneParent() {
-		return this.getSceneParent() == null;
+		return this.getSceneParent() != null;
 	}
 
 	default Scene getSceneParent() {
