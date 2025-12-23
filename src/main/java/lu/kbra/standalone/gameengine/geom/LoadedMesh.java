@@ -41,7 +41,8 @@ public class LoadedMesh implements Mesh {
 	protected UIntAttribArray indices;
 	protected AttribArray[] attribs;
 
-	protected final int vertexCount, indicesCount;
+	protected int vertexCount;
+	protected int indicesCount;
 	protected final BoundingBox boundingBox;
 
 	/**
@@ -219,12 +220,12 @@ public class LoadedMesh implements Mesh {
 				+ boundingBox + "]";
 	}
 
-	public static LoadedQuadMesh newQuad(String name, Material material2, Vector2f size) {
-		return new LoadedQuadMesh(name, material2, size);
+	public static QuadLoadedMesh newQuad(String name, Material material2, Vector2f size) {
+		return new QuadLoadedMesh(name, material2, size);
 	}
 
-	public static LoadedQuadMesh newQuad(GeoPlane plane, String name, Material material2, Vector2f size) {
-		return new LoadedQuadMesh(name, material2, size, plane);
+	public static QuadLoadedMesh newQuad(GeoPlane plane, String name, Material material2, Vector2f size) {
+		return new QuadLoadedMesh(name, material2, size, plane);
 	}
 
 	public static CubeMesh newCube(String name, Material material2, Vector3f size) {

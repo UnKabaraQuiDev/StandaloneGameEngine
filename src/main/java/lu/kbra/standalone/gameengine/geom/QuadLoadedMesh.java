@@ -11,11 +11,11 @@ import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class LoadedQuadMesh extends LoadedMesh implements QuadMesh {
+public class QuadLoadedMesh extends LoadedMesh implements QuadMesh {
 
 	private final Vector2fc size;
 
-	public LoadedQuadMesh(String name, Material material, Vector2fc size) {
+	public QuadLoadedMesh(String name, Material material, Vector2fc size) {
 		super(name, material,
 				new Vec3fAttribArray(Mesh.ATTRIB_VERTICES_NAME, Mesh.ATTRIB_VERTICES_ID, 1,
 						new Vector3f[] { new Vector3f(-1f, 0, -1f).mul(size.x(), 0, size.y()).div(2),
@@ -34,7 +34,7 @@ public class LoadedQuadMesh extends LoadedMesh implements QuadMesh {
 	}
 
 	@Deprecated
-	public LoadedQuadMesh(String name, Material material2, Vector2fc size, GeoPlane plane) {
+	public QuadLoadedMesh(String name, Material material2, Vector2fc size, GeoPlane plane) {
 		super(name, material2,
 				new Vec3fAttribArray(Mesh.ATTRIB_VERTICES_NAME, Mesh.ATTRIB_VERTICES_ID, 1,
 						new Vector3f[] { new Vector3f(-1f, -1f, -1f).mul(plane.project(size)).div(2),

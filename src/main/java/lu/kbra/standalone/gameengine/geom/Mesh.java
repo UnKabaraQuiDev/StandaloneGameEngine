@@ -58,12 +58,12 @@ public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
 		return BeginMode.TRIANGLES;
 	}
 
-	public static LoadedQuadMesh newQuad(String name, Material material2, Vector2f size) {
-		return new LoadedQuadMesh(name, material2, size);
+	public static QuadLoadedMesh newQuad(String name, Material material2, Vector2f size) {
+		return new QuadLoadedMesh(name, material2, size);
 	}
 
-	public static LoadedQuadMesh newQuad(GeoPlane plane, String name, Material material2, Vector2f size) {
-		return new LoadedQuadMesh(name, material2, size, plane);
+	public static QuadLoadedMesh newQuad(GeoPlane plane, String name, Material material2, Vector2f size) {
+		return new QuadLoadedMesh(name, material2, size, plane);
 	}
 
 	public static CubeMesh newCube(String name, Material material2, Vector3f size) {

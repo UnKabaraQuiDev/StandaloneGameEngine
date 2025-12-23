@@ -1,6 +1,10 @@
 package lu.kbra.standalone.gameengine.geom;
 
+import java.awt.geom.Rectangle2D;
+
 import org.joml.Vector3f;
+
+import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 
 public class BoundingBox {
 
@@ -53,6 +57,14 @@ public class BoundingBox {
 			size = new Vector3f();
 		}
 		return max.sub(min, size);
+	}
+
+	public Rectangle2D.Float project(GeoPlane plane) {
+		return switch (plane) {
+		case XY -> new Rectangle2D.Float(min.x, min.y, max.x - min.x, max.y - min.y);
+		case XZ -> new Rectangle2D.Float(min.x, min.z, max.x - min.x, max.z - min.z);
+		case YZ -> new Rectangle2D.Float(min.y, min.z, max.y - min.y, max.z - min.z);
+		};
 	}
 
 	@Override

@@ -20,6 +20,10 @@ public class Transform3D extends Transform {
 		this(new Vector3f(0), new Quaternionf().identity(), new Vector3f(1));
 	}
 
+	public Transform3D(Vector3fc trans, Quaternionfc rot, Vector3fc scale) {
+		this(new Vector3f(trans), new Quaternionf(rot), new Vector3f(scale));
+	}
+
 	public Transform3D(Vector3f trans, Quaternionf rot, Vector3f scale) {
 		this.translation = trans;
 		this.rotation = rot;
@@ -30,6 +34,10 @@ public class Transform3D extends Transform {
 		updateMatrix();
 	}
 
+	public Transform3D(Vector3fc trans) {
+		this(new Vector3f(trans), new Quaternionf().identity(), new Vector3f(1));
+	}
+
 	public Transform3D(Vector3f trans) {
 		this(trans, new Quaternionf().identity(), new Vector3f(1));
 	}
@@ -38,8 +46,16 @@ public class Transform3D extends Transform {
 		this(trans, rot, new Vector3f(1));
 	}
 
+	public Transform3D(Vector3fc trans, Quaternionfc rot) {
+		this(new Vector3f(trans), new Quaternionf(rot), new Vector3f(1));
+	}
+
 	public Transform3D(Quaternionf rot) {
 		this(new Vector3f(0), rot, new Vector3f(1));
+	}
+
+	public Transform3D(Quaternionfc rot) {
+		this(new Vector3f(0), new Quaternionf(rot), new Vector3f(1));
 	}
 
 	/** chaining methods for scale */
@@ -95,7 +111,7 @@ public class Transform3D extends Transform {
 		translation.add(x, y, z);
 		return this;
 	}
-	
+
 	public Transform3D translationSub(Vector3fc v) {
 		translation.sub(v);
 		return this;
