@@ -90,6 +90,11 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
+	public Transform3D scaleMul(float s) {
+		scale.mul(s);
+		return this;
+	}
+
 	public Transform3D scaleSet(float length) {
 		this.scale.set(length);
 		return this;
