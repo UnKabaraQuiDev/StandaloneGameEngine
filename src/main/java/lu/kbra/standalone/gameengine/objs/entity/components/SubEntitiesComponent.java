@@ -1,9 +1,11 @@
 package lu.kbra.standalone.gameengine.objs.entity.components;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
@@ -12,7 +14,7 @@ import lu.kbra.standalone.gameengine.objs.entity.ParentAware;
 public class SubEntitiesComponent<T extends Entity> extends Component {
 
 	protected Object entitiesLock = new Object();
-	protected List<T> entities = new CopyOnWriteArrayList<>();
+	protected List<T> entities = Collections.synchronizedList(new ArrayList<>());
 
 	public SubEntitiesComponent(List<T> entities) {
 		this.entities = entities;
@@ -25,6 +27,12 @@ public class SubEntitiesComponent<T extends Entity> extends Component {
 
 	public SubEntitiesComponent(T entity) {
 		addEntity(entity);
+	}
+
+	public void sort(Comparator<T> comp) {
+		synchronized (entitiesLock) {
+			entities.sort(comp);
+		}
 	}
 
 	public List<T> getEntities() {

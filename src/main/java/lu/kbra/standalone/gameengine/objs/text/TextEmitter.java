@@ -6,6 +6,7 @@ import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector2fc;
 import org.joml.Vector4f;
+import org.joml.Vector4fc;
 
 import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
@@ -400,12 +401,20 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 		return transparent;
 	}
 
-	public void setForegroundColor(Vector4f fgColor) {
-		this.fgColor = fgColor;
+	public void setForegroundColor(Vector4fc col) {
+		if (fgColor == null) {
+			fgColor = new Vector4f(col);
+		} else {
+			this.fgColor.set(col);
+		}
 	}
 
-	public void setBackgroundColor(Vector4f bgColor) {
-		this.bgColor = bgColor;
+	public void setBackgroundColor(Vector4fc col) {
+		if (bgColor == null) {
+			bgColor = new Vector4f(col);
+		} else {
+			this.bgColor.set(col);
+		}
 	}
 
 	public void setTransparent(Boolean transparent) {
