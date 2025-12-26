@@ -27,7 +27,7 @@ public abstract class Component implements ParentAware {
 
 	@Override
 	public String toString() {
-		return "Component@" + getClass().getSimpleName() + "[parent=" + parent + "]";
+		return "Component [parent=" + (this.parent == null ? "/" : parent.getClass().getName()) + "]";
 	}
 
 }

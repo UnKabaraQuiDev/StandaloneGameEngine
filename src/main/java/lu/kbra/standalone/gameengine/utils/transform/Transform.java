@@ -14,6 +14,13 @@ public abstract class Transform implements Cloneable {
 	}
 
 	public abstract Matrix4f updateMatrix();
+	
+	public abstract Matrix4f getBaseMatrix();
+
+	public Transform update() {
+		updateMatrix();
+		return this;
+	}
 
 	public Matrix4f getMatrix() {
 		return matrix;
@@ -25,5 +32,7 @@ public abstract class Transform implements Cloneable {
 
 	@Override
 	public abstract Transform clone();
+
+	
 
 }

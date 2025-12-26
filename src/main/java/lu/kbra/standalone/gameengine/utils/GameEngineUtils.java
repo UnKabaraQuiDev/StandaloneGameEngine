@@ -647,6 +647,59 @@ public final class GameEngineUtils {
 		return v.set(c.getRed() / 255.0f, c.getGreen() / 255.0f, c.getBlue() / 255.0f, c.getAlpha() / 255.0f);
 	}
 
+	public static Vector4f hsvToColorToVec4f(float h, float s, float v, float a) {
+		h = h - (float) Math.floor(h); // wrap hue to [0,1)
+
+		float r, g, b;
+
+		if (s == 0.0f) {
+			r = g = b = v;
+		} else {
+			float hf = h * 6.0f;
+			int i = (int) hf;
+			float f = hf - i;
+
+			float p = v * (1.0f - s);
+			float q = v * (1.0f - s * f);
+			float t = v * (1.0f - s * (1.0f - f));
+
+			switch (i) {
+			case 0 -> {
+				r = v;
+				g = t;
+				b = p;
+			}
+			case 1 -> {
+				r = q;
+				g = v;
+				b = p;
+			}
+			case 2 -> {
+				r = p;
+				g = v;
+				b = t;
+			}
+			case 3 -> {
+				r = p;
+				g = q;
+				b = v;
+			}
+			case 4 -> {
+				r = t;
+				g = p;
+				b = v;
+			}
+			default -> {
+				r = v;
+				g = p;
+				b = q;
+			}
+			}
+		}
+
+		return new Vector4f(r, g, b, a);
+	}
+
 	@Deprecated
 	public static Vector2f clone(Vector2fc vec) {
 		return vec instanceof Vector4f ? (Vector2f) vec : new Vector2f(vec);

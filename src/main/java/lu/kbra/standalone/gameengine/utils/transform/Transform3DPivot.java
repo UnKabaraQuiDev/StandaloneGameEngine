@@ -133,6 +133,12 @@ public class Transform3DPivot extends Transform3D {
 
 		return matrix;
 	}
+	
+	@Override
+	public Transform3DPivot update() {
+		updateMatrix();
+		return this;
+	}
 
 	@Override
 	public Transform clone() {

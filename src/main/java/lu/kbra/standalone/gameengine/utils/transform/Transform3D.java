@@ -105,6 +105,11 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
+	public Transform3D scaleReset() {
+		scale.zero();
+		return this;
+	}
+
 	/** chaining methods for translation */
 
 	public Transform3D translationAdd(Vector3fc v) {
@@ -159,6 +164,11 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
+	public Transform3D translationReset() {
+		translation.zero();
+		return this;
+	}
+
 	public Transform3D setTranslation(Vector3f translation) {
 		this.translation = translation;
 		return this;
@@ -181,27 +191,42 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
-	public Transform3D rotate(float x, float y, float z) {
-		final float newX = (float) Math.toRadians(x % 360);
-		final float newY = (float) Math.toRadians(y % 360);
-		final float newZ = (float) Math.toRadians(z % 360);
+//	public Transform3D rotate(float x, float y, float z) {
+//		final float newX = (float) Math.toRadians(x % 360);
+//		final float newY = (float) Math.toRadians(y % 360);
+//		final float newZ = (float) Math.toRadians(z % 360);
+//
+//		final Quaternionf rotationDelta = new Quaternionf();
+//		rotationDelta.rotationXYZ(newX, newY, newZ);
+//
+//		final Quaternionf conjugate = rotationDelta.conjugate();
+//
+//		rotation.mul(rotationDelta).mul(conjugate);
+//		return this;
+//	}
 
-		final Quaternionf rotationDelta = new Quaternionf();
-		rotationDelta.rotationXYZ(newX, newY, newZ);
-
-		final Quaternionf conjugate = rotationDelta.conjugate();
-
-		rotation.mul(rotationDelta).mul(conjugate);
-		return this;
-	}
-
-	public Transform3D rotationSet(float x, float y, float z) {
+	public Transform3D rotationAdd(float x, float y, float z) {
 		this.rotation.rotationXYZ(x, y, z);
 		return this;
 	}
 
-	public Transform3D rotationSet(Vector3fc v) {
+	public Transform3D rotationAdd(Vector3fc v) {
 		this.rotation.rotationXYZ(v.x(), v.y(), v.z());
+		return this;
+	}
+
+	public Transform3D rotationSet(float x, float y, float z) {
+		this.rotation.identity().rotationXYZ(x, y, z);
+		return this;
+	}
+
+	public Transform3D rotationSet(Vector3fc v) {
+		this.rotation.identity().rotationXYZ(v.x(), v.y(), v.z());
+		return this;
+	}
+
+	public Transform3D rotationReset() {
+		rotation.identity();
 		return this;
 	}
 
@@ -213,6 +238,17 @@ public class Transform3D extends Transform {
 	@Override
 	public Matrix4f updateMatrix() {
 		return matrix.identity().translationRotateScale(translation, rotation, scale);
+	}
+
+	@Override
+	public Matrix4f getBaseMatrix() {
+		return new Matrix4f().identity().translationRotateScale(translation, rotation, scale);
+	}
+
+	@Override
+	public Transform3D update() {
+		updateMatrix();
+		return this;
 	}
 
 	public Vector3f getTranslation() {
