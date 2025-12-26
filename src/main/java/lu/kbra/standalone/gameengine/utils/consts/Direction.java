@@ -48,19 +48,20 @@ public enum Direction {
 
 	public static Direction getGLFW(int dir, float leftX, float leftY) {
 		switch (dir) {
-		case GLFW.GLFW_GAMEPAD_AXIS_LEFT_X:
+		case GLFW.GLFW_GAMEPAD_AXIS_LEFT_X -> {
 			if (Math.signum(leftX) == -1) {
 				return Direction.WEST;
 			} else if (Math.signum(leftX) == 1) {
 				return Direction.EAST;
 			}
-			break;
-		case GLFW.GLFW_GAMEPAD_AXIS_LEFT_Y:
+		}
+		case GLFW.GLFW_GAMEPAD_AXIS_LEFT_Y -> {
 			if (Math.signum(leftY) == -1) {
 				return Direction.NORTH;
 			} else if (Math.signum(leftY) == 1) {
 				return Direction.SOUTH;
 			}
+		}
 		}
 
 		return NONE;
@@ -71,22 +72,20 @@ public enum Direction {
 	}
 
 	public Quaternionf rotate(Quaternionf first) {
-		return switch (this) {
-		case NORTH -> first.rotateY((float) Math.toRadians(-90));
-		case SOUTH -> first.rotateY(0);
-		case EAST -> first.rotateY((float) Math.toRadians(90));
-		case WEST -> first.rotateY((float) Math.toRadians(-90));
-		default -> first;
-		};
+		return first.rotateY(getAngle());
 	}
 
 	public Quaternionf rotate(Quaternionf first, Quaternionf target) {
+		return first.rotateY(getAngle(), target);
+	}
+
+	public float getAngle() {
 		return switch (this) {
-		case NORTH -> first.rotateY((float) Math.toRadians(180), target);
-		case SOUTH -> first.rotateY(0, target);
-		case EAST -> first.rotateY((float) Math.toRadians(90), target);
-		case WEST -> first.rotateY((float) Math.toRadians(-90), target);
-		default -> target;
+		case NORTH -> (float) Math.toRadians(180);
+		case SOUTH -> 0f;
+		case EAST -> (float) Math.toRadians(90);
+		case WEST -> (float) Math.toRadians(-90);
+		default -> 0f;
 		};
 	}
 
