@@ -59,7 +59,8 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	private Vector4f fgColor;
 	private Vector4f bgColor;
-	private Boolean transparent;
+	private boolean transparent;
+	private float opacity = 1f;
 
 	public TextEmitter(String name, TextMaterial material, int bufferSize, String text, Vector2fc charSize) {
 		this.name = name;
@@ -441,6 +442,14 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	public int getBufferLength() {
 		return charBuffer.getLength();
+	}
+
+	public float getOpacity() {
+		return this.opacity;
+	}
+
+	public void setOpacity(float opacity) {
+		this.opacity = opacity;
 	}
 
 	@Override
