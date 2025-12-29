@@ -10,7 +10,8 @@ public class BoundingBox {
 
 	private final Vector3f min;
 	private final Vector3f max;
-	private Vector3f center, size;
+	private Vector3f center;
+	private Vector3f size;
 
 	public BoundingBox(Vector3f min, Vector3f max) {
 		this.min = min;
@@ -70,6 +71,14 @@ public class BoundingBox {
 	@Override
 	public String toString() {
 		return "BoundingBox [min=" + min + ", max=" + max + ", center=" + center + "]";
+	}
+
+	public static BoundingBox union(BoundingBox bb1, BoundingBox bb2) {
+		final Vector3f max1 = bb1.getMax();
+		final Vector3f max2 = bb2.getMax();
+		final Vector3f min1 = bb1.getMin();
+		final Vector3f min2 = bb2.getMin();
+		return new BoundingBox(new Vector3f(min1).min(min2), new Vector3f(max1).min(max2));
 	}
 
 }

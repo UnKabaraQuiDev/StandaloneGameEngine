@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Optional;
 
 import lu.kbra.standalone.gameengine.objs.entity.Component;
-import lu.kbra.standalone.gameengine.objs.entity.Entity;
 import lu.kbra.standalone.gameengine.objs.entity.ParentAware;
+import lu.kbra.standalone.gameengine.objs.entity.SceneEntity;
 
-public class SubEntitiesComponent<T extends Entity> extends Component {
+public class SubEntitiesComponent<T extends SceneEntity> extends Component {
 
 	protected Object entitiesLock = new Object();
 	protected List<T> entities = Collections.synchronizedList(new ArrayList<>());
