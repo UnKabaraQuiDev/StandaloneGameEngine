@@ -27,6 +27,10 @@ import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
+/**
+ * element = raw type (float, int, ...)<br>
+ * component = vectors/matrices number of elements
+ */
 public abstract class AttribArray implements Cleanupable, GLObject, JavaTypeAttribArray {
 
 	protected int bid = -1;

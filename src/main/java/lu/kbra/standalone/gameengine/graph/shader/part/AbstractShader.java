@@ -41,6 +41,7 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 	protected final String name;
 	protected int spid = -1;
 	protected Map<Integer, AbstractShaderPart> parts;
+	// TODO: Remove properties
 	protected Map<String, Pair<Property<Object>, Integer>> uniforms = new HashMap<>();
 	protected List<String> knownNotExistsUniforms = new ArrayList<>();
 
