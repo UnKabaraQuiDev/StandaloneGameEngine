@@ -2,38 +2,38 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import org.joml.Vector4i;
 
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.types.IntegerJavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class Vec4iAttribArray extends AttribArray {
-
-	public static final int TYPE_SIZE = 4;
+public class Vec4iAttribArray extends AttribArray implements IntegerJavaTypeAttribArray {
 
 	private Vector4i[] data;
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data) {
-		super(name, index, dataSize);
+	public Vec4iAttribArray(String name, int index, Vector4i[] data) {
+		super(name, index);
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType) {
-		super(name, index, dataSize, bufferType);
+	public Vec4iAttribArray(String name, int index, Vector4i[] data, BufferType bufferType) {
+		super(name, index, bufferType);
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType, boolean s) {
-		super(name, index, dataSize, bufferType, s);
+	public Vec4iAttribArray(String name, int index, Vector4i[] data, BufferType bufferType, boolean s) {
+		super(name, index, bufferType, s);
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, boolean _static, int divisor) {
-		super(name, index, dataSize, _static, divisor);
+	public Vec4iAttribArray(String name, int index, Vector4i[] data, boolean _static, int divisor) {
+		super(name, index, _static, divisor);
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(String name, int index, int dataSize, Vector4i[] data, BufferType bufferType, boolean _static, int divisor) {
-		super(name, index, dataSize, bufferType, _static, divisor);
+	public Vec4iAttribArray(String name, int index, Vector4i[] data, BufferType bufferType, boolean _static, int divisor) {
+		super(name, index, bufferType, _static, divisor);
 		this.data = data;
 	}
 
@@ -41,10 +41,12 @@ public class Vec4iAttribArray extends AttribArray {
 	public void init() {
 		bind();
 
-		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		super.length = data.length;
 
-		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
-			GL_W.glVertexAttribIPointer(index, dataSize * TYPE_SIZE, GL_W.GL_INT, 0, 0);
+		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+
+		if (isVertexArray()) {
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, getElementByteSize(), 0);
 		}
 	}
 
@@ -54,43 +56,45 @@ public class Vec4iAttribArray extends AttribArray {
 	}
 
 	public void update(Vector4i[] nPos) {
+		bind();
+
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
 			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
-		bind();
 		data = nPos;
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
+		super.length = data.length;
+
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
 	}
 
 	public void resize(Vector4i[] nPos) {
 		bind();
 
-		if (nPos.length == data.length) {
-			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
+		final boolean sameSize = nPos.length == data.length;
+		data = nPos;
+		super.length = data.length;
+
+		if (sameSize) {
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
 		} else {
-			GL_W
-					.glBufferData(bufferType.getGlId(),
-							GameEngineUtils.toFlatArray(nPos),
-							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		}
 
-		data = nPos;
-
-		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
-			GL_W.glVertexAttribIPointer(index, dataSize * TYPE_SIZE, GL_W.GL_INT, 0, 0);
+		if (isVertexArray()) {
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, getElementByteSize(), 0);
 		}
 	}
 
 	public IntAttribArray toIntAttribArray() {
-		return new IntAttribArray(name, index, dataSize * TYPE_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new IntAttribArray(name, index, toFlatArray(), bufferType, iStatic, divisor);
 	}
 
-	public UIntAttribArray toUIntAttribArray() {
-		return new UIntAttribArray(name, index, dataSize * TYPE_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
-	}
+//	public UIntAttribArray toUIntAttribArray() {
+//		return new UIntAttribArray(name, index * TYPE_SIZE, toFlatArray(), bufferType, iStatic);
+//	}
 
 	@Override
 	public Class<?> getType() {
@@ -116,8 +120,13 @@ public class Vec4iAttribArray extends AttribArray {
 	}
 
 	@Override
-	public int getTypeSize() {
-		return TYPE_SIZE;
+	public int getElementComponentCount() {
+		return 4;
+	}
+
+	@Override
+	public int[] toFlatArray() {
+		return GameEngineUtils.toFlatArray(data);
 	}
 
 }

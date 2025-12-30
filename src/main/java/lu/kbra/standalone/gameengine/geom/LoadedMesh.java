@@ -10,10 +10,11 @@ import org.joml.Vector3f;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
-import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
-import lu.kbra.standalone.gameengine.cache.attrib.MultiAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.MultiAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
@@ -185,7 +186,7 @@ public class LoadedMesh implements Mesh {
 		return material;
 	}
 
-	public AttribArray[] getAttribs() {
+	public JavaTypeAttribArray[] getAttribs() {
 		return attribs;
 	}
 

@@ -1,39 +1,41 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.types.FloatJavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class FloatAttribArray extends AttribArray {
+public class FloatAttribArray extends AttribArray implements FloatJavaTypeAttribArray {
 
 	private float[] data;
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data) {
-		super(name, index, dataSize);
+	public FloatAttribArray(String name, int index, float[] data) {
+		super(name, index);
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType) {
-		super(name, index, dataSize, bufferType);
+	public FloatAttribArray(String name, int index, float[] data, BufferType bufferType) {
+		super(name, index, bufferType);
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static) {
-		super(name, index, dataSize, bufferType, _static);
+	public FloatAttribArray(String name, int index, float[] data, BufferType bufferType, boolean _static) {
+		super(name, index, bufferType, _static);
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static, int divisor) {
-		super(name, index, dataSize, bufferType, _static, divisor);
+	public FloatAttribArray(String name, int index, float[] data, BufferType bufferType, boolean _static, int divisor) {
+		super(name, index, bufferType, _static, divisor);
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, boolean _static) {
-		super(name, index, dataSize, _static);
+	public FloatAttribArray(String name, int index, float[] data, boolean _static) {
+		super(name, index, _static);
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, boolean _static, int divisor) {
-		super(name, index, dataSize, _static, divisor);
+	public FloatAttribArray(String name, int index, float[] data, boolean _static, int divisor) {
+		super(name, index, _static, divisor);
 		this.data = data;
 	}
 
@@ -41,10 +43,12 @@ public class FloatAttribArray extends AttribArray {
 	public void init() {
 		bind();
 
+		super.length = data.length;
+
 		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
-			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_FLOAT, false, 0, 0);
+		if (bufferType == BufferType.ARRAY) {
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 		}
 	}
 
@@ -62,6 +66,8 @@ public class FloatAttribArray extends AttribArray {
 		bind();
 
 		data = nPos;
+		super.length = data.length;
+
 		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
 	}
 
@@ -75,25 +81,21 @@ public class FloatAttribArray extends AttribArray {
 		}
 
 		data = nPos;
+		super.length = data.length;
 
-		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribPointer(index, getElementSize(), GL_W.GL_FLOAT, false, 0, 0);
+		if (isVertexArray()) {
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 		}
 	}
 
 	@Override
 	public Class<?> getType() {
-		return Float.class;
+		return float.class;
 	}
 
 	@Override
 	public float[] getData() {
 		return data;
-	}
-
-	@Override
-	public int getLength() {
-		return !isLoaded() ? -1 : data.length;
 	}
 
 	@Override
@@ -107,7 +109,12 @@ public class FloatAttribArray extends AttribArray {
 	}
 
 	@Override
-	public int getTypeSize() {
+	public float[] toFlatArray() {
+		return data;
+	}
+
+	@Override
+	public int getElementComponentCount() {
 		return 1;
 	}
 

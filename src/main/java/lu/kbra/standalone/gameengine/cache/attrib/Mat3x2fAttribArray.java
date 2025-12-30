@@ -2,44 +2,45 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import org.joml.Matrix3x2f;
 
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.MatrixAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.MultiAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.types.FloatJavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class Mat3x2fAttribArray extends AttribArray {
-
-	public static final int TYPE_SIZE = 3 * 2;
+public class Mat3x2fAttribArray extends AttribArray implements MultiAttribArray, FloatJavaTypeAttribArray, MatrixAttribArray {
 
 	private Matrix3x2f[] data;
 
-	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data) {
-		super(name, index, dataSize);
+	public Mat3x2fAttribArray(String name, int index, Matrix3x2f[] data) {
+		super(name, index);
 		this.data = data;
 	}
 
-	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data, BufferType bufferType) {
-		super(name, index, dataSize, bufferType);
+	public Mat3x2fAttribArray(String name, int index, Matrix3x2f[] data, BufferType bufferType) {
+		super(name, index, bufferType);
 		this.data = data;
 	}
 
-	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data, boolean iStatic) {
-		super(name, index, dataSize, iStatic);
+	public Mat3x2fAttribArray(String name, int index, Matrix3x2f[] data, boolean iStatic) {
+		super(name, index, iStatic);
 		this.data = data;
 	}
 
-	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data, boolean iStatic, int divisor) {
-		super(name, index, dataSize, iStatic, divisor);
+	public Mat3x2fAttribArray(String name, int index, Matrix3x2f[] data, boolean iStatic, int divisor) {
+		super(name, index, iStatic, divisor);
 		this.data = data;
 	}
 
-	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data, BufferType bufferType, boolean s) {
-		super(name, index, dataSize, bufferType, s);
+	public Mat3x2fAttribArray(String name, int index, Matrix3x2f[] data, BufferType bufferType, boolean s) {
+		super(name, index, bufferType, s);
 		this.data = data;
 	}
 
-	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data, BufferType bufferType, boolean iStatic,
-			int divisor) {
-		super(name, index, dataSize, bufferType, iStatic, divisor);
+	public Mat3x2fAttribArray(String name, int index, Matrix3x2f[] data, BufferType bufferType, boolean iStatic, int divisor) {
+		super(name, index, bufferType, iStatic, divisor);
 		this.data = data;
 	}
 
@@ -47,7 +48,13 @@ public class Mat3x2fAttribArray extends AttribArray {
 	public void init() {
 		bind();
 
-		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		super.length = data.length;
+
+		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		
+		if (isVertexArray()) {
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
+		}
 	}
 
 	@Override
@@ -56,57 +63,58 @@ public class Mat3x2fAttribArray extends AttribArray {
 	}
 
 	public void update(Matrix3x2f[] nPos) {
+		bind();
+
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
 			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
-		bind();
 		data = nPos;
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
+		super.length = data.length;
+
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
 	}
 
 	public void resize(Matrix3x2f[] nPos) {
 		bind();
 
-		if (nPos.length == data.length) {
-			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
+		final boolean sameSize = nPos.length == data.length;
+		data = nPos;
+		super.length = data.length;
+
+		if (sameSize) {
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
 		} else {
-			GL_W
-					.glBufferData(bufferType.getGlId(),
-							GameEngineUtils.toFlatArray(nPos),
-							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		}
 
-		data = nPos;
-
-		if (bufferType == BufferType.ARRAY) {
-			GL_W.glVertexAttribPointer(index, getElementSize(), GL_W.GL_FLOAT, false, 0, 0);
+		if (isVertexArray()) {
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 		}
 	}
 
 	@Override
 	public void enable() {
-		for (int i = 0; i < 3; i++) {
+		bind();
+		
+		for (int i = 0; i < getAttribArrayCount(); i++) {
 			GL_W.glEnableVertexAttribArray(index + i);
-			GL_W.glVertexAttribPointer(index + i, 2, GL_W.GL_FLOAT, false, getTypeSize(), i * 2 * Float.BYTES);
+			GL_W
+					.glVertexAttribPointer(index
+							+ i, getColumnComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), i * getElementByteSize());
 			GL_W.glVertexAttribDivisor(index + i, divisor);
 		}
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, getElementSize(), GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new FloatAttribArray(name, index, toFlatArray(), bufferType, iStatic, divisor);
 	}
 
 	@Override
 	public Class<?> getType() {
 		return Matrix3x2f.class;
-	}
-
-	@Override
-	public int getLength() {
-		return !isLoaded() ? -1 : data.length;
 	}
 
 	@Override
@@ -123,8 +131,23 @@ public class Mat3x2fAttribArray extends AttribArray {
 	}
 
 	@Override
-	public int getTypeSize() {
-		return TYPE_SIZE;
+	public int getColumnComponentCount() {
+		return 2;
+	}
+
+	@Override
+	public int getLineComponentCount() {
+		return 3;
+	}
+
+	@Override
+	public float[] toFlatArray() {
+		return GameEngineUtils.toFlatArray(data);
+	}
+
+	@Override
+	public int getElementComponentCount() {
+		return MatrixAttribArray.super.getElementComponentCount();
 	}
 
 }

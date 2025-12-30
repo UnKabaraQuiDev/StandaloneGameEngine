@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.cache.attrib;
+package lu.kbra.standalone.gameengine.cache.attrib.impl;
 
 import org.joml.Vector2f;
 import org.joml.Vector3f;
@@ -9,61 +9,69 @@ import org.joml.Vector4i;
 import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
+import lu.kbra.standalone.gameengine.cache.attrib.FloatAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.IntAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.Mat3x2fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.Mat4fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.UByteAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.Vec3iAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.Vec4iAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public abstract class AttribArray implements Cleanupable, GLObject {
+public abstract class AttribArray implements Cleanupable, GLObject, JavaTypeAttribArray {
 
 	protected int bid = -1;
 	protected boolean iStatic = true;;
 	protected BufferType bufferType;
 	protected String name = null;
 	protected int index = -1;
-	protected final int dataSize;
 	protected final int divisor;
+	protected int length = -1;
 
-	public AttribArray(String name, int index, int dataSize) {
-		this(name, index, dataSize, BufferType.ARRAY, true);
+	public AttribArray(String name, int index) {
+		this(name, index, BufferType.ARRAY, true);
 	}
 
-	public AttribArray(String name, int index, int dataSize, BufferType bufferType) {
-		this(name, index, dataSize, bufferType, true);
+	public AttribArray(String name, int index, BufferType bufferType) {
+		this(name, index, bufferType, true);
 	}
 
-	public AttribArray(String name, int index, int dataSize, boolean iStatic) {
-		this(name, index, dataSize, BufferType.ARRAY, iStatic);
+	public AttribArray(String name, int index, boolean iStatic) {
+		this(name, index, BufferType.ARRAY, iStatic);
 	}
 
-	public AttribArray(String name, int index, int dataSize, int divisor) {
-		this(name, index, dataSize, BufferType.ARRAY, false, divisor);
+	public AttribArray(String name, int index, int divisor) {
+		this(name, index, BufferType.ARRAY, false, divisor);
 	}
 
-	public AttribArray(String name, int index, int dataSize, boolean iStatic, int divisor) {
-		this(name, index, dataSize, BufferType.ARRAY, iStatic, divisor);
+	public AttribArray(String name, int index, boolean iStatic, int divisor) {
+		this(name, index, BufferType.ARRAY, iStatic, divisor);
 	}
 
-	public AttribArray(String name, int index, int dataSize, BufferType bufferType, boolean iStatic) {
-		this(name, index, dataSize, bufferType, iStatic, 0);
+	public AttribArray(String name, int index, BufferType bufferType, boolean iStatic) {
+		this(name, index, bufferType, iStatic, 0);
 	}
 
-	public AttribArray(String name, int index, int dataSize, BufferType bufferType, int _divisor) {
-		this(name, index, dataSize, bufferType, false, _divisor);
+	public AttribArray(String name, int index, BufferType bufferType, int _divisor) {
+		this(name, index, bufferType, false, _divisor);
 	}
 
-	public AttribArray(String name, int index, int dataSize, BufferType bufferType, boolean iStatic, int divisor) {
+	public AttribArray(String name, int index, BufferType bufferType, boolean iStatic, int divisor) {
 		this.name = name;
 		this.index = index;
-		this.dataSize = dataSize;
 		this.bufferType = bufferType;
 		this.iStatic = iStatic;
 		this.divisor = divisor;
 	}
-
-	/** get length in primitive elements (floats/ints) (GL side) */
-	public abstract int getLength();
 
 	public abstract void init();
 
@@ -73,39 +81,43 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	public abstract Object getData();
 
+	public abstract Object toFlatArray();
+
 	public abstract void update();
 
-	public abstract Class<?> getType();
-
-	/** size of a single element in the array (java side), in primitive elements (floats/ints) */
-	public abstract int getTypeSize();
-
-	/** size of a single element in the array (GL side), in primitive elements (floats/ints) */
-	public int getElementSize() {
-		return getTypeSize() * getDataSize();
-	}
-
-	/** count of elements (java side) */
-	public int getDataCount() {
-		return getLength() / getDataSize();
-	}
-
-	/** count of elements (GL side) */
 	public int getElementCount() {
-		return getLength() / getElementSize();
+		return length;
+	}
+
+	@Override
+	public int getTotalByteSize() {
+		return getElementByteSize() * getElementCount();
+	}
+
+	@Override
+	public int getTotalComponentCount() {
+		return getElementComponentCount() * getElementCount();
+	}
+
+	public boolean isVertexArray() {
+		return bufferType == BufferType.ARRAY;
 	}
 
 	public void enable() {
 		bind();
 
-		GL_W.glEnableVertexAttribArray(index);
-		GL_W.glVertexAttribDivisor(index, divisor);
+		if (isVertexArray()) {
+			GL_W.glEnableVertexAttribArray(index);
+			GL_W.glVertexAttribDivisor(index, divisor);
+		}
 	}
 
 	public void disable() {
 		bind();
 
-		GL_W.glDisableVertexAttribArray(index);
+		if (isVertexArray()) {
+			GL_W.glDisableVertexAttribArray(index);
+		}
 	}
 
 	public int gen() {
@@ -125,8 +137,9 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 	public void cleanup() {
 		GlobalLogger.log("Cleaning up: " + name + " (" + index + "=" + bid + ")");
 
-		if (bid == -1)
+		if (bid == -1) {
 			return;
+		}
 
 		GL_W.glDeleteBuffers(bid);
 		bid = -1;
@@ -146,18 +159,6 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	public void setIndex(int index) {
 		this.index = index;
-	}
-
-	public int getDataSize() {
-		return dataSize;
-	}
-
-	public boolean isiStatic() {
-		return iStatic;
-	}
-
-	public void setiStatic(boolean iStatic) {
-		this.iStatic = iStatic;
 	}
 
 	public BufferType getBufferType() {
@@ -186,6 +187,10 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 		return bid != -1;
 	}
 
+	public int getLength() {
+		return length;
+	}
+
 	@Override
 	public String getId() {
 		return name + "#" + bid + "@" + PCUtils.toSimpleIdentityString(this);
@@ -193,7 +198,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	@Override
 	public String toString() {
-		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
+		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + " * " + getComponentByteSize() + "B = "
+				+ getTotalByteSize() + "B";
 	}
 
 	public static void update(AttribArray arr, Object data) {
@@ -235,7 +241,7 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 		}
 	}
 
-	public static void resize(AttribArray arr, Object data) {
+	public static void resize(JavaTypeAttribArray arr, Object data) {
 		if (arr == null) {
 			GlobalLogger.log();
 			throw new NullPointerException("AttribArray is null !");

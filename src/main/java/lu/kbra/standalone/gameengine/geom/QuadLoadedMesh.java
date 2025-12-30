@@ -6,10 +6,10 @@ import org.joml.Vector3f;
 
 import lu.pcy113.pclib.PCUtils;
 
-import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
@@ -18,7 +18,7 @@ public class QuadLoadedMesh extends LoadedMesh implements QuadMesh {
 
 	private final Vector2fc size;
 
-	public QuadLoadedMesh(String name, Material material, Vector2fc size, AttribArray... arrays) {
+	public QuadLoadedMesh(String name, Material material, Vector2fc size, JavaTypeAttribArray... arrays) {
 		super(name, material,
 				new Vec3fAttribArray(Mesh.ATTRIB_VERTICES_NAME, Mesh.ATTRIB_VERTICES_ID, 1,
 						new Vector3f[] { new Vector3f(-1f, 0, -1f).mul(size.x(), 0, size.y()).div(2),
@@ -27,7 +27,7 @@ public class QuadLoadedMesh extends LoadedMesh implements QuadMesh {
 								new Vector3f(-1f, 0, 1f).mul(size.x(), 0, size.y()).div(2) }),
 				new UIntAttribArray(Mesh.ATTRIB_INDICES_NAME, Mesh.ATTRIB_INDICES_ID, 1, new int[] { 0, 2, 1, 0, 3, 2 },
 						BufferType.ELEMENT_ARRAY),
-				PCUtils.combineArrays(new AttribArray[] {
+				PCUtils.combineArrays(new JavaTypeAttribArray[] {
 						new Vec3fAttribArray(Mesh.ATTRIB_NORMALS_NAME, Mesh.ATTRIB_NORMALS_ID, 1,
 								new Vector3f[] { new Vector3f(0, 0, 1), new Vector3f(0, 0, 1), new Vector3f(0, 0, 1),
 										new Vector3f(0, 0, 1) }),

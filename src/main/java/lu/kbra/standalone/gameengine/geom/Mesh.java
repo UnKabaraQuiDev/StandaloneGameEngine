@@ -5,7 +5,7 @@ import java.util.Map;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
-import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;

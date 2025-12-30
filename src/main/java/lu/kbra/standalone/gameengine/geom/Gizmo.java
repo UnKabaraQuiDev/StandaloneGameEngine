@@ -9,10 +9,10 @@ import org.joml.Vector4f;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
-import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;

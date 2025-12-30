@@ -1,4 +1,4 @@
-package lu.kbra.standalone.gameengine.cache.attrib;
+package lu.kbra.standalone.gameengine.cache.attrib.impl;
 
 public interface PaddedArray {
 

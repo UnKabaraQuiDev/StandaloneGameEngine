@@ -10,8 +10,9 @@ import org.joml.Matrix4f;
 
 import lu.pcy113.pclib.logger.GlobalLogger;
 
-import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Mat4fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.geom.Mesh;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
@@ -91,7 +92,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		final Object[] atts = new Object[this.instancesAttribs.length];
 
 		for (int c = 0; c < this.instancesAttribs.length; c++) {
-			final AttribArray a = instancesAttribs[c];
+			final JavaTypeAttribArray a = instancesAttribs[c];
 			atts[c] = Array.newInstance(a.getType(), count);
 		}
 
@@ -101,7 +102,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			transforms[i] = this.particles[i].getTransform().getMatrix();
 
 			for (int c = 0; c < this.instancesAttribs.length; c++) {
-				final AttribArray a = instancesAttribs[c];
+				final JavaTypeAttribArray a = instancesAttribs[c];
 				((Object[]) atts[c])[i] = a.getType().cast(this.particles[i].getBuffers()[c]);
 			}
 		}
@@ -263,11 +264,11 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		return particles;
 	}
 
-	public AttribArray[] getParticleAttribs() {
+	public JavaTypeAttribArray[] getParticleAttribs() {
 		return this.instancesAttribs;
 	}
 
-	public AttribArray getParticleTransforms() {
+	public JavaTypeAttribArray getParticleTransforms() {
 		return this.instancesTransforms;
 	}
 

@@ -1,8 +1,8 @@
 package lu.kbra.standalone.gameengine.geom;
 
-import lu.kbra.standalone.gameengine.cache.attrib.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 
 public class LineLoadedMesh extends LoadedMesh implements LineMesh {

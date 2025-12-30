@@ -2,33 +2,33 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import org.joml.Vector2f;
 
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.types.FloatJavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class Vec2fAttribArray extends AttribArray {
-
-	public static final int TYPE_SIZE = 2;
+public class Vec2fAttribArray extends AttribArray implements FloatJavaTypeAttribArray {
 
 	private Vector2f[] data;
 
-	public Vec2fAttribArray(String name, int index, int dataSize, Vector2f[] data) {
-		super(name, index, dataSize);
+	public Vec2fAttribArray(String name, int index, Vector2f[] data) {
+		super(name, index);
 		this.data = data;
 	}
 
-	public Vec2fAttribArray(String name, int index, int dataSize, Vector2f[] data, BufferType bufferType) {
-		super(name, index, dataSize, bufferType);
+	public Vec2fAttribArray(String name, int index, Vector2f[] data, BufferType bufferType) {
+		super(name, index, bufferType);
 		this.data = data;
 	}
 
-	public Vec2fAttribArray(String name, int index, int dataSize, Vector2f[] data, BufferType bufferType, boolean _static) {
-		super(name, index, dataSize, bufferType, _static);
+	public Vec2fAttribArray(String name, int index, Vector2f[] data, BufferType bufferType, boolean _static) {
+		super(name, index, bufferType, _static);
 		this.data = data;
 	}
 
-	public Vec2fAttribArray(String name, int index, int dataSize, Vector2f[] data, BufferType bufferType, boolean _static, int divisor) {
-		super(name, index, dataSize, bufferType, _static, divisor);
+	public Vec2fAttribArray(String name, int index, Vector2f[] data, BufferType bufferType, boolean _static, int divisor) {
+		super(name, index, bufferType, _static, divisor);
 		this.data = data;
 	}
 
@@ -36,10 +36,12 @@ public class Vec2fAttribArray extends AttribArray {
 	public void init() {
 		bind();
 
-		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		super.length = data.length;
 
-		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribPointer(index, dataSize * TYPE_SIZE, GL_W.GL_FLOAT, false, 0, 0);
+		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+
+		if (isVertexArray()) {
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 		}
 	}
 
@@ -49,48 +51,45 @@ public class Vec2fAttribArray extends AttribArray {
 	}
 
 	public void update(Vector2f[] nPos) {
+		bind();
+
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
 			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
-		bind();
 		data = nPos;
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
+		super.length = data.length;
+
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
 	}
 
 	public void resize(Vector2f[] nPos) {
 		bind();
 
-		if (nPos.length == data.length) {
-			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(data));
+		final boolean sameSize = nPos.length == data.length;
+		data = nPos;
+		super.length = data.length;
+
+		if (sameSize) {
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
 		} else {
-			GL_W
-					.glBufferData(bufferType.getGlId(),
-							GameEngineUtils.toFlatArray(data),
-							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		}
 
-		data = nPos;
-
-		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribPointer(index, dataSize * TYPE_SIZE, GL_W.GL_FLOAT, false, 0, 0);
+		if (isVertexArray()) {
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 		}
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, dataSize * TYPE_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new FloatAttribArray(name, index, toFlatArray(), bufferType, iStatic, divisor);
 	}
 
 	@Override
 	public Class<?> getType() {
 		return Vector2f.class;
-	}
-
-	@Override
-	public int getLength() {
-		return !isLoaded() ? -1 : data.length;
 	}
 
 	@Override
@@ -104,9 +103,16 @@ public class Vec2fAttribArray extends AttribArray {
 
 	public Vector2f[] getData() {
 		return data;
-	}@Override
-	public int getTypeSize() {
-		return TYPE_SIZE;
+	}
+
+	@Override
+	public float[] toFlatArray() {
+		return GameEngineUtils.toFlatArray(data);
+	}
+
+	@Override
+	public int getElementComponentCount() {
+		return 2;
 	}
 
 }

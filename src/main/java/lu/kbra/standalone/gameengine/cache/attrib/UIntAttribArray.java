@@ -1,34 +1,36 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.types.IntegerJavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class UIntAttribArray extends AttribArray {
+public class UIntAttribArray extends AttribArray implements IntegerJavaTypeAttribArray {
 
 	private int[] data;
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data) {
-		super(name, index, dataSize);
+	public UIntAttribArray(String name, int index, int[] data) {
+		super(name, index);
 		this.data = data;
 	}
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType) {
-		super(name, index, dataSize, bufferType);
+	public UIntAttribArray(String name, int index, int[] data, BufferType bufferType) {
+		super(name, index, bufferType);
 		this.data = data;
 	}
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static) {
-		super(name, index, dataSize, bufferType, _static);
+	public UIntAttribArray(String name, int index, int[] data, BufferType bufferType, boolean _static) {
+		super(name, index, bufferType, _static);
 		this.data = data;
 	}
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data, boolean _static, int divisor) {
-		super(name, index, dataSize, _static, divisor);
+	public UIntAttribArray(String name, int index, int[] data, boolean _static, int divisor) {
+		super(name, index, _static, divisor);
 		this.data = data;
 	}
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static, int divisor) {
-		super(name, index, dataSize, bufferType, _static, divisor);
+	public UIntAttribArray(String name, int index, int[] data, BufferType bufferType, boolean _static, int divisor) {
+		super(name, index, bufferType, _static, divisor);
 		this.data = data;
 	}
 
@@ -36,10 +38,12 @@ public class UIntAttribArray extends AttribArray {
 	public void init() {
 		bind();
 
+		super.length = data.length;
+
 		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
+		if (isVertexArray()) {
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_UNSIGNED_INT, getElementByteSize(), 0);
 		}
 	}
 
@@ -49,41 +53,41 @@ public class UIntAttribArray extends AttribArray {
 	}
 
 	public void update(int[] nPos) {
+		bind();
+
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
 			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
-		bind();
 		data = nPos;
+		super.length = data.length;
+
 		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
 	}
 
 	public void resize(int[] nPos) {
 		bind();
 
-		if (nPos.length == data.length) {
+		final boolean sameSize = nPos.length == data.length;
+		data = nPos;
+		super.length = data.length;
+
+		if (sameSize) {
 			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
 		} else {
 			GL_W.glBufferData(bufferType.getGlId(), nPos, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		}
 
-		data = nPos;
-
-		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribIPointer(index, getElementSize(), GL_W.GL_UNSIGNED_INT, 0, 0);
+		if (isVertexArray()) {
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_UNSIGNED_INT, getElementByteSize(), 0);
 		}
 	}
 
 	@Override
 	public Class<?> getType() {
-		return Integer.class;
-	}
-
-	@Override
-	public int getLength() {
-		return !isLoaded() ? -1 : data.length;
+		return int.class;
 	}
 
 	@Override
@@ -91,16 +95,23 @@ public class UIntAttribArray extends AttribArray {
 		return data != null;
 	}
 
+	@Override
 	public Integer get(int i) {
 		return !isLoaded() ? null : data[i];
 	}
 
+	@Override
 	public int[] getData() {
 		return data;
 	}
 
 	@Override
-	public int getTypeSize() {
+	public int[] toFlatArray() {
+		return data;
+	}
+
+	@Override
+	public int getElementComponentCount() {
 		return 1;
 	}
 
