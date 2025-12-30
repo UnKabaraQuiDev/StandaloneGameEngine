@@ -1,5 +1,7 @@
 package lu.kbra.standalone.gameengine.utils.transform;
 
+import javax.sql.rowset.spi.TransactionalWriter;
+
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Quaternionfc;
@@ -142,6 +144,21 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
+	public Transform3D translationSetX(float x) {
+		translation.set(x, translation.y(), translation.z());
+		return this;
+	}
+
+	public Transform3D translationSetY(float y) {
+		translation.set(translation.x(), y, translation.z());
+		return this;
+	}
+
+	public Transform3D translationSetZ(float z) {
+		translation.set(translation.x(), translation.y(), z);
+		return this;
+	}
+
 	public Transform3D translationMul(Vector3fc v) {
 		translation.mul(v);
 		return this;
@@ -265,8 +282,7 @@ public class Transform3D extends Transform {
 
 	@Override
 	public Transform clone() {
-		return new Transform3D(translation.get(new Vector3f()), rotation.get(new Quaternionf()),
-				scale.get(new Vector3f()));
+		return new Transform3D(translation.get(new Vector3f()), rotation.get(new Quaternionf()), scale.get(new Vector3f()));
 	}
 
 	@Override

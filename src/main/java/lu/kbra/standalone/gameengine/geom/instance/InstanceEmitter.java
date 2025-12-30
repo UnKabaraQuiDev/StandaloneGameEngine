@@ -24,6 +24,7 @@ import lu.kbra.standalone.gameengine.utils.transform.Transform;
 public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObject {
 
 	public static final int TRANSFORM_BUFFER_INDEX = 5;
+	public static final int FIRST_BUFFER_INDEX = TRANSFORM_BUFFER_INDEX + Mat4fAttribArray.ATTRIB_LENGTH;
 	public static final String TRANSFORM_BUFFER_NAME = "transforms";
 
 	protected final String name;
@@ -40,8 +41,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		this(name, mesh, count, i -> baseTransform.clone(), attribs);
 	}
 
-	public InstanceEmitter(String name, Mesh mesh, int count, Function<Integer, Transform> baseTransform,
-			AttribArray... attribs) {
+	public InstanceEmitter(String name, Mesh mesh, int count, Function<Integer, Transform> baseTransform, AttribArray... attribs) {
 		this.name = name;
 		this.count = count;
 
@@ -53,20 +53,23 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		for (int i = 0; i < count; i++) {
 			final Object[] atts = new Object[this.instancesAttribs.length];
 
-			particles[i] = new Instance(i, baseTransform.apply(i), atts);
+			int c = 0;
+			for (AttribArray a : attribs) {
+				atts[c++] = a.get(i);
+			}
+
+			particles[i] = new Instance(i, atts, baseTransform.apply(i));
 		}
 
 		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME, TRANSFORM_BUFFER_INDEX, 1,
-				Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new),
-				BufferType.ARRAY, false, 1);
+				Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new), BufferType.ARRAY, false, 1);
 
 		mesh.bind();
 
 		mesh.addAttribArray(this.instancesTransforms);
 		for (AttribArray a : this.instancesAttribs) {
 			if (mesh.getVbo().containsKey(a.getIndex())) {
-				GlobalLogger.log(Level.WARNING,
-						"Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
+				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
 			}
 			mesh.addAttribArray(a);
@@ -74,8 +77,10 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 		mesh.unbind();
 
-		GlobalLogger.log(Level.INFO, "ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo()
-				+ "); count:" + count + "; attribs: " + Arrays.toString(attribs));
+		GlobalLogger
+				.log(Level.INFO,
+						"ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo() + "); count:" + count + "; attribs: "
+								+ Arrays.toString(attribs));
 	}
 
 	/**
@@ -83,7 +88,12 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 	 */
 	public void update(Consumer<Instance> update) {
 		final Matrix4f[] transforms = new Matrix4f[this.count];
-		final Object[][] atts = new Object[this.instancesAttribs.length][this.count];
+		final Object[] atts = new Object[this.instancesAttribs.length];
+
+		for (int c = 0; c < this.instancesAttribs.length; c++) {
+			final AttribArray a = instancesAttribs[c];
+			atts[c] = Array.newInstance(a.getType(), count);
+		}
 
 		for (int i = 0; i < this.count; i++) {
 			update.accept(this.particles[i]);
@@ -91,7 +101,8 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			transforms[i] = this.particles[i].getTransform().getMatrix();
 
 			for (int c = 0; c < this.instancesAttribs.length; c++) {
-				atts[c][i] = this.particles[i].getBuffers()[c];
+				final AttribArray a = instancesAttribs[c];
+				((Object[]) atts[c])[i] = a.getType().cast(this.particles[i].getBuffers()[c]);
 			}
 		}
 

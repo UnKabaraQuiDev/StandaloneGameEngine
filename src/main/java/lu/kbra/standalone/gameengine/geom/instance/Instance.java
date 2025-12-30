@@ -14,6 +14,12 @@ public class Instance {
 		this.buffers = buffers;
 	}
 
+	public Instance(int index, Object[] buffers, Transform transform) {
+		this.index = index;
+		this.transform = transform;
+		this.buffers = buffers;
+	}
+
 	public int getIndex() {
 		return this.index;
 	}

@@ -27,8 +27,7 @@ public class UIntAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static,
-			int divisor) {
+	public UIntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -53,8 +52,7 @@ public class UIntAttribArray extends AttribArray {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException(
-					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
 		bind();
@@ -76,6 +74,11 @@ public class UIntAttribArray extends AttribArray {
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
 			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
 		}
+	}
+
+	@Override
+	public Class<?> getType() {
+		return Integer.class;
 	}
 
 	@Override

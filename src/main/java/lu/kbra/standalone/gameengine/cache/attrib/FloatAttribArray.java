@@ -17,14 +17,12 @@ public class FloatAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType,
-			boolean _static) {
+	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static) {
 		super(name, index, dataSize, bufferType, _static);
 		this.data = data;
 	}
 
-	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static,
-			int divisor) {
+	public FloatAttribArray(String name, int index, int dataSize, float[] data, BufferType bufferType, boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -59,8 +57,7 @@ public class FloatAttribArray extends AttribArray {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException(
-					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 		bind();
 
@@ -82,6 +79,11 @@ public class FloatAttribArray extends AttribArray {
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
 			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_FLOAT, false, 0, 0);
 		}
+	}
+
+	@Override
+	public Class<?> getType() {
+		return Float.class;
 	}
 
 	@Override

@@ -30,14 +30,13 @@ public class Mat3x2fAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data, BufferType bufferType,
-			boolean s) {
+	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data, BufferType bufferType, boolean s) {
 		super(name, index, dataSize, bufferType, s);
 		this.data = data;
 	}
 
-	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data, BufferType bufferType,
-			boolean iStatic, int divisor) {
+	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data, BufferType bufferType, boolean iStatic,
+			int divisor) {
 		super(name, index, dataSize, bufferType, iStatic, divisor);
 		this.data = data;
 	}
@@ -46,8 +45,7 @@ public class Mat3x2fAttribArray extends AttribArray {
 	public void init() {
 		bind();
 
-		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data),
-				iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 	}
 
 	@Override
@@ -59,8 +57,7 @@ public class Mat3x2fAttribArray extends AttribArray {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException(
-					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
 		bind();
@@ -74,8 +71,10 @@ public class Mat3x2fAttribArray extends AttribArray {
 		if (nPos.length == data.length) {
 			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
 		} else {
-			GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(nPos),
-					iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			GL_W
+					.glBufferData(bufferType.getGlId(),
+							GameEngineUtils.toFlatArray(nPos),
+							iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		}
 
 		data = nPos;
@@ -95,8 +94,12 @@ public class Mat3x2fAttribArray extends AttribArray {
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, dataSize * 3 * 2, GameEngineUtils.toFlatArray(data), bufferType,
-				iStatic);
+		return new FloatAttribArray(name, index, dataSize * 3 * 2, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+	}
+
+	@Override
+	public Class<?> getType() {
+		return Matrix3x2f.class;
 	}
 
 	@Override

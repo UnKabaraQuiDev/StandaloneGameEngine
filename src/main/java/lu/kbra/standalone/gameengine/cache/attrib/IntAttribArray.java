@@ -27,8 +27,7 @@ public class IntAttribArray extends AttribArray {
 		this.data = data;
 	}
 
-	public IntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static,
-			int divisor) {
+	public IntAttribArray(String name, int index, int dataSize, int[] data, BufferType bufferType, boolean _static, int divisor) {
 		super(name, index, dataSize, bufferType, _static, divisor);
 		this.data = data;
 	}
@@ -52,8 +51,7 @@ public class IntAttribArray extends AttribArray {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException(
-					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
 		bind();
@@ -75,6 +73,11 @@ public class IntAttribArray extends AttribArray {
 		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
 			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
 		}
+	}
+
+	@Override
+	public Class<?> getType() {
+		return Integer.class;
 	}
 
 	@Override

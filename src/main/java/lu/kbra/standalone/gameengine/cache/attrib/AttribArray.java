@@ -77,6 +77,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	public abstract void update();
 
+	public abstract Class<?> getType();
+
 	public void enable() {
 		bind();
 
@@ -175,8 +177,7 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 
 	@Override
 	public String toString() {
-		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "="
-				+ getDataCount();
+		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "=" + getDataCount();
 	}
 
 	public static void update(AttribArray arr, Object data) {

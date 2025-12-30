@@ -45,6 +45,11 @@ public class UByteAttribArray extends AttribArray {
 	}
 
 	@Override
+	public Class<?> getType() {
+		return Byte.class;
+	}
+
+	@Override
 	public int getLength() {
 		return !isLoaded() ? -1 : data.length;
 	}
@@ -71,8 +76,7 @@ public class UByteAttribArray extends AttribArray {
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException(
-					"Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
 		bind();
