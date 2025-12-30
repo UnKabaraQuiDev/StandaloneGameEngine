@@ -19,6 +19,7 @@ import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
+@Deprecated
 public class Gizmo implements UniqueID, Cleanupable, Renderable {
 
 	public static final float LINE_WIDTH = 2.5f;
@@ -34,8 +35,7 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 	protected int vertexCount, indicesCount;
 
 	/**
-	 * Positions are stored as attribArray 0, normals as attribArray 1, uvs as
-	 * attribArray 2
+	 * Positions are stored as attribArray 0, normals as attribArray 1, uvs as attribArray 2
 	 */
 	public Gizmo(String name, Vec3fAttribArray vertices, UIntAttribArray indices, Vec4fAttribArray color) {
 		this.name = name;
@@ -43,23 +43,8 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 		this.indices = indices;
 		this.color = color;
 
-		/*
-		 * if(indices.getDataCount() != vertices.getDataCount()) {
-		 * GlobalLogger.log(Level.WARNING,
-		 * "Indices ("+indices.getLength()+"/"+indices.getDataSize()+"="+indices.
-		 * getDataCount()+") must be equal to vertices ("+vertices.getLength()+"/"+
-		 * vertices.getDataSize()+"="+vertices.getDataCount()+")"); }
-		 */
-
-		this.vertexCount = vertices.getDataCount();
+		this.vertexCount = vertices.getLength();
 		this.indicesCount = indices.getLength();
-
-		// System.out.println("gizmo vertices ("+(vertices.getLength()/3)+"*3):
-		// "+Arrays.toString(vertices.getData()));
-		// System.out.println("gizmo color ("+(color.getLength()/4)+"*4):
-		// "+Arrays.toString(color.getData()));
-		// System.out.println("gizmo indices
-		// ("+indices.getDataCount()+Arrays.toString(indices.getData()));
 
 		this.vao = GL_W.glGenVertexArrays();
 		bind();
@@ -153,11 +138,14 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 
 	public static Gizmo newRect(String name, Vector2f scale, Vector4f textBoxColor) {
 		return new Gizmo(name,
-				new Vec3fAttribArray("pos", 0, 1,
-						new Vector3f[] { new Vector3f(0, 0, 0), new Vector3f(scale.x, 0, 0),
-								new Vector3f(scale.x, scale.y, 0), new Vector3f(0, scale.y, 0) }),
-				new UIntAttribArray("ind", -1, 1, new int[] { 0, 1, 1, 2, 2, 3, 3, 0 }), new Vec4fAttribArray("color",
-						1, 1, new Vector4f[] { textBoxColor, textBoxColor, textBoxColor, textBoxColor }));
+				new Vec3fAttribArray("pos", 0,
+						new Vector3f[] {
+								new Vector3f(0, 0, 0),
+								new Vector3f(scale.x, 0, 0),
+								new Vector3f(scale.x, scale.y, 0),
+								new Vector3f(0, scale.y, 0) }),
+				new UIntAttribArray("ind", -1, new int[] { 0, 1, 1, 2, 2, 3, 3, 0 }),
+				new Vec4fAttribArray("color", 1, new Vector4f[] { textBoxColor, textBoxColor, textBoxColor, textBoxColor }));
 	}
 
 }

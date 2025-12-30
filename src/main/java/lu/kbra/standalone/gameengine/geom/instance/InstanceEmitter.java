@@ -62,7 +62,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			particles[i] = new Instance(i, atts, baseTransform.apply(i));
 		}
 
-		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME, TRANSFORM_BUFFER_INDEX, 1,
+		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME, TRANSFORM_BUFFER_INDEX,
 				Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new), BufferType.ARRAY, false, 1);
 
 		mesh.bind();
@@ -279,10 +279,10 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 	@Override
 	public String toString() {
-		return "InstanceEmitter [name=" + name + ", particles=" + particles.length + ", instancesTransforms="
-				+ instancesTransforms + ", instancesAttribs=" + Arrays.toString(instancesAttribs) + ", count=" + count + ", instanceMesh="
-				+ instanceMesh + ", isValid()=" + isValid() + ", instanceMesh.getGlid()=" + instanceMesh.getGlId()
-				+ ", instanceMesh.getVbo()=" + instanceMesh.getVbo() + "]";
+		return "InstanceEmitter [name=" + name + ", particles=" + particles.length + ", instancesTransforms=" + instancesTransforms
+				+ ", instancesAttribs=" + Arrays.toString(instancesAttribs) + ", count=" + count + ", instanceMesh=" + instanceMesh
+				+ ", isValid()=" + isValid() + ", instanceMesh.getGlid()=" + instanceMesh.getGlId() + ", instanceMesh.getVbo()="
+				+ instanceMesh.getVbo() + "]";
 	}
 
 }

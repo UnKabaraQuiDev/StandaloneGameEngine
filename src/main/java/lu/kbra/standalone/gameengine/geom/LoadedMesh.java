@@ -59,7 +59,7 @@ public class LoadedMesh implements Mesh {
 		this.material = material;
 		this.attribs = attribs;
 
-		this.vertexCount = vertices.getDataCount();
+		this.vertexCount = vertices.getLength();
 		this.indicesCount = indices.getLength();
 		this.boundingBox = GameEngineUtils.getBoundingBox(vertices);
 

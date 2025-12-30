@@ -29,7 +29,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 	private static record SetupData(TextMaterial material, int bufferSize) {
 	}
 
-	public static final int CHAR_BUFFER_INDEX = 9;
+	public static final int CHAR_BUFFER_ID = 9;
 	public static final String CHAR_BUFFER_NAME = "char";
 
 	public static final String STRING = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
@@ -76,11 +76,10 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 			throw new IllegalStateException("TextEmitter already initialized.");
 		}
 
-		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_INDEX, 1, new int[setupData.bufferSize],
-				false, 1);
+		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_ID, new int[setupData.bufferSize], false, 1);
 		// quad mesh ownership goes to the InstanceEmitter
-		this.instances = new InstanceEmitter(name, new QuadLoadedMesh(name, setupData.material, charSize),
-				setupData.bufferSize, new Transform3D(), charBuffer);
+		this.instances = new InstanceEmitter(name, new QuadLoadedMesh(name, setupData.material, charSize), setupData.bufferSize,
+				new Transform3D(), charBuffer);
 
 		updateText();
 
@@ -89,8 +88,9 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	public boolean updateText() {
 		if (charBuffer.getLength() < text.length()) {
-			GlobalLogger.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length()
-					+ ") for length: " + charBuffer.getLength() + ")");
+			GlobalLogger
+					.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length() + ") for length: "
+							+ charBuffer.getLength() + ")");
 		}
 
 		text = text.substring(0, getStringLength());
@@ -154,12 +154,12 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 				character++;
 				chars[charIndex] = (int) currentChar;
 
-				final float translationX = (character - (float) (widthCount[line] - 1) / 2)
-						* (charSize.x() + charOffset.x) - charSize.x();
+				final float translationX = (character - (float) (widthCount[line] - 1) / 2) * (charSize.x() + charOffset.x) - charSize.x();
 				final float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2 + charOffset.y;
 
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 
 				charIndex++;
 			}
@@ -188,11 +188,11 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-				float translationX = (character - widthCount[line] / 2) * (charSize.x() + charOffset.x) + widthMax / 2
-						- charSize.x();
+				float translationX = (character - widthCount[line] / 2) * (charSize.x() + charOffset.x) + widthMax / 2 - charSize.x();
 				float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
 			}
 			}
@@ -220,11 +220,11 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 			default -> {
 				character++;
 				chars[charIndex] = (int) currentChar;
-				final float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x() + charOffset.x)
-						- charSize.x();
+				final float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x() + charOffset.x) - charSize.x();
 				final float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
 			}
 			}
@@ -255,7 +255,8 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 				float translationX = (character - widthCount[line]) * (charSize.x() + charOffset.x) - charSize.x() / 2;
 				float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
 			}
 			}
@@ -283,7 +284,8 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 				float translationX = character * (charSize.x() + charOffset.x) - charSize.x() / 2;
 				float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
 				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity().translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
+						.identity()
+						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
 			}
 			}
@@ -469,10 +471,9 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	@Override
 	public String toString() {
-		return "TextEmitter [name=" + name + ", charSize=" + charSize + ", text=" + text + ", charBuffer=" + charBuffer
-				+ ", instances=" + instances + ", alignment=" + alignment + ", justify=" + justify + ", boxed=" + boxed
-				+ ", correctTransform=" + correctTransform + ", boxSize=" + boxSize + ", charOffset=" + charOffset
-				+ ", isValid()=" + isValid() + "]";
+		return "TextEmitter [name=" + name + ", charSize=" + charSize + ", text=" + text + ", charBuffer=" + charBuffer + ", instances="
+				+ instances + ", alignment=" + alignment + ", justify=" + justify + ", boxed=" + boxed + ", correctTransform="
+				+ correctTransform + ", boxSize=" + boxSize + ", charOffset=" + charOffset + ", isValid()=" + isValid() + "]";
 	}
 
 }

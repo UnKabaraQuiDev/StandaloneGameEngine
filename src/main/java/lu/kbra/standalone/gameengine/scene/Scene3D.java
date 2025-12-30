@@ -7,7 +7,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import lu.pcy113.pclib.PCUtils;
 
@@ -15,7 +14,6 @@ import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
 import lu.kbra.standalone.gameengine.objs.entity.ParentAware;
 import lu.kbra.standalone.gameengine.objs.entity.components.LightComponent;
-import lu.kbra.standalone.gameengine.objs.entity.components.PointLightComponent;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 import lu.kbra.standalone.gameengine.scene.camera.Camera3D;
 
@@ -108,12 +106,6 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 		this.lightEmittors = lightEmittors;
 	}
 
-	public List<LightComponent> getLights() {
-		return getLightEmittors().stream()
-				.map((String e) -> (PointLightComponent) entities.get(e).getComponent(PointLightComponent.class))
-				.collect(Collectors.toList());
-	}
-
 	@Override
 	public Camera3D getCamera() {
 		return (Camera3D) super.getCamera();
@@ -149,9 +141,8 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 			if (old != null && entities.containsKey(old.getId())) {
 				final Entity aValue = entities.remove(old.getId());
 				if (aValue != old) {
-					throw new IllegalStateException(
-							"Found value and given old values do not match (" + PCUtils.toSimpleIdentityString(aValue)
-									+ " <>" + PCUtils.toSimpleIdentityString(old) + ").");
+					throw new IllegalStateException("Found value and given old values do not match ("
+							+ PCUtils.toSimpleIdentityString(aValue) + " <>" + PCUtils.toSimpleIdentityString(old) + ").");
 				}
 				this.addEntity(new_);
 				return Optional.of(aValue);

@@ -12,6 +12,8 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public class Mat4fAttribArray extends AttribArray implements MultiAttribArray, FloatJavaTypeAttribArray, MatrixAttribArray {
 
+	public static final int ATTRIB_LENGTH = 4;
+
 	private Matrix4f[] data;
 
 	public Mat4fAttribArray(String name, int index, Matrix4f[] data) {

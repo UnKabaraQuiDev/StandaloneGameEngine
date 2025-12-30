@@ -31,7 +31,7 @@ import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
-import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
 import lu.kbra.standalone.gameengine.geom.Gizmo;
 import lu.kbra.standalone.gameengine.geom.LoadedMesh;
 import lu.kbra.standalone.gameengine.geom.Mesh;
@@ -40,7 +40,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public final class ObjLoader {
 
-	public record LoadedMeshData(Vec3fAttribArray vertices, UIntAttribArray indices, JavaTypeAttribArray[] attribs, String name,
+	public record LoadedMeshData(Vec3fAttribArray vertices, UIntAttribArray indices, AttribArray[] attribs, String name,
 			Material material) {
 
 	}
@@ -59,11 +59,11 @@ public final class ObjLoader {
 
 			switch (tokens[0]) {
 			case "v":
-				vertices.add(new Vector3f(Float.parseFloat(tokens[1]), Float.parseFloat(tokens[2]),
-						Float.parseFloat(tokens[3])));
+				vertices.add(new Vector3f(Float.parseFloat(tokens[1]), Float.parseFloat(tokens[2]), Float.parseFloat(tokens[3])));
 				if (tokens.length > 4)
-					colors.add(new Vector4f(Float.parseFloat(tokens[4]), Float.parseFloat(tokens[5]),
-							Float.parseFloat(tokens[6]), tokens.length > 7 ? Float.parseFloat(tokens[7]) : 1));
+					colors
+							.add(new Vector4f(Float.parseFloat(tokens[4]), Float.parseFloat(tokens[5]), Float.parseFloat(tokens[6]),
+									tokens.length > 7 ? Float.parseFloat(tokens[7]) : 1));
 				break;
 			case "l":
 				edges.add(new Vector2i(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2])));
@@ -99,24 +99,23 @@ public final class ObjLoader {
 		}
 		int[] indicesArr = indices.stream().mapToInt((v) -> v).toArray();
 
-		return new Gizmo(name, new Vec3fAttribArray("pos", 0, 1, verticesArr, BufferType.ARRAY),
-				new UIntAttribArray("ind", -1, 1, indicesArr, BufferType.ELEMENT_ARRAY),
-				new Vec4fAttribArray("col", 1, 1, colorArr, BufferType.ARRAY));
+		return new Gizmo(name, new Vec3fAttribArray("pos", 0, verticesArr, BufferType.ARRAY),
+				new UIntAttribArray("ind", -1, indicesArr, BufferType.ELEMENT_ARRAY),
+				new Vec4fAttribArray("col", 1, colorArr, BufferType.ARRAY));
 	}
 
 	public static Mesh loadMesh(String name, Material material, String path) {
-		return loadMesh(name, material, path,
-				(t) -> new LoadedMesh(t.name, t.material, t.vertices, t.indices, t.attribs));
+		return loadMesh(name, material, path, (t) -> new LoadedMesh(t.name, t.material, t.vertices, t.indices, t.attribs));
 	}
 
-	public static <T extends Mesh> T loadMesh(String name, Material material, String path,
-			Function<LoadedMeshData, T> factory) {
+	public static <T extends Mesh> T loadMesh(String name, Material material, String path, Function<LoadedMeshData, T> factory) {
 		final byte[] data = PCUtils.readBytesSource(path);
 		final ByteBuffer buffer = MemoryUtil.memAlloc(data.length).put(data).flip();
 
-		final AIScene scene = Assimp.aiImportFileFromMemory(buffer, aiProcess_Triangulate
-				/* | aiProcess_GenSmoothNormals */ | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
-				PCUtils.getFileExtension(path));
+		final AIScene scene = Assimp
+				.aiImportFileFromMemory(buffer,
+						aiProcess_Triangulate/* | aiProcess_GenSmoothNormals */ | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
+						PCUtils.getFileExtension(path));
 
 		if (scene == null) {
 			throw new RuntimeException("Failed to load OBJ: " + aiGetErrorString());
@@ -181,12 +180,12 @@ public final class ObjLoader {
 		Vector2f[] uvsArr = uvsList.toArray(new Vector2f[0]);
 		int[] indicesArr = indicesList.stream().mapToInt(i -> i).toArray();
 
-		final Vec3fAttribArray pos = new Vec3fAttribArray("pos", 0, 1, verticesArr, BufferType.ARRAY);
-		final UIntAttribArray ind = new UIntAttribArray("ind", -1, 1, indicesArr, BufferType.ELEMENT_ARRAY);
-		final Vec3fAttribArray norm = new Vec3fAttribArray("norm", 1, 1, normalsArr, BufferType.ARRAY);
-		final Vec2fAttribArray uv = new Vec2fAttribArray("uv", 2, 1, uvsArr, BufferType.ARRAY);
+		final Vec3fAttribArray pos = new Vec3fAttribArray("pos", 0, verticesArr, BufferType.ARRAY);
+		final UIntAttribArray ind = new UIntAttribArray("ind", -1, indicesArr, BufferType.ELEMENT_ARRAY);
+		final Vec3fAttribArray norm = new Vec3fAttribArray("norm", 1, normalsArr, BufferType.ARRAY);
+		final Vec2fAttribArray uv = new Vec2fAttribArray("uv", 2, uvsArr, BufferType.ARRAY);
 
-		return factory.apply(new LoadedMeshData(pos, ind, new JavaTypeAttribArray[] { norm, uv }, name, material));
+		return factory.apply(new LoadedMeshData(pos, ind, new AttribArray[] { norm, uv }, name, material));
 	}
 
 	private static void processFace(String token, List<Vector3i> faces) {
