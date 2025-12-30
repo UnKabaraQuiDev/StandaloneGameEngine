@@ -51,7 +51,7 @@ public class Mat3x2fAttribArray extends AttribArray implements MultiAttribArray,
 		super.length = data.length;
 
 		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		
+
 		if (isVertexArray()) {
 			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 		}
@@ -98,13 +98,21 @@ public class Mat3x2fAttribArray extends AttribArray implements MultiAttribArray,
 	@Override
 	public void enable() {
 		bind();
-		
+
 		for (int i = 0; i < getAttribArrayCount(); i++) {
 			GL_W.glEnableVertexAttribArray(index + i);
-			GL_W
-					.glVertexAttribPointer(index
-							+ i, getColumnComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), i * getElementByteSize());
+			GL_W.glVertexAttribPointer(index
+					+ i, getColumnComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), i * getColumnByteSize());
 			GL_W.glVertexAttribDivisor(index + i, divisor);
+		}
+	}
+
+	@Override
+	public void disable() {
+		bind();
+
+		for (int i = 0; i < getAttribArrayCount(); i++) {
+			GL_W.glDisableVertexAttribArray(index + i);
 		}
 	}
 
@@ -115,6 +123,11 @@ public class Mat3x2fAttribArray extends AttribArray implements MultiAttribArray,
 	@Override
 	public Class<?> getType() {
 		return Matrix3x2f.class;
+	}
+
+	@Override
+	public int getLength() {
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override
@@ -132,12 +145,12 @@ public class Mat3x2fAttribArray extends AttribArray implements MultiAttribArray,
 
 	@Override
 	public int getColumnComponentCount() {
-		return 2;
+		return 3;
 	}
 
 	@Override
 	public int getLineComponentCount() {
-		return 3;
+		return 2;
 	}
 
 	@Override

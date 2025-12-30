@@ -88,6 +88,11 @@ public class Vec4fAttribArray extends AttribArray implements FloatJavaTypeAttrib
 	}
 
 	@Override
+	public int getLength() {
+		return isLoaded() ? (length = data.length) : super.getLength();
+	}
+
+	@Override
 	public boolean isLoaded() {
 		return data != null;
 	}

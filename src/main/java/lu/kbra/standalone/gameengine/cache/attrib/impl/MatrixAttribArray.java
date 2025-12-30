@@ -1,6 +1,8 @@
 package lu.kbra.standalone.gameengine.cache.attrib.impl;
 
-public interface MatrixAttribArray extends MultiAttribArray {
+import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;
+
+public interface MatrixAttribArray extends MultiAttribArray, JavaTypeAttribArray {
 
 	int getColumnComponentCount();
 
@@ -14,4 +16,8 @@ public interface MatrixAttribArray extends MultiAttribArray {
 		return getColumnComponentCount();
 	}
 
+	default int getColumnByteSize() {
+		return getColumnComponentCount() * getComponentByteSize();
+	}
+	
 }

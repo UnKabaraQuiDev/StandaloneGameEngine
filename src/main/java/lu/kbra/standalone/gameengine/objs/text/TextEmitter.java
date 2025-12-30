@@ -29,7 +29,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 	private static record SetupData(TextMaterial material, int bufferSize) {
 	}
 
-	public static final int CHAR_BUFFER_ID = 9;
+	public static final int CHAR_BUFFER_ID = 10;
 	public static final String CHAR_BUFFER_NAME = "char";
 
 	public static final String STRING = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";

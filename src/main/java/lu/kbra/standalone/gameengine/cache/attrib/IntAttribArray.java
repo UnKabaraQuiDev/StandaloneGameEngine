@@ -91,7 +91,7 @@ public class IntAttribArray extends AttribArray implements IntegerJavaTypeAttrib
 
 	@Override
 	public int getLength() {
-		return !isLoaded() ? -1 : data.length;
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override

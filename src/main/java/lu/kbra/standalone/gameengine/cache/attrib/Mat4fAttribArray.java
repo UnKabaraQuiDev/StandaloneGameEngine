@@ -53,10 +53,6 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray, F
 		super.length = data.length;
 
 		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-
-		if (isVertexArray()) {
-			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
-		}
 	}
 
 	@Override
@@ -91,10 +87,6 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray, F
 		} else {
 			GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		}
-
-		if (isVertexArray()) {
-			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
-		}
 	}
 
 	@Override
@@ -103,10 +95,18 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray, F
 
 		for (int i = 0; i < getAttribArrayCount(); i++) {
 			GL_W.glEnableVertexAttribArray(index + i);
-			GL_W
-					.glVertexAttribPointer(index
-							+ i, getColumnComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), i * getElementByteSize());
+			GL_W.glVertexAttribPointer(index
+					+ i, getColumnComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), i * getColumnByteSize());
 			GL_W.glVertexAttribDivisor(index + i, divisor);
+		}
+	}
+
+	@Override
+	public void disable() {
+		bind();
+
+		for (int i = 0; i < getAttribArrayCount(); i++) {
+			GL_W.glDisableVertexAttribArray(index + i);
 		}
 	}
 
@@ -117,6 +117,11 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray, F
 	@Override
 	public Class<?> getType() {
 		return Matrix4f.class;
+	}
+
+	@Override
+	public int getLength() {
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override

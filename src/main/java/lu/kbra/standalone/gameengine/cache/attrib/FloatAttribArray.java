@@ -94,6 +94,11 @@ public class FloatAttribArray extends AttribArray implements FloatJavaTypeAttrib
 	}
 
 	@Override
+	public int getLength() {
+		return isLoaded() ? (length = data.length) : super.getLength();
+	}
+
+	@Override
 	public float[] getData() {
 		return data;
 	}

@@ -61,6 +61,8 @@ public class UIntAttribArray extends AttribArray implements IntegerJavaTypeAttri
 			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
+//		System.err.println(Arrays.toString(data) + " = " + data.length + " <> " + Arrays.toString(nPos) + " = " + nPos.length);
+
 		data = nPos;
 		super.length = data.length;
 
@@ -88,6 +90,11 @@ public class UIntAttribArray extends AttribArray implements IntegerJavaTypeAttri
 	@Override
 	public Class<?> getType() {
 		return int.class;
+	}
+
+	@Override
+	public int getLength() {
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override

@@ -99,6 +99,11 @@ public class Vec3fAttribArray extends AttribArray implements FloatJavaTypeAttrib
 	}
 
 	@Override
+	public int getLength() {
+		return isLoaded() ? (length = data.length) : super.getLength();
+	}
+
+	@Override
 	public Class<?> getType() {
 		return Vector3f.class;
 	}

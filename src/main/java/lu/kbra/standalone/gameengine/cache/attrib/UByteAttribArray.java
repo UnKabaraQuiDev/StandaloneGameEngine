@@ -44,7 +44,7 @@ public class UByteAttribArray extends AttribArray implements ByteJavaTypeAttribA
 		GL_W.glBufferData(bufferType.getGlId(), bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
 		if (isVertexArray()) {
-			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, getElementByteSize(), 0);
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_BYTE, getElementByteSize(), 0);
 		}
 	}
 
@@ -92,6 +92,11 @@ public class UByteAttribArray extends AttribArray implements ByteJavaTypeAttribA
 	@Override
 	public boolean isLoaded() {
 		return data != null;
+	}
+
+	@Override
+	public int getLength() {
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	public Byte get(int i) {

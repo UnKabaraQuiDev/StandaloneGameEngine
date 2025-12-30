@@ -46,7 +46,7 @@ public class Vec4iAttribArray extends AttribArray implements IntegerJavaTypeAttr
 		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
 		if (isVertexArray()) {
-			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, getElementByteSize(), 0);
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_INT, getElementByteSize(), 0);
 		}
 	}
 
@@ -84,7 +84,7 @@ public class Vec4iAttribArray extends AttribArray implements IntegerJavaTypeAttr
 		}
 
 		if (isVertexArray()) {
-			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, getElementByteSize(), 0);
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_INT, getElementByteSize(), 0);
 		}
 	}
 
@@ -103,7 +103,7 @@ public class Vec4iAttribArray extends AttribArray implements IntegerJavaTypeAttr
 
 	@Override
 	public int getLength() {
-		return !isLoaded() ? -1 : data.length;
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override
