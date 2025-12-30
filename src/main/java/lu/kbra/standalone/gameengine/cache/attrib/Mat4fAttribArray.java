@@ -8,7 +8,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 
-	public static final int DATA_SIZE = 16;
+	public static final int TYPE_SIZE = 16;
 	public static final int ATTRIB_LENGTH = 4;
 
 	private Matrix4f[] data;
@@ -74,7 +74,7 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 		for (int i = 0; i < ATTRIB_LENGTH; i++) {
 			GL_W.glEnableVertexAttribArray(index + i);
 			GL_W.checkError("EnableVertexAttribArray(" + index + i + ")");
-			GL_W.glVertexAttribPointer(index + i, 4, GL_W.GL_FLOAT, false, DATA_SIZE * 4, i * DATA_SIZE);
+			GL_W.glVertexAttribPointer(index + i, 4, GL_W.GL_FLOAT, false, TYPE_SIZE * 4, i * TYPE_SIZE);
 			GL_W.checkError("VertexAttribPointer(" + index + i + ", 4, FLOAT)");
 			GL_W.glVertexAttribDivisor(index + i, divisor);
 			GL_W.checkError("VertexAttribDivisor(" + index + i + ", " + divisor + ")");
@@ -82,7 +82,7 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new FloatAttribArray(name, index, dataSize * TYPE_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	@Override
@@ -141,6 +141,9 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray {
 	public String toString() {
 		return getGlId() + "|" + getMaxIndex() + "-" + getMaxIndex() + ") " + getName() + ": " + getLength() + "/" + getDataSize() + "="
 				+ getDataCount();
+	}@Override
+	public int getTypeSize() {
+		return TYPE_SIZE;
 	}
 
 }

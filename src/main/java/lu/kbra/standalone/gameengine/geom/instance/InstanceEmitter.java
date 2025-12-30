@@ -276,4 +276,12 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		return instanceMesh != null && instanceMesh.isValid() && instancesTransforms.isValid();
 	}
 
+	@Override
+	public String toString() {
+		return "InstanceEmitter [name=" + name + ", particles=" + particles.length + ", instancesTransforms="
+				+ instancesTransforms + ", instancesAttribs=" + Arrays.toString(instancesAttribs) + ", count=" + count + ", instanceMesh="
+				+ instanceMesh + ", isValid()=" + isValid() + ", instanceMesh.getGlid()=" + instanceMesh.getGlId()
+				+ ", instanceMesh.getVbo()=" + instanceMesh.getVbo() + "]";
+	}
+
 }

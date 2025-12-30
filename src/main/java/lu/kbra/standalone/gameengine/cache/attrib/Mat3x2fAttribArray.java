@@ -8,6 +8,8 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public class Mat3x2fAttribArray extends AttribArray {
 
+	public static final int TYPE_SIZE = 3 * 2;
+
 	private Matrix3x2f[] data;
 
 	public Mat3x2fAttribArray(String name, int index, int dataSize, Matrix3x2f[] data) {
@@ -79,8 +81,8 @@ public class Mat3x2fAttribArray extends AttribArray {
 
 		data = nPos;
 
-		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_FLOAT, false, 0, 0);
+		if (bufferType == BufferType.ARRAY) {
+			GL_W.glVertexAttribPointer(index, getElementSize(), GL_W.GL_FLOAT, false, 0, 0);
 		}
 	}
 
@@ -88,13 +90,13 @@ public class Mat3x2fAttribArray extends AttribArray {
 	public void enable() {
 		for (int i = 0; i < 3; i++) {
 			GL_W.glEnableVertexAttribArray(index + i);
-			GL_W.glVertexAttribPointer(index + i, 2, GL_W.GL_FLOAT, false, 6 * 3, i * 2 * 4);
+			GL_W.glVertexAttribPointer(index + i, 2, GL_W.GL_FLOAT, false, getTypeSize(), i * 2 * Float.BYTES);
 			GL_W.glVertexAttribDivisor(index + i, divisor);
 		}
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, dataSize * 3 * 2, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new FloatAttribArray(name, index, getElementSize(), GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	@Override
@@ -118,6 +120,11 @@ public class Mat3x2fAttribArray extends AttribArray {
 
 	public Matrix3x2f[] getData() {
 		return data;
+	}
+
+	@Override
+	public int getTypeSize() {
+		return TYPE_SIZE;
 	}
 
 }

@@ -109,4 +109,9 @@ public class UByteAttribArray extends AttribArray {
 		}
 	}
 
+	@Override
+	public int getTypeSize() {
+		return 1;
+	}
+
 }

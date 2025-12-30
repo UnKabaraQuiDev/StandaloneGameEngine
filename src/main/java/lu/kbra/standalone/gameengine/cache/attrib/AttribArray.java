@@ -22,7 +22,8 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 	protected BufferType bufferType;
 	protected String name = null;
 	protected int index = -1;
-	protected final int dataSize, divisor;
+	protected final int dataSize;
+	protected final int divisor;
 
 	public AttribArray(String name, int index, int dataSize) {
 		this(name, index, dataSize, BufferType.ARRAY, true);
@@ -61,10 +62,7 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 		this.divisor = divisor;
 	}
 
-	public int getDataCount() {
-		return getLength() / getDataSize();
-	}
-
+	/** get length in primitive elements (floats/ints) (GL side) */
 	public abstract int getLength();
 
 	public abstract void init();
@@ -78,6 +76,24 @@ public abstract class AttribArray implements Cleanupable, GLObject {
 	public abstract void update();
 
 	public abstract Class<?> getType();
+
+	/** size of a single element in the array (java side), in primitive elements (floats/ints) */
+	public abstract int getTypeSize();
+
+	/** size of a single element in the array (GL side), in primitive elements (floats/ints) */
+	public int getElementSize() {
+		return getTypeSize() * getDataSize();
+	}
+
+	/** count of elements (java side) */
+	public int getDataCount() {
+		return getLength() / getDataSize();
+	}
+
+	/** count of elements (GL side) */
+	public int getElementCount() {
+		return getLength() / getElementSize();
+	}
 
 	public void enable() {
 		bind();

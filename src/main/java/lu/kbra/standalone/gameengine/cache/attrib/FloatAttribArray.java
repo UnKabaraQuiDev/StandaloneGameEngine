@@ -77,7 +77,7 @@ public class FloatAttribArray extends AttribArray {
 		data = nPos;
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribPointer(index, dataSize, GL_W.GL_FLOAT, false, 0, 0);
+			GL_W.glVertexAttribPointer(index, getElementSize(), GL_W.GL_FLOAT, false, 0, 0);
 		}
 	}
 
@@ -104,6 +104,11 @@ public class FloatAttribArray extends AttribArray {
 	@Override
 	public Float get(int i) {
 		return !isLoaded() ? null : data[i];
+	}
+
+	@Override
+	public int getTypeSize() {
+		return 1;
 	}
 
 }

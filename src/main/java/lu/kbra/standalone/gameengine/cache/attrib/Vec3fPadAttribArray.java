@@ -6,41 +6,9 @@ import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class Vec3fAttribArray extends AttribArray {
+public class Vec3fPadAttribArray extends Vec3fAttribArray implements PaddedArray {
 
-	public static final int TYPE_SIZE = 3;
-
-	protected Vector3f[] data;
-
-	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data) {
-		super(name, index, dataSize);
-		this.data = data;
-	}
-
-	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType) {
-		super(name, index, dataSize, bufferType);
-		this.data = data;
-	}
-
-	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType, boolean _static) {
-		super(name, index, dataSize, bufferType, _static);
-		this.data = data;
-	}
-
-	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType, int _divisor) {
-		super(name, index, dataSize, bufferType, _divisor);
-		this.data = data;
-	}
-
-	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, BufferType bufferType, boolean _static, int _divisor) {
-		super(name, index, dataSize, bufferType, _static, _divisor);
-		this.data = data;
-	}
-
-	public Vec3fAttribArray(String name, int index, int dataSize, Vector3f[] data, boolean _static) {
-		super(name, index, dataSize, _static);
-		this.data = data;
-	}
+	protected int padLength = 4;
 
 	@Override
 	public void init() {
@@ -86,12 +54,12 @@ public class Vec3fAttribArray extends AttribArray {
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
 			// TODO: test this
-			GL_W.glVertexAttribPointer(index, getElementSize(), GL_W.GL_FLOAT, false, 0, 0);
+			GL_W.glVertexAttribPointer(index, dataSize * TYPE_SIZE, GL_W.GL_FLOAT, false, 0, 0);
 		}
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, getLength(), GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new FloatAttribArray(name, index, getTotalSize(), GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	@Override
@@ -118,8 +86,18 @@ public class Vec3fAttribArray extends AttribArray {
 	}
 
 	@Override
-	public int getTypeSize() {
-		return TYPE_SIZE;
+	public int getPadding() {
+		return padLength - (TYPE_SIZE * getDataSize());
+	}
+
+	@Override
+	public int getElementSize() {
+		return padLength;
+	}
+
+	@Override
+	public int getTotalSize() {
+		return padLength * getDataSize();
 	}
 
 }

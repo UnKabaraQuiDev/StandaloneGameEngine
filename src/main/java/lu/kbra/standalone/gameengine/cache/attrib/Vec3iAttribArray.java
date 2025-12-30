@@ -8,7 +8,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public class Vec3iAttribArray extends AttribArray {
 
-	public static final int DATA_SIZE = 3;
+	public static final int TYPE_SIZE = 3;
 
 	private Vector3i[] data;
 
@@ -44,7 +44,7 @@ public class Vec3iAttribArray extends AttribArray {
 		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribIPointer(index, dataSize * DATA_SIZE, GL_W.GL_INT, 0, 0);
+			GL_W.glVertexAttribIPointer(index, dataSize * TYPE_SIZE, GL_W.GL_INT, 0, 0);
 		}
 	}
 
@@ -80,16 +80,16 @@ public class Vec3iAttribArray extends AttribArray {
 		data = nPos;
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribIPointer(index, dataSize * DATA_SIZE, GL_W.GL_INT, 0, 0);
+			GL_W.glVertexAttribIPointer(index, dataSize * TYPE_SIZE, GL_W.GL_INT, 0, 0);
 		}
 	}
 
 	public IntAttribArray toIntAttribArray() {
-		return new IntAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new IntAttribArray(name, index, dataSize * TYPE_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	public UIntAttribArray toUIntAttribArray() {
-		return new UIntAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new UIntAttribArray(name, index, dataSize * TYPE_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	@Override
@@ -113,6 +113,9 @@ public class Vec3iAttribArray extends AttribArray {
 
 	public Vector3i[] getData() {
 		return data;
+	}@Override
+	public int getTypeSize() {
+		return TYPE_SIZE;
 	}
 
 }

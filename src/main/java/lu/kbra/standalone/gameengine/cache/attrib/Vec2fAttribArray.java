@@ -8,7 +8,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public class Vec2fAttribArray extends AttribArray {
 
-	public static final int DATA_SIZE = 2;
+	public static final int TYPE_SIZE = 2;
 
 	private Vector2f[] data;
 
@@ -39,7 +39,7 @@ public class Vec2fAttribArray extends AttribArray {
 		GL_W.glBufferData(bufferType.getGlId(), GameEngineUtils.toFlatArray(data), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribPointer(index, dataSize * DATA_SIZE, GL_W.GL_FLOAT, false, 0, 0);
+			GL_W.glVertexAttribPointer(index, dataSize * TYPE_SIZE, GL_W.GL_FLOAT, false, 0, 0);
 		}
 	}
 
@@ -75,12 +75,12 @@ public class Vec2fAttribArray extends AttribArray {
 		data = nPos;
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribPointer(index, dataSize * DATA_SIZE, GL_W.GL_FLOAT, false, 0, 0);
+			GL_W.glVertexAttribPointer(index, dataSize * TYPE_SIZE, GL_W.GL_FLOAT, false, 0, 0);
 		}
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(name, index, dataSize * DATA_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
+		return new FloatAttribArray(name, index, dataSize * TYPE_SIZE, GameEngineUtils.toFlatArray(data), bufferType, iStatic);
 	}
 
 	@Override
@@ -104,6 +104,9 @@ public class Vec2fAttribArray extends AttribArray {
 
 	public Vector2f[] getData() {
 		return data;
+	}@Override
+	public int getTypeSize() {
+		return TYPE_SIZE;
 	}
 
 }

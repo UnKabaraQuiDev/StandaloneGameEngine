@@ -72,7 +72,7 @@ public class UIntAttribArray extends AttribArray {
 		data = nPos;
 
 		if (bufferType != BufferType.ELEMENT_ARRAY) {
-			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
+			GL_W.glVertexAttribIPointer(index, getElementSize(), GL_W.GL_UNSIGNED_INT, 0, 0);
 		}
 	}
 
@@ -97,6 +97,11 @@ public class UIntAttribArray extends AttribArray {
 
 	public int[] getData() {
 		return data;
+	}
+
+	@Override
+	public int getTypeSize() {
+		return 1;
 	}
 
 }

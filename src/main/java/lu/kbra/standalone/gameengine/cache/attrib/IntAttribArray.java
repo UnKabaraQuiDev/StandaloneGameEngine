@@ -38,8 +38,8 @@ public class IntAttribArray extends AttribArray {
 
 		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
-			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_INT, 0, 0);
+		if (bufferType == BufferType.ARRAY) {
+			GL_W.glVertexAttribIPointer(index, getElementSize(), GL_W.GL_INT, 0, 0);
 		}
 	}
 
@@ -70,8 +70,8 @@ public class IntAttribArray extends AttribArray {
 
 		data = nPos;
 
-		if (bufferType != BufferType.ELEMENT_ARRAY && bufferType != BufferType.UNIFORM) {
-			GL_W.glVertexAttribIPointer(index, dataSize, GL_W.GL_UNSIGNED_INT, 0, 0);
+		if (bufferType == BufferType.ARRAY) {
+			GL_W.glVertexAttribIPointer(index, getElementSize(), GL_W.GL_UNSIGNED_INT, 0, 0);
 		}
 	}
 
@@ -96,6 +96,11 @@ public class IntAttribArray extends AttribArray {
 
 	public int[] getData() {
 		return data;
+	}
+
+	@Override
+	public int getTypeSize() {
+		return 1;
 	}
 
 }
