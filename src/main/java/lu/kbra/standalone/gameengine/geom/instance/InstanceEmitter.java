@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.IntFunction;
 import java.util.logging.Level;
 
 import org.joml.Matrix4f;
@@ -42,7 +43,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 		this(name, mesh, count, i -> baseTransform.clone(), attribs);
 	}
 
-	public InstanceEmitter(String name, Mesh mesh, int count, Function<Integer, Transform> baseTransform, AttribArray... attribs) {
+	public InstanceEmitter(String name, Mesh mesh, int count, IntFunction<Transform> baseTransform, AttribArray... attribs) {
 		this.name = name;
 		this.count = count;
 
@@ -62,8 +63,12 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 			particles[i] = new Instance(i, atts, baseTransform.apply(i));
 		}
 
-		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME, TRANSFORM_BUFFER_INDEX,
-				Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new), BufferType.ARRAY, false, 1);
+		this.instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME,
+				TRANSFORM_BUFFER_INDEX,
+				Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new),
+				BufferType.ARRAY,
+				false,
+				1);
 
 		mesh.bind();
 
@@ -78,10 +83,9 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 		mesh.unbind();
 
-		GlobalLogger
-				.log(Level.INFO,
-						"ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo() + "); count:" + count + "; attribs: "
-								+ Arrays.toString(attribs));
+		GlobalLogger.log(Level.INFO,
+				"ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo() + "); count:" + count + "; attribs: "
+						+ Arrays.toString(attribs));
 	}
 
 	/**

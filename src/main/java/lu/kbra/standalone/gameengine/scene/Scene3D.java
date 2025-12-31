@@ -1,10 +1,9 @@
 package lu.kbra.standalone.gameengine.scene;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -13,18 +12,17 @@ import lu.pcy113.pclib.PCUtils;
 import lu.kbra.standalone.gameengine.objs.entity.Component;
 import lu.kbra.standalone.gameengine.objs.entity.Entity;
 import lu.kbra.standalone.gameengine.objs.entity.ParentAware;
-import lu.kbra.standalone.gameengine.objs.entity.components.LightComponent;
+import lu.kbra.standalone.gameengine.objs.entity.SceneEntity;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 import lu.kbra.standalone.gameengine.scene.camera.Camera3D;
 
-public class Scene3D extends Scene implements Iterable<Entity> {
+public class Scene3D extends Scene {
 
 	public static final String NAME = Scene3D.class.getName();
 
 	private final Object entitiesLock = new Object();
 
-	protected Map<String, Entity> entities = Collections.synchronizedMap(new LinkedHashMap<>());
-	protected List<String> lightEmittors = new ArrayList<>();
+	protected Map<String, SceneEntity> entities = Collections.synchronizedMap(new LinkedHashMap<>());
 
 	public Scene3D(String name) {
 		super(name, Camera.perspectiveCamera3D());
@@ -35,26 +33,24 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 		super.cleanup();
 	}
 
-	public Map<String, Entity> getEntities() {
+	public Map<String, SceneEntity> getEntities() {
 		return entities;
 	}
 
-	public void setEntities(Map<String, Entity> entities) {
+	public void setEntities(Map<String, SceneEntity> entities) {
 		synchronized (entitiesLock) {
 			this.entities = entities;
 		}
 	}
 
-	public Entity addEntity(String str, Entity entity) {
+	@Deprecated
+	public <T extends SceneEntity> T addEntity(String str, T entity) {
 		if (entity == null) {
 			return null;
 		}
 
 		synchronized (entitiesLock) {
 			this.entities.put(str, entity);
-			if (entity.hasComponentMatching(LightComponent.class)) {
-				this.lightEmittors.add(str);
-			}
 		}
 
 		if (entity instanceof ParentAware pa) {
@@ -64,46 +60,58 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 		return entity;
 	}
 
-	public <T extends Entity> T addEntity(T e) {
-		synchronized (entitiesLock) {
-			return (T) addEntity(e.getId(), e);
+	@Override
+	public <T extends SceneEntity> T add(T entity) {
+		if (entity == null) {
+			return null;
 		}
+
+		synchronized (entitiesLock) {
+			this.entities.put(entity.getId(), entity);
+		}
+
+		if (entity instanceof ParentAware pa) {
+			pa.setParent(this);
+		}
+
+		return entity;
 	}
 
+	@Deprecated
 	public Entity addEntity(String str, Component... components) {
 		synchronized (entitiesLock) {
 			return addEntity(str, new Entity(str, components));
 		}
 	}
 
-	public Entity getEntity(String str) {
+	@Override
+	public <T extends SceneEntity> T getEntity(String str) {
 		synchronized (entitiesLock) {
-			return this.entities.get(str);
+			return (T) this.entities.get(str);
 		}
 	}
 
-	public <T extends Entity> void addEntities(T... entities) {
+	@Override
+	public <T extends SceneEntity> T[] addAll(T... entities) {
 		synchronized (entitiesLock) {
-			for (Entity entity : entities) {
-				this.addEntity(entity);
+//			boolean addedAny = false;
+			for (T entity : entities) {
+//				if (!this.entities.containsKey(entity.getId())) {
+//					addedAny |= true;
+//				}
+				this.add(entity);
 			}
+			return entities;
 		}
 	}
 
-	public void addEntities(String[] names, Entity[] entities) {
+	@Deprecated
+	public <T extends SceneEntity> void addEntities(String[] names, T[] entities) {
 		synchronized (entitiesLock) {
 			for (int i = 0; i < Math.min(names.length, entities.length); i++) {
 				this.addEntity(names[i], entities[i]);
 			}
 		}
-	}
-
-	public List<String> getLightEmittors() {
-		return lightEmittors;
-	}
-
-	public void setLightEmittors(List<String> lightEmittors) {
-		this.lightEmittors = lightEmittors;
 	}
 
 	@Override
@@ -120,13 +128,14 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 	}
 
 	@Override
-	public Iterator<Entity> iterator() {
+	public Iterator<SceneEntity> iterator() {
 		return this.entities.values().iterator();
 	}
 
-	public Optional<Entity> remove(Entity e) {
+	@Override
+	public <T extends SceneEntity> Optional<T> remove(T e) {
 		synchronized (entitiesLock) {
-			if (e != null && (e = this.entities.remove(e.getId())) != null) {
+			if (e != null && (e = (T) this.entities.remove(e.getId())) != null) {
 				if (e instanceof ParentAware pa) {
 					pa.setParent(null);
 				}
@@ -136,21 +145,51 @@ public class Scene3D extends Scene implements Iterable<Entity> {
 		return Optional.empty();
 	}
 
-	public Optional<Entity> replace(Entity old, Entity new_) {
+	@Override
+	public <T extends SceneEntity, O extends SceneEntity> Optional<O> replace(O old, T new_) {
 		synchronized (entitiesLock) {
 			if (old != null && entities.containsKey(old.getId())) {
-				final Entity aValue = entities.remove(old.getId());
-				if (aValue != old) {
+				final O oldValue = (O) entities.remove(old.getId());
+				if (oldValue != old) {
 					throw new IllegalStateException("Found value and given old values do not match ("
-							+ PCUtils.toSimpleIdentityString(aValue) + " <>" + PCUtils.toSimpleIdentityString(old) + ").");
+							+ PCUtils.toSimpleIdentityString(oldValue) + " <> " + PCUtils.toSimpleIdentityString(old) + ").");
 				}
-				this.addEntity(new_);
-				return Optional.of(aValue);
+				this.add(new_);
+				return Optional.of(oldValue);
 			} else {
-				addEntity(new_);
+				add(new_);
 				return Optional.empty();
 			}
 		}
+	}
+
+	@Override
+	public <T extends SceneEntity> boolean contains(T e) {
+		return entities.containsKey(e.getId()) && entities.get(e.getId()) == e;
+	}
+
+	@Override
+	public <T extends SceneEntity> boolean addAll(Collection<? extends T> entities) {
+		synchronized (entitiesLock) {
+			boolean addedAny = false;
+			for (T entity : entities) {
+				if (!this.entities.containsKey(entity.getId())) {
+					addedAny |= true;
+				}
+				this.add(entity);
+			}
+			return addedAny;
+		}
+	}
+
+	@Override
+	public int size() {
+		return this.entities.size();
+	}
+
+	@Override
+	public <T extends SceneEntity> boolean contains(String e) {
+		return entities.containsKey(e);
 	}
 
 }

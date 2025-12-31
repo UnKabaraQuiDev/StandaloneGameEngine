@@ -27,4 +27,6 @@ public interface SceneEntity extends UniqueID {
 
 	SceneEntity setActive(boolean a);
 
+	<T extends Component> T removeComponent(Class<T> componentClass);
+
 }

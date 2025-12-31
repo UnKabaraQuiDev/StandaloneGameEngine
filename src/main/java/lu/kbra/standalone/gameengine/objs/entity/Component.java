@@ -4,7 +4,7 @@ public abstract class Component implements ParentAware {
 
 	protected Entity parent;
 
-	public boolean attach(Entity parent) {
+	public boolean attach(SceneEntity parent) {
 		if (this.parent != null) {
 			return false;
 		}

@@ -23,12 +23,17 @@ public class Entity implements SceneEntity {
 	}
 
 	@Override
-	public Entity addComponent(Component component) {
+	public SceneEntity addComponent(Component component) {
 		if (component == null)
 			return this;
 		if (component.attach(this))
 			components.put(component.getClass(), component);
 		return this;
+	}
+
+	@Override
+	public <T extends Component> T removeComponent(Class<T> componentClass) {
+		return (T) components.remove(componentClass);
 	}
 
 	@Override
@@ -38,13 +43,15 @@ public class Entity implements SceneEntity {
 
 	@Override
 	public <T extends Component> T getComponentMatching(Class<T> clazz) {
-		return (T) components.get(
-				components.keySet().parallelStream().filter(t -> clazz.isAssignableFrom(t)).findFirst().orElse(null));
+		return (T) components.get(components.keySet().parallelStream().filter(t -> clazz.isAssignableFrom(t)).findFirst().orElse(null));
 	}
 
 	@Override
 	public <T extends Component> List<T> getComponentsMatching(Class<T> clazz) {
-		return components.keySet().stream().filter(t -> clazz.isAssignableFrom(t)).map(t -> (T) components.get(t))
+		return components.keySet()
+				.stream()
+				.filter(t -> clazz.isAssignableFrom(t))
+				.map(t -> (T) components.get(t))
 				.collect(Collectors.toList());
 	}
 
@@ -74,7 +81,7 @@ public class Entity implements SceneEntity {
 	}
 
 	@Override
-	public Entity setActive(boolean a) {
+	public SceneEntity setActive(boolean a) {
 		this.active = a;
 		return this;
 	}
@@ -82,7 +89,9 @@ public class Entity implements SceneEntity {
 	@Override
 	public String toString() {
 		return this.getClass().getSimpleName() + " [active=" + active + ", name=" + name + ", components="
-				+ components.values().parallelStream().map(c -> PCUtils.toSimpleIdentityString(c))
+				+ components.values()
+						.parallelStream()
+						.map(c -> PCUtils.toSimpleIdentityString(c))
 						.collect(Collectors.joining(", ", "[", "]"))
 				+ "]";
 	}
