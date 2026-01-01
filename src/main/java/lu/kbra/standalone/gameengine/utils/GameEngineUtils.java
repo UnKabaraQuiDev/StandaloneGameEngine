@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 
 import javax.swing.GroupLayout.Alignment;
 
+import org.joml.AxisAngle4d;
 import org.joml.Matrix3x2f;
 import org.joml.Matrix3x2fc;
 import org.joml.Matrix4f;
@@ -300,8 +301,7 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f[] floatArrayToVec3f(float[] arr) {
-		return IntStream
-				.range(0, arr.length / 3)
+		return IntStream.range(0, arr.length / 3)
 				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2]))
 				.toArray(Vector3f[]::new);
 	}
@@ -311,8 +311,7 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f[] intArrayToVec3f(int[] arr) {
-		return IntStream
-				.range(0, arr.length / 3)
+		return IntStream.range(0, arr.length / 3)
 				.mapToObj(i -> new Vector3f(arr[i * 3 + 0], arr[i * 3 + 1], arr[i * 3 + 2]))
 				.toArray(Vector3f[]::new);
 	}
@@ -335,10 +334,9 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector3f clampPositive(Vector3f vec) {
-		return vec
-				.set(PCUtils.clampGreaterOrEquals(0, vec.x),
-						PCUtils.clampGreaterOrEquals(0, vec.y),
-						PCUtils.clampGreaterOrEquals(0, vec.z));
+		return vec.set(PCUtils.clampGreaterOrEquals(0, vec.x),
+				PCUtils.clampGreaterOrEquals(0, vec.y),
+				PCUtils.clampGreaterOrEquals(0, vec.z));
 	}
 
 	public static Vector2f normalizeGreater(Vector2f vec) {
@@ -732,6 +730,16 @@ public final class GameEngineUtils {
 	@Deprecated
 	public static Vector4f clone(Vector4fc vec) {
 		return vec instanceof Vector4f ? (Vector4f) vec : new Vector4f(vec);
+	}
+
+	public static Vector3f randomVector3f() {
+		return new Vector3f((float) Math.random() * 2 - 1, (float) Math.random() * 2 - 1, (float) Math.random() * 2 - 1).normalize();
+	}
+
+	public static Quaternionf randomQuaterionf() {
+		return new Quaternionf().rotateXYZ((float) Math.random() * (float) Math.PI * 2f,
+				(float) Math.random() * (float) Math.PI * 2f,
+				(float) Math.random() * (float) Math.PI * 2f);
 	}
 
 }

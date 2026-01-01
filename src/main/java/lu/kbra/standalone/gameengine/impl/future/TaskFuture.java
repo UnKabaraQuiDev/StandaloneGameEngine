@@ -279,7 +279,7 @@ public class TaskFuture<I, O> {
 					state.ongoing.set(false);
 				}
 			} catch (Throwable e) {
-				throw new RuntimeException(state.source, e);
+				throw new RuntimeException(state.source + " > " + currentSource, e);
 			} finally {
 				state.ongoing.set(false);
 			}

@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 import lu.pcy113.pclib.PCUtils;
 
@@ -147,6 +149,23 @@ public class Scene2D extends Scene {
 	@Override
 	public int size() {
 		return this.entities.size();
+	}
+
+	@Override
+	public Stream<SceneEntity> parallelStream() {
+		return entities.values().parallelStream();
+	}
+
+	@Override
+	public Stream<SceneEntity> stream() {
+		return entities.values().stream();
+	}
+
+	@Override
+	public void forEach(Consumer<? super SceneEntity> action) {
+		synchronized (entitiesLock) {
+			super.forEach(action);
+		}
 	}
 
 }

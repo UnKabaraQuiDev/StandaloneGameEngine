@@ -2,6 +2,7 @@ package lu.kbra.standalone.gameengine.scene;
 
 import java.util.Collection;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import lu.kbra.standalone.gameengine.objs.entity.SceneEntity;
 
@@ -24,5 +25,9 @@ public interface EntityContainer<B extends SceneEntity> extends Iterable<B> {
 	int size();
 
 	<T extends SceneEntity> T getEntity(String str);
+
+	Stream<B> parallelStream();
+
+	Stream<B> stream();
 
 }

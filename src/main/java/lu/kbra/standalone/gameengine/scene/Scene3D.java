@@ -6,11 +6,11 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 import lu.pcy113.pclib.PCUtils;
 
-import lu.kbra.standalone.gameengine.objs.entity.Component;
-import lu.kbra.standalone.gameengine.objs.entity.Entity;
 import lu.kbra.standalone.gameengine.objs.entity.ParentAware;
 import lu.kbra.standalone.gameengine.objs.entity.SceneEntity;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
@@ -77,13 +77,6 @@ public class Scene3D extends Scene {
 		return entity;
 	}
 
-	@Deprecated
-	public Entity addEntity(String str, Component... components) {
-		synchronized (entitiesLock) {
-			return addEntity(str, new Entity(str, components));
-		}
-	}
-
 	@Override
 	public <T extends SceneEntity> T getEntity(String str) {
 		synchronized (entitiesLock) {
@@ -102,15 +95,6 @@ public class Scene3D extends Scene {
 				this.add(entity);
 			}
 			return entities;
-		}
-	}
-
-	@Deprecated
-	public <T extends SceneEntity> void addEntities(String[] names, T[] entities) {
-		synchronized (entitiesLock) {
-			for (int i = 0; i < Math.min(names.length, entities.length); i++) {
-				this.addEntity(names[i], entities[i]);
-			}
 		}
 	}
 
@@ -190,6 +174,23 @@ public class Scene3D extends Scene {
 	@Override
 	public <T extends SceneEntity> boolean contains(String e) {
 		return entities.containsKey(e);
+	}
+
+	@Override
+	public Stream<SceneEntity> parallelStream() {
+		return entities.values().parallelStream();
+	}
+
+	@Override
+	public Stream<SceneEntity> stream() {
+		return entities.values().stream();
+	}
+
+	@Override
+	public void forEach(Consumer<? super SceneEntity> action) {
+		synchronized (entitiesLock) {
+			super.forEach(action);
+		}
 	}
 
 }
