@@ -36,8 +36,7 @@ public class GLWindow extends Window {
 
 		monitor = getQualifiedMonitor();
 
-		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL,
-				MemoryUtil.NULL);
+		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL, MemoryUtil.NULL);
 		if (handle == MemoryUtil.NULL) {
 			throw new RuntimeException("Failed to create GLFW Window");
 		}
@@ -47,18 +46,15 @@ public class GLWindow extends Window {
 			throw new RuntimeException("Failed to create OpenGL context.");
 		}
 
-		// TODO: add option to disable debug output
-		if (GL_W.WRAPPER instanceof GL_W_GL43 || capabilities.GL_KHR_debug) {
+		if ((GL_W.WRAPPER instanceof GL_W_GL43 || capabilities.GL_KHR_debug) && GL_DEBUG_OUTPUT) {
 			GL_W.glEnable(GL_W.GL_DEBUG_OUTPUT);
 			GL_W.glEnable(GL_W.GL_DEBUG_OUTPUT_SYNCHRONOUS);
 
-			// Register callback
-			GL_W.glDebugMessageCallback(
-					(GLDebugMessageCallbackI) (source, type, id, severity, length, message, userParam) -> {
-						final String msg = GLDebugMessageCallback.getMessage(length, message);
-						GlobalLogger.info("GL DEBUG: " + msg + " (source=" + source + ", type=" + type + ", id=" + id
-								+ ", severity=" + severity + ")");
-					}, 0);
+			GL_W.glDebugMessageCallback((GLDebugMessageCallbackI) (source, type, id, severity, length, message, userParam) -> {
+				final String msg = GLDebugMessageCallback.getMessage(length, message);
+				GlobalLogger
+						.info("GL DEBUG: " + msg + " (source=" + source + ", type=" + type + ", id=" + id + ", severity=" + severity + ")");
+			}, 0);
 		}
 
 		try {

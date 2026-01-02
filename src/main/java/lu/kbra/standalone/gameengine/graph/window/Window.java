@@ -37,6 +37,9 @@ public abstract class Window implements Cleanupable {
 	public static final String DEBUG_ESCAPE_TO_CLOSE_PROPERTY = Window.class.getSimpleName() + ".debug_escape_to_close";
 	public static boolean DEBUG_ESCAPE_TO_CLOSE = Boolean.getBoolean(DEBUG_ESCAPE_TO_CLOSE_PROPERTY);
 
+	public static final String GL_DEBUG_OUTPUT_PROPERTY = Window.class.getSimpleName() + ".gl_debug_output";
+	public static boolean GL_DEBUG_OUTPUT = Boolean.getBoolean(GL_DEBUG_OUTPUT_PROPERTY);
+
 	protected GLType glType;
 
 	// Window options
@@ -106,15 +109,13 @@ public abstract class Window implements Cleanupable {
 	}
 
 	protected void createCallbacks() {
-		keyCallback = GLFWKeyCallback
-				.create((window, key, scancode, action, mods) -> callback_key(window, key, scancode, action, mods));
+		keyCallback = GLFWKeyCallback.create((window, key, scancode, action, mods) -> callback_key(window, key, scancode, action, mods));
 		GLFW.glfwSetKeyCallback(handle, keyCallback);
 
 		joystickCallback = GLFWJoystickCallback.create((jid, event) -> callback_joystick(jid, event));
 		GLFW.glfwSetJoystickCallback(joystickCallback);
 
-		frameBufferCallback = GLFWFramebufferSizeCallback
-				.create((window, width, height) -> callback_frameBuffer(window, width, height));
+		frameBufferCallback = GLFWFramebufferSizeCallback.create((window, width, height) -> callback_frameBuffer(window, width, height));
 		GLFW.glfwSetFramebufferSizeCallback(handle, frameBufferCallback);
 
 		scrollCallback = GLFWScrollCallback.create((window, sx, sy) -> callback_scroll(window, sx, sy));
@@ -180,9 +181,8 @@ public abstract class Window implements Cleanupable {
 				gamepadStates.put(jid, state);
 			}
 			GlobalLogger.log(Level.INFO,
-					"Joystick connected: jid:" + jid + ", name:" + GLFW.glfwGetJoystickName(jid) + ", guid:"
-							+ GLFW.glfwGetJoystickGUID(jid) + " -> name:" + GLFW.glfwGetGamepadName(jid)
-							+ ", joystick as gamepad:" + GLFW.glfwJoystickIsGamepad(jid));
+					"Joystick connected: jid:" + jid + ", name:" + GLFW.glfwGetJoystickName(jid) + ", guid:" + GLFW.glfwGetJoystickGUID(jid)
+							+ " -> name:" + GLFW.glfwGetGamepadName(jid) + ", joystick as gamepad:" + GLFW.glfwJoystickIsGamepad(jid));
 		} else if (event == GLFW.GLFW_DISCONNECTED) {
 			connectedGamepads.remove(jid);
 			gamepadStates.remove(jid);
@@ -352,9 +352,13 @@ public abstract class Window implements Cleanupable {
 		GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, options.resizable ? GLFW.GLFW_TRUE : GLFW.GLFW_FALSE);
 		GLFW.glfwSwapInterval(options.vsync ? 1 : 0);
 		GLFWVidMode vidMode = GLFW.glfwGetVideoMode(monitor);
-		GLFW.glfwSetWindowMonitor(handle, options.fullscreen ? monitor : MemoryUtil.NULL, 0, 0,
+		GLFW.glfwSetWindowMonitor(handle,
+				options.fullscreen ? monitor : MemoryUtil.NULL,
+				0,
+				0,
 				!options.fullscreen ? options.windowSize.x : vidMode.width(),
-				!options.fullscreen ? options.windowSize.y : vidMode.height(), options.fps);
+				!options.fullscreen ? options.windowSize.y : vidMode.height(),
+				options.fps);
 
 		this.width = !options.fullscreen ? options.windowSize.x : vidMode.width();
 		this.height = !options.fullscreen ? options.windowSize.y : vidMode.height();
