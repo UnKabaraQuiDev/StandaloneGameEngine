@@ -2,7 +2,7 @@ package lu.kbra.standalone.gameengine.objs.entity;
 
 import lu.kbra.standalone.gameengine.scene.Scene;
 
-public interface SceneParentAware extends ParentAware {
+public interface SceneParentAware extends ParentAwareNode {
 
 	default boolean hasSceneParent() {
 		return this.getSceneParent() != null;
@@ -16,7 +16,7 @@ public interface SceneParentAware extends ParentAware {
 				return scene;
 			}
 
-			if (!(current instanceof final ParentAware pa)) {
+			if (!(current instanceof final ParentAwareNode pa)) {
 				return null;
 			}
 			current = pa.getParent();

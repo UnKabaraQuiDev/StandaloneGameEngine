@@ -8,20 +8,15 @@ import org.joml.Vector2i;
 public class Projection {
 
 	private Matrix4f projectionMatrix = new Matrix4f();
-	private float nearPlane, farPlane;
+	private float nearPlane;
+	private float farPlane;
 	private boolean perspective;
-	private int width, height;
-	private float fov, size = 100f;
+	private int width;
+	private int height;
+	private float fov;
+	private float size = 100f;
 
-	public void dump(PrintStream out) {
-		out.println("Planes: " + nearPlane + " <> " + farPlane);
-		out.println("Perspective: " + perspective);
-		out.println("Resolution: " + width + ":" + height);
-		out.println("Fov: " + fov + ", size: " + size);
-	}
-
-	public Projection(int width, int height, float nearPlane, float farPlane, float fov, float size,
-			boolean perspective) {
+	public Projection(int width, int height, float nearPlane, float farPlane, float fov, float size, boolean perspective) {
 		this.width = width;
 		this.height = height;
 		this.nearPlane = nearPlane;
@@ -54,8 +49,8 @@ public class Projection {
 			final float halfHeight = 1f;
 			final float halfWidth = halfHeight * aspectRatio;
 
-			projectionMatrix.identity().ortho(-halfWidth / size, halfWidth / size, -halfHeight / size,
-					halfHeight / size, nearPlane, farPlane);
+			projectionMatrix.identity()
+					.ortho(-halfWidth / size, halfWidth / size, -halfHeight / size, halfHeight / size, nearPlane, farPlane);
 		}
 		return this;
 	}
@@ -131,6 +126,19 @@ public class Projection {
 
 	public int getHeight() {
 		return height;
+	}
+
+	@Override
+	public String toString() {
+		return "Projection [projectionMatrix=" + projectionMatrix + ", nearPlane=" + nearPlane + ", farPlane=" + farPlane + ", perspective="
+				+ perspective + ", width=" + width + ", height=" + height + ", fov=" + fov + ", size=" + size + "]";
+	}
+
+	public void dump(PrintStream out) {
+		out.println("Planes: " + nearPlane + " <> " + farPlane);
+		out.println("Perspective: " + perspective);
+		out.println("Resolution: " + width + ":" + height);
+		out.println("Fov: " + fov + ", size: " + size);
 	}
 
 }

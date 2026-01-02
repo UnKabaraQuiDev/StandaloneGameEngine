@@ -3,11 +3,11 @@ package lu.kbra.standalone.gameengine.objs.entity;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public interface ParentAware {
+non-sealed public interface ParentAwareNode extends ParentAwareComponent {
 
-	void setParent(Object e);
+	<T extends ParentAwareComponent> void setParent(T e);
 
-	Object getParent();
+	ParentAwareComponent getParent();
 
 	default boolean hasParent() {
 		return this.getParent() != null;
@@ -18,9 +18,9 @@ public interface ParentAware {
 
 		Object current = getParent();
 
-		while (current instanceof ParentAware) {
+		while (current instanceof ParentAwareNode) {
 			stack.push(current);
-			current = ((ParentAware) current).getParent();
+			current = ((ParentAwareNode) current).getParent();
 		}
 
 		if (current != null) {

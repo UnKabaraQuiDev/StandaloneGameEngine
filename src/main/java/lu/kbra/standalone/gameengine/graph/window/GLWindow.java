@@ -56,7 +56,7 @@ public class GLWindow extends Window {
 			GL_W.glDebugMessageCallback(
 					(GLDebugMessageCallbackI) (source, type, id, severity, length, message, userParam) -> {
 						final String msg = GLDebugMessageCallback.getMessage(length, message);
-						GlobalLogger.severe("GL DEBUG: " + msg + " (source=" + source + ", type=" + type + ", id=" + id
+						GlobalLogger.info("GL DEBUG: " + msg + " (source=" + source + ", type=" + type + ", id=" + id
 								+ ", severity=" + severity + ")");
 					}, 0);
 		}
@@ -64,7 +64,7 @@ public class GLWindow extends Window {
 		try {
 			GameEngineLoggerUtils.log(this.capabilities);
 		} catch (IllegalAccessException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 
 		GLFW.glfwDefaultWindowHints();

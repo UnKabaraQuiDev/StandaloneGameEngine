@@ -10,7 +10,8 @@ import java.util.stream.Stream;
 
 import lu.pcy113.pclib.PCUtils;
 
-import lu.kbra.standalone.gameengine.objs.entity.ParentAware;
+import lu.kbra.standalone.gameengine.objs.entity.ParentAwareComponent;
+import lu.kbra.standalone.gameengine.objs.entity.ParentAwareNode;
 import lu.kbra.standalone.gameengine.objs.entity.SceneEntity;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 
@@ -53,12 +54,10 @@ public class Scene2D extends Scene {
 				throw new IllegalArgumentException("Entity with id: " + entity.getId() + " already present !");
 			}
 			this.entities.put(entity.getId(), entity);
-//			if (old != null && old instanceof ParentAware pa) {
-//				pa.setParent(null);
-//			}
 		}
 
-		if (entity instanceof ParentAware pa) {
+		if (entity instanceof ParentAwareNode pa) {
+			ParentAwareComponent.checkHierarchy(this, pa);
 			pa.setParent(this);
 		}
 
@@ -95,7 +94,8 @@ public class Scene2D extends Scene {
 	public <T extends SceneEntity> Optional<T> remove(T e) {
 		synchronized (entitiesLock) {
 			if (e != null && (e = (T) this.entities.remove(e.getId())) != null) {
-				if (e instanceof ParentAware pa) {
+				if (e instanceof ParentAwareNode pa) {
+					ParentAwareComponent.checkHierarchy(this, pa);
 					pa.setParent(null);
 				}
 				return Optional.of(e);

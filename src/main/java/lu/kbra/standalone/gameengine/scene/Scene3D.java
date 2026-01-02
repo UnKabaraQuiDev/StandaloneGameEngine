@@ -10,8 +10,10 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.logger.GlobalLogger;
 
-import lu.kbra.standalone.gameengine.objs.entity.ParentAware;
+import lu.kbra.standalone.gameengine.objs.entity.ParentAwareComponent;
+import lu.kbra.standalone.gameengine.objs.entity.ParentAwareNode;
 import lu.kbra.standalone.gameengine.objs.entity.SceneEntity;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 import lu.kbra.standalone.gameengine.scene.camera.Camera3D;
@@ -43,23 +45,6 @@ public class Scene3D extends Scene {
 		}
 	}
 
-	@Deprecated
-	public <T extends SceneEntity> T addEntity(String str, T entity) {
-		if (entity == null) {
-			return null;
-		}
-
-		synchronized (entitiesLock) {
-			this.entities.put(str, entity);
-		}
-
-		if (entity instanceof ParentAware pa) {
-			pa.setParent(this);
-		}
-
-		return entity;
-	}
-
 	@Override
 	public <T extends SceneEntity> T add(T entity) {
 		if (entity == null) {
@@ -70,7 +55,8 @@ public class Scene3D extends Scene {
 			this.entities.put(entity.getId(), entity);
 		}
 
-		if (entity instanceof ParentAware pa) {
+		if (entity instanceof ParentAwareNode pa) {
+			ParentAwareComponent.checkHierarchy(this, pa);
 			pa.setParent(this);
 		}
 
@@ -87,11 +73,7 @@ public class Scene3D extends Scene {
 	@Override
 	public <T extends SceneEntity> T[] addAll(T... entities) {
 		synchronized (entitiesLock) {
-//			boolean addedAny = false;
 			for (T entity : entities) {
-//				if (!this.entities.containsKey(entity.getId())) {
-//					addedAny |= true;
-//				}
 				this.add(entity);
 			}
 			return entities;
@@ -120,7 +102,8 @@ public class Scene3D extends Scene {
 	public <T extends SceneEntity> Optional<T> remove(T e) {
 		synchronized (entitiesLock) {
 			if (e != null && (e = (T) this.entities.remove(e.getId())) != null) {
-				if (e instanceof ParentAware pa) {
+				if (e instanceof ParentAwareNode pa) {
+					ParentAwareComponent.checkHierarchy(this, pa);
 					pa.setParent(null);
 				}
 				return Optional.of(e);
