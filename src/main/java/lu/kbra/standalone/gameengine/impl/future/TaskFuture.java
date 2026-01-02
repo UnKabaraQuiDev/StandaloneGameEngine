@@ -152,11 +152,11 @@ public class TaskFuture<I, O> {
 	}
 
 	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, Function<O, N> function) {
-		return then(nextDispatcher, (ThrowingFunction<O, N, Throwable>) (i) -> function.apply(i), 0);
+		return then(nextDispatcher, (ThrowingFunction<O, N, Throwable>) (i) -> function.apply(i), this.priority + 1);
 	}
 
 	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, ThrowingFunction<O, N, Throwable> function) {
-		return then(nextDispatcher, function, 0);
+		return then(nextDispatcher, function, this.priority + 1);
 	}
 
 	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, ThrowingFunction<O, N, Throwable> function, int priority) {
@@ -168,7 +168,7 @@ public class TaskFuture<I, O> {
 	}
 
 	public <N> TaskFuture<O, Void> then(Dispatcher nextDispatcher, Consumer<O> function) {
-		return then(nextDispatcher, (ThrowingConsumer<O, Throwable>) (i) -> function.accept(i), 0);
+		return then(nextDispatcher, (ThrowingConsumer<O, Throwable>) (i) -> function.accept(i), this.priority + 1);
 	}
 
 	public <N> TaskFuture<O, Void> then(Dispatcher nextDispatcher, Consumer<O> function, int priority) {
@@ -176,7 +176,7 @@ public class TaskFuture<I, O> {
 	}
 
 	public TaskFuture<O, Void> then(Dispatcher nextDispatcher, ThrowingConsumer<O, Throwable> consumer) {
-		return then(nextDispatcher, consumer, 0);
+		return then(nextDispatcher, consumer, this.priority + 1);
 	}
 
 	public TaskFuture<O, Void> then(Dispatcher nextDispatcher, ThrowingConsumer<O, Throwable> consumer, int priority) {
@@ -191,7 +191,7 @@ public class TaskFuture<I, O> {
 	}
 
 	public <P extends O> TaskFuture<P, Void> then(Dispatcher nextDispatcher, Runnable consumer) {
-		return then(nextDispatcher, (ThrowingRunnable<Throwable>) () -> consumer.run(), 0);
+		return then(nextDispatcher, (ThrowingRunnable<Throwable>) () -> consumer.run(), this.priority + 1);
 	}
 
 	public <P extends O> TaskFuture<P, Void> then(Dispatcher nextDispatcher, Runnable consumer, int priority) {
@@ -199,7 +199,7 @@ public class TaskFuture<I, O> {
 	}
 
 	public <P extends O> TaskFuture<P, Void> then(Dispatcher nextDispatcher, ThrowingRunnable<Throwable> consumer) {
-		return then(nextDispatcher, consumer, 0);
+		return then(nextDispatcher, consumer, this.priority + 1);
 	}
 
 	public <P extends O> TaskFuture<P, Void> then(Dispatcher nextDispatcher, ThrowingRunnable<Throwable> consumer, int priority) {
@@ -214,7 +214,7 @@ public class TaskFuture<I, O> {
 	}
 
 	public <P extends O, N> TaskFuture<P, N> then(Dispatcher nextDispatcher, TaskFuture<P, N> nextFuture) {
-		return then(nextDispatcher, nextFuture, 0);
+		return then(nextDispatcher, nextFuture, this.priority + 1);
 	}
 
 	public <P extends O, N> TaskFuture<P, N> then(Dispatcher nextDispatcher, TaskFuture<P, N> nextFuture, int priority) {
@@ -226,7 +226,7 @@ public class TaskFuture<I, O> {
 	}
 
 	public <T extends TaskFuture<P, N>, P extends O, N> T then(T nextFuture) {
-		return then(nextFuture, 0);
+		return then(nextFuture, this.priority + 1);
 	}
 
 	public <T extends TaskFuture<P, N>, P extends O, N> T then(T nextFuture, int priority) {
@@ -279,6 +279,9 @@ public class TaskFuture<I, O> {
 					state.ongoing.set(false);
 				}
 			} catch (Throwable e) {
+				if (e instanceof YieldExecutionThrowable yield) {
+					throw yield;
+				}
 				throw new RuntimeException(state.source + " > " + currentSource, e);
 			} finally {
 				state.ongoing.set(false);

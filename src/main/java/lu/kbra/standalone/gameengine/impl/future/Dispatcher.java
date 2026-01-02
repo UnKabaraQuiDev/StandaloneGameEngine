@@ -1,27 +1,28 @@
 package lu.kbra.standalone.gameengine.impl.future;
 
 import java.util.List;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.DelayQueue;
+
+import lu.pcy113.pclib.impl.ThrowingRunnable;
 
 public class Dispatcher {
 
-	public static final int DEFAULT_PRIORITY = 100;
+	public static final int DEFAULT_PRIORITY = 0;
 
 	protected final String name;
-	protected final BlockingQueue<ScheduledTask> queue = new PriorityBlockingQueue<>();
+	protected final DelayQueue<ScheduledTask> queue = new DelayQueue<>();
 
 	public Dispatcher(String name) {
 		this.name = name;
 	}
 
-	public ScheduledTask post(Runnable task, int priority) {
+	public ScheduledTask post(ThrowingRunnable<YieldExecutionThrowable> task, int priority) {
 		final ScheduledTask task2 = new ScheduledTask(task, priority);
 		queue.add(task2);
 		return task2;
 	}
 
-	public ScheduledTask post(Runnable task, int priority, String source) {
+	public ScheduledTask post(ThrowingRunnable<YieldExecutionThrowable> task, int priority, String source) {
 		final ScheduledTask task2 = new ScheduledTask(task, priority, source);
 		queue.add(task2);
 		return task2;
@@ -32,7 +33,7 @@ public class Dispatcher {
 		return task;
 	}
 
-	public ScheduledTask post(Runnable task) {
+	public ScheduledTask post(ThrowingRunnable<YieldExecutionThrowable> task) {
 		final ScheduledTask task2 = new ScheduledTask(task, DEFAULT_PRIORITY);
 		queue.add(task2);
 		return task2;
