@@ -128,6 +128,21 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
+	public Transform3D translationAddX(float x) {
+		translation.add(x, 0, 0);
+		return this;
+	}
+
+	public Transform3D translationAddY(float x) {
+		translation.add(0, x, 0);
+		return this;
+	}
+
+	public Transform3D translationAddZ(float x) {
+		translation.add(0, 0, x);
+		return this;
+	}
+
 	public Transform3D translationSub(Vector3fc v) {
 		translation.sub(v);
 		return this;
