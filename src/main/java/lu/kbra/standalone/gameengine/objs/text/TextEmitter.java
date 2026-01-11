@@ -59,7 +59,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	private Vector4f fgColor;
 	private Vector4f bgColor;
-	private boolean transparent;
+	private Boolean transparent;
 	private float opacity = 1f;
 
 	public TextEmitter(String name, TextMaterial material, int bufferSize, String text, Vector2fc charSize) {
@@ -466,7 +466,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	@Override
 	public boolean isValid() {
-		return instances.isValid();
+		return instances != null && instances.isValid();
 	}
 
 	@Override

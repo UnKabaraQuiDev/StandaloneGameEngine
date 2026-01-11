@@ -66,8 +66,7 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 		}
 
 		if (GL_W.glGetProgrami(this.spid, GL_W.GL_LINK_STATUS) == GL_W.GL_FALSE) {
-			GlobalLogger.log(Level.SEVERE,
-					name + "(" + spid + "): " + GL_W.glGetProgramInfoLog_String(this.spid, 1024));
+			GlobalLogger.log(Level.SEVERE, name + "(" + spid + "): " + GL_W.glGetProgramInfoLog_String(this.spid, 1024));
 			this.cleanup();
 			throw new IllegalStateException(name + "(" + spid + "): Failed to link shader program!");
 		} else if (!GL_W.glIsProgram(spid)) {
@@ -288,8 +287,9 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 			this.uniforms.put(name, new Pair<>(new Property<>(), loc));
 			return true;
 		} else {
-			GlobalLogger.log(Level.WARNING, "Could not get Uniform location for: " + name + " in program " + this.name
-					+ " (" + this.spid + ") (" + GL_W.glGetError() + ")");
+			GlobalLogger.log(Level.WARNING,
+					"Could not get Uniform location for: " + name + " in program " + this.name + " (" + this.spid + ") ("
+							+ GL_W.glGetError() + ")");
 			knownNotExistsUniforms.add(name);
 			return false;
 		}

@@ -48,6 +48,14 @@ public class Transform3D extends Transform {
 		this(trans, new Quaternionf().identity(), new Vector3f(1));
 	}
 
+	public Transform3D(Vector3fc trans, float scale) {
+		this(new Vector3f(trans), new Quaternionf().identity(), new Vector3f(scale));
+	}
+
+	public Transform3D(Vector3f trans, float scale) {
+		this(trans, new Quaternionf().identity(), new Vector3f(scale));
+	}
+
 	public Transform3D(Vector3f trans, Quaternionf rot) {
 		this(trans, rot, new Vector3f(1));
 	}
