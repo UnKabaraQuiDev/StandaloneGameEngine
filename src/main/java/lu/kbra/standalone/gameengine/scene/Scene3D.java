@@ -10,29 +10,39 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
+import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.objs.entity.ParentAwareComponent;
 import lu.kbra.standalone.gameengine.objs.entity.ParentAwareNode;
 import lu.kbra.standalone.gameengine.objs.entity.SceneEntity;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 import lu.kbra.standalone.gameengine.scene.camera.Camera3D;
 
-public class Scene3D extends Scene {
+public class Scene3D implements Scene {
 
 	public static final String NAME = Scene3D.class.getName();
+
+	protected String name;
+	protected Camera3D camera;
 
 	private final Object entitiesLock = new Object();
 
 	protected Map<String, SceneEntity> entities = Collections.synchronizedMap(new LinkedHashMap<>());
 
 	public Scene3D(String name) {
-		super(name, Camera.perspectiveCamera3D());
+		this.name = name;
+		this.camera = Camera.perspectiveCamera3D();
 	}
 
 	@Override
 	public void cleanup() {
-		super.cleanup();
+		name = null;
+		entities.values().forEach(v -> {
+			if (v instanceof Cleanupable c) {
+				c.cleanup();
+			}
+		});
+		entities.clear();
 	}
 
 	public Map<String, SceneEntity> getEntities() {
@@ -82,11 +92,17 @@ public class Scene3D extends Scene {
 
 	@Override
 	public Camera3D getCamera() {
-		return (Camera3D) super.getCamera();
+		return camera;
+	}
+
+	@Deprecated
+	@Override
+	public void setCamera(Camera camera) {
+		this.camera = (Camera3D) camera;
 	}
 
 	public void setCamera(Camera3D camera) {
-		super.setCamera(camera);
+		this.camera = camera;
 	}
 
 	public Object getEntitiesLock() {
@@ -172,8 +188,13 @@ public class Scene3D extends Scene {
 	@Override
 	public void forEach(Consumer<? super SceneEntity> action) {
 		synchronized (entitiesLock) {
-			super.forEach(action);
+			entities.values().forEach(action);
 		}
+	}
+
+	@Override
+	public String getId() {
+		return name;
 	}
 
 }

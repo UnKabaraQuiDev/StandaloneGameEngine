@@ -7,32 +7,28 @@ import lu.kbra.standalone.gameengine.objs.entity.ParentAwareRoot;
 import lu.kbra.standalone.gameengine.objs.entity.SceneEntity;
 import lu.kbra.standalone.gameengine.scene.camera.Camera;
 
-public abstract class Scene implements UniqueID, Cleanupable, Renderable, EntityContainer<SceneEntity>, ParentAwareRoot {
+public interface Scene extends UniqueID, Cleanupable, Renderable, EntityContainer<SceneEntity>, ParentAwareRoot {
 
-	protected String name;
-	protected Camera camera;
+//	protected String name;
+//	protected Camera camera;
+//
+//	public Scene(String name, Camera cam) {
+//		this.name = name;
+//		this.camera = cam;
+//	}
+//
+//	@Override
+//	public void cleanup() {
+//		name = null;
+//	}
+//
+//	@Override
+//	public String getId() {
+//		return name;
+//	}
 
-	public Scene(String name, Camera cam) {
-		this.name = name;
-		this.camera = cam;
-	}
+	Camera getCamera();
 
-	@Override
-	public void cleanup() {
-		name = null;
-	}
-
-	@Override
-	public String getId() {
-		return name;
-	}
-
-	public Camera getCamera() {
-		return camera;
-	}
-
-	public void setCamera(Camera camera) {
-		this.camera = camera;
-	}
+	void setCamera(Camera camera);
 
 }

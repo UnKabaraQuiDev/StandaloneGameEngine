@@ -14,6 +14,11 @@ public enum Interpolators implements Interpolator {
 		public float inverse(float y) {
 			return Math.clamp(0, 1, y);
 		}
+
+		@Override
+		public boolean hasInverse() {
+			return true;
+		}
 	},
 
 	QUAD_IN {
@@ -27,6 +32,11 @@ public enum Interpolators implements Interpolator {
 		public float inverse(float y) {
 			return (float) (Math.sqrt(y));
 		}
+
+		@Override
+		public boolean hasInverse() {
+			return true;
+		}
 	},
 
 	QUAD_OUT {
@@ -39,6 +49,11 @@ public enum Interpolators implements Interpolator {
 		@Override
 		public float inverse(float y) {
 			return (float) (1 - Math.sqrt(1 - y));
+		}
+
+		@Override
+		public boolean hasInverse() {
+			return true;
 		}
 	},
 
@@ -65,6 +80,11 @@ public enum Interpolators implements Interpolator {
 		public float inverse(float y) {
 			return (float) java.lang.Math.cbrt(y);
 		}
+
+		@Override
+		public boolean hasInverse() {
+			return true;
+		}
 	},
 
 	CUBIC_OUT {
@@ -74,8 +94,7 @@ public enum Interpolators implements Interpolator {
 			return 1 - (1 - x) * (1 - x) * (1 - x);
 		}
 		/*
-		 * @Override public float inverse(float y) { return 1-java.lang.Math.cbrt(1-x);
-		 * }
+		 * @Override public float inverse(float y) { return 1-java.lang.Math.cbrt(1-x); }
 		 */
 	},
 
@@ -86,8 +105,8 @@ public enum Interpolators implements Interpolator {
 			return x < 0.5 ? 4 * x * x * x : 1 - 4 * (1 - x) * (1 - x) * (1 - x);
 		}
 		/*
-		 * @Override public float inverse(float y) { return y < 0.5 ?
-		 * java.lang.Math.cbrt(y/4) : 1-java.lang.Math.cbrt((1-y)/4); }
+		 * @Override public float inverse(float y) { return y < 0.5 ? java.lang.Math.cbrt(y/4) :
+		 * 1-java.lang.Math.cbrt((1-y)/4); }
 		 */
 	},
 
@@ -242,6 +261,26 @@ public enum Interpolators implements Interpolator {
 				return 7.5625f * x * x + 0.984375f;
 			}
 		}
+
+		@Override
+		public float inverse(float y) {
+			y = Math.clamp(0f, 1f, y);
+
+			if (y < 0.75f) {
+				return (float) Math.sqrt(y / 7.5625f);
+			} else if (y < 0.9375f) {
+				return (float) (Math.sqrt((y - 0.75f) / 7.5625f) + 1.5f / 2.75f);
+			} else if (y < 0.984375f) {
+				return (float) (Math.sqrt((y - 0.9375f) / 7.5625f) + 2.25f / 2.75f);
+			}
+
+			return (float) (Math.sqrt((y - 0.984375f) / 7.5625f) + 2.625f / 2.75f);
+		}
+		
+		@Override
+		public boolean hasInverse() {
+			return true;
+		}
 	},
 
 	BOUNCE_IN_OUT {
@@ -288,25 +327,5 @@ public enum Interpolators implements Interpolator {
 			}
 		}
 	};
-
-	public static float inverse(float closest, Interpolator interpolator, float interval, float _default) {
-
-		float x = interpolator.inverse(closest);
-		if (x != -1 && Float.isFinite(x)) {
-			return x;
-		}
-
-		float closestFound = Float.MAX_VALUE;
-		float closestFoundX = -1;
-
-		for (float j = 1; j >= 0; j -= interval) {
-			float y = interpolator.evaluate(j);
-			if (Math.abs(closest - y) < closestFound) {
-				closestFound = Math.abs(closest - y);
-				closestFoundX = j;
-			}
-		}
-		return closestFoundX;
-	}
 
 }
