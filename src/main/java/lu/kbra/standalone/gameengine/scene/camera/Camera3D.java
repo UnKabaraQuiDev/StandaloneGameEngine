@@ -38,6 +38,19 @@ public class Camera3D extends Camera {
 		return this;
 	}
 
+	public Camera3D lookAt(Vector3fc from, Vector3fc to, Vector3fc up) {
+		Vector3f forward = new Vector3f(to).sub(from).normalize();
+		Vector3f right = forward.cross(up, new Vector3f()).normalize();
+
+//		Vector3f up = right.cross(forward, new Vector3f()).normalize();
+
+		rotation.identity().lookAlong(forward, up);
+
+		position = new Vector3f(from);
+
+		return this;
+	}
+
 	public Camera3D move(float ax, float ay, float moveSpeed) {
 		position.add(new Vector3f(ax * moveSpeed, ay * moveSpeed, 0));
 		return this;

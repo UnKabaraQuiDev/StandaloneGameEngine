@@ -107,7 +107,7 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 			for (int c = 0; c < this.instancesAttribs.length; c++) {
 				final JavaTypeAttribArray a = instancesAttribs[c];
-				((Object[]) atts[c])[i] = a.getType().cast(this.particles[i].getBuffers()[c]);
+				Array.set(atts[c], i, this.particles[i].getBuffers()[c]);
 			}
 		}
 

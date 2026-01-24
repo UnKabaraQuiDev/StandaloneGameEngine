@@ -8,6 +8,8 @@ import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 
 public abstract class GameLogic {
 
+	public static GameLogic INSTANCE;
+
 	protected GameEngine engine;
 	protected SharedCacheManager cache;
 	protected Window window;

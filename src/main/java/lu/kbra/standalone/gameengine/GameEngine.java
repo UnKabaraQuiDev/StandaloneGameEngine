@@ -101,6 +101,11 @@ public class GameEngine implements Cleanupable, UniqueID {
 		this.name = name;
 		this.gameLogic = game;
 		this.windowOptions = options;
+
+		if (GameLogic.INSTANCE != null) {
+			throw new IllegalStateException("GameLogic was already initialized.");
+		}
+		GameLogic.INSTANCE = game;
 	}
 
 	private void updateRun() {
@@ -114,7 +119,7 @@ public class GameEngine implements Cleanupable, UniqueID {
 			this.audioMaster = new AudioMaster();
 			gameLogic.register(this);
 
-			// gameLogic.updateInit();
+//			gameLogic.updateInit();
 		}
 
 		try {
@@ -209,8 +214,8 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 					final long frameRenderDurationNano = System.nanoTime() - frameStartTime;
 					final double frameRenderDurationMs = (double) frameRenderDurationNano / 1_000_000;
-					final long dispatcherTimeBudgetNanos = Math
-							.max(MIN_RENDER_DISPATCHER_BUDGET_NANO, targetNanoPerFps - frameRenderDurationNano);
+					final long dispatcherTimeBudgetNanos = Math.max(MIN_RENDER_DISPATCHER_BUDGET_NANO,
+							targetNanoPerFps - frameRenderDurationNano);
 
 					// Pump the render dispatcher
 					final long dispatcherStartNano = System.nanoTime();
@@ -218,13 +223,12 @@ public class GameEngine implements Cleanupable, UniqueID {
 					final long dispatcherUsedNano = System.nanoTime() - dispatcherStartNano;
 
 					if (DEBUG_RENDER_REPORT) {
-						GlobalLogger
-								.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
-										+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
-										+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
-										+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
-										+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + tasks.size() + ") "
-										+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true) + " " + tasks);
+						GlobalLogger.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
+								+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
+								+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
+								+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
+								+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + tasks.size() + ") "
+								+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true) + " " + tasks);
 					}
 				}
 
