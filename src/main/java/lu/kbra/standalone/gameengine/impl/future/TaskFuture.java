@@ -44,7 +44,9 @@ public class TaskFuture<I, O> {
 
 		public V join() {
 			started.waitForTrue();
+			System.err.println(started + " " + ongoing + " " + result);
 			ongoing.waitForFalse();
+			System.err.println(started + " " + ongoing + " " + result);
 			return result;
 		}
 

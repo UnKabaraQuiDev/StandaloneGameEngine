@@ -86,8 +86,7 @@ public class SingleTexture extends Texture {
 		// Invalid value (glTexImage2DMultisample)
 		if ((width > MAX_TEXTURE_SIZE || width < 0) || (height > MAX_TEXTURE_SIZE || height < 0)
 				|| (depth > MAX_TEXTURE_SIZE || depth < 0)) {
-			GameEngineUtils.throwGLESError(
-					"Invalid texture size: " + width + "x" + height + "x" + depth + ", max is " + MAX_TEXTURE_SIZE);
+			GameEngineUtils.throwGLESError("Invalid texture size: " + width + "x" + height + "x" + depth + ", max is " + MAX_TEXTURE_SIZE);
 		}
 
 		return true;
@@ -123,8 +122,8 @@ public class SingleTexture extends Texture {
 		format = getFormatByChannels(channels);
 		internalFormat = getInternalFormatByChannels(channels);
 		if (format == null || internalFormat == null)
-			throw new RuntimeException("Invalid channel count: " + channels + " to format:" + format
-					+ " & internalFormat:" + internalFormat);
+			throw new RuntimeException(
+					"Invalid channel count: " + channels + " to format:" + format + " & internalFormat:" + internalFormat);
 
 		if (buffer.isFromJVM()) {
 			throw new RuntimeException("Buffer is from memory.");
@@ -151,8 +150,8 @@ public class SingleTexture extends Texture {
 		format = getFormatByChannels(channels);
 		internalFormat = getInternalFormatByChannels(channels);
 		if (format == null || internalFormat == null) {
-			throw new RuntimeException("Invalid channel count: " + channels + " to format:" + format
-					+ " & internalFormat:" + internalFormat);
+			throw new RuntimeException(
+					"Invalid channel count: " + channels + " to format:" + format + " & internalFormat:" + internalFormat);
 		}
 
 		if (buffer.isFromJVM()) {
@@ -161,11 +160,28 @@ public class SingleTexture extends Texture {
 
 		GL_W.glPixelStorei(GL_W.GL_UNPACK_ALIGNMENT, 1);
 		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
-			GL_W.glTexImage2D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, 0, format.getGlId(),
-					dataType.getGlId(), buffer.getBuffer());
+			GL_W
+					.glTexImage2D(txtType.getGlId(),
+							0,
+							internalFormat.getGlId(),
+							width,
+							height,
+							0,
+							format.getGlId(),
+							dataType.getGlId(),
+							buffer.getBuffer());
 		} else if (TextureType.TXT3D.equals(txtType)) {
-			GL_W.glTexImage3D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, depth, 0, format.getGlId(),
-					dataType.getGlId(), buffer.getBuffer());
+			GL_W
+					.glTexImage3D(txtType.getGlId(),
+							0,
+							internalFormat.getGlId(),
+							width,
+							height,
+							depth,
+							0,
+							format.getGlId(),
+							dataType.getGlId(),
+							buffer.getBuffer());
 		}
 		applyFilter();
 		applyWrap();
@@ -195,11 +211,28 @@ public class SingleTexture extends Texture {
 
 	public void resize() {
 		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
-			GL_W.glTexImage2D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, 0, format.getGlId(),
-					dataType.getGlId(), MemoryUtil.NULL);
+			GL_W
+					.glTexImage2D(txtType.getGlId(),
+							0,
+							internalFormat.getGlId(),
+							width,
+							height,
+							0,
+							format.getGlId(),
+							dataType.getGlId(),
+							MemoryUtil.NULL);
 		} else if (TextureType.TXT3D.equals(txtType)) {
-			GL_W.glTexImage3D(txtType.getGlId(), 0, internalFormat.getGlId(), width, height, depth, 0, format.getGlId(),
-					dataType.getGlId(), MemoryUtil.NULL);
+			GL_W
+					.glTexImage3D(txtType.getGlId(),
+							0,
+							internalFormat.getGlId(),
+							width,
+							height,
+							depth,
+							0,
+							format.getGlId(),
+							dataType.getGlId(),
+							MemoryUtil.NULL);
 		}
 	}
 
@@ -210,9 +243,7 @@ public class SingleTexture extends Texture {
 		final ByteBuffer buffer = MemoryUtil.memAlloc(width * height * channelCount);
 		GL_W.glPixelStorei(GL_W.GL_PACK_ALIGNMENT, 1);
 		GL_W.glGetTexImage(txtType.getGlId(), 0, format.getGlId(), dataType.getGlId(), buffer);
-		assert GL_W.checkError(
-				"ReadPixels(0, 0, " + width + ", " + height + ", " + internalFormat + ", " + dataType + ")");
-		GL_W.glFlush();
+//		GL_W.glFlush();
 		GL_W.glFinish();
 
 		unbind();
@@ -274,8 +305,13 @@ public class SingleTexture extends Texture {
 		return depth;
 	}
 
-	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter,
-			TextureType type, TextureWrap wrap) {
+	public static SingleTexture loadSingleTexture(
+			CacheManager cache,
+			String name,
+			String path,
+			TextureFilter filter,
+			TextureType type,
+			TextureWrap wrap) {
 		SingleTexture texture = new SingleTexture(name, path);
 		texture.setFilters(filter);
 		texture.setTextureType(type);
@@ -285,8 +321,7 @@ public class SingleTexture extends Texture {
 		return texture;
 	}
 
-	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter,
-			TextureType type) {
+	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter, TextureType type) {
 		SingleTexture texture = new SingleTexture(name, path);
 		texture.setFilters(filter);
 		texture.setTextureType(type);
@@ -319,13 +354,12 @@ public class SingleTexture extends Texture {
 
 	@Override
 	public String toString() {
-		return "SingleTexture [width=" + width + ", height=" + height + ", depth=" + depth + ", buffer=" + buffer
-				+ ", path=" + path + ", name=" + name + ", tid=" + glId + ", minFilter=" + minFilter + ", magFilter="
-				+ magFilter + ", txtType=" + txtType + ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap
-				+ ", dataType=" + dataType + ", format=" + format + ", internalFormat=" + internalFormat
-				+ ", generateMipmaps=" + generateMipmaps + ", fixedSampleLocation=" + fixedSampleLocation
-				+ ", sampleCount=" + sampleCount + ", textureOperation=" + textureOperation + ", isValid()=" + isValid()
-				+ "]";
+		return "SingleTexture [width=" + width + ", height=" + height + ", depth=" + depth + ", buffer=" + buffer + ", path=" + path
+				+ ", name=" + name + ", tid=" + glId + ", minFilter=" + minFilter + ", magFilter=" + magFilter + ", txtType=" + txtType
+				+ ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap + ", dataType=" + dataType + ", format=" + format
+				+ ", internalFormat=" + internalFormat + ", generateMipmaps=" + generateMipmaps + ", fixedSampleLocation="
+				+ fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation=" + textureOperation + ", isValid()="
+				+ isValid() + "]";
 	}
 
 }
