@@ -49,9 +49,27 @@ public class ComputeShader extends AbstractShader {
 	public Vector3i getGlobalGroup(int totalCount) {
 		final int count = Math.max(1, totalCount);
 
-		final int groupX = (count + this.localSize.x() - 1) / this.localSize.x();
-		final int groupY = 1;
-		final int groupZ = 1;
+		final int localX = this.localSize.x();
+		final int localY = this.localSize.y();
+		final int localZ = this.localSize.z();
+
+		int groupX = 1;
+		int groupY = 1;
+		int groupZ = 1;
+
+		while (groupX * localX * groupY * localY * groupZ * localZ < count) {
+			final int totalX = groupX * localX;
+			final int totalY = groupY * localY;
+			final int totalZ = groupZ * localZ;
+
+			if (totalX <= totalY && totalX <= totalZ) {
+				groupX++;
+			} else if (totalY <= totalX && totalY <= totalZ) {
+				groupY++;
+			} else {
+				groupZ++;
+			}
+		}
 
 		return new Vector3i(groupX, groupY, groupZ);
 	}

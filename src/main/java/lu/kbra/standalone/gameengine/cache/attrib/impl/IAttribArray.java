@@ -16,6 +16,8 @@ public interface IAttribArray extends GLObject {
 	void bind();
 
 	void unbind();
+	
+	int getLength();
 
 //	void enable();
 //

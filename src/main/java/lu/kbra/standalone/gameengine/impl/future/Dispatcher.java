@@ -85,4 +85,8 @@ public class Dispatcher {
 		return name;
 	}
 
+	public void clear() {
+		queue.clear();
+	}
+
 }
