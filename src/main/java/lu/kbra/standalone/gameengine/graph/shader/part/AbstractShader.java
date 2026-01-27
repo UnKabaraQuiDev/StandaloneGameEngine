@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.logging.Level;
 
 import org.joml.Matrix3fc;
@@ -23,6 +24,7 @@ import org.joml.Vector4i;
 import org.joml.Vector4ic;
 import org.lwjgl.system.MemoryStack;
 
+import lu.pcy113.pclib.PCUtils;
 import lu.pcy113.pclib.datastructure.pair.Pair;
 import lu.pcy113.pclib.logger.GlobalLogger;
 
@@ -175,6 +177,14 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 			}
 		} else if (value instanceof Boolean val) {
 			GL_W.glUniform1i(unifLoc, val ? 1 : 0);
+		} else if (value instanceof int[] ints) {
+			GL_W.glUniform1iv(unifLoc, ints);
+		} else if (value instanceof Integer[] ints) {
+			GL_W.glUniform1iv(unifLoc, PCUtils.toPrimitiveInt(ints));
+		} else if (value instanceof float[] floats) {
+			GL_W.glUniform1fv(unifLoc, floats);
+		} else if (value instanceof Float[] floats) {
+			GL_W.glUniform1fv(unifLoc, PCUtils.toPrimitiveFloat(floats));
 		} else if (value instanceof Double val) {
 			throw new UnsupportedOperationException("Double not supported.");
 		} else if (value instanceof Character val) {
@@ -280,6 +290,8 @@ public abstract class AbstractShader implements UniqueID, Cleanupable, GLObject 
 		if (uniforms.containsKey(name)) {
 			return true;
 		}
+
+		Objects.requireNonNull(name, "Name cannot be null.");
 
 		final int loc = GL_W.glGetUniformLocation(this.spid, name);
 

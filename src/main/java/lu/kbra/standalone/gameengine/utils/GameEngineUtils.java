@@ -286,6 +286,22 @@ public final class GameEngineUtils {
 		return result;
 	}
 
+	public static Vector4f[] vec4Repeating(Vector4f[] is, int size) {
+		if (size <= 0) {
+			throw new IllegalArgumentException("Size should be greater than 0");
+		}
+
+		int originalLength = is.length;
+		int repeatedLength = originalLength * size;
+		Vector4f[] result = new Vector4f[repeatedLength];
+
+		for (int i = 0; i < size; i++) {
+			System.arraycopy(is, 0, result, i * originalLength, originalLength);
+		}
+
+		return result;
+	}
+
 	public static Matrix4f[] castArrayMat4f(Object transforms) {
 		if (transforms instanceof Matrix4f[]) {
 			return (Matrix4f[]) transforms;

@@ -72,6 +72,26 @@ public class Transform3D extends Transform {
 		this(new Vector3f(0), new Quaternionf(rot), new Vector3f(1));
 	}
 
+	public Transform3D(Matrix4f matrix4f) {
+		if (matrix4f == null) {
+			translation = new Vector3f();
+			scale = new Vector3f();
+			rotation = new Quaternionf();
+			this.matrix = new Matrix4f();
+			return;
+		}
+
+		translation = new Vector3f();
+		matrix4f.getTranslation(translation);
+		scale = new Vector3f();
+		matrix4f.getScale(scale);
+		rotation = new Quaternionf();
+		matrix4f.getUnnormalizedRotation(rotation);
+		rotation.normalize();
+
+		this.matrix = new Matrix4f(matrix4f);
+	}
+
 	/** chaining methods for scale */
 
 	public Transform3D scaleAdd(Vector3fc v) {

@@ -46,6 +46,16 @@ public class ComputeShader extends AbstractShader {
 		return new Vector3i(groupX, groupY, groupZ);
 	}
 
+	public Vector3i getGlobalGroup(int totalCount) {
+		final int count = Math.max(1, totalCount);
+
+		final int groupX = (count + this.localSize.x() - 1) / this.localSize.x();
+		final int groupY = 1;
+		final int groupZ = 1;
+
+		return new Vector3i(groupX, groupY, groupZ);
+	}
+
 	@Override
 	public void createUniforms() {
 		createUniform(INPUT_SIZE);

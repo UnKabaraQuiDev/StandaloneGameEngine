@@ -22,8 +22,23 @@ public class Vec4fAttribArray extends AttribArray implements FloatJavaTypeAttrib
 		this.data = data;
 	}
 
-	public Vec4fAttribArray(String name, int index, Vector4f[] data, BufferType bufferType, boolean s) {
-		super(name, index, bufferType, s);
+	public Vec4fAttribArray(String name, int index, Vector4f[] data, BufferType bufferType, boolean _static) {
+		super(name, index, bufferType, _static);
+		this.data = data;
+	}
+
+	public Vec4fAttribArray(String name, int index, Vector4f[] data, BufferType bufferType, boolean _static, int divisor) {
+		super(name, index, bufferType, _static, divisor);
+		this.data = data;
+	}
+
+	public Vec4fAttribArray(String name, int index, Vector4f[] data, boolean _static) {
+		super(name, index, _static);
+		this.data = data;
+	}
+
+	public Vec4fAttribArray(String name, int index, Vector4f[] data, boolean _static, int divisor) {
+		super(name, index, _static, divisor);
 		this.data = data;
 	}
 
@@ -40,7 +55,7 @@ public class Vec4fAttribArray extends AttribArray implements FloatJavaTypeAttrib
 		}
 	}
 
-	public FloatAttribArray toFloatAttribArray() {
+	public FloatAttribArray toVec4fAttribArray() {
 		return new FloatAttribArray(name, index, toFlatArray(), bufferType, iStatic, divisor);
 	}
 

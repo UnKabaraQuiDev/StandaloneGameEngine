@@ -22,6 +22,7 @@ import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.transform.Transform;
+import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 
 public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObject {
 
@@ -41,6 +42,46 @@ public class InstanceEmitter implements Renderable, Cleanupable, UniqueID, GLObj
 
 	public InstanceEmitter(String name, Mesh mesh, int count, Transform baseTransform, AttribArray... attribs) {
 		this(name, mesh, count, i -> baseTransform.clone(), attribs);
+	}
+
+	public InstanceEmitter(String name, Mesh mesh, int count, Mat4fAttribArray baseTransform, AttribArray... attribs) {
+		this.name = name;
+		this.count = count;
+
+		this.instancesAttribs = attribs;
+		this.instanceMesh = mesh;
+
+		this.particles = new Instance[count];
+
+		for (int i = 0; i < count; i++) {
+			final Object[] atts = new Object[this.instancesAttribs.length];
+
+			int c = 0;
+			for (AttribArray a : attribs) {
+				atts[c++] = a.get(i);
+			}
+
+			particles[i] = new Instance(i, atts, new Transform3D(baseTransform.get(i)));
+		}
+
+		this.instancesTransforms = baseTransform;
+
+		mesh.bind();
+
+		mesh.addAttribArray(this.instancesTransforms);
+		for (AttribArray a : this.instancesAttribs) {
+			if (mesh.getVbo().containsKey(a.getIndex())) {
+				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
+				continue;
+			}
+			mesh.addAttribArray(a);
+		}
+
+		mesh.unbind();
+
+		GlobalLogger.log(Level.INFO,
+				"ParticleEmitter " + name + ": mesh:(" + mesh.getId() + " & " + mesh.getVbo() + "); count:" + count + "; attribs: "
+						+ Arrays.toString(attribs));
 	}
 
 	public InstanceEmitter(String name, Mesh mesh, int count, IntFunction<Transform> baseTransform, AttribArray... attribs) {
