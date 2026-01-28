@@ -28,7 +28,7 @@ public interface FloatJavaTypeAttribArray extends JavaTypeAttribArray {
 		final float[] arr = new float[length * getElementComponentCount()];
 		assert GL_W.glGetBufferParameteri(getBufferType().getGlId(), GL_W.GL_BUFFER_SIZE) >= arr.length * Float.BYTES : arr.length + " & "
 				+ (arr.length * Float.BYTES) + " & " + GL_W.glGetBufferParameteri(getBufferType().getGlId(), GL_W.GL_BUFFER_SIZE);
-		GL_W.glGetBufferSubData(getBufferType().getGlId(), start, arr);
+		GL_W.glGetBufferSubData(getBufferType().getGlId(), start * getElementByteSize(), arr);
 		GL_W.glFinish();
 		return arr;
 	}
