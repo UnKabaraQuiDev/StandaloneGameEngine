@@ -2,7 +2,6 @@ package lu.kbra.standalone.gameengine.graph.window;
 
 import org.lwjgl.glfw.Callbacks;
 import org.lwjgl.glfw.GLFW;
-import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GLCapabilities;
 import org.lwjgl.opengl.GLDebugMessageCallback;
@@ -27,15 +26,14 @@ public class GLWindow extends Window {
 
 	@Override
 	protected void init() {
-		errorCallback = GLFWErrorCallback.createPrint(System.err);
-		// GLFW.glfwSetErrorCallback(errorCallback);
-
 		if (!GLFW.glfwInit()) {
 			throw new RuntimeException("Failed to initialize GLFW");
 		}
 
 		monitor = getQualifiedMonitor();
 
+		GLFW.glfwDefaultWindowHints();
+		
 		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL, MemoryUtil.NULL);
 		if (handle == MemoryUtil.NULL) {
 			throw new RuntimeException("Failed to create GLFW Window");
@@ -63,7 +61,6 @@ public class GLWindow extends Window {
 			throw new RuntimeException(e);
 		}
 
-		GLFW.glfwDefaultWindowHints();
 		GLFW.glfwWindowHint(GLFW.GLFW_VISIBLE, GLFW.GLFW_FALSE);
 		GLFW.glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MAJOR, 4);
 		GLFW.glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 6);

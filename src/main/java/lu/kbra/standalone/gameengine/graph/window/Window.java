@@ -40,6 +40,9 @@ public abstract class Window implements Cleanupable {
 	public static final String GL_DEBUG_OUTPUT_PROPERTY = Window.class.getSimpleName() + ".gl_debug_output";
 	public static boolean GL_DEBUG_OUTPUT = Boolean.getBoolean(GL_DEBUG_OUTPUT_PROPERTY);
 
+	public static final String GLFW_DEBUG_OUTPUT_PROPERTY = Window.class.getSimpleName() + ".glfw_debug_output";
+	public static boolean GLFW_DEBUG_OUTPUT = Boolean.getBoolean(GLFW_DEBUG_OUTPUT_PROPERTY);
+
 	protected GLType glType;
 
 	// Window options
@@ -81,6 +84,11 @@ public abstract class Window implements Cleanupable {
 
 		Arrays.fill(keyStates, KeyState.RELEASE);
 		Arrays.fill(mouseButtonStates, KeyState.RELEASE);
+
+		if (GLFW_DEBUG_OUTPUT) {
+			errorCallback = GLFWErrorCallback.createPrint(System.err);
+			GLFW.glfwSetErrorCallback(errorCallback);
+		}
 
 		init();
 	}
