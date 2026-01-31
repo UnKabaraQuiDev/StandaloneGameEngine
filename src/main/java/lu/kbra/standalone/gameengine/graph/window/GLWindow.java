@@ -33,7 +33,7 @@ public class GLWindow extends Window {
 		monitor = getQualifiedMonitor();
 
 		GLFW.glfwDefaultWindowHints();
-		
+
 		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL, MemoryUtil.NULL);
 		if (handle == MemoryUtil.NULL) {
 			throw new RuntimeException("Failed to create GLFW Window");
@@ -99,7 +99,9 @@ public class GLWindow extends Window {
 		if (handle != -1) {
 			Callbacks.glfwFreeCallbacks(handle);
 
-			errorCallback.free();
+			if (errorCallback != null) {
+				errorCallback.free();
+			}
 			joystickCallback.free();
 
 			GLFW.glfwDestroyWindow(handle);

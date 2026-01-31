@@ -270,12 +270,12 @@ public class Transform3D extends Transform {
 //	}
 
 	public Transform3D rotationAdd(float x, float y, float z) {
-		this.rotation.rotationXYZ(x, y, z);
+		this.rotation.rotateXYZ(x, y, z);
 		return this;
 	}
 
 	public Transform3D rotationAdd(Vector3fc v) {
-		this.rotation.rotationXYZ(v.x(), v.y(), v.z());
+		this.rotation.rotateXYZ(v.x(), v.y(), v.z());
 		return this;
 	}
 

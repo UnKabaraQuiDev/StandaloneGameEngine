@@ -33,6 +33,13 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
  */
 public abstract class AttribArray implements Cleanupable, GLObject, JavaTypeAttribArray {
 
+	public static final String GEN_FAIL_IF_EXISTS_PROPERTY = AttribArray.class.getSimpleName() + ".gen_fail_if_exists";
+	public static final String GEN_SKIP_IF_EXISTS_PROPERTY = AttribArray.class.getSimpleName() + ".gen_skip_if_exists";
+	public static final String GEN_LOG_IF_EXISTS_PROPERTY = AttribArray.class.getSimpleName() + ".gen_log_if_exists";
+	public static boolean GEN_FAIL_IF_EXISTS = PCUtils.getBoolean(GEN_FAIL_IF_EXISTS_PROPERTY, true);
+	public static boolean GEN_SKIP_IF_EXISTS = PCUtils.getBoolean(GEN_SKIP_IF_EXISTS_PROPERTY, false);
+	public static boolean GEN_LOG_IF_EXISTS = PCUtils.getBoolean(GEN_LOG_IF_EXISTS_PROPERTY, false);
+
 	protected int bid = -1;
 	protected boolean iStatic = true;;
 	protected BufferType bufferType;
@@ -125,6 +132,15 @@ public abstract class AttribArray implements Cleanupable, GLObject, JavaTypeAttr
 	}
 
 	public int gen() {
+		if (bid != -1 && GEN_FAIL_IF_EXISTS) {
+			throw new IllegalStateException("Attrib array already initialized. (" + bid + ")");
+		}
+		if (bid != -1 && GEN_SKIP_IF_EXISTS) {
+			return bid;
+		}
+		if (bid != -1 && GEN_LOG_IF_EXISTS) {
+			GlobalLogger.severe("Attrib array already initilized. (" + bid + ")");
+		}
 		bid = GL_W.glGenBuffers();
 		return bid;
 	}
