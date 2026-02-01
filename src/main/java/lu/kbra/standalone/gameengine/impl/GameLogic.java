@@ -15,7 +15,9 @@ public abstract class GameLogic {
 	protected Window window;
 	protected AudioMaster audio;
 
-	public Dispatcher MAIN_DISPATCHER, RENDER_DISPATCHER, UPDATE_DISPATCHER;
+	public Dispatcher MAIN_DISPATCHER;
+	public Dispatcher RENDER_DISPATCHER;
+	public Dispatcher UPDATE_DISPATCHER;
 
 	public void register(GameEngine e) {
 		this.engine = e;
