@@ -86,6 +86,12 @@ public abstract class AttribArray implements Cleanupable, GLObject, JavaTypeAttr
 
 	public abstract void init();
 
+	public AttribArray genInit() {
+		gen();
+		init();
+		return this;
+	}
+	
 	public abstract Object get(int i);
 
 	public abstract boolean isLoaded();

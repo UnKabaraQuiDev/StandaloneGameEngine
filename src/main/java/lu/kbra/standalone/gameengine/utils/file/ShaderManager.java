@@ -18,8 +18,9 @@ import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
 import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShader;
 import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShaderPart;
+import lu.kbra.standalone.gameengine.impl.GameLogic;
 
-public class ShaderManager {
+public class ShaderManager extends Thread implements Runnable {
 
 	private CacheManager cache;
 	private Path root;
@@ -28,6 +29,9 @@ public class ShaderManager {
 	private HashMap<String, AbstractShader> shaders = new HashMap<>();
 
 	public ShaderManager(SharedCacheManager cache, String dir) throws IOException {
+		super("ShaderManager:" + dir);
+		super.setDaemon(true);
+
 		this.cache = cache;
 		this.root = Paths.get(dir);
 
@@ -38,41 +42,49 @@ public class ShaderManager {
 			Files.walkFileTree(root, new SimpleFileVisitor<Path>() {
 				@Override
 				public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
-					dir.register(watchService, StandardWatchEventKinds.ENTRY_MODIFY,
-							StandardWatchEventKinds.ENTRY_CREATE);
+					dir.register(watchService, StandardWatchEventKinds.ENTRY_MODIFY, StandardWatchEventKinds.ENTRY_CREATE);
 					return FileVisitResult.CONTINUE;
 				}
 			});
 		} catch (IOException e) {
 			throw e;
 		}
+
+		super.start();
 	}
 
 	public void monitorShader(AbstractShader shader) {
 		for (AbstractShaderPart part : shader.getParts().values()) {
-			shaders.put(part.getFile(), shader);
+			System.err.println(root);
+			final String name = root.resolve(part.getFile().replace("classpath:/", "")).toAbsolutePath().normalize().toString();
+			System.err.println(name);
+			shaders.put(name, shader);
 		}
 	}
 
-	public void manageEvents() {
+	@Override
+	public void run() {
 		while (true) {
-			WatchKey key = watchService.poll();
-			if (key == null)
+			WatchKey key;
+			try {
+				key = watchService.take();
+			} catch (InterruptedException e) {
 				return;
+			}
 
 			for (WatchEvent<?> event : key.pollEvents()) {
+				if (event.kind() == StandardWatchEventKinds.OVERFLOW)
+					continue;
 
-				if (event.kind() == StandardWatchEventKinds.ENTRY_MODIFY
-						|| event.kind() == StandardWatchEventKinds.ENTRY_CREATE) {
-					WatchEvent<Path> ev = (WatchEvent<Path>) event;
-					Path filename = ev.context();
-					Path child = ((Path) key.watchable()).resolve(filename);
-					System.err.println("File modified: " + filename + " and " + child);
+				WatchEvent<Path> ev = (WatchEvent<Path>) event;
+				Path filename = ev.context();
+				Path child = ((Path) key.watchable()).resolve(filename).toAbsolutePath().normalize();
 
-					if (shaders.containsKey(child.toString())) {
-						System.err.println("Recompiling shader: " + child);
-						shaders.get(child.toString()).recompile();
-					}
+				if (shaders.containsKey(child.toString())) {
+					System.err.println("Recompiling: " + child.toString());
+					GameLogic.INSTANCE.RENDER_DISPATCHER.post(() -> shaders.get(child.toString()).recompile());
+				} else {
+					System.err.println("Shader not found: " + child.toString());
 				}
 			}
 

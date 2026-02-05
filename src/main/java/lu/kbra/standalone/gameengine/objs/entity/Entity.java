@@ -1,6 +1,9 @@
 package lu.kbra.standalone.gameengine.objs.entity;
 
-public class Entity implements SceneEntity {
+import lu.pcy113.pclib.PCUtils;
+import lu.pcy113.pclib.impl.DeepCloneable;
+
+public class Entity implements SceneEntity, Cloneable {
 
 	protected boolean active = true;
 
@@ -29,6 +32,20 @@ public class Entity implements SceneEntity {
 	@Override
 	public String toString() {
 		return "Entity [active=" + active + ", name=" + name + "]";
+	}
+
+	@Override
+	public Entity clone() {
+		if(this instanceof DeepCloneable) {
+			
+		}
+		try {
+			final Entity e = (Entity) super.clone();
+			e.name = Long.toString(System.nanoTime() + PCUtils.randomIntRange(0, 10000));
+			return e;
+		} catch (CloneNotSupportedException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 }
