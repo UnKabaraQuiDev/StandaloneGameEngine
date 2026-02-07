@@ -4,8 +4,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
+import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.graph.texture.Texture;

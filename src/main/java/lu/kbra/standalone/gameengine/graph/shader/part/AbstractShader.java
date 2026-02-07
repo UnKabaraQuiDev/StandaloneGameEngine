@@ -24,10 +24,9 @@ import org.joml.Vector4i;
 import org.joml.Vector4ic;
 import org.lwjgl.system.MemoryStack;
 
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.datastructure.pair.Pair;
-import lu.pcy113.pclib.logger.GlobalLogger;
-
+import lu.kbra.pclib.PCUtils;
+import lu.kbra.pclib.datastructure.pair.Pair;
+import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;

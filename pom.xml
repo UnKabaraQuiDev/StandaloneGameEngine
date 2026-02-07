@@ -20,6 +20,7 @@
 		<joml.version>1.10.5</joml.version>
 		<lwjgl.natives>natives-linux</lwjgl.natives>
 		<lwjgl.debug>false</lwjgl.debug>
+		<pclib.version>1.0.0</pclib.version>
 
 		<local.jar.path>
 			${project.basedir}/target/${project.artifactId}-${project.version}.jar</local.jar.path>
@@ -92,6 +93,13 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>nexus.kbra.lu-releases</id>
+			<url>https://nexus.kbra.lu/repository/maven-releases/</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<!-- Java dependencies-->
@@ -208,9 +216,39 @@
 		</dependency>
 
 		<dependency>
-			<groupId>lu.pcy113</groupId>
-			<artifactId>PCLib</artifactId>
-			<version>[0.9.5,)</version>
+			<groupId>lu.kbra</groupId>
+			<artifactId>pclib-common</artifactId>
+			<version>${pclib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>lu.kbra</groupId>
+			<artifactId>pclib-datastruct</artifactId>
+			<version>${pclib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>lu.kbra</groupId>
+			<artifactId>pclib-logger</artifactId>
+			<version>${pclib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>lu.kbra</groupId>
+			<artifactId>pclib-pointer</artifactId>
+			<version>${pclib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>lu.kbra</groupId>
+			<artifactId>pclib-jbcodec</artifactId>
+			<version>${pclib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>lu.kbra</groupId>
+			<artifactId>pclib-function</artifactId>
+			<version>${pclib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>lu.kbra</groupId>
+			<artifactId>pclib-concurrency</artifactId>
+			<version>${pclib.version}</version>
 		</dependency>
 
 		<!-- tests -->
@@ -264,30 +302,6 @@
 					<debug>true</debug>
 					<debuglevel>lines,vars,source</debuglevel>
 				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.8</version>
-				<executions>
-					<execution>
-						<phase>install</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<target>
-								<exec executable="mvn">
-									<arg value="install:install-file" />
-									<arg value="-Dfile=${local.jar.path}" />
-									<arg value="-DpomFile=${local.pom.path}" />
-									<arg value="-Dclassifier=local" />
-								</exec>
-							</target>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 
 			<plugin>

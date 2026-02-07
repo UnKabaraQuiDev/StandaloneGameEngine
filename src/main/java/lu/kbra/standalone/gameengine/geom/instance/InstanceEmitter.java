@@ -9,8 +9,7 @@ import java.util.logging.Level;
 
 import org.joml.Matrix4f;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
+import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.cache.attrib.Mat4fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;

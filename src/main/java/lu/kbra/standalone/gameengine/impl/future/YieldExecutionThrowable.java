@@ -2,7 +2,7 @@ package lu.kbra.standalone.gameengine.impl.future;
 
 import java.util.function.Supplier;
 
-import lu.pcy113.pclib.pointer.prim.BooleanPointer;
+import lu.kbra.pclib.pointer.prim.BooleanPointer;
 
 public class YieldExecutionThrowable extends Throwable {
 

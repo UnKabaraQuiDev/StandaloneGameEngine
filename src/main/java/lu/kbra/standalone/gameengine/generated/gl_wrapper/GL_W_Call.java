@@ -1,14 +1,12 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper;
 
-import java.lang.CharSequence;
-import java.lang.String;
-import java.lang.UnsupportedOperationException;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
+
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.opengl.GLDebugMessageCallbackI;
 

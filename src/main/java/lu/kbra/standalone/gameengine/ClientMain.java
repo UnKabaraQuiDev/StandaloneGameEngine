@@ -6,8 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
+import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.graph.window.WindowOptions;
 import lu.kbra.standalone.gameengine.impl.GameLogic;
 

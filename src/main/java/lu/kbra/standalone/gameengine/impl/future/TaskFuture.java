@@ -4,12 +4,12 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.impl.ThrowingConsumer;
-import lu.pcy113.pclib.impl.ThrowingFunction;
-import lu.pcy113.pclib.impl.ThrowingRunnable;
-import lu.pcy113.pclib.impl.ThrowingSupplier;
-import lu.pcy113.pclib.pointer.prim.BooleanPointer;
+import lu.kbra.pclib.PCUtils;
+import lu.kbra.pclib.impl.ThrowingConsumer;
+import lu.kbra.pclib.impl.ThrowingFunction;
+import lu.kbra.pclib.impl.ThrowingRunnable;
+import lu.kbra.pclib.impl.ThrowingSupplier;
+import lu.kbra.pclib.pointer.prim.BooleanPointer;
 
 public class TaskFuture<I, O> {
 

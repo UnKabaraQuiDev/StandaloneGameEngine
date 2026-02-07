@@ -8,8 +8,7 @@ import org.lwjgl.opengl.GLDebugMessageCallback;
 import org.lwjgl.opengl.GLDebugMessageCallbackI;
 import org.lwjgl.system.MemoryUtil;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
+import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.base.GL_W_GL43;
 import lu.kbra.standalone.gameengine.utils.GameEngineLoggerUtils;

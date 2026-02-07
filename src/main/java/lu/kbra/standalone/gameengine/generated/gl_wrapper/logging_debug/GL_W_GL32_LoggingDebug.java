@@ -1,9 +1,5 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper.logging_debug;
 
-import java.lang.CharSequence;
-import java.lang.Override;
-import java.lang.RuntimeException;
-import java.lang.String;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
@@ -11,13 +7,15 @@ import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
 import java.util.logging.Level;
+
+import org.lwjgl.PointerBuffer;
+import org.lwjgl.opengl.GL32;
+
+import lu.kbra.pclib.logger.GlobalLogger;
+import lu.kbra.pclib.logger.PCLogger;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
-import lu.pcy113.pclib.logger.PCLogger;
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.opengl.GL32;
 
 public class GL_W_GL32_LoggingDebug implements GL_W_Call {
 	private static PCLogger LOGGER = GlobalLogger.getLogger();

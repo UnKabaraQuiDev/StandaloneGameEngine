@@ -1,7 +1,7 @@
 package lu.kbra.standalone.gameengine.objs.entity;
 
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.impl.DeepCloneable;
+import lu.kbra.pclib.PCUtils;
+import lu.kbra.pclib.datastructure.DeepCloneable;
 
 public class Entity implements SceneEntity, Cloneable {
 

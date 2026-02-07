@@ -1,7 +1,5 @@
 package lu.kbra.standalone.gameengine.utils.transform;
 
-import javax.sql.rowset.spi.TransactionalWriter;
-
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Quaternionfc;

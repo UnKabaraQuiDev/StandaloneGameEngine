@@ -19,6 +19,8 @@ import org.joml.Vector3i;
 import org.joml.Vector3ic;
 import org.lwjgl.glfw.GLFW;
 
+import lu.kbra.pclib.PCUtils;
+import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.audio.AudioMaster;
 import lu.kbra.standalone.gameengine.cache.SharedCacheManager;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.base.GL_W_GL46;
@@ -38,8 +40,6 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GameLogic;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
 
 public class GameEngine implements Cleanupable, UniqueID {
 

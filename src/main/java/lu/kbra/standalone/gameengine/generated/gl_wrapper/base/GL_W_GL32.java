@@ -1,19 +1,18 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper.base;
 
-import java.lang.CharSequence;
-import java.lang.Override;
-import java.lang.String;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
+
+import org.lwjgl.PointerBuffer;
+import org.lwjgl.opengl.GL32;
+
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W_Call;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.opengl.GL32;
 
 public class GL_W_GL32 implements GL_W_Call {
 	public void init() {

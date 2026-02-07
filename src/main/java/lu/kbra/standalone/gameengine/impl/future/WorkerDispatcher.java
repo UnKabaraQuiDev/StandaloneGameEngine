@@ -1,7 +1,7 @@
 package lu.kbra.standalone.gameengine.impl.future;
 
-import lu.pcy113.pclib.builder.ThreadBuilder;
-import lu.pcy113.pclib.impl.ThrowingRunnable;
+import lu.kbra.pclib.ThreadBuilder;
+import lu.kbra.pclib.impl.ThrowingRunnable;
 
 public class WorkerDispatcher extends Dispatcher implements Runnable {
 

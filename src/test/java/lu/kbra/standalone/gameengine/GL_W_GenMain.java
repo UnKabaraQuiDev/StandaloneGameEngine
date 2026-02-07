@@ -40,9 +40,9 @@ import com.squareup.javapoet.TypeSpec;
 import com.squareup.javapoet.TypeSpec.Builder;
 
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
-import lu.pcy113.pclib.impl.TriFunction;
-import lu.pcy113.pclib.logger.GlobalLogger;
-import lu.pcy113.pclib.logger.PCLogger;
+import lu.kbra.pclib.impl.TriFunction;
+import lu.kbra.pclib.logger.GlobalLogger;
+import lu.kbra.pclib.logger.PCLogger;
 
 public class GL_W_GenMain extends GenMainConsts {
 

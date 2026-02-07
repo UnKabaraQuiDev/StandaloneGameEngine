@@ -1,19 +1,17 @@
 package lu.kbra.standalone.gameengine.generated.gl_wrapper.debug;
 
-import java.lang.CharSequence;
-import java.lang.Override;
-import java.lang.RuntimeException;
-import java.lang.String;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
-import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
+
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.opengl.GL40;
+
+import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 
 public class GL_W_GL40_Debug extends GL_W_GL33_Debug {
 	public void init() {

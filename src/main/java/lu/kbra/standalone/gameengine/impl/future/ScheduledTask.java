@@ -4,8 +4,8 @@ import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
-import lu.pcy113.pclib.impl.ThrowingRunnable;
-import lu.pcy113.pclib.logger.GlobalLogger;
+import lu.kbra.pclib.impl.ThrowingRunnable;
+import lu.kbra.pclib.logger.GlobalLogger;
 
 public class ScheduledTask implements Runnable, Delayed {
 

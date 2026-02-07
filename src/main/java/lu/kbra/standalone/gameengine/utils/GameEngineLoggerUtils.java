@@ -7,8 +7,8 @@ import java.util.logging.Level;
 import org.lwjgl.openal.ALCCapabilities;
 import org.lwjgl.opengl.GLCapabilities;
 
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
+import lu.kbra.pclib.PCUtils;
+import lu.kbra.pclib.logger.GlobalLogger;
 
 public final class GameEngineLoggerUtils {
 

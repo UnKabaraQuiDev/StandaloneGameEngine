@@ -1,6 +1,6 @@
 package lu.kbra.standalone.gameengine.objs.entity;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
+import lu.kbra.pclib.logger.GlobalLogger;
 
 sealed public interface ParentAwareComponent permits ParentAwareNode, ParentAwareRoot {
 

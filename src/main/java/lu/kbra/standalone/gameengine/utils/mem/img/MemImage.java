@@ -7,9 +7,8 @@ import org.lwjgl.BufferUtils;
 import org.lwjgl.stb.STBImage;
 import org.lwjgl.system.MemoryUtil;
 
-import lu.pcy113.pclib.PCUtils;
-import lu.pcy113.pclib.logger.GlobalLogger;
-
+import lu.kbra.pclib.PCUtils;
+import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 
 public class MemImage implements Cleanupable {

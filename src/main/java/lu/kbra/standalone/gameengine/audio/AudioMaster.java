@@ -17,8 +17,7 @@ import org.lwjgl.openal.ALUtil;
 import org.lwjgl.openal.EXTThreadLocalContext;
 import org.lwjgl.system.MemoryUtil;
 
-import lu.pcy113.pclib.logger.GlobalLogger;
-
+import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.utils.GameEngineLoggerUtils;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
