@@ -75,14 +75,14 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 	/* chaining methods for shear */
 
 	@Override
-	public Transform3DShear shearSet(final GeoAxis targetAxis, final GeoAxis sourceAxis, final float factor) {
-		this.shear.set(targetAxis.getIndex(), sourceAxis.getIndex(), factor);
+	public Transform3DShear shearSet(final GeoAxis sourceAxis, final GeoAxis targetAxis, final float factor) {
+		this.shear.set(sourceAxis.getIndex(), targetAxis.getIndex(), factor);
 		return this;
 	}
 
 	@Override
-	public Transform3DShear shearAdd(final GeoAxis targetAxis, final GeoAxis sourceAxis, final float factor) {
-		this.shear.set(targetAxis.getIndex(), sourceAxis.getIndex(), this.shear.get(targetAxis.getIndex(), sourceAxis.getIndex()) + factor);
+	public Transform3DShear shearAdd(final GeoAxis sourceAxis, final GeoAxis targetAxis, final float factor) {
+		this.shear.set(sourceAxis.getIndex(), targetAxis.getIndex(), this.shear.get(sourceAxis.getIndex(), targetAxis.getIndex()) + factor);
 		return this;
 	}
 

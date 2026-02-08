@@ -17,8 +17,7 @@ public class Transform3DPivot extends Transform3D {
 		this(transform.translation, transform.rotation, transform.scale, new Vector3f(), new Vector3f());
 	}
 
-	public Transform3DPivot(Vector3f trans, Quaternionf rot, Vector3f scale, Vector3f rotationPivot,
-			Vector3f scalePivot) {
+	public Transform3DPivot(Vector3f trans, Quaternionf rot, Vector3f scale, Vector3f rotationPivot, Vector3f scalePivot) {
 		super(true);
 
 		super.translation = trans;
@@ -94,6 +93,21 @@ public class Transform3DPivot extends Transform3D {
 		return this;
 	}
 
+	public Transform3DPivot scalePivotSetX(float x) {
+		scalePivot.x = x;
+		return this;
+	}
+
+	public Transform3DPivot scalePivotSetY(float y) {
+		scalePivot.y = y;
+		return this;
+	}
+
+	public Transform3DPivot scalePivotSetZ(float z) {
+		scalePivot.z = z;
+		return this;
+	}
+
 	// setters
 	public Transform3DPivot setRotationPivot(Vector3f p) {
 		rotationPivot = p;
@@ -133,7 +147,7 @@ public class Transform3DPivot extends Transform3D {
 
 		return matrix;
 	}
-	
+
 	@Override
 	public Transform3DPivot update() {
 		updateMatrix();
@@ -142,15 +156,17 @@ public class Transform3DPivot extends Transform3D {
 
 	@Override
 	public Transform clone() {
-		return new Transform3DPivot(translation.get(new Vector3f()), rotation.get(new Quaternionf()),
-				scale.get(new Vector3f()), rotationPivot.get(new Vector3f()), scalePivot.get(new Vector3f()));
+		return new Transform3DPivot(translation.get(new Vector3f()),
+				rotation.get(new Quaternionf()),
+				scale.get(new Vector3f()),
+				rotationPivot.get(new Vector3f()),
+				scalePivot.get(new Vector3f()));
 	}
 
 	@Override
 	public String toString() {
-		return "Transform3DPivot [rotationPivot=" + this.rotationPivot + ", scalePivot=" + this.scalePivot
-				+ ", translation=" + this.translation + ", rotation=" + this.rotation + ", scale=" + this.scale
-				+ ", matrix=" + this.matrix + "]";
+		return "Transform3DPivot [rotationPivot=" + this.rotationPivot + ", scalePivot=" + this.scalePivot + ", translation="
+				+ this.translation + ", rotation=" + this.rotation + ", scale=" + this.scale + ", matrix=" + this.matrix + "]";
 	}
 
 }

@@ -1,7 +1,9 @@
 package lu.kbra.standalone.gameengine.geom;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
@@ -12,8 +14,6 @@ import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
-import lu.kbra.standalone.gameengine.cache.attrib.impl.MultiAttribArray;
-import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
@@ -22,15 +22,15 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public class LoadedMesh implements Mesh {
 
-	public static final String ATTRIB_VERTICES_NAME = "vertices";
-	public static final String ATTRIB_INDICES_NAME = "ids";
-	public static final String ATTRIB_NORMALS_NAME = "normals";
-	public static final String ATTRIB_UVS_NAME = "uvs";
-
-	public static final int ATTRIB_VERTICES_ID = 0;
-	public static final int ATTRIB_INDICES_ID = -1;
-	public static final int ATTRIB_NORMALS_ID = 1;
-	public static final int ATTRIB_UVS_ID = 2;
+//	public static final String ATTRIB_VERTICES_NAME = "vertices";
+//	public static final String ATTRIB_INDICES_NAME = "ids";
+//	public static final String ATTRIB_NORMALS_NAME = "normals";
+//	public static final String ATTRIB_UVS_NAME = "uvs";
+//
+//	public static final int ATTRIB_VERTICES_ID = 0;
+//	public static final int ATTRIB_INDICES_ID = -1;
+//	public static final int ATTRIB_NORMALS_ID = 1;
+//	public static final int ATTRIB_UVS_ID = 2;
 
 	protected String name;
 	protected int vao = -1;
@@ -39,7 +39,7 @@ public class LoadedMesh implements Mesh {
 
 	protected Vec3fAttribArray vertices;
 	protected UIntAttribArray indices;
-	protected AttribArray[] attribs;
+	protected List<AttribArray> attribs;
 
 	protected int vertexCount;
 	protected int indicesCount;
@@ -48,183 +48,148 @@ public class LoadedMesh implements Mesh {
 	/**
 	 * Positions are stored as attribArray 0, normals as attribArray 1, uvs as attribArray 2
 	 */
-	public LoadedMesh(String name, Material material, Vec3fAttribArray vertices, UIntAttribArray indices, AttribArray... attribs) {
+	public LoadedMesh(final String name, final Material material, final Vec3fAttribArray vertices, final UIntAttribArray indices,
+			final AttribArray... attribs) {
 		this.name = name;
 		this.vertices = vertices;
-		indices.setBufferType(BufferType.ELEMENT_ARRAY);
 		this.indices = indices;
 		this.material = material;
-		this.attribs = attribs;
+		this.attribs = new ArrayList<>(Arrays.asList(attribs));
 
 		this.vertexCount = vertices.getLength();
 		this.indicesCount = indices.getLength();
 		this.boundingBox = GameEngineUtils.getBoundingBox(vertices);
 
 		this.vao = GL_W.glGenVertexArrays();
-		bind();
-		storeElementArray((UIntAttribArray) indices);
+		this.bind();
+		indices.setIndex(ATTRIB_INDICES_ID);
+		indices.setBufferType(BufferType.ELEMENT_ARRAY);
+		this.storeElementArray((UIntAttribArray) indices);
+		vertices.setName(ATTRIB_VERTICES_NAME);
 		vertices.setIndex(ATTRIB_VERTICES_ID);
-		storeAttribArray((Vec3fAttribArray) vertices);
+		this.storeAttribArray((Vec3fAttribArray) vertices);
 
-		for (AttribArray a : attribs) {
-			if (vbo.containsKey(a.getIndex())) {
+		for (final AttribArray a : attribs) {
+			if (this.vbo.containsKey(a.getIndex())) {
 				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
 			}
-			storeAttribArray(a);
+			this.storeAttribArray(a);
 		}
 
-		unbind();
+		this.unbind();
 
-		GlobalLogger.log(Level.INFO, "Mesh " + name + ": " + vao + " & " + vbo + "; v:" + vertexCount + " ");
+		GlobalLogger.log(Level.INFO, "Mesh " + name + ": " + this.vao + " & " + this.vbo + "; v:" + this.vertexCount + " ");
 	}
 
-	private void storeAttribArray(AttribArray data) {
-		this.vbo.put(data.getIndex(), data.gen());
-		data.bind();
-		data.init();
-		data.enable();
-		data.unbind();
-
-		if (data instanceof MultiAttribArray) {
-			MultiAttribArray ma = (MultiAttribArray) data;
-			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++) {
-				vbo.put(a, data.getGlId());
-			}
-		}
-	}
-
-	public void addAttribArray(AttribArray data) {
-		bind();
-
-		this.vbo.put(data.getIndex(), data.getGlId() == -1 ? data.gen() : data.getGlId());
-		data.bind();
-		data.init();
-		data.enable();
-		data.unbind();
-
-		if (data instanceof MultiAttribArray) {
-			MultiAttribArray ma = (MultiAttribArray) data;
-			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++) {
-				vbo.put(a, data.getGlId());
-			}
-		}
-
-		final AttribArray[] newAttribs = new AttribArray[this.attribs.length + 1];
-		System.arraycopy(this.attribs, 0, newAttribs, 0, this.attribs.length);
-		newAttribs[this.attribs.length] = data;
-		this.attribs = newAttribs;
-	}
-
-	private void storeElementArray(UIntAttribArray indices) {
+	public void storeElementArray(final UIntAttribArray indices) {
 		indices.setBufferType(BufferType.ELEMENT_ARRAY);
 		this.vbo.put(indices.getIndex(), indices.gen());
 		indices.bind();
 		indices.init();
 	}
 
-	public void bind() {
-		GL_W.glBindVertexArray(vao);
-	}
-
-	public void unbind() {
-		GL_W.glBindVertexArray(0);
-	}
-
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + name + " (" + vao + ")");
+		GlobalLogger.log("Cleaning up: " + this.name + " (" + this.vao + ")");
 
-		if (vao == -1)
+		if (this.vao == -1) {
 			return;
+		}
 
-		GL_W.glDeleteVertexArrays(vao);
-		Arrays.stream(attribs).forEach(AttribArray::cleanup);
-		attribs = null;
-		vbo = null;
-		vao = -1;
+		GL_W.glDeleteVertexArrays(this.vao);
+		attribs.forEach(AttribArray::cleanup);
+		this.attribs = null;
+		this.vbo = null;
+		this.vao = -1;
 	}
 
 	@Override
 	public String getId() {
-		return name;
+		return this.name;
 	}
 
 	@Override
 	public int getVertexCount() {
-		return vertexCount;
+		return this.vertexCount;
 	}
 
 	@Override
 	public int getGlId() {
-		return vao;
+		return this.vao;
 	}
 
 	@Override
 	public Map<Integer, Integer> getVbo() {
-		return vbo;
+		return this.vbo;
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public UIntAttribArray getIndices() {
-		return indices;
+		return this.indices;
 	}
 
 	public Vec3fAttribArray getVertices() {
-		return vertices;
+		return this.vertices;
 	}
 
 	@Override
 	public Material getMaterial() {
-		return material;
+		return this.material;
 	}
 
-	public JavaTypeAttribArray[] getAttribs() {
-		return attribs;
+	@Override
+	public List<AttribArray> getAttribs() {
+		return this.attribs;
 	}
 
 	@Override
 	public int getIndicesCount() {
-		return indicesCount;
+		return this.indicesCount;
 	}
 
 	public int getFaceCount() {
-		return indicesCount / 6;
+		return this.indicesCount / 6;
 	}
 
-	public void setName(String name) {
+	public void setName(final String name) {
 		this.name = name;
 	}
 
 	@Override
 	public boolean isValid() {
-		return vao != -1;
+		return this.vao != -1;
 	}
 
 	@Override
 	public BoundingBox getBoundingBox() {
-		return boundingBox;
+		return this.boundingBox;
+	}
+	
+	@Override
+	public boolean usesEBO() {
+		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "LoadedMesh [name=" + name + ", vao=" + vao + ", vbo=" + vbo + ", material=" + material + ", vertices=" + vertices
-				+ ", indices=" + indices + ", attribs=" + Arrays.toString(attribs) + ", vertexCount=" + vertexCount + ", indicesCount="
-				+ indicesCount + ", isValid()=" + isValid() + ", boundingBox=" + boundingBox + "]";
+		return "LoadedMesh [name=" + this.name + ", vao=" + this.vao + ", vbo=" + this.vbo + ", material=" + this.material + ", vertices="
+				+ this.vertices + ", indices=" + this.indices + ", attribs=" + attribs + ", vertexCount=" + this.vertexCount
+				+ ", indicesCount=" + this.indicesCount + ", isValid()=" + this.isValid() + ", boundingBox=" + this.boundingBox + "]";
 	}
 
-	public static QuadLoadedMesh newQuad(String name, Material material2, Vector2f size) {
+	public static QuadLoadedMesh newQuad(final String name, final Material material2, final Vector2f size) {
 		return new QuadLoadedMesh(name, material2, size);
 	}
 
-	public static QuadLoadedMesh newQuad(GeoPlane plane, String name, Material material2, Vector2f size) {
+	public static QuadLoadedMesh newQuad(final GeoPlane plane, final String name, final Material material2, final Vector2f size) {
 		return new QuadLoadedMesh(name, material2, size, plane);
 	}
 
-	public static CubeMesh newCube(String name, Material material2, Vector3f size) {
+	public static CubeMesh newCube(final String name, final Material material2, final Vector3f size) {
 		return new CubeMesh(name, material2, size);
 	}
 
