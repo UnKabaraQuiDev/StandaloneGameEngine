@@ -42,6 +42,14 @@ public abstract class GameLogic {
 
 	public abstract void cleanup();
 
+	public static void cleanup(Cleanupable... vs) {
+		for (Cleanupable v : vs) {
+			if (v != null) {
+				v.cleanup();
+			}
+		}
+	}
+
 	protected boolean waitForFrameEnd() {
 		return engine.waitForFrameEnd();
 	}

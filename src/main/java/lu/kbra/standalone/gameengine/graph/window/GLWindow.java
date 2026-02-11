@@ -74,7 +74,9 @@ public class GLWindow extends Window {
 
 		createCallbacks();
 
-		GLFW.glfwShowWindow(handle);
+		if (options.visible) {
+			GLFW.glfwShowWindow(handle);
+		}
 	}
 
 	@Override

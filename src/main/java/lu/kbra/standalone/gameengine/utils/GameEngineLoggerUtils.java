@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.Objects;
 import java.util.logging.Level;
 
+import org.lwjgl.egl.EGLCapabilities;
 import org.lwjgl.openal.ALCCapabilities;
 import org.lwjgl.opengl.GLCapabilities;
 
@@ -14,8 +15,7 @@ public final class GameEngineLoggerUtils {
 
 	private static int count = 0;
 
-	public static synchronized void log(ALCCapabilities deviceCapabilities)
-			throws IllegalArgumentException, IllegalAccessException {
+	public static synchronized void log(ALCCapabilities deviceCapabilities) throws IllegalArgumentException, IllegalAccessException {
 		logFields(deviceCapabilities);
 	}
 
@@ -32,12 +32,15 @@ public final class GameEngineLoggerUtils {
 		synchronized (GlobalLogger.getLogger()) {
 			for (Field f : capabilities.getClass().getFields()) {
 				if (f.getType() == boolean.class && f.get(capabilities).equals(Boolean.TRUE)) {
-					GlobalLogger.logRaw(Level.INFO,
-							"\t" + PCUtils.leftPadString(Integer.toString(count++), " ", 3) + ". " + f.getName());
+					GlobalLogger.logRaw(Level.INFO, "\t" + PCUtils.leftPadString(Integer.toString(count++), " ", 3) + ". " + f.getName());
 				}
 			}
 		}
 		count = 0;
+	}
+
+	public static void log(EGLCapabilities eglCapabilities) throws IllegalArgumentException, IllegalAccessException {
+		logFields(eglCapabilities);
 	}
 
 }

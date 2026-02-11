@@ -407,6 +407,10 @@ public abstract class Window implements Cleanupable {
 		return new Vector2i(width, height);
 	}
 
+	public long getHandle() {
+		return handle;
+	}
+
 	public void clearScroll() {
 		scroll.set(0, 0);
 	}

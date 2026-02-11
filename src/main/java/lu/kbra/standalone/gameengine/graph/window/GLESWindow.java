@@ -19,6 +19,7 @@ import org.lwjgl.system.MemoryUtil;
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.exceptions.egl.EGLNoDisplayException;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
+import lu.kbra.standalone.gameengine.utils.GameEngineLoggerUtils;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
 
@@ -64,20 +65,12 @@ public class GLESWindow extends Window {
 			throw new RuntimeException("Failed to create EGL context");
 
 		try {
-			GlobalLogger.log("EGL Capabilities:");
-			for (Field f : EGLCapabilities.class.getFields()) {
-				if (f.getType() == boolean.class) {
-					if (f.get(this.eglCapabilities).equals(Boolean.TRUE)) {
-						GlobalLogger.log("\t" + f.getName());
-					}
-				}
-			}
+			GameEngineLoggerUtils.log(this.eglCapabilities);
 		} catch (IllegalAccessException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 
-		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL,
-				MemoryUtil.NULL);
+		handle = GLFW.glfwCreateWindow(options.windowSize.x, options.windowSize.y, options.title, MemoryUtil.NULL, MemoryUtil.NULL);
 		if (handle == MemoryUtil.NULL) {
 			PointerBuffer pb = PointerBuffer.allocateDirect(1024);
 			GLFW.glfwGetError(pb);
@@ -113,7 +106,9 @@ public class GLESWindow extends Window {
 
 		createCallbacks();
 
-		GLFW.glfwShowWindow(handle);
+		if (options.visible) {
+			GLFW.glfwShowWindow(handle);
+		}
 	}
 
 	@Override
@@ -121,13 +116,11 @@ public class GLESWindow extends Window {
 		GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, options.resizable ? GLFW.GLFW_TRUE : GLFW.GLFW_FALSE);
 		GLFW.glfwSwapInterval(options.vsync ? 1 : 0);
 		/*
-		 * GLFWVidMode vidMode = GLFW.glfwGetVideoMode(monitor);
-		 * GLFW.glfwSetWindowMonitor(handle, options.fullscreen ? monitor :
-		 * MemoryUtil.NULL, 0, 0, !options.fullscreen ? options.windowSize.x :
-		 * vidMode.width(), !options.fullscreen ? options.windowSize.y :
-		 * vidMode.height(), options.fps); this.width = !options.fullscreen ?
-		 * options.windowSize.x : vidMode.width(); this.height = !options.fullscreen ?
-		 * options.windowSize.y : vidMode.height();
+		 * GLFWVidMode vidMode = GLFW.glfwGetVideoMode(monitor); GLFW.glfwSetWindowMonitor(handle,
+		 * options.fullscreen ? monitor : MemoryUtil.NULL, 0, 0, !options.fullscreen ? options.windowSize.x
+		 * : vidMode.width(), !options.fullscreen ? options.windowSize.y : vidMode.height(), options.fps);
+		 * this.width = !options.fullscreen ? options.windowSize.x : vidMode.width(); this.height =
+		 * !options.fullscreen ? options.windowSize.y : vidMode.height();
 		 */
 	}
 

@@ -1,13 +1,33 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
+a<project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>lu.kbra</groupId>
 	<artifactId>gameengine</artifactId>
-	<version>0.1</version>
+	<version>0.1-SNAPSHOT</version>
 
 	<name>Standalone Game Engine</name>
+
+	<scm>
+		<connection>
+			scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</connection>
+		<developerConnection>
+			scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</developerConnection>
+		<url>https://github.com/UnKabaraQuiDev/StandaloneGameEngine</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus.kbr.lu-releases</id>
+			<url>https://nexus.kbr.lu/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus.kbr.lu-snapshots</id>
+			<url>https://nexus.kbr.lu/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<properties>
 		<java.version>17</java.version>
