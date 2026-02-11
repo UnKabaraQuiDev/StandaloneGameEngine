@@ -20,12 +20,12 @@
 
 	<distributionManagement>
 		<repository>
-			<id>nexus.kbr.lu-releases</id>
-			<url>https://nexus.kbr.lu/repository/maven-releases/</url>
+			<id>nexus.kbra.lu-releases</id>
+			<url>https://nexus.kbra.lu/repository/maven-releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>nexus.kbr.lu-snapshots</id>
-			<url>https://nexus.kbr.lu/repository/maven-snapshots/</url>
+			<id>nexus.kbra.lu-snapshots</id>
+			<url>https://nexus.kbra.lu/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
