@@ -331,8 +331,10 @@ public class GameEngine implements Cleanupable, UniqueID {
 
 			this.totalTime = GLFW.glfwGetTime();
 
+			gameLogic.main();
+			
 			// TODO: enable main dispatcher ?
-			// mainDispatcher.pump(10);
+			 mainDispatcher.pump(10);
 		}
 
 		Thread.interrupted();

@@ -40,6 +40,9 @@ public abstract class GameLogic {
 
 	public abstract void render(float dTime);
 
+	public void main() {
+	}
+
 	public abstract void cleanup();
 
 	public static void cleanup(Cleanupable... vs) {

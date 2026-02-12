@@ -7,13 +7,12 @@
 	<artifactId>gameengine</artifactId>
 	<version>0.1-SNAPSHOT</version>
 
-	<name>Standalone Game Engine</name>
+	<name>Standalone Game
+		Engine</name>
 
 	<scm>
-		<connection>
-			scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</connection>
-		<developerConnection>
-			scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</developerConnection>
+		<connection>scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</connection>
+		<developerConnection>scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</developerConnection>
 		<url>https://github.com/UnKabaraQuiDev/StandaloneGameEngine</url>
 		<tag>HEAD</tag>
 	</scm>
@@ -40,7 +39,7 @@
 		<joml.version>1.10.5</joml.version>
 		<lwjgl.natives>natives-linux</lwjgl.natives>
 		<lwjgl.debug>false</lwjgl.debug>
-		<pclib.version>1.0.0</pclib.version>
+		<pclib.version>1.0.2-SNAPSHOT</pclib.version>
 
 		<local.jar.path>
 			${project.basedir}/target/${project.artifactId}-${project.version}.jar</local.jar.path>
@@ -48,7 +47,6 @@
 	</properties>
 
 	<profiles>
-		<!-- Profile for Windows -->
 		<profile>
 			<id>windows</id>
 			<activation>
@@ -61,7 +59,6 @@
 			</properties>
 		</profile>
 
-		<!-- Profile for Linux x86 -->
 		<profile>
 			<id>linux</id>
 			<activation>
@@ -74,7 +71,6 @@
 			</properties>
 		</profile>
 
-		<!-- Profile for Linux arm64 -->
 		<profile>
 			<id>windows_arm64</id>
 			<activation>
@@ -102,6 +98,13 @@
 		</profile>
 	</profiles>
 
+	<repositories>
+		<repository>
+			<id>nexus.kbra.lu-releases</id>
+			<url>https://nexus.kbra.lu/repository/maven-releases/</url>
+		</repository>
+	</repositories>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -113,13 +116,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<repositories>
-		<repository>
-			<id>nexus.kbra.lu-releases</id>
-			<url>https://nexus.kbra.lu/repository/maven-releases/</url>
-		</repository>
-	</repositories>
 
 	<dependencies>
 		<!-- Java dependencies-->
@@ -209,14 +205,14 @@
 		<!-- steam things -->
 		<dependency>
 			<groupId>com.code-disaster.steamworks4j</groupId>
-			<artifactId>steamworks4j-server</artifactId>
-			<version>${steamworks4j-server.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.code-disaster.steamworks4j</groupId>
 			<artifactId>steamworks4j</artifactId>
 			<version>${steamworks4j.version}</version>
 		</dependency>
+		<!--<dependency>
+			<groupId>com.code-disaster.steamworks4j</groupId>
+			<artifactId>steamworks4j-lwjgl3</artifactId>
+			<version>1.10.0</version>
+		</dependency>-->
 
 		<!-- others -->
 		<dependency>

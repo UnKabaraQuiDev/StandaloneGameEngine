@@ -132,6 +132,21 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
+	public Transform3D scaleSetX(float length) {
+		this.scale.x = length;
+		return this;
+	}
+
+	public Transform3D scaleSetY(float length) {
+		this.scale.y = length;
+		return this;
+	}
+
+	public Transform3D scaleSetZ(float length) {
+		this.scale.z = length;
+		return this;
+	}
+
 	public Transform3D setScale(Vector3f scale) {
 		this.scale = scale;
 		return this;
