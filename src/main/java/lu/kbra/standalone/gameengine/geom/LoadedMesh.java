@@ -16,11 +16,12 @@ import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.Material;
+import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class LoadedMesh implements Mesh {
+public class LoadedMesh extends AutoCleanupable implements Mesh {
 
 //	public static final String ATTRIB_VERTICES_NAME = "vertices";
 //	public static final String ATTRIB_INDICES_NAME = "ids";
@@ -102,6 +103,8 @@ public class LoadedMesh implements Mesh {
 		this.attribs = null;
 		this.vbo = null;
 		this.vao = -1;
+		
+		super.cleanup();
 	}
 
 	@Override
@@ -168,7 +171,7 @@ public class LoadedMesh implements Mesh {
 	public BoundingBox getBoundingBox() {
 		return this.boundingBox;
 	}
-	
+
 	@Override
 	public boolean usesEBO() {
 		return true;

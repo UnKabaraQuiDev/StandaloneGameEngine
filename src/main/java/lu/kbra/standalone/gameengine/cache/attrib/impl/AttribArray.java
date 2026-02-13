@@ -21,6 +21,7 @@ import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec4iAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
+import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
@@ -30,7 +31,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
  * element = raw type (float, int, ...)<br>
  * component = vectors/matrices number of elements
  */
-public abstract class AttribArray implements Cleanupable, GLObject, JavaTypeAttribArray {
+public abstract class AttribArray extends AutoCleanupable implements Cleanupable, GLObject, JavaTypeAttribArray {
 
 	public static final String GEN_FAIL_IF_EXISTS_PROPERTY = AttribArray.class.getSimpleName() + ".gen_fail_if_exists";
 	public static final String GEN_SKIP_IF_EXISTS_PROPERTY = AttribArray.class.getSimpleName() + ".gen_skip_if_exists";
@@ -90,7 +91,7 @@ public abstract class AttribArray implements Cleanupable, GLObject, JavaTypeAttr
 		init();
 		return this;
 	}
-	
+
 	public abstract Object get(int i);
 
 	public abstract boolean isLoaded();
@@ -168,6 +169,7 @@ public abstract class AttribArray implements Cleanupable, GLObject, JavaTypeAttr
 
 		GL_W.glDeleteBuffers(bid);
 		bid = -1;
+		super.cleanup();
 	}
 
 	public String getName() {

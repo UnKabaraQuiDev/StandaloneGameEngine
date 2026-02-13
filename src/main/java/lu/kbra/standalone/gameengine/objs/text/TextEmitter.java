@@ -16,6 +16,7 @@ import lu.kbra.standalone.gameengine.geom.QuadLoadedMesh;
 import lu.kbra.standalone.gameengine.geom.instance.InstanceEmitter;
 import lu.kbra.standalone.gameengine.graph.material.text.TextShader;
 import lu.kbra.standalone.gameengine.graph.material.text.TextShader.TextMaterial;
+import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
@@ -23,7 +24,7 @@ import lu.kbra.standalone.gameengine.impl.UniqueID;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextAlignment;
 import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 
-public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable {
+public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueID, GLObject, Renderable {
 
 	private static record SetupData(TextMaterial material, int bufferSize) {
 	}
@@ -77,8 +78,11 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_ID, new int[setupData.bufferSize], false, 1);
 		// quad mesh ownership goes to the InstanceEmitter
-		this.instances = new InstanceEmitter(name, new QuadLoadedMesh(name, setupData.material, charSize), setupData.bufferSize,
-				new Transform3D(), charBuffer);
+		this.instances = new InstanceEmitter(name,
+				new QuadLoadedMesh(name, setupData.material, charSize),
+				setupData.bufferSize,
+				new Transform3D(),
+				charBuffer);
 
 		updateText();
 
@@ -87,9 +91,8 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 
 	public boolean updateText() {
 		if (charBuffer.getLength() < text.length()) {
-			GlobalLogger
-					.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length() + ") for length: "
-							+ charBuffer.getLength() + ")");
+			GlobalLogger.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length() + ") for length: "
+					+ charBuffer.getLength() + ")");
 		}
 
 		text = text.substring(0, getStringLength());
@@ -156,8 +159,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 				final float translationX = (character - (float) (widthCount[line] - 1) / 2) * (charSize.x() + charOffset.x) - charSize.x();
 				final float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2 + charOffset.y;
 
-				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity()
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex]).identity()
 						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 
 				charIndex++;
@@ -189,8 +191,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 				chars[charIndex] = (int) currentChar;
 				float translationX = (character - widthCount[line] / 2) * (charSize.x() + charOffset.x) + widthMax / 2 - charSize.x();
 				float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
-				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity()
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex]).identity()
 						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
 			}
@@ -221,8 +222,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 				chars[charIndex] = (int) currentChar;
 				final float translationX = ((widthMax - widthCount[line]) + character) * (charSize.x() + charOffset.x) - charSize.x();
 				final float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
-				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity()
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex]).identity()
 						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
 			}
@@ -253,8 +253,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 				chars[charIndex] = (int) currentChar;
 				float translationX = (character - widthCount[line]) * (charSize.x() + charOffset.x) - charSize.x() / 2;
 				float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
-				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity()
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex]).identity()
 						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
 			}
@@ -282,8 +281,7 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 				chars[charIndex] = (int) currentChar;
 				float translationX = character * (charSize.x() + charOffset.x) - charSize.x() / 2;
 				float translationY = line * (charSize.y() + charOffset.y) + charSize.y() / 2;
-				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex])
-						.identity()
+				transforms[charIndex] = (transforms[charIndex] == null ? new Matrix4f() : transforms[charIndex]).identity()
 						.translate(translationX, (correctTransform ? -1 : 1) * translationY, 0);
 				charIndex++;
 			}
@@ -435,6 +433,8 @@ public class TextEmitter implements Cleanupable, UniqueID, GLObject, Renderable 
 		instances = null;
 		// owned by InstanceEmitter
 		charBuffer = null;
+
+		super.cleanup();
 	}
 
 	public int getStringLength() {

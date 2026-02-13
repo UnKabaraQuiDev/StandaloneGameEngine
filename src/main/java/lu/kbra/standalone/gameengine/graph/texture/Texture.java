@@ -2,6 +2,7 @@ package lu.kbra.standalone.gameengine.graph.texture;
 
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
+import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.GLObject;
@@ -14,7 +15,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.TextureParameter;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureWrap;
 
-public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttachment, GLObject {
+public abstract class Texture extends AutoCleanupable implements Cleanupable, UniqueID, FramebufferAttachment, GLObject {
 
 	public static final int MAX_TEXTURE_LOD_BIAS = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_LOD_BIAS);
 	public static final int MAX_TEXTURE_SIZE = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_SIZE);
@@ -98,6 +99,8 @@ public abstract class Texture implements Cleanupable, UniqueID, FramebufferAttac
 
 		GL_W.glDeleteTextures(glId);
 		glId = -1;
+
+		super.cleanup();
 	}
 
 	@Override

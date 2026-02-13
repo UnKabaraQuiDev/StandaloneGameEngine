@@ -6,12 +6,10 @@ import java.util.Map;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
-import lu.kbra.pclib.PCUtils;
 import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.impl.MultiAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.Material;
-import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
@@ -20,7 +18,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BeginMode;
 import lu.kbra.standalone.gameengine.utils.gl.consts.PolygonDrawMode;
 import lu.kbra.standalone.gameengine.utils.gl.consts.PolygonMode;
 
-public interface Mesh extends UniqueID, Cleanupable, Renderable, GLObject {
+public interface Mesh extends UniqueID, Renderable, GLObject {
 
 	String ATTRIB_VERTICES_NAME = "vertices";
 	String ATTRIB_INDICES_NAME = "ids";
