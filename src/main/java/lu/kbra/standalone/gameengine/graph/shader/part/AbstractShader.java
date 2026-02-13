@@ -331,7 +331,7 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 		this.parts = null;
 		GL_W.glDeleteProgram(this.spid);
 		this.spid = -1;
-		
+
 		super.cleanup();
 	}
 

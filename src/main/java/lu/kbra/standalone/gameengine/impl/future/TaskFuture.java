@@ -20,40 +20,40 @@ public class TaskFuture<I, O> {
 		private final BooleanPointer done = new BooleanPointer(false);
 
 		private V result;
-		private String source;
+		private final String source;
 
-		public TaskState(TaskFuture<?, ?> first) {
+		public TaskState(final TaskFuture<?, ?> first) {
 			this.source = first.currentSource;
 		}
 
 		public boolean isStarted() {
-			return started.get();
+			return this.started.get();
 		}
 
 		public boolean isOngoing() {
-			return ongoing.get();
+			return this.ongoing.get();
 		}
 
 		public boolean isDone() {
-			return done.get();
+			return this.done.get();
 		}
 
 		public V getResult() {
-			return result;
+			return this.result;
 		}
 
 		public V join() {
-			started.waitForTrue();
-			System.err.println(started + " " + ongoing + " " + result);
-			ongoing.waitForFalse();
-			System.err.println(started + " " + ongoing + " " + result);
-			return result;
+			this.started.waitForTrue();
+			System.err.println(this.started + " " + this.ongoing + " " + this.result);
+			this.ongoing.waitForFalse();
+			System.err.println(this.started + " " + this.ongoing + " " + this.result);
+			return this.result;
 		}
 
-		public V join(long timeout) {
-			started.waitForTrue();
-			ongoing.waitForFalse(timeout);
-			return result;
+		public V join(final long timeout) {
+			this.started.waitForTrue();
+			this.ongoing.waitForFalse(timeout);
+			return this.result;
 		}
 
 		@Override
@@ -75,27 +75,27 @@ public class TaskFuture<I, O> {
 	protected TaskFuture<? extends O, ?> next;
 	protected String currentSource;
 
-	protected TaskFuture(Dispatcher dispatcher) {
+	protected TaskFuture(final Dispatcher dispatcher) {
 		this.dispatcher = dispatcher;
 		this.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		this.first = this;
 	}
 
-	public TaskFuture(Dispatcher dispatcher, ThrowingFunction<I, O, ? extends Throwable> task) {
+	public TaskFuture(final Dispatcher dispatcher, final ThrowingFunction<I, O, ? extends Throwable> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, ThrowingFunction<I, O, ? extends Throwable> task, int priority) {
+	public TaskFuture(final Dispatcher dispatcher, final ThrowingFunction<I, O, ? extends Throwable> task, final int priority) {
 		this.dispatcher = dispatcher;
 		this.task = task;
 		this.priority = priority;
 	}
 
-	public TaskFuture(Dispatcher dispatcher, ThrowingSupplier<O, ? extends Throwable> task) {
+	public TaskFuture(final Dispatcher dispatcher, final ThrowingSupplier<O, ? extends Throwable> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, ThrowingSupplier<O, ? extends Throwable> task, int priority) {
+	public TaskFuture(final Dispatcher dispatcher, final ThrowingSupplier<O, ? extends Throwable> task, final int priority) {
 		this.dispatcher = dispatcher;
 		this.task = (v) -> task.get();
 		this.priority = priority;
@@ -103,14 +103,14 @@ public class TaskFuture<I, O> {
 		this.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, ThrowingRunnable<? extends Throwable> task) {
+	public TaskFuture(final Dispatcher dispatcher, final ThrowingRunnable<? extends Throwable> task) {
 		this(dispatcher, (ThrowingSupplier<O, ? extends Throwable>) () -> {
 			task.run();
 			return null;
 		}, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, ThrowingRunnable<? extends Throwable> task, int priority) {
+	public TaskFuture(final Dispatcher dispatcher, final ThrowingRunnable<? extends Throwable> task, final int priority) {
 		this(dispatcher, (ThrowingSupplier<O, ? extends Throwable>) () -> {
 			task.run();
 			return null;
@@ -127,11 +127,11 @@ public class TaskFuture<I, O> {
 //		this.priority = priority;
 //	}
 
-	public TaskFuture(Dispatcher dispatcher, Supplier<O> task) {
+	public TaskFuture(final Dispatcher dispatcher, final Supplier<O> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, Supplier<O> task, int priority) {
+	public TaskFuture(final Dispatcher dispatcher, final Supplier<O> task, final int priority) {
 		this.dispatcher = dispatcher;
 		this.task = (v) -> task.get();
 		this.priority = priority;
@@ -139,49 +139,68 @@ public class TaskFuture<I, O> {
 		this.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, Runnable task) {
+	public TaskFuture(final Dispatcher dispatcher, final Runnable task) {
 		this(dispatcher, (ThrowingSupplier<O, Throwable>) () -> {
 			task.run();
 			return null;
 		}, Dispatcher.DEFAULT_PRIORITY);
 	}
 
-	public TaskFuture(Dispatcher dispatcher, Runnable task, int priority) {
+	public TaskFuture(final Dispatcher dispatcher, final Runnable task, final int priority) {
 		this(dispatcher, (ThrowingSupplier<O, Throwable>) () -> {
 			task.run();
 			return null;
 		}, priority);
 	}
 
-	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, Function<O, N> function) {
-		return then(nextDispatcher, (ThrowingFunction<O, N, Throwable>) (i) -> function.apply(i), this.priority + 1);
+	public <N> TaskFuture<O, N> then(final Dispatcher nextDispatcher, final Supplier<N> function) {
+		return this.then(nextDispatcher, (ThrowingFunction<O, N, Throwable>) (i) -> function.get(), this.priority + 1);
 	}
 
-	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, ThrowingFunction<O, N, Throwable> function) {
-		return then(nextDispatcher, function, this.priority + 1);
+	public <N> TaskFuture<O, N> then(final Dispatcher nextDispatcher, final ThrowingSupplier<N, Throwable> function) {
+		return this.then(nextDispatcher, function, this.priority + 1);
 	}
 
-	public <N> TaskFuture<O, N> then(Dispatcher nextDispatcher, ThrowingFunction<O, N, Throwable> function, int priority) {
-		final TaskFuture<O, N> nextFuture = new TaskFuture<O, N>(nextDispatcher, function, priority);
+	public <N> TaskFuture<O, N> then(final Dispatcher nextDispatcher, final ThrowingSupplier<N, Throwable> function, final int priority) {
+		final TaskFuture<O, N> nextFuture = new TaskFuture<>(nextDispatcher, function, priority);
 		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
 	}
 
-	public <N> TaskFuture<O, Void> then(Dispatcher nextDispatcher, Consumer<O> function) {
-		return then(nextDispatcher, (ThrowingConsumer<O, Throwable>) (i) -> function.accept(i), this.priority + 1);
+	public <N> TaskFuture<O, N> then(final Dispatcher nextDispatcher, final Function<O, N> function) {
+		return this.then(nextDispatcher, (ThrowingFunction<O, N, Throwable>) (i) -> function.apply(i), this.priority + 1);
 	}
 
-	public <N> TaskFuture<O, Void> then(Dispatcher nextDispatcher, Consumer<O> function, int priority) {
-		return then(nextDispatcher, (ThrowingConsumer<O, Throwable>) (i) -> function.accept(i), priority);
+	public <N> TaskFuture<O, N> then(final Dispatcher nextDispatcher, final ThrowingFunction<O, N, Throwable> function) {
+		return this.then(nextDispatcher, function, this.priority + 1);
 	}
 
-	public TaskFuture<O, Void> then(Dispatcher nextDispatcher, ThrowingConsumer<O, Throwable> consumer) {
-		return then(nextDispatcher, consumer, this.priority + 1);
+	public <N> TaskFuture<O, N> then(
+			final Dispatcher nextDispatcher,
+			final ThrowingFunction<O, N, Throwable> function,
+			final int priority) {
+		final TaskFuture<O, N> nextFuture = new TaskFuture<>(nextDispatcher, function, priority);
+		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
+		nextFuture.first = this.first;
+		this.next = nextFuture;
+		return nextFuture;
 	}
 
-	public TaskFuture<O, Void> then(Dispatcher nextDispatcher, ThrowingConsumer<O, Throwable> consumer, int priority) {
+	public <N> TaskFuture<O, Void> then(final Dispatcher nextDispatcher, final Consumer<O> function) {
+		return this.then(nextDispatcher, (ThrowingConsumer<O, Throwable>) (i) -> function.accept(i), this.priority + 1);
+	}
+
+	public <N> TaskFuture<O, Void> then(final Dispatcher nextDispatcher, final Consumer<O> function, final int priority) {
+		return this.then(nextDispatcher, (ThrowingConsumer<O, Throwable>) (i) -> function.accept(i), priority);
+	}
+
+	public TaskFuture<O, Void> then(final Dispatcher nextDispatcher, final ThrowingConsumer<O, Throwable> consumer) {
+		return this.then(nextDispatcher, consumer, this.priority + 1);
+	}
+
+	public TaskFuture<O, Void> then(final Dispatcher nextDispatcher, final ThrowingConsumer<O, Throwable> consumer, final int priority) {
 		final TaskFuture<O, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
 			consumer.accept(v);
 			return null;
@@ -192,19 +211,22 @@ public class TaskFuture<I, O> {
 		return nextFuture;
 	}
 
-	public <P extends O> TaskFuture<P, Void> then(Dispatcher nextDispatcher, Runnable consumer) {
-		return then(nextDispatcher, (ThrowingRunnable<Throwable>) () -> consumer.run(), this.priority + 1);
+	public <P extends O> TaskFuture<P, Void> then(final Dispatcher nextDispatcher, final Runnable consumer) {
+		return this.then(nextDispatcher, (ThrowingRunnable<Throwable>) () -> consumer.run(), this.priority + 1);
 	}
 
-	public <P extends O> TaskFuture<P, Void> then(Dispatcher nextDispatcher, Runnable consumer, int priority) {
-		return then(nextDispatcher, (ThrowingRunnable<Throwable>) () -> consumer.run(), priority);
+	public <P extends O> TaskFuture<P, Void> then(final Dispatcher nextDispatcher, final Runnable consumer, final int priority) {
+		return this.then(nextDispatcher, (ThrowingRunnable<Throwable>) () -> consumer.run(), priority);
 	}
 
-	public <P extends O> TaskFuture<P, Void> then(Dispatcher nextDispatcher, ThrowingRunnable<Throwable> consumer) {
-		return then(nextDispatcher, consumer, this.priority + 1);
+	public <P extends O> TaskFuture<P, Void> then(final Dispatcher nextDispatcher, final ThrowingRunnable<Throwable> consumer) {
+		return this.then(nextDispatcher, consumer, this.priority + 1);
 	}
 
-	public <P extends O> TaskFuture<P, Void> then(Dispatcher nextDispatcher, ThrowingRunnable<Throwable> consumer, int priority) {
+	public <P extends O> TaskFuture<P, Void> then(
+			final Dispatcher nextDispatcher,
+			final ThrowingRunnable<Throwable> consumer,
+			final int priority) {
 		final TaskFuture<P, Void> nextFuture = new TaskFuture<>(nextDispatcher, (v) -> {
 			consumer.run();
 			return null;
@@ -215,11 +237,11 @@ public class TaskFuture<I, O> {
 		return nextFuture;
 	}
 
-	public <P extends O, N> TaskFuture<P, N> then(Dispatcher nextDispatcher, TaskFuture<P, N> nextFuture) {
-		return then(nextDispatcher, nextFuture, this.priority + 1);
+	public <P extends O, N> TaskFuture<P, N> then(final Dispatcher nextDispatcher, final TaskFuture<P, N> nextFuture) {
+		return this.then(nextDispatcher, nextFuture, this.priority + 1);
 	}
 
-	public <P extends O, N> TaskFuture<P, N> then(Dispatcher nextDispatcher, TaskFuture<P, N> nextFuture, int priority) {
+	public <P extends O, N> TaskFuture<P, N> then(final Dispatcher nextDispatcher, final TaskFuture<P, N> nextFuture, final int priority) {
 		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		nextFuture.dispatcher = nextDispatcher;
@@ -227,11 +249,11 @@ public class TaskFuture<I, O> {
 		return nextFuture;
 	}
 
-	public <T extends TaskFuture<P, N>, P extends O, N> T then(T nextFuture) {
-		return then(nextFuture, this.priority + 1);
+	public <T extends TaskFuture<P, N>, P extends O, N> T then(final T nextFuture) {
+		return this.then(nextFuture, this.priority + 1);
 	}
 
-	public <T extends TaskFuture<P, N>, P extends O, N> T then(T nextFuture, int priority) {
+	public <T extends TaskFuture<P, N>, P extends O, N> T then(final T nextFuture, final int priority) {
 		this.next = (TaskFuture<O, ?>) nextFuture.first;
 		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
@@ -239,28 +261,28 @@ public class TaskFuture<I, O> {
 	}
 
 	public TaskState<O> push() {
-		final TaskState<O> state = new TaskState<>(first);
+		final TaskState<O> state = new TaskState<>(this.first);
 		state.started.set(true);
-		first.pushInternal(null, state);
+		this.first.pushInternal(null, state);
 		return state;
 	}
 
 	@SuppressWarnings("unchecked")
-	private void pushInternal(Object v, TaskState state) {
-		dispatcher.post(() -> {
+	private void pushInternal(final Object v, final TaskState state) {
+		this.dispatcher.post(() -> {
 			state.ongoing.set(true);
 			O result = null;
 			try {
-				result = task.apply((I) v);
-				if (next != null) {
-					next.pushInternal(result, state);
+				result = this.task.apply((I) v);
+				if (this.next != null) {
+					this.next.pushInternal(result, state);
 				} else {
 					state.result = result;
 					state.done.set(true);
 					state.ongoing.set(false);
 				}
-			} catch (SkipThen st) {
-				TaskFuture<?, ?> current = next;
+			} catch (final SkipThen st) {
+				TaskFuture<?, ?> current = this.next;
 				int remaining = st.getCount();
 
 				while (current != null && remaining > 1) {
@@ -280,15 +302,15 @@ public class TaskFuture<I, O> {
 					state.done.set(true);
 					state.ongoing.set(false);
 				}
-			} catch (Throwable e) {
-				if (e instanceof YieldExecutionThrowable yield) {
+			} catch (final Throwable e) {
+				if (e instanceof final YieldExecutionThrowable yield) {
 					throw yield;
 				}
-				throw new RuntimeException(state.source + " > " + currentSource, e);
+				throw new RuntimeException(state.source + " > " + this.currentSource, e);
 			} finally {
 				state.ongoing.set(false);
 			}
-		}, priority, currentSource);
+		}, this.priority, this.currentSource);
 	}
 
 	private class ExecTaskState<V> {
@@ -299,21 +321,21 @@ public class TaskFuture<I, O> {
 
 	public O exec() {
 		final ExecTaskState<O> state = new ExecTaskState<>();
-		first.execInternal(null, state);
+		this.first.execInternal(null, state);
 		return state.result;
 	}
 
-	private void execInternal(Object v, ExecTaskState state) {
+	private void execInternal(final Object v, final ExecTaskState state) {
 		O result = null;
 		try {
-			result = task.apply((I) v);
-			if (next != null) {
-				next.execInternal(result, state);
+			result = this.task.apply((I) v);
+			if (this.next != null) {
+				this.next.execInternal(result, state);
 			} else {
 				state.result = result;
 			}
-		} catch (SkipThen st) {
-			TaskFuture<?, ?> current = next;
+		} catch (final SkipThen st) {
+			TaskFuture<?, ?> current = this.next;
 			int remaining = st.getCount();
 
 			while (current != null && remaining > 1) {
@@ -331,7 +353,7 @@ public class TaskFuture<I, O> {
 			} else {
 				state.result = st.getObj();
 			}
-		} catch (Throwable e) {
+		} catch (final Throwable e) {
 			throw new RuntimeException(e);
 		}
 	}

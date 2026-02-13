@@ -7,6 +7,8 @@ public interface FramebufferAttachment extends Cleanupable {
 	void bind(int id);
 
 	default void bindUniform(int loc, int i) {
+		if (loc == -1)
+			return;
 		bind(i);
 
 		GL_W.glUniform1i(loc, i);

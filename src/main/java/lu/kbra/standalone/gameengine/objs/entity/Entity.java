@@ -36,9 +36,6 @@ public class Entity implements SceneEntity, Cloneable {
 
 	@Override
 	public Entity clone() {
-		if(this instanceof DeepCloneable) {
-			
-		}
 		try {
 			final Entity e = (Entity) super.clone();
 			e.name = Long.toString(System.nanoTime() + PCUtils.randomIntRange(0, 10000));
