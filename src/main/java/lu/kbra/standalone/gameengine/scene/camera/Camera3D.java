@@ -63,6 +63,26 @@ public class Camera3D extends Camera {
 		return this;
 	}
 
+	public Camera3D positionSet(Vector3f position) {
+		this.position.set(position);
+		return this;
+	}
+
+	public Camera3D positionAdd(Vector3f position) {
+		this.position.add(position);
+		return this;
+	}
+
+	public Camera3D positionSet(float x, float y, float z) {
+		this.position.set(x, y, z);
+		return this;
+	}
+
+	public Camera3D positionAdd(float x, float y, float z) {
+		this.position.add(x, y, z);
+		return this;
+	}
+
 	@Deprecated
 	public Camera3D loadRotation() {
 		return loadRotation(viewMatrix);

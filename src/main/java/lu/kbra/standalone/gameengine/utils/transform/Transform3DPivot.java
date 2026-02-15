@@ -31,9 +31,21 @@ public class Transform3DPivot extends Transform3D {
 		updateMatrix();
 	}
 
+	public Transform3DPivot(Matrix4f matrix4f) {
+		super(matrix4f);
+
+		this.rotationPivot = new Vector3f(rotationPivot);
+		this.scalePivot = new Vector3f(scalePivot);
+	}
+
 	// rotation
 	public Transform3DPivot rotationPivotAdd(Vector3f p) {
 		rotationPivot.add(p);
+		return this;
+	}
+
+	public Transform3DPivot rotationPivotSub(Vector3f p) {
+		rotationPivot.sub(p);
 		return this;
 	}
 
@@ -49,6 +61,11 @@ public class Transform3DPivot extends Transform3D {
 
 	public Transform3DPivot rotationPivotAdd(float x, float y, float z) {
 		rotationPivot.add(x, y, z);
+		return this;
+	}
+
+	public Transform3DPivot rotationPivotSub(float x, float y, float z) {
+		rotationPivot.sub(x, y, z);
 		return this;
 	}
 
@@ -68,6 +85,11 @@ public class Transform3DPivot extends Transform3D {
 		return this;
 	}
 
+	public Transform3DPivot scalePivotSub(Vector3f p) {
+		scalePivot.sub(p);
+		return this;
+	}
+
 	public Transform3DPivot scalePivotMul(Vector3f p) {
 		scalePivot.mul(p);
 		return this;
@@ -80,6 +102,11 @@ public class Transform3DPivot extends Transform3D {
 
 	public Transform3DPivot scalePivotAdd(float x, float y, float z) {
 		scalePivot.add(x, y, z);
+		return this;
+	}
+
+	public Transform3DPivot scalePivotSub(float x, float y, float z) {
+		scalePivot.sub(x, y, z);
 		return this;
 	}
 
