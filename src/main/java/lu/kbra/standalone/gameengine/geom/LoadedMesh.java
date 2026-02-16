@@ -23,16 +23,6 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public class LoadedMesh extends AutoCleanupable implements Mesh {
 
-//	public static final String ATTRIB_VERTICES_NAME = "vertices";
-//	public static final String ATTRIB_INDICES_NAME = "ids";
-//	public static final String ATTRIB_NORMALS_NAME = "normals";
-//	public static final String ATTRIB_UVS_NAME = "uvs";
-//
-//	public static final int ATTRIB_VERTICES_ID = 0;
-//	public static final int ATTRIB_INDICES_ID = -1;
-//	public static final int ATTRIB_NORMALS_ID = 1;
-//	public static final int ATTRIB_UVS_ID = 2;
-
 	protected String name;
 	protected int vao = -1;
 	protected HashMap<Integer, Integer> vbo = new HashMap<>();
@@ -92,18 +82,18 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + this.name + " (" + this.vao + ")");
-
 		if (this.vao == -1) {
 			return;
 		}
+
+		GlobalLogger.log("Cleaning up: " + this.name + " (" + this.vao + ")");
 
 		GL_W.glDeleteVertexArrays(this.vao);
 		attribs.forEach(AttribArray::cleanup);
 		this.attribs = null;
 		this.vbo = null;
 		this.vao = -1;
-		
+
 		super.cleanup();
 	}
 

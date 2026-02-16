@@ -65,8 +65,7 @@ public class AudioMaster implements Cleanupable {
 		alContext = ALC10.alcCreateContext(device, (IntBuffer) null);
 		GameEngineUtils.checkAlcError(device);
 
-		useTLC = deviceCapabilities.ALC_EXT_thread_local_context
-				&& EXTThreadLocalContext.alcSetThreadContext(alContext);
+		useTLC = deviceCapabilities.ALC_EXT_thread_local_context && EXTThreadLocalContext.alcSetThreadContext(alContext);
 		if (!useTLC) {
 			if (!ALC11.alcMakeContextCurrent(alContext)) {
 				throw new RuntimeException("Could not set context as thread context.");
@@ -142,8 +141,7 @@ public class AudioMaster implements Cleanupable {
 
 	public void checkAccessThrow() {
 		if (!checkAccess()) {
-			throw new IllegalAccessError(
-					Thread.currentThread().getName() + " cannot access the audio context in " + getThreadName());
+			throw new IllegalAccessError(Thread.currentThread().getName() + " cannot access the audio context in " + getThreadName());
 		}
 	}
 
@@ -168,8 +166,7 @@ public class AudioMaster implements Cleanupable {
 	}
 
 	public String getDefaultDevice() {
-		return GameEngineUtils.alcNullError(
-				alcGetString(ALC11.ALC_DEFAULT_DEVICE_SPECIFIER, "Could not get default device."),
+		return GameEngineUtils.alcNullError(alcGetString(ALC11.ALC_DEFAULT_DEVICE_SPECIFIER, "Could not get default device."),
 				"Default device is null");
 	}
 
@@ -196,10 +193,11 @@ public class AudioMaster implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + getClass().getName() + " in " + thread.getName());
-
-		if (device == -1)
+		if (device == -1) {
 			return;
+		}
+
+		GlobalLogger.log("Cleaning up: " + getClass().getName() + " in " + thread.getName());
 
 		ALC10.alcDestroyContext(alContext);
 		alContext = -1;

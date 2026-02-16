@@ -142,9 +142,9 @@ public class GLESWindow extends Window {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + getClass().getName() + " (" + handle + ")");
-
 		if (capabilities != null) {
+			GlobalLogger.log("Cleaning up: " + getClass().getName() + " (" + handle + ")");
+
 			GLES.setCapabilities(null);
 			capabilities = null;
 		}
@@ -152,9 +152,9 @@ public class GLESWindow extends Window {
 
 	@Override
 	public void cleanupGLFW() {
-		GlobalLogger.log("Cleaning up GLFW: " + getClass().getName() + " (" + handle + ")");
-
 		if (handle != -1) {
+			GlobalLogger.log("Cleaning up GLFW: " + getClass().getName() + " (" + handle + ")");
+
 			if (!EGL10.eglTerminate(monitor)) {
 				GlobalLogger.severe("Could not terminate EGL context.");
 			}

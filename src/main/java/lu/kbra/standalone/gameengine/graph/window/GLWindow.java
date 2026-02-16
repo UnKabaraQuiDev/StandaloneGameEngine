@@ -87,17 +87,17 @@ public class GLWindow extends Window {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + getClass().getName() + " (" + handle + ")");
-
 		if (GL.getCapabilities() != null) {
+			GlobalLogger.log("Cleaning up: " + getClass().getName() + " (" + handle + ")");
+
 			GL.setCapabilities(null);
 		}
 	}
 
 	public void cleanupGLFW() {
-		GlobalLogger.log("Cleaning up: " + getClass().getName() + " (" + handle + ")");
-
 		if (handle != -1) {
+			GlobalLogger.log("Cleaning up: " + getClass().getName() + " (" + handle + ")");
+
 			Callbacks.glfwFreeCallbacks(handle);
 
 			if (errorCallback != null) {

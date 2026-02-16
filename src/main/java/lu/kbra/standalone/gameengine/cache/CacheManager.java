@@ -74,7 +74,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 		this.textures.values().forEach(Texture::cleanup);
 		this.textures.clear();
 
-		textEmitters.values().forEach(TextEmitter::cleanup);
+		this.textEmitters.values().forEach(TextEmitter::cleanup);
 		this.textEmitters.clear();
 
 		this.instanceEmitters.values().forEach(InstanceEmitter::cleanup);
@@ -86,7 +86,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 		this.framebuffers.values().forEach(Framebuffer::cleanup);
 		this.framebuffers.clear();
 
-		this.name = null;
+//		this.name = null;
 	}
 
 	@Override

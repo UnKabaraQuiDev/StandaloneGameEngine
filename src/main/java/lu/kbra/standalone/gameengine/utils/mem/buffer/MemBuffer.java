@@ -25,10 +25,11 @@ public class MemBuffer<T extends Buffer> implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		if (buffer == null)
+		if (buffer == null) {
 			return;
+		}
 
-		if (MemBufferOrigin.STBV.equals(origin)) {
+		if (MemBufferOrigin.STBV == origin) {
 			if (buffer instanceof ShortBuffer) {
 				LibCStdlib.free((ShortBuffer) buffer);
 			} else if (buffer instanceof ByteBuffer) {
@@ -43,18 +44,18 @@ public class MemBuffer<T extends Buffer> implements Cleanupable {
 				LibCStdlib.free((LongBuffer) buffer);
 			}
 			buffer = null;
-		} else if (MemBufferOrigin.OPENAL.equals(origin)) {
+		} else if (MemBufferOrigin.OPENAL == origin) {
 			MemoryUtil.memFree(buffer);
 			buffer = null;
 		}
 	}
 
 	public boolean isFromOAL() {
-		return MemBufferOrigin.OPENAL.equals(origin);
+		return MemBufferOrigin.OPENAL == origin;
 	}
 
 	public boolean isFromStbv() {
-		return MemBufferOrigin.STBV.equals(origin);
+		return MemBufferOrigin.STBV == origin;
 	}
 
 	public T getBuffer() {

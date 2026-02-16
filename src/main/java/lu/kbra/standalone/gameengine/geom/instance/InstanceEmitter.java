@@ -270,12 +270,11 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log();
-		GlobalLogger.log("Cleaning up: " + name);
-
 		if (instanceMesh == null) {
 			return;
 		}
+
+		GlobalLogger.log("Cleaning up: " + name);
 
 		Arrays.stream(this.instancesAttribs).forEach(AttribArray::cleanup);
 		this.instancesAttribs = null;

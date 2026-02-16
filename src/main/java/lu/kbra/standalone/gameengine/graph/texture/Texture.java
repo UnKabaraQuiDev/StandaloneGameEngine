@@ -92,10 +92,11 @@ public abstract class Texture extends AutoCleanupable implements Cleanupable, Un
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + name + " (" + glId + ")");
-
-		if (glId == -1)
+		if (glId == -1) {
 			return;
+		}
+
+		GlobalLogger.log("Cleaning up: " + name + " (" + glId + ")");
 
 		GL_W.glDeleteTextures(glId);
 		glId = -1;

@@ -134,10 +134,12 @@ public final class Framebuffer extends AutoCleanupable implements UniqueID, Clea
 
 	@Override
 	public void cleanup() {
+		if (this.fbo == -1) {
+			return;
+		}
+
 		GlobalLogger.log("Cleaning up: " + this.name + " (" + this.fbo + ")");
 
-		if (this.fbo == -1)
-			return;
 		GL_W.glDeleteFramebuffers(this.fbo);
 		this.fbo = -1;
 		super.cleanup();

@@ -161,11 +161,11 @@ public abstract class AttribArray extends AutoCleanupable implements Cleanupable
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + name + " (" + index + "=" + bid + ")");
-
 		if (bid == -1) {
 			return;
 		}
+
+		GlobalLogger.log("Cleaning up: " + name + " (" + index + "=" + bid + ")");
 
 		GL_W.glDeleteBuffers(bid);
 		bid = -1;

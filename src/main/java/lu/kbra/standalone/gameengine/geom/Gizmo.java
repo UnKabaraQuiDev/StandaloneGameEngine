@@ -84,10 +84,11 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + name + " (" + vao + ")");
-
-		if (vao == -1)
+		if (vao == -1) {
 			return;
+		}
+
+		GlobalLogger.log("Cleaning up: " + name + " (" + vao + ")");
 
 		GL_W.glDeleteVertexArrays(vao);
 		vbo = null;
@@ -137,7 +138,8 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 
 	public static Gizmo newRect(String name, Vector2f scale, Vector4f textBoxColor) {
 		return new Gizmo(name,
-				new Vec3fAttribArray("pos", 0,
+				new Vec3fAttribArray("pos",
+						0,
 						new Vector3f[] {
 								new Vector3f(0, 0, 0),
 								new Vector3f(scale.x, 0, 0),

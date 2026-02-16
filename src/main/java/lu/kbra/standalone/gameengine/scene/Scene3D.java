@@ -35,12 +35,8 @@ public class Scene3D implements Scene {
 
 	@Override
 	public void cleanup() {
-		name = null;
-		entities.values().forEach(v -> {
-			if (v instanceof Cleanupable c) {
-				c.cleanup();
-			}
-		});
+//		name = null;
+		entities.values().stream().filter(v -> v instanceof Cleanupable c).forEach(v -> ((Cleanupable) v).cleanup());
 		entities.clear();
 	}
 

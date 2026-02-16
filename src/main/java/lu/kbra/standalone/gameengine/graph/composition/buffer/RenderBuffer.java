@@ -95,10 +95,11 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + name + "(" + rbid + ")");
-
-		if (rbid == -1)
+		if (rbid == -1) {
 			return;
+		}
+
+		GlobalLogger.log("Cleaning up: " + name + "(" + rbid + ")");
 
 		GL_W.glDeleteRenderbuffers(rbid);
 		rbid = -1;

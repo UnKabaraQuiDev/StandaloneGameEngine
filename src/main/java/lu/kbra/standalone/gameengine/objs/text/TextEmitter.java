@@ -423,11 +423,11 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + name);
-
 		if (instances == null) {
 			return;
 		}
+
+		GlobalLogger.log("Cleaning up: " + name);
 
 		instances.cleanup();
 		instances = null;

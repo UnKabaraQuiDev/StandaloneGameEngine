@@ -105,10 +105,11 @@ public class Sound implements UniqueID, Cleanupable {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + name);
-
-		if (buffer == null)
+		if (buffer == null) {
 			return;
+		}
+		
+		GlobalLogger.log("Cleaning up: " + name);
 
 		buffer.cleanup();
 		buffer = null;

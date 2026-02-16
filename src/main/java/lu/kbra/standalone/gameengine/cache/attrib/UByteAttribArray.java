@@ -49,22 +49,28 @@ public class UByteAttribArray extends AttribArray implements ByteJavaTypeAttribA
 	}
 
 	public void update(byte[] nPos) {
+		if (nPos.length != data.length) {
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+		}
+
+		update(0, nPos);
+	}
+
+	public void update(int index, byte[] nPos) {
 		bind();
 
 		if (iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
-		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 		}
 
-		data = nPos;
+		System.arraycopy(nPos, 0, data, index, nPos.length);
 		super.length = data.length;
 
-		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(data.length);
-		bbuffer.put(data);
+		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(nPos.length);
+		bbuffer.put(nPos);
 		bbuffer.flip();
 
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, bbuffer);
+		GL_W.glBufferSubData(bufferType.getGlId(), index * getElementByteSize(), bbuffer);
 	}
 
 	public void resize(byte[] nPos) {

@@ -321,11 +321,11 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log();
-		GlobalLogger.warning("Cleaning up: " + name);
-
-		if (this.spid == -1)
+		if (this.spid == -1) {
 			return;
+		}
+
+		GlobalLogger.warning("Cleaning up: " + name);
 
 		this.parts.values().forEach(AbstractShaderPart::cleanup);
 		this.parts = null;

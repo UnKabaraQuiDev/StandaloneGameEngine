@@ -112,11 +112,11 @@ public abstract class AbstractShaderPart extends AutoCleanupable implements Uniq
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + this.file + " (" + this.sid + ")");
-
 		if (this.sid == -1) {
 			return;
 		}
+
+		GlobalLogger.log("Cleaning up: " + this.file + " (" + this.sid + ")");
 
 		GL_W.glDeleteShader(this.sid);
 		this.sid = -1;
