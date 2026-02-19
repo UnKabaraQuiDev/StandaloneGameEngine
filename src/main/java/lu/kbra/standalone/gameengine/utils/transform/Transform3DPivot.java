@@ -182,7 +182,7 @@ public class Transform3DPivot extends Transform3D {
 	}
 
 	@Override
-	public Transform clone() {
+	public Transform3DPivot clone() {
 		return new Transform3DPivot(translation.get(new Vector3f()),
 				rotation.get(new Quaternionf()),
 				scale.get(new Vector3f()),

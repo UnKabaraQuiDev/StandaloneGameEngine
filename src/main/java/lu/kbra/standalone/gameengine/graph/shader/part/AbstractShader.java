@@ -1,10 +1,10 @@
 package lu.kbra.standalone.gameengine.graph.shader.part;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.logging.Level;
 
 import org.joml.Matrix3fc;
@@ -43,9 +43,13 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 	protected final String name;
 	protected int spid = -1;
 	protected Map<Integer, AbstractShaderPart> parts;
+
 	// TODO: Remove properties
 	protected Map<String, Pair<Property<Object>, Integer>> uniforms = new HashMap<>();
-	protected List<String> knownNotExistsUniforms = new ArrayList<>();
+	protected Set<String> knownNotExistsUniforms = new HashSet<>();
+
+	private final Map<String, Integer> fragOutputs = new HashMap<>();
+	private final Set<String> knownNotExistsFragOutputs = new HashSet<>();
 
 	public AbstractShader(String name_, AbstractShaderPart... parts) {
 		this.name = name_ == null ? this.getClass().getName() : name_;
@@ -85,13 +89,17 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 
 	public boolean recompile() {
 		for (AbstractShaderPart part : parts.values()) {
-			if (!part.recompile())
+			if (!part.recompile()) {
 				return false;
+			}
 		}
 		GL_W.glLinkProgram(this.spid);
 
 		knownNotExistsUniforms.clear();
 		uniforms.clear();
+
+		knownNotExistsFragOutputs.clear();
+		fragOutputs.clear();
 
 		return true;
 	}
@@ -124,67 +132,67 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 
 	private void storeUniform(int unifLoc, Object value, String key) {
 		if (value instanceof Float val) {
-			GL_W.glUniform1f(unifLoc, val);
+			GL_W.glProgramUniform1f(spid, unifLoc, val);
 		} else if (value instanceof Vector2fc val) {
-			GL_W.glUniform2f(unifLoc, val.x(), val.y());
+			GL_W.glProgramUniform2f(spid, unifLoc, val.x(), val.y());
 		} else if (value instanceof Vector3fc val) {
-			GL_W.glUniform3f(unifLoc, val.x(), val.y(), val.z());
+			GL_W.glProgramUniform3f(spid, unifLoc, val.x(), val.y(), val.z());
 		} else if (value instanceof Vector4fc val) {
-			GL_W.glUniform4f(unifLoc, val.x(), val.y(), val.z(), val.w());
+			GL_W.glProgramUniform4f(spid, unifLoc, val.x(), val.y(), val.z(), val.w());
 		} else if (value instanceof Vector2fc[] val) {
-			GL_W.glUniform2fv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform2fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector3fc[] val) {
-			GL_W.glUniform3fv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform3fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector4fc[] val) {
-			GL_W.glUniform4fv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform4fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector2f[] val) {
-			GL_W.glUniform2fv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform2fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector3f[] val) {
-			GL_W.glUniform3fv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform3fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector4f[] val) {
-			GL_W.glUniform4fv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform4fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Integer val) {
-			GL_W.glUniform1i(unifLoc, val);
+			GL_W.glProgramUniform1i(spid, unifLoc, val);
 		} else if (value instanceof Vector2ic val) {
-			GL_W.glUniform2i(unifLoc, val.x(), val.y());
+			GL_W.glProgramUniform2i(spid, unifLoc, val.x(), val.y());
 		} else if (value instanceof Vector3ic val) {
-			GL_W.glUniform3i(unifLoc, val.x(), val.y(), val.z());
+			GL_W.glProgramUniform3i(spid, unifLoc, val.x(), val.y(), val.z());
 		} else if (value instanceof Vector4ic val) {
-			GL_W.glUniform4i(unifLoc, val.x(), val.y(), val.z(), val.w());
+			GL_W.glProgramUniform4i(spid, unifLoc, val.x(), val.y(), val.z(), val.w());
 		} else if (value instanceof Vector2ic[] val) {
-			GL_W.glUniform2iv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform2iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector3ic[] val) {
-			GL_W.glUniform3iv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform3iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector4ic[] val) {
-			GL_W.glUniform4iv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform4iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector2i[] val) {
-			GL_W.glUniform2iv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform2iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector3i[] val) {
-			GL_W.glUniform3iv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform3iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector4i[] val) {
-			GL_W.glUniform4iv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform4iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Matrix4fc val) {
 			try (MemoryStack stack = MemoryStack.stackPush()) {
-				GL_W.glUniformMatrix4fv(unifLoc, false, val.get(stack.mallocFloat(16)));
+				GL_W.glProgramUniformMatrix4fv(spid, unifLoc, false, val.get(stack.mallocFloat(16)));
 			}
 		} else if (value instanceof Matrix3fc val) {
 			try (MemoryStack stack = MemoryStack.stackPush()) {
-				GL_W.glUniformMatrix3fv(unifLoc, false, val.get(stack.mallocFloat(9)));
+				GL_W.glProgramUniformMatrix3fv(spid, unifLoc, false, val.get(stack.mallocFloat(9)));
 			}
 		} else if (value instanceof Matrix3x2fc val) {
 			try (MemoryStack stack = MemoryStack.stackPush()) {
-				GL_W.glUniformMatrix3x2fv(unifLoc, false, val.get(stack.mallocFloat(6)));
+				GL_W.glProgramUniformMatrix3x2fv(spid, unifLoc, false, val.get(stack.mallocFloat(6)));
 			}
 		} else if (value instanceof Boolean val) {
-			GL_W.glUniform1i(unifLoc, val ? 1 : 0);
+			GL_W.glProgramUniform1i(spid, unifLoc, val ? 1 : 0);
 		} else if (value instanceof int[] ints) {
-			GL_W.glUniform1iv(unifLoc, ints);
+			GL_W.glProgramUniform1iv(spid, unifLoc, ints);
 		} else if (value instanceof Integer[] ints) {
-			GL_W.glUniform1iv(unifLoc, PCUtils.toPrimitiveInt(ints));
+			GL_W.glProgramUniform1iv(spid, unifLoc, PCUtils.toPrimitiveInt(ints));
 		} else if (value instanceof float[] floats) {
-			GL_W.glUniform1fv(unifLoc, floats);
+			GL_W.glProgramUniform1fv(spid, unifLoc, floats);
 		} else if (value instanceof Float[] floats) {
-			GL_W.glUniform1fv(unifLoc, PCUtils.toPrimitiveFloat(floats));
+			GL_W.glProgramUniform1fv(spid, unifLoc, PCUtils.toPrimitiveFloat(floats));
 		} else if (value instanceof Double val) {
 			throw new UnsupportedOperationException("Double not supported.");
 		} else if (value instanceof Character val) {
@@ -220,27 +228,27 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 
 	private void storeUniformUnsigned(int unifLoc, Object value, String key) {
 		if (value instanceof Integer val) {
-			GL_W.glUniform1ui(unifLoc, val);
+			GL_W.glProgramUniform1ui(spid, unifLoc, val);
 		} else if (value instanceof Vector2ic val) {
-			GL_W.glUniform2ui(unifLoc, val.x(), val.y());
+			GL_W.glProgramUniform2ui(spid, unifLoc, val.x(), val.y());
 		} else if (value instanceof Vector3ic val) {
-			GL_W.glUniform3ui(unifLoc, val.x(), val.y(), val.z());
+			GL_W.glProgramUniform3ui(spid, unifLoc, val.x(), val.y(), val.z());
 		} else if (value instanceof Vector4ic val) {
-			GL_W.glUniform4ui(unifLoc, val.x(), val.y(), val.z(), val.w());
+			GL_W.glProgramUniform4ui(spid, unifLoc, val.x(), val.y(), val.z(), val.w());
 		} else if (value instanceof Vector2ic[] val) {
-			GL_W.glUniform2uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform2uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector3ic[] val) {
-			GL_W.glUniform3uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform3uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector4ic[] val) {
-			GL_W.glUniform4uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform4uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector2i[] val) {
-			GL_W.glUniform2uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform2uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector3i[] val) {
-			GL_W.glUniform3uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform3uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Vector4i[] val) {
-			GL_W.glUniform4uiv(unifLoc, GameEngineUtils.toFlatArray(val));
+			GL_W.glProgramUniform4uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
 		} else if (value instanceof Boolean val) {
-			GL_W.glUniform1ui(unifLoc, val ? 1 : 0);
+			GL_W.glProgramUniform1ui(spid, unifLoc, val ? 1 : 0);
 		} else {
 			throw new UnsupportedOperationException(value.getClass().getName() + " not supported.");
 		}
@@ -307,6 +315,43 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 		}
 	}
 
+	public int getFragDataLocation(String name) {
+		if (!createFragDataOutput(name)) {
+			return -1;
+		}
+
+		return fragOutputs.get(name);
+	}
+
+	public boolean createFragDataOutput(String name) {
+		if (knownNotExistsFragOutputs.contains(name)) {
+			return false;
+		}
+
+		if (fragOutputs.containsKey(name)) {
+			return true;
+		}
+
+		Objects.requireNonNull(name, "Name cannot be null.");
+
+		final int loc = GL_W.glGetFragDataLocation(this.spid, name);
+
+		if (loc != -1) {
+			fragOutputs.put(name, loc);
+			return true;
+		} else {
+			GlobalLogger.log(Level.WARNING,
+					"Could not get FragData location for: " + name + " in program " + this.name + " (" + this.spid + ") ("
+							+ GL_W.glGetError() + ")");
+			knownNotExistsFragOutputs.add(name);
+			return false;
+		}
+	}
+
+	public boolean hasFragDataOutput(String name) {
+		return this.fragOutputs.containsKey(name);
+	}
+
 	public void bind() {
 		if (this.spid == -1) {
 			GlobalLogger.warning("Shader program is invalid (" + name + ").");
@@ -356,6 +401,12 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 
 	public Map<String, Pair<Property<Object>, Integer>> getUniforms() {
 		return uniforms;
+	}
+
+	@Override
+	public String toString() {
+		return "AbstractShader@" + System.identityHashCode(this) + " [name=" + name + ", spid=" + spid + ", parts=" + parts + ", uniforms="
+				+ uniforms + ", knownNotExistsUniforms=" + knownNotExistsUniforms + ", cleanable=" + cleanable + "]";
 	}
 
 }

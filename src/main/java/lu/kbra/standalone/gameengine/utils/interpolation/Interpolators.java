@@ -4,6 +4,26 @@ import org.joml.Math;
 
 public enum Interpolators implements Interpolator {
 
+	ZIGZAG {
+		public float p = 1;
+
+		@Override
+		public float evaluate(float x) {
+			// to check
+			return x % 2 * p < p ? x % p : p - x % p;
+		}
+
+		@Override
+		public float inverse(float y) {
+			return super.inverse(y);
+		}
+
+		@Override
+		public boolean hasInverse() {
+			return true;
+		}
+	},
+
 	LINEAR {
 		@Override
 		public float evaluate(float x) {
@@ -276,7 +296,7 @@ public enum Interpolators implements Interpolator {
 
 			return (float) (Math.sqrt((y - 0.984375f) / 7.5625f) + 2.625f / 2.75f);
 		}
-		
+
 		@Override
 		public boolean hasInverse() {
 			return true;

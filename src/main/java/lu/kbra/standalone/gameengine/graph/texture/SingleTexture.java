@@ -20,73 +20,76 @@ import lu.kbra.standalone.gameengine.utils.mem.img.MemImageOrigin;
 
 public class SingleTexture extends Texture {
 
-	private int width, height, depth;
-	private MemImage buffer;
+	protected int width;
+	protected int height;
+	protected int depth;
+	protected MemImage buffer;
 
 	// GEN
-	public SingleTexture(String name, int width, int height) {
+	public SingleTexture(final String name, final int width, final int height) {
 		this(name, width, height, 0);
-		setTextureType(TextureType.TXT2D);
+		this.setTextureType(TextureType.TXT2D);
 	}
 
-	public SingleTexture(String string, Vector2i res) {
+	public SingleTexture(final String string, final Vector2i res) {
 		this(string, res.x, res.y);
 	}
 
 	/**
 	 * GEN
 	 */
-	public SingleTexture(String name, int width, int height, int depth) {
+	public SingleTexture(final String name, final int width, final int height, final int depth) {
 		super(name, name, TextureOperation.GENERATE);
-		setSize(width, height, depth);
-		setTextureType(TextureType.TXT3D);
+		this.setSize(width, height, depth);
+		this.setTextureType(TextureType.TXT3D);
 	}
 
-	public SingleTexture(String string, Vector3i res) {
+	public SingleTexture(final String string, final Vector3i res) {
 		this(string, res.x, res.y, res.z);
 	}
 
 	// BUFFER LOAD
-	public SingleTexture(String name, MemImage buffer) {
+	public SingleTexture(final String name, final MemImage buffer) {
 		this(name, buffer.getWidth(), buffer.getHeight(), 0, buffer);
-		setTextureType(TextureType.TXT2D);
+		this.setTextureType(TextureType.TXT2D);
 	}
 
-	public SingleTexture(String name, int width, int height, MemImage buffer) {
+	public SingleTexture(final String name, final int width, final int height, final MemImage buffer) {
 		this(name, width, height, 0, buffer);
-		setTextureType(TextureType.TXT2D);
+		this.setTextureType(TextureType.TXT2D);
 	}
 
 	/**
 	 * BUFFER LOAD
 	 */
-	public SingleTexture(String name, int width, int height, int depth, MemImage buffer) {
+	public SingleTexture(final String name, final int width, final int height, final int depth, final MemImage buffer) {
 		super(name, name, TextureOperation.BUFFER_LOAD);
 		this.buffer = buffer;
-		setSize(width, height, depth);
-		setTextureType(TextureType.TXT3D);
+		this.setSize(width, height, depth);
+		this.setTextureType(TextureType.TXT3D);
 	}
 
 	/**
 	 * FILE BUFFER LOAD
 	 */
-	public SingleTexture(String name, String path) {
+	public SingleTexture(final String name, final String path) {
 		super(name, path, TextureOperation.FILE_BUFFER_LOAD);
 	}
 
 	/**
 	 * FILE BUFFER LOAD
 	 */
-	public SingleTexture(String name, File path) {
+	public SingleTexture(final String name, final File path) {
 		super(name, path.getAbsolutePath(), TextureOperation.FILE_BUFFER_LOAD);
 	}
 
 	@Override
 	public boolean checkConfigErrors() {
 		// Invalid value (glTexImage2DMultisample)
-		if ((width > MAX_TEXTURE_SIZE || width < 0) || (height > MAX_TEXTURE_SIZE || height < 0)
-				|| (depth > MAX_TEXTURE_SIZE || depth < 0)) {
-			GameEngineUtils.throwGLESError("Invalid texture size: " + width + "x" + height + "x" + depth + ", max is " + MAX_TEXTURE_SIZE);
+		if ((this.width > MAX_TEXTURE_SIZE || this.width < 0) || (this.height > MAX_TEXTURE_SIZE || this.height < 0)
+				|| (this.depth > MAX_TEXTURE_SIZE || this.depth < 0)) {
+			GameEngineUtils.throwGLESError(
+					"Invalid texture size: " + this.width + "x" + this.height + "x" + this.depth + ", max is " + MAX_TEXTURE_SIZE);
 		}
 
 		return true;
@@ -94,225 +97,221 @@ public class SingleTexture extends Texture {
 
 	@Override
 	public boolean setup() {
-		if (isValid()) {
+		if (this.isValid()) {
 			throw new RuntimeException("Cannot setup already loaded Single Texture.");
 		}
 
-		checkConfigErrors();
+		this.checkConfigErrors();
 
-		if (TextureOperation.GENERATE.equals(textureOperation)) {
-			generateTexture();
-		} else if (TextureOperation.BUFFER_LOAD.equals(textureOperation)) {
-			generateBufferTexture();
-		} else if (TextureOperation.FILE_BUFFER_LOAD.equals(textureOperation)) {
-			generateFileBufferTexture();
+		if (TextureOperation.GENERATE.equals(this.textureOperation)) {
+			this.generateTexture();
+		} else if (TextureOperation.BUFFER_LOAD.equals(this.textureOperation)) {
+			this.generateBufferTexture();
+		} else if (TextureOperation.FILE_BUFFER_LOAD.equals(this.textureOperation)) {
+			this.generateFileBufferTexture();
 		}
 
-		return isValid();
+		return this.isValid();
 	}
 
 	// FILE BUFFER LOAD
 	private void generateFileBufferTexture() {
-		buffer = FileUtils.STBILoad(path);
+		this.buffer = FileUtils.STBILoad(this.path);
 
-		final int wi = buffer.getWidth();
-		final int he = buffer.getHeight();
-		final int channels = buffer.getChannels();
+		final int wi = this.buffer.getWidth();
+		final int he = this.buffer.getHeight();
+		final int channels = this.buffer.getChannels();
 
-		format = getFormatByChannels(channels);
-		internalFormat = getInternalFormatByChannels(channels);
-		if (format == null || internalFormat == null)
+		this.format = getFormatByChannels(channels);
+		this.internalFormat = getInternalFormatByChannels(channels);
+		if (this.format == null || this.internalFormat == null)
 			throw new RuntimeException(
-					"Invalid channel count: " + channels + " to format:" + format + " & internalFormat:" + internalFormat);
+					"Invalid channel count: " + channels + " to format:" + this.format + " & internalFormat:" + this.internalFormat);
 
-		if (buffer.isFromJVM()) {
+		if (this.buffer.isFromJVM()) {
 			throw new RuntimeException("Buffer is from memory.");
 		}
 
-		setSize(wi, he, 0);
-		setTextureType(TextureType.TXT2D);
-		setMemImage(buffer);
+		this.setSize(wi, he, 0);
+		this.setTextureType(TextureType.TXT2D);
+		this.setMemImage(this.buffer);
 
-		generateBufferTexture();
+		this.generateBufferTexture();
 
-		buffer.cleanup();
+		this.buffer.cleanup();
 	}
 
 	// BUFFER LOAD
 	private void generateBufferTexture() {
-		gen();
-		bind();
+		this.gen();
+		this.bind();
 
-		width = buffer.getWidth();
-		height = buffer.getHeight();
-		final int channels = buffer.getChannels();
+		this.width = this.buffer.getWidth();
+		this.height = this.buffer.getHeight();
+		final int channels = this.buffer.getChannels();
 
-		format = getFormatByChannels(channels);
-		internalFormat = getInternalFormatByChannels(channels);
-		if (format == null || internalFormat == null) {
+		this.format = getFormatByChannels(channels);
+		this.internalFormat = getInternalFormatByChannels(channels);
+		if (this.format == null || this.internalFormat == null) {
 			throw new RuntimeException(
-					"Invalid channel count: " + channels + " to format:" + format + " & internalFormat:" + internalFormat);
+					"Invalid channel count: " + channels + " to format:" + this.format + " & internalFormat:" + this.internalFormat);
 		}
 
-		if (buffer.isFromJVM()) {
+		if (this.buffer.isFromJVM()) {
 			throw new RuntimeException("Buffer is from memory.");
 		}
 
 		GL_W.glPixelStorei(GL_W.GL_UNPACK_ALIGNMENT, 1);
-		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
-			GL_W
-					.glTexImage2D(txtType.getGlId(),
-							0,
-							internalFormat.getGlId(),
-							width,
-							height,
-							0,
-							format.getGlId(),
-							dataType.getGlId(),
-							buffer.getBuffer());
-		} else if (TextureType.TXT3D.equals(txtType)) {
-			GL_W
-					.glTexImage3D(txtType.getGlId(),
-							0,
-							internalFormat.getGlId(),
-							width,
-							height,
-							depth,
-							0,
-							format.getGlId(),
-							dataType.getGlId(),
-							buffer.getBuffer());
+		if (TextureType.TXT2D == this.txtType || TextureType.ARRAY2D == this.txtType) {
+			GL_W.glTexImage2D(this.txtType.getGlId(),
+					0,
+					this.internalFormat.getGlId(),
+					this.width,
+					this.height,
+					0,
+					this.format.getGlId(),
+					this.dataType.getGlId(),
+					this.buffer.getBuffer());
+		} else if (TextureType.TXT3D == this.txtType) {
+			GL_W.glTexImage3D(this.txtType.getGlId(),
+					0,
+					this.internalFormat.getGlId(),
+					this.width,
+					this.height,
+					this.depth,
+					0,
+					this.format.getGlId(),
+					this.dataType.getGlId(),
+					this.buffer.getBuffer());
 		}
-		applyFilter();
-		applyWrap();
+		this.applyFilter();
+		this.applyWrap();
 
-		if (generateMipmaps) {
-			genMipMaps();
+		if (this.generateMipmaps) {
+			this.genMipMaps();
 		}
 
-		unbind();
+		this.unbind();
 	}
 
 	// GEN
 	private void generateTexture() {
-		gen();
-		bind();
+		this.gen();
+		this.bind();
 
-		resize();
-		applyFilter();
-		applyWrap();
+		this.resize();
+		this.applyFilter();
+		this.applyWrap();
 
-		if (generateMipmaps) {
-			GL_W.glGenerateMipmap(txtType.getGlId());
+		if (this.generateMipmaps) {
+			GL_W.glGenerateMipmap(this.txtType.getGlId());
 		}
 
-		unbind();
+		this.unbind();
 	}
 
 	public void resize() {
-		if (TextureType.TXT2D.equals(txtType) || TextureType.ARRAY2D.equals(txtType)) {
-			GL_W
-					.glTexImage2D(txtType.getGlId(),
-							0,
-							internalFormat.getGlId(),
-							width,
-							height,
-							0,
-							format.getGlId(),
-							dataType.getGlId(),
-							MemoryUtil.NULL);
-		} else if (TextureType.TXT3D.equals(txtType)) {
-			GL_W
-					.glTexImage3D(txtType.getGlId(),
-							0,
-							internalFormat.getGlId(),
-							width,
-							height,
-							depth,
-							0,
-							format.getGlId(),
-							dataType.getGlId(),
-							MemoryUtil.NULL);
+		if (TextureType.TXT2D == this.txtType || TextureType.ARRAY2D == this.txtType) {
+			GL_W.glTexImage2D(this.txtType.getGlId(),
+					0,
+					this.internalFormat.getGlId(),
+					this.width,
+					this.height,
+					0,
+					this.format.getGlId(),
+					this.dataType.getGlId(),
+					MemoryUtil.NULL);
+		} else if (TextureType.TXT3D == this.txtType) {
+			GL_W.glTexImage3D(this.txtType.getGlId(),
+					0,
+					this.internalFormat.getGlId(),
+					this.width,
+					this.height,
+					this.depth,
+					0,
+					this.format.getGlId(),
+					this.dataType.getGlId(),
+					MemoryUtil.NULL);
 		}
 	}
 
 	public MemImage getStoredImage() {
-		bind();
+		this.bind();
 
-		int channelCount = getChannelsByFormat(format.getGlId());
-		final ByteBuffer buffer = MemoryUtil.memAlloc(width * height * channelCount);
+		final int channelCount = getChannelsByFormat(this.format.getGlId());
+		final ByteBuffer buffer = MemoryUtil.memAlloc(this.width * this.height * channelCount * dataType.getByteSize());
 		GL_W.glPixelStorei(GL_W.GL_PACK_ALIGNMENT, 1);
-		GL_W.glGetTexImage(txtType.getGlId(), 0, format.getGlId(), dataType.getGlId(), buffer);
+		GL_W.glGetTexImage(this.txtType.getGlId(), 0, this.format.getGlId(), this.dataType.getGlId(), buffer);
 //		GL_W.glFlush();
 		GL_W.glFinish();
 
-		unbind();
+		this.unbind();
 
-		return new MemImage(width, height, channelCount, buffer, MemImageOrigin.OPENGL);
+		return new MemImage(this.width, this.height, channelCount, buffer, MemImageOrigin.OPENGL);
 	}
 
-	public void setSize(int width) {
-		setSize(width, 0, 0);
+	public void setSize(final int width) {
+		this.setSize(width, 0, 0);
 	}
 
-	public void setSize(int width, int height) {
-		setSize(width, height, 0);
+	public void setSize(final int width, final int height) {
+		this.setSize(width, height, 0);
 	}
 
-	public void setSize(int width, int height, int depth) {
+	public void setSize(final int width, final int height, final int depth) {
 		this.width = width;
 		this.height = height;
 		this.depth = depth;
 	}
 
-	public void setSize(Vector2i resolution) {
-		setSize(resolution.x, resolution.y, 0);
+	public void setSize(final Vector2i resolution) {
+		this.setSize(resolution.x, resolution.y, 0);
 	}
 
-	public void setSize(Vector3i resolution) {
-		setSize(resolution.x, resolution.y, resolution.z);
+	public void setSize(final Vector3i resolution) {
+		this.setSize(resolution.x, resolution.y, resolution.z);
 	}
 
 	public MemImage getMemImage() {
-		return buffer;
+		return this.buffer;
 	}
 
-	public void setMemImage(MemImage buffer) {
+	public void setMemImage(final MemImage buffer) {
 		this.buffer = buffer;
 	}
 
 	public void destroyBuffer() {
-		buffer = null;
+		this.buffer = null;
 	}
 
 	public Vector2i getSize2D() {
-		return new Vector2i(width, height);
+		return new Vector2i(this.width, this.height);
 	}
 
 	public Vector2f getNormalizedSize2D() {
-		return new Vector2f(getSize2D()).div(Math.max(width, height));
+		return new Vector2f(this.getSize2D()).div(Math.max(this.width, this.height));
 	}
 
 	public int getWidth() {
-		return width;
+		return this.width;
 	}
 
 	public int getHeight() {
-		return height;
+		return this.height;
 	}
 
 	public int getDepth() {
-		return depth;
+		return this.depth;
 	}
 
 	public static SingleTexture loadSingleTexture(
-			CacheManager cache,
-			String name,
-			String path,
-			TextureFilter filter,
-			TextureType type,
-			TextureWrap wrap) {
-		SingleTexture texture = new SingleTexture(name, path);
+			final CacheManager cache,
+			final String name,
+			final String path,
+			final TextureFilter filter,
+			final TextureType type,
+			final TextureWrap wrap) {
+		final SingleTexture texture = new SingleTexture(name, path);
 		texture.setFilters(filter);
 		texture.setTextureType(type);
 		texture.setWraps(wrap);
@@ -321,8 +320,13 @@ public class SingleTexture extends Texture {
 		return texture;
 	}
 
-	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter, TextureType type) {
-		SingleTexture texture = new SingleTexture(name, path);
+	public static SingleTexture loadSingleTexture(
+			final CacheManager cache,
+			final String name,
+			final String path,
+			final TextureFilter filter,
+			final TextureType type) {
+		final SingleTexture texture = new SingleTexture(name, path);
 		texture.setFilters(filter);
 		texture.setTextureType(type);
 		texture.setup();
@@ -330,23 +334,27 @@ public class SingleTexture extends Texture {
 		return texture;
 	}
 
-	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path, TextureFilter filter) {
-		SingleTexture texture = new SingleTexture(name, path);
+	public static SingleTexture loadSingleTexture(
+			final CacheManager cache,
+			final String name,
+			final String path,
+			final TextureFilter filter) {
+		final SingleTexture texture = new SingleTexture(name, path);
 		texture.setFilters(filter);
 		texture.setup();
 		cache.addTexture(texture);
 		return texture;
 	}
 
-	public static SingleTexture loadSingleTexture(CacheManager cache, String name, String path) {
-		SingleTexture texture = new SingleTexture(name, path);
+	public static SingleTexture loadSingleTexture(final CacheManager cache, final String name, final String path) {
+		final SingleTexture texture = new SingleTexture(name, path);
 		texture.setup();
 		cache.addTexture(texture);
 		return texture;
 	}
 
-	public static SingleTexture loadSingleTexture(CacheManager cache, String path) {
-		SingleTexture texture = new SingleTexture(path, path);
+	public static SingleTexture loadSingleTexture(final CacheManager cache, final String path) {
+		final SingleTexture texture = new SingleTexture(path, path);
 		texture.setup();
 		cache.addTexture(texture);
 		return texture;
@@ -354,12 +362,12 @@ public class SingleTexture extends Texture {
 
 	@Override
 	public String toString() {
-		return "SingleTexture [width=" + width + ", height=" + height + ", depth=" + depth + ", buffer=" + buffer + ", path=" + path
-				+ ", name=" + name + ", tid=" + glId + ", minFilter=" + minFilter + ", magFilter=" + magFilter + ", txtType=" + txtType
-				+ ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap + ", dataType=" + dataType + ", format=" + format
-				+ ", internalFormat=" + internalFormat + ", generateMipmaps=" + generateMipmaps + ", fixedSampleLocation="
-				+ fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation=" + textureOperation + ", isValid()="
-				+ isValid() + "]";
+		return "SingleTexture [width=" + this.width + ", height=" + this.height + ", depth=" + this.depth + ", buffer=" + this.buffer
+				+ ", path=" + this.path + ", name=" + this.name + ", tid=" + this.glId + ", minFilter=" + this.minFilter + ", magFilter="
+				+ this.magFilter + ", txtType=" + this.txtType + ", hWrap=" + this.hWrap + ", vWrap=" + this.vWrap + ", dWrap=" + this.dWrap
+				+ ", dataType=" + this.dataType + ", format=" + this.format + ", internalFormat=" + this.internalFormat
+				+ ", generateMipmaps=" + this.generateMipmaps + ", fixedSampleLocation=" + this.fixedSampleLocation + ", sampleCount="
+				+ this.sampleCount + ", textureOperation=" + this.textureOperation + ", isValid()=" + this.isValid() + "]";
 	}
 
 }

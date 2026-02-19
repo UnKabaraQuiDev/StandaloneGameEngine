@@ -1,6 +1,8 @@
 package lu.kbra.standalone.gameengine.graph.composition.buffer;
 
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import org.joml.Vector2i;
@@ -8,6 +10,7 @@ import org.joml.Vector2i;
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.texture.SingleTexture;
+import lu.kbra.standalone.gameengine.graph.texture.Texture;
 import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
@@ -49,10 +52,12 @@ public final class Framebuffer extends AutoCleanupable implements UniqueID, Clea
 			throw new IllegalStateException("TextureType is null");
 		}
 
-		if (TextureType.TXT2D.equals(txtType)) {
+		if (TextureType.TXT1D == txtType) {
+			GL_W.glFramebufferTexture1D(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, txtType.getGlId(), texture.getGlId(), 0);
+		} else if (TextureType.TXT2D == txtType) {
 			GL_W.glFramebufferTexture2D(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, txtType.getGlId(), texture.getGlId(), 0);
-		} else if (TextureType.TXT3D.equals(txtType)) {
-			GameEngineUtils.throwGLESError("Cannot attach TXT3D to Framebuffer");
+		} else if (TextureType.TXT3D == txtType) {
+			GameEngineUtils.throwGLError("Cannot attach TXT3D to Framebuffer");
 		}
 
 		this.attachments.put(attach.getGlId() + offset, texture);
@@ -66,7 +71,6 @@ public final class Framebuffer extends AutoCleanupable implements UniqueID, Clea
 	public boolean attachRenderBuffer(final FrameBufferAttachment attach, final int offset, final RenderBuffer texture) {
 		GL_W.glFramebufferRenderbuffer(GL_W.GL_FRAMEBUFFER, attach.getGlId() + offset, GL_W.GL_RENDERBUFFER, texture.getRbid());
 		this.attachments.put(attach.getGlId() + offset, texture);
-		assert GL_W.checkError("FrameBufferRenderbuffer[" + attach + "+" + offset + "][" + this.name + "]=" + texture.getId());
 		return true;
 	}
 
@@ -76,7 +80,11 @@ public final class Framebuffer extends AutoCleanupable implements UniqueID, Clea
 
 	public boolean clearAttachments() {
 		for (final Entry<Integer, FramebufferAttachment> it : this.attachments.entrySet()) {
-			GameEngineUtils.throwGLESError("Cannot clear attachments from Framebuffer");
+			if (it.getValue() instanceof Texture txt) {
+				GL_W.glFramebufferTexture2D(GL_W.GL_FRAMEBUFFER, it.getKey(), txt.getTextureType().getGlId(), 0, 0);
+			} else if (it.getValue() instanceof RenderBuffer rb) {
+				GL_W.glFramebufferTexture2D(GL_W.GL_FRAMEBUFFER, it.getKey(), GL_W.GL_RENDERBUFFER, 0, 0);
+			}
 		}
 		this.attachments.clear();
 		return true;
@@ -99,8 +107,9 @@ public final class Framebuffer extends AutoCleanupable implements UniqueID, Clea
 				.stream()
 				.filter(e -> e.getKey() >= FrameBufferAttachment.COLOR_FIRST.getGlId()
 						&& e.getKey() <= FrameBufferAttachment.COLOR_LAST.getGlId())
-				.sorted((a, b) -> a.getKey() - b.getKey())
-				.mapToInt(a -> a.getKey())
+//				.sorted(Comparator.comparingInt(Map.Entry::getKey))
+				.mapToInt(Map.Entry::getKey)
+				.sorted()
 				.toArray();
 		GL_W.glDrawBuffers(bfs);
 		if (!this.isComplete()) {

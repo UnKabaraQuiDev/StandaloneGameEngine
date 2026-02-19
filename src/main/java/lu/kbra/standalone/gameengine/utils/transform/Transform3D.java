@@ -340,8 +340,15 @@ public class Transform3D extends Transform {
 		return scale;
 	}
 
+	public Transform3D set(Transform3D last) {
+		this.translation.set(last.translation);
+		this.scale.set(last.scale);
+		this.rotation.set(last.rotation);
+		return this;
+	}
+
 	@Override
-	public Transform clone() {
+	public Transform3D clone() {
 		return new Transform3D(translation.get(new Vector3f()), rotation.get(new Quaternionf()), scale.get(new Vector3f()));
 	}
 

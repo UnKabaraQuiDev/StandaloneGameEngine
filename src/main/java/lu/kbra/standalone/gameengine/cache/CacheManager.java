@@ -4,6 +4,7 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 
 import lu.kbra.pclib.PCUtils;
@@ -193,6 +194,10 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public <T extends AbstractShader> T getAbstractShader(Class<T> clazz) {
 		return (T) getAbstractShader(clazz.getName());
+	}
+
+	public <T extends AbstractShader> T getAbstractShader(Class<T> clazz, Supplier<T> supp) {
+		return (T) abstractShaders.computeIfAbsent(clazz.getName(), (k) -> supp.get());
 	}
 
 	public Texture getTexture(String name) {

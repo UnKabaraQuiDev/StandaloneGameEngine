@@ -146,7 +146,7 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 	}
 
 	@Override
-	public Transform clone() {
+	public Transform3DShear clone() {
 		return new Transform3DShear(
 				this.translation.get(new Vector3f()),
 				this.rotation.get(new Quaternionf()),

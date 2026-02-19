@@ -314,7 +314,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		return this.instancesAttribs;
 	}
 
-	public JavaTypeAttribArray getParticleTransforms() {
+	public Mat4fAttribArray getParticleTransforms() {
 		return this.instancesTransforms;
 	}
 

@@ -3,7 +3,6 @@ package lu.kbra.standalone.gameengine.graph.texture;
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
-import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
@@ -15,7 +14,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.TextureParameter;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureWrap;
 
-public abstract class Texture extends AutoCleanupable implements Cleanupable, UniqueID, FramebufferAttachment, GLObject {
+public abstract class Texture extends AutoCleanupable implements UniqueID, FramebufferAttachment, GLObject {
 
 	public static final int MAX_TEXTURE_LOD_BIAS = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_LOD_BIAS);
 	public static final int MAX_TEXTURE_SIZE = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_SIZE);
@@ -23,17 +22,21 @@ public abstract class Texture extends AutoCleanupable implements Cleanupable, Un
 	protected final String path;
 	protected final String name;
 	protected int glId = -1;
-	protected TextureFilter minFilter = TextureFilter.LINEAR, magFilter = TextureFilter.LINEAR;
+	protected TextureFilter minFilter = TextureFilter.LINEAR;
+	protected TextureFilter magFilter = TextureFilter.LINEAR;
 	protected TextureType txtType = TextureType.TXT2D;
-	protected TextureWrap hWrap = TextureWrap.CLAMP_TO_EDGE, vWrap = TextureWrap.CLAMP_TO_EDGE, dWrap = TextureWrap.CLAMP_TO_EDGE;
+	protected TextureWrap hWrap = TextureWrap.CLAMP_TO_EDGE;
+	protected TextureWrap vWrap = TextureWrap.CLAMP_TO_EDGE;
+	protected TextureWrap dWrap = TextureWrap.CLAMP_TO_EDGE;
 	protected DataType dataType = DataType.UBYTE;
 	protected TexelFormat format = TexelFormat.RGB;
 	protected TexelInternalFormat internalFormat = TexelInternalFormat.RGB;
-	protected boolean generateMipmaps = true, fixedSampleLocation = false;
+	protected boolean generateMipmaps = true;
+	protected boolean fixedSampleLocation = false;
 	protected int sampleCount = 1;
 	protected TextureOperation textureOperation = null;
 
-	public Texture(String _name, String _path, TextureOperation txtOp) {
+	public Texture(final String _name, final String _path, final TextureOperation txtOp) {
 		this.name = _name;
 		this.path = _path;
 		this.textureOperation = txtOp;
@@ -45,207 +48,212 @@ public abstract class Texture extends AutoCleanupable implements Cleanupable, Un
 
 	protected int gen() {
 		this.glId = GL_W.glGenTextures();
-		return glId;
+		return this.glId;
 	}
 
-	public void active(int i) {
-		if (i > 31)
+	public void active(final int i) {
+		if (i > 31) {
 			return;
+		}
 		GL_W.glActiveTexture(GL_W.GL_TEXTURE0 + i);
 	}
 
-	public void bind(int i) {
-		active(i);
-		bind();
+	@Override
+	public void bind(final int i) {
+		this.active(i);
+		this.bind();
 	}
 
 	public void bind() {
-		if (glId == -1)
+		if (this.glId == -1) {
 			return;
-		GL_W.glBindTexture(txtType.getGlId(), glId);
+		}
+		GL_W.glBindTexture(this.txtType.getGlId(), this.glId);
 	}
 
-	public void unbind(int i) {
-		active(i);
-		unbind();
+	public void unbind(final int i) {
+		this.active(i);
+		this.unbind();
 	}
 
 	public void unbind() {
-		GL_W.glBindTexture(txtType.getGlId(), 0);
+		GL_W.glBindTexture(this.txtType.getGlId(), 0);
 	}
 
 	public void genMipMaps() {
-		bind();
-		GL_W.glGenerateMipmap(txtType.getGlId());
+		this.bind();
+		GL_W.glGenerateMipmap(this.txtType.getGlId());
 	}
 
 	public void applyFilter() {
-		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.MIN_FILTER.getGlId(), minFilter.getGlId());
-		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.MAG_FILTER.getGlId(), magFilter.getGlId());
+		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.MIN_FILTER.getGlId(), this.minFilter.getGlId());
+		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.MAG_FILTER.getGlId(), this.magFilter.getGlId());
 	}
 
 	public void applyWrap() {
-		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_HORIZONTAL.getGlId(), hWrap.getGlId());
-		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_VERTICAL.getGlId(), vWrap.getGlId());
-		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_DEPTH.getGlId(), dWrap.getGlId());
+		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.WRAP_HORIZONTAL.getGlId(), this.hWrap.getGlId());
+		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.WRAP_VERTICAL.getGlId(), this.vWrap.getGlId());
+		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.WRAP_DEPTH.getGlId(), this.dWrap.getGlId());
 	}
 
 	@Override
 	public void cleanup() {
-		if (glId == -1) {
+		if (this.glId == -1) {
 			return;
 		}
 
-		GlobalLogger.log("Cleaning up: " + name + " (" + glId + ")");
+		GlobalLogger.log("Cleaning up: " + this.name + " (" + this.glId + ")");
 
-		GL_W.glDeleteTextures(glId);
-		glId = -1;
+		GL_W.glDeleteTextures(this.glId);
+		this.glId = -1;
 
 		super.cleanup();
 	}
 
 	@Override
 	public String getId() {
-		return name;
+		return this.name;
 	}
 
 	@Override
 	public int getGlId() {
-		return glId;
+		return this.glId;
 	}
 
 	public String getPath() {
-		return path;
+		return this.path;
 	}
 
 	public TextureFilter getMinFilter() {
-		return minFilter;
+		return this.minFilter;
 	}
 
-	public void setMinFilter(TextureFilter minFilter) {
+	public void setMinFilter(final TextureFilter minFilter) {
 		this.minFilter = minFilter;
 	}
 
 	public TextureFilter getMagFilter() {
-		return magFilter;
+		return this.magFilter;
 	}
 
-	public void setMagFilter(TextureFilter magFilter) {
+	public void setMagFilter(final TextureFilter magFilter) {
 		this.magFilter = magFilter;
 	}
 
-	public void setFilters(TextureFilter min, TextureFilter mag) {
+	public void setFilters(final TextureFilter min, final TextureFilter mag) {
 		this.minFilter = min;
 		this.magFilter = mag;
 	}
 
-	public void setFilters(TextureFilter filter) {
+	public void setFilters(final TextureFilter filter) {
 		this.minFilter = filter;
 		this.magFilter = filter;
 	}
 
 	public TextureType getTextureType() {
-		return txtType;
+		return this.txtType;
 	}
 
-	public void setTextureType(TextureType txtType) {
+	public void setTextureType(final TextureType txtType) {
 		this.txtType = txtType;
 	}
 
 	public TextureWrap gethWrap() {
-		return hWrap;
+		return this.hWrap;
 	}
 
-	public void sethWrap(TextureWrap hWrap) {
+	public void sethWrap(final TextureWrap hWrap) {
 		this.hWrap = hWrap;
 	}
 
 	public TextureWrap getvWrap() {
-		return vWrap;
+		return this.vWrap;
 	}
 
-	public void setvWrap(TextureWrap vWrap) {
+	public void setvWrap(final TextureWrap vWrap) {
 		this.vWrap = vWrap;
 	}
 
 	public TextureWrap getdWrap() {
-		return dWrap;
+		return this.dWrap;
 	}
 
-	public void setdWrap(TextureWrap dWrap) {
+	public void setdWrap(final TextureWrap dWrap) {
 		this.dWrap = dWrap;
 	}
 
-	public void setWraps(TextureWrap hWrap, TextureWrap vWrap, TextureWrap dWrap) {
+	public void setWraps(final TextureWrap hWrap, final TextureWrap vWrap, final TextureWrap dWrap) {
 		this.hWrap = hWrap;
 		this.vWrap = vWrap;
 		this.dWrap = dWrap;
 	}
 
-	public void setWraps(TextureWrap wrap) {
+	public void setWraps(final TextureWrap wrap) {
 		this.hWrap = wrap;
 		this.vWrap = wrap;
 		this.dWrap = wrap;
 	}
 
 	public TexelFormat getFormat() {
-		return format;
+		return this.format;
 	}
 
-	public void setFormat(TexelFormat format) {
+	public void setFormat(final TexelFormat format) {
 		this.format = format;
 	}
 
 	public TexelInternalFormat getInternalFormat() {
-		return internalFormat;
+		return this.internalFormat;
 	}
 
-	public void setInternalFormat(TexelInternalFormat internalFormat) {
+	public void setInternalFormat(final TexelInternalFormat internalFormat) {
 		this.internalFormat = internalFormat;
 	}
 
 	public DataType getDataType() {
-		return dataType;
+		return this.dataType;
 	}
 
-	public void setDataType(DataType dataType) {
+	public void setDataType(final DataType dataType) {
 		this.dataType = dataType;
 	}
 
+	@Override
 	public boolean isValid() {
-		return glId != -1;
+		return this.glId != -1;
 	}
 
 	public boolean isGenerateMipmaps() {
-		return generateMipmaps;
+		return this.generateMipmaps;
 	}
 
-	public void setGenerateMipmaps(boolean generateMipmaps) {
+	public void setGenerateMipmaps(final boolean generateMipmaps) {
 		this.generateMipmaps = generateMipmaps;
 	}
 
 	public boolean isArray() {
-		return TextureType.isArray(txtType);
+		return TextureType.isArray(this.txtType);
 	}
 
 	public int getSampleCount() {
-		return sampleCount;
+		return this.sampleCount;
 	}
 
-	public void setSampleCount(int sampleCount) {
+	public void setSampleCount(final int sampleCount) {
 		this.sampleCount = sampleCount;
 	}
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + " [path=" + path + ", name=" + name + ", tid=" + glId + ", minFilter=" + minFilter
-				+ ", magFilter=" + magFilter + ", txtType=" + txtType + ", hWrap=" + hWrap + ", vWrap=" + vWrap + ", dWrap=" + dWrap
-				+ ", dataType=" + dataType + ", format=" + format + ", internalFormat=" + internalFormat + ", generateMipmaps="
-				+ generateMipmaps + ", fixedSampleLocation=" + fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation="
-				+ textureOperation + ", isValid()=" + isValid() + "]";
+		return this.getClass().getSimpleName() + " [path=" + this.path + ", name=" + this.name + ", tid=" + this.glId + ", minFilter="
+				+ this.minFilter + ", magFilter=" + this.magFilter + ", txtType=" + this.txtType + ", hWrap=" + this.hWrap + ", vWrap="
+				+ this.vWrap + ", dWrap=" + this.dWrap + ", dataType=" + this.dataType + ", format=" + this.format + ", internalFormat="
+				+ this.internalFormat + ", generateMipmaps=" + this.generateMipmaps + ", fixedSampleLocation=" + this.fixedSampleLocation
+				+ ", sampleCount=" + this.sampleCount + ", textureOperation=" + this.textureOperation + ", isValid()=" + this.isValid()
+				+ "]";
 	}
 
-	public static TexelFormat getFormatByChannels(int channels) {
+	public static TexelFormat getFormatByChannels(final int channels) {
 		switch (channels) {
 		case 1:
 			return TexelFormat.RED;
@@ -259,7 +267,7 @@ public abstract class Texture extends AutoCleanupable implements Cleanupable, Un
 		return null;
 	}
 
-	public static TexelInternalFormat getInternalFormatByChannels(int channels) {
+	public static TexelInternalFormat getInternalFormatByChannels(final int channels) {
 		switch (channels) {
 		case 1:
 			return TexelInternalFormat.RED;
@@ -273,7 +281,7 @@ public abstract class Texture extends AutoCleanupable implements Cleanupable, Un
 		return null;
 	}
 
-	public static int getChannelsByInternalFormat(int format) {
+	public static int getChannelsByInternalFormat(final int format) {
 		if (format == TexelInternalFormat.RED.getGlId()) {
 			return 1;
 		} else if (format == TexelInternalFormat.RG.getGlId()) {
@@ -286,7 +294,7 @@ public abstract class Texture extends AutoCleanupable implements Cleanupable, Un
 		return -1;
 	}
 
-	public static int getChannelsByFormat(int format) {
+	public static int getChannelsByFormat(final int format) {
 		if (format == TexelFormat.RED.getGlId()) {
 			return 1;
 		} else if (format == TexelFormat.RG.getGlId()) {
