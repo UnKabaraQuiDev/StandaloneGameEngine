@@ -13,6 +13,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.TextureFilter;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureParameter;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureWrap;
+import lu.kbra.standalone.gameengine.utils.mem.img.MemImageFormat;
 
 public abstract class Texture extends AutoCleanupable implements UniqueID, FramebufferAttachment, GLObject {
 
@@ -29,8 +30,8 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	protected TextureWrap vWrap = TextureWrap.CLAMP_TO_EDGE;
 	protected TextureWrap dWrap = TextureWrap.CLAMP_TO_EDGE;
 	protected DataType dataType = DataType.UBYTE;
-	protected TexelFormat format = TexelFormat.RGB;
-	protected TexelInternalFormat internalFormat = TexelInternalFormat.RGB;
+	protected TexelFormat texelFormat = TexelFormat.RGB;
+	protected TexelInternalFormat texelInternalFormat = TexelInternalFormat.RGB;
 	protected boolean generateMipmaps = true;
 	protected boolean fixedSampleLocation = false;
 	protected int sampleCount = 1;
@@ -194,20 +195,20 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 		this.dWrap = wrap;
 	}
 
-	public TexelFormat getFormat() {
-		return this.format;
+	public TexelFormat getTexelFormat() {
+		return this.texelFormat;
 	}
 
-	public void setFormat(final TexelFormat format) {
-		this.format = format;
+	public void setTexelFormat(final TexelFormat texelFormat) {
+		this.texelFormat = texelFormat;
 	}
 
-	public TexelInternalFormat getInternalFormat() {
-		return this.internalFormat;
+	public TexelInternalFormat getTexelInternalFormat() {
+		return this.texelInternalFormat;
 	}
 
-	public void setInternalFormat(final TexelInternalFormat internalFormat) {
-		this.internalFormat = internalFormat;
+	public void setTexelInternalFormat(final TexelInternalFormat texelInternalFormat) {
+		this.texelInternalFormat = texelInternalFormat;
 	}
 
 	public DataType getDataType() {
@@ -247,38 +248,62 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	public String toString() {
 		return this.getClass().getSimpleName() + " [path=" + this.path + ", name=" + this.name + ", tid=" + this.glId + ", minFilter="
 				+ this.minFilter + ", magFilter=" + this.magFilter + ", txtType=" + this.txtType + ", hWrap=" + this.hWrap + ", vWrap="
-				+ this.vWrap + ", dWrap=" + this.dWrap + ", dataType=" + this.dataType + ", format=" + this.format + ", internalFormat="
-				+ this.internalFormat + ", generateMipmaps=" + this.generateMipmaps + ", fixedSampleLocation=" + this.fixedSampleLocation
+				+ this.vWrap + ", dWrap=" + this.dWrap + ", dataType=" + this.dataType + ", format=" + this.texelFormat + ", internalFormat="
+				+ this.texelInternalFormat + ", generateMipmaps=" + this.generateMipmaps + ", fixedSampleLocation=" + this.fixedSampleLocation
 				+ ", sampleCount=" + this.sampleCount + ", textureOperation=" + this.textureOperation + ", isValid()=" + this.isValid()
 				+ "]";
 	}
 
 	public static TexelFormat getFormatByChannels(final int channels) {
 		switch (channels) {
-		case 1:
+		case 1 -> {
 			return TexelFormat.RED;
-		case 2:
+		}
+		case 2 -> {
 			return TexelFormat.RG;
-		case 3:
+		}
+		case 3 -> {
 			return TexelFormat.RGB;
-		case 4:
+		}
+		case 4 -> {
 			return TexelFormat.RGBA;
+		}
 		}
 		return null;
 	}
 
-	public static TexelInternalFormat getInternalFormatByChannels(final int channels) {
-		switch (channels) {
-		case 1:
-			return TexelInternalFormat.RED;
-		case 2:
-			return TexelInternalFormat.RG;
-		case 3:
-			return TexelInternalFormat.RGB;
-		case 4:
-			return TexelInternalFormat.RGBA;
-		}
-		return null;
+	public static TexelInternalFormat getInternalFormatByChannels(final int channels, final MemImageFormat format) {
+		return switch (channels) {
+		case 1 -> switch (format) {
+		case UBYTE -> TexelInternalFormat.R8;
+		case USHORT -> TexelInternalFormat.R16;
+		case HALF_FLOAT -> TexelInternalFormat.R16F;
+		case FLOAT -> TexelInternalFormat.R32F;
+		default -> throw new IllegalArgumentException("Unsupported format: " + format.name());
+		};
+		case 2 -> switch (format) {
+		case UBYTE -> TexelInternalFormat.RG8;
+		case USHORT -> TexelInternalFormat.RG16;
+		case HALF_FLOAT -> TexelInternalFormat.RG16F;
+		case FLOAT -> TexelInternalFormat.RG32F;
+		default -> throw new IllegalArgumentException("Unsupported format: " + format.name());
+		};
+		case 3 -> switch (format) {
+		case UBYTE -> TexelInternalFormat.RGB8;
+		case USHORT -> TexelInternalFormat.RGB16;
+		case HALF_FLOAT -> TexelInternalFormat.RGB16F;
+		case FLOAT -> TexelInternalFormat.RGB32F;
+		default -> throw new IllegalArgumentException("Unsupported format: " + format.name());
+		};
+		case 4 -> switch (format) {
+		case UBYTE -> TexelInternalFormat.RGBA8;
+		case USHORT -> TexelInternalFormat.RGBA16;
+		case HALF_FLOAT -> TexelInternalFormat.RGBA16F;
+		case FLOAT -> TexelInternalFormat.RGBA32F;
+		default -> throw new IllegalArgumentException("Unsupported format: " + format.name());
+		};
+		default -> throw new IllegalArgumentException("Unsupported channel count: " + channels);
+		};
 	}
 
 	public static int getChannelsByInternalFormat(final int format) {

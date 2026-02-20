@@ -18,13 +18,15 @@ public class MemImage implements Cleanupable {
 	private final int channels;
 	private ByteBuffer buffer;
 	private final MemImageOrigin origin;
+	private final MemImageFormat format;
 
-	public MemImage(int width, int height, int channels, ByteBuffer buffer, MemImageOrigin origin) {
+	public MemImage(int width, int height, int channels, ByteBuffer buffer, MemImageOrigin origin, MemImageFormat format) {
 		this.width = width;
 		this.height = height;
 		this.channels = channels;
 		this.buffer = buffer;
 		this.origin = origin;
+		this.format = format;
 	}
 
 	@Override
@@ -32,6 +34,8 @@ public class MemImage implements Cleanupable {
 		if (buffer == null) {
 			return;
 		}
+
+		GlobalLogger.log();
 
 		if (MemImageOrigin.STBI == origin) {
 			STBImage.stbi_image_free(buffer);
@@ -48,8 +52,7 @@ public class MemImage implements Cleanupable {
 			return;
 		}
 
-		GlobalLogger.severe(
-				"Buffer " + PCUtils.toSimpleIdentityString(this) + " went OOB but wasn't cleaned up properly !");
+		GlobalLogger.severe("Buffer " + PCUtils.toSimpleIdentityString(this) + " went OOB but wasn't cleaned up properly !");
 		cleanup();
 	}
 
@@ -57,28 +60,28 @@ public class MemImage implements Cleanupable {
 		return MemoryUtil.memAlloc(size);
 	}
 
-	public static MemImage fromOGL(int width, int height, int channels) {
-		return new MemImage(width, height, channels, fromOGL(width * height * channels), MemImageOrigin.OPENGL);
+	public static MemImage fromOGL(int width, int height, int channels, MemImageFormat format) {
+		return new MemImage(width, height, channels, fromOGL(width * height * channels), MemImageOrigin.OPENGL, format);
 	}
 
-	public static MemImage fromOGL(int width, int height, int channels, Consumer<ByteBuffer> bbs) {
+	public static MemImage fromOGL(int width, int height, int channels, Consumer<ByteBuffer> bbs, MemImageFormat format) {
 		final ByteBuffer bb = fromOGL(width * height * channels);
 		bbs.accept(bb);
-		return new MemImage(width, height, channels, bb, MemImageOrigin.OPENGL);
+		return new MemImage(width, height, channels, bb, MemImageOrigin.OPENGL, format);
 	}
 
 	public static ByteBuffer fromDirect(int size) {
 		return BufferUtils.createByteBuffer(size);
 	}
 
-	public static MemImage fromDirect(int width, int height, int channels) {
-		return new MemImage(width, height, channels, fromDirect(width * height * channels), MemImageOrigin.DIRECT);
+	public static MemImage fromDirect(int width, int height, int channels, MemImageFormat format) {
+		return new MemImage(width, height, channels, fromDirect(width * height * channels), MemImageOrigin.DIRECT, format);
 	}
 
-	public static MemImage fromDirect(int width, int height, int channels, Consumer<ByteBuffer> bbs) {
+	public static MemImage fromDirect(int width, int height, int channels, Consumer<ByteBuffer> bbs, MemImageFormat format) {
 		final ByteBuffer bb = fromDirect(width * height * channels);
 		bbs.accept(bb);
-		return new MemImage(width, height, channels, bb, MemImageOrigin.DIRECT);
+		return new MemImage(width, height, channels, bb, MemImageOrigin.DIRECT, format);
 	}
 
 	public boolean isFromOGL() {
@@ -113,10 +116,18 @@ public class MemImage implements Cleanupable {
 		return buffer;
 	}
 
+	public MemImageOrigin getOrigin() {
+		return origin;
+	}
+
+	public MemImageFormat getFormat() {
+		return format;
+	}
+
 	@Override
 	public String toString() {
-		return "MemImage [width=" + width + ", height=" + height + ", channels=" + channels + ", buffer=" + buffer
-				+ ", origin=" + origin + ", direct=" + (buffer != null ? buffer.isDirect() : false) + "]";
+		return "MemImage@" + System.identityHashCode(this) + " [width=" + width + ", height=" + height + ", channels=" + channels
+				+ ", buffer=" + buffer + ", origin=" + origin + ", format=" + format + "]";
 	}
 
 }

@@ -1,6 +1,7 @@
 package lu.kbra.standalone.gameengine.utils.gl.consts;
 
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
+import lu.kbra.standalone.gameengine.utils.mem.img.MemImageFormat;
 
 public enum DataType implements GLConstant {
 
@@ -66,6 +67,19 @@ public enum DataType implements GLConstant {
 		case SHORT, USHORT, HALF_FLOAT, USHORT565, USHORT4444, USHORT5551 -> 2;
 		case INT, UINT, FLOAT, UINT2101010REV, UINT248, UINT10F11F11FREV -> 4;
 		case FLOAT32UINT248REV, UINT5999REV -> throw new UnsupportedOperationException("Weird data type: " + this);
+		};
+	}
+
+	public MemImageFormat getImageFormat() {
+		return switch (this) {
+		case UBYTE -> MemImageFormat.UBYTE;
+		case USHORT -> MemImageFormat.USHORT;
+		case HALF_FLOAT -> MemImageFormat.HALF_FLOAT;
+		case UINT -> MemImageFormat.UINT;
+		case FLOAT -> MemImageFormat.FLOAT;
+		case BYTE, INT, SHORT -> throw new UnsupportedOperationException("Unsupported data type: " + this);
+		case FLOAT32UINT248REV, UINT5999REV, UINT10F11F11FREV, UINT2101010REV, UINT248, USHORT4444, USHORT5551, USHORT565 ->
+			throw new UnsupportedOperationException("Weird data type: " + this);
 		};
 	}
 

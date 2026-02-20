@@ -69,9 +69,9 @@ public class CubemapTexture extends Texture {
 		for (int i = 0; i < FACE_COUNT; i++) {
 			final MemImage image = this.images[i];
 
-			this.format = getFormatByChannels(image.getChannels());
-			this.internalFormat = getInternalFormatByChannels(image.getChannels());
-			if (this.format == null) {
+			this.texelFormat = getFormatByChannels(image.getChannels());
+			this.texelInternalFormat = getInternalFormatByChannels(image.getChannels(), image.getFormat());
+			if (this.texelFormat == null) {
 				this.cleanup();
 				throw new RuntimeException("Invalid channel count: " + image.getChannels());
 			}
@@ -79,11 +79,11 @@ public class CubemapTexture extends Texture {
 			// if (image != null) {
 			GL_W.glTexImage2D(TextureType.CM_PX.getGlId() + i,
 					0,
-					this.internalFormat.getGlId(),
+					this.texelInternalFormat.getGlId(),
 					image.getWidth(),
 					image.getHeight(),
 					0,
-					this.format.getGlId(),
+					this.texelFormat.getGlId(),
 					this.dataType.getGlId(),
 					image.getBuffer());
 			// image.free();
@@ -123,9 +123,9 @@ public class CubemapTexture extends Texture {
 			 * width = w[0]; height = h[0]; channels = c[0];
 			 */
 
-			this.format = getFormatByChannels(image.getChannels());
-			this.internalFormat = getInternalFormatByChannels(image.getChannels());
-			if (this.format == null) {
+			this.texelFormat = getFormatByChannels(image.getChannels());
+			this.texelInternalFormat = getInternalFormatByChannels(image.getChannels(), image.getFormat());
+			if (this.texelFormat == null) {
 				this.cleanup();
 				throw new RuntimeException("Invalid channel count: " + image.getChannels());
 			}
@@ -133,11 +133,11 @@ public class CubemapTexture extends Texture {
 			// if (image != null) {
 			GL_W.glTexImage2D(TextureType.CM_PX.getGlId() + i,
 					0,
-					this.internalFormat.getGlId(),
+					this.texelInternalFormat.getGlId(),
 					image.getWidth(),
 					image.getHeight(),
 					0,
-					this.format.getGlId(),
+					this.texelFormat.getGlId(),
 					this.dataType.getGlId(),
 					image.getBuffer());
 			image.cleanup();
