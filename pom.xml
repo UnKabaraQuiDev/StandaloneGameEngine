@@ -7,12 +7,13 @@
 	<artifactId>gameengine</artifactId>
 	<version>0.1-SNAPSHOT</version>
 
-	<name>Standalone Game
-		Engine</name>
+	<name>Standalone Game Engine</name>
 
 	<scm>
-		<connection>scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</connection>
-		<developerConnection>scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</developerConnection>
+		<connection>
+			scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</connection>
+		<developerConnection>
+			scm:git:git@github.com:UnKabaraQuiDev/StandaloneGameEngine.git</developerConnection>
 		<url>https://github.com/UnKabaraQuiDev/StandaloneGameEngine</url>
 		<tag>HEAD</tag>
 	</scm>
@@ -284,6 +285,62 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.5.0</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<classifier>shaded</classifier>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>${mainClass}</mainClass>
+								</transformer>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer" />
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer" />
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.4.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.12.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<failOnError>false</failOnError>
+					<doclint>all,-reference,-missing,-accessibility</doclint>
+				</configuration>
+			</plugin>
 
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -339,6 +396,7 @@
 					</arguments>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>flatten-maven-plugin</artifactId>

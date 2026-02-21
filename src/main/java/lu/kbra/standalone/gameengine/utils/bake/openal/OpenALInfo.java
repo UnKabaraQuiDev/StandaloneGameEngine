@@ -63,7 +63,7 @@ import org.lwjgl.openal.EnumerateAllExt;
 /**
  * idea from openal-info
  *
- * @author Brian Matzon <brian@matzon.dk>
+ * @author Brian Matzon &lt;brian@matzon.dk&gt;
  */
 public class OpenALInfo {
 
