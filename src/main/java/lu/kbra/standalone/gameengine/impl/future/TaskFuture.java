@@ -13,6 +13,9 @@ import lu.kbra.pclib.pointer.prim.BooleanPointer;
 
 public class TaskFuture<I, O> {
 
+	public static final String STACK_TRACE_PROPERTY = TaskFuture.class.getSimpleName() + ".stack_trace";
+	public static boolean STACK_TRACE = Boolean.getBoolean(STACK_TRACE_PROPERTY);
+
 	public class TaskState<V> {
 
 		private final BooleanPointer started = new BooleanPointer(false);
@@ -20,10 +23,9 @@ public class TaskFuture<I, O> {
 		private final BooleanPointer done = new BooleanPointer(false);
 
 		private V result;
-		private final String source;
+		private Throwable stackTrace;
 
 		public TaskState(final TaskFuture<?, ?> first) {
-			this.source = first.currentSource;
 		}
 
 		public boolean isStarted() {
@@ -44,9 +46,7 @@ public class TaskFuture<I, O> {
 
 		public V join() {
 			this.started.waitForTrue();
-			System.err.println(this.started + " " + this.ongoing + " " + this.result);
 			this.ongoing.waitForFalse();
-			System.err.println(this.started + " " + this.ongoing + " " + this.result);
 			return this.result;
 		}
 
@@ -56,11 +56,14 @@ public class TaskFuture<I, O> {
 			return this.result;
 		}
 
+		public Throwable getStackTrace() {
+			return stackTrace;
+		}
+
 		@Override
 		public String toString() {
-			return "TaskState@" + Integer.toHexString(System.identityHashCode(this)) + " [started=" + this.started.toSafeString()
-					+ ", ongoing=" + this.ongoing.toSafeString() + ", done=" + this.done.toSafeString() + ", result=" + this.result
-					+ ", source=" + this.source + "]";
+			return "TaskState@" + System.identityHashCode(this) + " [started=" + started + ", ongoing=" + ongoing + ", done=" + done
+					+ ", result=" + result + ", stackTrace=" + stackTrace + "]";
 		}
 
 	}
@@ -73,11 +76,10 @@ public class TaskFuture<I, O> {
 	protected ThrowingFunction<I, O, ? extends Throwable> task;
 	protected int priority;
 	protected TaskFuture<? extends O, ?> next;
-	protected String currentSource;
+	protected Throwable stackTrace = STACK_TRACE ? new Throwable().fillInStackTrace() : null;
 
 	protected TaskFuture(final Dispatcher dispatcher) {
 		this.dispatcher = dispatcher;
-		this.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		this.first = this;
 	}
 
@@ -100,7 +102,6 @@ public class TaskFuture<I, O> {
 		this.task = (v) -> task.get();
 		this.priority = priority;
 		this.first = this;
-		this.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 	}
 
 	public TaskFuture(final Dispatcher dispatcher, final ThrowingRunnable<? extends Throwable> task) {
@@ -136,7 +137,6 @@ public class TaskFuture<I, O> {
 		this.task = (v) -> task.get();
 		this.priority = priority;
 		this.first = this;
-		this.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 	}
 
 	public TaskFuture(final Dispatcher dispatcher, final Runnable task) {
@@ -163,7 +163,6 @@ public class TaskFuture<I, O> {
 
 	public <N> TaskFuture<O, N> then(final Dispatcher nextDispatcher, final ThrowingSupplier<N, Throwable> function, final int priority) {
 		final TaskFuture<O, N> nextFuture = new TaskFuture<>(nextDispatcher, function, priority);
-		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
@@ -182,7 +181,6 @@ public class TaskFuture<I, O> {
 			final ThrowingFunction<O, N, Throwable> function,
 			final int priority) {
 		final TaskFuture<O, N> nextFuture = new TaskFuture<>(nextDispatcher, function, priority);
-		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
@@ -205,7 +203,6 @@ public class TaskFuture<I, O> {
 			consumer.accept(v);
 			return null;
 		}, priority);
-		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
@@ -231,7 +228,6 @@ public class TaskFuture<I, O> {
 			consumer.run();
 			return null;
 		}, priority);
-		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		this.next = nextFuture;
 		return nextFuture;
@@ -242,7 +238,6 @@ public class TaskFuture<I, O> {
 	}
 
 	public <P extends O, N> TaskFuture<P, N> then(final Dispatcher nextDispatcher, final TaskFuture<P, N> nextFuture, final int priority) {
-		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		nextFuture.dispatcher = nextDispatcher;
 		this.next = nextFuture;
@@ -255,7 +250,6 @@ public class TaskFuture<I, O> {
 
 	public <T extends TaskFuture<P, N>, P extends O, N> T then(final T nextFuture, final int priority) {
 		this.next = (TaskFuture<O, ?>) nextFuture.first;
-		nextFuture.currentSource = PCUtils.getCallerClassName(PARENT, SIMPLE, TaskFuture.class);
 		nextFuture.first = this.first;
 		return nextFuture;
 	}
@@ -306,11 +300,14 @@ public class TaskFuture<I, O> {
 				if (e instanceof final YieldExecutionThrowable yield) {
 					throw yield;
 				}
-				throw new RuntimeException(state.source + " > " + this.currentSource, e);
+				if (STACK_TRACE) {
+					e.addSuppressed(this.stackTrace);
+				}
+				throw new RuntimeException(e);
 			} finally {
 				state.ongoing.set(false);
 			}
-		}, this.priority, this.currentSource);
+		}, this.priority);
 	}
 
 	private class ExecTaskState<V> {
@@ -354,6 +351,9 @@ public class TaskFuture<I, O> {
 				state.result = st.getObj();
 			}
 		} catch (final Throwable e) {
+			if (STACK_TRACE) {
+				e.addSuppressed(this.stackTrace);
+			}
 			throw new RuntimeException(e);
 		}
 	}

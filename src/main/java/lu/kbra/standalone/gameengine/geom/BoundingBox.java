@@ -81,4 +81,8 @@ public class BoundingBox {
 		return new BoundingBox(new Vector3f(min1).min(min2), new Vector3f(max1).min(max2));
 	}
 
+	public BoundingBox translated(Vector3f translation) {
+		return new BoundingBox(new Vector3f(min).add(translation), new Vector3f(max).add(translation));
+	}
+
 }

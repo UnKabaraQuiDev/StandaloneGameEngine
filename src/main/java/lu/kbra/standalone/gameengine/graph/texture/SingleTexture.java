@@ -7,6 +7,7 @@ import org.joml.Vector2f;
 import org.joml.Vector2i;
 import org.joml.Vector3i;
 import org.joml.Vector4f;
+import org.joml.Vector4i;
 import org.lwjgl.system.MemoryUtil;
 
 import lu.kbra.standalone.gameengine.cache.CacheManager;
@@ -271,6 +272,15 @@ public class SingleTexture extends Texture {
 				this.getTexelFormat().getGlId(),
 				this.getDataType().getGlId(),
 				new float[] { backgroundColor.x, backgroundColor.y, backgroundColor.z, backgroundColor.w });
+	}
+
+	public void clear(Vector4i backgroundColor) {
+		bind();
+		GL_W.glClearTexImage(this.getGlId(),
+				0,
+				this.getTexelFormat().getGlId(),
+				this.getDataType().getGlId(),
+				new int[] { backgroundColor.x, backgroundColor.y, backgroundColor.z, backgroundColor.w });
 	}
 
 	public void setColorFormat(DataType dataType, TexelFormat texelFormat, TexelInternalFormat texelInternalFormat) {

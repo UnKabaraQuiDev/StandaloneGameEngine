@@ -51,7 +51,7 @@ public interface Mesh extends UniqueID, Renderable, GLObject {
 	BoundingBox getBoundingBox();
 
 	default PolygonMode getPolygonMode() {
-		return PolygonMode.FRONT;
+		return PolygonMode.FRONT_AND_BACK;
 	}
 
 	default PolygonDrawMode getPolygonDrawMode() {
