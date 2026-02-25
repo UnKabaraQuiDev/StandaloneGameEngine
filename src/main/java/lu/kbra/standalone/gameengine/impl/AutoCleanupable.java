@@ -1,8 +1,9 @@
 package lu.kbra.standalone.gameengine.impl;
 
 import java.lang.ref.Cleaner;
-import java.util.Collections;
 import java.util.Set;
+
+import lu.kbra.pclib.datastructure.set.WeakHashSet;
 
 public abstract class AutoCleanupable implements Cleanupable {
 
