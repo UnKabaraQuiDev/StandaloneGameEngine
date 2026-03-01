@@ -143,7 +143,9 @@ public class Scene3D implements Scene {
 
 	@Override
 	public <T extends SceneEntity> boolean contains(T e) {
-		return entities.containsKey(e.getId()) && entities.get(e.getId()) == e;
+		synchronized (entitiesLock) {
+			return entities.containsKey(e.getId()) && entities.get(e.getId()) == e;
+		}
 	}
 
 	@Override
@@ -162,22 +164,30 @@ public class Scene3D implements Scene {
 
 	@Override
 	public int size() {
-		return this.entities.size();
+		synchronized (entitiesLock) {
+			return this.entities.size();
+		}
 	}
 
 	@Override
 	public <T extends SceneEntity> boolean contains(String e) {
-		return entities.containsKey(e);
+		synchronized (entitiesLock) {
+			return entities.containsKey(e);
+		}
 	}
 
 	@Override
 	public Stream<SceneEntity> parallelStream() {
-		return entities.values().parallelStream();
+		synchronized (entitiesLock) {
+			return entities.values().parallelStream();
+		}
 	}
 
 	@Override
 	public Stream<SceneEntity> stream() {
-		return entities.values().stream();
+		synchronized (entitiesLock) {
+			return entities.values().stream();
+		}
 	}
 
 	@Override

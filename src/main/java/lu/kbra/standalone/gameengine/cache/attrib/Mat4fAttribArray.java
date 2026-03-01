@@ -1,5 +1,7 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
+import java.nio.ByteBuffer;
+
 import org.joml.Matrix4f;
 
 import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
@@ -73,6 +75,25 @@ public class Mat4fAttribArray extends AttribArray implements MultiAttribArray, F
 		super.length = data.length;
 
 		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
+	}
+
+	public void update(int index, Matrix4f[] nPos) {
+		bind();
+
+		if (iStatic) {
+			throw new UnsupportedOperationException("Array is static.");
+		}
+
+		System.arraycopy(nPos, 0, data, index, nPos.length);
+		super.length = data.length;
+
+		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(nPos.length * getElementByteSize());
+		for (Matrix4f nPo : nPos) {
+			nPo.get(bbuffer);
+		}
+		bbuffer.flip();
+
+		GL_W.glBufferSubData(bufferType.getGlId(), index * getElementByteSize(), bbuffer);
 	}
 
 	public void resize(Matrix4f[] nPos) {
