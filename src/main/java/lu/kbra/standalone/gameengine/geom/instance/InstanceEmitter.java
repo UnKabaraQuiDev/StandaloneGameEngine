@@ -1,19 +1,24 @@
 package lu.kbra.standalone.gameengine.geom.instance;
 
 import java.lang.reflect.Array;
+import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.IntFunction;
+import java.util.function.Supplier;
 import java.util.logging.Level;
+import java.util.stream.Collectors;
 
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
 
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.cache.attrib.Mat4fAttribArray;
@@ -26,6 +31,8 @@ import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
+import lu.kbra.standalone.gameengine.impl.future.TaskFuture;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.transform.Transform;
 import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
@@ -208,12 +215,36 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
-	public void updateParticlesTransforms(final Set<Integer> indices) {
-		if (indices == null || indices.isEmpty()) {
-			return;
+	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, Optional<Dispatcher> worker, Dispatcher render) {
+		if (worker.isPresent()) {
+			return new TaskFuture<>(worker.get(), (Supplier<Map<Integer, Matrix4f[]>>) () -> computeUpdateGroups(indices)).then(render,
+					(Consumer<Map<Integer, Matrix4f[]>>) (result) -> result.entrySet()
+							.forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
+		} else {
+			final Map<Integer, Matrix4f[]> result = computeUpdateGroups(indices);
+			return new TaskFuture<>(render,
+					(Runnable) () -> result.entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
 		}
+	}
 
+	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, Dispatcher worker, Dispatcher render) {
+		return new TaskFuture<>(worker, (Supplier<Map<Integer, Matrix4f[]>>) () -> computeUpdateGroups(indices)).then(render,
+				(Consumer<Map<Integer, Matrix4f[]>>) (result) -> result.entrySet()
+						.forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
+	}
+
+	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, Dispatcher render) {
+		final Map<Integer, Matrix4f[]> result = computeUpdateGroups(indices);
+		return new TaskFuture<>(render,
+				(Runnable) () -> result.entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
+	}
+
+	protected Map<Integer, Matrix4f[]> computeUpdateGroups(final Set<Integer> indices) {
 		final Map<Integer, Matrix4f[]> result = new LinkedHashMap<>();
+
+		if (indices == null || indices.isEmpty()) {
+			return result;
+		}
 
 		final List<Integer> sorted = new ArrayList<>(indices);
 		Collections.sort(sorted);
@@ -251,13 +282,23 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 			result.put(currentStart, currentMatrices.toArray(new Matrix4f[0]));
 		}
 
-		if (result.isEmpty()) {
+		System.err.println(result.entrySet()
+				.stream()
+				.map(c -> c.getKey() + " "
+						+ Arrays.stream(c.getValue())
+								.map(d -> d.getTranslation(new Vector3f()).toString())
+								.collect(Collectors.joining(", ")))
+				.collect(Collectors.joining(", ")));
+
+		return result;
+	}
+
+	public void updateParticlesTransforms(final Set<Integer> indices) {
+		if (indices == null || indices.isEmpty()) {
 			return;
 		}
-		System.err.println(result);
-		result.entrySet().forEach(entry -> {
-			this.instancesTransforms.update(entry.getKey(), entry.getValue());
-		});
+
+		computeUpdateGroups(indices).entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue()));
 
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
