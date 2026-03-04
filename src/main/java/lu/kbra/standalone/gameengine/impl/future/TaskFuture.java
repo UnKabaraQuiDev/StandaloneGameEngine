@@ -4,7 +4,6 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import lu.kbra.pclib.PCUtils;
 import lu.kbra.pclib.impl.ThrowingConsumer;
 import lu.kbra.pclib.impl.ThrowingFunction;
 import lu.kbra.pclib.impl.ThrowingRunnable;
