@@ -1,7 +1,6 @@
 package lu.kbra.standalone.gameengine.objs.entity;
 
 import lu.kbra.pclib.PCUtils;
-import lu.kbra.pclib.datastructure.DeepCloneable;
 
 public class Entity implements SceneEntity, Cloneable {
 
@@ -22,6 +21,11 @@ public class Entity implements SceneEntity, Cloneable {
 	public SceneEntity setActive(boolean a) {
 		this.active = a;
 		return this;
+	}
+
+	protected <T extends Entity> T setId(String id) {
+		this.name = id;
+		return (T) this;
 	}
 
 	@Override

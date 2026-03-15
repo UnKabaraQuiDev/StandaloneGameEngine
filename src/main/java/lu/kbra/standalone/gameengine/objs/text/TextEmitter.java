@@ -315,7 +315,7 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 		if (boxed) {
 			throw new UnsupportedOperationException();
 		} else {
-			return text.replace("\t", TAB_CHARS);
+			return text.substring(0, Math.min(getBufferLength(), text.length())).replace("\t", TAB_CHARS);
 		}
 	}
 
