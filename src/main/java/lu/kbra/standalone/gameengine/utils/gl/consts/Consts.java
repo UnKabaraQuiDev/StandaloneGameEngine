@@ -17,9 +17,6 @@ public class Consts {
 	public static final boolean DEFAULT_GLES = false;
 
 	@Deprecated
-	public static final File CONFIG_DIR = new File("./config/");
-
-	@Deprecated
 	public static final File RES_DIR = new File("./resources/");
 	@Deprecated
 	public static final File MODEL_RES_DIR = new File(RES_DIR, "models/");

@@ -28,7 +28,7 @@ public class Scene3D implements Scene {
 
 	protected Map<String, SceneEntity> entities = Collections.synchronizedMap(new LinkedHashMap<>());
 
-	public Scene3D(String name) {
+	public Scene3D(final String name) {
 		this.name = name;
 		this.camera = Camera.perspectiveCamera3D();
 	}
@@ -36,31 +36,35 @@ public class Scene3D implements Scene {
 	@Override
 	public void cleanup() {
 //		name = null;
-		entities.values().stream().filter(v -> v instanceof Cleanupable c).forEach(v -> ((Cleanupable) v).cleanup());
-		entities.clear();
+		this.entities.values().stream().filter(v -> v instanceof final Cleanupable c).forEach(v -> ((Cleanupable) v).cleanup());
+		this.entities.clear();
 	}
 
 	public Map<String, SceneEntity> getEntities() {
-		return entities;
+		return this.entities;
 	}
 
-	public void setEntities(Map<String, SceneEntity> entities) {
-		synchronized (entitiesLock) {
+	public void setEntities(final Map<String, SceneEntity> entities) {
+		synchronized (this.entitiesLock) {
 			this.entities = entities;
 		}
 	}
 
 	@Override
-	public <T extends SceneEntity> T add(T entity) {
+	public <T extends SceneEntity> T add(final T entity) {
 		if (entity == null) {
 			return null;
 		}
 
-		synchronized (entitiesLock) {
+		synchronized (this.entitiesLock) {
+			if (this.entities.containsKey(entity.getId())) {
+				this.onRemove(this.entities.get(entity.getId()));
+			}
 			this.entities.put(entity.getId(), entity);
+			this.onAdd(entity);
 		}
 
-		if (entity instanceof ParentAwareNode pa) {
+		if (entity instanceof final ParentAwareNode pa) {
 			ParentAwareComponent.checkHierarchy(this, pa);
 			pa.setParent(this);
 		}
@@ -68,17 +72,23 @@ public class Scene3D implements Scene {
 		return entity;
 	}
 
+	protected <T extends SceneEntity> void onAdd(final T entity) {
+	}
+
+	protected <T extends SceneEntity> void onRemove(final T entity) {
+	}
+
 	@Override
-	public <T extends SceneEntity> T getEntity(String str) {
-		synchronized (entitiesLock) {
+	public <T extends SceneEntity> T getEntity(final String str) {
+		synchronized (this.entitiesLock) {
 			return (T) this.entities.get(str);
 		}
 	}
 
 	@Override
-	public <T extends SceneEntity> T[] addAll(T... entities) {
-		synchronized (entitiesLock) {
-			for (T entity : entities) {
+	public <T extends SceneEntity> T[] addAll(final T... entities) {
+		synchronized (this.entitiesLock) {
+			for (final T entity : entities) {
 				this.add(entity);
 			}
 			return entities;
@@ -87,21 +97,21 @@ public class Scene3D implements Scene {
 
 	@Override
 	public Camera3D getCamera() {
-		return camera;
+		return this.camera;
 	}
 
 	@Deprecated
 	@Override
-	public void setCamera(Camera camera) {
+	public void setCamera(final Camera camera) {
 		this.camera = (Camera3D) camera;
 	}
 
-	public void setCamera(Camera3D camera) {
+	public void setCamera(final Camera3D camera) {
 		this.camera = camera;
 	}
 
 	public Object getEntitiesLock() {
-		return entitiesLock;
+		return this.entitiesLock;
 	}
 
 	@Override
@@ -111,12 +121,13 @@ public class Scene3D implements Scene {
 
 	@Override
 	public <T extends SceneEntity> Optional<T> remove(T e) {
-		synchronized (entitiesLock) {
+		synchronized (this.entitiesLock) {
 			if (e != null && (e = (T) this.entities.remove(e.getId())) != null) {
-				if (e instanceof ParentAwareNode pa) {
+				if (e instanceof final ParentAwareNode pa) {
 					ParentAwareComponent.checkHierarchy(this, pa);
 					pa.setParent(null);
 				}
+				this.onRemove(e);
 				return Optional.of(e);
 			}
 		}
@@ -124,10 +135,11 @@ public class Scene3D implements Scene {
 	}
 
 	@Override
-	public <T extends SceneEntity, O extends SceneEntity> Optional<O> replace(O old, T new_) {
-		synchronized (entitiesLock) {
-			if (old != null && entities.containsKey(old.getId())) {
-				final O oldValue = (O) entities.remove(old.getId());
+	public <T extends SceneEntity, O extends SceneEntity> Optional<O> replace(final O old, final T new_) {
+		synchronized (this.entitiesLock) {
+			if (old != null && this.entities.containsKey(old.getId())) {
+				final O oldValue = (O) this.entities.remove(old.getId());
+				this.onRemove(oldValue);
 				if (oldValue != old) {
 					throw new IllegalStateException("Found value and given old values do not match ("
 							+ PCUtils.toSimpleIdentityString(oldValue) + " <> " + PCUtils.toSimpleIdentityString(old) + ").");
@@ -135,24 +147,24 @@ public class Scene3D implements Scene {
 				this.add(new_);
 				return Optional.of(oldValue);
 			} else {
-				add(new_);
+				this.add(new_);
 				return Optional.empty();
 			}
 		}
 	}
 
 	@Override
-	public <T extends SceneEntity> boolean contains(T e) {
-		synchronized (entitiesLock) {
-			return entities.containsKey(e.getId()) && entities.get(e.getId()) == e;
+	public <T extends SceneEntity> boolean contains(final T e) {
+		synchronized (this.entitiesLock) {
+			return this.entities.containsKey(e.getId()) && this.entities.get(e.getId()) == e;
 		}
 	}
 
 	@Override
-	public <T extends SceneEntity> boolean addAll(Collection<? extends T> entities) {
-		synchronized (entitiesLock) {
+	public <T extends SceneEntity> boolean addAll(final Collection<? extends T> entities) {
+		synchronized (this.entitiesLock) {
 			boolean addedAny = false;
-			for (T entity : entities) {
+			for (final T entity : entities) {
 				if (!this.entities.containsKey(entity.getId())) {
 					addedAny |= true;
 				}
@@ -164,42 +176,42 @@ public class Scene3D implements Scene {
 
 	@Override
 	public int size() {
-		synchronized (entitiesLock) {
+		synchronized (this.entitiesLock) {
 			return this.entities.size();
 		}
 	}
 
 	@Override
-	public <T extends SceneEntity> boolean contains(String e) {
-		synchronized (entitiesLock) {
-			return entities.containsKey(e);
+	public <T extends SceneEntity> boolean contains(final String e) {
+		synchronized (this.entitiesLock) {
+			return this.entities.containsKey(e);
 		}
 	}
 
 	@Override
 	public Stream<SceneEntity> parallelStream() {
-		synchronized (entitiesLock) {
-			return entities.values().parallelStream();
+		synchronized (this.entitiesLock) {
+			return this.entities.values().parallelStream();
 		}
 	}
 
 	@Override
 	public Stream<SceneEntity> stream() {
-		synchronized (entitiesLock) {
-			return entities.values().stream();
+		synchronized (this.entitiesLock) {
+			return this.entities.values().stream();
 		}
 	}
 
 	@Override
-	public void forEach(Consumer<? super SceneEntity> action) {
-		synchronized (entitiesLock) {
-			entities.values().forEach(action);
+	public void forEach(final Consumer<? super SceneEntity> action) {
+		synchronized (this.entitiesLock) {
+			this.entities.values().forEach(action);
 		}
 	}
 
 	@Override
 	public String getId() {
-		return name;
+		return this.name;
 	}
 
 }
