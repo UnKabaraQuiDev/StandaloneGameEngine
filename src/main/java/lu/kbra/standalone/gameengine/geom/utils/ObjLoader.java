@@ -30,7 +30,7 @@ import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec2fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
-import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.geom.Gizmo;
 import lu.kbra.standalone.gameengine.geom.LoadedMesh;
 import lu.kbra.standalone.gameengine.geom.Mesh;
@@ -39,7 +39,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 public final class ObjLoader {
 
-	public record LoadedMeshData(Vec3fAttribArray vertices, UIntAttribArray indices, AttribArray[] attribs, String name,
+	public record LoadedMeshData(Vec3fAttribArray vertices, UIntAttribArray indices, JavaAttribArray[] attribs, String name,
 			Material material) {
 
 	}
@@ -184,7 +184,7 @@ public final class ObjLoader {
 		final Vec3fAttribArray norm = new Vec3fAttribArray("norm", 1, normalsArr, BufferType.ARRAY);
 		final Vec2fAttribArray uv = new Vec2fAttribArray("uv", 2, uvsArr, BufferType.ARRAY);
 
-		return factory.apply(new LoadedMeshData(pos, ind, new AttribArray[] { norm, uv }, name, material));
+		return factory.apply(new LoadedMeshData(pos, ind, new JavaAttribArray[] { norm, uv }, name, material));
 	}
 
 	private static void processFace(String token, List<Vector3i> faces) {

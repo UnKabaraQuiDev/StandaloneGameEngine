@@ -1,115 +1,119 @@
 package lu.kbra.standalone.gameengine.cache.attrib;
 
-import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.types.IntegerJavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class IntAttribArray extends AttribArray implements IntegerJavaTypeAttribArray {
+public class IntAttribArray extends JavaAttribArray implements IntegerJavaTypeAttribArray {
 
 	protected int[] data;
 
-	public IntAttribArray(String name, int index, int[] data) {
+	public IntAttribArray(final String name, final int index, final int[] data) {
 		super(name, index);
 		this.data = data;
 	}
 
-	public IntAttribArray(String name, int index, int[] data, BufferType bufferType) {
+	public IntAttribArray(final String name, final int index, final int[] data, final BufferType bufferType) {
 		super(name, index, bufferType);
 		this.data = data;
 	}
 
-	public IntAttribArray(String name, int index, int[] data, BufferType bufferType, boolean s) {
+	public IntAttribArray(final String name, final int index, final int[] data, final BufferType bufferType, final boolean s) {
 		super(name, index, bufferType, s);
 		this.data = data;
 	}
 
-	public IntAttribArray(String name, int index, int[] data, boolean _static, int divisor) {
+	public IntAttribArray(final String name, final int index, final int[] data, final boolean _static, final int divisor) {
 		super(name, index, _static, divisor);
 		this.data = data;
 	}
 
-	public IntAttribArray(String name, int index, int[] data, BufferType bufferType, boolean _static, int divisor) {
+	public IntAttribArray(final String name, final int index, final int[] data, final BufferType bufferType, final boolean _static,
+			final int divisor) {
 		super(name, index, bufferType, _static, divisor);
 		this.data = data;
 	}
 
 	@Override
 	public void init() {
-		bind();
+		this.bind();
 
-		super.length = data.length;
+		super.length = this.data.length;
 
-		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(this.bufferType.getGlId(), this.data, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (isVertexArray()) {
-			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_INT, getElementByteSize(), 0);
-		}
-	}
-
-	public void update() {
-		update(data);
-	}
-
-	public void update(int[] nPos) {
-		bind();
-
-		if (iStatic) {
-			throw new UnsupportedOperationException("Array is static.");
-		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
-		}
-
-		data = nPos;
-		super.length = data.length;
-
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
-	}
-
-	public void resize(int[] nPos) {
-		bind();
-
-		final boolean sameSize = nPos.length == data.length;
-		data = nPos;
-		super.length = data.length;
-
-		if (sameSize) {
-			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
-		} else {
-			GL_W.glBufferData(bufferType.getGlId(), nPos, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
-
-		if (isVertexArray()) {
-			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_UNSIGNED_INT, getElementByteSize(), 0);
+		if (this.isVertexArray()) {
+			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_INT, this.getElementByteSize(), 0);
 		}
 	}
 
 	@Override
-	public Class<?> getType() {
+	public void update() {
+		this.update(this.data);
+	}
+
+	public void update(final int[] nPos) {
+		this.bind();
+
+		if (this.iStatic) {
+			throw new UnsupportedOperationException("Array is static.");
+		} else if (nPos.length != this.data.length) {
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + this.data.length + ").");
+		}
+
+		this.data = nPos;
+		super.length = this.data.length;
+
+		GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.data);
+	}
+
+	public void resize(final int[] nPos) {
+		this.bind();
+
+		final boolean sameSize = nPos.length == this.data.length;
+		this.data = nPos;
+		super.length = this.data.length;
+
+		if (sameSize) {
+			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, nPos);
+		} else {
+			GL_W.glBufferData(this.bufferType.getGlId(), nPos, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		}
+
+		if (this.isVertexArray()) {
+			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_UNSIGNED_INT, this.getElementByteSize(), 0);
+		}
+	}
+
+	@Override
+	public Class<Integer> getType() {
 		return int.class;
 	}
 
 	@Override
 	public int getLength() {
-		return isLoaded() ? (length = data.length) : super.getLength();
+		return this.isLoaded() ? (this.length = this.data.length) : super.getLength();
 	}
 
 	@Override
 	public boolean isLoaded() {
-		return data != null;
+		return this.data != null;
 	}
 
-	public Integer get(int i) {
-		return !isLoaded() ? null : data[i];
+	@Override
+	public Integer get(final int i) {
+		return !this.isLoaded() ? null : this.data[i];
 	}
 
+	@Override
 	public int[] getData() {
-		return data;
+		return this.data;
 	}
 
 	@Override
 	public int[] toFlatArray() {
-		return data;
+		return this.data;
 	}
 
 	@Override

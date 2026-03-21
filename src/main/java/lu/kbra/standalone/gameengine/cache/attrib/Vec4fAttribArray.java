@@ -2,98 +2,99 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import org.joml.Vector4f;
 
-import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.types.FloatJavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class Vec4fAttribArray extends AttribArray implements FloatJavaTypeAttribArray {
+public class Vec4fAttribArray extends JavaAttribArray implements FloatJavaTypeAttribArray {
 
 	private Vector4f[] data;
 
-	public Vec4fAttribArray(String name, int index, Vector4f[] data) {
+	public Vec4fAttribArray(final String name, final int index, final Vector4f[] data) {
 		super(name, index);
 		this.data = data;
 	}
 
-	public Vec4fAttribArray(String name, int index, Vector4f[] data, BufferType bufferType) {
+	public Vec4fAttribArray(final String name, final int index, final Vector4f[] data, final BufferType bufferType) {
 		super(name, index, bufferType);
 		this.data = data;
 	}
 
-	public Vec4fAttribArray(String name, int index, Vector4f[] data, BufferType bufferType, boolean _static) {
+	public Vec4fAttribArray(final String name, final int index, final Vector4f[] data, final BufferType bufferType, final boolean _static) {
 		super(name, index, bufferType, _static);
 		this.data = data;
 	}
 
-	public Vec4fAttribArray(String name, int index, Vector4f[] data, BufferType bufferType, boolean _static, int divisor) {
+	public Vec4fAttribArray(final String name, final int index, final Vector4f[] data, final BufferType bufferType, final boolean _static,
+			final int divisor) {
 		super(name, index, bufferType, _static, divisor);
 		this.data = data;
 	}
 
-	public Vec4fAttribArray(String name, int index, Vector4f[] data, boolean _static) {
+	public Vec4fAttribArray(final String name, final int index, final Vector4f[] data, final boolean _static) {
 		super(name, index, _static);
 		this.data = data;
 	}
 
-	public Vec4fAttribArray(String name, int index, Vector4f[] data, boolean _static, int divisor) {
+	public Vec4fAttribArray(final String name, final int index, final Vector4f[] data, final boolean _static, final int divisor) {
 		super(name, index, _static, divisor);
 		this.data = data;
 	}
 
 	@Override
 	public void init() {
-		bind();
+		this.bind();
 
-		super.length = data.length;
+		super.length = this.data.length;
 
-		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(this.bufferType.getGlId(), this.toFlatArray(), this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (isVertexArray()) {
-			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
+		if (this.isVertexArray()) {
+			GL_W.glVertexAttribPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), 0);
 		}
 	}
 
 	public FloatAttribArray toVec4fAttribArray() {
-		return new FloatAttribArray(name, index, toFlatArray(), bufferType, iStatic, divisor);
+		return new FloatAttribArray(this.name, this.index, this.toFlatArray(), this.bufferType, this.iStatic, this.divisor);
 	}
 
 	@Override
 	public void update() {
-		update(data);
+		this.update(this.data);
 	}
 
-	public void update(Vector4f[] nPos) {
-		bind();
+	public void update(final Vector4f[] nPos) {
+		this.bind();
 
-		if (iStatic) {
+		if (this.iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
-		} else if (nPos.length != data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+		} else if (nPos.length != this.data.length) {
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + this.data.length + ").");
 		}
 
-		data = nPos;
-		super.length = data.length;
+		this.data = nPos;
+		super.length = this.data.length;
 
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
+		GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.toFlatArray());
 	}
 
-	public void resize(Vector4f[] nPos) {
-		bind();
+	public void resize(final Vector4f[] nPos) {
+		this.bind();
 
-		final boolean sameSize = nPos.length == data.length;
-		data = nPos;
-		super.length = data.length;
+		final boolean sameSize = nPos.length == this.data.length;
+		this.data = nPos;
+		super.length = this.data.length;
 
 		if (sameSize) {
-			GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
+			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.toFlatArray());
 		} else {
-			GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			GL_W.glBufferData(this.bufferType.getGlId(), this.toFlatArray(), this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		}
 
-		if (isVertexArray()) {
-			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
+		if (this.isVertexArray()) {
+			GL_W.glVertexAttribPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), 0);
 		}
 	}
 
@@ -104,25 +105,27 @@ public class Vec4fAttribArray extends AttribArray implements FloatJavaTypeAttrib
 
 	@Override
 	public int getLength() {
-		return isLoaded() ? (length = data.length) : super.getLength();
+		return this.isLoaded() ? (this.length = this.data.length) : super.getLength();
 	}
 
 	@Override
 	public boolean isLoaded() {
-		return data != null;
+		return this.data != null;
 	}
 
-	public Vector4f get(int i) {
-		return !isLoaded() ? null : data[i];
+	@Override
+	public Vector4f get(final int i) {
+		return !this.isLoaded() ? null : this.data[i];
 	}
 
+	@Override
 	public Vector4f[] getData() {
-		return data;
+		return this.data;
 	}
 
 	@Override
 	public float[] toFlatArray() {
-		return GameEngineUtils.toFlatArray(data);
+		return GameEngineUtils.toFlatArray(this.data);
 	}
 
 	@Override

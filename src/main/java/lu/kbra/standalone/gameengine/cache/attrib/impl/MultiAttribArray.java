@@ -1,13 +1,13 @@
 package lu.kbra.standalone.gameengine.cache.attrib.impl;
 
-public interface MultiAttribArray extends IAttribArray {
+public interface MultiAttribArray extends AttribArray {
 
 	default int getMinIndex() {
-		return getIndex();
+		return this.getIndex();
 	}
 
 	default int getMaxIndex() {
-		return getIndex() + getAttribArrayCount();
+		return this.getIndex() + this.getAttribArrayCount();
 	}
 
 	int getAttribArrayCount();

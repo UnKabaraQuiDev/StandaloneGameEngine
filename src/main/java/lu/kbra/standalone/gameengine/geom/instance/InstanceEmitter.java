@@ -22,7 +22,7 @@ import org.joml.Vector3f;
 
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.cache.attrib.Mat4fAttribArray;
-import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.types.JavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.geom.Mesh;
@@ -48,18 +48,18 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 	protected Instance[] particles;
 
 	protected Mat4fAttribArray instancesTransforms;
-	protected AttribArray[] instancesAttribs;
+	protected JavaAttribArray[] instancesAttribs;
 	protected int count;
 
 	protected Mesh instanceMesh;
 
 	public InstanceEmitter(final String name, final Mesh mesh, final int count, final Transform baseTransform,
-			final AttribArray... attribs) {
+			final JavaAttribArray... attribs) {
 		this(name, mesh, count, i -> baseTransform.clone(), attribs);
 	}
 
 	public InstanceEmitter(final String name, final Mesh mesh, final int count, final Mat4fAttribArray baseTransform,
-			final AttribArray... attribs) {
+			final JavaAttribArray... attribs) {
 		this.name = name;
 		this.count = count;
 
@@ -72,7 +72,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 			final Object[] atts = new Object[this.instancesAttribs.length];
 
 			int c = 0;
-			for (final AttribArray a : attribs)
+			for (final JavaAttribArray a : attribs)
 				atts[c++] = a.get(i);
 
 			this.particles[i] = new Instance(i, atts, new Transform3D(baseTransform.get(i)));
@@ -83,7 +83,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		mesh.bind();
 
 		mesh.addAttribArray(this.instancesTransforms);
-		for (final AttribArray a : this.instancesAttribs) {
+		for (final JavaAttribArray a : this.instancesAttribs) {
 			if (mesh.getVbo().containsKey(a.getIndex())) {
 				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
@@ -99,7 +99,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 	}
 
 	public InstanceEmitter(final String name, final Mesh mesh, final int count, final IntFunction<Transform> baseTransform,
-			final AttribArray... attribs) {
+			final JavaAttribArray... attribs) {
 		this.name = name;
 		this.count = count;
 
@@ -112,7 +112,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 			final Object[] atts = new Object[this.instancesAttribs.length];
 
 			int c = 0;
-			for (final AttribArray a : attribs)
+			for (final JavaAttribArray a : attribs)
 				atts[c++] = a.get(i);
 
 			this.particles[i] = new Instance(i, atts, baseTransform.apply(i));
@@ -128,7 +128,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		mesh.bind();
 
 		mesh.addAttribArray(this.instancesTransforms);
-		for (final AttribArray a : this.instancesAttribs) {
+		for (final JavaAttribArray a : this.instancesAttribs) {
 			if (mesh.getVbo().containsKey(a.getIndex())) {
 				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
@@ -169,7 +169,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		this.instancesTransforms.update(transforms);
 
 		for (int c = 0; c < this.instancesAttribs.length; c++)
-			AttribArray.update(this.instancesAttribs[c], atts[c]);
+			JavaAttribArray.update(this.instancesAttribs[c], atts[c]);
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
@@ -182,7 +182,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		this.instancesTransforms.update(transforms);
 
 		for (int c = 0; c < this.instancesAttribs.length; c++)
-			AttribArray.update(this.instancesAttribs[c], atts[c]);
+			JavaAttribArray.update(this.instancesAttribs[c], atts[c]);
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
@@ -200,7 +200,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		this.instancesTransforms.update(transforms);
 
 		for (int c = 0; c < this.instancesAttribs.length; c++)
-			AttribArray.update(this.instancesAttribs[c], atts[c]);
+			JavaAttribArray.update(this.instancesAttribs[c], atts[c]);
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
@@ -326,10 +326,10 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 
 			transforms = Arrays.stream(this.particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new);
 
-			for (final AttribArray arr : this.instancesAttribs) {
+			for (final JavaAttribArray arr : this.instancesAttribs) {
 				final Object nData = Array.newInstance(arr.getData().getClass().getComponentType(), newCount);
 				System.arraycopy(arr.getData(), 0, nData, 0, newCount);
-				AttribArray.resize(arr, nData);
+				JavaAttribArray.resize(arr, nData);
 			}
 
 		} else { // add new ones
@@ -351,10 +351,10 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		if (this.instancesTransforms != null)
 			this.instancesTransforms.resize(transforms);
 
-		for (final AttribArray arr : this.instancesAttribs) {
+		for (final JavaAttribArray arr : this.instancesAttribs) {
 			final Object nData = Array.newInstance(arr.getData().getClass().getComponentType(), newCount);
 			System.arraycopy(arr.getData(), 0, nData, 0, Math.min(Array.getLength(arr.getData()), newCount));
-			AttribArray.resize(arr, nData);
+			JavaAttribArray.resize(arr, nData);
 		}
 
 		this.count = newCount;
@@ -369,7 +369,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 
 		GlobalLogger.log("Cleaning up: " + this.name);
 
-		Arrays.stream(this.instancesAttribs).forEach(AttribArray::cleanup);
+		Arrays.stream(this.instancesAttribs).forEach(JavaAttribArray::cleanup);
 		this.instancesAttribs = null;
 
 		this.instancesTransforms.cleanup();

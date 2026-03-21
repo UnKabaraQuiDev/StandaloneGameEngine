@@ -2,120 +2,122 @@ package lu.kbra.standalone.gameengine.cache.attrib;
 
 import java.nio.ByteBuffer;
 
-import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.types.ByteJavaTypeAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
-public class UByteAttribArray extends AttribArray implements ByteJavaTypeAttribArray {
+public class UByteAttribArray extends JavaAttribArray implements ByteJavaTypeAttribArray {
 
 	private byte[] data;
 
-	public UByteAttribArray(String name, int index, byte[] data) {
+	public UByteAttribArray(final String name, final int index, final byte[] data) {
 		super(name, index);
 		this.data = data;
 	}
 
-	public UByteAttribArray(String name, int index, byte[] data, BufferType bufferType) {
+	public UByteAttribArray(final String name, final int index, final byte[] data, final BufferType bufferType) {
 		super(name, index, bufferType);
 		this.data = data;
 	}
 
-	public UByteAttribArray(String name, int index, byte[] data, BufferType bufferType, boolean s) {
+	public UByteAttribArray(final String name, final int index, final byte[] data, final BufferType bufferType, final boolean s) {
 		super(name, index, bufferType, s);
 		this.data = data;
 	}
 
-	public UByteAttribArray(String name, int index, byte[] data, boolean _static, int divisor) {
+	public UByteAttribArray(final String name, final int index, final byte[] data, final boolean _static, final int divisor) {
 		super(name, index, _static, divisor);
 		this.data = data;
 	}
 
 	@Override
 	public void init() {
-		bind();
+		this.bind();
 
-		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(data.length);
-		bbuffer.put(data);
+		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(this.data.length);
+		bbuffer.put(this.data);
 		bbuffer.flip();
 
-		super.length = data.length;
+		super.length = this.data.length;
 
-		GL_W.glBufferData(bufferType.getGlId(), bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(this.bufferType.getGlId(), bbuffer, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (isVertexArray()) {
-			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_BYTE, getElementByteSize(), 0);
+		if (this.isVertexArray()) {
+			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_BYTE, this.getElementByteSize(), 0);
 		}
 	}
 
-	public void update(byte[] nPos) {
-		if (nPos.length != data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+	public void update(final byte[] nPos) {
+		if (nPos.length != this.data.length) {
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + this.data.length + ").");
 		}
 
-		update(0, nPos);
+		this.update(0, nPos);
 	}
 
-	public void update(int index, byte[] nPos) {
-		bind();
+	public void update(final int index, final byte[] nPos) {
+		this.bind();
 
-		if (iStatic) {
+		if (this.iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
 		}
 
-		System.arraycopy(nPos, 0, data, index, nPos.length);
-		super.length = data.length;
+		System.arraycopy(nPos, 0, this.data, index, nPos.length);
+		super.length = this.data.length;
 
 		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(nPos.length);
 		bbuffer.put(nPos);
 		bbuffer.flip();
 
-		GL_W.glBufferSubData(bufferType.getGlId(), index * getElementByteSize(), bbuffer);
+		GL_W.glBufferSubData(this.bufferType.getGlId(), index * this.getElementByteSize(), bbuffer);
 	}
 
-	public void resize(byte[] nPos) {
-		bind();
+	public void resize(final byte[] nPos) {
+		this.bind();
 
-		final boolean sameSize = nPos.length == data.length;
-		data = nPos;
-		super.length = data.length;
+		final boolean sameSize = nPos.length == this.data.length;
+		this.data = nPos;
+		super.length = this.data.length;
 
-		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(data.length);
-		bbuffer.put(data);
+		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(this.data.length);
+		bbuffer.put(this.data);
 		bbuffer.flip();
 
 		if (sameSize) {
-			GL_W.glBufferSubData(bufferType.getGlId(), 0, bbuffer);
+			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, bbuffer);
 		} else {
-			GL_W.glBufferData(bufferType.getGlId(), bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+			GL_W.glBufferData(this.bufferType.getGlId(), bbuffer, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 		}
 
-		if (isVertexArray()) {
-			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, getElementByteSize(), 0);
+		if (this.isVertexArray()) {
+			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, this.getElementByteSize(), 0);
 		}
 	}
 
 	@Override
 	public boolean isLoaded() {
-		return data != null;
+		return this.data != null;
 	}
 
 	@Override
 	public int getLength() {
-		return isLoaded() ? (length = data.length) : super.getLength();
+		return this.isLoaded() ? (this.length = this.data.length) : super.getLength();
 	}
 
-	public Byte get(int i) {
-		return !isLoaded() ? null : data[i];
+	@Override
+	public Byte get(final int i) {
+		return !this.isLoaded() ? null : this.data[i];
 	}
 
+	@Override
 	public byte[] getData() {
-		return data;
+		return this.data;
 	}
 
 	@Override
 	public void update() {
-		update(data);
+		this.update(this.data);
 	}
 
 	@Override
@@ -125,7 +127,7 @@ public class UByteAttribArray extends AttribArray implements ByteJavaTypeAttribA
 
 	@Override
 	public byte[] toFlatArray() {
-		return data;
+		return this.data;
 	}
 
 }

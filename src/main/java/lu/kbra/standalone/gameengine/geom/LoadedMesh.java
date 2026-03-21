@@ -13,7 +13,7 @@ import org.joml.Vector3f;
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
-import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
@@ -30,7 +30,7 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 
 	protected Vec3fAttribArray vertices;
 	protected UIntAttribArray indices;
-	protected List<AttribArray> attribs;
+	protected List<JavaAttribArray> attribs;
 
 	protected int vertexCount;
 	protected int indicesCount;
@@ -40,7 +40,7 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 	 * Positions are stored as attribArray 0, normals as attribArray 1, uvs as attribArray 2
 	 */
 	public LoadedMesh(final String name, final Material material, final Vec3fAttribArray vertices, final UIntAttribArray indices,
-			final AttribArray... attribs) {
+			final JavaAttribArray... attribs) {
 		this.name = name;
 		this.vertices = vertices;
 		this.indices = indices;
@@ -60,7 +60,7 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 		vertices.setIndex(ATTRIB_VERTICES_ID);
 		this.storeAttribArray((Vec3fAttribArray) vertices);
 
-		for (final AttribArray a : attribs) {
+		for (final JavaAttribArray a : attribs) {
 			if (this.vbo.containsKey(a.getIndex())) {
 				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
@@ -89,7 +89,7 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 		GlobalLogger.log("Cleaning up: " + this.name + " (" + this.vao + ")");
 
 		GL_W.glDeleteVertexArrays(this.vao);
-		attribs.forEach(AttribArray::cleanup);
+		attribs.forEach(JavaAttribArray::cleanup);
 		this.attribs = null;
 		this.vbo = null;
 		this.vao = -1;
@@ -135,7 +135,7 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 	}
 
 	@Override
-	public List<AttribArray> getAttribs() {
+	public List<JavaAttribArray> getAttribs() {
 		return this.attribs;
 	}
 

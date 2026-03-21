@@ -6,7 +6,7 @@ import java.util.Map;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
-import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.impl.MultiAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.Material;
@@ -65,7 +65,7 @@ public interface Mesh extends UniqueID, Renderable, GLObject {
 	@Deprecated
 	boolean usesEBO();
 
-	default void storeAttribArray(AttribArray data) {
+	default void storeAttribArray(JavaAttribArray data) {
 		bind();
 		final boolean valid = data.isValid();
 		if (!valid) {
@@ -87,7 +87,7 @@ public interface Mesh extends UniqueID, Renderable, GLObject {
 		}
 	}
 
-	default void addAttribArray(AttribArray data) {
+	default void addAttribArray(JavaAttribArray data) {
 		bind();
 		final boolean valid = data.isValid();
 		if (!valid) {
@@ -111,7 +111,7 @@ public interface Mesh extends UniqueID, Renderable, GLObject {
 		getAttribs().add(data);
 	}
 
-	List<AttribArray> getAttribs();
+	List<JavaAttribArray> getAttribs();
 
 	public static QuadLoadedMesh newQuad(String name, Material material2, Vector2f size) {
 		return new QuadLoadedMesh(name, material2, size);

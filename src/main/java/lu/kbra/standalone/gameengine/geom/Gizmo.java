@@ -11,7 +11,7 @@ import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.cache.attrib.UIntAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec3fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
-import lu.kbra.standalone.gameengine.cache.attrib.impl.AttribArray;
+import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
@@ -57,7 +57,7 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 		GlobalLogger.log(Level.INFO, "Gizmo " + name + ": " + vao + " & " + vbo);
 	}
 
-	protected void storeAttribArray(AttribArray data) {
+	protected void storeAttribArray(JavaAttribArray data) {
 		this.vbo.put(data.getIndex(), data.gen());
 		data.bind();
 		data.init();
