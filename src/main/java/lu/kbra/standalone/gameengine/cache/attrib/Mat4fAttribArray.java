@@ -89,10 +89,12 @@ public class Mat4fAttribArray extends JavaAttribArray implements MultiAttribArra
 		super.length = this.data.length;
 
 		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(nPos.length * this.getElementByteSize());
+		int offset = 0;
 		for (final Matrix4f nPo : nPos) {
-			nPo.get(bbuffer);
+			nPo.get(offset, bbuffer);
+			offset += 16 * Float.BYTES;
 		}
-		bbuffer.flip();
+//		bbuffer.flip();
 
 		GL_W.glBufferSubData(this.bufferType.getGlId(), index * this.getElementByteSize(), bbuffer);
 	}

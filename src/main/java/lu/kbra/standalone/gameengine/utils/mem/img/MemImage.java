@@ -35,8 +35,6 @@ public class MemImage implements Cleanupable {
 			return;
 		}
 
-		GlobalLogger.log();
-
 		if (MemImageOrigin.STBI == origin) {
 			STBImage.stbi_image_free(buffer);
 		} else if (MemImageOrigin.OPENGL == origin) {

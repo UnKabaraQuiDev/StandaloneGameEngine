@@ -1,7 +1,6 @@
 package lu.kbra.standalone.gameengine.geom.instance;
 
 import java.lang.reflect.Array;
-import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -418,6 +417,11 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 
 	@Override
 	public String toString() {
+		if (this.instanceMesh == null) {
+			return "InstanceEmitter [name=" + this.name + ", particles=" + this.particles.length + ", instancesTransforms="
+					+ this.instancesTransforms + ", instancesAttribs=" + Arrays.toString(this.instancesAttribs) + ", count=" + this.count
+					+ ", instanceMesh=" + this.instanceMesh + ", isValid()=" + this.isValid() + ", instanceMesh=null]";
+		}
 		return "InstanceEmitter [name=" + this.name + ", particles=" + this.particles.length + ", instancesTransforms="
 				+ this.instancesTransforms + ", instancesAttribs=" + Arrays.toString(this.instancesAttribs) + ", count=" + this.count
 				+ ", instanceMesh=" + this.instanceMesh + ", isValid()=" + this.isValid() + ", instanceMesh.getGlid()="

@@ -109,6 +109,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 			return false;
 		if (this.meshes.containsKey(m.getId()) && !this.meshes.get(m.getId()).equals(m)) {
 			GlobalLogger.severe("Overwriting Mesh: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
+			new Exception("Overwriting Mesh: " + m).fillInStackTrace().printStackTrace();
 			this.meshes.remove(m.getId()).cleanup();
 		}
 		return this.meshes.putIfAbsent(m.getId(), m) == null;

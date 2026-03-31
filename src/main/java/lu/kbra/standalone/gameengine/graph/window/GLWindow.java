@@ -60,6 +60,7 @@ public class GLWindow extends Window {
 			throw new RuntimeException(e);
 		}
 
+		GLFW.glfwSetWindowPos(handle, 50, 50);
 		GLFW.glfwWindowHint(GLFW.GLFW_VISIBLE, GLFW.GLFW_FALSE);
 		GLFW.glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MAJOR, 4);
 		GLFW.glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 6);
