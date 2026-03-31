@@ -39,8 +39,13 @@ public class Mat3x2fAttribArray extends JavaAttribArray implements MultiAttribAr
 		this.data = data;
 	}
 
-	public Mat3x2fAttribArray(final String name, final int index, final Matrix3x2f[] data, final BufferType bufferType,
-			final boolean iStatic, final int divisor) {
+	public Mat3x2fAttribArray(
+			final String name,
+			final int index,
+			final Matrix3x2f[] data,
+			final BufferType bufferType,
+			final boolean iStatic,
+			final int divisor) {
 		super(name, index, bufferType, iStatic, divisor);
 		this.data = data;
 	}

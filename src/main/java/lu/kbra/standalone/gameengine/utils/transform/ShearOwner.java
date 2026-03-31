@@ -25,8 +25,7 @@ public interface ShearOwner {
 	default void applyShear(final AffineTransform affine) {
 		final Matrix3fc shear = this.getShear();
 		// project XZ plane: x' = m00*x + m02*z, z' = m20*x + m22*z
-		final AffineTransform shearAffine = new AffineTransform(
-				shear.m00(),
+		final AffineTransform shearAffine = new AffineTransform(shear.m00(),
 				shear.m20(), // m00, m10
 				shear.m02(),
 				shear.m22(), // m01, m11

@@ -359,8 +359,19 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, long arg11) {
+	default void nglGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int arg10,
+			long arg11) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -416,13 +427,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetProgramResourceiv(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4,
-			IntBuffer arg5) {
+	default void glGetProgramResourceiv(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4, IntBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetProgramResourceiv(int arg0, int arg1, int arg2, int[] arg3, int[] arg4,
-			int[] arg5) {
+	default void glGetProgramResourceiv(int arg0, int arg1, int arg2, int[] arg3, int[] arg4, int[] arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -590,18 +599,15 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	default String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	default void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetActiveUniform(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	default void glGetActiveUniform(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -769,13 +775,18 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default int glGetDebugMessageLog(int arg0, IntBuffer arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, IntBuffer arg5, ByteBuffer arg6) {
+	default int glGetDebugMessageLog(
+			int arg0,
+			IntBuffer arg1,
+			IntBuffer arg2,
+			IntBuffer arg3,
+			IntBuffer arg4,
+			IntBuffer arg5,
+			ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default int glGetDebugMessageLog(int arg0, int[] arg1, int[] arg2, int[] arg3, int[] arg4,
-			int[] arg5, ByteBuffer arg6) {
+	default int glGetDebugMessageLog(int arg0, int[] arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -795,8 +806,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glBindImageTexture(int arg0, int arg1, int arg2, boolean arg3, int arg4, int arg5,
-			int arg6) {
+	default void glBindImageTexture(int arg0, int arg1, int arg2, boolean arg3, int arg4, int arg5, int arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -884,8 +894,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureView(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	default void glTextureView(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -1121,8 +1130,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3,
-			IntBuffer arg4) {
+	default void glGetActiveSubroutineUniformiv(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -1174,13 +1182,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3,
-			IntBuffer arg4) {
+	default void glMultiDrawElementsBaseVertex(int arg0, IntBuffer arg1, int arg2, PointerBuffer arg3, IntBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3,
-			int[] arg4) {
+	default void glMultiDrawElementsBaseVertex(int arg0, int[] arg1, int arg2, PointerBuffer arg3, int[] arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -1236,8 +1242,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4,
-			double arg5) {
+	default void glFrustum(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -1269,8 +1274,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	default void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -1334,8 +1338,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, long arg6) {
+	default void nglClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -1759,8 +1762,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	default void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -1820,8 +1822,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	default void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -1869,8 +1870,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	default void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -1962,13 +1962,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMultiDrawArraysIndirectCount(int arg0, IntBuffer arg1, long arg2, int arg3,
-			int arg4) {
+	default void glMultiDrawArraysIndirectCount(int arg0, IntBuffer arg1, long arg2, int arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMultiDrawArraysIndirectCount(int arg0, ByteBuffer arg1, long arg2, int arg3,
-			int arg4) {
+	default void glMultiDrawArraysIndirectCount(int arg0, ByteBuffer arg1, long arg2, int arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2052,8 +2050,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	default void nglGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2149,53 +2146,153 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, double[] arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			double[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, float[] arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			float[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int[] arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, short[] arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			short[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			DoubleBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			FloatBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, IntBuffer arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			IntBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ShortBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	default void glTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ByteBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2311,53 +2408,43 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, short[] arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, short[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, double[] arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, double[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, float[] arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, float[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int[] arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, ShortBuffer arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ShortBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, IntBuffer arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, IntBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, ByteBuffer arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ByteBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, DoubleBuffer arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, DoubleBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, FloatBuffer arg8) {
+	default void glTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, FloatBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2441,8 +2528,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	default void nglCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2450,8 +2536,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glInvalidateTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	default void glInvalidateTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2463,53 +2548,43 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			double[] arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, double[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int[] arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			DoubleBuffer arg6) {
+	default void glTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, DoubleBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2749,18 +2824,15 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	default void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	default void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			long arg6) {
+	default void nglBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2800,18 +2872,15 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	default void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	default void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	default void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2843,13 +2912,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	default void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	default void glCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2865,8 +2932,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	default void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2874,8 +2940,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3,
-			int arg4) {
+	default void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -2935,13 +3000,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glProgramUniform4d(int arg0, int arg1, double arg2, double arg3, double arg4,
-			double arg5) {
+	default void glProgramUniform4d(int arg0, int arg1, double arg2, double arg3, double arg4, double arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glProgramUniform4f(int arg0, int arg1, float arg2, float arg3, float arg4,
-			float arg5) {
+	default void glProgramUniform4f(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -3033,13 +3096,32 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, ByteBuffer arg9) {
+	default void glCompressedTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			ByteBuffer arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	default void glCompressedTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -3111,8 +3193,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetProgramResourceName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	default void nglGetProgramResourceName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -3236,8 +3317,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetProgramResourceName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	default void glGetProgramResourceName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -3293,13 +3373,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glBindBuffersRange(int arg0, int arg1, int[] arg2, PointerBuffer arg3,
-			PointerBuffer arg4) {
+	default void glBindBuffersRange(int arg0, int arg1, int[] arg2, PointerBuffer arg3, PointerBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glBindBuffersRange(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3,
-			PointerBuffer arg4) {
+	default void glBindBuffersRange(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3, PointerBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -3335,8 +3413,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	default void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -3492,53 +3569,43 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			double[] arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, double[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int[] arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			DoubleBuffer arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, DoubleBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	default void glTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -3614,53 +3681,43 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, short[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ShortBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, IntBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, FloatBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, DoubleBuffer arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, DoubleBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, float[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, double[] arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, double[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ByteBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	default void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -3728,53 +3785,153 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, float[] arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			float[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, int[] arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			FloatBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, short[] arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			short[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ByteBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ShortBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, IntBuffer arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			IntBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			DoubleBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, double[] arg10) {
+	default void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			double[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -3962,8 +4119,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			boolean arg6) {
+	default void glTexImage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4051,8 +4207,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	default void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4148,8 +4303,18 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	default void nglTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4181,8 +4346,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5) {
+	default void nglMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4262,23 +4426,19 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4290,13 +4450,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	default void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4340,13 +4498,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	default void glDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawElementsInstancedBaseInstance(int arg0, int arg1, ByteBuffer arg2, int arg3,
-			int arg4) {
+	default void glDrawElementsInstancedBaseInstance(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4354,8 +4510,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglInvalidateNamedFramebufferSubData(int arg0, int arg1, long arg2, int arg3,
-			int arg4, int arg5, int arg6) {
+	default void nglInvalidateNamedFramebufferSubData(int arg0, int arg1, long arg2, int arg3, int arg4, int arg5, int arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4415,38 +4570,31 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, ByteBuffer arg6) {
+	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, IntBuffer arg6) {
+	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, IntBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, FloatBuffer arg6) {
+	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, FloatBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, float[] arg6) {
+	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, float[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, int[] arg6) {
+	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, int[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, short[] arg6) {
+	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, short[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5, ShortBuffer arg6) {
+	default void glClearNamedBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, ShortBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4826,53 +4974,43 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, double[] arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, double[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, float[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, DoubleBuffer arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, DoubleBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, short[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ByteBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ShortBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, IntBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	default void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, FloatBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4912,8 +5050,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			boolean arg6) {
+	default void glTexStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -4961,58 +5098,58 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	default void nglTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, short[] arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, short[] arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int[] arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int[] arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, DoubleBuffer arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, DoubleBuffer arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, double[] arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, double[] arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, float[] arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, float[] arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ShortBuffer arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, ShortBuffer arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, long arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ByteBuffer arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, ByteBuffer arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, IntBuffer arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, IntBuffer arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	default void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, FloatBuffer arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5060,8 +5197,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	default void nglTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5201,13 +5337,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	default void nglTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	default void nglTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5219,53 +5353,43 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ByteBuffer arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			ShortBuffer arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ShortBuffer arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			IntBuffer arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, IntBuffer arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			FloatBuffer arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, FloatBuffer arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int[] arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int[] arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			short[] arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, short[] arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			double[] arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, double[] arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			float[] arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, float[] arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			DoubleBuffer arg7) {
+	default void glTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, DoubleBuffer arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5525,8 +5649,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	default void nglCompressedTexSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5542,28 +5665,23 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			FloatBuffer arg5) {
+	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			IntBuffer arg5) {
+	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ShortBuffer arg5) {
+	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ByteBuffer arg5) {
+	default void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5583,8 +5701,18 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	default void nglCompressedTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5600,8 +5728,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	default void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5769,38 +5896,31 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			short[] arg6) {
+	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, short[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			int[] arg6) {
+	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, int[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			float[] arg6) {
+	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, float[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, FloatBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, IntBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, ShortBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	default void glClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5832,53 +5952,134 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, DoubleBuffer arg8) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			DoubleBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, ByteBuffer arg8) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			ByteBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, FloatBuffer arg8) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			FloatBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, IntBuffer arg8) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			IntBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, ShortBuffer arg8) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			ShortBuffer arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, float[] arg8) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			float[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int[] arg8) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, short[] arg8) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			short[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, double[] arg8) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			double[] arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, long arg9) {
+	default void glGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			long arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -5922,8 +6123,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glOrtho(double arg0, double arg1, double arg2, double arg3, double arg4,
-			double arg5) {
+	default void glOrtho(double arg0, double arg1, double arg2, double arg3, double arg4, double arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6079,8 +6279,17 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetCompressedTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, long arg9) {
+	default void nglGetCompressedTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			long arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6312,13 +6521,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			long arg6) {
+	default void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5,
-			ByteBuffer arg6) {
+	default void glBitmap(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6478,13 +6685,32 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, ByteBuffer arg9) {
+	default void glCompressedTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			ByteBuffer arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, int arg9, long arg10) {
+	default void glCompressedTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6504,8 +6730,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglVertexArrayVertexBuffers(int arg0, int arg1, int arg2, long arg3, long arg4,
-			long arg5) {
+	default void nglVertexArrayVertexBuffers(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6533,8 +6758,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glVertexArrayAttribFormat(int arg0, int arg1, int arg2, int arg3, boolean arg4,
-			int arg5) {
+	default void glVertexArrayAttribFormat(int arg0, int arg1, int arg2, int arg3, boolean arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6574,13 +6798,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glVertexArrayVertexBuffers(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3,
-			IntBuffer arg4) {
+	default void glVertexArrayVertexBuffers(int arg0, int arg1, IntBuffer arg2, PointerBuffer arg3, IntBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glVertexArrayVertexBuffers(int arg0, int arg1, int[] arg2, PointerBuffer arg3,
-			int[] arg4) {
+	default void glVertexArrayVertexBuffers(int arg0, int arg1, int[] arg2, PointerBuffer arg3, int[] arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6640,8 +6862,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6) {
+	default void glCopyTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6681,13 +6902,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	default void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, long arg6) {
+	default void glCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6719,8 +6938,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	default void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6800,13 +7018,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, long arg8) {
+	default void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, ByteBuffer arg7) {
+	default void glCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6958,8 +7174,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, long arg7) {
+	default void nglGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6, long arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -6967,8 +7182,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4,
-			long arg5, long arg6) {
+	default void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7036,8 +7250,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetProgramResourceiv(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, long arg7) {
+	default void nglGetProgramResourceiv(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6, long arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7113,8 +7326,19 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glBlitNamedFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
+	default void glBlitNamedFramebuffer(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int arg10,
+			int arg11) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7162,8 +7386,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2,
-			long arg3, int arg4, int arg5, int arg6) {
+	default void nglDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5, int arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7179,8 +7402,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4,
-			int arg5, int arg6) {
+	default void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4, int arg5, int arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7320,8 +7542,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetActiveSubroutineName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	default void nglGetActiveSubroutineName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7365,8 +7586,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, long arg6) {
+	default void nglCompressedTextureSubImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7390,48 +7610,138 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int[] arg10) {
+	default void glClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, short[] arg10) {
+	default void glClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			short[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	default void glClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			FloatBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	default void glClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ByteBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	default void glClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ShortBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, IntBuffer arg10) {
+	default void glClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			IntBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	default void glClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			DoubleBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, double[] arg10) {
+	default void glClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			double[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, float[] arg10) {
+	default void glClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			float[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7451,23 +7761,19 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	default void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	default String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, ByteBuffer arg5) {
+	default void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2,
-			IntBuffer arg3) {
+	default String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7531,8 +7837,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, long arg8) {
+	default void nglCompressedTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7584,8 +7889,18 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglCompressedTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, int arg6, int arg7, int arg8, int arg9, long arg10) {
+	default void nglCompressedTextureSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7637,8 +7952,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	default void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7702,8 +8016,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCopyTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8) {
+	default void glCopyTextureSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -7795,8 +8108,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCopyTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	default void glCopyTextureSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8060,13 +8372,31 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, double[] arg9) {
+	default void glMap2d(
+			int arg0,
+			double arg1,
+			double arg2,
+			int arg3,
+			int arg4,
+			double arg5,
+			double arg6,
+			int arg7,
+			int arg8,
+			double[] arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, DoubleBuffer arg9) {
+	default void glMap2d(
+			int arg0,
+			double arg1,
+			double arg2,
+			int arg3,
+			int arg4,
+			double arg5,
+			double arg6,
+			int arg7,
+			int arg8,
+			DoubleBuffer arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8074,13 +8404,21 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, float[] arg9) {
+	default void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7, int arg8, float[] arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	default void glMap2f(
+			int arg0,
+			float arg1,
+			float arg2,
+			int arg3,
+			int arg4,
+			float arg5,
+			float arg6,
+			int arg7,
+			int arg8,
+			FloatBuffer arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8160,28 +8498,23 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3,
-			int arg4) {
+	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, IntBuffer arg3,
-			int arg4) {
+	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, IntBuffer arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4,
-			int arg5) {
+	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3,
-			int arg4) {
+	default void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8189,8 +8522,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5,
-			long arg6) {
+	default void nglClearBufferSubData(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8274,8 +8606,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetNamedFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2,
-			IntBuffer arg3) {
+	default void glGetNamedFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8287,53 +8618,154 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, long arg11) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int arg10,
+			long arg11) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, DoubleBuffer arg10) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			DoubleBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			FloatBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, IntBuffer arg10) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			IntBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ShortBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ByteBuffer arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, double[] arg10) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			double[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, float[] arg10) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			float[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, short[] arg10) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			short[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetTextureSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int[] arg10) {
+	default void glGetTextureSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int[] arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8349,8 +8781,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3,
-			int arg4, int arg5) {
+	default void nglDrawElementsInstancedBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8362,18 +8793,15 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glInvalidateNamedFramebufferSubData(int arg0, IntBuffer arg1, int arg2, int arg3,
-			int arg4, int arg5) {
+	default void glInvalidateNamedFramebufferSubData(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glInvalidateNamedFramebufferSubData(int arg0, int[] arg1, int arg2, int arg3,
-			int arg4, int arg5) {
+	default void glInvalidateNamedFramebufferSubData(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glInvalidateNamedFramebufferSubData(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	default void glInvalidateNamedFramebufferSubData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8425,23 +8853,19 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4,
-			int arg5) {
+	default void glMultiDrawElementsIndirectCount(int arg0, int arg1, long arg2, long arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMultiDrawElementsIndirectCount(int arg0, int arg1, int[] arg2, long arg3, int arg4,
-			int arg5) {
+	default void glMultiDrawElementsIndirectCount(int arg0, int arg1, int[] arg2, long arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMultiDrawElementsIndirectCount(int arg0, int arg1, IntBuffer arg2, long arg3,
-			int arg4, int arg5) {
+	default void glMultiDrawElementsIndirectCount(int arg0, int arg1, IntBuffer arg2, long arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glMultiDrawElementsIndirectCount(int arg0, int arg1, ByteBuffer arg2, long arg3,
-			int arg4, int arg5) {
+	default void glMultiDrawElementsIndirectCount(int arg0, int arg1, ByteBuffer arg2, long arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8505,8 +8929,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glPrimitiveBoundingBox(float arg0, float arg1, float arg2, float arg3, float arg4,
-			float arg5, float arg6, float arg7) {
+	default void glPrimitiveBoundingBox(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, float arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8526,8 +8949,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4,
-			long arg5) {
+	default void nglMultiDrawElementsBaseVertex(int arg0, long arg1, int arg2, long arg3, int arg4, long arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8723,13 +9145,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	default void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int[] arg3,
-			ByteBuffer arg4) {
+	default void glGetActiveSubroutineUniformName(int arg0, int arg1, int arg2, int[] arg3, ByteBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8849,8 +9269,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9) {
+	default void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8882,8 +9301,18 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglClearTexSubImage(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	default void nglClearTexSubImage(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8927,8 +9356,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default int nglGetDebugMessageLog(int arg0, int arg1, long arg2, long arg3, long arg4, long arg5,
-			long arg6, long arg7) {
+	default int nglGetDebugMessageLog(int arg0, int arg1, long arg2, long arg3, long arg4, long arg5, long arg6, long arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -8948,13 +9376,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5, boolean arg6) {
+	default void glTextureStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTextureStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	default void glTextureStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9046,8 +9472,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	default void glTexStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9235,8 +9660,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglDebugMessageControl(int arg0, int arg1, int arg2, int arg3, long arg4,
-			boolean arg5) {
+	default void nglDebugMessageControl(int arg0, int arg1, int arg2, int arg3, long arg4, boolean arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9364,8 +9788,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	default void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9441,18 +9864,15 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	default String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	default void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	default void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9568,8 +9988,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	default void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, long arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9597,13 +10016,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	default void nglReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	default void glTexImage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9767,8 +10184,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default ByteBuffer glMapNamedBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
-			ByteBuffer arg4) {
+	default ByteBuffer glMapNamedBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9796,8 +10212,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glNamedRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3,
-			int arg4) {
+	default void glNamedRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9829,13 +10244,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	default void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	default void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9947,8 +10360,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5,
-			double arg6, int arg7, int arg8, long arg9) {
+	default void nglMap2d(int arg0, double arg1, double arg2, int arg3, int arg4, double arg5, double arg6, int arg7, int arg8, long arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -9960,8 +10372,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6,
-			int arg7, int arg8, long arg9) {
+	default void nglMap2f(int arg0, float arg1, float arg2, int arg3, int arg4, float arg5, float arg6, int arg7, int arg8, long arg9) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10025,8 +10436,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetActiveSubroutineName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	default void glGetActiveSubroutineName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10038,8 +10448,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
-			ByteBuffer arg4) {
+	default ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10083,13 +10492,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			long arg6) {
+	default void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4,
-			ByteBuffer arg5) {
+	default void glCompressedTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10197,13 +10604,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	default void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	default void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10267,8 +10672,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8) {
+	default void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10280,13 +10684,11 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, ByteBuffer arg7) {
+	default void glGetnSeparableFilter(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6, ByteBuffer arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glGetnSeparableFilter(int arg0, int arg1, int arg2, ByteBuffer arg3, ByteBuffer arg4,
-			ByteBuffer arg5) {
+	default void glGetnSeparableFilter(int arg0, int arg1, int arg2, ByteBuffer arg3, ByteBuffer arg4, ByteBuffer arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10322,28 +10724,23 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3,
-			int arg4, int arg5, int arg6) {
+	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5, int arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, ByteBuffer arg2,
-			int arg3, int arg4, int arg5) {
+	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4, int arg5) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, IntBuffer arg1, int arg2,
-			int arg3, int arg4) {
+	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ShortBuffer arg1, int arg2,
-			int arg3, int arg4) {
+	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ShortBuffer arg1, int arg2, int arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ByteBuffer arg1, int arg2,
-			int arg3, int arg4) {
+	default void glDrawElementsInstancedBaseVertexBaseInstance(int arg0, ByteBuffer arg1, int arg2, int arg3, int arg4) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10539,8 +10936,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	default void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10588,43 +10984,35 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int[] arg6) {
+	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	default void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10836,8 +11224,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	default void nglTexImage1D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10921,8 +11308,22 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void glCopyImageSubData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14) {
+	default void glCopyImageSubData(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int arg10,
+			int arg11,
+			int arg12,
+			int arg13,
+			int arg14) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
@@ -10942,8 +11343,7 @@ public interface GL_W_Call {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 
-	default void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	default void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		throw new UnsupportedOperationException("Not implemented yet.");
 	}
 

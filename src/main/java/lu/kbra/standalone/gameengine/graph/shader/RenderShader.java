@@ -41,7 +41,7 @@ public abstract class RenderShader extends AbstractShader {
 		createUniform(TRANSFORMATION_MATRIX);
 		createUniform(VIEW_POSITION);
 	}
-	
+
 	public boolean isTransparent() {
 		return this.transparent;
 	}

@@ -4,7 +4,9 @@ import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 
 public enum PolygonMode implements GLConstant {
 
-	FRONT_AND_BACK(GL_W.GL_FRONT_AND_BACK), FRONT(GL_W.GL_FRONT), BACK(GL_W.GL_BACK);
+	FRONT_AND_BACK(GL_W.GL_FRONT_AND_BACK),
+	FRONT(GL_W.GL_FRONT),
+	BACK(GL_W.GL_BACK);
 
 	private int glId;
 

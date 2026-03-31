@@ -18,13 +18,22 @@ public class SyntheticMat4fAttribArray extends Mat4fAttribArray {
 		super.length = dataLength;
 	}
 
-	public SyntheticMat4fAttribArray(final String name, final int index, final int dataLength, final BufferType bufferType,
-			final boolean iStatic, final int divisor) {
+	public SyntheticMat4fAttribArray(
+			final String name,
+			final int index,
+			final int dataLength,
+			final BufferType bufferType,
+			final boolean iStatic,
+			final int divisor) {
 		super(name, index, null, bufferType, iStatic, divisor);
 		super.length = dataLength;
 	}
 
-	public SyntheticMat4fAttribArray(final String name, final int index, final int dataLength, final BufferType bufferType,
+	public SyntheticMat4fAttribArray(
+			final String name,
+			final int index,
+			final int dataLength,
+			final BufferType bufferType,
 			final boolean s) {
 		super(name, index, null, bufferType, s);
 		super.length = dataLength;

@@ -29,7 +29,12 @@ public class UIntAttribArray extends JavaAttribArray implements IntegerJavaTypeA
 		this.data = data;
 	}
 
-	public UIntAttribArray(final String name, final int index, final int[] data, final BufferType bufferType, final boolean _static,
+	public UIntAttribArray(
+			final String name,
+			final int index,
+			final int[] data,
+			final BufferType bufferType,
+			final boolean _static,
 			final int divisor) {
 		super(name, index, bufferType, _static, divisor);
 		this.data = data;

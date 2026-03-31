@@ -24,7 +24,12 @@ public class FloatAttribArray extends JavaAttribArray implements FloatJavaTypeAt
 		this.data = data;
 	}
 
-	public FloatAttribArray(final String name, final int index, final float[] data, final BufferType bufferType, final boolean _static,
+	public FloatAttribArray(
+			final String name,
+			final int index,
+			final float[] data,
+			final BufferType bufferType,
+			final boolean _static,
 			final int divisor) {
 		super(name, index, bufferType, _static, divisor);
 		this.data = data;

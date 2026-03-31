@@ -1134,17 +1134,17 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4,
-			IntBuffer arg5) {
+	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4, IntBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, int[] arg3, int[] arg4,
-			int[] arg5) {
+	public void glGetProgramResourceiv(int arg0, int arg1, int arg2, int[] arg3, int[] arg4, int[] arg5) {
 		org.lwjgl.opengles.GLES32.glGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -1289,23 +1289,20 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES32.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 		LOGGER.log(Level.INFO, "glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
@@ -1405,26 +1402,35 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public int glGetDebugMessageLog(int arg0, IntBuffer arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, IntBuffer arg5, ByteBuffer arg6) {
+	public int glGetDebugMessageLog(
+			int arg0,
+			IntBuffer arg1,
+			IntBuffer arg2,
+			IntBuffer arg3,
+			IntBuffer arg4,
+			IntBuffer arg5,
+			ByteBuffer arg6) {
 		int ret = org.lwjgl.opengles.GLES32.glGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") = "
+						+ ret);
 		return ret;
 	}
 
 	@Override
-	public int glGetDebugMessageLog(int arg0, int[] arg1, int[] arg2, int[] arg3, int[] arg4,
-			int[] arg5, ByteBuffer arg6) {
+	public int glGetDebugMessageLog(int arg0, int[] arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, ByteBuffer arg6) {
 		int ret = org.lwjgl.opengles.GLES32.glGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") = "
+						+ ret);
 		return ret;
 	}
 
 	@Override
-	public void glBindImageTexture(int arg0, int arg1, int arg2, boolean arg3, int arg4, int arg5,
-			int arg6) {
+	public void glBindImageTexture(int arg0, int arg1, int arg2, boolean arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengles.GLES32.glBindImageTexture(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glBindImageTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glBindImageTexture(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -1702,10 +1708,10 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void nglDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengles.GLES32.nglDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"nglDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -1888,10 +1894,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengles.GLES32.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")");
 	}
 
 	@Override
@@ -1931,10 +1938,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES32.nglCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1951,10 +1959,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	public void nglDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		org.lwjgl.opengles.GLES32.nglDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ")");
 	}
 
 	@Override
@@ -2407,17 +2416,19 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengles.GLES32.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ")");
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES32.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -2433,24 +2444,24 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengles.GLES32.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengles.GLES32.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengles.GLES32.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -2478,10 +2489,10 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4,
-			int arg5) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, int arg2, long arg3, int arg4, int arg5) {
 		org.lwjgl.opengles.GLES32.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -2491,8 +2502,7 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3,
-			int arg4) {
+	public void glDrawElementsInstancedBaseVertex(int arg0, int arg1, ByteBuffer arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES32.glDrawElementsInstancedBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		LOGGER.log(Level.INFO, "glDrawElementsInstancedBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
@@ -2522,8 +2532,7 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glProgramUniform4f(int arg0, int arg1, float arg2, float arg3, float arg4,
-			float arg5) {
+	public void glProgramUniform4f(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5) {
 		org.lwjgl.opengles.GLES32.glProgramUniform4f(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glProgramUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
@@ -2565,17 +2574,40 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, ByteBuffer arg9) {
+	public void glCompressedTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			ByteBuffer arg9) {
 		org.lwjgl.opengles.GLES32.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void glCompressedTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		org.lwjgl.opengles.GLES32.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -2657,10 +2689,10 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetProgramResourceName(int arg0, int arg1, int arg2, int arg3, long arg4,
-			long arg5) {
+	public void nglGetProgramResourceName(int arg0, int arg1, int arg2, int arg3, long arg4, long arg5) {
 		org.lwjgl.opengles.GLES32.nglGetProgramResourceName(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -2781,8 +2813,7 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetProgramResourceName(int arg0, int arg1, int arg2, IntBuffer arg3,
-			ByteBuffer arg4) {
+	public void glGetProgramResourceName(int arg0, int arg1, int arg2, IntBuffer arg3, ByteBuffer arg4) {
 		org.lwjgl.opengles.GLES32.glGetProgramResourceName(arg0, arg1, arg2, arg3, arg4);
 		LOGGER.log(Level.INFO, "glGetProgramResourceName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
@@ -2850,10 +2881,10 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES32.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -2972,59 +3003,67 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, short[] arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int[] arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, IntBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, float[] arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES32.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -3076,59 +3115,155 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, float[] arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			float[] arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, int[] arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int[] arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			FloatBuffer arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, short[] arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			short[] arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ByteBuffer arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ShortBuffer arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			IntBuffer arg10) {
 		org.lwjgl.opengles.GLES32.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -3232,10 +3367,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES32.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -3276,10 +3412,22 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void nglTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		org.lwjgl.opengles.GLES32.nglTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -3325,57 +3473,59 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -3617,59 +3767,67 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, float[] arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int[] arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, short[] arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, IntBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES32.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -3691,10 +3849,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			boolean arg6) {
+	public void glTexStorage3DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		org.lwjgl.opengles.GLES32.glTexStorage3DMultisample(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glTexStorage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexStorage3DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ")");
 	}
 
 	@Override
@@ -3723,59 +3882,67 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, short[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, short[] arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int[] arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, float[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, float[] arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ShortBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, ShortBuffer arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, long arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ByteBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, IntBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, IntBuffer arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengles.GLES32.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -4053,45 +4220,52 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			FloatBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ShortBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void nglCompressedTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		org.lwjgl.opengles.GLES32.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
+		LOGGER.log(Level.INFO,
+				"nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")");
 	}
 
 	@Override
@@ -4102,10 +4276,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES32.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -4583,10 +4758,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengles.GLES32.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ")");
 	}
 
 	@Override
@@ -4669,10 +4845,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4,
-			long arg5, long arg6) {
+	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES32.nglGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ")");
 	}
 
 	@Override
@@ -4700,10 +4877,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetProgramResourceiv(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5,
-			long arg6, long arg7) {
+	public void nglGetProgramResourceiv(int arg0, int arg1, int arg2, int arg3, long arg4, int arg5, long arg6, long arg7) {
 		org.lwjgl.opengles.GLES32.nglGetProgramResourceiv(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetProgramResourceiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")");
 	}
 
 	@Override
@@ -4776,10 +4954,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4,
-			int arg5, int arg6) {
+	public void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengles.GLES32.nglInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"nglInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ")");
 	}
 
 	@Override
@@ -4908,30 +5087,29 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, ByteBuffer arg5) {
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2,
-			IntBuffer arg3) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengles.GLES32.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3);
 		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret);
 		return ret;
@@ -4982,10 +5160,10 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES32.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -5157,8 +5335,7 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3,
-			int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ShortBuffer arg3, int arg4) {
 		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
@@ -5170,22 +5347,22 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4,
-			long arg5, int arg6) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5, int arg6) {
 		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ")");
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4,
-			int arg5) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4, int arg5) {
 		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3,
-			int arg4) {
+	public void glDrawRangeElementsBaseVertex(int arg0, int arg1, int arg2, ByteBuffer arg3, int arg4) {
 		org.lwjgl.opengles.GLES32.glDrawRangeElementsBaseVertex(arg0, arg1, arg2, arg3, arg4);
 		LOGGER.log(Level.INFO, "glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")");
 	}
@@ -5312,10 +5489,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glPrimitiveBoundingBox(float arg0, float arg1, float arg2, float arg3, float arg4,
-			float arg5, float arg6, float arg7) {
+	public void glPrimitiveBoundingBox(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, float arg7) {
 		org.lwjgl.opengles.GLES32.glPrimitiveBoundingBox(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glPrimitiveBoundingBox(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"glPrimitiveBoundingBox(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")");
 	}
 
 	@Override
@@ -5526,10 +5704,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9) {
+	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
 		org.lwjgl.opengles.GLES32.glBlitFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -5552,10 +5731,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public int nglGetDebugMessageLog(int arg0, int arg1, long arg2, long arg3, long arg4, long arg5,
-			long arg6, long arg7) {
+	public int nglGetDebugMessageLog(int arg0, int arg1, long arg2, long arg3, long arg4, long arg5, long arg6, long arg7) {
 		int ret = org.lwjgl.opengles.GLES32.nglGetDebugMessageLog(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"nglGetDebugMessageLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ") = " + ret);
 		return ret;
 	}
 
@@ -5640,10 +5820,10 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glTexStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4,
-			boolean arg5) {
+	public void glTexStorage2DMultisample(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		org.lwjgl.opengles.GLES32.glTexStorage2DMultisample(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "glTexStorage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"glTexStorage2DMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -5732,10 +5912,10 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglDebugMessageControl(int arg0, int arg1, int arg2, int arg3, long arg4,
-			boolean arg5) {
+	public void nglDebugMessageControl(int arg0, int arg1, int arg2, int arg3, long arg4, boolean arg5) {
 		org.lwjgl.opengles.GLES32.nglDebugMessageControl(arg0, arg1, arg2, arg3, arg4, arg5);
-		LOGGER.log(Level.INFO, "nglDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
+		LOGGER.log(Level.INFO,
+				"nglDebugMessageControl(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
@@ -5784,10 +5964,10 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES32.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -5804,23 +5984,20 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES32.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 		LOGGER.log(Level.INFO, "glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES32.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")");
 	}
@@ -5930,10 +6107,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, long arg9) {
 		org.lwjgl.opengles.GLES32.nglTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-		LOGGER.log(Level.INFO, "nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")");
+		LOGGER.log(Level.INFO,
+				"nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")");
 	}
 
 	@Override
@@ -5943,10 +6121,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void nglReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengles.GLES32.nglReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "nglReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"nglReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ")");
 	}
 
 	@Override
@@ -6054,17 +6233,19 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES32.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengles.GLES32.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")");
 	}
 
 	@Override
@@ -6091,7 +6272,8 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	@Override
 	public void nglReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengles.GLES32.nglReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -6101,10 +6283,10 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
-			ByteBuffer arg4) {
+	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
 		ByteBuffer ret = org.lwjgl.opengles.GLES32.glMapBufferRange(arg0, arg1, arg2, arg3, arg4);
-		LOGGER.log(Level.INFO, "glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
+		LOGGER.log(Level.INFO,
+				"glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret);
 		return ret;
 	}
 
@@ -6205,17 +6387,18 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengles.GLES32.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")");
 	}
 
 	@Override
@@ -6250,10 +6433,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8) {
+	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		org.lwjgl.opengles.GLES32.glCopyTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -6341,10 +6525,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengles.GLES32.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")");
 	}
 
 	@Override
@@ -6360,58 +6545,60 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengles.GLES32.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengles.GLES32.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
 	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengles.GLES32.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			long arg7) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengles.GLES32.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
-	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadnPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengles.GLES32.glReadnPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-		LOGGER.log(Level.INFO, "glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
+		LOGGER.log(Level.INFO,
+				"glReadnPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")");
 	}
 
 	@Override
@@ -6570,10 +6757,28 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void glCopyImageSubData(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14) {
-		org.lwjgl.opengles.GLES32.glCopyImageSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
-		LOGGER.log(Level.INFO, "glCopyImageSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ", " + arg12 + ", " + arg13 + ", " + arg14 + ")");
+	public void glCopyImageSubData(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int arg10,
+			int arg11,
+			int arg12,
+			int arg13,
+			int arg14) {
+		org.lwjgl.opengles.GLES32
+				.glCopyImageSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
+		LOGGER.log(Level.INFO,
+				"glCopyImageSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ", " + arg11 + ", " + arg12 + ", " + arg13 + ", " + arg14
+						+ ")");
 	}
 
 	@Override
@@ -6584,10 +6789,11 @@ public class GL_W_GLES32_Logging implements GL_W_Call {
 	}
 
 	@Override
-	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES32.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		LOGGER.log(Level.INFO, "nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")");
+		LOGGER.log(Level.INFO,
+				"nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")");
 	}
 
 	@Override

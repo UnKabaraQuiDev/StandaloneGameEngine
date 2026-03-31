@@ -126,8 +126,7 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 
 	@Override
 	public Matrix4f getShearMatrix() {
-		return new Matrix4f(
-				this.shear.m00(),
+		return new Matrix4f(this.shear.m00(),
 				this.shear.m01(),
 				this.shear.m02(),
 				0f,
@@ -147,8 +146,7 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 
 	@Override
 	public Transform3DShear clone() {
-		return new Transform3DShear(
-				this.translation.get(new Vector3f()),
+		return new Transform3DShear(this.translation.get(new Vector3f()),
 				this.rotation.get(new Quaternionf()),
 				this.scale.get(new Vector3f()),
 				this.shear.get(new Matrix3f()));

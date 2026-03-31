@@ -14,7 +14,8 @@ import lu.kbra.standalone.gameengine.utils.MathUtils;
 
 public enum GeoPlane {
 
-	XY(new Vector3fc[] { X_POS, Y_POS }, Z_POS), XZ(new Vector3fc[] { X_POS, Z_POS }, Y_POS),
+	XY(new Vector3fc[] { X_POS, Y_POS }, Z_POS),
+	XZ(new Vector3fc[] { X_POS, Z_POS }, Y_POS),
 	YZ(new Vector3fc[] { Y_POS, Z_POS }, X_POS);
 
 	private Vector3fc[] points;

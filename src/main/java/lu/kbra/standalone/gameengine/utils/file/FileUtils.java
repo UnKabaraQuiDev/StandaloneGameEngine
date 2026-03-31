@@ -9,7 +9,6 @@ import java.util.Objects;
 
 import org.lwjgl.stb.STBImage;
 import org.lwjgl.stb.STBImageWrite;
-import org.lwjgl.system.MemoryUtil;
 
 import lu.kbra.pclib.PCUtils;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;

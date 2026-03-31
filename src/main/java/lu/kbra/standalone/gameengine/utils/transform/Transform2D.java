@@ -71,13 +71,14 @@ public class Transform2D extends Transform {
 
 	@Override
 	public Matrix4f updateMatrix() {
-		return matrix.identity().translate(translation.x, translation.y, 0f).rotate(rotation, GameEngine.UP)
-				.scale(scale.x, scale.y, 1f);
+		return matrix.identity().translate(translation.x, translation.y, 0f).rotate(rotation, GameEngine.UP).scale(scale.x, scale.y, 1f);
 	}
 
 	@Override
 	public Matrix4f getBaseMatrix() {
-		return new Matrix4f().identity().translate(translation.x, translation.y, 0f).rotate(rotation, GameEngine.UP)
+		return new Matrix4f().identity()
+				.translate(translation.x, translation.y, 0f)
+				.rotate(rotation, GameEngine.UP)
 				.scale(scale.x, scale.y, 1f);
 	}
 

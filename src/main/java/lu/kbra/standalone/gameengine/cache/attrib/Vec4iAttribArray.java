@@ -32,7 +32,12 @@ public class Vec4iAttribArray extends JavaAttribArray implements IntegerJavaType
 		this.data = data;
 	}
 
-	public Vec4iAttribArray(final String name, final int index, final Vector4i[] data, final BufferType bufferType, final boolean _static,
+	public Vec4iAttribArray(
+			final String name,
+			final int index,
+			final Vector4i[] data,
+			final BufferType bufferType,
+			final boolean _static,
 			final int divisor) {
 		super(name, index, bufferType, _static, divisor);
 		this.data = data;

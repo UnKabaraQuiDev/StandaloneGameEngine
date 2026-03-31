@@ -32,7 +32,12 @@ public class Vec3fAttribArray extends JavaAttribArray implements FloatJavaTypeAt
 		this.data = data;
 	}
 
-	public Vec3fAttribArray(final String name, final int index, final Vector3f[] data, final BufferType bufferType, final boolean _static,
+	public Vec3fAttribArray(
+			final String name,
+			final int index,
+			final Vector3f[] data,
+			final BufferType bufferType,
+			final boolean _static,
 			final int _divisor) {
 		super(name, index, bufferType, _static, _divisor);
 		this.data = data;

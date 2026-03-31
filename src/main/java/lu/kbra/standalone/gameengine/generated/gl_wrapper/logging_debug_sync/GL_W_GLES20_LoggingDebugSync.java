@@ -332,7 +332,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -343,7 +344,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -354,7 +356,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -365,7 +368,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -376,7 +380,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -388,7 +393,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -399,7 +406,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -410,7 +418,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -421,7 +430,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -433,7 +443,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -445,7 +456,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -456,7 +468,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -467,7 +480,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -478,7 +492,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -489,7 +504,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -500,7 +516,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -511,7 +528,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -522,7 +540,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -533,7 +552,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -544,45 +564,49 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = "
+					+ ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -593,7 +617,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -605,7 +631,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -616,7 +643,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -627,7 +655,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -638,7 +667,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -649,7 +679,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -660,7 +691,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -672,7 +704,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -683,7 +716,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -694,7 +728,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -705,7 +740,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFlush() !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glFlush() !! ERROR: " + err);
 	}
 
 	@Override
@@ -716,7 +752,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -727,7 +764,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -739,7 +777,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -750,7 +789,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -761,7 +801,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -772,7 +813,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -783,7 +825,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -794,7 +837,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -806,19 +850,21 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengles.GLES20.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -829,7 +875,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -840,7 +887,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDepthRangef(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDepthRangef(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -851,7 +899,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -862,7 +911,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -873,7 +924,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -884,7 +936,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -895,7 +949,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -906,7 +961,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -917,7 +973,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -928,7 +985,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -939,7 +997,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -950,7 +1009,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -961,7 +1021,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -973,7 +1034,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -984,7 +1046,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -995,7 +1059,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1006,7 +1072,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1018,7 +1085,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1029,7 +1097,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1040,7 +1109,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1051,7 +1121,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1062,31 +1133,34 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1097,7 +1171,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1108,7 +1183,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1119,7 +1195,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1130,7 +1207,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1141,7 +1219,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1152,7 +1231,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1163,7 +1243,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1174,7 +1256,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1185,7 +1269,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1196,7 +1281,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1207,7 +1293,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1219,7 +1306,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1230,7 +1318,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1242,7 +1331,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1253,7 +1343,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1264,7 +1355,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1275,7 +1367,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1286,7 +1379,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1297,19 +1391,21 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES20.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1320,7 +1416,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1331,7 +1428,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1342,7 +1440,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1353,7 +1452,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1364,7 +1464,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1375,7 +1476,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1386,7 +1488,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1397,7 +1500,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1408,103 +1512,112 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, short[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, IntBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, float[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1515,7 +1628,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1526,7 +1640,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1537,7 +1652,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1548,7 +1664,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1559,7 +1676,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1570,7 +1688,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1581,7 +1700,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1593,7 +1713,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1604,7 +1725,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1616,7 +1738,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1628,19 +1751,21 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1651,7 +1776,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1663,7 +1789,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1674,7 +1802,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1685,7 +1814,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1696,7 +1826,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1707,55 +1838,60 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1766,7 +1902,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1777,31 +1915,35 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1812,7 +1954,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1823,7 +1966,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1834,7 +1978,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1846,7 +1992,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1857,7 +2004,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1868,7 +2016,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1879,7 +2028,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1890,7 +2040,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1901,7 +2052,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1912,103 +2064,112 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, float[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, short[] arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, IntBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2019,7 +2180,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2030,7 +2192,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2041,7 +2204,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2052,7 +2216,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2063,7 +2228,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2074,7 +2240,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2085,7 +2252,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2096,7 +2264,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2107,7 +2276,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2118,7 +2288,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2129,7 +2300,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2140,7 +2312,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2151,7 +2324,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2162,7 +2336,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2174,7 +2349,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2186,7 +2362,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2197,7 +2374,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2208,7 +2386,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2219,7 +2398,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2231,7 +2411,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2242,7 +2423,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2253,67 +2435,73 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			FloatBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ShortBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2324,20 +2512,22 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2348,7 +2538,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2359,7 +2550,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2370,7 +2562,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2381,7 +2574,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2392,7 +2586,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2403,7 +2598,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2414,7 +2610,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2425,7 +2622,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2436,7 +2634,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2447,7 +2646,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2458,7 +2658,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2469,7 +2670,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2480,7 +2682,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2491,7 +2694,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glReleaseShaderCompiler() !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glReleaseShaderCompiler() !! ERROR: " + err);
 	}
 
 	@Override
@@ -2502,7 +2706,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2513,7 +2718,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2524,7 +2730,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2535,7 +2742,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2547,7 +2755,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2558,7 +2767,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2569,7 +2779,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2580,7 +2791,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2592,7 +2804,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2603,7 +2816,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2615,7 +2829,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2626,7 +2841,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2637,7 +2853,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2649,7 +2866,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2660,7 +2878,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2671,7 +2890,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2682,7 +2902,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2693,7 +2914,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2704,7 +2926,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2715,7 +2938,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2727,7 +2951,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2738,19 +2963,21 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengles.GLES20.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2761,7 +2988,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2772,7 +3000,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2783,7 +3012,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2794,7 +3024,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2805,7 +3036,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2816,7 +3048,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2827,7 +3060,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2838,7 +3072,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2850,7 +3085,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2861,7 +3097,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2873,7 +3110,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2884,7 +3122,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2895,7 +3134,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2907,7 +3147,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2918,7 +3159,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2929,7 +3171,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2940,7 +3183,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2951,20 +3195,22 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES20.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2975,7 +3221,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2987,7 +3234,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2998,7 +3246,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3009,7 +3258,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3020,7 +3271,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3031,7 +3283,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3042,7 +3295,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3053,7 +3307,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3064,7 +3319,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3075,7 +3331,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3087,7 +3344,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3099,7 +3357,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3110,7 +3369,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3121,7 +3381,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3132,7 +3393,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3143,7 +3405,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3154,7 +3417,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3165,7 +3429,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3176,7 +3441,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3187,7 +3453,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3198,7 +3465,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3209,7 +3477,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3220,7 +3489,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3232,7 +3502,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3243,7 +3514,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3254,7 +3526,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3265,7 +3538,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3276,7 +3550,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glClearDepthf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glClearDepthf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3287,7 +3562,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3298,7 +3574,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3309,7 +3586,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3320,7 +3598,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3331,7 +3610,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3342,7 +3622,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3353,7 +3634,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3364,7 +3646,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3375,7 +3658,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3386,7 +3670,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3397,7 +3682,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3408,7 +3694,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3419,7 +3706,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3430,7 +3718,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3441,7 +3730,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3452,7 +3742,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3463,7 +3754,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3474,7 +3766,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3486,7 +3779,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3498,20 +3792,22 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES20.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3522,45 +3818,50 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = "
+					+ ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES20.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3571,7 +3872,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3582,7 +3884,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3593,7 +3896,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3604,7 +3908,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3615,7 +3920,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3626,7 +3932,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3637,7 +3944,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3648,7 +3956,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3659,7 +3969,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3670,7 +3981,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3681,7 +3993,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3692,7 +4005,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3703,7 +4017,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3714,7 +4029,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3725,7 +4041,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3736,7 +4054,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3748,7 +4067,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3759,7 +4079,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3770,7 +4091,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3782,7 +4104,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3794,7 +4117,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3805,7 +4129,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3816,31 +4141,34 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES20.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengles.GLES20.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3851,7 +4179,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3862,7 +4191,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3873,7 +4203,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3884,7 +4215,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3895,19 +4227,21 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengles.GLES20.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3918,7 +4252,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3929,7 +4264,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3940,7 +4276,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3951,7 +4289,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3963,7 +4302,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3974,7 +4314,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3985,7 +4326,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3997,20 +4339,22 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES20.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES20.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4021,7 +4365,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFinish() !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glFinish() !! ERROR: " + err);
 	}
 
 	@Override
@@ -4032,7 +4377,9 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4043,7 +4390,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4054,7 +4402,8 @@ public class GL_W_GLES20_LoggingDebugSync implements GL_W_Call {
 		GL11.glFlush();
 		final int result = GL32.glClientWaitSync(fence, GL32.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000);
 		assert result != GL32.GL_WAIT_FAILED;
-		if (err != GLES20.GL_NO_ERROR) throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES20.GL_NO_ERROR)
+			throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override

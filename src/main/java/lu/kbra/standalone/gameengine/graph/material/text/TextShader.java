@@ -22,7 +22,9 @@ public class TextShader extends RenderShader {
 	public static final String THICKNESS = "thickness";
 
 	public TextShader() {
-		super(TextShader.class.getName(), true, AbstractShaderPart.load("./resources/shaders/text/text.vert"),
+		super(TextShader.class.getName(),
+				true,
+				AbstractShaderPart.load("./resources/shaders/text/text.vert"),
 				AbstractShaderPart.load("./resources/shaders/text/text.frag"));
 	}
 

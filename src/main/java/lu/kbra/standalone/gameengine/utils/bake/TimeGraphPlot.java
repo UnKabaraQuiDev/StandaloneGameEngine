@@ -93,8 +93,8 @@ public class TimeGraphPlot {
 			endMs = endNano / 1_000_000.0;
 
 			/*
-			 * if(firstStartMs > startMs) firstStartMs = startMs; if(firstStartNano >
-			 * startNano) firstStartNano = startNano;
+			 * if(firstStartMs > startMs) firstStartMs = startMs; if(firstStartNano > startNano) firstStartNano
+			 * = startNano;
 			 */
 
 			// System.out.println("firstStartMs = " + firstStartMs);

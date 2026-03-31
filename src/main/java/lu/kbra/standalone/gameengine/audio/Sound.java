@@ -55,24 +55,24 @@ public class Sound implements UniqueID, Cleanupable {
 		buffer = new ALBuffer().gen();
 
 		// buffer, channels, sampleRate
-		Triplet<MemBuffer<ShortBuffer>, Integer, Integer> vorbis_channels_sampleRate = SoundLoaderUtils
-				.readVorbis(file);
+		Triplet<MemBuffer<ShortBuffer>, Integer, Integer> vorbis_channels_sampleRate = SoundLoaderUtils.readVorbis(file);
 
 		boolean stereoBuffer = vorbis_channels_sampleRate.getSecond() == 2;
 		boolean monoBuffer = vorbis_channels_sampleRate.getSecond() == 1;
 
 		if (!stereo && !monoBuffer) {
 			MemBuffer<ShortBuffer> preBuffer = vorbis_channels_sampleRate.getFirst();
-			vorbis_channels_sampleRate.setFirst(new MemBuffer<ShortBuffer>(
-					bufferToMonoAvg(preBuffer.getBuffer(), vorbis_channels_sampleRate.getSecond()),
-					MemBufferOrigin.OPENAL));
+			vorbis_channels_sampleRate
+					.setFirst(new MemBuffer<ShortBuffer>(bufferToMonoAvg(preBuffer.getBuffer(), vorbis_channels_sampleRate.getSecond()),
+							MemBufferOrigin.OPENAL));
 			preBuffer.cleanup();
 			stereoBuffer = false;
 		}
 
 		// copy to buffer
 		buffer.setData(vorbis_channels_sampleRate.getFirst().getBuffer(),
-				stereoBuffer ? AL11.AL_FORMAT_STEREO16 : AL11.AL_FORMAT_MONO16, vorbis_channels_sampleRate.getThird());
+				stereoBuffer ? AL11.AL_FORMAT_STEREO16 : AL11.AL_FORMAT_MONO16,
+				vorbis_channels_sampleRate.getThird());
 
 		// free mem
 		vorbis_channels_sampleRate.getFirst().cleanup();
@@ -108,7 +108,7 @@ public class Sound implements UniqueID, Cleanupable {
 		if (buffer == null) {
 			return;
 		}
-		
+
 		GlobalLogger.log("Cleaning up: " + name);
 
 		buffer.cleanup();

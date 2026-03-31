@@ -27,7 +27,12 @@ public class Vec4fAttribArray extends JavaAttribArray implements FloatJavaTypeAt
 		this.data = data;
 	}
 
-	public Vec4fAttribArray(final String name, final int index, final Vector4f[] data, final BufferType bufferType, final boolean _static,
+	public Vec4fAttribArray(
+			final String name,
+			final int index,
+			final Vector4f[] data,
+			final BufferType bufferType,
+			final boolean _static,
 			final int divisor) {
 		super(name, index, bufferType, _static, divisor);
 		this.data = data;

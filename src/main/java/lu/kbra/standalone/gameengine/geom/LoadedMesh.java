@@ -39,7 +39,11 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 	/**
 	 * Positions are stored as attribArray 0, normals as attribArray 1, uvs as attribArray 2
 	 */
-	public LoadedMesh(final String name, final Material material, final Vec3fAttribArray vertices, final UIntAttribArray indices,
+	public LoadedMesh(
+			final String name,
+			final Material material,
+			final Vec3fAttribArray vertices,
+			final UIntAttribArray indices,
 			final JavaAttribArray... attribs) {
 		this.name = name;
 		this.vertices = vertices;

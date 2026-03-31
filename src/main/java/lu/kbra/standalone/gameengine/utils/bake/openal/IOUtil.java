@@ -14,10 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/*
- * Copyright LWJGL. All rights reserved.
- * License terms: https://www.lwjgl.org/license
- */
 import org.lwjgl.BufferUtils;
 
 public final class IOUtil {
@@ -55,8 +51,7 @@ public final class IOUtil {
 			}
 		} else {
 			try (InputStream source = resource.startsWith("http") ? new URL(resource).openStream()
-					: IOUtil.class.getClassLoader().getResourceAsStream(resource);
-					ReadableByteChannel rbc = Channels.newChannel(source)) {
+					: IOUtil.class.getClassLoader().getResourceAsStream(resource); ReadableByteChannel rbc = Channels.newChannel(source)) {
 				buffer = createByteBuffer(bufferSize);
 
 				while (true) {

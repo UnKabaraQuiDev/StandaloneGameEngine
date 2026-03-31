@@ -648,7 +648,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDeleteRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -656,7 +657,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -664,7 +666,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform1iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform1iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -672,7 +675,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindRenderbuffer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindRenderbuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindRenderbuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -680,7 +684,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetRenderbufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetRenderbufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -689,7 +694,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		String ret = org.lwjgl.opengles.GLES30.glGetStringi(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -698,7 +704,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenVertexArrays(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -706,7 +713,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGenVertexArrays();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenVertexArrays() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenVertexArrays() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -715,23 +723,32 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenVertexArrays(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetProgramBinary(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengles.GLES30.nglGetProgramBinary(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -739,7 +756,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -747,7 +765,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -755,7 +774,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGenFramebuffers();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenFramebuffers() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenFramebuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -764,7 +784,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform1uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -772,7 +793,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		long ret = org.lwjgl.opengles.GLES30.glGetVertexAttribPointer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -781,7 +803,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -789,7 +812,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -797,7 +821,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteVertexArrays(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteVertexArrays(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteVertexArrays(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -805,7 +830,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -813,7 +839,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -821,7 +848,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glHint(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glHint(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glHint(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -829,7 +857,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -837,7 +866,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -845,15 +875,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteFramebuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteFramebuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteFramebuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetAttachedShaders(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglGetAttachedShaders(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -861,7 +894,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -869,7 +903,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -877,7 +912,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -885,7 +921,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -893,44 +930,58 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetProgrami(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgrami(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveUniform_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES30.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = "
+					+ ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glGetActiveUniform(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveUniform(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveUniform_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengles.GLES30.glGetActiveUniform(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -938,8 +989,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glColorMask(boolean arg0, boolean arg1, boolean arg2, boolean arg3) {
 		org.lwjgl.opengles.GLES30.glColorMask(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glColorMask(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -947,7 +1000,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform2uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -955,7 +1009,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform2uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform2uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -963,7 +1018,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -971,7 +1027,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -979,7 +1036,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindVertexArray(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindVertexArray(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindVertexArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindVertexArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -987,7 +1045,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBeginQuery(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBeginQuery(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBeginQuery(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBeginQuery(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -995,7 +1054,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindTexture(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindTexture(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindTexture(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1003,7 +1063,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glPolygonOffset(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glPolygonOffset(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glPolygonOffset(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1011,7 +1072,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1019,7 +1081,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGenQueries(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGenQueries(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGenQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGenQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1027,7 +1090,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.nglGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1036,7 +1100,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glEndTransformFeedback();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glEndTransformFeedback()" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glEndTransformFeedback() !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glEndTransformFeedback() !! ERROR: " + err);
 	}
 
 	@Override
@@ -1044,7 +1109,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1052,15 +1118,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexStorage2D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.glTexStorage2D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexStorage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexStorage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexStorage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexStorage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1068,7 +1139,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1076,7 +1148,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetUniformIndices(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1084,7 +1157,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		long ret = org.lwjgl.opengles.GLES30.nglGetStringi(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetStringi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1093,7 +1167,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsTransformFeedback(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsTransformFeedback(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsTransformFeedback(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsTransformFeedback(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1101,56 +1176,76 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES30.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengles.GLES30.glDrawRangeElements(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawRangeElements(int arg0, int arg1, int arg2, ShortBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glDrawRangeElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglUniformMatrix3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTexStorage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengles.GLES30.glTexStorage3D(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexStorage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexStorage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexStorage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glTexStorage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1158,7 +1253,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenQueries(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1166,7 +1262,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenQueries(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1174,7 +1271,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGenQueries();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenQueries() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenQueries() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenQueries() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1183,7 +1281,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glFlush();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glFlush()" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glFlush() !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glFlush() !! ERROR: " + err);
 	}
 
 	@Override
@@ -1191,7 +1290,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix2x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1199,7 +1299,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix2x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1207,7 +1308,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix3x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1215,7 +1317,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix3x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1223,7 +1326,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glInvalidateFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1231,7 +1335,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glInvalidateFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1239,23 +1344,32 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glInvalidateFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glInvalidateFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformBlockiv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengles.GLES30.glGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformBlockiv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1263,15 +1377,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDeleteTransformFeedbacks(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDeleteTransformFeedbacks(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDeleteTransformFeedbacks(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteTransformFeedbacks(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix2x3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglUniformMatrix2x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1279,7 +1396,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glTexParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1287,7 +1405,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsBuffer(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsBuffer(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1296,7 +1415,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1304,7 +1424,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglVertexAttrib1fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib1fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1312,7 +1433,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glValidateProgram(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glValidateProgram(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glValidateProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1320,7 +1442,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglVertexAttribI4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1328,7 +1451,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGenTextures(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGenTextures(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGenTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1336,7 +1460,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glProgramParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glProgramParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glProgramParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glProgramParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1344,7 +1469,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform1ui(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform1ui(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1ui(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1352,7 +1478,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1360,7 +1487,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1368,7 +1496,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglVertexAttribI4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1376,7 +1505,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform1fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1384,7 +1514,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glTexParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1392,7 +1523,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetVertexAttribIi(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribIi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribIi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1401,7 +1533,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetQueryi(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetQueryi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetQueryi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1410,7 +1543,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindBufferBase(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindBufferBase(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindBufferBase(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindBufferBase(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1418,7 +1552,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glCreateProgram();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glCreateProgram() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCreateProgram() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1427,7 +1562,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetBufferPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1435,32 +1571,42 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glCullFace(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glCullFace(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCullFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix4x3fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglUniformMatrix4x3fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void nglCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengles.GLES30.nglCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBindBufferRange(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengles.GLES30.glBindBufferRange(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glBindBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1468,7 +1614,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform1iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform1iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1476,7 +1623,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDepthRangef(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDepthRangef(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDepthRangef(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDepthRangef(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1484,32 +1632,42 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDisable(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDisable(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDisable(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglProgramBinary(int arg0, int arg1, long arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.nglProgramBinary(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES30.nglCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengles.GLES30.glUniform4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1517,31 +1675,40 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGenFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGenFramebuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGenFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.glUniform4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferParameteri64v(int arg0, int arg1, long[] arg2) {
 		org.lwjgl.opengles.GLES30.glGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetBufferParameteri64v(int arg0, int arg1, LongBuffer arg2) {
 		org.lwjgl.opengles.GLES30.glGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1549,7 +1716,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1557,7 +1725,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1565,15 +1734,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public long nglMapBufferRange(int arg0, long arg1, long arg2, int arg3) {
 		long ret = org.lwjgl.opengles.GLES30.nglMapBufferRange(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1582,7 +1756,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1590,7 +1765,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1598,7 +1774,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenTextures(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1606,7 +1783,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGenTextures();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenTextures() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1615,39 +1793,54 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenTextures(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderPrecisionFormat(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetShaderPrecisionFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetShaderPrecisionFormat(int arg0, int arg1, int[] arg2, int[] arg3) {
 		org.lwjgl.opengles.GLES30.glGetShaderPrecisionFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformBlockName(int arg0, int arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetActiveUniformBlockName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveUniformBlockName_String(int arg0, int arg1) {
 		String ret = org.lwjgl.opengles.GLES30.glGetActiveUniformBlockName(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1655,16 +1848,24 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glGetActiveUniformBlockName(int arg0, int arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetActiveUniformBlockName(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveUniformBlockName_String(int arg0, int arg1, int arg2) {
 		String ret = org.lwjgl.opengles.GLES30.glGetActiveUniformBlockName(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1673,7 +1874,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsProgram(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsProgram(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsProgram(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1681,16 +1883,22 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglGetProgramInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglGetProgramInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglTransformFeedbackVaryings(int arg0, int arg1, long arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.nglTransformFeedbackVaryings(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1698,7 +1906,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetSynci(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetSynci(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetSynci(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetSynci(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1707,7 +1916,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsVertexArray(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsVertexArray(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsVertexArray(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsVertexArray(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1715,8 +1925,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1724,7 +1936,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1732,7 +1945,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1740,7 +1954,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		long ret = org.lwjgl.opengles.GLES30.glFenceSync(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glFenceSync(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glFenceSync(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glFenceSync(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -1749,7 +1964,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1757,7 +1973,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1765,7 +1982,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1773,15 +1991,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearBufferfi(int arg0, int arg1, float arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glClearBufferfi(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glClearBufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearBufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glClearBufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferfi(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1789,7 +2010,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1797,7 +2019,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1805,7 +2028,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1813,7 +2037,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteTransformFeedbacks(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1821,7 +2046,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteTransformFeedbacks(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1829,7 +2055,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteTransformFeedbacks(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1837,7 +2064,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDeleteSync(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDeleteSync(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDeleteSync(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteSync(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1845,52 +2073,68 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetBufferPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetBufferPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengles.GLES30.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES30.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengles.GLES30.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, IntBuffer arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengles.GLES30.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4,
-			int arg5) {
+	public void glInvalidateSubFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		org.lwjgl.opengles.GLES30.glInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1898,7 +2142,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1906,15 +2151,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetVertexAttribPointerv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES30.nglGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1922,7 +2170,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glEnableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glEnableVertexAttribArray(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glEnableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1930,7 +2179,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1938,7 +2188,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetIntegerv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1946,41 +2197,77 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glClear(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glClear(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClear(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, ByteBuffer arg9) {
+	public void glCompressedTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			ByteBuffer arg9) {
 		org.lwjgl.opengles.GLES30.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void glCompressedTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		org.lwjgl.opengles.GLES30.glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glCopyBufferSubData(int arg0, int arg1, long arg2, long arg3, long arg4) {
 		org.lwjgl.opengles.GLES30.glCopyBufferSubData(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glCopyBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengles.GLES30.nglVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -1988,23 +2275,32 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGenBuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGenBuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGenBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetFramebufferAttachmentParameteriv(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengles.GLES30.glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetFramebufferAttachmentParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2012,15 +2308,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glReadBuffer(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glReadBuffer(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReadBuffer(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReadBuffer(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawArraysInstanced(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glDrawArraysInstanced(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glDrawArraysInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawArraysInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glDrawArraysInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawArraysInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2028,7 +2327,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2036,7 +2336,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2044,7 +2345,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2052,7 +2354,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenRenderbuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenRenderbuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2060,7 +2363,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGenRenderbuffers();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenRenderbuffers() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenRenderbuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2068,8 +2372,12 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.nglDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2077,7 +2385,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglClearBufferfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglClearBufferfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2085,7 +2394,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glCompileShader(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glCompileShader(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCompileShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2093,7 +2403,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.nglGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2102,7 +2413,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetInteger64v(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2110,7 +2422,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsRenderbuffer(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsRenderbuffer(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsRenderbuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2118,8 +2431,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglUniformMatrix4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglUniformMatrix4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2127,7 +2442,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2135,7 +2451,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2143,15 +2460,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glViewport(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glViewport(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glViewport(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2159,7 +2479,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDeleteFramebuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteFramebuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2167,16 +2488,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform4uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveUniform(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES30.nglGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveUniform(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2184,7 +2509,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2192,7 +2518,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2200,7 +2527,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform4iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2208,7 +2536,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttribI4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2216,7 +2545,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttribI4iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttribI4iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2224,7 +2554,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetVertexAttribIuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetVertexAttribIuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2232,7 +2563,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		long ret = org.lwjgl.opengles.GLES30.glGetInteger64(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetInteger64(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInteger64(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2241,15 +2573,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDepthMask(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDepthMask(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDepthMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetBufferParameteri64v(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES30.nglGetBufferParameteri64v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetBufferParameteri64v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2257,7 +2592,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUseProgram(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUseProgram(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUseProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2265,7 +2601,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2273,7 +2610,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2281,7 +2619,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2289,7 +2628,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix2x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2297,7 +2637,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix2x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2305,7 +2646,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glSampleCoverage(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glSampleCoverage(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glSampleCoverage(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2313,79 +2655,104 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglClearBufferiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglClearBufferiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, short[] arg8) {
 		org.lwjgl.opengles.GLES30.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int[] arg8) {
 		org.lwjgl.opengles.GLES30.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES30.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, IntBuffer arg8) {
 		org.lwjgl.opengles.GLES30.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES30.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, float[] arg8) {
 		org.lwjgl.opengles.GLES30.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES30.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES30.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2393,7 +2760,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteShader(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteShader(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteShader(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2401,7 +2769,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform3uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2409,7 +2778,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform3uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform3uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2417,7 +2787,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2425,15 +2796,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib4fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib4fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib4fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetShaderInfoLog(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglGetShaderInfoLog(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2441,79 +2815,192 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawArrays(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawArrays(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, float[] arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			float[] arg10) {
 		org.lwjgl.opengles.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, int[] arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			int[] arg10) {
 		org.lwjgl.opengles.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, FloatBuffer arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			FloatBuffer arg10) {
 		org.lwjgl.opengles.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, short[] arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			short[] arg10) {
 		org.lwjgl.opengles.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ByteBuffer arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ByteBuffer arg10) {
 		org.lwjgl.opengles.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		org.lwjgl.opengles.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, ShortBuffer arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			ShortBuffer arg10) {
 		org.lwjgl.opengles.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, IntBuffer arg10) {
+	public void glTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			IntBuffer arg10) {
 		org.lwjgl.opengles.GLES30.glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2521,7 +3008,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glSamplerParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glSamplerParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glSamplerParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glSamplerParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2529,15 +3017,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glSamplerParameterf(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glSamplerParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glSamplerParameterf(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetActiveUniformsiv(int arg0, int arg1, long arg2, int arg3, long arg4) {
 		org.lwjgl.opengles.GLES30.nglGetActiveUniformsiv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2545,23 +3038,28 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDeleteVertexArrays(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDeleteVertexArrays(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDeleteVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglInvalidateFramebuffer(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES30.nglInvalidateFramebuffer(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglInvalidateFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglInvalidateFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglInvalidateFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglInvalidateFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2569,15 +3067,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglClearBufferuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglClearBufferuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.glVertexAttribI4ui(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttribI4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2585,7 +3088,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.nglGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2593,8 +3097,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glFlushMappedBufferRange(int arg0, long arg1, long arg2) {
 		org.lwjgl.opengles.GLES30.glFlushMappedBufferRange(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glFlushMappedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glFlushMappedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glFlushMappedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glFlushMappedBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2602,7 +3108,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glStencilOp(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glStencilOp(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2610,7 +3117,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		float ret = org.lwjgl.opengles.GLES30.glGetUniformf(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2619,7 +3127,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetUniformi(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2628,40 +3137,50 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindBuffer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindBuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindBuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES30.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTransformFeedbackVaryings(int arg0, CharSequence arg1, int arg2) {
 		org.lwjgl.opengles.GLES30.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTransformFeedbackVaryings(int arg0, CharSequence[] arg1, int arg2) {
 		org.lwjgl.opengles.GLES30.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glTransformFeedbackVaryings(int arg0, PointerBuffer arg1, int arg2) {
 		org.lwjgl.opengles.GLES30.glTransformFeedbackVaryings(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTransformFeedbackVaryings(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2669,25 +3188,44 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsTexture(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsTexture(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsTexture(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9, long arg10) {
+	public void nglTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		org.lwjgl.opengles.GLES30.nglTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFramebufferTexture2D(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.glFramebufferTexture2D(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glFramebufferTexture2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2695,7 +3233,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glEnable(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glEnable(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glEnable(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2703,7 +3242,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2711,7 +3251,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetFloatv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2719,77 +3260,104 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetFloatv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES30.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			FloatBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloatBuffer arg6) {
 		org.lwjgl.opengles.GLES30.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			short[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, short[] arg6) {
 		org.lwjgl.opengles.GLES30.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			float[] arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, float[] arg6) {
 		org.lwjgl.opengles.GLES30.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
 		org.lwjgl.opengles.GLES30.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengles.GLES30.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			IntBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, IntBuffer arg6) {
 		org.lwjgl.opengles.GLES30.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ShortBuffer arg6) {
+	public void glReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ShortBuffer arg6) {
 		org.lwjgl.opengles.GLES30.glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2797,7 +3365,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDrawBuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDrawBuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDrawBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2805,7 +3374,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glFrontFace(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glFrontFace(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glFrontFace(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2813,7 +3383,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform2iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2821,15 +3392,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetActiveUniformBlocki(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengles.GLES30.glGetActiveUniformBlocki(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformBlocki(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformBlocki(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniformBlocki(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformBlocki(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2837,8 +3411,12 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public int glGetFramebufferAttachmentParameteri(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengles.GLES30.glGetFramebufferAttachmentParameteri(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2847,7 +3425,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2855,15 +3434,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRenderbufferStorageMultisample(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.glRenderbufferStorageMultisample(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glRenderbufferStorageMultisample(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2871,7 +3455,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsSampler(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsSampler(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsSampler(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsSampler(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -2880,7 +3465,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2888,7 +3474,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2896,7 +3483,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGenVertexArrays(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGenVertexArrays(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGenVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGenVertexArrays(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2904,7 +3492,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2912,7 +3501,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetAttachedShaders(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetAttachedShaders(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2920,23 +3510,28 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glClearStencil(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glClearStencil(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearStencil(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformsiv(int arg0, int[] arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengles.GLES30.glGetActiveUniformsiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetActiveUniformsiv(int arg0, IntBuffer arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetActiveUniformsiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveUniformsiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2944,7 +3539,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2952,7 +3548,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2960,7 +3557,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glShaderBinary(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -2968,103 +3566,136 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glShaderBinary(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, float[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, float[] arg8) {
 		org.lwjgl.opengles.GLES30.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int[] arg8) {
 		org.lwjgl.opengles.GLES30.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, short[] arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, short[] arg8) {
 		org.lwjgl.opengles.GLES30.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ByteBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ByteBuffer arg8) {
 		org.lwjgl.opengles.GLES30.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES30.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, ShortBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ShortBuffer arg8) {
 		org.lwjgl.opengles.GLES30.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, IntBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, IntBuffer arg8) {
 		org.lwjgl.opengles.GLES30.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, FloatBuffer arg8) {
+	public void glTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, FloatBuffer arg8) {
 		org.lwjgl.opengles.GLES30.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix4x2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglUniformMatrix4x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetActiveUniformBlockName(int arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengles.GLES30.nglGetActiveUniformBlockName(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetActiveUniformBlockName(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix3x4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglUniformMatrix3x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3072,96 +3703,125 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDeleteTextures(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDeleteTextures(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteTextures(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glGetInternalformati(int arg0, int arg1, int arg2) {
 		int ret = org.lwjgl.opengles.GLES30.glGetInternalformati(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetInternalformati(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInternalformati(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetInternalformati(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInternalformati(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, short[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, short[] arg9) {
 		org.lwjgl.opengles.GLES30.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int[] arg9) {
 		org.lwjgl.opengles.GLES30.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, float[] arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, float[] arg9) {
 		org.lwjgl.opengles.GLES30.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ShortBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, ShortBuffer arg9) {
 		org.lwjgl.opengles.GLES30.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, long arg9) {
 		org.lwjgl.opengles.GLES30.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, ByteBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, ByteBuffer arg9) {
 		org.lwjgl.opengles.GLES30.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, IntBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, IntBuffer arg9) {
 		org.lwjgl.opengles.GLES30.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, FloatBuffer arg9) {
+	public void glTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, FloatBuffer arg9) {
 		org.lwjgl.opengles.GLES30.glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glBlendFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBlendFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3169,7 +3829,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3177,7 +3838,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3185,7 +3847,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3193,7 +3856,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3201,7 +3865,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3209,7 +3874,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3217,7 +3883,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3225,7 +3892,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3233,7 +3901,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDetachShader(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDetachShader(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDetachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3241,7 +3910,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3249,7 +3919,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3257,7 +3928,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3265,7 +3937,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3273,7 +3946,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3281,7 +3955,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3289,7 +3964,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3297,7 +3973,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		String ret = org.lwjgl.opengles.GLES30.glGetProgramInfoLog(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetProgramInfoLog_String(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3306,7 +3983,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		String ret = org.lwjgl.opengles.GLES30.glGetProgramInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3315,7 +3993,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3323,7 +4002,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetProgramInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3331,7 +4011,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.nglIsSync(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglIsSync(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3340,7 +4021,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glStencilMaskSeparate(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glStencilMaskSeparate(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glStencilMaskSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3348,7 +4030,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glGetBoolean(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetBoolean(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBoolean(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3356,8 +4039,12 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glUniform4ui(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.glUniform4ui(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glUniform4ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3365,7 +4052,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3373,7 +4061,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3381,7 +4070,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttribI4uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribI4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3389,69 +4079,101 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glLineWidth(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glLineWidth(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glLineWidth(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetShaderSource(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglGetShaderSource(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			FloatBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, FloatBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES30.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			IntBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, IntBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ShortBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ShortBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			ByteBuffer arg5) {
+	public void glVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglCompressedTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8, int arg9, long arg10) {
+	public void nglCompressedTexSubImage3D(
+			int arg0,
+			int arg1,
+			int arg2,
+			int arg3,
+			int arg4,
+			int arg5,
+			int arg6,
+			int arg7,
+			int arg8,
+			int arg9,
+			long arg10) {
 		org.lwjgl.opengles.GLES30.nglCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3459,17 +4181,21 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetShaderi(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderi(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void nglCompressedTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES30.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3477,7 +4203,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetIntegeri_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetIntegeri_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3485,7 +4212,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform4uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3493,7 +4221,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform4uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform4uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform4uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3501,7 +4230,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		float ret = org.lwjgl.opengles.GLES30.glGetSamplerParameterf(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetSamplerParameterf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetSamplerParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3510,7 +4240,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetSamplerParameteri(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetSamplerParameteri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetSamplerParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetSamplerParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3518,8 +4249,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glDrawElements(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.glDrawElements(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3527,7 +4260,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawElements(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3535,7 +4269,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3543,7 +4278,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3551,7 +4287,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawElements(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawElements(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElements(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3559,7 +4296,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBlendFunc(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBlendFunc(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBlendFunc(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3567,7 +4305,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3575,7 +4314,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform3iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform3iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3583,7 +4323,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3591,7 +4332,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglBindAttribLocation(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglBindAttribLocation(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3599,7 +4341,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindSampler(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindSampler(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindSampler(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindSampler(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3607,7 +4350,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteProgram(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteProgram(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3615,7 +4359,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetIntegerv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3623,7 +4368,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetIntegerv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetIntegerv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegerv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3631,7 +4377,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3640,7 +4387,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3649,7 +4397,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3657,7 +4406,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glReleaseShaderCompiler();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glReleaseShaderCompiler()" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glReleaseShaderCompiler() !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glReleaseShaderCompiler() !! ERROR: " + err);
 	}
 
 	@Override
@@ -3665,7 +4415,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetIntegeri(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetIntegeri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetIntegeri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetIntegeri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3674,7 +4425,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3682,7 +4434,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3690,7 +4443,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3698,15 +4452,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformBlockBinding(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformBlockBinding(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformBlockBinding(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformBlockBinding(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetSamplerParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES30.nglGetSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3714,7 +4471,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glCheckFramebufferStatus(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glCheckFramebufferStatus(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCheckFramebufferStatus(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3723,7 +4481,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3731,7 +4490,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3739,23 +4499,30 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDrawElementsInstanced(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsInstanced(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.glDrawElementsInstanced(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glDrawElementsInstanced(int arg0, int arg1, ByteBuffer arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glDrawElementsInstanced(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDrawElementsInstanced(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3763,7 +4530,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glResumeTransformFeedback();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glResumeTransformFeedback()" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glResumeTransformFeedback() !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glResumeTransformFeedback() !! ERROR: " + err);
 	}
 
 	@Override
@@ -3771,7 +4539,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindFramebuffer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindFramebuffer(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindFramebuffer(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3779,7 +4548,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3787,7 +4557,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3795,7 +4566,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteQueries(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteQueries(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteQueries(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3803,7 +4575,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3811,7 +4584,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3819,7 +4593,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetUniformiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3827,7 +4602,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsShader(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsShader(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3836,7 +4612,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3844,7 +4621,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		String ret = org.lwjgl.opengles.GLES30.glGetShaderInfoLog(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderInfoLog_String(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3853,7 +4631,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3861,7 +4640,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetShaderInfoLog(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3869,7 +4649,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		String ret = org.lwjgl.opengles.GLES30.glGetShaderInfoLog(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderInfoLog_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3877,8 +4658,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglGetSamplerParameterfv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES30.nglGetSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3886,7 +4669,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDepthFunc(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDepthFunc(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDepthFunc(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3894,7 +4678,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix4x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3902,15 +4687,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix4x3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4x3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetUniformIndices(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglGetUniformIndices(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetUniformIndices(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3918,7 +4706,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3926,7 +4715,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3934,7 +4724,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenTransformFeedbacks(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3942,7 +4733,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenTransformFeedbacks(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenTransformFeedbacks(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenTransformFeedbacks(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3950,7 +4742,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGenTransformFeedbacks();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenTransformFeedbacks() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenTransformFeedbacks() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenTransformFeedbacks() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3959,7 +4752,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3967,7 +4761,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3975,7 +4770,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glStencilMask(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glStencilMask(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glStencilMask(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3983,7 +4779,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform3uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -3991,7 +4788,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetInteger(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetInteger(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -3999,8 +4797,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glGetVertexAttribPointerv(int arg0, int arg1, PointerBuffer arg2) {
 		org.lwjgl.opengles.GLES30.glGetVertexAttribPointerv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribPointerv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4008,7 +4808,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBlendEquationSeparate(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBlendEquationSeparate(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBlendEquationSeparate(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4016,7 +4817,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glPauseTransformFeedback();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glPauseTransformFeedback()" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glPauseTransformFeedback() !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glPauseTransformFeedback() !! ERROR: " + err);
 	}
 
 	@Override
@@ -4024,7 +4826,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4032,16 +4835,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetUniformuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7) {
+	public void glCopyTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengles.GLES30.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4049,7 +4856,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4057,7 +4865,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4065,7 +4874,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteTextures(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteTextures(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteTextures(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4073,7 +4883,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		long ret = org.lwjgl.opengles.GLES30.glGetBufferParameteri64(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetBufferParameteri64(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferParameteri64(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4082,7 +4893,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4090,16 +4902,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetUniformfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4,
-			long arg5, long arg6) {
+	public void nglGetTransformFeedbackVarying(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES30.nglGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4107,7 +4923,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglVertexAttrib3fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib3fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4115,7 +4932,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetFloatv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetFloatv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetFloatv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4123,7 +4941,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		String ret = org.lwjgl.opengles.GLES30.glGetString(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetString(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4132,23 +4951,30 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDeleteSamplers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDeleteSamplers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDeleteSamplers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteSamplers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetActiveUniformBlockiv(int arg0, int arg1, int arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglGetActiveUniformBlockiv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetActiveUniformBlockiv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glRenderbufferStorage(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glRenderbufferStorage(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glRenderbufferStorage(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4156,7 +4982,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		float ret = org.lwjgl.opengles.GLES30.glGetFloat(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetFloat(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetFloat(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4165,7 +4992,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4173,7 +5001,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetQueryiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4181,7 +5010,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetInteger64v(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4189,32 +5019,40 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetInteger64v(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetInteger64v(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64v(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4,
-			int arg5, int arg6) {
+	public void nglInvalidateSubFramebuffer(int arg0, int arg1, long arg2, int arg3, int arg4, int arg5, int arg6) {
 		org.lwjgl.opengles.GLES30.nglInvalidateSubFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
+						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglInvalidateSubFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetSynciv(long arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetSynciv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetSynciv(long arg0, int arg1, int[] arg2, int[] arg3) {
 		org.lwjgl.opengles.GLES30.glGetSynciv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4222,7 +5060,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform3fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4230,7 +5069,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4238,7 +5078,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGenBuffers();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenBuffers() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4247,7 +5088,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4255,7 +5097,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDeleteBuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDeleteBuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteBuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4263,52 +5106,69 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform3iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform3iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFramebufferTextureLayer(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.glFramebufferTextureLayer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glFramebufferTextureLayer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES30.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
+					+ arg4 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3,
-			IntBuffer arg4, ByteBuffer arg5) {
+	public void glGetTransformFeedbackVarying(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ", " + arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2,
-			IntBuffer arg3) {
+	public String glGetTransformFeedbackVarying_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengles.GLES30.glGetTransformFeedbackVarying(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = "
+					+ ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4317,7 +5177,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGenRenderbuffers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGenRenderbuffers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGenRenderbuffers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4325,7 +5186,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		long ret = org.lwjgl.opengles.GLES30.nglGetString(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetString(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetString(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4334,17 +5196,21 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		long ret = org.lwjgl.opengles.GLES30.glGetInteger64i(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetInteger64i(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64i(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4,
-			long arg5) {
+	public void nglVertexAttribPointer(int arg0, int arg1, int arg2, boolean arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES30.nglVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttribPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4352,7 +5218,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetError();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetError() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetError() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4360,8 +5227,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glUniform3ui(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glUniform3ui(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3ui(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4369,7 +5238,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glScissor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glScissor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4377,15 +5247,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetBooleanv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int glClientWaitSync(long arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengles.GLES30.glClientWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4393,24 +5266,32 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglShaderBinary(int arg0, long arg1, int arg2, long arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.nglShaderBinary(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglShaderBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, int[] arg2) {
 		org.lwjgl.opengles.GLES30.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetRenderbufferParameteriv(int arg0, int arg1, IntBuffer arg2) {
 		org.lwjgl.opengles.GLES30.glGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4418,7 +5299,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetUniformui(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformui(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4427,7 +5309,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4435,15 +5318,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glAttachShader(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glAttachShader(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glAttachShader(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetRenderbufferParameteriv(int arg0, int arg1, long arg2) {
 		org.lwjgl.opengles.GLES30.nglGetRenderbufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetRenderbufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4451,7 +5337,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBeginTransformFeedback(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBeginTransformFeedback(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBeginTransformFeedback(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBeginTransformFeedback(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4459,7 +5346,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsQuery(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsQuery(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsQuery(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsQuery(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4468,7 +5356,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetQueryObjectui(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetQueryObjectui(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetQueryObjectui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetQueryObjectui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4477,7 +5366,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetShaderiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetShaderiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4485,7 +5375,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetVertexAttribIui(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribIui(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribIui(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4494,7 +5385,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform2uiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform2uiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4502,7 +5394,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4511,7 +5404,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetUniformLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4520,7 +5414,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4528,7 +5423,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetTexParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4536,23 +5432,28 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetInternalformativ(int arg0, int arg1, int arg2, int[] arg3) {
 		org.lwjgl.opengles.GLES30.glGetInternalformativ(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetInternalformativ(int arg0, int arg1, int arg2, IntBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetInternalformativ(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4560,7 +5461,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform2i(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2i(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4568,7 +5470,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4576,7 +5479,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4584,7 +5488,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4592,7 +5497,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4600,7 +5506,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4608,7 +5515,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4616,7 +5524,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBufferSubData(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4624,7 +5533,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsEnabled(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsEnabled(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsEnabled(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4632,8 +5542,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glUniform3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengles.GLES30.glUniform3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4641,7 +5553,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.nglGetFragDataLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetFragDataLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4650,7 +5563,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4658,15 +5572,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glUniform3i(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glUniform3i(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform3i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4674,7 +5591,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glClearDepthf(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glClearDepthf(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearDepthf(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearDepthf(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4682,7 +5600,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDisableVertexAttribArray(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDisableVertexAttribArray(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDisableVertexAttribArray(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4690,7 +5609,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4698,7 +5618,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform2iv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform2iv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2iv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4706,7 +5627,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4714,7 +5636,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetTexParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4722,7 +5645,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetBooleanv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetBooleanv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBooleanv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4730,7 +5654,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glEndQuery(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glEndQuery(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glEndQuery(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glEndQuery(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4738,16 +5663,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform1f(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform1f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, int arg9) {
+	public void glBlitFramebuffer(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
 		org.lwjgl.opengles.GLES30.glBlitFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBlitFramebuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4755,7 +5684,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform1i(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform1i(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1i(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4763,15 +5693,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetBufferParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetBufferParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribI4i(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		org.lwjgl.opengles.GLES30.glVertexAttribI4i(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttribI4i(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4779,7 +5714,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglSamplerParameteriv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglSamplerParameteriv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4787,7 +5723,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform1uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4795,7 +5732,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform1uiv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform1uiv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform1uiv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4803,7 +5741,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenerateMipmap(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenerateMipmap(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenerateMipmap(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4811,7 +5750,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBlendEquation(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBlendEquation(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBlendEquation(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4819,15 +5759,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttribDivisor(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttribDivisor(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribDivisor(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttribDivisor(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glClearColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengles.GLES30.glClearColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glClearColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4835,7 +5778,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glStencilFunc(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glStencilFunc(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4843,7 +5787,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteSync(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteSync(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteSync(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteSync(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4851,7 +5796,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4859,7 +5805,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4867,7 +5814,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix4x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4875,7 +5823,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix4x2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix4x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4883,7 +5832,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteSamplers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4891,7 +5841,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteSamplers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4899,15 +5850,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteSamplers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglUniformMatrix2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4915,7 +5869,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglVertexAttrib2fv(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglVertexAttrib2fv(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4923,7 +5878,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4932,7 +5888,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetAttribLocation(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetAttribLocation(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4941,7 +5898,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glCreateShader(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glCreateShader(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCreateShader(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -4950,24 +5908,32 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglSamplerParameterfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglSamplerParameterfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglDrawRangeElements(int arg0, int arg1, int arg2, int arg3, int arg4, long arg5) {
 		org.lwjgl.opengles.GLES30.nglDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDrawRangeElements(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5,
-			long arg6) {
+	public void nglGetActiveAttrib(int arg0, int arg1, int arg2, long arg3, long arg4, long arg5, long arg6) {
 		org.lwjgl.opengles.GLES30.nglGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -4975,44 +5941,58 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glProgramBinary(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public String glGetActiveAttrib_String(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3) {
 		String ret = org.lwjgl.opengles.GLES30.glGetActiveAttrib(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3,
-			IntBuffer arg4) {
+	public String glGetActiveAttrib_String(int arg0, int arg1, int arg2, IntBuffer arg3, IntBuffer arg4) {
 		String ret = org.lwjgl.opengles.GLES30.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = "
+					+ ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4,
-			ByteBuffer arg5) {
+	public void glGetActiveAttrib(int arg0, int arg1, IntBuffer arg2, IntBuffer arg3, IntBuffer arg4, ByteBuffer arg5) {
 		org.lwjgl.opengles.GLES30.glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetActiveAttrib(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5020,7 +6000,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5028,7 +6009,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix2fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5036,7 +6018,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		long ret = org.lwjgl.opengles.GLES30.glGetBufferPointer(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetBufferPointer(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBufferPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferPointer(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5045,7 +6028,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGenTransformFeedbacks(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGenTransformFeedbacks(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGenTransformFeedbacks(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGenTransformFeedbacks(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5053,7 +6037,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5061,15 +6046,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetVertexAttribIiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribIiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public int nglClientWaitSync(long arg0, int arg1, long arg2) {
 		int ret = org.lwjgl.opengles.GLES30.nglClientWaitSync(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglClientWaitSync(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5078,7 +6066,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5086,7 +6075,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glShaderSource(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5094,7 +6084,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5102,7 +6093,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glShaderSource(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glShaderSource(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5110,24 +6102,32 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, int arg8, long arg9) {
+	public void nglTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, long arg9) {
 		org.lwjgl.opengles.GLES30.nglTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttrib4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		org.lwjgl.opengles.GLES30.glVertexAttrib4f(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttrib4f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5135,15 +6135,18 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetProgramiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetProgramiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glBlendColor(float arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengles.GLES30.glBlendColor(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBlendColor(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5151,7 +6154,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglUniform4iv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniform4iv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5159,7 +6163,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5168,7 +6173,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetUniformBlockIndex(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetUniformBlockIndex(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5176,8 +6182,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglBufferSubData(int arg0, long arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglBufferSubData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglBufferSubData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5185,7 +6193,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5193,7 +6202,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetVertexAttribfv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribfv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5201,7 +6211,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix3x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5209,25 +6220,32 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniformMatrix3x4fv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniformMatrix3x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, long arg8) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES30.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, ByteBuffer arg7) {
+	public void glCompressedTexImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ByteBuffer arg7) {
 		org.lwjgl.opengles.GLES30.glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5235,7 +6253,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glUnmapBuffer(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUnmapBuffer(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUnmapBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUnmapBuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5243,25 +6262,36 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglReadPixels(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, long arg6) {
 		org.lwjgl.opengles.GLES30.nglReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglReadPixels(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetInternalformativ(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengles.GLES30.nglGetInternalformativ(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetInternalformativ(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3,
-			ByteBuffer arg4) {
+	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3, ByteBuffer arg4) {
 		ByteBuffer ret = org.lwjgl.opengles.GLES30.glMapBufferRange(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
+					+ ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5269,8 +6299,12 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public ByteBuffer glMapBufferRange_ByteBuffer(int arg0, long arg1, long arg2, int arg3) {
 		ByteBuffer ret = org.lwjgl.opengles.GLES30.glMapBufferRange(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5279,7 +6313,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsFramebuffer(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsFramebuffer(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsFramebuffer(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5288,7 +6323,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5296,7 +6332,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetShaderSource(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5304,7 +6341,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		String ret = org.lwjgl.opengles.GLES30.glGetShaderSource(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource_String(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5313,7 +6351,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		String ret = org.lwjgl.opengles.GLES30.glGetShaderSource(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetShaderSource_String(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetShaderSource_String(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5321,8 +6360,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglUniformMatrix3x2fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglUniformMatrix3x2fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix3x2fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5330,7 +6371,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5338,57 +6380,72 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetVertexAttribiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetVertexAttribiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilOpSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glStencilOpSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glStencilOpSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglUniformMatrix2x4fv(int arg0, int arg1, boolean arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglUniformMatrix2x4fv(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglUniformMatrix2x4fv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetProgramBinary(int arg0, IntBuffer arg1, IntBuffer arg2, ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetProgramBinary(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glGetProgramBinary(int arg0, int[] arg1, int[] arg2, ByteBuffer arg3) {
 		org.lwjgl.opengles.GLES30.glGetProgramBinary(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetProgramBinary(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			ByteBuffer arg6) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ByteBuffer arg6) {
 		org.lwjgl.opengles.GLES30.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, long arg7) {
+	public void glCompressedTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		org.lwjgl.opengles.GLES30.glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCompressedTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
+					+ arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5396,7 +6453,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glBindTransformFeedback(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glBindTransformFeedback(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glBindTransformFeedback(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glBindTransformFeedback(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5404,7 +6462,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5412,7 +6471,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5420,24 +6480,30 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glDeleteBuffers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glDeleteBuffers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glDeleteBuffers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7, int arg8) {
+	public void glCopyTexSubImage3D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		org.lwjgl.opengles.GLES30.glCopyTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glStencilFuncSeparate(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glStencilFuncSeparate(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glStencilFuncSeparate(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5445,7 +6511,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGetQueryObjectuiv(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGetQueryObjectuiv(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5453,7 +6520,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glPixelStorei(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glPixelStorei(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glPixelStorei(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5461,7 +6529,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5469,16 +6538,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGetInteger64i_v(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetInteger64i_v(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
-	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
-			int arg6, int arg7) {
+	public void glCopyTexSubImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		org.lwjgl.opengles.GLES30.glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", "
+						+ arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glCopyTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
+					+ ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5486,7 +6559,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglGenSamplers(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglGenSamplers(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGenSamplers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglGenSamplers(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5494,7 +6568,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glUniform2ui(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glUniform2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glUniform2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glUniform2ui(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5502,23 +6577,30 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib1f(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib1f(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib1f(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglBufferData(int arg0, long arg1, long arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.nglBufferData(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglBufferData(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void nglGetSynciv(long arg0, int arg1, int arg2, long arg3, long arg4) {
 		org.lwjgl.opengles.GLES30.nglGetSynciv(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetSynciv(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5526,7 +6608,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenSamplers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenSamplers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5534,7 +6617,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glGenSamplers(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenSamplers(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenSamplers(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenSamplers(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5542,7 +6626,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGenSamplers();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGenSamplers() = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGenSamplers() = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGenSamplers() = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5550,8 +6635,12 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void nglGetShaderPrecisionFormat(int arg0, int arg1, long arg2, long arg3) {
 		org.lwjgl.opengles.GLES30.nglGetShaderPrecisionFormat(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"nglGetShaderPrecisionFormat(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5559,7 +6648,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetBufferParameteri(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetBufferParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5567,8 +6657,10 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 	public void glVertexAttrib3f(int arg0, float arg1, float arg2, float arg3) {
 		org.lwjgl.opengles.GLES30.glVertexAttrib3f(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib3f(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5576,39 +6668,56 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.nglDeleteQueries(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "nglDeleteQueries(" + arg0 + ", " + arg1 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglDeleteQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglDeleteQueries(" + arg0 + ", " + arg1 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ShortBuffer arg4) {
 		org.lwjgl.opengles.GLES30.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, IntBuffer arg4) {
 		org.lwjgl.opengles.GLES30.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, long arg4) {
 		org.lwjgl.opengles.GLES30.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
 	public void glVertexAttribIPointer(int arg0, int arg1, int arg2, int arg3, ByteBuffer arg4) {
 		org.lwjgl.opengles.GLES30.glVertexAttribIPointer(arg0, arg1, arg2, arg3, arg4);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glVertexAttribIPointer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5616,7 +6725,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glVertexAttrib2f(arg0, arg1, arg2);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glVertexAttrib2f(" + arg0 + ", " + arg1 + ", " + arg2 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5624,7 +6734,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		float ret = org.lwjgl.opengles.GLES30.glGetTexParameterf(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameterf(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5633,7 +6744,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		int ret = org.lwjgl.opengles.GLES30.glGetTexParameteri(arg0, arg1);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glGetTexParameteri(" + arg0 + ", " + arg1 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
@@ -5642,17 +6754,21 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		boolean ret = org.lwjgl.opengles.GLES30.glIsSync(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glIsSync(" + arg0 + ") = " + ret + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glIsSync(" + arg0 + ") = " + ret + " !! ERROR: " + err);
 		return ret;
 	}
 
 	@Override
-	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
-			int arg7, long arg8) {
+	public void nglTexImage2D(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, long arg8) {
 		org.lwjgl.opengles.GLES30.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
+						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
+					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5660,15 +6776,20 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glFinish();
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glFinish()" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glFinish() !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glFinish() !! ERROR: " + err);
 	}
 
 	@Override
 	public void glFramebufferRenderbuffer(int arg0, int arg1, int arg2, int arg3) {
 		org.lwjgl.opengles.GLES30.glFramebufferRenderbuffer(arg0, arg1, arg2, arg3);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
-		LOGGER.log(Level.INFO, "glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
+		LOGGER.log(Level.INFO,
+				"glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ")"
+						+ (err != 0 ? " !! ERROR: " + err : ""));
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException(
+					"glFramebufferRenderbuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5676,7 +6797,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glActiveTexture(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glActiveTexture(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glActiveTexture(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override
@@ -5684,7 +6806,8 @@ public class GL_W_GLES30_LoggingDebug extends GL_W_GLES20_LoggingDebug {
 		org.lwjgl.opengles.GLES30.glLinkProgram(arg0);
 		int err = org.lwjgl.opengles.GLES30.glGetError();
 		LOGGER.log(Level.INFO, "glLinkProgram(" + arg0 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
-		if (err != GLES30.GL_NO_ERROR) throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
+		if (err != GLES30.GL_NO_ERROR)
+			throw new RuntimeException("glLinkProgram(" + arg0 + ") !! ERROR: " + err);
 	}
 
 	@Override

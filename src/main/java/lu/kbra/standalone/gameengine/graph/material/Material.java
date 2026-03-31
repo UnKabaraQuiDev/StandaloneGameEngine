@@ -96,8 +96,7 @@ public class Material implements UniqueID {
 	}
 
 	public boolean hasComponent(Class<? extends MaterialComponent> clazz) {
-		return components.keySet().stream().map(t -> clazz.isAssignableFrom(t))
-				.collect(Collectors.reducing((a, b) -> a || b)).get();
+		return components.keySet().stream().map(t -> clazz.isAssignableFrom(t)).collect(Collectors.reducing((a, b) -> a || b)).get();
 	}
 
 	public Map<Class<? extends MaterialComponent>, MaterialComponent> getComponents() {

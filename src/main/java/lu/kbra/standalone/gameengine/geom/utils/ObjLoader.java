@@ -60,9 +60,10 @@ public final class ObjLoader {
 			case "v":
 				vertices.add(new Vector3f(Float.parseFloat(tokens[1]), Float.parseFloat(tokens[2]), Float.parseFloat(tokens[3])));
 				if (tokens.length > 4)
-					colors
-							.add(new Vector4f(Float.parseFloat(tokens[4]), Float.parseFloat(tokens[5]), Float.parseFloat(tokens[6]),
-									tokens.length > 7 ? Float.parseFloat(tokens[7]) : 1));
+					colors.add(new Vector4f(Float.parseFloat(tokens[4]),
+							Float.parseFloat(tokens[5]),
+							Float.parseFloat(tokens[6]),
+							tokens.length > 7 ? Float.parseFloat(tokens[7]) : 1));
 				break;
 			case "l":
 				edges.add(new Vector2i(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2])));
@@ -98,7 +99,8 @@ public final class ObjLoader {
 		}
 		int[] indicesArr = indices.stream().mapToInt((v) -> v).toArray();
 
-		return new Gizmo(name, new Vec3fAttribArray("pos", 0, verticesArr, BufferType.ARRAY),
+		return new Gizmo(name,
+				new Vec3fAttribArray("pos", 0, verticesArr, BufferType.ARRAY),
 				new UIntAttribArray("ind", -1, indicesArr, BufferType.ELEMENT_ARRAY),
 				new Vec4fAttribArray("col", 1, colorArr, BufferType.ARRAY));
 	}
@@ -111,10 +113,9 @@ public final class ObjLoader {
 		final byte[] data = PCUtils.readBytesSource(path);
 		final ByteBuffer buffer = MemoryUtil.memAlloc(data.length).put(data).flip();
 
-		final AIScene scene = Assimp
-				.aiImportFileFromMemory(buffer,
-						aiProcess_Triangulate/* | aiProcess_GenSmoothNormals */ | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
-						PCUtils.getFileExtension(path));
+		final AIScene scene = Assimp.aiImportFileFromMemory(buffer,
+				aiProcess_Triangulate/* | aiProcess_GenSmoothNormals */ | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
+				PCUtils.getFileExtension(path));
 
 		if (scene == null) {
 			throw new RuntimeException("Failed to load OBJ: " + aiGetErrorString());

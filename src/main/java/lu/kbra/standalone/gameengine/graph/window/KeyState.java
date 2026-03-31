@@ -4,7 +4,9 @@ import org.lwjgl.glfw.GLFW;
 
 public enum KeyState {
 
-	PRESS, REPEAT, RELEASE;
+	PRESS,
+	REPEAT,
+	RELEASE;
 
 	public static KeyState byGLFWId(int id) {
 		switch (id) {

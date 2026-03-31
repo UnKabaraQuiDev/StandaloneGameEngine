@@ -2,6 +2,10 @@ package lu.kbra.standalone.gameengine.utils.mem.img;
 
 public enum MemImageOrigin {
 
-	OPENGL, STBI, MEMORY, DIRECT, OTHER;
+	OPENGL,
+	STBI,
+	MEMORY,
+	DIRECT,
+	OTHER;
 
 }

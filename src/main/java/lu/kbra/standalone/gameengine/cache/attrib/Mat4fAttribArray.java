@@ -43,7 +43,12 @@ public class Mat4fAttribArray extends JavaAttribArray implements MultiAttribArra
 		this.data = data;
 	}
 
-	public Mat4fAttribArray(final String name, final int index, final Matrix4f[] data, final BufferType bufferType, final boolean iStatic,
+	public Mat4fAttribArray(
+			final String name,
+			final int index,
+			final Matrix4f[] data,
+			final BufferType bufferType,
+			final boolean iStatic,
 			final int divisor) {
 		super(name, index, bufferType, iStatic, divisor);
 		this.data = data;

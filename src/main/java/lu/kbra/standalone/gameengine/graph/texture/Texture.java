@@ -248,10 +248,10 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	public String toString() {
 		return this.getClass().getSimpleName() + " [path=" + this.path + ", name=" + this.name + ", tid=" + this.glId + ", minFilter="
 				+ this.minFilter + ", magFilter=" + this.magFilter + ", txtType=" + this.txtType + ", hWrap=" + this.hWrap + ", vWrap="
-				+ this.vWrap + ", dWrap=" + this.dWrap + ", dataType=" + this.dataType + ", format=" + this.texelFormat + ", internalFormat="
-				+ this.texelInternalFormat + ", generateMipmaps=" + this.generateMipmaps + ", fixedSampleLocation=" + this.fixedSampleLocation
-				+ ", sampleCount=" + this.sampleCount + ", textureOperation=" + this.textureOperation + ", isValid()=" + this.isValid()
-				+ "]";
+				+ this.vWrap + ", dWrap=" + this.dWrap + ", dataType=" + this.dataType + ", format=" + this.texelFormat
+				+ ", internalFormat=" + this.texelInternalFormat + ", generateMipmaps=" + this.generateMipmaps + ", fixedSampleLocation="
+				+ this.fixedSampleLocation + ", sampleCount=" + this.sampleCount + ", textureOperation=" + this.textureOperation
+				+ ", isValid()=" + this.isValid() + "]";
 	}
 
 	public static TexelFormat getFormatByChannels(final int channels) {

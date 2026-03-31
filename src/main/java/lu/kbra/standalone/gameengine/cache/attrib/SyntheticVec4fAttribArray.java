@@ -18,13 +18,22 @@ public class SyntheticVec4fAttribArray extends Vec4fAttribArray {
 		super.length = dataLength;
 	}
 
-	public SyntheticVec4fAttribArray(final String name, final int index, final int dataLength, final BufferType bufferType,
-			final boolean _static, final int divisor) {
+	public SyntheticVec4fAttribArray(
+			final String name,
+			final int index,
+			final int dataLength,
+			final BufferType bufferType,
+			final boolean _static,
+			final int divisor) {
 		super(name, index, null, bufferType, _static, divisor);
 		super.length = dataLength;
 	}
 
-	public SyntheticVec4fAttribArray(final String name, final int index, final int dataLength, final BufferType bufferType,
+	public SyntheticVec4fAttribArray(
+			final String name,
+			final int index,
+			final int dataLength,
+			final BufferType bufferType,
 			final boolean _static) {
 		super(name, index, null, bufferType, _static);
 		super.length = dataLength;

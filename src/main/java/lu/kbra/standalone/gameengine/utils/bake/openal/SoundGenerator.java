@@ -9,7 +9,7 @@ import java.nio.ShortBuffer;
 import org.joml.Math;
 import org.lwjgl.system.MemoryUtil;
 
-import lu.kbra.standalone.gameengine.utils.MathUtils;;
+import lu.kbra.standalone.gameengine.utils.MathUtils;
 
 public class SoundGenerator {
 
@@ -75,32 +75,28 @@ public class SoundGenerator {
 		}
 
 		/*
-		 * // Calculate the number of samples for 10 seconds int numSamples = sampleRate
-		 * * 10;
-		 * 
-		 * // Generate audio samples for 10 seconds for (int second = 0; second < 10;
-		 * second++) { // Generate the note for (int i = 0; i < sampleRate / 2; i++) {
-		 * // Calculate time in seconds double time = ((double) second / (double)
-		 * sampleRate) * i;
-		 * 
+		 * // Calculate the number of samples for 10 seconds int numSamples = sampleRate * 10;
+		 *
+		 * // Generate audio samples for 10 seconds for (int second = 0; second < 10; second++) { //
+		 * Generate the note for (int i = 0; i < sampleRate / 2; i++) { // Calculate time in seconds double
+		 * time = ((double) second / (double) sampleRate) * i;
+		 *
 		 * // Calculate angle based on time double angle = 2 * Math.PI * time;
-		 * 
+		 *
 		 * // Initialize amplitude double amplitude = 0.0;
-		 * 
-		 * // Calculate amplitude using Fourier series for (int ji = 0; ji <
-		 * radii.length; ji++) { amplitude += radii[ji] * Math.cos(coefficients[ji] *
-		 * angle + 1); }
-		 * 
-		 * // Calculate frequency based on angle double frequency = 440 *
-		 * java.lang.Math.pow(1.059, angle);
-		 * 
-		 * // Calculate amplitude-adjusted sample value short sampleValue = (short)
-		 * (amplitude * Short.MAX_VALUE / 500);
-		 * 
+		 *
+		 * // Calculate amplitude using Fourier series for (int ji = 0; ji < radii.length; ji++) { amplitude
+		 * += radii[ji] * Math.cos(coefficients[ji] * angle + 1); }
+		 *
+		 * // Calculate frequency based on angle double frequency = 440 * java.lang.Math.pow(1.059, angle);
+		 *
+		 * // Calculate amplitude-adjusted sample value short sampleValue = (short) (amplitude *
+		 * Short.MAX_VALUE / 500);
+		 *
 		 * buffer.put(sampleValue); }
-		 * 
-		 * // Silence for the remaining half of the second for (int i = 0; i <
-		 * sampleRate / 2; i++) { buffer.put((short) 0); } }
+		 *
+		 * // Silence for the remaining half of the second for (int i = 0; i < sampleRate / 2; i++) {
+		 * buffer.put((short) 0); } }
 		 */
 
 		// Reset position of the buffer to prepare for playback
@@ -149,12 +145,12 @@ public class SoundGenerator {
 		}
 
 		/*
-		 * Now you can use the buffer for audio playback try (MemoryStack stack =
-		 * MemoryStack.stackPush()) { IntBuffer errorBuffer = stack.mallocInt(256);
-		 * 
+		 * Now you can use the buffer for audio playback try (MemoryStack stack = MemoryStack.stackPush()) {
+		 * IntBuffer errorBuffer = stack.mallocInt(256);
+		 *
 		 * // Initialize the file for writing long file =
-		 * STBVorbis.stb_vorbis_open_filename("./resources/bakes/audio/test.ogg",
-		 * errorBuffer, null); if (file == MemoryUtil.NULL) {
+		 * STBVorbis.stb_vorbis_open_filename("./resources/bakes/audio/test.ogg", errorBuffer, null); if
+		 * (file == MemoryUtil.NULL) {
 		 */
 		/**
 		 * throw new RuntimeException( "Failed to open Ogg file. Error: " +
@@ -162,17 +158,16 @@ public class SoundGenerator {
 		 */
 		/*
 		 * }
-		 * 
-		 * // Create an empty VorbisInfo instance STBVorbisInfo info =
-		 * STBVorbisInfo.malloc();
-		 * 
+		 *
+		 * // Create an empty VorbisInfo instance STBVorbisInfo info = STBVorbisInfo.malloc();
+		 *
 		 * // Get the file information STBVorbis.stb_vorbis_get_info(file, info);
-		 * 
-		 * // Write the audio data to the file STBVorbis.stb_vorbis_encode_float(file,
-		 * sampleRate, 1, sampleRate);
-		 * 
+		 *
+		 * // Write the audio data to the file STBVorbis.stb_vorbis_encode_float(file, sampleRate, 1,
+		 * sampleRate);
+		 *
 		 * // Close the file STBVorbis.stb_vorbis_close(file);
-		 * 
+		 *
 		 * // Free the memory allocated for VorbisInfo info.free(); }
 		 */
 	}

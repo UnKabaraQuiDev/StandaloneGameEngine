@@ -16,14 +16,23 @@ public class SyntheticFloatAttribArray extends FloatAttribArray implements Synth
 		super.length = dataLength;
 	}
 
-	public SyntheticFloatAttribArray(final String name, final int index, final int dataLength, final BufferType bufferType,
+	public SyntheticFloatAttribArray(
+			final String name,
+			final int index,
+			final int dataLength,
+			final BufferType bufferType,
 			final boolean _static) {
 		super(name, index, null, bufferType, _static);
 		super.length = dataLength;
 	}
 
-	public SyntheticFloatAttribArray(final String name, final int index, final int dataLength, final BufferType bufferType,
-			final boolean _static, final int divisor) {
+	public SyntheticFloatAttribArray(
+			final String name,
+			final int index,
+			final int dataLength,
+			final BufferType bufferType,
+			final boolean _static,
+			final int divisor) {
 		super(name, index, null, bufferType, _static, divisor);
 		super.length = dataLength;
 	}

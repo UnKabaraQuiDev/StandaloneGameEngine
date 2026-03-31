@@ -39,10 +39,10 @@ import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
 import com.squareup.javapoet.TypeSpec.Builder;
 
-import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.pclib.impl.TriFunction;
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.pclib.logger.PCLogger;
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 
 public class GL_W_GenMain extends GenMainConsts {
 
@@ -171,8 +171,7 @@ public class GL_W_GenMain extends GenMainConsts {
 
 		public MethodSpec toInterfaceDefault(boolean explicitSuffix) {
 			String methodName = name + (explicitSuffix ? getSuffixReturnTypeName(returnType) : "");
-			MethodSpec.Builder mb = MethodSpec
-					.methodBuilder(methodName)
+			MethodSpec.Builder mb = MethodSpec.methodBuilder(methodName)
 					.addModifiers(Modifier.PUBLIC, Modifier.DEFAULT)
 					.returns(TypeName.get(returnType));
 
@@ -186,8 +185,7 @@ public class GL_W_GenMain extends GenMainConsts {
 
 		public MethodSpec toWrapperStatic(boolean explicitSuffix) {
 			String methodName = name + (explicitSuffix ? getSuffixReturnTypeName(returnType) : "");
-			MethodSpec.Builder mb = MethodSpec
-					.methodBuilder(methodName)
+			MethodSpec.Builder mb = MethodSpec.methodBuilder(methodName)
 					.addModifiers(Modifier.PUBLIC, Modifier.STATIC)
 					.returns(TypeName.get(returnType));
 
@@ -211,8 +209,7 @@ public class GL_W_GenMain extends GenMainConsts {
 
 		public MethodSpec toImplMethod(Class<?> implClazz, boolean explicitSuffix) {
 			String methodName = name + (explicitSuffix ? getSuffixReturnTypeName(returnType) : "");
-			MethodSpec.Builder mb = MethodSpec
-					.methodBuilder(methodName)
+			MethodSpec.Builder mb = MethodSpec.methodBuilder(methodName)
 					.addAnnotation(Override.class)
 					.addModifiers(Modifier.PUBLIC)
 					.returns(TypeName.get(returnType));
@@ -235,8 +232,7 @@ public class GL_W_GenMain extends GenMainConsts {
 
 		public MethodSpec toLoggingImplMethod(Class<?> implClazz, boolean explicitSuffix) {
 			String methodName = name + (explicitSuffix ? getSuffixReturnTypeName(returnType) : "");
-			MethodSpec.Builder mb = MethodSpec
-					.methodBuilder(methodName)
+			MethodSpec.Builder mb = MethodSpec.methodBuilder(methodName)
 					.addAnnotation(Override.class)
 					.addModifiers(Modifier.PUBLIC)
 					.returns(TypeName.get(returnType));
@@ -265,8 +261,7 @@ public class GL_W_GenMain extends GenMainConsts {
 			TypeName retType = TypeName.get(returnType);
 			boolean returnsValue = !retType.equals(TypeName.VOID);
 
-			MethodSpec.Builder mb = MethodSpec
-					.methodBuilder(methodName)
+			MethodSpec.Builder mb = MethodSpec.methodBuilder(methodName)
 					.addAnnotation(Override.class)
 					.addModifiers(Modifier.PUBLIC)
 					.returns(retType);
@@ -288,26 +283,22 @@ public class GL_W_GenMain extends GenMainConsts {
 			mb.addStatement("int err = $L", glGetError);
 
 			if (returnsValue) {
-				mb
-						.addStatement("LOGGER.log($T.INFO, \"" + buildLogPrefix(methodName) + " = \" + ret + (err != 0 ? $S + err : $S))",
-								Level.class,
-								" !! ERROR: ",
-								"");
-				mb
-						.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-								+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+				mb.addStatement("LOGGER.log($T.INFO, \"" + buildLogPrefix(methodName) + " = \" + ret + (err != 0 ? $S + err : $S))",
+						Level.class,
+						" !! ERROR: ",
+						"");
+				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
+						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 
 				mb.addStatement("return ret");
 			} else {
-				mb
-						.addStatement("LOGGER.log($T.INFO, \"" + buildLogPrefix(methodName) + "\" + (err != 0 ? $S + err : $S))",
-								Level.class,
-								" !! ERROR: ",
-								"");
-				mb
-						.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
-								implClazz,
-								RuntimeException.class);
+				mb.addStatement("LOGGER.log($T.INFO, \"" + buildLogPrefix(methodName) + "\" + (err != 0 ? $S + err : $S))",
+						Level.class,
+						" !! ERROR: ",
+						"");
+				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
+						implClazz,
+						RuntimeException.class);
 
 			}
 
@@ -319,8 +310,7 @@ public class GL_W_GenMain extends GenMainConsts {
 			TypeName retType = TypeName.get(returnType);
 			boolean returnsValue = !retType.equals(TypeName.VOID);
 
-			MethodSpec.Builder mb = MethodSpec
-					.methodBuilder(methodName)
+			MethodSpec.Builder mb = MethodSpec.methodBuilder(methodName)
 					.addAnnotation(Override.class)
 					.addModifiers(Modifier.PUBLIC)
 					.returns(retType);
@@ -342,15 +332,13 @@ public class GL_W_GenMain extends GenMainConsts {
 			mb.addStatement("int err = $L", glGetError);
 
 			if (returnsValue) {
-				mb
-						.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-								+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
+						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 				mb.addStatement("return ret");
 			} else {
-				mb
-						.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
-								implClazz,
-								RuntimeException.class);
+				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
+						implClazz,
+						RuntimeException.class);
 			}
 
 			return mb.build();
@@ -368,8 +356,7 @@ public class GL_W_GenMain extends GenMainConsts {
 			TypeName retType = TypeName.get(returnType);
 			boolean returnsValue = !retType.equals(TypeName.VOID);
 
-			MethodSpec.Builder mb = MethodSpec
-					.methodBuilder(methodName)
+			MethodSpec.Builder mb = MethodSpec.methodBuilder(methodName)
 					.addAnnotation(Override.class)
 					.addModifiers(Modifier.PUBLIC)
 					.returns(retType);
@@ -393,15 +380,13 @@ public class GL_W_GenMain extends GenMainConsts {
 			mb.addStatement("$T.glFlush()", GL11.class);
 
 			if (returnsValue) {
-				mb
-						.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-								+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
+						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 				mb.addStatement("return ret");
 			} else {
-				mb
-						.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
-								implClazz,
-								RuntimeException.class);
+				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
+						implClazz,
+						RuntimeException.class);
 			}
 
 			return mb.build();
@@ -412,8 +397,7 @@ public class GL_W_GenMain extends GenMainConsts {
 			TypeName retType = TypeName.get(returnType);
 			boolean returnsValue = !retType.equals(TypeName.VOID);
 
-			MethodSpec.Builder mb = MethodSpec
-					.methodBuilder(methodName)
+			MethodSpec.Builder mb = MethodSpec.methodBuilder(methodName)
 					.addAnnotation(Override.class)
 					.addModifiers(Modifier.PUBLIC)
 					.returns(retType);
@@ -436,20 +420,20 @@ public class GL_W_GenMain extends GenMainConsts {
 
 			mb.addStatement("final long fence = $T.glFenceSync($T.GL_SYNC_GPU_COMMANDS_COMPLETE, 0)", GL32.class, GL32.class);
 			mb.addStatement("$T.glFlush()", GL11.class);
-			mb.addStatement("final int result = $T.glClientWaitSync(fence, $T.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000)", GL32.class, GL32.class);
+			mb.addStatement("final int result = $T.glClientWaitSync(fence, $T.GL_SYNC_FLUSH_COMMANDS_BIT, 100_000_000)",
+					GL32.class,
+					GL32.class);
 			// mb.addStatement("$T.err.println(result)", System.class);
 			mb.addStatement("assert result != $T.GL_WAIT_FAILED", GL32.class);
-			
+
 			if (returnsValue) {
-				mb
-						.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-								+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
+						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 				mb.addStatement("return ret");
 			} else {
-				mb
-						.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
-								implClazz,
-								RuntimeException.class);
+				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
+						implClazz,
+						RuntimeException.class);
 			}
 
 			return mb.build();
@@ -486,8 +470,7 @@ public class GL_W_GenMain extends GenMainConsts {
 	 * --------------------------- Main generation logic ---------------------------
 	 */
 
-	private final List<String> NAME_BLACKLIST = Arrays
-			.stream(Object.class.getDeclaredMethods())
+	private final List<String> NAME_BLACKLIST = Arrays.stream(Object.class.getDeclaredMethods())
 			.map(Method::getName)
 			.distinct()
 			.collect(Collectors.toList());
@@ -554,13 +537,11 @@ public class GL_W_GenMain extends GenMainConsts {
 			}
 		}
 
-		iface
-				.addMethod(MethodSpec
-						.methodBuilder("checkError")
-						.addModifiers(Modifier.PUBLIC, Modifier.ABSTRACT)
-						.returns(boolean.class)
-						.addParameter(String.class, "message")
-						.build());
+		iface.addMethod(MethodSpec.methodBuilder("checkError")
+				.addModifiers(Modifier.PUBLIC, Modifier.ABSTRACT)
+				.returns(boolean.class)
+				.addParameter(String.class, "message")
+				.build());
 
 		iface.addMethod(MethodSpec.methodBuilder("isGLES").addModifiers(Modifier.PUBLIC, Modifier.ABSTRACT).returns(boolean.class).build());
 
@@ -594,38 +575,30 @@ public class GL_W_GenMain extends GenMainConsts {
 			}
 		}
 
-		cls
-				.addMethod(MethodSpec
-						.methodBuilder("checkError")
-						.addModifiers(Modifier.PUBLIC, Modifier.STATIC)
-						.returns(boolean.class)
-						.addParameter(String.class, "message")
-						.addStatement("return WRAPPER.checkError(message)")
-						.build());
+		cls.addMethod(MethodSpec.methodBuilder("checkError")
+				.addModifiers(Modifier.PUBLIC, Modifier.STATIC)
+				.returns(boolean.class)
+				.addParameter(String.class, "message")
+				.addStatement("return WRAPPER.checkError(message)")
+				.build());
 
-		cls
-				.addMethod(MethodSpec
-						.methodBuilder("checkError")
-						.addModifiers(Modifier.PUBLIC, Modifier.STATIC)
-						.returns(boolean.class)
-						.addStatement("return WRAPPER.checkError(\"\")")
-						.build());
+		cls.addMethod(MethodSpec.methodBuilder("checkError")
+				.addModifiers(Modifier.PUBLIC, Modifier.STATIC)
+				.returns(boolean.class)
+				.addStatement("return WRAPPER.checkError(\"\")")
+				.build());
 
-		cls
-				.addMethod(MethodSpec
-						.methodBuilder("isGLES")
-						.addModifiers(Modifier.PUBLIC, Modifier.STATIC)
-						.returns(boolean.class)
-						.addStatement("return WRAPPER.isGLES()")
-						.build());
+		cls.addMethod(MethodSpec.methodBuilder("isGLES")
+				.addModifiers(Modifier.PUBLIC, Modifier.STATIC)
+				.returns(boolean.class)
+				.addStatement("return WRAPPER.isGLES()")
+				.build());
 
-		cls
-				.addMethod(MethodSpec
-						.methodBuilder("isGL")
-						.addModifiers(Modifier.PUBLIC, Modifier.STATIC)
-						.returns(boolean.class)
-						.addStatement("return WRAPPER.isGL()")
-						.build());
+		cls.addMethod(MethodSpec.methodBuilder("isGL")
+				.addModifiers(Modifier.PUBLIC, Modifier.STATIC)
+				.returns(boolean.class)
+				.addStatement("return WRAPPER.isGL()")
+				.build());
 
 		JavaFile jf = JavaFile.builder(PACKAGE_PATH, cls.build()).indent("\t").build();
 
@@ -684,35 +657,28 @@ public class GL_W_GenMain extends GenMainConsts {
 			}
 
 			boolean isGles = clazz.getSimpleName().contains("GLES");
-			cls
-					.addMethod(MethodSpec
-							.methodBuilder("checkError")
-							.addAnnotation(Override.class)
-							.addModifiers(Modifier.PUBLIC)
-							.addParameter(String.class, "message")
-							.returns(boolean.class)
-							.addStatement("$T." + (isGles ? "checkGlESError" : "checkGlError") + "(message)",
-									ClassName.get(GameEngineUtils.class))
-							.addStatement("return true")
-							.build());
+			cls.addMethod(MethodSpec.methodBuilder("checkError")
+					.addAnnotation(Override.class)
+					.addModifiers(Modifier.PUBLIC)
+					.addParameter(String.class, "message")
+					.returns(boolean.class)
+					.addStatement("$T." + (isGles ? "checkGlESError" : "checkGlError") + "(message)", ClassName.get(GameEngineUtils.class))
+					.addStatement("return true")
+					.build());
 
-			cls
-					.addMethod(MethodSpec
-							.methodBuilder("isGLES")
-							.addAnnotation(Override.class)
-							.addModifiers(Modifier.PUBLIC)
-							.returns(boolean.class)
-							.addStatement("return $L", isGles)
-							.build());
+			cls.addMethod(MethodSpec.methodBuilder("isGLES")
+					.addAnnotation(Override.class)
+					.addModifiers(Modifier.PUBLIC)
+					.returns(boolean.class)
+					.addStatement("return $L", isGles)
+					.build());
 
-			cls
-					.addMethod(MethodSpec
-							.methodBuilder("isGL")
-							.addAnnotation(Override.class)
-							.addModifiers(Modifier.PUBLIC)
-							.returns(boolean.class)
-							.addStatement("return $L", !isGles)
-							.build());
+			cls.addMethod(MethodSpec.methodBuilder("isGL")
+					.addAnnotation(Override.class)
+					.addModifiers(Modifier.PUBLIC)
+					.returns(boolean.class)
+					.addStatement("return $L", !isGles)
+					.build());
 
 			JavaFile jf = JavaFile.builder(newPackage, cls.build()).indent("\t").build();
 
@@ -788,11 +754,9 @@ public class GL_W_GenMain extends GenMainConsts {
 	}
 
 	private void createLogger(Builder cls, String name) {
-		cls
-				.addField(FieldSpec
-						.builder(PCLogger.class, "LOGGER", Modifier.PRIVATE, Modifier.STATIC)
-						.initializer("$T.getLogger()", GlobalLogger.class)
-						.build());
+		cls.addField(FieldSpec.builder(PCLogger.class, "LOGGER", Modifier.PRIVATE, Modifier.STATIC)
+				.initializer("$T.getLogger()", GlobalLogger.class)
+				.build());
 	}
 
 }

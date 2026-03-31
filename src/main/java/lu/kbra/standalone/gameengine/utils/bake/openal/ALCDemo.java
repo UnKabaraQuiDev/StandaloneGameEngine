@@ -46,10 +46,6 @@ import java.nio.ShortBuffer;
 import java.util.List;
 import java.util.Objects;
 
-/*
- * Copyright LWJGL. All rights reserved.
- * License terms: https://www.lwjgl.org/license
- */
 import org.lwjgl.BufferUtils;
 import org.lwjgl.openal.AL;
 import org.lwjgl.openal.ALC;

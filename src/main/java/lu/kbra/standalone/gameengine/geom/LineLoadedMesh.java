@@ -9,8 +9,13 @@ public class LineLoadedMesh extends LoadedMesh implements LineMesh {
 
 	private float lineWidth;
 
-	public LineLoadedMesh(String name, Material material, float lineWidth, Vec3fAttribArray vertices,
-			UIntAttribArray indices, JavaAttribArray... attribs) {
+	public LineLoadedMesh(
+			String name,
+			Material material,
+			float lineWidth,
+			Vec3fAttribArray vertices,
+			UIntAttribArray indices,
+			JavaAttribArray... attribs) {
 		super(name, material, vertices, indices, attribs);
 		this.lineWidth = lineWidth;
 	}

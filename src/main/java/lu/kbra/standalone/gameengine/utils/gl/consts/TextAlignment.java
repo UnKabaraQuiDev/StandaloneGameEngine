@@ -4,7 +4,12 @@ import javax.swing.GroupLayout.Alignment;
 
 public enum TextAlignment {
 
-	TEXT_LEFT, LEFT, TEXT_RIGHT, RIGHT, TEXT_CENTER, CENTER;
+	TEXT_LEFT,
+	LEFT,
+	TEXT_RIGHT,
+	RIGHT,
+	TEXT_CENTER,
+	CENTER;
 
 	public Alignment asSwingAlignment() {
 		switch (this) {

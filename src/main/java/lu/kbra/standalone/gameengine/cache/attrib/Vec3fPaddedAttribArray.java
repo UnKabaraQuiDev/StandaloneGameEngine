@@ -15,31 +15,55 @@ public class Vec3fPaddedAttribArray extends Vec3fAttribArray implements PaddedAt
 		this.elementPadLength = elementPadLength;
 	}
 
-	public Vec3fPaddedAttribArray(final String name, final int index, final Vector3f[] data, final BufferType bufferType,
+	public Vec3fPaddedAttribArray(
+			final String name,
+			final int index,
+			final Vector3f[] data,
+			final BufferType bufferType,
 			final int elementPadLength) {
 		super(name, index, data, bufferType);
 		this.elementPadLength = elementPadLength;
 	}
 
-	public Vec3fPaddedAttribArray(final String name, final int index, final Vector3f[] data, final BufferType bufferType,
-			final boolean _static, final int elementPadLength) {
+	public Vec3fPaddedAttribArray(
+			final String name,
+			final int index,
+			final Vector3f[] data,
+			final BufferType bufferType,
+			final boolean _static,
+			final int elementPadLength) {
 		super(name, index, data, bufferType, _static);
 		this.elementPadLength = elementPadLength;
 	}
 
-	public Vec3fPaddedAttribArray(final String name, final int index, final Vector3f[] data, final BufferType bufferType,
-			final int _divisor, final int elementPadLength) {
+	public Vec3fPaddedAttribArray(
+			final String name,
+			final int index,
+			final Vector3f[] data,
+			final BufferType bufferType,
+			final int _divisor,
+			final int elementPadLength) {
 		super(name, index, data, bufferType, _divisor);
 		this.elementPadLength = elementPadLength;
 	}
 
-	public Vec3fPaddedAttribArray(final String name, final int index, final Vector3f[] data, final BufferType bufferType,
-			final boolean _static, final int _divisor, final int elementPadLength) {
+	public Vec3fPaddedAttribArray(
+			final String name,
+			final int index,
+			final Vector3f[] data,
+			final BufferType bufferType,
+			final boolean _static,
+			final int _divisor,
+			final int elementPadLength) {
 		super(name, index, data, bufferType, _static, _divisor);
 		this.elementPadLength = elementPadLength;
 	}
 
-	public Vec3fPaddedAttribArray(final String name, final int index, final Vector3f[] data, final boolean _static,
+	public Vec3fPaddedAttribArray(
+			final String name,
+			final int index,
+			final Vector3f[] data,
+			final boolean _static,
 			final int elementPadLength) {
 		super(name, index, data, _static);
 		this.elementPadLength = elementPadLength;
