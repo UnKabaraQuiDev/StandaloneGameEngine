@@ -323,31 +323,32 @@ public final class GameEngine implements Cleanupable, UniqueID {
 			throw new RuntimeException(e);
 		}
 
-		while (this.running) {
-			if (this.waitingForEvents) {
-				this.window.pollEvents();
-				this.waitingForEvents = false;
-				synchronized (this.waitingForEventsLock) {
-					this.waitingForEventsLock.notifyAll();
-				}
-			}
-
-			this.totalTime = GLFW.glfwGetTime();
-
-			this.gameLogic.main();
-
-			// TODO: enable main dispatcher ?
-			this.mainDispatcher.pump(10);
-		}
-
-		Thread.interrupted();
 		try {
-			this.updateThread.join();
-			this.renderThread.join();
-		} catch (final InterruptedException e) {
-			GlobalLogger.severe("Main thread interrupted while joining subthreads");
+			while (this.running) {
+				if (this.waitingForEvents) {
+					this.window.pollEvents();
+					this.waitingForEvents = false;
+					synchronized (this.waitingForEventsLock) {
+						this.waitingForEventsLock.notifyAll();
+					}
+				}
+
+				this.totalTime = GLFW.glfwGetTime();
+
+				this.gameLogic.main();
+
+				this.mainDispatcher.pump(10);
+			}
 		} finally {
-			this.cleanup();
+			Thread.interrupted();
+			try {
+				this.updateThread.join();
+				this.renderThread.join();
+			} catch (final InterruptedException e) {
+				GlobalLogger.severe("Main thread interrupted while joining subthreads");
+			} finally {
+				this.cleanup();
+			}
 		}
 	}
 
