@@ -243,6 +243,7 @@ public final class GameEngine implements Cleanupable, UniqueID {
 		} catch (final Exception e) {
 			e.printStackTrace();
 		} finally {
+			running = false;
 			this.cleanup();
 		}
 	}
@@ -302,10 +303,10 @@ public final class GameEngine implements Cleanupable, UniqueID {
 
 		this.mainThread = Thread.currentThread();
 		this.updateThread = new Thread(this.threadGroup, this::updateRun, this.threadGroup.getName() + ":update");
-		this.renderThread = new Thread(this.threadGroup, this::renderRun, this.threadGroup.getName() + ":render");
-
 		this.updateThread.setDaemon(true);
+		this.renderThread = new Thread(this.threadGroup, this::renderRun, this.threadGroup.getName() + ":render");
 		this.renderThread.setDaemon(true);
+
 		this.updateThread.start();
 		this.renderThread.start();
 

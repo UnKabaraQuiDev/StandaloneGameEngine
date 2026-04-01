@@ -52,20 +52,12 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 
 	protected Mesh instanceMesh;
 
-	public InstanceEmitter(
-			final String name,
-			final Mesh mesh,
-			final int count,
-			final Transform baseTransform,
+	public InstanceEmitter(final String name, final Mesh mesh, final int count, final Transform baseTransform,
 			final JavaAttribArray... attribs) {
 		this(name, mesh, count, i -> baseTransform.clone(), attribs);
 	}
 
-	public InstanceEmitter(
-			final String name,
-			final Mesh mesh,
-			final int count,
-			final Mat4fAttribArray baseTransform,
+	public InstanceEmitter(final String name, final Mesh mesh, final int count, final Mat4fAttribArray baseTransform,
 			final JavaAttribArray... attribs) {
 		this.name = name;
 		this.count = count;
@@ -105,11 +97,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 						+ Arrays.toString(attribs));
 	}
 
-	public InstanceEmitter(
-			final String name,
-			final Mesh mesh,
-			final int count,
-			final IntFunction<Transform> baseTransform,
+	public InstanceEmitter(final String name, final Mesh mesh, final int count, final IntFunction<Transform> baseTransform,
 			final JavaAttribArray... attribs) {
 		this.name = name;
 		this.count = count;
@@ -226,26 +214,29 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
-	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, Optional<Dispatcher> worker, Dispatcher render) {
+	public TaskFuture<?, Void> updateParticlesTransforms(
+			final Set<Integer> indices,
+			final Optional<Dispatcher> worker,
+			final Dispatcher render) {
 		if (worker.isPresent()) {
-			return new TaskFuture<>(worker.get(), (Supplier<Map<Integer, Matrix4f[]>>) () -> computeUpdateGroups(indices)).then(render,
+			return new TaskFuture<>(worker.get(), (Supplier<Map<Integer, Matrix4f[]>>) () -> this.computeUpdateGroups(indices)).then(render,
 					(Consumer<Map<Integer, Matrix4f[]>>) (result) -> result.entrySet()
 							.forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
 		} else {
-			final Map<Integer, Matrix4f[]> result = computeUpdateGroups(indices);
+			final Map<Integer, Matrix4f[]> result = this.computeUpdateGroups(indices);
 			return new TaskFuture<>(render,
 					(Runnable) () -> result.entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
 		}
 	}
 
-	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, Dispatcher worker, Dispatcher render) {
-		return new TaskFuture<>(worker, (Supplier<Map<Integer, Matrix4f[]>>) () -> computeUpdateGroups(indices)).then(render,
+	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, final Dispatcher worker, final Dispatcher render) {
+		return new TaskFuture<>(worker, (Supplier<Map<Integer, Matrix4f[]>>) () -> this.computeUpdateGroups(indices)).then(render,
 				(Consumer<Map<Integer, Matrix4f[]>>) (result) -> result.entrySet()
 						.forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
 	}
 
-	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, Dispatcher render) {
-		final Map<Integer, Matrix4f[]> result = computeUpdateGroups(indices);
+	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, final Dispatcher render) {
+		final Map<Integer, Matrix4f[]> result = this.computeUpdateGroups(indices);
 		return new TaskFuture<>(render,
 				(Runnable) () -> result.entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
 	}
@@ -309,7 +300,7 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 			return;
 		}
 
-		computeUpdateGroups(indices).entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue()));
+		this.computeUpdateGroups(indices).entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue()));
 
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
@@ -375,10 +366,9 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 
 	@Override
 	public void cleanup() {
-		if (this.instanceMesh == null)
+		if (this.instanceMesh == null) {
 			return;
-
-		GlobalLogger.log("Cleaning up: " + this.name);
+		}
 
 		Arrays.stream(this.instancesAttribs).forEach(JavaAttribArray::cleanup);
 		this.instancesAttribs = null;

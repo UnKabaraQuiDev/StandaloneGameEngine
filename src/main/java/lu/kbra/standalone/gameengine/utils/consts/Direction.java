@@ -2,18 +2,23 @@ package lu.kbra.standalone.gameengine.utils.consts;
 
 import org.joml.Quaternionf;
 import org.joml.Vector2f;
+import org.joml.Vector2fc;
 import org.joml.Vector2i;
+import org.joml.Vector2ic;
 import org.lwjgl.glfw.GLFW;
 
 public enum Direction {
 
-	NORTH(new Vector2f(0, 1), 0),
+	NORTH(new Vector2f(0, 1),
+			0),
 	EAST(new Vector2f(1, 0), 1),
 	SOUTH(new Vector2f(0, -1), 2),
 	WEST(new Vector2f(-1, 0), 3),
 	NONE(new Vector2f(0, 0), -1);
 
+	public static final int COUNT = 4;
 	private static final Direction[] DIRS = { NORTH, EAST, SOUTH, WEST };
+	public static final Direction DEFAULT = SOUTH;
 
 	private Vector2f dir;
 	private int index;
@@ -29,10 +34,6 @@ public enum Direction {
 
 	public int getIndex() {
 		return index;
-	}
-
-	public static Direction DEFAULT() {
-		return SOUTH;
 	}
 
 	public static Direction getByIndexValid(int i) {
@@ -95,7 +96,7 @@ public enum Direction {
 
 	public Direction add(Direction rotation) {
 		if (rotation == NONE) {
-			rotation = DEFAULT();
+			rotation = DEFAULT;
 		}
 		return getByIndexValid(Math.floorMod(this.getIndex() + rotation.getIndex(), 4));
 	}
@@ -110,30 +111,30 @@ public enum Direction {
 		};
 	}
 
-	public Vector2i rotated(final Vector2i v) {
+	public Vector2i rotated(final Vector2ic v) {
 		return switch (this) {
-		case SOUTH, NONE -> new Vector2i(v.x, v.y);
-		case NORTH -> new Vector2i(-v.x, -v.y);
-		case EAST -> new Vector2i(v.y, -v.x);
-		case WEST -> new Vector2i(-v.y, v.x);
+		case SOUTH, NONE -> new Vector2i(v.x(), v.y());
+		case NORTH -> new Vector2i(-v.x(), -v.y());
+		case EAST -> new Vector2i(v.y(), -v.x());
+		case WEST -> new Vector2i(-v.y(), v.x());
 		};
 	}
 
-	public Vector2f rotated(final Vector2f v) {
+	public Vector2f rotated(final Vector2fc v) {
 		return switch (this) {
-		case SOUTH, NONE -> new Vector2f(v.x, v.y);
-		case NORTH -> new Vector2f(-v.x, -v.y);
-		case EAST -> new Vector2f(v.y, -v.x);
-		case WEST -> new Vector2f(-v.y, v.x);
+		case SOUTH, NONE -> new Vector2f(v.x(), v.y());
+		case NORTH -> new Vector2f(-v.x(), -v.y());
+		case EAST -> new Vector2f(v.y(), -v.x());
+		case WEST -> new Vector2f(-v.y(), v.x());
 		};
 	}
 
 	public Vector2i rotate(final Vector2i v) {
 		return switch (this) {
-		case SOUTH, NONE -> v.set(v.x, v.y);
-		case NORTH -> v.set(-v.x, -v.y);
-		case EAST -> v.set(v.y, -v.x);
-		case WEST -> v.set(-v.y, v.x);
+		case SOUTH, NONE -> v.set(v.x(), v.y());
+		case NORTH -> v.set(-v.x(), -v.y());
+		case EAST -> v.set(v.y(), -v.x());
+		case WEST -> v.set(-v.y(), v.x());
 		};
 	}
 
@@ -152,6 +153,16 @@ public enum Direction {
 
 	public boolean isHorizontal() {
 		return this == EAST || this == WEST;
+	}
+
+	public Direction inverse() {
+		return switch (this) {
+		case NORTH -> SOUTH;
+		case SOUTH -> NORTH;
+		case EAST -> WEST;
+		case WEST -> EAST;
+		case NONE -> NONE;
+		};
 	}
 
 }
