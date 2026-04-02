@@ -12,6 +12,7 @@ import org.lwjgl.stb.STBImageWrite;
 
 import lu.kbra.pclib.PCUtils;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImage;
+import lu.kbra.standalone.gameengine.utils.mem.img.MemImageContentOrientation;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImageFormat;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImageOrigin;
 
@@ -65,7 +66,6 @@ public final class FileUtils {
 			if (shortBuf != null) {
 				buffer = ByteBuffer.allocateDirect(shortBuf.capacity() * 2).order(ByteOrder.nativeOrder());
 				buffer.asShortBuffer().put(shortBuf);
-//				STBImage.stbi_image_free(shortBuf);
 			}
 		}
 		case FLOAT -> {
@@ -73,7 +73,6 @@ public final class FileUtils {
 			if (floatBuffer != null) {
 				buffer = ByteBuffer.allocateDirect(floatBuffer.capacity() * 4).order(ByteOrder.nativeOrder());
 				buffer.asFloatBuffer().put(floatBuffer);
-//				STBImage.stbi_image_free(floatBuffer);
 			}
 		}
 		case HALF_FLOAT -> {
@@ -81,7 +80,6 @@ public final class FileUtils {
 			if (halfBuf != null) {
 				buffer = ByteBuffer.allocateDirect(halfBuf.capacity() * 2).order(ByteOrder.nativeOrder());
 				buffer.asShortBuffer().put(halfBuf);
-//				STBImage.stbi_image_free(halfBuf);
 			}
 		}
 		default -> throw new IllegalArgumentException("Unsupported: " + format);
@@ -118,13 +116,14 @@ public final class FileUtils {
 	}
 
 	public static boolean STBISave(final File file, final MemImage image) {
-		file.getParentFile().mkdirs();
 		Objects.requireNonNull(image);
 		Objects.requireNonNull(image.getBuffer());
 		if (!image.getBuffer().isDirect()) {
 			throw new IllegalArgumentException("The buffer: " + image + " isn't direct.");
 		}
-		STBImageWrite.stbi_flip_vertically_on_write(image.isFromOGL());
+		file.getParentFile().mkdirs();
+		STBImageWrite.stbi_flip_vertically_on_write(image.getOrientation() == MemImageContentOrientation.BOTTOM_LEFT);
+
 		return STBImageWrite.stbi_write_png(file.getAbsolutePath(),
 				image.getWidth(),
 				image.getHeight(),

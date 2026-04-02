@@ -257,7 +257,6 @@ public class SingleTexture extends Texture {
 		final ByteBuffer buffer = MemoryUtil.memAlloc(this.width * this.height * channelCount * dataType.getByteSize());
 		GL_W.glPixelStorei(GL_W.GL_PACK_ALIGNMENT, 1);
 		GL_W.glGetTexImage(this.txtType.getGlId(), 0, this.texelFormat.getGlId(), this.dataType.getGlId(), buffer);
-//		GL_W.glFlush();
 		GL_W.glFinish();
 
 		this.unbind();

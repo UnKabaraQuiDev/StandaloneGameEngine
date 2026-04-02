@@ -1,15 +1,15 @@
 package lu.kbra.standalone.gameengine.utils.mem.img;
 
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.function.Consumer;
 
 import org.lwjgl.BufferUtils;
 import org.lwjgl.stb.STBImage;
 import org.lwjgl.system.MemoryUtil;
 
-import lu.kbra.pclib.PCUtils;
-import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
+import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 
 public class MemImage implements Cleanupable {
 
@@ -19,6 +19,24 @@ public class MemImage implements Cleanupable {
 	private ByteBuffer buffer;
 	private final MemImageOrigin origin;
 	private final MemImageFormat format;
+	private final MemImageContentOrientation orientation;
+
+	public MemImage(
+			int width,
+			int height,
+			int channels,
+			ByteBuffer buffer,
+			MemImageOrigin origin,
+			MemImageFormat format,
+			MemImageContentOrientation orientation) {
+		this.width = width;
+		this.height = height;
+		this.channels = channels;
+		this.buffer = buffer;
+		this.origin = origin;
+		this.format = format;
+		this.orientation = orientation;
+	}
 
 	public MemImage(int width, int height, int channels, ByteBuffer buffer, MemImageOrigin origin, MemImageFormat format) {
 		this.width = width;
@@ -27,31 +45,34 @@ public class MemImage implements Cleanupable {
 		this.buffer = buffer;
 		this.origin = origin;
 		this.format = format;
+		this.orientation = origin == MemImageOrigin.OPENGL ? MemImageContentOrientation.BOTTOM_LEFT : MemImageContentOrientation.TOP_LEFT;
 	}
 
-	@Override
-	public void cleanup() {
-		if (buffer == null) {
-			return;
+	public MemImage toRGBA8() {
+		if (this.channels != 4) {
+			throw new IllegalStateException("Expected 4 channels, got " + this.channels);
+		}
+		if (this.format != MemImageFormat.HALF_FLOAT) {
+			throw new IllegalStateException("Expected HALF_FLOAT, got " + this.format);
 		}
 
-		if (MemImageOrigin.STBI == origin) {
-			STBImage.stbi_image_free(buffer);
-		} else if (MemImageOrigin.OPENGL == origin) {
-			MemoryUtil.memFree(buffer);
+		final ByteBuffer src = this.buffer.duplicate().order(ByteOrder.LITTLE_ENDIAN);
+		final ByteBuffer dst = BufferUtils.createByteBuffer(this.width * this.height * 4);
+
+		for (int i = 0; i < this.width * this.height; i++) {
+			final float r = halfToFloat(src.getShort());
+			final float g = halfToFloat(src.getShort());
+			final float b = halfToFloat(src.getShort());
+			final float a = halfToFloat(src.getShort());
+
+			dst.put(floatToUNorm8(r));
+			dst.put(floatToUNorm8(g));
+			dst.put(floatToUNorm8(b));
+			dst.put(floatToUNorm8(a));
 		}
 
-		buffer = null;
-	}
-
-	@Override
-	protected void finalize() throws Throwable {
-		if (buffer == null) {
-			return;
-		}
-
-		GlobalLogger.severe("Buffer " + PCUtils.toSimpleIdentityString(this) + " went OOB but wasn't cleaned up properly !");
-		cleanup();
+		dst.flip();
+		return new MemImage(this.width, this.height, 4, dst, MemImageOrigin.DIRECT, MemImageFormat.UBYTE, orientation);
 	}
 
 	public static ByteBuffer fromOGL(int size) {
@@ -122,10 +143,38 @@ public class MemImage implements Cleanupable {
 		return format;
 	}
 
+	public MemImageContentOrientation getOrientation() {
+		return orientation;
+	}
+
+	@Override
+	public void cleanup() {
+		if (buffer == null) {
+			return;
+		}
+
+		if (MemImageOrigin.STBI == origin) {
+			STBImage.stbi_image_free(buffer);
+		} else if (MemImageOrigin.OPENGL == origin) {
+			MemoryUtil.memFree(buffer);
+		}
+
+		buffer = null;
+	}
+
 	@Override
 	public String toString() {
 		return "MemImage@" + System.identityHashCode(this) + " [width=" + width + ", height=" + height + ", channels=" + channels
-				+ ", buffer=" + buffer + ", origin=" + origin + ", format=" + format + "]";
+				+ ", buffer=" + buffer + ", origin=" + origin + ", format=" + format + ", orientation=" + orientation + "]";
+	}
+
+	private static byte floatToUNorm8(final float v) {
+		final float clamped = Math.max(0.0f, Math.min(1.0f, v));
+		return (byte) Math.round(clamped * 255.0f);
+	}
+
+	private static float halfToFloat(final short h) {
+		return GameEngineUtils.halfFloatToFloat(h);
 	}
 
 }

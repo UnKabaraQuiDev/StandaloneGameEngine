@@ -767,4 +767,14 @@ public final class GameEngineUtils {
 				(float) Math.random() * (float) Math.PI * 2f);
 	}
 
+	public static float halfFloatToFloat(final short half) {
+		return switch ((int) half) {
+		case 0x0000 -> 0.0f;
+		case 0x8000 -> -0.0f;
+		case 0x7c00 -> Float.POSITIVE_INFINITY;
+		case 0xfc00 -> Float.NEGATIVE_INFINITY;
+		default -> Float.intBitsToFloat(((half & 0x8000) << 16) | (((half & 0x7c00) + 0x1C000) << 13) | ((half & 0x03FF) << 13));
+		};
+	}
+
 }
