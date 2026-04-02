@@ -2,8 +2,13 @@ package lu.kbra.standalone.gameengine.utils.transform;
 
 import org.joml.Matrix4f;
 
-public abstract class Transform implements Cloneable {
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lu.kbra.standalone.gameengine.utils.json.PostDeserialize;
+
+public abstract class Transform implements Cloneable, PostDeserialize {
+
+	@JsonIgnore
 	protected Matrix4f matrix;
 
 	public Transform() {
@@ -11,6 +16,11 @@ public abstract class Transform implements Cloneable {
 
 	protected Transform(boolean _noAction) {
 		matrix = new Matrix4f();
+	}
+
+	@Override
+	public void postDeserialize() {
+		updateMatrix();
 	}
 
 	public abstract Matrix4f updateMatrix();
