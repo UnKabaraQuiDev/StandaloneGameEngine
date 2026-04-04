@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -35,7 +36,6 @@ public class Scene3D implements Scene {
 
 	@Override
 	public void cleanup() {
-//		name = null;
 		this.entities.values().stream().filter(v -> v instanceof final Cleanupable c).forEach(v -> ((Cleanupable) v).cleanup());
 		this.entities.clear();
 	}
@@ -154,6 +154,21 @@ public class Scene3D implements Scene {
 	}
 
 	@Override
+	public <T extends SceneEntity, O extends SceneEntity> Optional<O> replace(final String oldId, final T new_) {
+		synchronized (this.entitiesLock) {
+			if (oldId != null && this.entities.containsKey(oldId)) {
+				final O oldValue = (O) this.entities.remove(oldId);
+				this.onRemove(oldValue);
+				this.add(new_);
+				return Optional.of(oldValue);
+			} else {
+				this.add(new_);
+				return Optional.empty();
+			}
+		}
+	}
+
+	@Override
 	public <T extends SceneEntity> boolean contains(final T e) {
 		synchronized (this.entitiesLock) {
 			return this.entities.containsKey(e.getId()) && this.entities.get(e.getId()) == e;
@@ -190,28 +205,41 @@ public class Scene3D implements Scene {
 
 	@Override
 	public Stream<SceneEntity> parallelStream() {
-		synchronized (this.entitiesLock) {
-			return this.entities.values().parallelStream();
-		}
+		return getROEntities().parallelStream();
 	}
 
 	@Override
 	public Stream<SceneEntity> stream() {
+		return getROEntities().stream();
+	}
+
+	public Collection<SceneEntity> getROEntities() {
 		synchronized (this.entitiesLock) {
-			return this.entities.values().stream();
+			return List.copyOf(entities.values());
 		}
 	}
 
 	@Override
 	public void forEach(final Consumer<? super SceneEntity> action) {
+		getROEntities().forEach(action);
+	}
+
+	@Override
+	public void flatForEach(Consumer<? super SceneEntity> action) {
 		synchronized (this.entitiesLock) {
-			this.entities.values().forEach(action);
+			flatStream().forEach(action);
 		}
 	}
 
 	@Override
 	public String getId() {
 		return this.name;
+	}
+
+	@Override
+	public String toString() {
+		return "Scene3D@" + System.identityHashCode(this) + " [name=" + this.name + ", camera=" + this.camera + ", entitiesLock="
+				+ this.entitiesLock + ", entities=" + this.entities + "]";
 	}
 
 }

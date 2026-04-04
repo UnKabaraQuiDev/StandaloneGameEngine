@@ -8,14 +8,14 @@ public class WorkerDispatcher extends Dispatcher implements Runnable {
 	private final ThreadGroup group;
 	private final Thread[] workers;
 
-	public WorkerDispatcher(String name, int workerCount) {
+	public WorkerDispatcher(final String name, final int workerCount) {
 		super(name);
 
-		group = new ThreadGroup(name);
-		workers = new Thread[workerCount];
+		this.group = new ThreadGroup(name);
+		this.workers = new Thread[workerCount];
 		for (int i = 0; i < workerCount; i++) {
 			final int index = i;
-			workers[i] = ThreadBuilder.create(group, this).name("Worker-" + name + "-" + index).daemon(true).start();
+			this.workers[i] = ThreadBuilder.create(this.group, this).name("Worker-" + name + "-" + index).daemon(true).start();
 		}
 	}
 
@@ -23,50 +23,49 @@ public class WorkerDispatcher extends Dispatcher implements Runnable {
 	public void run() {
 		while (!Thread.currentThread().isInterrupted()) {
 			try {
-				final ScheduledTask task = queue.take();
-//				System.err.println(Thread.currentThread().getName() + " took task " + System.identityHashCode(task));
-//				if (!task.isReady()) {
-//					queue.offer(task);
-//				}
+				final ScheduledTask task = this.queue.take();
 				task.run();
 				if (!task.wasRan()) {
-					queue.offer(task);
+					this.queue.offer(task);
 				}
-			} catch (InterruptedException e) {
-				// e.printStackTrace();
+			} catch (final InterruptedException e) {
 				Thread.currentThread().interrupt();
 				break;
-			} catch (Exception e) {
+			} catch (final Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	public ScheduledTask post(ThrowingRunnable<YieldExecutionThrowable> task, int priority) {
+	@Override
+	public ScheduledTask post(final ThrowingRunnable<YieldExecutionThrowable> task, final int priority) {
 		final ScheduledTask task2 = new ScheduledTask(task, priority);
-		queue.add(task2);
+		this.queue.add(task2);
 		return task2;
 	}
 
-	public ScheduledTask post(ThrowingRunnable<YieldExecutionThrowable> task, int priority, String source) {
+	@Override
+	public ScheduledTask post(final ThrowingRunnable<YieldExecutionThrowable> task, final int priority, final String source) {
 		final ScheduledTask task2 = new ScheduledTask(task, priority, source);
-		queue.add(task2);
+		this.queue.add(task2);
 		return task2;
 	}
 
-	public ScheduledTask post(ScheduledTask task) {
-		queue.add(task);
+	@Override
+	public ScheduledTask post(final ScheduledTask task) {
+		this.queue.add(task);
 		return task;
 	}
 
-	public ScheduledTask post(ThrowingRunnable<YieldExecutionThrowable> task) {
+	@Override
+	public ScheduledTask post(final ThrowingRunnable<YieldExecutionThrowable> task) {
 		final ScheduledTask task2 = new ScheduledTask(task, DEFAULT_PRIORITY);
-		queue.add(task2);
+		this.queue.add(task2);
 		return task2;
 	}
 
 	public void shutdown() {
-		group.interrupt();
+		this.group.interrupt();
 	}
 
 }
