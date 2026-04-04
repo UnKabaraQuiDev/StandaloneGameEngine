@@ -28,27 +28,29 @@ jobs:
       id: changes
       if: github.event_name == 'schedule'
       run: |
-        if git log \
-            --since='26 hours ago' \
-            -1 \
-            --oneline \
-            --invert-grep \
-            --grep='^\[NIGHTLY\]' \
-            --author='github-actions' \
-            --author='.*\[bot\]' \
-            --all-match \
-            -- . ':(exclude).github/**' | grep -q .; then
+        LOG_OUTPUT=$(git log \
+          --since='26 hours ago' \
+          --oneline \
+          -- . ':(exclude).github/**' \
+          | grep -v '\[bot\]' \
+          | grep -v 'github-actions' \
+          | grep -v '^\[NIGHTLY\]')
 
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-          else
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-          fi
+        echo "Git log output:"
+        echo "$LOG_OUTPUT"
+        
+        if echo "$LOG_OUTPUT" | grep -q .; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        fi
         
     - name: Detect SNAPSHOT version
       id: snapshot
       run: |
         VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
         echo "version=$VERSION"
+        
         if [[ "$VERSION" == *"-SNAPSHOT" ]]; then
           echo "is_snapshot=true" >> $GITHUB_OUTPUT
         else
