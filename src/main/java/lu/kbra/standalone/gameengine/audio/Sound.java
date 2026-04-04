@@ -40,7 +40,6 @@ public class Sound implements UniqueID, Cleanupable {
 		MemBuffer<ShortBuffer> sb = mb;
 
 		if (!stereo && !monoBuffer) {
-			System.err.println("converting");
 			sb = new MemBuffer<>(bufferToMonoAvg(mb.getBuffer(), channels), MemBufferOrigin.OPENAL);
 			mb.cleanup();
 			stereoBuffer = false;
@@ -63,8 +62,8 @@ public class Sound implements UniqueID, Cleanupable {
 		if (!stereo && !monoBuffer) {
 			MemBuffer<ShortBuffer> preBuffer = vorbis_channels_sampleRate.getFirst();
 			vorbis_channels_sampleRate
-			.setFirst(new MemBuffer<>(bufferToMonoAvg(preBuffer.getBuffer(), vorbis_channels_sampleRate.getSecond()),
-					MemBufferOrigin.OPENAL));
+					.setFirst(new MemBuffer<>(bufferToMonoAvg(preBuffer.getBuffer(), vorbis_channels_sampleRate.getSecond()),
+							MemBufferOrigin.OPENAL));
 			preBuffer.cleanup();
 			stereoBuffer = false;
 		}
@@ -72,7 +71,7 @@ public class Sound implements UniqueID, Cleanupable {
 		// copy to buffer
 		buffer.setData(vorbis_channels_sampleRate.getFirst().getBuffer(),
 				stereoBuffer ? AL11.AL_FORMAT_STEREO16 : AL11.AL_FORMAT_MONO16,
-						vorbis_channels_sampleRate.getThird());
+				vorbis_channels_sampleRate.getThird());
 
 		// free mem
 		vorbis_channels_sampleRate.getFirst().cleanup();

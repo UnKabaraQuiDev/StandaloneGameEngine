@@ -55,9 +55,7 @@ public class ShaderManager extends Thread implements Runnable {
 
 	public void monitorShader(AbstractShader shader) {
 		for (AbstractShaderPart part : shader.getParts().values()) {
-			System.err.println(root);
 			final String name = root.resolve(part.getFile().replace("classpath:/", "")).toAbsolutePath().normalize().toString();
-			System.err.println(name);
 			shaders.put(name, shader);
 		}
 	}

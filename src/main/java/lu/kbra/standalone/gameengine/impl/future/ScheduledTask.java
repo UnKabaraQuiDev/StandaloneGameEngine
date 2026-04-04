@@ -9,7 +9,7 @@ import lu.kbra.pclib.logger.GlobalLogger;
 
 public class ScheduledTask implements Runnable, Delayed {
 
-	//	public static final int DEFAULT_PRIORITY = 100;
+	// public static final int DEFAULT_PRIORITY = 100;
 	public static final long RETRY_DELAY_NANOS = TimeUnit.MILLISECONDS.toNanos(1);
 
 	private final ThrowingRunnable<YieldExecutionThrowable> task;
@@ -32,10 +32,10 @@ public class ScheduledTask implements Runnable, Delayed {
 		sourceString = task.toString();
 	}
 
-	//	@Override
-	//	public int compareTo(ScheduledTask o) {
-	//		return Integer.compare(o.priority, this.priority); // higher first
-	//	}
+	// @Override
+	// public int compareTo(ScheduledTask o) {
+	// return Integer.compare(o.priority, this.priority); // higher first
+	// }
 	@Override
 	public long getDelay(TimeUnit unit) {
 		long delay = nextTry - System.nanoTime();
@@ -57,7 +57,6 @@ public class ScheduledTask implements Runnable, Delayed {
 
 	@Override
 	public void run() {
-		//		System.err.println(Thread.currentThread().getName() + ": " + (predicate == null ? "null" : predicate.get()));
 		if (!isReady()) {
 			nextTry = nextTryDelay;
 			ran = false;

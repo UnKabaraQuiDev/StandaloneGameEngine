@@ -17,6 +17,7 @@ import javax.imageio.ImageIO;
 
 import lu.kbra.pclib.PCUtils;
 
+@Deprecated
 public class TimeGraphPlot {
 
 	private static final double PX_PER_MS_FACTOR = 100;

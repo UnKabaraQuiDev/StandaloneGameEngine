@@ -22,4 +22,5 @@ public class GlobalPostDeserializeModifier extends BeanDeserializerModifier {
 
 		return deserializer;
 	}
+
 }

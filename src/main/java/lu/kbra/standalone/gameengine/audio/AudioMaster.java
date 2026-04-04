@@ -88,7 +88,6 @@ public class AudioMaster implements Cleanupable {
 	}
 
 	public AudioMaster setPosition(Vector3f pos) {
-		// System.err.println("sound cam pos: " + pos);
 		AL11.alListener3f(AL11.AL_POSITION, pos.x, pos.y, pos.z);
 		GameEngineUtils.checkAlError("Listener3f().POSITION=" + pos);
 		return this;

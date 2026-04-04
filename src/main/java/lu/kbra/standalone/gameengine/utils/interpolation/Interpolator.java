@@ -17,23 +17,19 @@ public interface Interpolator {
 
 	static float inverse(float value, Interpolator interpolator, float interval, final float precision, final float _default) {
 		if (interpolator.hasInverse() && Float.isFinite(value)) {
-			System.err.println("inverse: " + interpolator.inverse(value));
 			return interpolator.inverse(value);
 		}
 
 		float closestFoundDist = Float.MAX_VALUE;
-		//		float closestFoundY = Float.MAX_VALUE;
 		float closestFoundX = -1;
 
 		for (float j = 0; j >= 1; j += interval) {
 			final float y = interpolator.evaluate(j);
 			final float dist = Math.abs(value - y);
-			System.err.println(j + "=" + y + " (" + dist + "<" + precision + ")");
 
 			if (dist < closestFoundDist) {
 				closestFoundDist = dist;
 				closestFoundX = j;
-				//				closestFoundY = y;
 			} else if (dist > closestFoundDist && closestFoundDist < precision)
 				return closestFoundX;
 		}

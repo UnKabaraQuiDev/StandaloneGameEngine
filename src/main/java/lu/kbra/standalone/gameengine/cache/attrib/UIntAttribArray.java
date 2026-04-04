@@ -42,51 +42,54 @@ public class UIntAttribArray extends JavaAttribArray implements IntegerJavaTypeA
 
 	@Override
 	public void init() {
-		bind();
+		this.bind();
 
-		super.length = data.length;
+		super.length = this.data.length;
 
-		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(this.bufferType.getGlId(), this.data, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (isVertexArray())
-			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_UNSIGNED_INT, getElementByteSize(), 0);
+		if (this.isVertexArray()) {
+			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_UNSIGNED_INT, this.getElementByteSize(), 0);
+		}
 	}
 
 	@Override
 	public void update() {
-		this.update(data);
+		this.update(this.data);
 	}
 
 	public void update(final int[] nPos) {
-		bind();
+		this.bind();
 
-		if (iStatic)
+		if (this.iStatic) {
 			throw new UnsupportedOperationException("Array is static.");
-		if (nPos.length != data.length)
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+		}
+		if (nPos.length != this.data.length) {
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + this.data.length + ").");
+		}
 
-		//		System.err.println(Arrays.toString(data) + " = " + data.length + " <> " + Arrays.toString(nPos) + " = " + nPos.length);
+		this.data = nPos;
+		super.length = this.data.length;
 
-		data = nPos;
-		super.length = data.length;
-
-		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
+		GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.data);
 	}
 
 	public void resize(final int[] nPos) {
-		bind();
+		this.bind();
 
-		final boolean sameSize = nPos.length == data.length;
-		data = nPos;
-		super.length = data.length;
+		final boolean sameSize = nPos.length == this.data.length;
+		this.data = nPos;
+		super.length = this.data.length;
 
-		if (sameSize)
-			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
-		else
-			GL_W.glBufferData(bufferType.getGlId(), nPos, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		if (sameSize) {
+			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, nPos);
+		} else {
+			GL_W.glBufferData(this.bufferType.getGlId(), nPos, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		}
 
-		if (isVertexArray())
-			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_UNSIGNED_INT, getElementByteSize(), 0);
+		if (this.isVertexArray()) {
+			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_UNSIGNED_INT, this.getElementByteSize(), 0);
+		}
 	}
 
 	@Override
@@ -96,27 +99,27 @@ public class UIntAttribArray extends JavaAttribArray implements IntegerJavaTypeA
 
 	@Override
 	public int getLength() {
-		return isLoaded() ? (length = data.length) : super.getLength();
+		return this.isLoaded() ? (this.length = this.data.length) : super.getLength();
 	}
 
 	@Override
 	public boolean isLoaded() {
-		return data != null;
+		return this.data != null;
 	}
 
 	@Override
 	public Integer get(final int i) {
-		return !isLoaded() ? null : data[i];
+		return !this.isLoaded() ? null : this.data[i];
 	}
 
 	@Override
 	public int[] getData() {
-		return data;
+		return this.data;
 	}
 
 	@Override
 	public int[] toFlatArray() {
-		return data;
+		return this.data;
 	}
 
 	@Override

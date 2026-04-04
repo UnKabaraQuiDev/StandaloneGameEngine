@@ -14,10 +14,8 @@ import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.function.Supplier;
 import java.util.logging.Level;
-import java.util.stream.Collectors;
 
 import org.joml.Matrix4f;
-import org.joml.Vector3f;
 
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.cache.attrib.Mat4fAttribArray;
@@ -39,7 +37,7 @@ import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 public class InstanceEmitter extends AutoCleanupable implements Renderable, Cleanupable, UniqueID, GLObject {
 
 	public static final int TRANSFORM_BUFFER_INDEX = 5;
-	public static final int FIRST_BUFFER_INDEX = TRANSFORM_BUFFER_INDEX + Mat4fAttribArray.ATTRIB_LENGTH;
+	public static final int FIRST_BUFFER_INDEX = InstanceEmitter.TRANSFORM_BUFFER_INDEX + Mat4fAttribArray.ATTRIB_LENGTH;
 	public static final String TRANSFORM_BUFFER_NAME = "transforms";
 
 	protected final String name;
@@ -70,27 +68,28 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		this.name = name;
 		this.count = count;
 
-		instancesAttribs = attribs;
-		instanceMesh = mesh;
+		this.instancesAttribs = attribs;
+		this.instanceMesh = mesh;
 
-		particles = new Instance[count];
+		this.particles = new Instance[count];
 
 		for (int i = 0; i < count; i++) {
-			final Object[] atts = new Object[instancesAttribs.length];
+			final Object[] atts = new Object[this.instancesAttribs.length];
 
 			int c = 0;
-			for (final JavaAttribArray a : attribs)
+			for (final JavaAttribArray a : attribs) {
 				atts[c++] = a.get(i);
+			}
 
-			particles[i] = new Instance(i, atts, new Transform3D(baseTransform.get(i)));
+			this.particles[i] = new Instance(i, atts, new Transform3D(baseTransform.get(i)));
 		}
 
-		instancesTransforms = baseTransform;
+		this.instancesTransforms = baseTransform;
 
 		mesh.bind();
 
-		mesh.addAttribArray(instancesTransforms);
-		for (final JavaAttribArray a : instancesAttribs) {
+		mesh.addAttribArray(this.instancesTransforms);
+		for (final JavaAttribArray a : this.instancesAttribs) {
 			if (mesh.getVbo().containsKey(a.getIndex())) {
 				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
@@ -114,32 +113,33 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		this.name = name;
 		this.count = count;
 
-		instancesAttribs = attribs;
-		instanceMesh = mesh;
+		this.instancesAttribs = attribs;
+		this.instanceMesh = mesh;
 
-		particles = new Instance[count];
+		this.particles = new Instance[count];
 
 		for (int i = 0; i < count; i++) {
-			final Object[] atts = new Object[instancesAttribs.length];
+			final Object[] atts = new Object[this.instancesAttribs.length];
 
 			int c = 0;
-			for (final JavaAttribArray a : attribs)
+			for (final JavaAttribArray a : attribs) {
 				atts[c++] = a.get(i);
+			}
 
-			particles[i] = new Instance(i, atts, baseTransform.apply(i));
+			this.particles[i] = new Instance(i, atts, baseTransform.apply(i));
 		}
 
-		instancesTransforms = new Mat4fAttribArray(TRANSFORM_BUFFER_NAME,
-				TRANSFORM_BUFFER_INDEX,
-				Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new),
+		this.instancesTransforms = new Mat4fAttribArray(InstanceEmitter.TRANSFORM_BUFFER_NAME,
+				InstanceEmitter.TRANSFORM_BUFFER_INDEX,
+				Arrays.stream(this.particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new),
 				BufferType.ARRAY,
 				false,
 				1);
 
 		mesh.bind();
 
-		mesh.addAttribArray(instancesTransforms);
-		for (final JavaAttribArray a : instancesAttribs) {
+		mesh.addAttribArray(this.instancesTransforms);
+		for (final JavaAttribArray a : this.instancesAttribs) {
 			if (mesh.getVbo().containsKey(a.getIndex())) {
 				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
@@ -158,70 +158,76 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 	 * <h3>DOES NOT CALL Transform#updateMatrix()</h3>
 	 */
 	public void update(final Consumer<Instance> update) {
-		final Matrix4f[] transforms = new Matrix4f[count];
-		final Object[] atts = new Object[instancesAttribs.length];
+		final Matrix4f[] transforms = new Matrix4f[this.count];
+		final Object[] atts = new Object[this.instancesAttribs.length];
 
-		for (int c = 0; c < instancesAttribs.length; c++) {
-			final JavaTypeAttribArray a = instancesAttribs[c];
-			atts[c] = Array.newInstance(a.getType(), count);
+		for (int c = 0; c < this.instancesAttribs.length; c++) {
+			final JavaTypeAttribArray a = this.instancesAttribs[c];
+			atts[c] = Array.newInstance(a.getType(), this.count);
 		}
 
-		for (int i = 0; i < count; i++) {
-			update.accept(particles[i]);
+		for (int i = 0; i < this.count; i++) {
+			update.accept(this.particles[i]);
 
-			transforms[i] = particles[i].getTransform().getMatrix();
+			transforms[i] = this.particles[i].getTransform().getMatrix();
 
-			for (int c = 0; c < instancesAttribs.length; c++) {
-				final JavaTypeAttribArray a = instancesAttribs[c];
-				Array.set(atts[c], i, particles[i].getBuffers()[c]);
+			for (int c = 0; c < this.instancesAttribs.length; c++) {
+				final JavaTypeAttribArray a = this.instancesAttribs[c];
+				Array.set(atts[c], i, this.particles[i].getBuffers()[c]);
 			}
 		}
 
-		instancesTransforms.update(transforms);
+		this.instancesTransforms.update(transforms);
 
-		for (int c = 0; c < instancesAttribs.length; c++)
-			JavaAttribArray.update(instancesAttribs[c], atts[c]);
+		for (int c = 0; c < this.instancesAttribs.length; c++) {
+			JavaAttribArray.update(this.instancesAttribs[c], atts[c]);
+		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
 	public void updateDirect(final Matrix4f[] transforms, final Object[][] atts) {
-		if (transforms.length != count || atts.length != instancesAttribs.length)
+		if (transforms.length != this.count || atts.length != this.instancesAttribs.length) {
 			throw new IllegalArgumentException();
+		}
 
 		// update this.particles to the new values ?
 
-		instancesTransforms.update(transforms);
+		this.instancesTransforms.update(transforms);
 
-		for (int c = 0; c < instancesAttribs.length; c++)
-			JavaAttribArray.update(instancesAttribs[c], atts[c]);
+		for (int c = 0; c < this.instancesAttribs.length; c++) {
+			JavaAttribArray.update(this.instancesAttribs[c], atts[c]);
+		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
 	public void updateParticles() {
-		final Matrix4f[] transforms = new Matrix4f[count];
-		final Object[][] atts = new Object[instancesAttribs.length][count];
+		final Matrix4f[] transforms = new Matrix4f[this.count];
+		final Object[][] atts = new Object[this.instancesAttribs.length][this.count];
 
-		for (int i = 0; i < count; i++) {
-			transforms[i] = particles[i].getTransform().getMatrix();
+		for (int i = 0; i < this.count; i++) {
+			transforms[i] = this.particles[i].getTransform().getMatrix();
 
-			for (int c = 0; c < instancesAttribs.length; c++)
-				atts[c][i] = particles[i].getBuffers()[c];
+			for (int c = 0; c < this.instancesAttribs.length; c++) {
+				atts[c][i] = this.particles[i].getBuffers()[c];
+			}
 		}
 
-		instancesTransforms.update(transforms);
+		this.instancesTransforms.update(transforms);
 
-		for (int c = 0; c < instancesAttribs.length; c++)
-			JavaAttribArray.update(instancesAttribs[c], atts[c]);
+		for (int c = 0; c < this.instancesAttribs.length; c++) {
+			JavaAttribArray.update(this.instancesAttribs[c], atts[c]);
+		}
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
 	public void updateParticlesTransforms() {
-		final Matrix4f[] transforms = new Matrix4f[count];
+		final Matrix4f[] transforms = new Matrix4f[this.count];
 
-		for (int i = 0; i < count; i++)
-			transforms[i] = particles[i].getTransform().getMatrix();
+		for (int i = 0; i < this.count; i++) {
+			transforms[i] = this.particles[i].getTransform().getMatrix();
+		}
 
-		instancesTransforms.update(transforms);
+		this.instancesTransforms.update(transforms);
 
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
@@ -230,32 +236,34 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 			final Set<Integer> indices,
 			final Optional<Dispatcher> worker,
 			final Dispatcher render) {
-		if (worker.isPresent())
-			return new TaskFuture<>(worker.get(), (Supplier<Map<Integer, Matrix4f[]>>) () -> computeUpdateGroups(indices)).then(render,
-					(Consumer<Map<Integer, Matrix4f[]>>) (result) -> result.entrySet()
-					.forEach(entry -> instancesTransforms.update(entry.getKey(), entry.getValue())));
-		final Map<Integer, Matrix4f[]> result = computeUpdateGroups(indices);
+		if (worker.isPresent()) {
+			return new TaskFuture<>(worker.get(), (Supplier<Map<Integer, Matrix4f[]>>) () -> this.computeUpdateGroups(indices)).then(render,
+					(Consumer<Map<Integer, Matrix4f[]>>) result -> result.entrySet()
+							.forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
+		}
+		final Map<Integer, Matrix4f[]> result = this.computeUpdateGroups(indices);
 		return new TaskFuture<>(render,
-				(Runnable) () -> result.entrySet().forEach(entry -> instancesTransforms.update(entry.getKey(), entry.getValue())));
+				(Runnable) () -> result.entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
 	}
 
 	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, final Dispatcher worker, final Dispatcher render) {
-		return new TaskFuture<>(worker, (Supplier<Map<Integer, Matrix4f[]>>) () -> computeUpdateGroups(indices)).then(render,
-				(Consumer<Map<Integer, Matrix4f[]>>) (result) -> result.entrySet()
-				.forEach(entry -> instancesTransforms.update(entry.getKey(), entry.getValue())));
+		return new TaskFuture<>(worker, (Supplier<Map<Integer, Matrix4f[]>>) () -> this.computeUpdateGroups(indices)).then(render,
+				(Consumer<Map<Integer, Matrix4f[]>>) result -> result.entrySet()
+						.forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
 	}
 
 	public TaskFuture<?, Void> updateParticlesTransforms(final Set<Integer> indices, final Dispatcher render) {
-		final Map<Integer, Matrix4f[]> result = computeUpdateGroups(indices);
+		final Map<Integer, Matrix4f[]> result = this.computeUpdateGroups(indices);
 		return new TaskFuture<>(render,
-				(Runnable) () -> result.entrySet().forEach(entry -> instancesTransforms.update(entry.getKey(), entry.getValue())));
+				(Runnable) () -> result.entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue())));
 	}
 
 	protected Map<Integer, Matrix4f[]> computeUpdateGroups(final Set<Integer> indices) {
 		final Map<Integer, Matrix4f[]> result = new LinkedHashMap<>();
 
-		if (indices == null || indices.isEmpty())
+		if (indices == null || indices.isEmpty()) {
 			return result;
+		}
 
 		final List<Integer> sorted = new ArrayList<>(indices);
 		Collections.sort(sorted);
@@ -266,18 +274,19 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		final List<Matrix4f> currentMatrices = new ArrayList<>();
 
 		for (final int index : sorted) {
-			if (index < 0 || index >= count)
+			if (index < 0 || index >= this.count) {
 				continue;
+			}
 
-			final Matrix4f matrix = particles[index].getTransform().getMatrix();
+			final Matrix4f matrix = this.particles[index].getTransform().getMatrix();
 
 			if (currentStart == -1) {
 				currentStart = index;
 
 				currentMatrices.add(matrix);
-			} else if (index == previousIndex + 1)
+			} else if (index == previousIndex + 1) {
 				currentMatrices.add(matrix);
-			else {
+			} else {
 				result.put(currentStart, currentMatrices.toArray(new Matrix4f[0]));
 
 				currentMatrices.clear();
@@ -288,35 +297,29 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 			previousIndex = index;
 		}
 
-		if (!currentMatrices.isEmpty())
+		if (!currentMatrices.isEmpty()) {
 			result.put(currentStart, currentMatrices.toArray(new Matrix4f[0]));
-
-		System.err.println(result.entrySet()
-				.stream()
-				.map(c -> c.getKey() + " "
-						+ Arrays.stream(c.getValue())
-						.map(d -> d.getTranslation(new Vector3f()).toString())
-						.collect(Collectors.joining(", ")))
-				.collect(Collectors.joining(", ")));
+		}
 
 		return result;
 	}
 
 	public void updateParticlesTransforms(final Set<Integer> indices) {
-		if (indices == null || indices.isEmpty())
+		if (indices == null || indices.isEmpty()) {
 			return;
+		}
 
-		computeUpdateGroups(indices).entrySet().forEach(entry -> instancesTransforms.update(entry.getKey(), entry.getValue()));
+		this.computeUpdateGroups(indices).entrySet().forEach(entry -> this.instancesTransforms.update(entry.getKey(), entry.getValue()));
 
 		GL_W.glBindBuffer(BufferType.ARRAY.getGlId(), 0);
 	}
 
 	public void bind() {
-		instanceMesh.bind();
+		this.instanceMesh.bind();
 	}
 
 	public void unbind() {
-		instanceMesh.unbind();
+		this.instanceMesh.unbind();
 	}
 
 	public Matrix4f[] resize(final int newCount, final Transform baseTransform) {
@@ -324,17 +327,17 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 	}
 
 	public Matrix4f[] resize(final int newCount, final Function<Integer, Transform> baseTransform) {
-		count = newCount;
+		this.count = newCount;
 		final Matrix4f[] transforms;
 
-		if (particles != null && particles.length > count) { // reduce the array
-			final Instance[] newParts = new Instance[count];
-			System.arraycopy(particles, 0, newParts, 0, count);
-			particles = newParts;
+		if (this.particles != null && this.particles.length > this.count) { // reduce the array
+			final Instance[] newParts = new Instance[this.count];
+			System.arraycopy(this.particles, 0, newParts, 0, this.count);
+			this.particles = newParts;
 
-			transforms = Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new);
+			transforms = Arrays.stream(this.particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new);
 
-			for (final JavaAttribArray arr : instancesAttribs) {
+			for (final JavaAttribArray arr : this.instancesAttribs) {
 				final Object nData = Array.newInstance(arr.getData().getClass().getComponentType(), newCount);
 				System.arraycopy(arr.getData(), 0, nData, 0, newCount);
 				JavaAttribArray.resize(arr, nData);
@@ -343,95 +346,99 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 		} else { // add new ones
 
 			final Instance[] newParts = new Instance[newCount];
-			if (particles != null)
-				System.arraycopy(particles, 0, newParts, 0, particles.length);
+			if (this.particles != null) {
+				System.arraycopy(this.particles, 0, newParts, 0, this.particles.length);
+			}
 
-			for (int i = particles == null ? 0 : particles.length; i < count; i++) {
-				final Object[] atts = new Object[instancesAttribs.length];
+			for (int i = this.particles == null ? 0 : this.particles.length; i < this.count; i++) {
+				final Object[] atts = new Object[this.instancesAttribs.length];
 
 				newParts[i] = new Instance(i, baseTransform.apply(i), atts);
 			}
-			particles = newParts;
+			this.particles = newParts;
 
-			transforms = Arrays.stream(particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new);
+			transforms = Arrays.stream(this.particles).map(c -> c.getTransform().getMatrix()).toArray(Matrix4f[]::new);
 		}
 
-		if (instancesTransforms != null)
-			instancesTransforms.resize(transforms);
+		if (this.instancesTransforms != null) {
+			this.instancesTransforms.resize(transforms);
+		}
 
-		for (final JavaAttribArray arr : instancesAttribs) {
+		for (final JavaAttribArray arr : this.instancesAttribs) {
 			final Object nData = Array.newInstance(arr.getData().getClass().getComponentType(), newCount);
 			System.arraycopy(arr.getData(), 0, nData, 0, Math.min(Array.getLength(arr.getData()), newCount));
 			JavaAttribArray.resize(arr, nData);
 		}
 
-		count = newCount;
+		this.count = newCount;
 
 		return transforms;
 	}
 
 	@Override
 	public void cleanup() {
-		if (instanceMesh == null)
+		if (this.instanceMesh == null) {
 			return;
+		}
 
-		Arrays.stream(instancesAttribs).forEach(JavaAttribArray::cleanup);
-		instancesAttribs = null;
+		Arrays.stream(this.instancesAttribs).forEach(JavaAttribArray::cleanup);
+		this.instancesAttribs = null;
 
-		instancesTransforms.cleanup();
-		instancesTransforms = null;
+		this.instancesTransforms.cleanup();
+		this.instancesTransforms = null;
 
-		instanceMesh.cleanup();
-		instanceMesh = null;
+		this.instanceMesh.cleanup();
+		this.instanceMesh = null;
 
 		super.cleanup();
 	}
 
 	@Override
 	public String getId() {
-		return name;
+		return this.name;
 	}
 
 	@Override
 	public int getGlId() {
-		return instanceMesh.getGlId();
+		return this.instanceMesh.getGlId();
 	}
 
 	public int getParticleCount() {
-		return count;
+		return this.count;
 	}
 
 	public Mesh getParticleMesh() {
-		return instanceMesh;
+		return this.instanceMesh;
 	}
 
 	public Instance[] getParticles() {
-		return particles;
+		return this.particles;
 	}
 
 	public JavaTypeAttribArray[] getParticleAttribs() {
-		return instancesAttribs;
+		return this.instancesAttribs;
 	}
 
 	public Mat4fAttribArray getParticleTransforms() {
-		return instancesTransforms;
+		return this.instancesTransforms;
 	}
 
 	@Override
 	public boolean isValid() {
-		return instanceMesh != null && instanceMesh.isValid() && instancesTransforms.isValid();
+		return this.instanceMesh != null && this.instanceMesh.isValid() && this.instancesTransforms.isValid();
 	}
 
 	@Override
 	public String toString() {
-		if (instanceMesh == null)
-			return "InstanceEmitter [name=" + name + ", particles=" + particles.length + ", instancesTransforms="
-			+ instancesTransforms + ", instancesAttribs=" + Arrays.toString(instancesAttribs) + ", count=" + count
-			+ ", instanceMesh=" + instanceMesh + ", isValid()=" + isValid() + ", instanceMesh=null]";
-		return "InstanceEmitter [name=" + name + ", particles=" + particles.length + ", instancesTransforms="
-		+ instancesTransforms + ", instancesAttribs=" + Arrays.toString(instancesAttribs) + ", count=" + count
-		+ ", instanceMesh=" + instanceMesh + ", isValid()=" + isValid() + ", instanceMesh.getGlid()="
-		+ instanceMesh.getGlId() + ", instanceMesh.getVbo()=" + instanceMesh.getVbo() + "]";
+		if (this.instanceMesh == null) {
+			return "InstanceEmitter [name=" + this.name + ", particles=" + this.particles.length + ", instancesTransforms="
+					+ this.instancesTransforms + ", instancesAttribs=" + Arrays.toString(this.instancesAttribs) + ", count=" + this.count
+					+ ", instanceMesh=" + this.instanceMesh + ", isValid()=" + this.isValid() + ", instanceMesh=null]";
+		}
+		return "InstanceEmitter [name=" + this.name + ", particles=" + this.particles.length + ", instancesTransforms="
+				+ this.instancesTransforms + ", instancesAttribs=" + Arrays.toString(this.instancesAttribs) + ", count=" + this.count
+				+ ", instanceMesh=" + this.instanceMesh + ", isValid()=" + this.isValid() + ", instanceMesh.getGlid()="
+				+ this.instanceMesh.getGlId() + ", instanceMesh.getVbo()=" + this.instanceMesh.getVbo() + "]";
 	}
 
 }
