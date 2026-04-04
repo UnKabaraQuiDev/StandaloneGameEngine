@@ -52,12 +52,20 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 
 	protected Mesh instanceMesh;
 
-	public InstanceEmitter(final String name, final Mesh mesh, final int count, final Transform baseTransform,
+	public InstanceEmitter(
+			final String name,
+			final Mesh mesh,
+			final int count,
+			final Transform baseTransform,
 			final JavaAttribArray... attribs) {
 		this(name, mesh, count, i -> baseTransform.clone(), attribs);
 	}
 
-	public InstanceEmitter(final String name, final Mesh mesh, final int count, final Mat4fAttribArray baseTransform,
+	public InstanceEmitter(
+			final String name,
+			final Mesh mesh,
+			final int count,
+			final Mat4fAttribArray baseTransform,
 			final JavaAttribArray... attribs) {
 		this.name = name;
 		this.count = count;
@@ -97,7 +105,11 @@ public class InstanceEmitter extends AutoCleanupable implements Renderable, Clea
 						+ Arrays.toString(attribs));
 	}
 
-	public InstanceEmitter(final String name, final Mesh mesh, final int count, final IntFunction<Transform> baseTransform,
+	public InstanceEmitter(
+			final String name,
+			final Mesh mesh,
+			final int count,
+			final IntFunction<Transform> baseTransform,
 			final JavaAttribArray... attribs) {
 		this.name = name;
 		this.count = count;

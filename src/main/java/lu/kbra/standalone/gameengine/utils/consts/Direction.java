@@ -9,8 +9,7 @@ import org.lwjgl.glfw.GLFW;
 
 public enum Direction {
 
-	NORTH(new Vector2f(0, 1),
-			0),
+	NORTH(new Vector2f(0, 1), 0),
 	EAST(new Vector2f(1, 0), 1),
 	SOUTH(new Vector2f(0, -1), 2),
 	WEST(new Vector2f(-1, 0), 3),
