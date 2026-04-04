@@ -69,9 +69,8 @@ public class OpenALInfo {
 
 	public static void main(String[] args) {
 		long device = alcOpenDevice(args.length == 0 ? null : args[0]);
-		if (device == NULL) {
+		if (device == NULL)
 			throw new IllegalStateException("Failed to open an OpenAL device.");
-		}
 
 		ALCCapabilities deviceCaps = ALC.createCapabilities(device);
 
@@ -79,27 +78,23 @@ public class OpenALInfo {
 		checkALCError(device);
 
 		boolean useTLC = deviceCaps.ALC_EXT_thread_local_context && alcSetThreadContext(context);
-		if (!useTLC) {
-			if (!alcMakeContextCurrent(context)) {
+		if (!useTLC)
+			if (!alcMakeContextCurrent(context))
 				throw new IllegalStateException();
-			}
-		}
 		checkALCError(device);
 
 		AL.createCapabilities(deviceCaps);
 
 		printALCInfo(device, deviceCaps);
 		printALInfo();
-		if (deviceCaps.ALC_EXT_EFX) {
+		if (deviceCaps.ALC_EXT_EFX)
 			printEFXInfo(device);
-		}
 
 		alcMakeContextCurrent(NULL);
-		if (useTLC) {
+		if (useTLC)
 			AL.setCurrentThread(null);
-		} else {
+		else
 			AL.setCurrentProcess(null);
-		}
 
 		alcDestroyContext(context);
 		alcCloseDevice(device);
@@ -109,21 +104,18 @@ public class OpenALInfo {
 		// we're running 1.1, so really no need to query for the 'ALC_ENUMERATION_EXT'
 		// extension
 		if (caps.ALC_ENUMERATION_EXT) {
-			if (caps.ALC_ENUMERATE_ALL_EXT) {
+			if (caps.ALC_ENUMERATE_ALL_EXT)
 				printDevices(EnumerateAllExt.ALC_ALL_DEVICES_SPECIFIER, "playback");
-			} else {
+			else
 				printDevices(ALC_DEVICE_SPECIFIER, "playback");
-			}
 			printDevices(ALC_CAPTURE_DEVICE_SPECIFIER, "capture");
-		} else {
+		} else
 			System.out.println("No device enumeration available");
-		}
 
-		if (caps.ALC_ENUMERATE_ALL_EXT) {
+		if (caps.ALC_ENUMERATE_ALL_EXT)
 			System.out.println("Default playback device: " + alcGetString(0, EnumerateAllExt.ALC_DEFAULT_ALL_DEVICES_SPECIFIER));
-		} else {
+		else
 			System.out.println("Default playback device: " + alcGetString(0, ALC_DEFAULT_DEVICE_SPECIFIER));
-		}
 
 		System.out.println("Default capture device: " + alcGetString(0, ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER));
 
@@ -139,9 +131,8 @@ public class OpenALInfo {
 		String[] extensions = Objects.requireNonNull(alcGetString(device, ALC_EXTENSIONS)).split(" ");
 		checkALCError(device);
 		for (String extension : extensions) {
-			if (extension.trim().isEmpty()) {
+			if (extension.trim().isEmpty())
 				continue;
-			}
 			System.out.println("    " + extension);
 		}
 	}
@@ -153,9 +144,8 @@ public class OpenALInfo {
 		System.out.println("AL extensions:");
 		String[] extensions = Objects.requireNonNull(alGetString(AL_EXTENSIONS)).split(" ");
 		for (String extension : extensions) {
-			if (extension.trim().isEmpty()) {
+			if (extension.trim().isEmpty())
 				continue;
-			}
 			System.out.println("    " + extension);
 		}
 		checkALError();
@@ -164,14 +154,12 @@ public class OpenALInfo {
 	private static void printEFXInfo(long device) {
 		int efxMajor = alcGetInteger(device, ALC_EFX_MAJOR_VERSION);
 		int efxMinor = alcGetInteger(device, ALC_EFX_MINOR_VERSION);
-		if (alcGetError(device) == ALC_NO_ERROR) {
+		if (alcGetError(device) == ALC_NO_ERROR)
 			System.out.println("EFX version: " + efxMajor + "." + efxMinor);
-		}
 
 		int auxSends = alcGetInteger(device, ALC_MAX_AUXILIARY_SENDS);
-		if (alcGetError(device) == ALC_NO_ERROR) {
+		if (alcGetError(device) == ALC_NO_ERROR)
 			System.out.println("Max auxiliary sends: " + auxSends);
-		}
 
 		System.out.println("Supported filters: ");
 		HashMap<String, Integer> filters = new HashMap<>();
@@ -180,9 +168,9 @@ public class OpenALInfo {
 		filters.put("Band-pass", AL_FILTER_BANDPASS);
 
 		filters.entrySet()
-				.stream()
-				.filter(entry -> EFXUtil.isFilterSupported(entry.getValue()))
-				.forEach(entry -> System.out.println("    " + entry.getKey()));
+		.stream()
+		.filter(entry -> EFXUtil.isFilterSupported(entry.getValue()))
+		.forEach(entry -> System.out.println("    " + entry.getKey()));
 
 		System.out.println("Supported effects: ");
 		HashMap<String, Integer> effects = new HashMap<>();
@@ -201,31 +189,28 @@ public class OpenALInfo {
 		effects.put("Equalizer", AL_EFFECT_EQUALIZER);
 
 		effects.entrySet()
-				.stream()
-				.filter(e -> EFXUtil.isEffectSupported(e.getValue()))
-				.forEach(e -> System.out.println("    " + e.getKey()));
+		.stream()
+		.filter(e -> EFXUtil.isEffectSupported(e.getValue()))
+		.forEach(e -> System.out.println("    " + e.getKey()));
 	}
 
 	private static void printDevices(int which, String kind) {
 		List<String> devices = Objects.requireNonNull(ALUtil.getStringList(NULL, which));
 		System.out.println("Available " + kind + " devices: ");
-		for (String d : devices) {
+		for (String d : devices)
 			System.out.println("    " + d);
-		}
 	}
 
 	static void checkALCError(long device) {
 		int err = alcGetError(device);
-		if (err != ALC_NO_ERROR) {
+		if (err != ALC_NO_ERROR)
 			throw new RuntimeException(alcGetString(device, err));
-		}
 	}
 
 	static void checkALError() {
 		int err = alGetError();
-		if (err != AL_NO_ERROR) {
+		if (err != AL_NO_ERROR)
 			throw new RuntimeException(alGetString(err));
-		}
 	}
 
 }

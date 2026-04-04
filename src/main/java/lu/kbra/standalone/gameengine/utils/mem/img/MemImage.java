@@ -45,21 +45,19 @@ public class MemImage implements Cleanupable {
 		this.buffer = buffer;
 		this.origin = origin;
 		this.format = format;
-		this.orientation = origin == MemImageOrigin.OPENGL ? MemImageContentOrientation.BOTTOM_LEFT : MemImageContentOrientation.TOP_LEFT;
+		orientation = origin == MemImageOrigin.OPENGL ? MemImageContentOrientation.BOTTOM_LEFT : MemImageContentOrientation.TOP_LEFT;
 	}
 
 	public MemImage toRGBA8() {
-		if (this.channels != 4) {
-			throw new IllegalStateException("Expected 4 channels, got " + this.channels);
-		}
-		if (this.format != MemImageFormat.HALF_FLOAT) {
-			throw new IllegalStateException("Expected HALF_FLOAT, got " + this.format);
-		}
+		if (channels != 4)
+			throw new IllegalStateException("Expected 4 channels, got " + channels);
+		if (format != MemImageFormat.HALF_FLOAT)
+			throw new IllegalStateException("Expected HALF_FLOAT, got " + format);
 
-		final ByteBuffer src = this.buffer.duplicate().order(ByteOrder.LITTLE_ENDIAN);
-		final ByteBuffer dst = BufferUtils.createByteBuffer(this.width * this.height * 4);
+		final ByteBuffer src = buffer.duplicate().order(ByteOrder.LITTLE_ENDIAN);
+		final ByteBuffer dst = BufferUtils.createByteBuffer(width * height * 4);
 
-		for (int i = 0; i < this.width * this.height; i++) {
+		for (int i = 0; i < width * height; i++) {
 			final float r = halfToFloat(src.getShort());
 			final float g = halfToFloat(src.getShort());
 			final float b = halfToFloat(src.getShort());
@@ -72,7 +70,7 @@ public class MemImage implements Cleanupable {
 		}
 
 		dst.flip();
-		return new MemImage(this.width, this.height, 4, dst, MemImageOrigin.DIRECT, MemImageFormat.UBYTE, orientation);
+		return new MemImage(width, height, 4, dst, MemImageOrigin.DIRECT, MemImageFormat.UBYTE, orientation);
 	}
 
 	public static ByteBuffer fromOGL(int size) {
@@ -149,15 +147,13 @@ public class MemImage implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		if (buffer == null) {
+		if (buffer == null)
 			return;
-		}
 
-		if (MemImageOrigin.STBI == origin) {
+		if (MemImageOrigin.STBI == origin)
 			STBImage.stbi_image_free(buffer);
-		} else if (MemImageOrigin.OPENGL == origin) {
+		else if (MemImageOrigin.OPENGL == origin)
 			MemoryUtil.memFree(buffer);
-		}
 
 		buffer = null;
 	}

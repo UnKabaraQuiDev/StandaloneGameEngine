@@ -123,10 +123,10 @@ public class TimeGraphPlot {
 				startX %= GRAPH_WIDTH;
 			}
 
-			if (name.startsWith("u_")) {
+			if (name.startsWith("u_"))
 				// height -= 25;
 				startY += 25;
-			} else if (name.startsWith("r_")) {
+			else if (name.startsWith("r_")) {
 				// height -= 25;
 			}
 			if (!name.endsWith("_loop")) {
@@ -144,16 +144,14 @@ public class TimeGraphPlot {
 
 		g.setColor(Color.BLACK);
 		g.setStroke(new BasicStroke(5f));
-		for (int i = 0; i < GRAPH_HEIGHT / 50; i++) {
+		for (int i = 0; i < GRAPH_HEIGHT / 50; i++)
 			g.drawLine(0, 50 * i, GRAPH_WIDTH, 50 * i);
-		}
 
 		g.setStroke(new BasicStroke(1f));
-		for (int i = 0; i < GRAPH_WIDTH / PX_PER_MS_FACTOR; i++) {
+		for (int i = 0; i < GRAPH_WIDTH / PX_PER_MS_FACTOR; i++)
 			// System.out.println("w: "+(GRAPH_WIDTH/PX_PER_MS_FACTOR)+"
 			// i:"+(i*PX_PER_MS_FACTOR));
 			g.drawLine((int) (i * PX_PER_MS_FACTOR), 0, (int) (i * PX_PER_MS_FACTOR), GRAPH_HEIGHT);
-		}
 
 		int y = 5;
 		for (Entry<String, Color> sc : colorMap.entrySet()) {

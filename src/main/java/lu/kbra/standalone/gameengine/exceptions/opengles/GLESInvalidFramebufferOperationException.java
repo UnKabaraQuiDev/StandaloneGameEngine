@@ -2,6 +2,8 @@ package lu.kbra.standalone.gameengine.exceptions.opengles;
 
 public class GLESInvalidFramebufferOperationException extends GLESRuntimeException {
 
+	private static final long serialVersionUID = 1L;
+
 	public GLESInvalidFramebufferOperationException(String str) {
 		super(str);
 	}

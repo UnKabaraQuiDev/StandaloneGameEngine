@@ -29,14 +29,14 @@ public class NoiseGenerator {
 	}
 
 	public NoiseGenerator() {
-		this.seed = new Random().nextGaussian() * 255;
+		seed = new Random().nextGaussian() * 255;
 		init();
 	}
 
 	private void init() {
 		// Initialize the permutation array.
-		this.p = new int[512];
-		this.permutation = new int[] {
+		p = new int[512];
+		permutation = new int[] {
 				151,
 				160,
 				137,
@@ -295,9 +295,8 @@ public class NoiseGenerator {
 				180 };
 
 		// Populate it
-		for (int i = 0; i < 256; i++) {
+		for (int i = 0; i < 256; i++)
 			p[256 + i] = p[i] = permutation[i];
-		}
 
 	}
 
@@ -306,7 +305,7 @@ public class NoiseGenerator {
 	}
 
 	public double getSeed() {
-		return this.seed;
+		return seed;
 	}
 
 	public void setScale(long scale) {
@@ -383,9 +382,9 @@ public class NoiseGenerator {
 
 	public float smoothNoise(float x, float y, float z) {
 		// Offset each coordinate by the seed value
-		x += this.seed;
-		y += this.seed;
-		x += this.seed;
+		x += seed;
+		y += seed;
+		x += seed;
 
 		int X = (int) Math.floor(x) & 255; // FIND UNIT CUBE THAT
 		int Y = (int) Math.floor(y) & 255; // CONTAINS POINT.
@@ -434,7 +433,7 @@ public class NoiseGenerator {
 		float u = h < 8 ? x : y, // INTO 12 GRADIENT DIRECTIONS.
 				v = h < 4 ? y
 						: h == 12 || h == 14 ? x
-						: z;
+								: z;
 		return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
 	}
 

@@ -33,7 +33,7 @@ public class ShaderManager extends Thread implements Runnable {
 		super.setDaemon(true);
 
 		this.cache = cache;
-		this.root = Paths.get(dir);
+		root = Paths.get(dir);
 
 		try {
 			watchService = FileSystems.getDefault().newWatchService();
@@ -83,9 +83,8 @@ public class ShaderManager extends Thread implements Runnable {
 				if (shaders.containsKey(child.toString())) {
 					System.err.println("Recompiling: " + child.toString());
 					GameLogic.INSTANCE.RENDER_DISPATCHER.post(() -> shaders.get(child.toString()).recompile());
-				} else {
+				} else
 					System.err.println("Shader not found: " + child.toString());
-				}
 			}
 
 			key.reset();

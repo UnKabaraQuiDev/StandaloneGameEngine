@@ -40,18 +40,18 @@ public class ComputeShader extends AbstractShader {
 
 	public Vector3ic getGlobalGroup(Vector3ic totalCount) {
 		totalCount = new Vector3i(1, 1, 1).max(totalCount);
-		final int groupX = (totalCount.x() + this.localSize.x() - 1) / this.localSize.x();
-		final int groupY = (totalCount.y() + this.localSize.y() - 1) / this.localSize.y();
-		final int groupZ = (totalCount.z() + this.localSize.z() - 1) / this.localSize.z();
+		final int groupX = (totalCount.x() + localSize.x() - 1) / localSize.x();
+		final int groupY = (totalCount.y() + localSize.y() - 1) / localSize.y();
+		final int groupZ = (totalCount.z() + localSize.z() - 1) / localSize.z();
 		return new Vector3i(groupX, groupY, groupZ);
 	}
 
 	public Vector3i getGlobalGroup(int totalCount) {
 		final int count = Math.max(1, totalCount);
 
-		final int localX = this.localSize.x();
-		final int localY = this.localSize.y();
-		final int localZ = this.localSize.z();
+		final int localX = localSize.x();
+		final int localY = localSize.y();
+		final int localZ = localSize.z();
 
 		int groupX = 1;
 		int groupY = 1;
@@ -62,13 +62,12 @@ public class ComputeShader extends AbstractShader {
 			final int totalY = groupY * localY;
 			final int totalZ = groupZ * localZ;
 
-			if (totalX <= totalY && totalX <= totalZ) {
+			if (totalX <= totalY && totalX <= totalZ)
 				groupX++;
-			} else if (totalY <= totalX && totalY <= totalZ) {
+			else if (totalY <= totalX && totalY <= totalZ)
 				groupY++;
-			} else {
+			else
 				groupZ++;
-			}
 		}
 
 		return new Vector3i(groupX, groupY, groupZ);

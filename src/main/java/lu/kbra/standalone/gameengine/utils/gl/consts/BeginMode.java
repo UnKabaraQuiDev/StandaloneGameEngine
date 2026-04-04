@@ -12,7 +12,7 @@ public enum BeginMode implements GLConstant {
 
 	private int glId;
 
-	private BeginMode(int glId) {
+	BeginMode(int glId) {
 		this.glId = glId;
 	}
 

@@ -47,9 +47,8 @@ public interface EntityContainer<B extends SceneEntity> extends Iterable<B> {
 	}
 
 	default Stream<SceneEntity> flatten(SceneEntity entity) {
-		if (!(entity instanceof EntityContainer<?> container)) {
+		if (!(entity instanceof EntityContainer<?> container))
 			return Stream.of(entity);
-		}
 
 		final EntityContainer<? extends SceneEntity> typed = (EntityContainer<? extends SceneEntity>) container;
 		return Stream.concat(Stream.of(entity), typed.stream().flatMap(this::flatten));

@@ -34,45 +34,41 @@ public abstract class AbstractShaderPart extends AutoCleanupable implements Uniq
 
 		if (type == -1) {
 			GameEngineUtils.throwGLESError("Unknown shader type: " + file);
-			this.sid = -1;
+			sid = -1;
 			return;
 		}
 
-		final String source = this.loadSource();
+		final String source = loadSource();
 
-		this.sid = GL_W.glCreateShader(type);
+		sid = GL_W.glCreateShader(type);
 		// TODO: add gl version
-		GL_W.glShaderSource(this.sid, source);
-		GL_W.glCompileShader(this.sid);
+		GL_W.glShaderSource(sid, source);
+		GL_W.glCompileShader(sid);
 
-		if (GL_W.glGetShaderi(this.sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
-			final int logLen = GL_W.glGetShaderi(this.sid, GL_W.GL_INFO_LOG_LENGTH);
-			GlobalLogger.log(Level.SEVERE, file + "> " + GL_W.glGetShaderInfoLog_String(this.sid, logLen));
-			this.cleanup();
-			throw new IllegalStateException(file + "(" + this.sid + "): Failed to compile shader!");
-		} else {
-			GlobalLogger.log(Level.INFO, "ShaderPart " + file + " (" + this.sid + ") (" + type + ") created successfully");
+		if (GL_W.glGetShaderi(sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
+			final int logLen = GL_W.glGetShaderi(sid, GL_W.GL_INFO_LOG_LENGTH);
+			GlobalLogger.log(Level.SEVERE, file + "> " + GL_W.glGetShaderInfoLog_String(sid, logLen));
+			cleanup();
+			throw new IllegalStateException(file + "(" + sid + "): Failed to compile shader!");
 		}
+		GlobalLogger.log(Level.INFO, "ShaderPart " + file + " (" + sid + ") (" + type + ") created successfully");
 	}
 
 	protected String loadSource() {
 		String source;
 		try {
-			source = PCUtils.readStringSource(this.file).replace("{version}", GL_W.WRAPPER.isGL() ? "420 core" : "300 es");
+			source = PCUtils.readStringSource(file).replace("{version}", GL_W.WRAPPER.isGL() ? "420 core" : "300 es");
 		} catch (final Exception e) {
-			throw new RuntimeException("Error when loading file `" + this.file + "`", e);
+			throw new RuntimeException("Error when loading file `" + file + "`", e);
 		}
-		if (this.replacements != null) {
-			for (final Entry<String, Object> eso : this.replacements.entrySet()) {
-				if (eso.getValue() == null) {
+		if (replacements != null)
+			for (final Entry<String, Object> eso : replacements.entrySet()) {
+				if (eso.getValue() == null)
 					throw new IllegalArgumentException("Value is null for key: " + eso.getKey() + ", probably not intended");
-				}
 				source = source.replace(eso.getKey(), eso.getValue().toString());
 			}
-		}
-		if (DEBUG) {
+		if (DEBUG)
 			GlobalLogger.logRaw(Level.INFO, source);
-		}
 		return source;
 	}
 
@@ -82,68 +78,64 @@ public abstract class AbstractShaderPart extends AutoCleanupable implements Uniq
 
 	public static AbstractShaderPart load(final String file, final Map<String, Object> replacements) {
 		final int type = shaderType(file.substring(file.lastIndexOf(".") + 1));
-		if (type == GL_W.GL_VERTEX_SHADER) {
+		if (type == GL_W.GL_VERTEX_SHADER)
 			return new VertexShaderPart(file, replacements);
-		} else if (type == GL_W.GL_FRAGMENT_SHADER) {
+		if (type == GL_W.GL_FRAGMENT_SHADER)
 			return new FragmentShaderPart(file, replacements);
-		} else if (type == GL_W.GL_COMPUTE_SHADER) {
+		if (type == GL_W.GL_COMPUTE_SHADER)
 			return new ComputeShaderPart(file, replacements);
-		} else {
-			GameEngineUtils.throwGLESError("Unknown shader part type: " + file);
-			return null;
-		}
+		GameEngineUtils.throwGLESError("Unknown shader part type: " + file);
+		return null;
 	}
 
 	public boolean recompile() {
-		final String source = this.loadSource();
+		final String source = loadSource();
 
-		GL_W.glShaderSource(this.sid, source);
-		GL_W.glCompileShader(this.sid);
+		GL_W.glShaderSource(sid, source);
+		GL_W.glCompileShader(sid);
 
-		if (GL_W.glGetShaderi(this.sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
-			final int logLen = GL_W.glGetShaderi(this.sid, GL_W.GL_INFO_LOG_LENGTH);
-			GlobalLogger.log(Level.SEVERE, this.file + "> " + GL_W.glGetShaderInfoLog_String(this.sid, logLen));
+		if (GL_W.glGetShaderi(sid, GL_W.GL_COMPILE_STATUS) == GL_W.GL_FALSE) {
+			final int logLen = GL_W.glGetShaderi(sid, GL_W.GL_INFO_LOG_LENGTH);
+			GlobalLogger.log(Level.SEVERE, file + "> " + GL_W.glGetShaderInfoLog_String(sid, logLen));
 			return false;
-		} else {
-			GlobalLogger.log(Level.INFO, "ShaderPart " + this.file + " (" + this.sid + ") (" + this.type + ") recompiled successfully");
-			return true;
 		}
+		GlobalLogger.log(Level.INFO, "ShaderPart " + file + " (" + sid + ") (" + type + ") recompiled successfully");
+		return true;
 	}
 
 	@Override
 	public void cleanup() {
-		if (this.sid == -1) {
+		if (sid == -1)
 			return;
-		}
 
-		GlobalLogger.log("Cleaning up: " + this.file + " (" + this.sid + ")");
+		GlobalLogger.log("Cleaning up: " + file + " (" + sid + ")");
 
-		GL_W.glDeleteShader(this.sid);
-		this.sid = -1;
+		GL_W.glDeleteShader(sid);
+		sid = -1;
 		super.cleanup();
 	}
 
 	@Override
 	public String getId() {
-		return this.file;
+		return file;
 	}
 
 	@Override
 	public int getGlId() {
-		return this.sid;
+		return sid;
 	}
 
 	@Override
 	public boolean isValid() {
-		return this.sid != -1;
+		return sid != -1;
 	}
 
 	public String getFile() {
-		return this.file;
+		return file;
 	}
 
 	public int getType() {
-		return this.type;
+		return type;
 	}
 
 	public static int shaderType(final String type) {
@@ -155,9 +147,8 @@ public abstract class AbstractShaderPart extends AutoCleanupable implements Uniq
 			return GL_W.GL_FRAGMENT_SHADER;
 		}
 		case "geo", "comp" -> {
-			if (GL_W.isGLES()) {
+			if (GL_W.isGLES())
 				GameEngineUtils.throwGLESError("Cannot load Compute/Geometry shader using GLES");
-			}
 			return GL_W.GL_COMPUTE_SHADER;
 		}
 		}

@@ -100,117 +100,116 @@ public final class GameEngine implements Cleanupable, UniqueID {
 
 	public GameEngine(final String name, final GameLogic game, final WindowOptions options) {
 		this.name = name;
-		this.gameLogic = game;
-		this.windowOptions = options;
+		gameLogic = game;
+		windowOptions = options;
 
-		if (GameLogic.INSTANCE != null) {
+		if (GameLogic.INSTANCE != null)
 			throw new IllegalStateException("GameLogic was already initialized.");
-		}
 		GameLogic.INSTANCE = game;
 	}
 
 	private void updateRun() {
 		try {
-			this.startLatch.await();
+			startLatch.await();
 		} catch (final InterruptedException e) {
 			throw new RuntimeException(e);
 		}
 
 		init: {
-			this.audioMaster = new AudioMaster();
-			this.gameLogic.register(this);
+			audioMaster = new AudioMaster();
+			gameLogic.register(this);
 
-//			gameLogic.updateInit();
+			//			gameLogic.updateInit();
 		}
 
 		try {
 
-			this.targetUps = this.window.getOptions().ups;
-			final long targetPerUps = (long) (1e9 / this.targetUps);
+			targetUps = window.getOptions().ups;
+			final long targetPerUps = (long) (1e9 / targetUps);
 			long lastTime = System.nanoTime(); // nanos
 
-			while (this.shouldRun()) {
+			while (shouldRun()) {
 				final long now = System.nanoTime();
 
 				final long deltaUpdate = now - lastTime;
 				if (deltaUpdate > targetPerUps) {
-					synchronized (this.waitForUpdateStart) {
-						this.waitForUpdateStart.notifyAll();
+					synchronized (waitForUpdateStart) {
+						waitForUpdateStart.notifyAll();
 					}
 
-					this.pollEvents();
-					this.gameLogic.input(deltaUpdate / 1e9f);
-					this.window.clearScroll();
+					pollEvents();
+					gameLogic.input(deltaUpdate / 1e9f);
+					window.clearScroll();
 
-					this.gameLogic.update(deltaUpdate / 1e9f);
+					gameLogic.update(deltaUpdate / 1e9f);
 
 					lastTime = now;
 
-					synchronized (this.waitForUpdateEnd) {
-						this.waitForUpdateEnd.notifyAll();
+					synchronized (waitForUpdateEnd) {
+						waitForUpdateEnd.notifyAll();
 					}
 
 					final long dispatcherBudgetNanos = Math.max(MIN_UPDATE_DISPATCHER_BUDGET_NANO, targetPerUps - deltaUpdate);
-					this.updateDispatcher.pump((long) (dispatcherBudgetNanos * 1e6));
+					updateDispatcher.pump((long) (dispatcherBudgetNanos * 1e6));
 				}
 			}
 		} catch (final Exception e) {
 			e.printStackTrace();
 		} finally {
-			this.cleanup();
+			cleanup();
 		}
 	}
 
 	private void pollEvents() {
 		try {
-			this.waitingForEvents = true;
-			synchronized (this.waitingForEventsLock) {
-				this.waitingForEventsLock.wait(POLL_EVENT_TIMEOUT);
+			waitingForEvents = true;
+			synchronized (waitingForEventsLock) {
+				waitingForEventsLock.wait(POLL_EVENT_TIMEOUT);
 			}
 		} catch (final InterruptedException e) {
 		}
 	}
 
 	private void renderRun() {
-		this.window.takeGLContext();
+		window.takeGLContext();
 
 		try {
-			this.running = true;
-			this.gameLogic.register(this);
+			running = true;
+			gameLogic.register(this);
 			try {
-				this.gameLogic.init();
+				gameLogic.init();
 			} catch (final Exception e) {
 				throw new Exception("Caught exception in init method. Stopping.", e);
 			}
-			this.startLatch.countDown();
+			startLatch.countDown();
 
-			this.targetFps = this.window.getOptions().fps;
-			final long targetNanoPerFps = (long) (1e9 / this.targetFps);
+			targetFps = window.getOptions().fps;
+			final long targetNanoPerFps = (long) (1e9 / targetFps);
 			long lastFrameTime = System.nanoTime();
 			final List<String> tasks = new ArrayList<>();
 
-			while (this.shouldRun()) {
+			while (shouldRun()) {
 				final long currentTime = System.nanoTime();
 				final long nanoTimeSinceLastFrame = currentTime - lastFrameTime;
 
 				if (nanoTimeSinceLastFrame >= targetNanoPerFps) {
-					synchronized (this.waitForFrameStart) {
-						this.waitForFrameStart.notifyAll();
+					synchronized (waitForFrameStart) {
+						waitForFrameStart.notifyAll();
 					}
 
 					final long frameStartTime = System.nanoTime();
 
 					// Render the game
 					final float deltaSeconds = nanoTimeSinceLastFrame / 1e9f;
-					this.gameLogic.render(deltaSeconds);
-					this.window.swapBuffers();
+					gameLogic.render(deltaSeconds);
+					window.swapBuffers();
 
 					// Update frame timing
 					lastFrameTime = currentTime;
-					this.currentFps = 1.0 / deltaSeconds;
+					currentFps = 1.0 / deltaSeconds;
 
-					synchronized (this.waitForFrameEnd) {
-						this.waitForFrameEnd.notifyAll();
+					synchronized (waitForFrameEnd) {
+						waitForFrameEnd.notifyAll();
 					}
 
 					final long frameRenderDurationNano = System.nanoTime() - frameStartTime;
@@ -220,22 +219,21 @@ public final class GameEngine implements Cleanupable, UniqueID {
 
 					// Pump the render dispatcher
 					final long dispatcherStartNano = System.nanoTime();
-					this.renderDispatcher.pump((long) (dispatcherTimeBudgetNanos * 0.9f), tasks);
+					renderDispatcher.pump((long) (dispatcherTimeBudgetNanos * 0.9f), tasks);
 					final long dispatcherUsedNano = System.nanoTime() - dispatcherStartNano;
 
-					if (DEBUG_RENDER_REPORT) {
-						GlobalLogger.info("FPS: " + PCUtils.roundFill(this.currentFps, 5) + " | Delta: "
+					if (DEBUG_RENDER_REPORT)
+						GlobalLogger.info("FPS: " + PCUtils.roundFill(currentFps, 5) + " | Delta: "
 								+ PCUtils.roundFill(nanoTimeSinceLastFrame / 1_000_000.0, 5) + " ms" + " | Render loop: "
 								+ PCUtils.roundFill(frameRenderDurationMs, 5) + " ms | Dispatcher budget: "
 								+ PCUtils.roundFill((double) dispatcherTimeBudgetNanos / 1e6, 5) + " ms | Used: "
 								+ PCUtils.roundFill((double) dispatcherUsedNano / 1e6, 5) + " ms (" + tasks.size() + ") "
 								+ PCUtils.progressBar(dispatcherTimeBudgetNanos, dispatcherUsedNano, true) + " " + tasks);
-					}
 				}
 
 				// Stop loop if window requests closure
-				if (this.window.shouldClose()) {
-					this.stop();
+				if (window.shouldClose()) {
+					stop();
 					break;
 				}
 			}
@@ -244,73 +242,65 @@ public final class GameEngine implements Cleanupable, UniqueID {
 			e.printStackTrace();
 		} finally {
 			running = false;
-			this.cleanup();
+			cleanup();
 		}
 	}
 
 	public void start() {
-		if (this.running) {
+		if (running)
 			throw new IllegalStateException("Already running");
-		}
 
-		this.cache = new SharedCacheManager("GameEngineMain");
-		MaterialFactory.INSTANCE = new MaterialFactory(this.cache);
+		cache = new SharedCacheManager("GameEngineMain");
+		MaterialFactory.INSTANCE = new MaterialFactory(cache);
 
-		GlobalLogger.info("Starting using GLES: " + this.windowOptions.gles);
-		if (this.windowOptions.logging && this.windowOptions.debug) {
-			if (this.windowOptions.gles) {
+		GlobalLogger.info("Starting using GLES: " + windowOptions.gles);
+		if (windowOptions.logging && windowOptions.debug) {
+			if (windowOptions.gles)
 				new GL_W_GLES30_LoggingDebug().init();
-			} else {
+			else
 				new GL_W_GL46_LoggingDebug().init();
-			}
-		} else if (this.windowOptions.debug) {
-			if (this.windowOptions.gles) {
+		} else if (windowOptions.debug) {
+			if (windowOptions.gles)
 				new GL_W_GLES30_Debug().init();
-			} else {
+			else
 				new GL_W_GL46_Debug().init();
-			}
-		} else if (this.windowOptions.logging) {
-			if (this.windowOptions.gles) {
+		} else if (windowOptions.logging) {
+			if (windowOptions.gles)
 				new GL_W_GLES30_Logging().init();
-			} else {
+			else
 				new GL_W_GL46_Logging().init();
-			}
-		} else {
-			if (this.windowOptions.gles) {
-				new GL_W_GLES30().init();
-			} else {
-				new GL_W_GL46().init();
-			}
-		}
+		} else if (windowOptions.gles)
+			new GL_W_GLES30().init();
+		else
+			new GL_W_GL46().init();
 
 		// new GL_W_GL46_LoggingDebugFlush().init();
 		// new GL_W_GL46_LoggingDebugSync().init();
 
-		if (this.windowOptions.gles) {
-			this.window = new GLESWindow(this.windowOptions);
-		} else {
-			this.window = new GLWindow(this.windowOptions);
-		}
+		if (windowOptions.gles)
+			window = new GLESWindow(windowOptions);
+		else
+			window = new GLWindow(windowOptions);
 
-		this.window.runCallbacks();
-		this.window.clearGLContext();
+		window.runResizeCallbacks();
+		window.clearGLContext();
 
-		this.mainDispatcher = new Dispatcher("main");
-		this.renderDispatcher = new Dispatcher("render");
-		this.updateDispatcher = new Dispatcher("update");
+		mainDispatcher = new Dispatcher("main");
+		renderDispatcher = new Dispatcher("render");
+		updateDispatcher = new Dispatcher("update");
 
-		this.threadGroup = new ThreadGroup(this.getClass().getSimpleName() + "#" + this.name);
+		threadGroup = new ThreadGroup(this.getClass().getSimpleName() + "#" + name);
 
-		this.mainThread = Thread.currentThread();
-		this.updateThread = new Thread(this.threadGroup, this::updateRun, this.threadGroup.getName() + ":update");
-		this.updateThread.setDaemon(true);
-		this.renderThread = new Thread(this.threadGroup, this::renderRun, this.threadGroup.getName() + ":render");
-		this.renderThread.setDaemon(true);
+		mainThread = Thread.currentThread();
+		updateThread = new Thread(threadGroup, this::updateRun, threadGroup.getName() + ":update");
+		updateThread.setDaemon(true);
+		renderThread = new Thread(threadGroup, this::renderRun, threadGroup.getName() + ":render");
+		renderThread.setDaemon(true);
 
-		this.updateThread.start();
-		this.renderThread.start();
+		updateThread.start();
+		renderThread.start();
 
-		this.mainRun();
+		mainRun();
 
 		// this.run();
 	}
@@ -318,36 +308,36 @@ public final class GameEngine implements Cleanupable, UniqueID {
 	// in main thread
 	private void mainRun() {
 		try {
-			this.startLatch.await();
+			startLatch.await();
 		} catch (final InterruptedException e) {
 			throw new RuntimeException(e);
 		}
 
 		try {
-			while (this.running) {
-				if (this.waitingForEvents) {
-					this.window.pollEvents();
-					this.waitingForEvents = false;
-					synchronized (this.waitingForEventsLock) {
-						this.waitingForEventsLock.notifyAll();
+			while (running) {
+				if (waitingForEvents) {
+					window.pollEvents();
+					waitingForEvents = false;
+					synchronized (waitingForEventsLock) {
+						waitingForEventsLock.notifyAll();
 					}
 				}
 
-				this.totalTime = GLFW.glfwGetTime();
+				totalTime = GLFW.glfwGetTime();
 
-				this.gameLogic.main();
+				gameLogic.main();
 
-				this.mainDispatcher.pump(10);
+				mainDispatcher.pump(10);
 			}
 		} finally {
 			Thread.interrupted();
 			try {
-				this.updateThread.join();
-				this.renderThread.join();
+				updateThread.join();
+				renderThread.join();
 			} catch (final InterruptedException e) {
 				GlobalLogger.severe("Main thread interrupted while joining subthreads");
 			} finally {
-				this.cleanup();
+				cleanup();
 			}
 		}
 	}
@@ -357,78 +347,77 @@ public final class GameEngine implements Cleanupable, UniqueID {
 		GlobalLogger.getLogger().setMinForwardLevel(Level.ALL);
 		GlobalLogger.log();
 		GlobalLogger.info("Thread: " + Thread.currentThread().getName() + " stopped GameEngine");
-		this.running = false;
+		running = false;
 	}
 
 	private boolean shouldRun() {
-		return this.running && this.updateThread.isAlive() && this.renderThread.isAlive();
+		return running && updateThread.isAlive() && renderThread.isAlive();
 	}
 
 	@Override
 	public String getId() {
-		return this.name;
+		return name;
 	}
 
 	public GameLogic getGameLogic() {
-		return this.gameLogic;
+		return gameLogic;
 	}
 
 	public Window getWindow() {
-		return this.window;
+		return window;
 	}
 
 	public boolean isRunning() {
-		return this.running;
+		return running;
 	}
 
 	public SharedCacheManager getCache() {
-		return this.cache;
+		return cache;
 	}
 
 	public double getCurrentFps() {
-		return this.currentFps;
+		return currentFps;
 	}
 
 	public AudioMaster getAudioMaster() {
-		return this.audioMaster;
+		return audioMaster;
 	}
 
 	public Dispatcher getMainDispatcher() {
-		return this.mainDispatcher;
+		return mainDispatcher;
 	}
 
 	public Dispatcher getRenderDispatcher() {
-		return this.renderDispatcher;
+		return renderDispatcher;
 	}
 
 	public Dispatcher getUpdateDispatcher() {
-		return this.updateDispatcher;
+		return updateDispatcher;
 	}
 
 	public Thread getMainThread() {
-		return this.mainThread;
+		return mainThread;
 	}
 
 	public Thread getRenderThread() {
-		return this.renderThread;
+		return renderThread;
 	}
 
 	public Thread getUpdateThread() {
-		return this.updateThread;
+		return updateThread;
 	}
 
 	public double getTotalTime() {
-		return this.totalTime;
+		return totalTime;
 	}
 
 	public boolean waitForFrameStart() {
-		if (Thread.currentThread().equals(this.renderThread)) {
-			throw new IllegalAccessError(this.renderThread.getName() + " cannot wait for itself");
-		}
+		if (Thread.currentThread().equals(renderThread))
+			throw new IllegalAccessError(renderThread.getName() + " cannot wait for itself");
 
-		synchronized (this.waitForFrameStart) {
+		synchronized (waitForFrameStart) {
 			try {
-				this.waitForFrameStart.wait(WAIT_FRAME_START_TIMEOUT);
+				waitForFrameStart.wait(WAIT_FRAME_START_TIMEOUT);
 				return true;
 			} catch (final InterruptedException e) {
 				return true;
@@ -437,13 +426,12 @@ public final class GameEngine implements Cleanupable, UniqueID {
 	}
 
 	public boolean waitForFrameEnd() {
-		if (Thread.currentThread().equals(this.renderThread)) {
-			throw new IllegalAccessError(this.renderThread.getName() + " cannot wait for itself");
-		}
+		if (Thread.currentThread().equals(renderThread))
+			throw new IllegalAccessError(renderThread.getName() + " cannot wait for itself");
 
-		synchronized (this.waitForFrameEnd) {
+		synchronized (waitForFrameEnd) {
 			try {
-				this.waitForFrameEnd.wait(WAIT_FRAME_END_TIMEOUT);
+				waitForFrameEnd.wait(WAIT_FRAME_END_TIMEOUT);
 				return true;
 			} catch (final InterruptedException e) {
 				return true;
@@ -452,13 +440,12 @@ public final class GameEngine implements Cleanupable, UniqueID {
 	}
 
 	public boolean waitForUpdateStart() {
-		if (Thread.currentThread().equals(this.updateThread)) {
-			throw new IllegalAccessError(this.updateThread.getName() + " cannot wait for itself");
-		}
+		if (Thread.currentThread().equals(updateThread))
+			throw new IllegalAccessError(updateThread.getName() + " cannot wait for itself");
 
-		synchronized (this.waitForUpdateStart) {
+		synchronized (waitForUpdateStart) {
 			try {
-				this.waitForUpdateStart.wait(WAIT_UPDATE_START_TIMEOUT);
+				waitForUpdateStart.wait(WAIT_UPDATE_START_TIMEOUT);
 				return true;
 			} catch (final InterruptedException e) {
 				return true;
@@ -467,13 +454,12 @@ public final class GameEngine implements Cleanupable, UniqueID {
 	}
 
 	public boolean waitForUpdateEnd() {
-		if (Thread.currentThread().equals(this.updateThread)) {
-			throw new IllegalAccessError(this.updateThread.getName() + " cannot wait for itself");
-		}
+		if (Thread.currentThread().equals(updateThread))
+			throw new IllegalAccessError(updateThread.getName() + " cannot wait for itself");
 
-		synchronized (this.waitForUpdateEnd) {
+		synchronized (waitForUpdateEnd) {
 			try {
-				this.waitForUpdateEnd.wait(WAIT_UPDATE_END_TIMEOUT);
+				waitForUpdateEnd.wait(WAIT_UPDATE_END_TIMEOUT);
 				return true;
 			} catch (final InterruptedException e) {
 				return true;
@@ -483,23 +469,23 @@ public final class GameEngine implements Cleanupable, UniqueID {
 
 	@Override
 	public void cleanup() {
-		GlobalLogger.log("Cleaning up: " + this.name);
+		GlobalLogger.log("Cleaning up: " + name);
 
-		if (Thread.currentThread().equals(this.updateThread)) {
-			this.cache.cleanupSounds();
+		if (Thread.currentThread().equals(updateThread)) {
+			cache.cleanupSounds();
 			AutoCleanupable.cleanupAL();
-			this.audioMaster.cleanup();
-			this.audioMaster = null;
-		} else if (Thread.currentThread().equals(this.renderThread)) {
-			this.cache.cleanup();
+			audioMaster.cleanup();
+			audioMaster = null;
+		} else if (Thread.currentThread().equals(renderThread)) {
+			cache.cleanup();
 			AutoCleanupable.cleanupGL();
-			this.gameLogic.cleanup();
-			this.window.cleanup();
-		} else if (Thread.currentThread().equals(this.mainThread)) {
-			this.window.cleanupGLFW();
-			this.window = null;
+			gameLogic.cleanup();
+			window.cleanup();
+		} else if (Thread.currentThread().equals(mainThread)) {
+			window.cleanupGLFW();
+			window = null;
 
-			this.cache = null;
+			cache = null;
 		}
 	}
 

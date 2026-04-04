@@ -9,7 +9,7 @@ public class Consts {
 	public static final String DEFAULT_TITLE = "PDR Engine";
 	public static final int DEFAULT_UPS = 30;
 	public static final int DEFAULT_FPS = 100;
-	public static final boolean DEFAULT_FULLSCREEN = false;
+	public static final WindowMode DEFAULT_FULLSCREEN = WindowMode.WINDOWED;
 	public static final boolean DEFAULT_VSYNC = false;
 	public static final boolean DEFAULT_RESIZABLE = true;
 	public static final Vector2i DEFAULT_WINDOW_SIZE = new Vector2i(800, 600);

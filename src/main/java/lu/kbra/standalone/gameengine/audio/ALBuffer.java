@@ -58,9 +58,8 @@ public class ALBuffer implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		if (bufferId == -1) {
+		if (bufferId == -1)
 			return;
-		}
 
 		GlobalLogger.log("Cleaning up: " + bufferId);
 

@@ -20,10 +20,10 @@ public class Material implements UniqueID {
 	protected RenderShader shader;
 
 	public Material(String name_, RenderShader shader) {
-		this.name = name_ == null ? PCUtils.toSimpleIdentityString(this) : name_;
+		name = name_ == null ? PCUtils.toSimpleIdentityString(this) : name_;
 		this.shader = shader;
 
-		this.properties = new HashMap<>();
+		properties = new HashMap<>();
 		if (shader == null)
 			throw new IllegalArgumentException("Shader cannot be null!");
 		if (shader.getUniforms() == null)
@@ -32,9 +32,8 @@ public class Material implements UniqueID {
 	}
 
 	public void bindProperties(CacheManager cache, Renderable parent) {
-		for (Entry<String, Object> eso : properties.entrySet()) {
+		for (Entry<String, Object> eso : properties.entrySet())
 			shader.setUniform(eso.getKey(), eso.getValue());
-		}
 
 		if (shader.isTransparent()) {
 			GL_W.glEnable(GL_W.GL_BLEND);

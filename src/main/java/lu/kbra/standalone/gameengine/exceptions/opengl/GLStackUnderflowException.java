@@ -2,6 +2,8 @@ package lu.kbra.standalone.gameengine.exceptions.opengl;
 
 public class GLStackUnderflowException extends GLRuntimeException {
 
+	private static final long serialVersionUID = 1L;
+
 	public GLStackUnderflowException(int status, String msg) {
 		super(status, msg);
 	}

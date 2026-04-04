@@ -18,7 +18,7 @@ public class Camera3D extends Camera {
 	public Camera3D(Vector3f position, Quaternionf rot, Projection proj) {
 		super(proj);
 		this.position = position;
-		this.rotation = rot;
+		rotation = rot;
 
 		lookAt(position, new Vector3f(0));
 
@@ -74,12 +74,12 @@ public class Camera3D extends Camera {
 	}
 
 	public Camera3D positionSet(float x, float y, float z) {
-		this.position.set(x, y, z);
+		position.set(x, y, z);
 		return this;
 	}
 
 	public Camera3D positionAdd(float x, float y, float z) {
-		this.position.add(x, y, z);
+		position.add(x, y, z);
 		return this;
 	}
 
@@ -120,6 +120,7 @@ public class Camera3D extends Camera {
 		this.up = up;
 	}
 
+	@Override
 	public Matrix4f updateMatrix() {
 		viewMatrix.identity();
 		viewMatrix.rotate(rotation);

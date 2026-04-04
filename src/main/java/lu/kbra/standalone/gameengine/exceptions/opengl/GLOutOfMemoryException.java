@@ -2,6 +2,8 @@ package lu.kbra.standalone.gameengine.exceptions.opengl;
 
 public class GLOutOfMemoryException extends GLRuntimeException {
 
+	private static final long serialVersionUID = 1L;
+
 	public GLOutOfMemoryException(String caller, int status, String msg) {
 		super(caller, status, msg);
 	}

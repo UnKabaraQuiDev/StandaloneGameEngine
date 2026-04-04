@@ -23,19 +23,19 @@ public class CubemapTexture extends Texture {
 	@Deprecated
 	public CubemapTexture(final String path) {
 		super(path, path, TextureOperation.FILE_BUFFER_LOAD);
-		this.txtType = TextureType.CUBE_MAP;
+		txtType = TextureType.CUBE_MAP;
 	}
 
 	@Deprecated
 	public CubemapTexture(final String name, final String path) {
 		super(name, path, TextureOperation.FILE_BUFFER_LOAD);
-		this.txtType = TextureType.CUBE_MAP;
+		txtType = TextureType.CUBE_MAP;
 	}
 
 	@Deprecated
 	public CubemapTexture(final String name, final MemImage[] images) {
 		super(name, name, TextureOperation.BUFFER_LOAD);
-		this.txtType = TextureType.CUBE_MAP;
+		txtType = TextureType.CUBE_MAP;
 		this.images = images;
 	}
 
@@ -49,42 +49,40 @@ public class CubemapTexture extends Texture {
 	@Deprecated
 	@Override
 	public boolean setup() {
-		if (this.isValid()) {
+		if (isValid())
 			throw new RuntimeException("Cannot setup already loaded Cubemap Texture");
-		}
 
-		if (TextureOperation.FILE_BUFFER_LOAD == this.textureOperation) {
-			this.generateFileBufferCubeMapTexture();
-		} else if (TextureOperation.BUFFER_LOAD == this.textureOperation) {
-			this.generateBufferCubeMapTexture();
-		}
+		if (TextureOperation.FILE_BUFFER_LOAD == textureOperation)
+			generateFileBufferCubeMapTexture();
+		else if (TextureOperation.BUFFER_LOAD == textureOperation)
+			generateBufferCubeMapTexture();
 
-		return this.isValid();
+		return isValid();
 	}
 
 	private void generateBufferCubeMapTexture() {
-		this.gen();
+		gen();
 		this.bind();
 		// GL_W.glPixelStorei(GL_W.GL_UNPACK_ALIGNMENT, 1);
 		for (int i = 0; i < FACE_COUNT; i++) {
-			final MemImage image = this.images[i];
+			final MemImage image = images[i];
 
-			this.texelFormat = getFormatByChannels(image.getChannels());
-			this.texelInternalFormat = getInternalFormatByChannels(image.getChannels(), image.getFormat());
-			if (this.texelFormat == null) {
-				this.cleanup();
+			texelFormat = getFormatByChannels(image.getChannels());
+			texelInternalFormat = getInternalFormatByChannels(image.getChannels(), image.getFormat());
+			if (texelFormat == null) {
+				cleanup();
 				throw new RuntimeException("Invalid channel count: " + image.getChannels());
 			}
 
 			// if (image != null) {
 			GL_W.glTexImage2D(TextureType.CM_PX.getGlId() + i,
 					0,
-					this.texelInternalFormat.getGlId(),
+					texelInternalFormat.getGlId(),
 					image.getWidth(),
 					image.getHeight(),
 					0,
-					this.texelFormat.getGlId(),
-					this.dataType.getGlId(),
+					texelFormat.getGlId(),
+					dataType.getGlId(),
 					image.getBuffer());
 			// image.free();
 			/*
@@ -92,8 +90,8 @@ public class CubemapTexture extends Texture {
 			 */
 		}
 
-		this.applyFilter();
-		this.applyWrap();
+		applyFilter();
+		applyWrap();
 
 		this.unbind();
 	}
@@ -101,18 +99,17 @@ public class CubemapTexture extends Texture {
 	private void generateFileBufferCubeMapTexture() {
 		final String[] faces = new String[6];
 		for (int i = 0; i < 6; i++) {
-			faces[i] = PCUtils.appendFileName(this.path, FACES[i]);
-			if (!Files.exists(Paths.get(faces[i]))) {
+			faces[i] = PCUtils.appendFileName(path, FACES[i]);
+			if (!Files.exists(Paths.get(faces[i])))
 				throw new RuntimeException("Texture does not exist: " + faces[i]);
-			}
 		}
 		// GlobalLogger.log(Arrays.toString(faces));
 
-		this.gen();
+		gen();
 		this.bind();
 		// GL_W.glPixelStorei(GL_W.GL_UNPACK_ALIGNMENT, 1);
 		for (int i = 0; i < faces.length; i++) {
-			final MemImage image = FileUtils.STBILoad(this.path);
+			final MemImage image = FileUtils.STBILoad(path);
 
 			/*
 			 * ByteBuffer imageBuffer; int width, height, channels; int[] w = new int[1]; int[] h = new int[1];
@@ -123,22 +120,22 @@ public class CubemapTexture extends Texture {
 			 * width = w[0]; height = h[0]; channels = c[0];
 			 */
 
-			this.texelFormat = getFormatByChannels(image.getChannels());
-			this.texelInternalFormat = getInternalFormatByChannels(image.getChannels(), image.getFormat());
-			if (this.texelFormat == null) {
-				this.cleanup();
+			texelFormat = getFormatByChannels(image.getChannels());
+			texelInternalFormat = getInternalFormatByChannels(image.getChannels(), image.getFormat());
+			if (texelFormat == null) {
+				cleanup();
 				throw new RuntimeException("Invalid channel count: " + image.getChannels());
 			}
 
 			// if (image != null) {
 			GL_W.glTexImage2D(TextureType.CM_PX.getGlId() + i,
 					0,
-					this.texelInternalFormat.getGlId(),
+					texelInternalFormat.getGlId(),
 					image.getWidth(),
 					image.getHeight(),
 					0,
-					this.texelFormat.getGlId(),
-					this.dataType.getGlId(),
+					texelFormat.getGlId(),
+					dataType.getGlId(),
 					image.getBuffer());
 			image.cleanup();
 			/*
@@ -146,8 +143,8 @@ public class CubemapTexture extends Texture {
 			 */
 		}
 
-		this.applyFilter();
-		this.applyWrap();
+		applyFilter();
+		applyWrap();
 
 		this.unbind();
 	}

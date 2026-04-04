@@ -220,11 +220,9 @@ public enum Interpolators implements Interpolator {
 		@Override
 		public float evaluate(float x) {
 			x = Math.clamp(0, 1, x);
-			if (x < 0.5) {
+			if (x < 0.5)
 				return (float) (0.5 * java.lang.Math.pow(2, 10 * (2 * x - 1)));
-			} else {
-				return (float) (-0.5 * java.lang.Math.pow(2, -10 * (2 * x - 1)) + 1);
-			}
+			return (float) (-0.5 * java.lang.Math.pow(2, -10 * (2 * x - 1)) + 1);
 		}
 	},
 
@@ -248,11 +246,9 @@ public enum Interpolators implements Interpolator {
 		@Override
 		public float evaluate(float x) {
 			x = Math.clamp(0, 1, x);
-			if (x < 0.5) {
+			if (x < 0.5)
 				return (float) (0.5 * (1 - Math.sqrt(1 - 4 * x * x)));
-			} else {
-				return (float) (0.5 * (Math.sqrt(1 - (2 * x - 2) * (2 * x - 2)) + 1));
-			}
+			return (float) (0.5 * (Math.sqrt(1 - (2 * x - 2) * (2 * x - 2)) + 1));
 		}
 	},
 
@@ -268,31 +264,30 @@ public enum Interpolators implements Interpolator {
 		@Override
 		public float evaluate(float x) {
 			x = Math.clamp(0, 1, x);
-			if (x < 1 / 2.75) {
+			if (x < 1 / 2.75)
 				return 7.5625f * x * x;
-			} else if (x < 2 / 2.75) {
+			if (x < 2 / 2.75) {
 				x -= 1.5f / 2.75f;
 				return 7.5625f * x * x + 0.75f;
-			} else if (x < 2.5 / 2.75) {
+			}
+			if (x < 2.5 / 2.75) {
 				x -= 2.25f / 2.75f;
 				return 7.5625f * x * x + 0.9375f;
-			} else {
-				x -= 2.625f / 2.75f;
-				return 7.5625f * x * x + 0.984375f;
 			}
+			x -= 2.625f / 2.75f;
+			return 7.5625f * x * x + 0.984375f;
 		}
 
 		@Override
 		public float inverse(float y) {
 			y = Math.clamp(0f, 1f, y);
 
-			if (y < 0.75f) {
+			if (y < 0.75f)
 				return (float) Math.sqrt(y / 7.5625f);
-			} else if (y < 0.9375f) {
+			if (y < 0.9375f)
 				return (float) (Math.sqrt((y - 0.75f) / 7.5625f) + 1.5f / 2.75f);
-			} else if (y < 0.984375f) {
+			else if (y < 0.984375f)
 				return (float) (Math.sqrt((y - 0.9375f) / 7.5625f) + 2.25f / 2.75f);
-			}
 
 			return (float) (Math.sqrt((y - 0.984375f) / 7.5625f) + 2.625f / 2.75f);
 		}
@@ -307,11 +302,9 @@ public enum Interpolators implements Interpolator {
 		@Override
 		public float evaluate(float x) {
 			x = Math.clamp(0, 1, x);
-			if (x < 0.5f) {
+			if (x < 0.5f)
 				return 0.5f * BOUNCE_IN.evaluate(x * 2);
-			} else {
-				return 0.5f * BOUNCE_OUT.evaluate(x * 2 - 1) + 0.5f;
-			}
+			return 0.5f * BOUNCE_OUT.evaluate(x * 2 - 1) + 0.5f;
 		}
 	},
 
@@ -340,11 +333,9 @@ public enum Interpolators implements Interpolator {
 			x = Math.clamp(0, 1, x);
 			float s = 1.70158f;
 			x *= 2;
-			if (x < 1) {
+			if (x < 1)
 				return 0.5f * (x * x * (((s *= 1.525f) + 1) * x - s));
-			} else {
-				return 0.5f * ((x -= 2) * x * (((s *= 1.525f) + 1) * x + s) + 2);
-			}
+			return 0.5f * ((x -= 2) * x * (((s *= 1.525f) + 1) * x + s) + 2);
 		}
 	};
 

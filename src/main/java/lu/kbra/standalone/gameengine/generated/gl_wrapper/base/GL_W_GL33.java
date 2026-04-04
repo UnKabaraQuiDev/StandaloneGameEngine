@@ -14,6 +14,7 @@ import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 
 public class GL_W_GL33 extends GL_W_GL32 {
+	@Override
 	public void init() {
 		GL_W.WRAPPER = this;
 		GL_W.GL_SRC1_COLOR = GL33.GL_SRC1_COLOR;

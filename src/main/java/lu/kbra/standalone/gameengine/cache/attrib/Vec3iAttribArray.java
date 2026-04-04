@@ -45,62 +45,58 @@ public class Vec3iAttribArray extends JavaAttribArray implements IntegerJavaType
 
 	@Override
 	public void init() {
-		this.bind();
+		bind();
 
-		super.length = this.data.length;
+		super.length = data.length;
 
-		GL_W.glBufferData(this.bufferType.getGlId(), this.toFlatArray(), this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (this.isVertexArray()) {
-			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_INT, this.getElementByteSize(), 0);
-		}
+		if (isVertexArray())
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_INT, getElementByteSize(), 0);
 	}
 
 	@Override
 	public void update() {
-		this.update(this.data);
+		this.update(data);
 	}
 
 	public void update(final Vector3i[] nPos) {
-		this.bind();
+		bind();
 
-		if (this.iStatic) {
+		if (iStatic)
 			throw new UnsupportedOperationException("Array is static.");
-		} else if (nPos.length != this.data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + this.data.length + ").");
-		}
+		if (nPos.length != data.length)
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 
-		this.data = nPos;
-		super.length = this.data.length;
+		data = nPos;
+		super.length = data.length;
 
-		GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.toFlatArray());
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
 	}
 
 	public void resize(final Vector3i[] nPos) {
-		this.bind();
+		bind();
 
-		final boolean sameSize = nPos.length == this.data.length;
-		this.data = nPos;
-		super.length = this.data.length;
+		final boolean sameSize = nPos.length == data.length;
+		data = nPos;
+		super.length = data.length;
 
-		if (sameSize) {
-			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.toFlatArray());
-		} else {
-			GL_W.glBufferData(this.bufferType.getGlId(), this.toFlatArray(), this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
+		if (sameSize)
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
+		else
+			GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (this.isVertexArray()) {
-			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_INT, this.getElementByteSize(), 0);
-		}
+		if (isVertexArray())
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_INT, getElementByteSize(), 0);
 	}
 
 	public IntAttribArray toIntAttribArray() {
-		return new IntAttribArray(this.name, this.index, this.toFlatArray(), this.bufferType, this.iStatic, this.divisor);
+		return new IntAttribArray(name, index, toFlatArray(), bufferType, iStatic, divisor);
 	}
 
-//	public UIntAttribArray toUIntAttribArray() {
-//		return new UIntAttribArray(name, index * TYPE_SIZE, toFlatArray(), bufferType, iStatic);
-//	}
+	//	public UIntAttribArray toUIntAttribArray() {
+	//		return new UIntAttribArray(name, index * TYPE_SIZE, toFlatArray(), bufferType, iStatic);
+	//	}
 
 	@Override
 	public Class<?> getType() {
@@ -109,27 +105,27 @@ public class Vec3iAttribArray extends JavaAttribArray implements IntegerJavaType
 
 	@Override
 	public int getLength() {
-		return this.isLoaded() ? (this.length = this.data.length) : super.getLength();
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override
 	public boolean isLoaded() {
-		return this.data != null;
+		return data != null;
 	}
 
 	@Override
 	public Vector3i get(final int i) {
-		return !this.isLoaded() ? null : this.data[i];
+		return !isLoaded() ? null : data[i];
 	}
 
 	@Override
 	public Vector3i[] getData() {
-		return this.data;
+		return data;
 	}
 
 	@Override
 	public int[] toFlatArray() {
-		return GameEngineUtils.toFlatArray(this.data);
+		return GameEngineUtils.toFlatArray(data);
 	}
 
 	@Override

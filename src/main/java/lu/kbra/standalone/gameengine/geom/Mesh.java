@@ -33,7 +33,7 @@ public interface Mesh extends UniqueID, Renderable, GLObject {
 	Vector2f UV_RANGE = new Vector2f(0, 1);
 
 	default void bind() {
-		GL_W.glBindVertexArray(this.getGlId());
+		GL_W.glBindVertexArray(getGlId());
 	}
 
 	default void unbind() {
@@ -68,44 +68,38 @@ public interface Mesh extends UniqueID, Renderable, GLObject {
 	default void storeAttribArray(JavaAttribArray data) {
 		bind();
 		final boolean valid = data.isValid();
-		if (!valid) {
+		if (!valid)
 			data.gen();
-		}
 		getVbo().put(data.getIndex(), data.getGlId());
 		data.bind();
-		if (!valid) {
+		if (!valid)
 			data.init();
-		}
 		data.enable();
 		data.unbind();
 
 		if (data instanceof MultiAttribArray) {
 			final MultiAttribArray ma = (MultiAttribArray) data;
-			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++) {
+			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++)
 				getVbo().put(a, data.getGlId());
-			}
 		}
 	}
 
 	default void addAttribArray(JavaAttribArray data) {
 		bind();
 		final boolean valid = data.isValid();
-		if (!valid) {
+		if (!valid)
 			data.gen();
-		}
 		getVbo().put(data.getIndex(), data.getGlId());
 		data.bind();
-		if (!valid) {
+		if (!valid)
 			data.init();
-		}
 		data.enable();
 		data.unbind();
 
 		if (data instanceof MultiAttribArray) {
 			final MultiAttribArray ma = (MultiAttribArray) data;
-			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++) {
+			for (int a = ma.getMinIndex() + 1; a <= ma.getMaxIndex(); a++)
 				getVbo().put(a, data.getGlId());
-			}
 		}
 
 		getAttribs().add(data);
@@ -113,15 +107,15 @@ public interface Mesh extends UniqueID, Renderable, GLObject {
 
 	List<JavaAttribArray> getAttribs();
 
-	public static QuadLoadedMesh newQuad(String name, Material material2, Vector2f size) {
+	static QuadLoadedMesh newQuad(String name, Material material2, Vector2f size) {
 		return new QuadLoadedMesh(name, material2, size);
 	}
 
-	public static QuadLoadedMesh newQuad(GeoPlane plane, String name, Material material2, Vector2f size) {
+	static QuadLoadedMesh newQuad(GeoPlane plane, String name, Material material2, Vector2f size) {
 		return new QuadLoadedMesh(name, material2, size, plane);
 	}
 
-	public static CubeMesh newCube(String name, Material material2, Vector3f size) {
+	static CubeMesh newCube(String name, Material material2, Vector3f size) {
 		return new CubeMesh(name, material2, size);
 	}
 

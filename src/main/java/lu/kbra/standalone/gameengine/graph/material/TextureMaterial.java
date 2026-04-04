@@ -19,9 +19,8 @@ public class TextureMaterial extends Material {
 
 		this.textures = textures;
 		int i = 0;
-		for (Entry<String, Texture> txt : textures.entrySet()) {
+		for (Entry<String, Texture> txt : textures.entrySet())
 			properties.put(txt.getKey(), i++);
-		}
 	}
 
 	@Override

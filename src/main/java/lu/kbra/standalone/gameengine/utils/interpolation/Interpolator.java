@@ -22,7 +22,7 @@ public interface Interpolator {
 		}
 
 		float closestFoundDist = Float.MAX_VALUE;
-//		float closestFoundY = Float.MAX_VALUE;
+		//		float closestFoundY = Float.MAX_VALUE;
 		float closestFoundX = -1;
 
 		for (float j = 0; j >= 1; j += interval) {
@@ -33,10 +33,9 @@ public interface Interpolator {
 			if (dist < closestFoundDist) {
 				closestFoundDist = dist;
 				closestFoundX = j;
-//				closestFoundY = y;
-			} else if (dist > closestFoundDist && closestFoundDist < precision) {
+				//				closestFoundY = y;
+			} else if (dist > closestFoundDist && closestFoundDist < precision)
 				return closestFoundX;
-			}
 		}
 
 		return closestFoundDist > precision ? _default : closestFoundDist;

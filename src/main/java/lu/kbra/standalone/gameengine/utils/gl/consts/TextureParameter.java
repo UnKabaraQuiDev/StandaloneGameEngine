@@ -37,8 +37,8 @@ public enum TextureParameter implements GLConstant {
 
 	private int glId;
 
-	private TextureParameter(int id) {
-		this.glId = id;
+	TextureParameter(int id) {
+		glId = id;
 	}
 
 	@Override

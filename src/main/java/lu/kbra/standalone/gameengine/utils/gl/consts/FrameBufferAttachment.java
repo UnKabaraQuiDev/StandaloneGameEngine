@@ -14,8 +14,8 @@ public enum FrameBufferAttachment implements GLConstant {
 
 	private int glId;
 
-	private FrameBufferAttachment(int id) {
-		this.glId = id;
+	FrameBufferAttachment(int id) {
+		glId = id;
 	}
 
 	@Override

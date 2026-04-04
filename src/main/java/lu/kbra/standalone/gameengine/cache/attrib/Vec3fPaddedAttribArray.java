@@ -71,22 +71,22 @@ public class Vec3fPaddedAttribArray extends Vec3fAttribArray implements PaddedAt
 
 	@Override
 	public float[] toFlatArray() {
-		return GameEngineUtils.toFlatArray(this.data, this.elementPadLength);
+		return GameEngineUtils.toFlatArray(data, elementPadLength);
 	}
 
 	@Override
 	public int getElementComponentCount() {
-		return this.elementPadLength;
+		return elementPadLength;
 	}
 
 	@Override
 	public int getElementPadLength() {
-		return this.elementPadLength;
+		return elementPadLength;
 	}
 
 	@Override
 	public int getElementPadding() {
-		return this.elementPadLength - this.getElementComponentCount();
+		return elementPadLength - getElementComponentCount();
 	}
 
 }

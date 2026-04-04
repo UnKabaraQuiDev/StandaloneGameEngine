@@ -41,9 +41,8 @@ public class Dispatcher {
 
 	// duplicated for optimization
 	public int pump(long timeBudgetNanos) {
-		if (timeBudgetNanos <= 0) {
+		if (timeBudgetNanos <= 0)
 			return 0;
-		}
 
 		int count = 0;
 		final long deadline = System.nanoTime() + timeBudgetNanos;
@@ -62,9 +61,8 @@ public class Dispatcher {
 	public int pump(long timeBudgetNanos, List<String> list) {
 		list.clear();
 
-		if (timeBudgetNanos <= 0) {
+		if (timeBudgetNanos <= 0)
 			return 0;
-		}
 
 		int count = 0;
 		final long deadline = System.nanoTime() + timeBudgetNanos;

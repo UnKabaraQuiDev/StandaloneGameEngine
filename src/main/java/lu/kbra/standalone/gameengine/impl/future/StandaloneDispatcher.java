@@ -14,7 +14,7 @@ public class StandaloneDispatcher extends Dispatcher implements Runnable {
 
 	@Override
 	public void run() {
-		while (!Thread.currentThread().isInterrupted()) {
+		while (!Thread.currentThread().isInterrupted())
 			try {
 				final ScheduledTask task = queue.take();
 				task.run();
@@ -25,7 +25,6 @@ public class StandaloneDispatcher extends Dispatcher implements Runnable {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
 	}
 
 	public Thread getThread() {

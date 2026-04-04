@@ -11,12 +11,12 @@ public enum GeoAxis {
 
 	private final Vector3fc axis;
 
-	private GeoAxis(Vector3fc axis) {
+	GeoAxis(Vector3fc axis) {
 		this.axis = axis;
 	}
 
 	public Vector3fc getAxis() {
-		return this.axis;
+		return axis;
 	}
 
 	public int getIndex() {

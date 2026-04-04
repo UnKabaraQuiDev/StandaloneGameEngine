@@ -329,7 +329,7 @@ public class ImprovedNoise {
 		double u = h < 8 ? x : y, // INTO 12 GRADIENT DIRECTIONS.
 				v = h < 4 ? y
 						: h == 12 || h == 14 ? x
-						: z;
+								: z;
 		return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
 	}
 

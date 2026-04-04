@@ -34,8 +34,8 @@ public class Transform3DPivot extends Transform3D {
 	public Transform3DPivot(Matrix4f matrix4f) {
 		super(matrix4f);
 
-		this.rotationPivot = new Vector3f(rotationPivot);
-		this.scalePivot = new Vector3f(scalePivot);
+		rotationPivot = new Vector3f(rotationPivot);
+		scalePivot = new Vector3f(scalePivot);
 	}
 
 	// rotation
@@ -192,8 +192,8 @@ public class Transform3DPivot extends Transform3D {
 
 	@Override
 	public String toString() {
-		return "Transform3DPivot [rotationPivot=" + this.rotationPivot + ", scalePivot=" + this.scalePivot + ", translation="
-				+ this.translation + ", rotation=" + this.rotation + ", scale=" + this.scale + ", matrix=" + this.matrix + "]";
+		return "Transform3DPivot [rotationPivot=" + rotationPivot + ", scalePivot=" + scalePivot + ", translation="
+				+ translation + ", rotation=" + rotation + ", scale=" + scale + ", matrix=" + matrix + "]";
 	}
 
 }

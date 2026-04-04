@@ -21,18 +21,18 @@ public abstract class CallbackValueInterpolation<T, D> {
 
 	public synchronized CallbackValueInterpolation<T, D> set(float x) {
 		synchronized (this) {
-			this.progress = x;
+			progress = x;
 		}
 		return this;
 	}
 
 	public synchronized CallbackValueInterpolation<T, D> add(float x) {
-		this.progress += x;
+		progress += x;
 		return this;
 	}
 
 	public CallbackValueInterpolation<T, D> exec() {
-		this.callback(this.object, this.evaluate(this.interpolator.evaluate(this.progress)));
+		this.callback(object, this.evaluate(interpolator.evaluate(progress)));
 		return this;
 	}
 
@@ -41,7 +41,7 @@ public abstract class CallbackValueInterpolation<T, D> {
 	public abstract void callback(T object, D value);
 
 	public synchronized CallbackValueInterpolation<T, D> clamp() {
-		this.progress = Math.clamp(0, 1, progress);
+		progress = Math.clamp(0, 1, progress);
 		return this;
 	}
 
@@ -50,7 +50,7 @@ public abstract class CallbackValueInterpolation<T, D> {
 	}
 
 	public synchronized CallbackValueInterpolation<T, D> mod(float period) {
-		this.progress %= period;
+		progress %= period;
 		return this;
 	}
 
@@ -59,7 +59,7 @@ public abstract class CallbackValueInterpolation<T, D> {
 	}
 
 	public synchronized CallbackValueInterpolation<T, D> zigzag(float period) {
-		this.progress = MathUtils.zigzag(progress, period);
+		progress = MathUtils.zigzag(progress, period);
 		return this;
 	}
 
@@ -68,11 +68,11 @@ public abstract class CallbackValueInterpolation<T, D> {
 	}
 
 	public D getStart() {
-		return this.start;
+		return start;
 	}
 
 	public D getEnd() {
-		return this.end;
+		return end;
 	}
 
 	public void setEnd(D end) {
@@ -80,7 +80,7 @@ public abstract class CallbackValueInterpolation<T, D> {
 	}
 
 	public Interpolator getInterpolator() {
-		return this.interpolator;
+		return interpolator;
 	}
 
 	public void setInterpolator(Interpolator interpolator) {
@@ -88,7 +88,7 @@ public abstract class CallbackValueInterpolation<T, D> {
 	}
 
 	public T getObject() {
-		return this.object;
+		return object;
 	}
 
 	public void setObject(T object) {
@@ -96,7 +96,7 @@ public abstract class CallbackValueInterpolation<T, D> {
 	}
 
 	public float get() {
-		return this.progress;
+		return progress;
 	}
 
 }

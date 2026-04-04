@@ -10,7 +10,7 @@ public enum PolygonDrawMode implements GLConstant {
 
 	private int glId;
 
-	private PolygonDrawMode(int glId) {
+	PolygonDrawMode(int glId) {
 		this.glId = glId;
 	}
 

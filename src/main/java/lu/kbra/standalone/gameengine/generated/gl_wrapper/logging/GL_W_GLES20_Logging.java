@@ -737,7 +737,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		LOGGER.log(Level.INFO,
 				"glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ", " + arg7 + ")");
+				+ ", " + arg7 + ")");
 	}
 
 	@Override
@@ -745,7 +745,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ", " + arg7 + ", " + arg8 + ")");
+				+ ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -930,7 +930,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -938,7 +938,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -946,7 +946,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -954,7 +954,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -962,7 +962,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -970,7 +970,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -978,7 +978,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -986,7 +986,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1063,7 +1063,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.nglTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1225,7 +1225,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1233,7 +1233,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1241,7 +1241,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1249,7 +1249,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1257,7 +1257,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1265,7 +1265,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1273,7 +1273,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1281,7 +1281,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1461,7 +1461,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.nglCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ", " + arg7 + ", " + arg8 + ")");
+				+ ", " + arg7 + ", " + arg8 + ")");
 	}
 
 	@Override
@@ -1690,7 +1690,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		LOGGER.log(Level.INFO,
 				"glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")");
+				+ ")");
 	}
 
 	@Override
@@ -2391,7 +2391,7 @@ public class GL_W_GLES20_Logging implements GL_W_Call {
 		org.lwjgl.opengles.GLES20.nglTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		LOGGER.log(Level.INFO,
 				"nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")");
+				+ ", " + arg8 + ")");
 	}
 
 	@Override

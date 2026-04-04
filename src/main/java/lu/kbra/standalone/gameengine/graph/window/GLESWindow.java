@@ -57,15 +57,15 @@ public class GLESWindow extends Window {
 			EGL10.eglInitialize(monitor, major, minor);
 			GameEngineUtils.checkEGLError("glInitialize[" + monitor + ", IB, IB]");
 
-			this.eglCapabilities = EGL.createDisplayCapabilities(monitor, major.get(0), minor.get(0));
+			eglCapabilities = EGL.createDisplayCapabilities(monitor, major.get(0), minor.get(0));
 			GameEngineUtils.checkEGLError("createDisplayCapabilities[" + monitor + ", IB, IB]");
 		}
 
-		if (this.eglCapabilities == null)
+		if (eglCapabilities == null)
 			throw new RuntimeException("Failed to create EGL context");
 
 		try {
-			GameEngineLoggerUtils.log(this.eglCapabilities);
+			GameEngineLoggerUtils.log(eglCapabilities);
 		} catch (IllegalAccessException e) {
 			throw new RuntimeException(e);
 		}
@@ -79,25 +79,21 @@ public class GLESWindow extends Window {
 
 		GLFW.glfwMakeContextCurrent(handle);
 
-		if ((this.capabilities = GLES.createCapabilities()) == null)
+		if ((capabilities = GLES.createCapabilities()) == null)
 			throw new RuntimeException("Failed to create OpenGL ES context");
 
 		try {
 			GlobalLogger.log("OpenGL ES Capabilities:");
-			for (Field f : GLESCapabilities.class.getFields()) {
-				if (f.getType() == boolean.class) {
-					if (f.get(this.capabilities).equals(Boolean.TRUE)) {
+			for (Field f : GLESCapabilities.class.getFields())
+				if (f.getType() == boolean.class)
+					if (f.get(capabilities).equals(Boolean.TRUE))
 						GlobalLogger.log("\t" + f.getName());
-					}
-				}
-			}
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
 
-		if (options.windowMultisample > 1) {
+		if (options.windowMultisample > 1)
 			GLFW.glfwWindowHint(GLFW.GLFW_SAMPLES, options.windowMultisample);
-		}
 
 		GL_W.glEnable(GL_W.GL_DEPTH_TEST);
 		GameEngineUtils.checkEGLError("glEnable[DEPTH_TEST]");
@@ -106,9 +102,8 @@ public class GLESWindow extends Window {
 
 		createCallbacks();
 
-		if (options.visible) {
+		if (options.visible)
 			GLFW.glfwShowWindow(handle);
-		}
 	}
 
 	@Override
@@ -128,16 +123,16 @@ public class GLESWindow extends Window {
 	protected long getQualifiedMonitor() {
 		long monitor = EGL15.eglGetDisplay(EGL15.EGL_DEFAULT_DISPLAY);
 		GameEngineUtils.checkEGLError("eglGetDisplay[DEFAULT]");
-		if (monitor == EGL15.EGL_NO_DISPLAY) {
+		if (monitor == EGL15.EGL_NO_DISPLAY)
 			throw new EGLNoDisplayException("eglGetDisplay[DEFAULT]");
-		}
 		return monitor;
 	}
 
+	@Override
 	public void takeGLContext() {
 		// throw new GLESRuntimeException("Cannot set GLES context");
 		GLFW.glfwMakeContextCurrent(handle);
-		GLES.setCapabilities(this.capabilities);
+		GLES.setCapabilities(capabilities);
 	}
 
 	@Override
@@ -155,9 +150,8 @@ public class GLESWindow extends Window {
 		if (handle != -1) {
 			GlobalLogger.log("Cleaning up GLFW: " + getClass().getName() + " (" + handle + ")");
 
-			if (!EGL10.eglTerminate(monitor)) {
+			if (!EGL10.eglTerminate(monitor))
 				GlobalLogger.severe("Could not terminate EGL context.");
-			}
 			Callbacks.glfwFreeCallbacks(handle);
 			GLFW.glfwDestroyWindow(handle);
 			GLFW.glfwTerminate();

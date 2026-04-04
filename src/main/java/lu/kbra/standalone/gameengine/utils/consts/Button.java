@@ -15,7 +15,7 @@ public enum Button {
 	private int index, glfwIndex;
 
 	Button(Vector2f v, int index, int glfwIndex) {
-		this.dir = v;
+		dir = v;
 		this.index = index;
 		this.glfwIndex = glfwIndex;
 	}
@@ -33,18 +33,16 @@ public enum Button {
 	}
 
 	public static Button getByIndex(int i) {
-		for (Button d : values()) {
+		for (Button d : values())
 			if (d.getIndex() == i)
 				return d;
-		}
 		return NONE;
 	}
 
 	public static Button getByGLFWIndex(int i) {
-		for (Button d : values()) {
+		for (Button d : values())
 			if (d.getGLFWIndex() == i)
 				return d;
-		}
 		return NONE;
 	}
 

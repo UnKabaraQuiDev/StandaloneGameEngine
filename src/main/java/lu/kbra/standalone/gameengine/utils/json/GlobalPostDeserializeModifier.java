@@ -7,6 +7,8 @@ import com.fasterxml.jackson.databind.deser.BeanDeserializerModifier;
 
 public class GlobalPostDeserializeModifier extends BeanDeserializerModifier {
 
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public JsonDeserializer<?> modifyDeserializer(
 			final DeserializationConfig config,
@@ -15,9 +17,8 @@ public class GlobalPostDeserializeModifier extends BeanDeserializerModifier {
 
 		final Class<?> clazz = beanDesc.getBeanClass();
 
-		if (PostDeserialize.class.isAssignableFrom(clazz)) {
+		if (PostDeserialize.class.isAssignableFrom(clazz))
 			return new PostDeserializeWrapper(deserializer);
-		}
 
 		return deserializer;
 	}

@@ -2,6 +2,8 @@ package lu.kbra.standalone.gameengine.exceptions.egl;
 
 public class EGLBadContextException extends EGLRuntimeException {
 
+	private static final long serialVersionUID = 1L;
+
 	public EGLBadContextException(String str) {
 		super(str);
 	}

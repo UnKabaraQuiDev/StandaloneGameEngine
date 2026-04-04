@@ -47,7 +47,7 @@ public final class FileUtils {
 				desiredChannels,
 				STBImage.stbi_is_hdr_from_memory(bb) ? MemImageFormat.FLOAT
 						: STBImage.stbi_is_16_bit_from_memory(bb) ? MemImageFormat.USHORT
-						: MemImageFormat.UBYTE);
+								: MemImageFormat.UBYTE);
 	}
 
 	public static MemImage STBILoad(ByteBuffer bb, final int desiredChannels, final MemImageFormat format) {
@@ -87,9 +87,8 @@ public final class FileUtils {
 
 		bb = null;
 
-		if (buffer == null) {
+		if (buffer == null)
 			throw new RuntimeException(STBImage.stbi_failure_reason());
-		}
 
 		buffer.flip();
 
@@ -118,9 +117,8 @@ public final class FileUtils {
 	public static boolean STBISave(final File file, final MemImage image) {
 		Objects.requireNonNull(image);
 		Objects.requireNonNull(image.getBuffer());
-		if (!image.getBuffer().isDirect()) {
+		if (!image.getBuffer().isDirect())
 			throw new IllegalArgumentException("The buffer: " + image + " isn't direct.");
-		}
 		file.getParentFile().mkdirs();
 		STBImageWrite.stbi_flip_vertically_on_write(image.getOrientation() == MemImageContentOrientation.BOTTOM_LEFT);
 

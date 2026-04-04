@@ -51,105 +51,104 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 		this.material = material;
 		this.attribs = new ArrayList<>(Arrays.asList(attribs));
 
-		this.vertexCount = vertices.getLength();
-		this.indicesCount = indices.getLength();
-		this.boundingBox = GameEngineUtils.getBoundingBox(vertices);
+		vertexCount = vertices.getLength();
+		indicesCount = indices.getLength();
+		boundingBox = GameEngineUtils.getBoundingBox(vertices);
 
-		this.vao = GL_W.glGenVertexArrays();
-		this.bind();
+		vao = GL_W.glGenVertexArrays();
+		bind();
 		indices.setIndex(ATTRIB_INDICES_ID);
 		indices.setBufferType(BufferType.ELEMENT_ARRAY);
-		this.storeElementArray((UIntAttribArray) indices);
+		storeElementArray((UIntAttribArray) indices);
 		vertices.setName(ATTRIB_VERTICES_NAME);
 		vertices.setIndex(ATTRIB_VERTICES_ID);
-		this.storeAttribArray((Vec3fAttribArray) vertices);
+		storeAttribArray((Vec3fAttribArray) vertices);
 
 		for (final JavaAttribArray a : attribs) {
-			if (this.vbo.containsKey(a.getIndex())) {
+			if (vbo.containsKey(a.getIndex())) {
 				GlobalLogger.log(Level.WARNING, "Duplicate of index: " + a.getIndex() + " from " + a.getName() + ", in Mesh: " + name);
 				continue;
 			}
-			this.storeAttribArray(a);
+			storeAttribArray(a);
 		}
 
-		this.unbind();
+		unbind();
 
-		GlobalLogger.log(Level.INFO, "Mesh " + name + ": " + this.vao + " & " + this.vbo + "; v:" + this.vertexCount + " ");
+		GlobalLogger.log(Level.INFO, "Mesh " + name + ": " + vao + " & " + vbo + "; v:" + vertexCount + " ");
 	}
 
 	public void storeElementArray(final UIntAttribArray indices) {
 		indices.setBufferType(BufferType.ELEMENT_ARRAY);
-		this.vbo.put(indices.getIndex(), indices.gen());
+		vbo.put(indices.getIndex(), indices.gen());
 		indices.bind();
 		indices.init();
 	}
 
 	@Override
 	public void cleanup() {
-		if (this.vao == -1) {
+		if (vao == -1)
 			return;
-		}
 
-		GlobalLogger.log("Cleaning up: " + this.name + " (" + this.vao + ")");
+		GlobalLogger.log("Cleaning up: " + name + " (" + vao + ")");
 
-		GL_W.glDeleteVertexArrays(this.vao);
+		GL_W.glDeleteVertexArrays(vao);
 		attribs.forEach(JavaAttribArray::cleanup);
-		this.attribs = null;
-		this.vbo = null;
-		this.vao = -1;
+		attribs = null;
+		vbo = null;
+		vao = -1;
 
 		super.cleanup();
 	}
 
 	@Override
 	public String getId() {
-		return this.name;
+		return name;
 	}
 
 	@Override
 	public int getVertexCount() {
-		return this.vertexCount;
+		return vertexCount;
 	}
 
 	@Override
 	public int getGlId() {
-		return this.vao;
+		return vao;
 	}
 
 	@Override
 	public Map<Integer, Integer> getVbo() {
-		return this.vbo;
+		return vbo;
 	}
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public UIntAttribArray getIndices() {
-		return this.indices;
+		return indices;
 	}
 
 	public Vec3fAttribArray getVertices() {
-		return this.vertices;
+		return vertices;
 	}
 
 	@Override
 	public Material getMaterial() {
-		return this.material;
+		return material;
 	}
 
 	@Override
 	public List<JavaAttribArray> getAttribs() {
-		return this.attribs;
+		return attribs;
 	}
 
 	@Override
 	public int getIndicesCount() {
-		return this.indicesCount;
+		return indicesCount;
 	}
 
 	public int getFaceCount() {
-		return this.indicesCount / 6;
+		return indicesCount / 6;
 	}
 
 	public void setName(final String name) {
@@ -158,12 +157,12 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 
 	@Override
 	public boolean isValid() {
-		return this.vao != -1;
+		return vao != -1;
 	}
 
 	@Override
 	public BoundingBox getBoundingBox() {
-		return this.boundingBox;
+		return boundingBox;
 	}
 
 	@Override
@@ -173,9 +172,9 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 
 	@Override
 	public String toString() {
-		return "LoadedMesh [name=" + this.name + ", vao=" + this.vao + ", vbo=" + this.vbo + ", material=" + this.material + ", vertices="
-				+ this.vertices + ", indices=" + this.indices + ", attribs=" + attribs + ", vertexCount=" + this.vertexCount
-				+ ", indicesCount=" + this.indicesCount + ", isValid()=" + this.isValid() + ", boundingBox=" + this.boundingBox + "]";
+		return "LoadedMesh [name=" + name + ", vao=" + vao + ", vbo=" + vbo + ", material=" + material + ", vertices="
+				+ vertices + ", indices=" + indices + ", attribs=" + attribs + ", vertexCount=" + vertexCount
+				+ ", indicesCount=" + indicesCount + ", isValid()=" + isValid() + ", boundingBox=" + boundingBox + "]";
 	}
 
 	public static QuadLoadedMesh newQuad(final String name, final Material material2, final Vector2f size) {

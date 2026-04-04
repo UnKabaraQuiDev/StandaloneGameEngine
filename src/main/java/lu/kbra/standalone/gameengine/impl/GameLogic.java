@@ -20,16 +20,16 @@ public abstract class GameLogic {
 	public Dispatcher UPDATE_DISPATCHER;
 
 	public void register(GameEngine e) {
-		this.engine = e;
+		engine = e;
 
-		this.cache = e.getCache();
-		this.window = e.getWindow();
+		cache = e.getCache();
+		window = e.getWindow();
 
-		this.audio = e.getAudioMaster();
+		audio = e.getAudioMaster();
 
-		this.MAIN_DISPATCHER = e.getMainDispatcher();
-		this.RENDER_DISPATCHER = e.getRenderDispatcher();
-		this.UPDATE_DISPATCHER = e.getUpdateDispatcher();
+		MAIN_DISPATCHER = e.getMainDispatcher();
+		RENDER_DISPATCHER = e.getRenderDispatcher();
+		UPDATE_DISPATCHER = e.getUpdateDispatcher();
 	}
 
 	public abstract void init() throws Exception;
@@ -46,11 +46,9 @@ public abstract class GameLogic {
 	public abstract void cleanup();
 
 	public static void cleanup(Cleanupable... vs) {
-		for (Cleanupable v : vs) {
-			if (v != null) {
+		for (Cleanupable v : vs)
+			if (v != null)
 				v.cleanup();
-			}
-		}
 	}
 
 	protected boolean waitForFrameEnd() {

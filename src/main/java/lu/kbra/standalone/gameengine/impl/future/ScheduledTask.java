@@ -9,7 +9,7 @@ import lu.kbra.pclib.logger.GlobalLogger;
 
 public class ScheduledTask implements Runnable, Delayed {
 
-//	public static final int DEFAULT_PRIORITY = 100;
+	//	public static final int DEFAULT_PRIORITY = 100;
 	public static final long RETRY_DELAY_NANOS = TimeUnit.MILLISECONDS.toNanos(1);
 
 	private final ThrowingRunnable<YieldExecutionThrowable> task;
@@ -23,19 +23,19 @@ public class ScheduledTask implements Runnable, Delayed {
 	public ScheduledTask(ThrowingRunnable<YieldExecutionThrowable> task, int priority, String source) {
 		this.task = task;
 		this.priority = priority;
-		this.sourceString = source;
+		sourceString = source;
 	}
 
 	public ScheduledTask(ThrowingRunnable<YieldExecutionThrowable> task, int priority) {
 		this.task = task;
 		this.priority = priority;
-		this.sourceString = task.toString();
+		sourceString = task.toString();
 	}
 
-//	@Override
-//	public int compareTo(ScheduledTask o) {
-//		return Integer.compare(o.priority, this.priority); // higher first
-//	}
+	//	@Override
+	//	public int compareTo(ScheduledTask o) {
+	//		return Integer.compare(o.priority, this.priority); // higher first
+	//	}
 	@Override
 	public long getDelay(TimeUnit unit) {
 		long delay = nextTry - System.nanoTime();
@@ -47,10 +47,9 @@ public class ScheduledTask implements Runnable, Delayed {
 		if (other == this)
 			return 0;
 		if (other instanceof ScheduledTask o) {
-			int cmp = Long.compare(this.nextTry, o.nextTry); // soonest first
-			if (cmp == 0) {
-				return Integer.compare(o.priority, this.priority); // higher priority first
-			}
+			int cmp = Long.compare(nextTry, o.nextTry); // soonest first
+			if (cmp == 0)
+				return Integer.compare(o.priority, priority); // higher priority first
 			return cmp;
 		}
 		return Long.compare(getDelay(TimeUnit.NANOSECONDS), other.getDelay(TimeUnit.NANOSECONDS));
@@ -58,7 +57,7 @@ public class ScheduledTask implements Runnable, Delayed {
 
 	@Override
 	public void run() {
-//		System.err.println(Thread.currentThread().getName() + ": " + (predicate == null ? "null" : predicate.get()));
+		//		System.err.println(Thread.currentThread().getName() + ": " + (predicate == null ? "null" : predicate.get()));
 		if (!isReady()) {
 			nextTry = nextTryDelay;
 			ran = false;
@@ -85,7 +84,7 @@ public class ScheduledTask implements Runnable, Delayed {
 	}
 
 	public boolean isReady() {
-		return predicate == null ? this.nextTry <= System.nanoTime() : predicate.get();
+		return predicate == null ? nextTry <= System.nanoTime() : predicate.get();
 	}
 
 	public int getPriority() {

@@ -52,48 +52,45 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 	private final Set<String> knownNotExistsFragOutputs = new HashSet<>();
 
 	public AbstractShader(String name_, AbstractShaderPart... parts) {
-		this.name = name_ == null ? this.getClass().getName() : name_;
+		name = name_ == null ? this.getClass().getName() : name_;
 
-		this.spid = GL_W.glCreateProgram();
-		if (this.spid == -1) {
+		spid = GL_W.glCreateProgram();
+		if (spid == -1)
 			GameEngineUtils.throwGLError(name + ": Failed to create shader program!");
-		}
 		this.parts = new HashMap<>();
 		for (AbstractShaderPart sp : parts) {
 			this.parts.put(sp.getType(), sp);
-			GL_W.glAttachShader(this.spid, sp.getGlId());
+			GL_W.glAttachShader(spid, sp.getGlId());
 		}
-		GL_W.glLinkProgram(this.spid);
+		GL_W.glLinkProgram(spid);
 
-		final int logLen = GL_W.glGetProgrami(this.spid, GL_W.GL_INFO_LOG_LENGTH);
+		final int logLen = GL_W.glGetProgrami(spid, GL_W.GL_INFO_LOG_LENGTH);
 		if (logLen > 1) {
-			final String log = GL_W.glGetProgramInfoLog_String(this.spid, logLen);
+			final String log = GL_W.glGetProgramInfoLog_String(spid, logLen);
 			GlobalLogger.severe("Link log:\n" + log);
 		}
 
-		if (GL_W.glGetProgrami(this.spid, GL_W.GL_LINK_STATUS) == GL_W.GL_FALSE) {
-			GlobalLogger.log(Level.SEVERE, name + "(" + spid + "): " + GL_W.glGetProgramInfoLog_String(this.spid, 1024));
-			this.cleanup();
+		if (GL_W.glGetProgrami(spid, GL_W.GL_LINK_STATUS) == GL_W.GL_FALSE) {
+			GlobalLogger.log(Level.SEVERE, name + "(" + spid + "): " + GL_W.glGetProgramInfoLog_String(spid, 1024));
+			cleanup();
 			throw new IllegalStateException(name + "(" + spid + "): Failed to link shader program!");
-		} else if (!GL_W.glIsProgram(spid)) {
-			this.cleanup();
-			throw new IllegalStateException(name + "(" + spid + "): Is not a GL Shader Program!");
-		} else {
-			GlobalLogger.log(Level.INFO, "ShaderProgram " + name + " (" + spid + ") created successfully");
 		}
+		if (!GL_W.glIsProgram(spid)) {
+			cleanup();
+			throw new IllegalStateException(name + "(" + spid + "): Is not a GL Shader Program!");
+		} else
+			GlobalLogger.log(Level.INFO, "ShaderProgram " + name + " (" + spid + ") created successfully");
 
-		this.bind();
-		this.createUniforms();
-		this.unbind();
+		bind();
+		createUniforms();
+		unbind();
 	}
 
 	public boolean recompile() {
-		for (AbstractShaderPart part : parts.values()) {
-			if (!part.recompile()) {
+		for (AbstractShaderPart part : parts.values())
+			if (!part.recompile())
 				return false;
-			}
-		}
-		GL_W.glLinkProgram(this.spid);
+		GL_W.glLinkProgram(spid);
 
 		knownNotExistsUniforms.clear();
 		uniforms.clear();
@@ -107,23 +104,19 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 	public abstract void createUniforms();
 
 	public void setUniform(String key, Object value) {
-		if (getUniformLocation(key) == -1) {
+		if (getUniformLocation(key) == -1)
 			return;
-		}
 
-		if (DEBUG) {
+		if (DEBUG)
 			GlobalLogger.info("[" + name + "] " + key + " = " + value);
-		}
 
 		final Pair<Property<Object>, Integer> unif = uniforms.get(key);
-		if (unif == null) {
+		if (unif == null)
 			return;
-		}
-		final Property<Object> prop = unif.hasKey() ? unif.getKey() : new Property<Object>();
+		final Property<Object> prop = unif.hasKey() ? unif.getKey() : new Property<>();
 		prop.setValue(value);
-		if (!prop.isChanged()) {
+		if (!prop.isChanged())
 			return;
-		}
 
 		final int unifLoc = unif.getValue();
 
@@ -131,95 +124,90 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 	}
 
 	private void storeUniform(int unifLoc, Object value, String key) {
-		if (value instanceof Float val) {
+		if (value instanceof Float val)
 			GL_W.glProgramUniform1f(spid, unifLoc, val);
-		} else if (value instanceof Vector2fc val) {
+		else if (value instanceof Vector2fc val)
 			GL_W.glProgramUniform2f(spid, unifLoc, val.x(), val.y());
-		} else if (value instanceof Vector3fc val) {
+		else if (value instanceof Vector3fc val)
 			GL_W.glProgramUniform3f(spid, unifLoc, val.x(), val.y(), val.z());
-		} else if (value instanceof Vector4fc val) {
+		else if (value instanceof Vector4fc val)
 			GL_W.glProgramUniform4f(spid, unifLoc, val.x(), val.y(), val.z(), val.w());
-		} else if (value instanceof Vector2fc[] val) {
+		else if (value instanceof Vector2fc[] val)
 			GL_W.glProgramUniform2fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector3fc[] val) {
+		else if (value instanceof Vector3fc[] val)
 			GL_W.glProgramUniform3fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector4fc[] val) {
+		else if (value instanceof Vector4fc[] val)
 			GL_W.glProgramUniform4fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector2f[] val) {
+		else if (value instanceof Vector2f[] val)
 			GL_W.glProgramUniform2fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector3f[] val) {
+		else if (value instanceof Vector3f[] val)
 			GL_W.glProgramUniform3fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector4f[] val) {
+		else if (value instanceof Vector4f[] val)
 			GL_W.glProgramUniform4fv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Integer val) {
+		else if (value instanceof Integer val)
 			GL_W.glProgramUniform1i(spid, unifLoc, val);
-		} else if (value instanceof Vector2ic val) {
+		else if (value instanceof Vector2ic val)
 			GL_W.glProgramUniform2i(spid, unifLoc, val.x(), val.y());
-		} else if (value instanceof Vector3ic val) {
+		else if (value instanceof Vector3ic val)
 			GL_W.glProgramUniform3i(spid, unifLoc, val.x(), val.y(), val.z());
-		} else if (value instanceof Vector4ic val) {
+		else if (value instanceof Vector4ic val)
 			GL_W.glProgramUniform4i(spid, unifLoc, val.x(), val.y(), val.z(), val.w());
-		} else if (value instanceof Vector2ic[] val) {
+		else if (value instanceof Vector2ic[] val)
 			GL_W.glProgramUniform2iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector3ic[] val) {
+		else if (value instanceof Vector3ic[] val)
 			GL_W.glProgramUniform3iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector4ic[] val) {
+		else if (value instanceof Vector4ic[] val)
 			GL_W.glProgramUniform4iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector2i[] val) {
+		else if (value instanceof Vector2i[] val)
 			GL_W.glProgramUniform2iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector3i[] val) {
+		else if (value instanceof Vector3i[] val)
 			GL_W.glProgramUniform3iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector4i[] val) {
+		else if (value instanceof Vector4i[] val)
 			GL_W.glProgramUniform4iv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Matrix4fc val) {
+		else if (value instanceof Matrix4fc val)
 			try (MemoryStack stack = MemoryStack.stackPush()) {
 				GL_W.glProgramUniformMatrix4fv(spid, unifLoc, false, val.get(stack.mallocFloat(16)));
 			}
-		} else if (value instanceof Matrix3fc val) {
+		else if (value instanceof Matrix3fc val)
 			try (MemoryStack stack = MemoryStack.stackPush()) {
 				GL_W.glProgramUniformMatrix3fv(spid, unifLoc, false, val.get(stack.mallocFloat(9)));
 			}
-		} else if (value instanceof Matrix3x2fc val) {
+		else if (value instanceof Matrix3x2fc val)
 			try (MemoryStack stack = MemoryStack.stackPush()) {
 				GL_W.glProgramUniformMatrix3x2fv(spid, unifLoc, false, val.get(stack.mallocFloat(6)));
 			}
-		} else if (value instanceof Boolean val) {
+		else if (value instanceof Boolean val)
 			GL_W.glProgramUniform1i(spid, unifLoc, val ? 1 : 0);
-		} else if (value instanceof int[] ints) {
+		else if (value instanceof int[] ints)
 			GL_W.glProgramUniform1iv(spid, unifLoc, ints);
-		} else if (value instanceof Integer[] ints) {
+		else if (value instanceof Integer[] ints)
 			GL_W.glProgramUniform1iv(spid, unifLoc, PCUtils.toPrimitiveInt(ints));
-		} else if (value instanceof float[] floats) {
+		else if (value instanceof float[] floats)
 			GL_W.glProgramUniform1fv(spid, unifLoc, floats);
-		} else if (value instanceof Float[] floats) {
+		else if (value instanceof Float[] floats)
 			GL_W.glProgramUniform1fv(spid, unifLoc, PCUtils.toPrimitiveFloat(floats));
-		} else if (value instanceof Double val) {
+		else if (value instanceof Double val)
 			throw new UnsupportedOperationException("Double not supported.");
-		} else if (value instanceof Character val) {
+		else if (value instanceof Character val)
 			throw new UnsupportedOperationException("Character not supported.");
-		} else {
+		else
 			throw new UnsupportedOperationException(value.getClass().getName() + " not supported.");
-		}
 	}
 
 	public void setUniformUnsigned(String key, Object value) {
-		if (getUniformLocation(key) == -1) {
+		if (getUniformLocation(key) == -1)
 			return;
-		}
 
-		if (DEBUG) {
+		if (DEBUG)
 			GlobalLogger.info("[" + name + "] (u) " + key + " = " + value);
-		}
 
 		final Pair<Property<Object>, Integer> unif = uniforms.get(key);
-		if (unif == null) {
+		if (unif == null)
 			return;
-		}
-		final Property<Object> prop = unif.hasKey() ? unif.getKey() : new Property<Object>();
+		final Property<Object> prop = unif.hasKey() ? unif.getKey() : new Property<>();
 		prop.setValue(value);
-		if (!prop.isChanged()) {
+		if (!prop.isChanged())
 			return;
-		}
 
 		final int unifLoc = unif.getValue();
 
@@ -227,31 +215,30 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 	}
 
 	private void storeUniformUnsigned(int unifLoc, Object value, String key) {
-		if (value instanceof Integer val) {
+		if (value instanceof Integer val)
 			GL_W.glProgramUniform1ui(spid, unifLoc, val);
-		} else if (value instanceof Vector2ic val) {
+		else if (value instanceof Vector2ic val)
 			GL_W.glProgramUniform2ui(spid, unifLoc, val.x(), val.y());
-		} else if (value instanceof Vector3ic val) {
+		else if (value instanceof Vector3ic val)
 			GL_W.glProgramUniform3ui(spid, unifLoc, val.x(), val.y(), val.z());
-		} else if (value instanceof Vector4ic val) {
+		else if (value instanceof Vector4ic val)
 			GL_W.glProgramUniform4ui(spid, unifLoc, val.x(), val.y(), val.z(), val.w());
-		} else if (value instanceof Vector2ic[] val) {
+		else if (value instanceof Vector2ic[] val)
 			GL_W.glProgramUniform2uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector3ic[] val) {
+		else if (value instanceof Vector3ic[] val)
 			GL_W.glProgramUniform3uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector4ic[] val) {
+		else if (value instanceof Vector4ic[] val)
 			GL_W.glProgramUniform4uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector2i[] val) {
+		else if (value instanceof Vector2i[] val)
 			GL_W.glProgramUniform2uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector3i[] val) {
+		else if (value instanceof Vector3i[] val)
 			GL_W.glProgramUniform3uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Vector4i[] val) {
+		else if (value instanceof Vector4i[] val)
 			GL_W.glProgramUniform4uiv(spid, unifLoc, GameEngineUtils.toFlatArray(val));
-		} else if (value instanceof Boolean val) {
+		else if (value instanceof Boolean val)
 			GL_W.glProgramUniform1ui(spid, unifLoc, val ? 1 : 0);
-		} else {
+		else
 			throw new UnsupportedOperationException(value.getClass().getName() + " not supported.");
-		}
 	}
 
 	public void storeUniform(int unifLoc, Object value) {
@@ -263,101 +250,91 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 	}
 
 	public void storeUniform(int unifLoc, Object value, boolean signed) {
-		if (signed) {
+		if (signed)
 			storeUniform(unifLoc, value);
-		} else {
+		else
 			storeUniformUnsigned(unifLoc, value);
-		}
 	}
 
 	public void setUniform(String key, Object value, boolean signed) {
-		if (signed) {
+		if (signed)
 			setUniform(key, value);
-		} else {
+		else
 			setUniformUnsigned(key, value);
-		}
 	}
 
 	public int getUniformLocation(String name) {
-		if (!this.createUniform(name)) {
+		if (!createUniform(name))
 			return -1;
-		}
 
-		return this.uniforms.get(name).getValue();
+		return uniforms.get(name).getValue();
 	}
 
 	public boolean hasUniform(String name) {
-		return this.uniforms.containsKey(name);
+		return uniforms.containsKey(name);
 	}
 
 	public boolean createUniform(String name) {
-		if (knownNotExistsUniforms.contains(name)) {
+		if (knownNotExistsUniforms.contains(name))
 			return false;
-		}
 
-		if (uniforms.containsKey(name)) {
+		if (uniforms.containsKey(name))
 			return true;
-		}
 
 		Objects.requireNonNull(name, "Name cannot be null.");
 
-		final int loc = GL_W.glGetUniformLocation(this.spid, name);
+		final int loc = GL_W.glGetUniformLocation(spid, name);
 
 		if (loc != -1) {
-			this.uniforms.put(name, new Pair<>(new Property<>(), loc));
+			uniforms.put(name, new Pair<>(new Property<>(), loc));
 			return true;
-		} else {
-			GlobalLogger.log(Level.WARNING,
-					"Could not get Uniform location for: " + name + " in program " + this.name + " (" + this.spid + ") ("
-							+ GL_W.glGetError() + ")");
-			knownNotExistsUniforms.add(name);
-			return false;
 		}
+		GlobalLogger.log(Level.WARNING,
+				"Could not get Uniform location for: " + name + " in program " + this.name + " (" + spid + ") ("
+						+ GL_W.glGetError() + ")");
+		knownNotExistsUniforms.add(name);
+		return false;
 	}
 
 	public int getFragDataLocation(String name) {
-		if (!createFragDataOutput(name)) {
+		if (!createFragDataOutput(name))
 			return -1;
-		}
 
 		return fragOutputs.get(name);
 	}
 
 	public boolean createFragDataOutput(String name) {
-		if (knownNotExistsFragOutputs.contains(name)) {
+		if (knownNotExistsFragOutputs.contains(name))
 			return false;
-		}
 
-		if (fragOutputs.containsKey(name)) {
+		if (fragOutputs.containsKey(name))
 			return true;
-		}
 
 		Objects.requireNonNull(name, "Name cannot be null.");
 
-		final int loc = GL_W.glGetFragDataLocation(this.spid, name);
+		final int loc = GL_W.glGetFragDataLocation(spid, name);
 
 		if (loc != -1) {
 			fragOutputs.put(name, loc);
 			return true;
-		} else {
-			GlobalLogger.log(Level.WARNING,
-					"Could not get FragData location for: " + name + " in program " + this.name + " (" + this.spid + ") ("
-							+ GL_W.glGetError() + ")");
-			knownNotExistsFragOutputs.add(name);
-			return false;
 		}
+		GlobalLogger.log(Level.WARNING,
+				"Could not get FragData location for: " + name + " in program " + this.name + " (" + spid + ") ("
+						+ GL_W.glGetError() + ")");
+		knownNotExistsFragOutputs.add(name);
+		return false;
 	}
 
 	public boolean hasFragDataOutput(String name) {
-		return this.fragOutputs.containsKey(name);
+		return fragOutputs.containsKey(name);
 	}
 
 	public void bind() {
-		if (this.spid == -1) {
+		if (spid == -1) {
 			GlobalLogger.warning("Shader program is invalid (" + name + ").");
 			return;
 		}
-		GL_W.glUseProgram(this.spid);
+		GL_W.glUseProgram(spid);
 	}
 
 	public void unbind() {
@@ -366,23 +343,22 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 
 	@Override
 	public void cleanup() {
-		if (this.spid == -1) {
+		if (spid == -1)
 			return;
-		}
 
 		GlobalLogger.warning("Cleaning up: " + name);
 
-		this.parts.values().forEach(AbstractShaderPart::cleanup);
-		this.parts = null;
-		GL_W.glDeleteProgram(this.spid);
-		this.spid = -1;
+		parts.values().forEach(AbstractShaderPart::cleanup);
+		parts = null;
+		GL_W.glDeleteProgram(spid);
+		spid = -1;
 
 		super.cleanup();
 	}
 
 	@Override
 	public String getId() {
-		return this.name;
+		return name;
 	}
 
 	@Override
@@ -396,7 +372,7 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 	}
 
 	public Map<Integer, AbstractShaderPart> getParts() {
-		return this.parts;
+		return parts;
 	}
 
 	public Map<String, Pair<Property<Object>, Integer>> getUniforms() {

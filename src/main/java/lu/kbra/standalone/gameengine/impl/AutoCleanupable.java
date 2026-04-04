@@ -16,28 +16,26 @@ public abstract class AutoCleanupable implements Cleanupable {
 	private static final Cleaner CLEANER = Cleaner.create();
 
 	public static Cleaner.Cleanable register(Cleanupable target, Runnable cleanupAction) {
-		if (target instanceof GLObject glo) {
+		if (target instanceof GLObject glo)
 			synchronized (GL_RESOURCES) {
 				GL_RESOURCES.add(glo);
 			}
-		} else if (target instanceof ALObject alo) {
+		else if (target instanceof ALObject alo)
 			synchronized (AL_RESOURCES) {
 				AL_RESOURCES.add(alo);
 			}
-		}
 		return CLEANER.register(target, cleanupAction);
 	}
 
 	public static Cleaner.Cleanable register(Cleanupable target) {
-		if (target instanceof GLObject glo) {
+		if (target instanceof GLObject glo)
 			synchronized (GL_RESOURCES) {
 				GL_RESOURCES.add(glo);
 			}
-		} else if (target instanceof ALObject alo) {
+		else if (target instanceof ALObject alo)
 			synchronized (AL_RESOURCES) {
 				AL_RESOURCES.add(alo);
 			}
-		}
 		return CLEANER.register(target, target::cleanup);
 	}
 
@@ -70,7 +68,7 @@ public abstract class AutoCleanupable implements Cleanupable {
 	protected final Cleaner.Cleanable cleanable;
 
 	public AutoCleanupable() {
-		this.cleanable = register(this, this::cleanup);
+		cleanable = register(this, this::cleanup);
 	}
 
 	public Cleaner.Cleanable getCleanable() {
@@ -79,15 +77,14 @@ public abstract class AutoCleanupable implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		if (this instanceof GLObject glo && !GLOBAL_GL_CLEANUP) {
+		if (this instanceof GLObject glo && !GLOBAL_GL_CLEANUP)
 			synchronized (GL_RESOURCES) {
 				GL_RESOURCES.remove(glo);
 			}
-		} else if (this instanceof ALObject alo && !GLOBAL_AL_CLEANUP) {
+		else if (this instanceof ALObject alo && !GLOBAL_AL_CLEANUP)
 			synchronized (AL_RESOURCES) {
 				AL_RESOURCES.remove(alo);
 			}
-		}
 	}
 
 	@Override

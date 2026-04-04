@@ -27,9 +27,8 @@ public class ALSource implements Cleanupable {
 	}
 
 	public ALSource play(ALBuffer buffer) {
-		if (buffer == null) {
+		if (buffer == null)
 			return this;
-		}
 
 		AL11.alSourcei(sourceId, AL11.AL_BUFFER, buffer.getBufferId());
 		GameEngineUtils.checkAlError("SourceI(" + sourceId + ", BUFFER, " + buffer.getBufferId() + ")");
@@ -41,11 +40,9 @@ public class ALSource implements Cleanupable {
 	}
 
 	public ALSource play(Sound bz) {
-		if (bz.hasBuffer()) {
+		if (bz.hasBuffer())
 			return play(bz.getBuffer());
-		} else {
-			return this;
-		}
+		return this;
 	}
 
 	public ALSource play() {
@@ -203,9 +200,8 @@ public class ALSource implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		if (sourceId == -1) {
+		if (sourceId == -1)
 			return;
-		}
 
 		GlobalLogger.log("Cleaning up: " + sourceId);
 

@@ -2,6 +2,7 @@ package lu.kbra.standalone.gameengine.impl.future;
 
 public class SkipThen extends RuntimeException {
 
+	private static final long serialVersionUID = 1L;
 	private int count = 1;
 	private Object obj;
 	private TaskFuture next;

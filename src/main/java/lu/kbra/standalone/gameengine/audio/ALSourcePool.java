@@ -17,27 +17,23 @@ public class ALSourcePool {
 	public ALSourcePool(AudioMaster audio, int maxSources) {
 		this.audio = audio;
 		this.maxSources = maxSources;
-		this.availableSources = new ArrayList<ALSource>();
-		this.usedSources = new ArrayList<ALSource>();
+		availableSources = new ArrayList<>();
+		usedSources = new ArrayList<>();
 
-		if (!audio.checkAccess()) {
+		if (!audio.checkAccess())
 			throw new ALRuntimeException("Could not create ALSourcePool in thread: " + Thread.currentThread().getName()
 					+ ", should be in Audio thread: " + audio.getThreadName());
-		}
 	}
 
 	public ALSource getFreeSource() {
-		for (ALSource source : availableSources) {
-			if (source.isFree()) {
+		for (ALSource source : availableSources)
+			if (source.isFree())
 				return source;
-			} else {
-				this.usedSources.add(source);
-			}
-		}
+			else
+				usedSources.add(source);
 
-		if (sourceCount >= maxSources) {
+		if (sourceCount >= maxSources)
 			return null;
-		}
 
 		final ALSource newSource = new ALSource(this);
 		newSource.gen();
@@ -55,30 +51,29 @@ public class ALSourcePool {
 				sourceCount++;
 			} catch (ALRuntimeException e) {
 				throw e;
-//				return i;
+				//				return i;
 			}
 
-			if (sourceCount <= maxSources) {
+			if (sourceCount <= maxSources)
 				continue;
-			}
 		}
 		return count;
 	}
 
 	public void update(ALSource source) {
 		if (source.isFree()) {
-			this.availableSources.add(source);
-			this.usedSources.remove(source);
+			availableSources.add(source);
+			usedSources.remove(source);
 		} else {
-			this.availableSources.remove(source);
-			this.usedSources.add(source);
+			availableSources.remove(source);
+			usedSources.add(source);
 		}
 	}
 
 	public void remove(ALSource source) {
-		this.availableSources.remove(source);
-		this.usedSources.remove(source);
-		this.sourceCount--;
+		availableSources.remove(source);
+		usedSources.remove(source);
+		sourceCount--;
 	}
 
 }

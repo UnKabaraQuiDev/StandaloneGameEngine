@@ -15,14 +15,21 @@ import org.joml.Vector4f;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWCharCallback;
+import org.lwjgl.glfw.GLFWCharCallbackI;
 import org.lwjgl.glfw.GLFWCursorPosCallback;
+import org.lwjgl.glfw.GLFWCursorPosCallbackI;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWFramebufferSizeCallback;
+import org.lwjgl.glfw.GLFWFramebufferSizeCallbackI;
 import org.lwjgl.glfw.GLFWGamepadState;
 import org.lwjgl.glfw.GLFWJoystickCallback;
+import org.lwjgl.glfw.GLFWJoystickCallbackI;
 import org.lwjgl.glfw.GLFWKeyCallback;
+import org.lwjgl.glfw.GLFWKeyCallbackI;
 import org.lwjgl.glfw.GLFWMouseButtonCallback;
+import org.lwjgl.glfw.GLFWMouseButtonCallbackI;
 import org.lwjgl.glfw.GLFWScrollCallback;
+import org.lwjgl.glfw.GLFWScrollCallbackI;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.system.MemoryUtil;
 
@@ -34,13 +41,17 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.GLType;
 public abstract class Window implements Cleanupable {
 
 	public static final String DEBUG_ESCAPE_TO_CLOSE_PROPERTY = Window.class.getSimpleName() + ".debug_escape_to_close";
-	public static boolean DEBUG_ESCAPE_TO_CLOSE = Boolean.getBoolean(DEBUG_ESCAPE_TO_CLOSE_PROPERTY);
+	public static boolean DEBUG_ESCAPE_TO_CLOSE = Boolean.getBoolean(Window.DEBUG_ESCAPE_TO_CLOSE_PROPERTY);
 
 	public static final String GL_DEBUG_OUTPUT_PROPERTY = Window.class.getSimpleName() + ".gl_debug_output";
-	public static boolean GL_DEBUG_OUTPUT = Boolean.getBoolean(GL_DEBUG_OUTPUT_PROPERTY);
+	public static boolean GL_DEBUG_OUTPUT = Boolean.getBoolean(Window.GL_DEBUG_OUTPUT_PROPERTY);
+	public static final String GL_FAIL_ON_ERROR_PROPERTY = Window.class.getSimpleName() + ".gl_fail_on_error";
+	public static boolean GL_FAIL_ON_ERROR = Boolean.getBoolean(Window.GL_FAIL_ON_ERROR_PROPERTY);
 
 	public static final String GLFW_DEBUG_OUTPUT_PROPERTY = Window.class.getSimpleName() + ".glfw_debug_output";
-	public static boolean GLFW_DEBUG_OUTPUT = Boolean.getBoolean(GLFW_DEBUG_OUTPUT_PROPERTY);
+	public static boolean GLFW_DEBUG_OUTPUT = Boolean.getBoolean(Window.GLFW_DEBUG_OUTPUT_PROPERTY);
+	public static final String GLFW_FAIL_ON_ERROR_PROPERTY = Window.class.getSimpleName() + ".glfw_fail_on_error";
+	public static boolean GLFW_FAIL_ON_ERROR = Boolean.getBoolean(Window.GLFW_FAIL_ON_ERROR_PROPERTY);
 
 	protected GLType glType;
 
@@ -74,22 +85,27 @@ public abstract class Window implements Cleanupable {
 	protected Character character;
 	protected GLFWCharCallback charCallback;
 
-	protected int width, height;
+	protected int width;
+	protected int height;
 
-	public Window(GLType glType, WindowOptions options) {
+	public Window(final GLType glType, final WindowOptions options) {
 		this.glType = glType;
 		this.options = options;
 		this.ownerThread = Thread.currentThread();
 
-		Arrays.fill(keyStates, KeyState.RELEASE);
-		Arrays.fill(mouseButtonStates, KeyState.RELEASE);
+		Arrays.fill(this.keyStates, KeyState.RELEASE);
+		Arrays.fill(this.mouseButtonStates, KeyState.RELEASE);
 
-		if (GLFW_DEBUG_OUTPUT) {
-			errorCallback = GLFWErrorCallback.createPrint(System.err);
-			GLFW.glfwSetErrorCallback(errorCallback);
+		if (Window.GLFW_DEBUG_OUTPUT) {
+			if (Window.GLFW_FAIL_ON_ERROR) {
+				this.errorCallback = GLFWErrorCallback.createPrint(System.err);
+			} else {
+				this.errorCallback = GLFWErrorCallback.createThrow();
+			}
+			GLFW.glfwSetErrorCallback(this.errorCallback);
 		}
 
-		init();
+		this.init();
 	}
 
 	protected abstract void init();
@@ -105,7 +121,7 @@ public abstract class Window implements Cleanupable {
 	protected long getQualifiedMonitor() {
 		long monitor = GLFW.glfwGetPrimaryMonitor();
 		if (monitor == MemoryUtil.NULL) {
-			PointerBuffer ptb = GLFW.glfwGetMonitors();
+			final PointerBuffer ptb = GLFW.glfwGetMonitors();
 			if (!ptb.hasRemaining()) {
 				throw new RuntimeException("No primary monitor found");
 			}
@@ -116,316 +132,344 @@ public abstract class Window implements Cleanupable {
 	}
 
 	protected void createCallbacks() {
-		keyCallback = GLFWKeyCallback.create((window, key, scancode, action, mods) -> callback_key(window, key, scancode, action, mods));
-		GLFW.glfwSetKeyCallback(handle, keyCallback);
+		this.keyCallback = GLFWKeyCallback.create((GLFWKeyCallbackI) this::callback_key);
+		GLFW.glfwSetKeyCallback(this.handle, this.keyCallback);
 
-		joystickCallback = GLFWJoystickCallback.create((jid, event) -> callback_joystick(jid, event));
-		GLFW.glfwSetJoystickCallback(joystickCallback);
+		this.joystickCallback = GLFWJoystickCallback.create((GLFWJoystickCallbackI) this::callback_joystick);
+		GLFW.glfwSetJoystickCallback(this.joystickCallback);
 
-		frameBufferCallback = GLFWFramebufferSizeCallback.create((window, width, height) -> callback_frameBuffer(window, width, height));
-		GLFW.glfwSetFramebufferSizeCallback(handle, frameBufferCallback);
+		this.frameBufferCallback = GLFWFramebufferSizeCallback.create((GLFWFramebufferSizeCallbackI) this::callback_frameBuffer);
+		GLFW.glfwSetFramebufferSizeCallback(this.handle, this.frameBufferCallback);
 
-		scrollCallback = GLFWScrollCallback.create((window, sx, sy) -> callback_scroll(window, sx, sy));
-		GLFW.glfwSetScrollCallback(handle, scrollCallback);
+		this.scrollCallback = GLFWScrollCallback.create((GLFWScrollCallbackI) this::callback_scroll);
+		GLFW.glfwSetScrollCallback(this.handle, this.scrollCallback);
 
-		cursorPosCallback = GLFWCursorPosCallback.create((window, sx, sy) -> callback_cursor_pos(window, sx, sy));
-		GLFW.glfwSetCursorPosCallback(handle, cursorPosCallback);
+		this.cursorPosCallback = GLFWCursorPosCallback.create((GLFWCursorPosCallbackI) this::callback_cursor_pos);
+		GLFW.glfwSetCursorPosCallback(this.handle, this.cursorPosCallback);
 
-		mouseButtonCallback = GLFWMouseButtonCallback
-				.create((window, button, action, mods) -> callback_mouse_button(window, button, action, mods));
-		GLFW.glfwSetMouseButtonCallback(handle, mouseButtonCallback);
+		this.mouseButtonCallback = GLFWMouseButtonCallback.create((GLFWMouseButtonCallbackI) this::callback_mouse_button);
+		GLFW.glfwSetMouseButtonCallback(this.handle, this.mouseButtonCallback);
 
-		charCallback = GLFWCharCallback.create((window, codepoint) -> callback_char(window, codepoint));
-		GLFW.glfwSetCharCallback(handle, charCallback);
+		this.charCallback = GLFWCharCallback.create((GLFWCharCallbackI) this::callback_char);
+		GLFW.glfwSetCharCallback(this.handle, this.charCallback);
 	}
 
-	protected void callback_char(long window, int codepoint) {
+	protected void callback_char(final long window, final int codepoint) {
 		if (codepoint > 0) {
-			character = (char) codepoint;
+			this.character = (char) codepoint;
 		}
 	}
 
-	protected void callback_mouse_button(long window, int button, int action, int mods) {
-		if (button >= 0 && button < mouseButtonStates.length) {
+	protected void callback_mouse_button(final long window, final int button, final int action, final int mods) {
+		if (button >= 0 && button < this.mouseButtonStates.length) {
 			if (action == GLFW.GLFW_PRESS) {
-				mouseButtonStates[button] = KeyState.PRESS;
+				this.mouseButtonStates[button] = KeyState.PRESS;
 			} else if (action == GLFW.GLFW_RELEASE) {
-				mouseButtonStates[button] = KeyState.RELEASE;
+				this.mouseButtonStates[button] = KeyState.RELEASE;
 			}
 		} else {
 			GlobalLogger.severe("Unsupported mouse button: " + button);
 		}
 	}
 
-	protected void callback_cursor_pos(long window, double sx, double sy) {
-		cursorPosition.set(sx, sy);
+	protected void callback_cursor_pos(final long window, final double sx, final double sy) {
+		this.cursorPosition.set(sx, sy);
 	}
 
-	protected void callback_scroll(long window, double sx, double sy) {
-		if (window != handle)
+	protected void callback_scroll(final long window, final double sx, final double sy) {
+		if (window != this.handle) {
 			return;
-		scroll.add(sx, sy);
+		}
+		this.scroll.add(sx, sy);
 	}
 
-	protected void callback_frameBuffer(long window, int w, int h) {
-		if (window != handle)
+	protected void callback_frameBuffer(final long window, final int w, final int h) {
+		if (window != this.handle) {
 			return;
-		if (!options.fullscreen)
-			options.windowSize.set(w, h);
-		if (onResize != null)
-			onResize.accept(w, h);
-		GL_W.glViewport(0, 0, w, h);
+		}
+//		if (!this.options.windowMode) {
+//			this.options.windowSize.set(w, h);
+//		}
+		if (this.onResize != null) {
+			this.onResize.accept(w, h);
+		}
+//		GL_W.glViewport(0, 0, w, h);
 		this.width = w;
 		this.height = h;
 	}
 
-	protected void callback_joystick(int jid, int event) {
+	protected void callback_joystick(final int jid, final int event) {
 		if (event == GLFW.GLFW_CONNECTED) {
-			boolean isGamepad = GLFW.glfwJoystickIsGamepad(jid);
-			connectedGamepads.put(jid, isGamepad);
+			final boolean isGamepad = GLFW.glfwJoystickIsGamepad(jid);
+			this.connectedGamepads.put(jid, isGamepad);
 			if (isGamepad) {
-				GLFWGamepadState state = GLFWGamepadState.create();
-				gamepadStates.put(jid, state);
+				final GLFWGamepadState state = GLFWGamepadState.create();
+				this.gamepadStates.put(jid, state);
 			}
 			GlobalLogger.log(Level.INFO,
 					"Joystick connected: jid:" + jid + ", name:" + GLFW.glfwGetJoystickName(jid) + ", guid:" + GLFW.glfwGetJoystickGUID(jid)
 							+ " -> name:" + GLFW.glfwGetGamepadName(jid) + ", joystick as gamepad:" + GLFW.glfwJoystickIsGamepad(jid));
 		} else if (event == GLFW.GLFW_DISCONNECTED) {
-			connectedGamepads.remove(jid);
-			gamepadStates.remove(jid);
+			this.connectedGamepads.remove(jid);
+			this.gamepadStates.remove(jid);
 			GlobalLogger.log(Level.INFO, "Joystick disconnected: jid:" + jid);
 		}
 	}
 
-	protected void callback_key(long window, int key, int scancode, int action, int mods) {
-		if (window != handle) {
+	protected void callback_key(final long window, final int key, final int scancode, final int action, final int mods) {
+		if (window != this.handle) {
 			return;
 		}
 
-		if (DEBUG_ESCAPE_TO_CLOSE && key == GLFW.GLFW_KEY_ESCAPE && action == GLFW.GLFW_PRESS) {
-			setWindowShouldClose(true);
+		if (Window.DEBUG_ESCAPE_TO_CLOSE && key == GLFW.GLFW_KEY_ESCAPE && action == GLFW.GLFW_PRESS) {
+			this.setWindowShouldClose(true);
 		} else if (key == GLFW.GLFW_KEY_F11 && action == GLFW.GLFW_PRESS) {
-			options.fullscreen = !options.fullscreen;
-			updateOptions();
+			this.options.windowMode = this.options.windowMode.next();
+			GlobalLogger.info("Switched window mode to: " + this.options.windowMode);
+			this.updateOptions();
 		}
 
-		if (key > 0 && key < keyStates.length) {
-			keyStates[key] = KeyState.byGLFWId(action);
+		if (key > 0 && key < this.keyStates.length) {
+			this.keyStates[key] = KeyState.byGLFWId(action);
 		}
 	}
 
 	public void postPollEvents() {
-		pollGamePadStates();
+		this.pollGamePadStates();
 	}
 
 	protected void pollGamePadStates() {
-		for (Map.Entry<Integer, Boolean> entry : connectedGamepads.entrySet()) {
+		for (final Map.Entry<Integer, Boolean> entry : this.connectedGamepads.entrySet()) {
 			final int jid = entry.getKey();
 			if (!entry.getValue()) {
 				return;
 			}
-			final GLFWGamepadState state = gamepadStates.get(jid);
+			final GLFWGamepadState state = this.gamepadStates.get(jid);
 			final boolean isValid = GLFW.glfwGetGamepadState(jid, state);
 			if (!isValid) {
-				connectedGamepads.put(entry.getKey(), false);
-				gamepadStates.remove(entry.getKey());
+				this.connectedGamepads.put(entry.getKey(), false);
+				this.gamepadStates.remove(entry.getKey());
 			}
 		}
 	}
 
-	public void setWindowShouldClose(boolean b) {
-		GLFW.glfwSetWindowShouldClose(handle, b);
+	public void setWindowShouldClose(final boolean b) {
+		GLFW.glfwSetWindowShouldClose(this.handle, b);
 	}
 
 	@Deprecated
 	public boolean isJoystickPresent() {
-		assert Thread.currentThread() == ownerThread;
+		assert Thread.currentThread() == this.ownerThread;
 		return GLFW.glfwJoystickPresent(GLFW.GLFW_JOYSTICK_1);
 	}
 
 	@Deprecated
-	public float[] getJoystickAxis(int jid) {
-		assert Thread.currentThread() == ownerThread;
-		FloatBuffer fb = GLFW.glfwGetJoystickAxes(jid);
-		float[] bb = new float[fb.remaining()];
+	public float[] getJoystickAxis(final int jid) {
+		assert Thread.currentThread() == this.ownerThread;
+		final FloatBuffer fb = GLFW.glfwGetJoystickAxes(jid);
+		final float[] bb = new float[fb.remaining()];
 		fb.get(bb);
 		return bb;
 	}
 
 	@Deprecated
-	public float getJoystickAxis(int jid, int axis) {
-		assert Thread.currentThread() == ownerThread;
-		FloatBuffer fb = GLFW.glfwGetJoystickAxes(jid);
-		float[] bb = new float[fb.remaining()];
+	public float getJoystickAxis(final int jid, final int axis) {
+		assert Thread.currentThread() == this.ownerThread;
+		final FloatBuffer fb = GLFW.glfwGetJoystickAxes(jid);
+		final float[] bb = new float[fb.remaining()];
 		fb.get(bb);
 		return bb[axis];
 	}
 
 	@Deprecated
-	public boolean getJoystickButton(int jid, int btn) {
-		assert Thread.currentThread() == ownerThread;
-		ByteBuffer fb = GLFW.glfwGetJoystickButtons(jid);
-		byte[] bb = new byte[fb.remaining()];
+	public boolean getJoystickButton(final int jid, final int btn) {
+		assert Thread.currentThread() == this.ownerThread;
+		final ByteBuffer fb = GLFW.glfwGetJoystickButtons(jid);
+		final byte[] bb = new byte[fb.remaining()];
 		fb.get(bb);
 		return bb[btn] == GLFW.GLFW_PRESS;
 	}
 
 	@Deprecated
-	public byte[] getJoystickButtonsArray(int jid) {
-		assert Thread.currentThread() == ownerThread;
-		ByteBuffer fb = GLFW.glfwGetJoystickButtons(jid);
-		byte[] bb = new byte[fb.remaining()];
+	public byte[] getJoystickButtonsArray(final int jid) {
+		assert Thread.currentThread() == this.ownerThread;
+		final ByteBuffer fb = GLFW.glfwGetJoystickButtons(jid);
+		final byte[] bb = new byte[fb.remaining()];
 		fb.get(bb);
 		return bb;
 	}
 
 	@Deprecated
-	public ByteBuffer getJoystickButtons(int jid) {
-		assert Thread.currentThread() == ownerThread;
+	public ByteBuffer getJoystickButtons(final int jid) {
+		assert Thread.currentThread() == this.ownerThread;
 		return GLFW.glfwGetJoystickButtons(jid);
 	}
 
 	@Deprecated
-	public byte getJoystickHat(int jid, int hat) {
-		assert Thread.currentThread() == ownerThread;
-		ByteBuffer fb = GLFW.glfwGetJoystickButtons(jid);
-		byte[] bb = new byte[fb.remaining()];
+	public byte getJoystickHat(final int jid, final int hat) {
+		assert Thread.currentThread() == this.ownerThread;
+		final ByteBuffer fb = GLFW.glfwGetJoystickButtons(jid);
+		final byte[] bb = new byte[fb.remaining()];
 		fb.get(bb);
 		return bb[hat];
 	}
 
 	@Deprecated
-	public boolean isMouseButtonPressed(int mbid) {
-		assert Thread.currentThread() == ownerThread;
-		return GLFW.glfwGetMouseButton(handle, mbid) == GLFW.GLFW_PRESS;
+	public boolean isMouseButtonPressed(final int mbid) {
+		assert Thread.currentThread() == this.ownerThread;
+		return GLFW.glfwGetMouseButton(this.handle, mbid) == GLFW.GLFW_PRESS;
 	}
 
-	public KeyState getMouseButtonState(int mbid) {
-		return mouseButtonStates[mbid];
+	public KeyState getMouseButtonState(final int mbid) {
+		return this.mouseButtonStates[mbid];
 	}
 
 	public Vector2f getMousePosition() {
-		return cursorPosition;
+		return this.cursorPosition;
 	}
 
-	public boolean getJoystickHat(int jid, int hat, byte state) {
-		return getJoystickHat(jid, hat) == state;
+	public boolean getJoystickHat(final int jid, final int hat, final byte state) {
+		return this.getJoystickHat(jid, hat) == state;
 	}
 
-	public ByteBuffer getJoystickHats(int jid) {
+	public ByteBuffer getJoystickHats(final int jid) {
 		return GLFW.glfwGetJoystickHats(jid);
 	}
 
 	public GLFWGamepadState getGamepad() {
-		return gamepadState;
+		return this.gamepadState;
 	}
 
 	@Deprecated
-	public boolean isKeyPressed(int code) {
-		assert Thread.currentThread() == ownerThread;
-		return GLFW.glfwGetKey(handle, code) == GLFW.GLFW_PRESS;
+	public boolean isKeyPressed(final int code) {
+		assert Thread.currentThread() == this.ownerThread;
+		return GLFW.glfwGetKey(this.handle, code) == GLFW.GLFW_PRESS;
 	}
 
-	public KeyState getKeyState(int code) {
-		return keyStates[code];
+	public KeyState getKeyState(final int code) {
+		return this.keyStates[code];
 	}
 
 	public boolean shouldClose() {
-		return GLFW.glfwWindowShouldClose(handle);
+		return GLFW.glfwWindowShouldClose(this.handle);
 	}
 
 	public void swapBuffers() {
-		if (handle == MemoryUtil.NULL) {
+		if (this.handle == MemoryUtil.NULL) {
 			throw new IllegalStateException("Window wasn't initialized");
 		}
 		GL_W.glBindFramebuffer(GL_W.GL_FRAMEBUFFER, 0);
-		GLFW.glfwSwapBuffers(handle);
+		GLFW.glfwSwapBuffers(this.handle);
 	}
 
 	public void pollEvents() {
-		assert Thread.currentThread() == ownerThread;
+		assert Thread.currentThread() == this.ownerThread;
 		GLFW.glfwPollEvents();
 	}
 
 	@Deprecated
-	public boolean updateGamepad(int jid) {
-		assert Thread.currentThread() == ownerThread;
-		return GLFW.glfwGetGamepadState(jid, gamepadState);
+	public boolean updateGamepad(final int jid) {
+		assert Thread.currentThread() == this.ownerThread;
+		return GLFW.glfwGetGamepadState(jid, this.gamepadState);
 	}
 
 	public void updateOptions() {
-		assert Thread.currentThread() == ownerThread;
+		assert Thread.currentThread() == this.ownerThread;
 
-		GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, options.resizable ? GLFW.GLFW_TRUE : GLFW.GLFW_FALSE);
-		GLFW.glfwSwapInterval(options.vsync ? 1 : 0);
-		GLFWVidMode vidMode = GLFW.glfwGetVideoMode(monitor);
-		GLFW.glfwSetWindowMonitor(handle,
-				options.fullscreen ? monitor : MemoryUtil.NULL,
-				0,
-				0,
-				!options.fullscreen ? options.windowSize.x : vidMode.width(),
-				!options.fullscreen ? options.windowSize.y : vidMode.height(),
-				options.fps);
+		GLFW.glfwSwapInterval(this.options.vsync ? 1 : 0);
 
-		this.width = !options.fullscreen ? options.windowSize.x : vidMode.width();
-		this.height = !options.fullscreen ? options.windowSize.y : vidMode.height();
+		final GLFWVidMode vidMode = GLFW.glfwGetVideoMode(this.monitor);
+
+		switch (this.options.windowMode) {
+
+		case WINDOWED -> {
+			GLFW.glfwSetWindowAttrib(this.handle, GLFW.GLFW_DECORATED, GLFW.GLFW_TRUE);
+
+			GLFW.glfwSetWindowMonitor(this.handle,
+					MemoryUtil.NULL,
+					100,
+					100,
+					this.options.windowSize.x,
+					this.options.windowSize.y,
+					GLFW.GLFW_DONT_CARE);
+
+			runResizeCallbacks();
+		}
+
+		case FULLSCREEN -> {
+			GLFW.glfwSetWindowAttrib(this.handle, GLFW.GLFW_DECORATED, GLFW.GLFW_TRUE);
+
+			GLFW.glfwSetWindowMonitor(this.handle,
+					this.monitor,
+					0,
+					0,
+					vidMode.width(),
+					vidMode.height(),
+					this.options.fps > 0 ? this.options.fps : vidMode.refreshRate());
+
+			runResizeCallbacks();
+		}
+		}
 	}
 
 	public Vector4f getBackground() {
-		return background;
+		return this.background;
 	}
 
-	public void setBackground(Vector4f background) {
+	public void setBackground(final Vector4f background) {
 		this.background = background;
 	}
 
 	public WindowOptions getOptions() {
-		return options;
+		return this.options;
 	}
 
 	public Character getCharacter() {
-		return character;
+		return this.character;
 	}
 
 	public void clearCharacter() {
-		character = null;
+		this.character = null;
 	}
 
 	public int getWidth() {
-		return width;
+		return this.width;
 	}
 
 	public int getHeight() {
-		return height;
+		return this.height;
 	}
 
 	public Vector2d getScroll() {
-		return scroll;
+		return this.scroll;
 	}
 
 	public Vector2i getSize() {
-		return new Vector2i(width, height);
+		return new Vector2i(this.width, this.height);
 	}
 
 	public long getHandle() {
-		return handle;
+		return this.handle;
 	}
 
 	public void clearScroll() {
-		scroll.set(0, 0);
+		this.scroll.set(0, 0);
 	}
 
-	public void onResize(BiConsumer<Integer, Integer> object) {
+	public void onResize(final BiConsumer<Integer, Integer> object) {
 		this.onResize = object;
 	}
 
-	public void runCallbacks() {
-		assert Thread.currentThread() == ownerThread;
-		if (onResize != null) {
-			int[] w = new int[1];
-			int[] h = new int[1];
-			GLFW.glfwGetWindowSize(handle, w, h);
-			onResize.accept(w[0], h[0]);
+	public void runResizeCallbacks() {
+		assert Thread.currentThread() == this.ownerThread;
+
+		final int[] w = new int[1];
+		final int[] h = new int[1];
+		GLFW.glfwGetWindowSize(this.handle, w, h);
+		this.width = w[0];
+		this.height = h[0];
+		if (this.onResize != null) {
+			this.onResize.accept(w[0], h[0]);
 		}
 	}
 

@@ -15,11 +15,11 @@ public interface PaddedAttribArray extends JavaTypeAttribArray {
 	int getElementPadLength();
 
 	default int getElementPaddingBytes() {
-		return this.getElementPadding() * this.getElementByteSize();
+		return getElementPadding() * getElementByteSize();
 	}
 
 	default int getElementPadBytes() {
-		return this.getElementPadLength() * this.getElementByteSize();
+		return getElementPadLength() * getElementByteSize();
 	}
 
 }

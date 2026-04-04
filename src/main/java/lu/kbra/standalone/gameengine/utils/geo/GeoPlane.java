@@ -21,9 +21,9 @@ public enum GeoPlane {
 	private Vector3fc[] points;
 	private Vector3fc normal;
 
-	private GeoPlane(Vector3fc[] p, Vector3fc n) {
-		this.points = p;
-		this.normal = n;
+	GeoPlane(Vector3fc[] p, Vector3fc n) {
+		points = p;
+		normal = n;
 	}
 
 	public Vector3fc[] getPoints() {
@@ -43,13 +43,12 @@ public enum GeoPlane {
 		y = MathUtils.snap(y, 1);
 		z = MathUtils.snap(z, 1);
 
-		if (x == 0 && y == 0) {
+		if (x == 0 && y == 0)
 			return XZ;
-		} else if (x == 0 && z == 0) {
+		if (x == 0 && z == 0)
 			return XY;
-		} else if (y == 0 && z == 0) {
+		else if (y == 0 && z == 0)
 			return YZ;
-		}
 
 		return null;
 	}
@@ -65,13 +64,12 @@ public enum GeoPlane {
 		y = MathUtils.snap(y, 1);
 		z = MathUtils.snap(z, 1);
 
-		if (x == 1 && y == 0 && z == 0) {
+		if (x == 1 && y == 0 && z == 0)
 			return YZ;
-		} else if (y == 1 && x == 0 && z == 0) {
+		if (y == 1 && x == 0 && z == 0)
 			return XZ;
-		} else if (z == 1 && x == 0 && y == 0) {
+		else if (z == 1 && x == 0 && y == 0)
 			return XY;
-		}
 
 		return null;
 	}

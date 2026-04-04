@@ -2,6 +2,8 @@ package lu.kbra.standalone.gameengine.exceptions.opengl;
 
 public class GLRuntimeException extends RuntimeException {
 
+	private static final long serialVersionUID = 1L;
+
 	public GLRuntimeException(String str) {
 		super(str);
 	}

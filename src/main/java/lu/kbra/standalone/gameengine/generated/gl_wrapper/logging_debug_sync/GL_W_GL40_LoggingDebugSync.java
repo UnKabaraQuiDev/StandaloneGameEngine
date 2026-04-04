@@ -20,6 +20,7 @@ import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 public class GL_W_GL40_LoggingDebugSync extends GL_W_GL33_LoggingDebugSync {
 	private static PCLogger LOGGER = GlobalLogger.getLogger();
 
+	@Override
 	public void init() {
 		GL_W.WRAPPER = this;
 		GL_W.GL_DRAW_INDIRECT_BUFFER = GL40.GL_DRAW_INDIRECT_BUFFER;

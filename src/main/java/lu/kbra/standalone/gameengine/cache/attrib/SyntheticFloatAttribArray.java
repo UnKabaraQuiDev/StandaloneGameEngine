@@ -49,63 +49,56 @@ public class SyntheticFloatAttribArray extends FloatAttribArray implements Synth
 
 	@Override
 	public void init() {
-		this.bind();
+		bind();
 
-		GL_W.glBufferData(this.bufferType.getGlId(),
-				this.length * this.getElementByteSize(),
-				this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(),
+				length * getElementByteSize(),
+				iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (this.bufferType == BufferType.ARRAY) {
-			GL_W.glVertexAttribPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), 0);
-		}
+		if (bufferType == BufferType.ARRAY)
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 	}
 
 	@Override
 	public void update(final float[] nPos) {
-		if (this.iStatic) {
+		if (iStatic)
 			throw new UnsupportedOperationException("Array is static.");
-		} else if (nPos.length != super.length) {
+		if (nPos.length != super.length)
 			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + super.length + ").");
-		}
-		this.bind();
+		bind();
 
-		GL_W.glBufferSubData(this.bufferType.getGlId(), 0, nPos);
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
 	}
 
 	public void resize(final int newSize) {
-		this.bind();
+		bind();
 
-		if (newSize == super.length) {
-//			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
+		if (newSize == super.length)
+			//			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
 			return;
-		} else {
-			GL_W.glBufferData(this.bufferType.getGlId(),
-					newSize * this.getElementByteSize(),
-					this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
+		GL_W.glBufferData(bufferType.getGlId(),
+				newSize * getElementByteSize(),
+				iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
 		super.length = newSize;
 
-		if (this.isVertexArray()) {
-			GL_W.glVertexAttribPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), 0);
-		}
+		if (isVertexArray())
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 	}
 
 	@Override
 	public void resize(final float[] nPos) {
-		this.bind();
+		bind();
 
-		if (nPos.length == super.length) {
-			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, nPos);
-		} else {
-			GL_W.glBufferData(this.bufferType.getGlId(), nPos, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
+		if (nPos.length == super.length)
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
+		else
+			GL_W.glBufferData(bufferType.getGlId(), nPos, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
 		super.length = nPos.length;
 
-		if (this.isVertexArray()) {
-			GL_W.glVertexAttribPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), 0);
-		}
+		if (isVertexArray())
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 	}
 
 }

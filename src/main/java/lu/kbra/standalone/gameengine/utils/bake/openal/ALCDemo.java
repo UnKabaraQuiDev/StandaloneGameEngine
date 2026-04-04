@@ -64,15 +64,13 @@ public final class ALCDemo {
 
 	public static void main(String[] args) {
 		long device = alcOpenDevice(args.length == 0 ? null : args[0]);
-		if (device == NULL) {
+		if (device == NULL)
 			throw new IllegalStateException("Failed to open an OpenAL device.");
-		}
 
 		ALCCapabilities deviceCaps = ALC.createCapabilities(device);
 
-		if (!deviceCaps.OpenALC10) {
+		if (!deviceCaps.OpenALC10)
 			throw new IllegalStateException();
-		}
 
 		System.out.println("OpenALC10  : " + deviceCaps.OpenALC10);
 		System.out.println("OpenALC11  : " + deviceCaps.OpenALC11);
@@ -80,13 +78,11 @@ public final class ALCDemo {
 
 		if (deviceCaps.OpenALC11) {
 			List<String> devices = ALUtil.getStringList(NULL, ALC_ALL_DEVICES_SPECIFIER);
-			if (devices == null) {
+			if (devices == null)
 				GameEngineUtils.checkAlcError(NULL);
-			} else {
-				for (int i = 0; i < devices.size(); i++) {
+			else
+				for (int i = 0; i < devices.size(); i++)
 					System.out.println(i + ": " + devices.get(i));
-				}
-			}
 		}
 
 		String defaultDeviceSpecifier = Objects.requireNonNull(alcGetString(NULL, ALC_DEFAULT_DEVICE_SPECIFIER));
@@ -98,11 +94,9 @@ public final class ALCDemo {
 		GameEngineUtils.checkAlcError(device);
 
 		boolean useTLC = deviceCaps.ALC_EXT_thread_local_context && alcSetThreadContext(context);
-		if (!useTLC) {
-			if (!alcMakeContextCurrent(context)) {
+		if (!useTLC)
+			if (!alcMakeContextCurrent(context))
 				throw new IllegalStateException();
-			}
-		}
 		GameEngineUtils.checkAlcError(device);
 
 		ALCapabilities caps = AL.createCapabilities(deviceCaps, MemoryUtil::memCallocPointer);
@@ -117,11 +111,10 @@ public final class ALCDemo {
 			testPlayback();
 		} finally {
 			alcMakeContextCurrent(NULL);
-			if (useTLC) {
+			if (useTLC)
 				AL.setCurrentThread(null);
-			} else {
+			else
 				AL.setCurrentProcess(null);
-			}
 			memFree(caps.getAddressBuffer());
 
 			alcDestroyContext(context);
@@ -161,9 +154,8 @@ public final class ALCDemo {
 			} catch (InterruptedException ignored) {
 				break;
 			}
-			if (alGetSourcei(source, AL_SOURCE_STATE) == AL_STOPPED) {
+			if (alGetSourcei(source, AL_SOURCE_STATE) == AL_STOPPED)
 				break;
-			}
 			System.out.print(".");
 		}
 
@@ -189,9 +181,8 @@ public final class ALCDemo {
 
 		IntBuffer error = BufferUtils.createIntBuffer(1);
 		long decoder = stb_vorbis_open_memory(vorbis, error, null);
-		if (decoder == NULL) {
+		if (decoder == NULL)
 			throw new RuntimeException("Failed to open Ogg Vorbis file. Error: " + error.get(0));
-		}
 
 		stb_vorbis_get_info(decoder, info);
 

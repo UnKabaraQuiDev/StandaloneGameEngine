@@ -47,76 +47,72 @@ public class FloatAttribArray extends JavaAttribArray implements FloatJavaTypeAt
 
 	@Override
 	public void init() {
-		this.bind();
+		bind();
 
-		super.length = this.data.length;
+		super.length = data.length;
 
-		GL_W.glBufferData(this.bufferType.getGlId(), this.data, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), data, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (this.bufferType == BufferType.ARRAY) {
-			GL_W.glVertexAttribPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), 0);
-		}
+		if (bufferType == BufferType.ARRAY)
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 	}
 
 	@Override
 	public void update() {
-		this.update(this.data);
+		this.update(data);
 	}
 
 	public void update(final float[] nPos) {
-		if (this.iStatic) {
+		if (iStatic)
 			throw new UnsupportedOperationException("Array is static.");
-		} else if (nPos.length != this.data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + this.data.length + ").");
-		}
-		this.bind();
+		if (nPos.length != data.length)
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
+		bind();
 
-		this.data = nPos;
-		super.length = this.data.length;
+		data = nPos;
+		super.length = data.length;
 
-		GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.data);
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, data);
 	}
 
 	public void resize(final float[] nPos) {
-		this.bind();
+		bind();
 
-		if (nPos.length == this.data.length) {
-			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, nPos);
-		} else {
-			GL_W.glBufferData(this.bufferType.getGlId(), nPos, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
+		if (nPos.length == data.length)
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
+		else
+			GL_W.glBufferData(bufferType.getGlId(), nPos, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		this.data = nPos;
-		super.length = this.data.length;
+		data = nPos;
+		super.length = data.length;
 
-		if (this.isVertexArray()) {
-			GL_W.glVertexAttribPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), 0);
-		}
+		if (isVertexArray())
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 	}
 
 	@Override
 	public int getLength() {
-		return this.isLoaded() ? (this.length = this.data.length) : super.getLength();
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override
 	public float[] getData() {
-		return this.data;
+		return data;
 	}
 
 	@Override
 	public boolean isLoaded() {
-		return this.data != null;
+		return data != null;
 	}
 
 	@Override
 	public Float get(final int i) {
-		return !this.isLoaded() ? null : this.data[i];
+		return !isLoaded() ? null : data[i];
 	}
 
 	@Override
 	public float[] toFlatArray() {
-		return this.data;
+		return data;
 	}
 
 	@Override

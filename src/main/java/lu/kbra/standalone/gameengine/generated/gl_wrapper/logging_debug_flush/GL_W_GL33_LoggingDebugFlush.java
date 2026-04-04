@@ -19,6 +19,7 @@ import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 public class GL_W_GL33_LoggingDebugFlush extends GL_W_GL32_LoggingDebugFlush {
 	private static PCLogger LOGGER = GlobalLogger.getLogger();
 
+	@Override
 	public void init() {
 		GL_W.WRAPPER = this;
 		GL_W.GL_SRC1_COLOR = GL33.GL_SRC1_COLOR;

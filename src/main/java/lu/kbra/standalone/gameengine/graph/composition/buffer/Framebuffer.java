@@ -79,9 +79,9 @@ public final class Framebuffer extends AutoCleanupable implements UniqueID, Clea
 
 	public boolean clearAttachments() {
 		for (final Entry<Integer, FramebufferAttachment> it : this.attachments.entrySet()) {
-			if (it.getValue() instanceof Texture txt) {
+			if (it.getValue() instanceof final Texture txt) {
 				GL_W.glFramebufferTexture2D(GL_W.GL_FRAMEBUFFER, it.getKey(), txt.getTextureType().getGlId(), 0, 0);
-			} else if (it.getValue() instanceof RenderBuffer rb) {
+			} else if (it.getValue() instanceof final RenderBuffer rb) {
 				GL_W.glFramebufferTexture2D(GL_W.GL_FRAMEBUFFER, it.getKey(), GL_W.GL_RENDERBUFFER, 0, 0);
 			}
 		}
@@ -106,7 +106,6 @@ public final class Framebuffer extends AutoCleanupable implements UniqueID, Clea
 				.stream()
 				.filter(e -> e.getKey() >= FrameBufferAttachment.COLOR_FIRST.getGlId()
 						&& e.getKey() <= FrameBufferAttachment.COLOR_LAST.getGlId())
-//				.sorted(Comparator.comparingInt(Map.Entry::getKey))
 				.mapToInt(Map.Entry::getKey)
 				.sorted()
 				.toArray();

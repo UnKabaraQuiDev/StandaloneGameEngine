@@ -21,15 +21,15 @@ public class Instance {
 	}
 
 	public int getIndex() {
-		return this.index;
+		return index;
 	}
 
 	public Transform getTransform() {
-		return this.transform;
+		return transform;
 	}
 
 	public Object[] getBuffers() {
-		return this.buffers;
+		return buffers;
 	}
 
 	public void setTransform(Transform transform) {

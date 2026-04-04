@@ -24,8 +24,8 @@ public enum TextureType implements GLConstant {
 	private int glId;
 	private TextureType base;
 
-	private TextureType(int id, TextureType base) {
-		this.glId = id;
+	TextureType(int id, TextureType base) {
+		glId = id;
 		this.base = base;
 	}
 

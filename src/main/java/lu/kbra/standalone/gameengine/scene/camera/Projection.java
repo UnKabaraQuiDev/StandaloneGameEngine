@@ -29,28 +29,28 @@ public class Projection {
 	}
 
 	public Projection update(int w, int h) {
-		this.width = w;
-		this.height = h;
+		width = w;
+		height = h;
 		return update();
 	}
 
 	public Projection update(Vector2i resolution) {
-		this.width = resolution.x;
-		this.height = resolution.y;
+		width = resolution.x;
+		height = resolution.y;
 		return update();
 	}
 
 	public Projection update() {
 		final float aspectRatio = getAspectRatio();
 
-		if (perspective) {
+		if (perspective)
 			projectionMatrix.identity().perspective(fov, aspectRatio, nearPlane, farPlane);
-		} else {
+		else {
 			final float halfHeight = 1f;
 			final float halfWidth = halfHeight * aspectRatio;
 
 			projectionMatrix.identity()
-					.ortho(-halfWidth / size, halfWidth / size, -halfHeight / size, halfHeight / size, nearPlane, farPlane);
+			.ortho(-halfWidth / size, halfWidth / size, -halfHeight / size, halfHeight / size, nearPlane, farPlane);
 		}
 		return this;
 	}
@@ -84,8 +84,8 @@ public class Projection {
 	}
 
 	public Projection setSize(Vector2i size) {
-		this.width = size.x;
-		this.width = size.y;
+		width = size.x;
+		width = size.y;
 		return this;
 	}
 

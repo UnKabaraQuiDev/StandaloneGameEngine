@@ -84,85 +84,80 @@ public abstract class JavaAttribArray extends AutoCleanupable implements GLObjec
 	}
 
 	public JavaAttribArray genInit() {
-		this.gen();
-		this.init();
+		gen();
+		init();
 		return this;
 	}
 
 	public int getElementCount() {
-		return this.length;
+		return length;
 	}
 
 	@Override
 	public int getTotalByteSize() {
-		return this.getElementByteSize() * this.getElementCount();
+		return getElementByteSize() * getElementCount();
 	}
 
 	@Override
 	public int getTotalComponentCount() {
-		return this.getElementComponentCount() * this.getElementCount();
+		return getElementComponentCount() * getElementCount();
 	}
 
 	public boolean isVertexArray() {
-		return this.bufferType == BufferType.ARRAY;
+		return bufferType == BufferType.ARRAY;
 	}
 
 	public void enable() {
-		this.bind();
+		bind();
 
-		if (this.isVertexArray()) {
-			GL_W.glEnableVertexAttribArray(this.index);
-			GL_W.glVertexAttribDivisor(this.index, this.divisor);
+		if (isVertexArray()) {
+			GL_W.glEnableVertexAttribArray(index);
+			GL_W.glVertexAttribDivisor(index, divisor);
 		}
 	}
 
 	public void disable() {
-		this.bind();
+		bind();
 
-		if (this.isVertexArray()) {
-			GL_W.glDisableVertexAttribArray(this.index);
-		}
+		if (isVertexArray())
+			GL_W.glDisableVertexAttribArray(index);
 	}
 
 	public int gen() {
-		if (this.bid != -1 && GEN_FAIL_IF_EXISTS) {
-			throw new IllegalStateException("Attrib array already initialized. (" + this.bid + ")");
-		}
-		if (this.bid != -1 && GEN_SKIP_IF_EXISTS) {
-			return this.bid;
-		}
-		if (this.bid != -1 && GEN_LOG_IF_EXISTS) {
-			GlobalLogger.severe("Attrib array already initilized. (" + this.bid + ")");
-		}
-		this.bid = GL_W.glGenBuffers();
-		return this.bid;
+		if (bid != -1 && GEN_FAIL_IF_EXISTS)
+			throw new IllegalStateException("Attrib array already initialized. (" + bid + ")");
+		if (bid != -1 && GEN_SKIP_IF_EXISTS)
+			return bid;
+		if (bid != -1 && GEN_LOG_IF_EXISTS)
+			GlobalLogger.severe("Attrib array already initilized. (" + bid + ")");
+		bid = GL_W.glGenBuffers();
+		return bid;
 	}
 
 	@Override
 	public void bind() {
-		GL_W.glBindBuffer(this.bufferType.getGlId(), this.bid);
+		GL_W.glBindBuffer(bufferType.getGlId(), bid);
 	}
 
 	@Override
 	public void unbind() {
-		GL_W.glBindBuffer(this.bufferType.getGlId(), 0);
+		GL_W.glBindBuffer(bufferType.getGlId(), 0);
 	}
 
 	@Override
 	public void cleanup() {
-		if (this.bid == -1) {
+		if (bid == -1)
 			return;
-		}
 
-		GlobalLogger.log("Cleaning up: " + this.name + " (" + this.index + "=" + this.bid + ")");
+		GlobalLogger.log("Cleaning up: " + name + " (" + index + "=" + bid + ")");
 
-		GL_W.glDeleteBuffers(this.bid);
-		this.bid = -1;
+		GL_W.glDeleteBuffers(bid);
+		bid = -1;
 		super.cleanup();
 	}
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(final String name) {
@@ -171,7 +166,7 @@ public abstract class JavaAttribArray extends AutoCleanupable implements GLObjec
 
 	@Override
 	public int getIndex() {
-		return this.index;
+		return index;
 	}
 
 	public void setIndex(final int index) {
@@ -180,7 +175,7 @@ public abstract class JavaAttribArray extends AutoCleanupable implements GLObjec
 
 	@Override
 	public BufferType getBufferType() {
-		return this.bufferType;
+		return bufferType;
 	}
 
 	public void setBufferType(final BufferType bufferType) {
@@ -189,38 +184,38 @@ public abstract class JavaAttribArray extends AutoCleanupable implements GLObjec
 
 	@Override
 	public int getGlId() {
-		return this.bid;
+		return bid;
 	}
 
 	@Override
 	public boolean isStatic() {
-		return this.iStatic;
+		return iStatic;
 	}
 
 	@Override
 	public int getDivisor() {
-		return this.divisor;
+		return divisor;
 	}
 
 	@Override
 	public boolean isValid() {
-		return this.bid != -1;
+		return bid != -1;
 	}
 
 	@Override
 	public int getLength() {
-		return this.length;
+		return length;
 	}
 
 	@Override
 	public String getId() {
-		return this.name + "#" + this.bid + "@" + PCUtils.toSimpleIdentityString(this);
+		return name + "#" + bid + "@" + PCUtils.toSimpleIdentityString(this);
 	}
 
 	@Override
 	public String toString() {
-		return this.getGlId() + "|" + this.getIndex() + ") " + this.getName() + ": " + this.getLength() + " * "
-				+ this.getComponentByteSize() + "B = " + this.getTotalByteSize() + "B";
+		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + " * "
+				+ getComponentByteSize() + "B = " + getTotalByteSize() + "B";
 	}
 
 	public static void update(final JavaAttribArray arr, final Object data) {
@@ -231,35 +226,30 @@ public abstract class JavaAttribArray extends AutoCleanupable implements GLObjec
 
 		arr.bind();
 
-		if (arr instanceof final IntAttribArray intArr) {
+		if (arr instanceof final IntAttribArray intArr)
 			intArr.update(PCUtils.toPrimitiveInt(data));
-		} else if (arr instanceof final UIntAttribArray uintArr) {
+		else if (arr instanceof final UIntAttribArray uintArr)
 			uintArr.update(PCUtils.toPrimitiveInt(data));
-		} else if (arr instanceof final UByteAttribArray ubyteArr) {
+		else if (arr instanceof final UByteAttribArray ubyteArr)
 			ubyteArr.update(PCUtils.toPrimitiveByte(data));
-
-		} else if (arr instanceof final FloatAttribArray floatArr) {
+		else if (arr instanceof final FloatAttribArray floatArr)
 			floatArr.update(PCUtils.toPrimitiveFloat(data));
-
-		} else if (arr instanceof final Vec2fAttribArray vec2fArr) {
+		else if (arr instanceof final Vec2fAttribArray vec2fArr)
 			vec2fArr.update((Vector2f[]) data);
-		} else if (arr instanceof final Vec3fAttribArray vec3fArr) {
+		else if (arr instanceof final Vec3fAttribArray vec3fArr)
 			vec3fArr.update((Vector3f[]) data);
-		} else if (arr instanceof final Vec4fAttribArray vec4fArr) {
+		else if (arr instanceof final Vec4fAttribArray vec4fArr)
 			vec4fArr.update((Vector4f[]) data);
-
-		} else if (arr instanceof final Vec3iAttribArray vec3iArr) {
+		else if (arr instanceof final Vec3iAttribArray vec3iArr)
 			vec3iArr.update((Vector3i[]) data);
-		} else if (arr instanceof final Vec4iAttribArray vec4iArr) {
+		else if (arr instanceof final Vec4iAttribArray vec4iArr)
 			vec4iArr.update((Vector4i[]) data);
-
-		} else if (arr instanceof final Mat3x2fAttribArray mat3x2fArr) {
+		else if (arr instanceof final Mat3x2fAttribArray mat3x2fArr)
 			mat3x2fArr.update(GameEngineUtils.castArrayMat3x2f(data));
-		} else if (arr instanceof final Mat4fAttribArray mat4fArr) {
+		else if (arr instanceof final Mat4fAttribArray mat4fArr)
 			mat4fArr.update(GameEngineUtils.castArrayMat4f(data));
-		} else {
+		else
 			PCUtils.throwUnsupported(arr.getClass().toString());
-		}
 	}
 
 	public static void resize(final JavaTypeAttribArray arr, final Object data) {
@@ -267,35 +257,30 @@ public abstract class JavaAttribArray extends AutoCleanupable implements GLObjec
 			GlobalLogger.log();
 			throw new NullPointerException("AttribArray is null !");
 		}
-		if (arr instanceof final IntAttribArray intArr) {
+		if (arr instanceof final IntAttribArray intArr)
 			intArr.resize(PCUtils.toPrimitiveInt(data));
-		} else if (arr instanceof final UIntAttribArray uintArr) {
+		else if (arr instanceof final UIntAttribArray uintArr)
 			uintArr.resize(PCUtils.toPrimitiveInt(data));
-		} else if (arr instanceof final UByteAttribArray ubyteArr) {
+		else if (arr instanceof final UByteAttribArray ubyteArr)
 			ubyteArr.resize(PCUtils.toPrimitiveByte(data));
-
-		} else if (arr instanceof final FloatAttribArray floatArr) {
+		else if (arr instanceof final FloatAttribArray floatArr)
 			floatArr.resize(PCUtils.toPrimitiveFloat(data));
-
-		} else if (arr instanceof final Vec2fAttribArray vec2fArr) {
+		else if (arr instanceof final Vec2fAttribArray vec2fArr)
 			vec2fArr.resize((Vector2f[]) data);
-		} else if (arr instanceof final Vec3fAttribArray vec3fArr) {
+		else if (arr instanceof final Vec3fAttribArray vec3fArr)
 			vec3fArr.resize((Vector3f[]) data);
-		} else if (arr instanceof final Vec4fAttribArray vec4fArr) {
+		else if (arr instanceof final Vec4fAttribArray vec4fArr)
 			vec4fArr.resize((Vector4f[]) data);
-
-		} else if (arr instanceof final Vec3iAttribArray vec3iArr) {
+		else if (arr instanceof final Vec3iAttribArray vec3iArr)
 			vec3iArr.resize((Vector3i[]) data);
-		} else if (arr instanceof final Vec4iAttribArray vec4iArr) {
+		else if (arr instanceof final Vec4iAttribArray vec4iArr)
 			vec4iArr.resize((Vector4i[]) data);
-
-		} else if (arr instanceof final Mat3x2fAttribArray mat3x2fArr) {
+		else if (arr instanceof final Mat3x2fAttribArray mat3x2fArr)
 			mat3x2fArr.resize(GameEngineUtils.castArrayMat3x2f(data));
-		} else if (arr instanceof final Mat4fAttribArray mat4fArr) {
+		else if (arr instanceof final Mat4fAttribArray mat4fArr)
 			mat4fArr.resize(GameEngineUtils.castArrayMat4f(data));
-		} else {
+		else
 			PCUtils.throwUnsupported(arr.getClass().toString());
-		}
 	}
 
 }

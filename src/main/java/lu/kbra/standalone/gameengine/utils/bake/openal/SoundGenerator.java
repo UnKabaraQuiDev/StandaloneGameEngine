@@ -44,7 +44,6 @@ public class SoundGenerator {
 				double time = (second * sampleRate + moment) * Math.PI * 2;
 
 				double x = 0, y = 0;
-				double amplitude = 0;
 				for (int circle = 0; circle < radii.length; circle++) {
 					double radius = radii[circle];
 					double coefficient = coefficients[circle];
@@ -53,7 +52,7 @@ public class SoundGenerator {
 					y += Math.sin(time) * radius;
 				}
 
-				amplitude = computeFourierSeries(time, radii);
+				double amplitude = computeFourierSeries(time, radii);
 
 				float angle = (float) java.lang.Math.atan2(x, y);
 				int note = (int) (MathUtils.snap(angle, (float) (Math.PI * 2 / 8)) / 8);
@@ -125,9 +124,8 @@ public class SoundGenerator {
 
 		ByteBuffer byteBuffer = ByteBuffer.allocate(buffer.capacity() * 2); // Each short is 2 bytes
 
-		while (buffer.hasRemaining()) {
+		while (buffer.hasRemaining())
 			byteBuffer.putShort(buffer.get());
-		}
 
 		// Write ByteBuffer to file
 		File file = new File("./resources/bakes/audio/test.ogg");
@@ -136,9 +134,8 @@ public class SoundGenerator {
 
 		try (FileOutputStream outputStream = new FileOutputStream(file)) {
 			byteBuffer.flip(); // Prepare for reading
-			while (byteBuffer.hasRemaining()) {
+			while (byteBuffer.hasRemaining())
 				outputStream.write(byteBuffer.get());
-			}
 			System.out.println("Audio file written successfully.");
 		} catch (IOException e) {
 			e.printStackTrace();

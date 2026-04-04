@@ -9,7 +9,7 @@ public interface JavaTypeAttribArray extends AttribArray {
 	int getTotalByteSize();
 
 	default int getElementByteSize() {
-		return this.getElementComponentCount() * this.getComponentByteSize();
+		return getElementComponentCount() * getComponentByteSize();
 	}
 
 	int getElementComponentCount();

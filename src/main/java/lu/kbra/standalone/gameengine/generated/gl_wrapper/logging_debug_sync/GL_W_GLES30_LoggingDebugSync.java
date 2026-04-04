@@ -19,6 +19,7 @@ import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 public class GL_W_GLES30_LoggingDebugSync extends GL_W_GLES20_LoggingDebugSync {
 	private static PCLogger LOGGER = GlobalLogger.getLogger();
 
+	@Override
 	public void init() {
 		GL_W.WRAPPER = this;
 		GL_W.GL_READ_BUFFER = GLES30.GL_READ_BUFFER;

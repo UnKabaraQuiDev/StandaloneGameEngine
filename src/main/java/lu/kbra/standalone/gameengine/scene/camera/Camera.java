@@ -19,8 +19,8 @@ public abstract class Camera {
 	protected Matrix4f viewMatrix;
 
 	public Camera(Projection proj) {
-		this.projection = proj;
-		this.viewMatrix = new Matrix4f();
+		projection = proj;
+		viewMatrix = new Matrix4f();
 	}
 
 	public abstract Matrix4f updateMatrix();
@@ -68,9 +68,7 @@ public abstract class Camera {
 		// Calculate intersection point
 		float t = -(a * origin.x + b * origin.y + c * origin.z + d) / (a * direction.x + b * direction.y + c * direction.z);
 
-		Vector3f intersectionPoint = new Vector3f(origin).add(direction.mul(t, new Vector3f()));
-
-		return intersectionPoint;
+		return new Vector3f(origin).add(direction.mul(t, new Vector3f()));
 	}
 
 	public Matrix4f getViewMatrix() {

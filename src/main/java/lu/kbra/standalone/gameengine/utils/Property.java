@@ -23,11 +23,11 @@ public class Property<T> {
 			return;
 
 		this.value = value;
-		this.changed = true;
+		changed = true;
 	}
 
 	public T readValue() {
-		this.changed = false;
+		changed = false;
 		return value;
 	}
 

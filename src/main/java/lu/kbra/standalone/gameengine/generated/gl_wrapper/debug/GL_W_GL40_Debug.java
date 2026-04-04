@@ -14,6 +14,7 @@ import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 
 public class GL_W_GL40_Debug extends GL_W_GL33_Debug {
+	@Override
 	public void init() {
 		GL_W.WRAPPER = this;
 		GL_W.GL_DRAW_INDIRECT_BUFFER = GL40.GL_DRAW_INDIRECT_BUFFER;

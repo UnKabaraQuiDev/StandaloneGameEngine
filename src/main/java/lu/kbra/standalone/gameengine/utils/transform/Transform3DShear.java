@@ -24,7 +24,7 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 		super.rotation = new Quaternionf(rotation);
 		super.scale = new Vector3f(scale);
 		this.shear = new Matrix3f(shear);
-		this.updateMatrix();
+		updateMatrix();
 	}
 
 	public Transform3DShear(final Vector3f translation, final Quaternionf rotation, final Vector3f scale, final Matrix3f shear) {
@@ -33,7 +33,7 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 		super.rotation = rotation;
 		super.scale = scale;
 		this.shear = shear;
-		this.updateMatrix();
+		updateMatrix();
 	}
 
 	public Transform3DShear(final Vector3fc translation) {
@@ -76,13 +76,13 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 
 	@Override
 	public Transform3DShear shearSet(final GeoAxis sourceAxis, final GeoAxis targetAxis, final float factor) {
-		this.shear.set(sourceAxis.getIndex(), targetAxis.getIndex(), factor);
+		shear.set(sourceAxis.getIndex(), targetAxis.getIndex(), factor);
 		return this;
 	}
 
 	@Override
 	public Transform3DShear shearAdd(final GeoAxis sourceAxis, final GeoAxis targetAxis, final float factor) {
-		this.shear.set(sourceAxis.getIndex(), targetAxis.getIndex(), this.shear.get(sourceAxis.getIndex(), targetAxis.getIndex()) + factor);
+		shear.set(sourceAxis.getIndex(), targetAxis.getIndex(), shear.get(sourceAxis.getIndex(), targetAxis.getIndex()) + factor);
 		return this;
 	}
 
@@ -94,49 +94,49 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 
 	@Override
 	public Transform3DShear shearReset() {
-		this.shear.identity();
+		shear.identity();
 		return this;
 	}
 
 	@Override
 	public Matrix3f getShear() {
-		return this.shear;
+		return shear;
 	}
 
 	@Override
 	public Matrix4f updateMatrix() {
-		this.matrix.identity();
+		matrix.identity();
 
-		this.matrix.translate(this.translation);
+		matrix.translate(translation);
 
-		this.matrix.rotate(this.rotation);
+		matrix.rotate(rotation);
 
-		this.matrix.mulAffine(this.getShearMatrix());
+		matrix.mulAffine(getShearMatrix());
 
-		this.matrix.scale(this.scale);
+		matrix.scale(scale);
 
-		return this.matrix;
+		return matrix;
 	}
 
 	@Override
 	public Transform3DShear update() {
-		this.updateMatrix();
+		updateMatrix();
 		return this;
 	}
 
 	@Override
 	public Matrix4f getShearMatrix() {
-		return new Matrix4f(this.shear.m00(),
-				this.shear.m01(),
-				this.shear.m02(),
+		return new Matrix4f(shear.m00(),
+				shear.m01(),
+				shear.m02(),
 				0f,
-				this.shear.m10(),
-				this.shear.m11(),
-				this.shear.m12(),
+				shear.m10(),
+				shear.m11(),
+				shear.m12(),
 				0f,
-				this.shear.m20(),
-				this.shear.m21(),
-				this.shear.m22(),
+				shear.m20(),
+				shear.m21(),
+				shear.m22(),
 				0f,
 				0f,
 				0f,
@@ -146,15 +146,15 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 
 	@Override
 	public Transform3DShear clone() {
-		return new Transform3DShear(this.translation.get(new Vector3f()),
-				this.rotation.get(new Quaternionf()),
-				this.scale.get(new Vector3f()),
-				this.shear.get(new Matrix3f()));
+		return new Transform3DShear(translation.get(new Vector3f()),
+				rotation.get(new Quaternionf()),
+				scale.get(new Vector3f()),
+				shear.get(new Matrix3f()));
 	}
 
 	@Override
 	public String toString() {
-		return "Transform3DShear [translation=" + this.translation + ", rotation=" + this.rotation + ", scale=" + this.scale + ", shear="
-				+ this.shear + "]";
+		return "Transform3DShear [translation=" + translation + ", rotation=" + rotation + ", scale=" + scale + ", shear="
+				+ shear + "]";
 	}
 }

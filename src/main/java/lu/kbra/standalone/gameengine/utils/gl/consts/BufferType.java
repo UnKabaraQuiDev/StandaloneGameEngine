@@ -19,8 +19,8 @@ public enum BufferType implements GLConstant {
 
 	private int glId;
 
-	private BufferType(int id) {
-		this.glId = id;
+	BufferType(int id) {
+		glId = id;
 	}
 
 	@Override

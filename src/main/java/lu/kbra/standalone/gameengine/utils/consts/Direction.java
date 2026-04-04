@@ -23,7 +23,7 @@ public enum Direction {
 	private int index;
 
 	Direction(Vector2f v, int index) {
-		this.dir = v;
+		dir = v;
 		this.index = index;
 	}
 
@@ -55,18 +55,16 @@ public enum Direction {
 	public static Direction getGLFW(int dir, float leftX, float leftY) {
 		switch (dir) {
 		case GLFW.GLFW_GAMEPAD_AXIS_LEFT_X -> {
-			if (Math.signum(leftX) == -1) {
+			if (Math.signum(leftX) == -1)
 				return Direction.WEST;
-			} else if (Math.signum(leftX) == 1) {
+			if (Math.signum(leftX) == 1)
 				return Direction.EAST;
-			}
 		}
 		case GLFW.GLFW_GAMEPAD_AXIS_LEFT_Y -> {
-			if (Math.signum(leftY) == -1) {
+			if (Math.signum(leftY) == -1)
 				return Direction.NORTH;
-			} else if (Math.signum(leftY) == 1) {
+			if (Math.signum(leftY) == 1)
 				return Direction.SOUTH;
-			}
 		}
 		}
 
@@ -94,10 +92,9 @@ public enum Direction {
 	}
 
 	public Direction add(Direction rotation) {
-		if (rotation == NONE) {
+		if (rotation == NONE)
 			rotation = DEFAULT;
-		}
-		return getByIndexValid(Math.floorMod(this.getIndex() + rotation.getIndex(), 4));
+		return getByIndexValid(Math.floorMod(getIndex() + rotation.getIndex(), 4));
 	}
 
 	public float getAngle() {

@@ -9,7 +9,7 @@ public class Entity implements SceneEntity, Cloneable {
 	protected String name = "undefined";
 
 	public Entity(String str) {
-		this.name = str;
+		name = str;
 	}
 
 	@Override
@@ -19,12 +19,12 @@ public class Entity implements SceneEntity, Cloneable {
 
 	@Override
 	public SceneEntity setActive(boolean a) {
-		this.active = a;
+		active = a;
 		return this;
 	}
 
 	protected <T extends Entity> T setId(String id) {
-		this.name = id;
+		name = id;
 		return (T) this;
 	}
 

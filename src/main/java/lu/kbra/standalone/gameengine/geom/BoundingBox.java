@@ -33,30 +33,26 @@ public class BoundingBox {
 	}
 
 	public Vector3f getCenter() {
-		if (center == null) {
+		if (center == null)
 			computeCenter();
-		}
 		return center;
 	}
 
 	public Vector3f computeCenter() {
-		if (center == null) {
+		if (center == null)
 			center = new Vector3f();
-		}
 		return min.add(max, center).mul(0.5f);
 	}
 
 	public Vector3f getSize() {
-		if (size == null) {
+		if (size == null)
 			computeSize();
-		}
 		return size;
 	}
 
 	public Vector3f computeSize() {
-		if (size == null) {
+		if (size == null)
 			size = new Vector3f();
-		}
 		return max.sub(min, size);
 	}
 

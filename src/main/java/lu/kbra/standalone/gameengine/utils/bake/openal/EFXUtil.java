@@ -164,11 +164,10 @@ public final class EFXUtil {
 			// Hack because OpenALException hides the original error code (short of parsing
 			// the
 			// error message String which would break if it gets changed).
-			if (debugBuildException.getMessage().contains("AL_OUT_OF_MEMORY")) {
+			if (debugBuildException.getMessage().contains("AL_OUT_OF_MEMORY"))
 				genError = AL_OUT_OF_MEMORY;
-			} else {
+			else
 				genError = AL_INVALID_OPERATION;
-			}
 		}
 
 		if (genError == AL_NO_ERROR) {
@@ -193,9 +192,8 @@ public final class EFXUtil {
 				setError = AL_INVALID_VALUE;
 			}
 
-			if (setError == AL_NO_ERROR) {
+			if (setError == AL_NO_ERROR)
 				supported = true;
-			}
 
 			// Cleanup
 			try {
@@ -213,9 +211,8 @@ public final class EFXUtil {
 				// Don't care about cleanup errors.
 			}
 
-		} else if (genError == AL_OUT_OF_MEMORY) {
+		} else if (genError == AL_OUT_OF_MEMORY)
 			throw new RuntimeException(alGetString(AL_OUT_OF_MEMORY));
-		}
 
 		return supported;
 	}

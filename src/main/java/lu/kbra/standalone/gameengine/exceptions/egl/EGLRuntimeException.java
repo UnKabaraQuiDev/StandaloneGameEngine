@@ -2,6 +2,8 @@ package lu.kbra.standalone.gameengine.exceptions.egl;
 
 public class EGLRuntimeException extends RuntimeException {
 
+	private static final long serialVersionUID = 1L;
+
 	public EGLRuntimeException(String str) {
 		super(str);
 	}

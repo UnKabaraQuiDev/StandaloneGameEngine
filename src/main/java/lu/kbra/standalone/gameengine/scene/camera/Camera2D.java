@@ -14,7 +14,7 @@ public class Camera2D extends Camera {
 	public Camera2D(Vector2f position, Quaternionf rot, Projection proj) {
 		super(proj);
 		this.position = position;
-		this.rotation = rot;
+		rotation = rot;
 	}
 
 	public void roll(float z) {
@@ -39,6 +39,7 @@ public class Camera2D extends Camera {
 		return this;
 	}
 
+	@Override
 	public Matrix4f updateMatrix() {
 		viewMatrix.identity();
 		viewMatrix.rotate(rotation);

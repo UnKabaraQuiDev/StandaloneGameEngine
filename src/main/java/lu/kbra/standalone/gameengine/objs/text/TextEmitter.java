@@ -68,17 +68,16 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 		this.text = text;
 		this.charSize = charSize;
 
-		this.setupData = new SetupData(material, bufferSize);
+		setupData = new SetupData(material, bufferSize);
 	}
 
 	public void setup() {
-		if (setupData == null) {
+		if (setupData == null)
 			throw new IllegalStateException("TextEmitter already initialized.");
-		}
 
-		this.charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_ID, new int[setupData.bufferSize], false, 1);
+		charBuffer = new UIntAttribArray(CHAR_BUFFER_NAME, CHAR_BUFFER_ID, new int[setupData.bufferSize], false, 1);
 		// quad mesh ownership goes to the InstanceEmitter
-		this.instances = new InstanceEmitter(name,
+		instances = new InstanceEmitter(name,
 				new QuadLoadedMesh(name, setupData.material, charSize),
 				setupData.bufferSize,
 				new Transform3D(),
@@ -90,21 +89,19 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 	}
 
 	public boolean updateText() {
-		if (charBuffer.getLength() < text.length()) {
+		if (charBuffer.getLength() < text.length())
 			GlobalLogger.warning("Char buffer too small to hold text. ('" + text + "' (" + text.length() + ") for length: "
 					+ charBuffer.getLength() + ")");
-		}
 
 		text = text.substring(0, getStringLength());
 
 		final TextMaterial material = (TextMaterial) instances.getParticleMesh().getMaterial();
-		if (material != null) {
+		if (material != null)
 			material.setProperty(TextShader.TXT_LENGTH, text.length());
-		}
 
 		final Matrix4f[] transforms = ((Mat4fAttribArray) instances.getParticleTransforms()).isLoaded()
 				? ((Mat4fAttribArray) instances.getParticleTransforms()).getData()
-				: new Matrix4f[instances.getParticleCount()];
+						: new Matrix4f[instances.getParticleCount()];
 		final Integer[] chars = new Integer[instances.getParticleCount()];
 		Arrays.fill(chars, 0);
 
@@ -120,19 +117,16 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 	}
 
 	private void updateTextContent(Matrix4f[] transforms, Integer[] chars) {
-		if (TextAlignment.LEFT == alignment) {
+		if ((TextAlignment.LEFT == alignment) || (TextAlignment.TEXT_LEFT == alignment))
 			updateTextContentLeft(transforms, chars);
-		} else if (TextAlignment.TEXT_LEFT == alignment) { // same as LEFT
-			updateTextContentLeft(transforms, chars);
-		} else if (TextAlignment.RIGHT == alignment) {
+		else if (TextAlignment.RIGHT == alignment)
 			updateTextContentRight(transforms, chars);
-		} else if (TextAlignment.TEXT_RIGHT == alignment) {
+		else if (TextAlignment.TEXT_RIGHT == alignment)
 			updateTextContentAbsRight(transforms, chars);
-		} else if (TextAlignment.CENTER == alignment) {
+		else if (TextAlignment.CENTER == alignment)
 			updateTextContentCenter(transforms, chars);
-		} else if (TextAlignment.TEXT_CENTER == alignment) {
+		else if (TextAlignment.TEXT_CENTER == alignment)
 			updateTextContentAbsCenter(transforms, chars);
-		}
 	}
 
 	private void updateTextContentAbsCenter(Matrix4f[] transforms, Integer[] chars) {
@@ -292,9 +286,8 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 	public int computeMaxWidthCount() {
 		int max = Integer.MIN_VALUE;
 
-		for (String s : text.split("\n")) {
+		for (String s : text.split("\n"))
 			max = Math.max(max, s.length());
-		}
 
 		return max;
 	}
@@ -312,11 +305,9 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 	}
 
 	public String getDisplayedText() {
-		if (boxed) {
+		if (boxed)
 			throw new UnsupportedOperationException();
-		} else {
-			return text.substring(0, Math.min(getBufferLength(), text.length())).replace("\t", TAB_CHARS);
-		}
+		return text.substring(0, Math.min(getBufferLength(), text.length())).replace("\t", TAB_CHARS);
 	}
 
 	public int getLineCount() {
@@ -378,11 +369,11 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 	}
 
 	public void setCharOffset(Vector2f charSpace) {
-		this.charOffset = charSpace;
+		charOffset = charSpace;
 	}
 
 	public Vector2fc getCharSize() {
-		return this.charSize;
+		return charSize;
 	}
 
 	public void setCorrectTransform(boolean correctTransform) {
@@ -402,19 +393,17 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 	}
 
 	public void setForegroundColor(Vector4fc col) {
-		if (fgColor == null) {
+		if (fgColor == null)
 			fgColor = new Vector4f(col);
-		} else {
-			this.fgColor.set(col);
-		}
+		else
+			fgColor.set(col);
 	}
 
 	public void setBackgroundColor(Vector4fc col) {
-		if (bgColor == null) {
+		if (bgColor == null)
 			bgColor = new Vector4f(col);
-		} else {
-			this.bgColor.set(col);
-		}
+		else
+			bgColor.set(col);
 	}
 
 	public void setTransparent(Boolean transparent) {
@@ -423,9 +412,8 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 
 	@Override
 	public void cleanup() {
-		if (instances == null) {
+		if (instances == null)
 			return;
-		}
 
 		GlobalLogger.log("Cleaning up: " + name);
 
@@ -446,7 +434,7 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 	}
 
 	public float getOpacity() {
-		return this.opacity;
+		return opacity;
 	}
 
 	public void setOpacity(float opacity) {

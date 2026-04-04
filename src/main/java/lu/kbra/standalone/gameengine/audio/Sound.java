@@ -41,7 +41,7 @@ public class Sound implements UniqueID, Cleanupable {
 
 		if (!stereo && !monoBuffer) {
 			System.err.println("converting");
-			sb = new MemBuffer<ShortBuffer>(bufferToMonoAvg(mb.getBuffer(), channels), MemBufferOrigin.OPENAL);
+			sb = new MemBuffer<>(bufferToMonoAvg(mb.getBuffer(), channels), MemBufferOrigin.OPENAL);
 			mb.cleanup();
 			stereoBuffer = false;
 		}
@@ -63,8 +63,8 @@ public class Sound implements UniqueID, Cleanupable {
 		if (!stereo && !monoBuffer) {
 			MemBuffer<ShortBuffer> preBuffer = vorbis_channels_sampleRate.getFirst();
 			vorbis_channels_sampleRate
-					.setFirst(new MemBuffer<ShortBuffer>(bufferToMonoAvg(preBuffer.getBuffer(), vorbis_channels_sampleRate.getSecond()),
-							MemBufferOrigin.OPENAL));
+			.setFirst(new MemBuffer<>(bufferToMonoAvg(preBuffer.getBuffer(), vorbis_channels_sampleRate.getSecond()),
+					MemBufferOrigin.OPENAL));
 			preBuffer.cleanup();
 			stereoBuffer = false;
 		}
@@ -72,7 +72,7 @@ public class Sound implements UniqueID, Cleanupable {
 		// copy to buffer
 		buffer.setData(vorbis_channels_sampleRate.getFirst().getBuffer(),
 				stereoBuffer ? AL11.AL_FORMAT_STEREO16 : AL11.AL_FORMAT_MONO16,
-				vorbis_channels_sampleRate.getThird());
+						vorbis_channels_sampleRate.getThird());
 
 		// free mem
 		vorbis_channels_sampleRate.getFirst().cleanup();
@@ -89,9 +89,8 @@ public class Sound implements UniqueID, Cleanupable {
 		for (int i = 0; i < length / channels; i++) {
 			int sum = 0;
 			// Calculate the sum of samples from all channels
-			for (int j = 0; j < channels; j++) {
+			for (int j = 0; j < channels; j++)
 				sum += preBuffer.get() / channels; // Dividing by channels to avoid overflow
-			}
 			sb.put((short) sum); // Put the average sample value into the output buffer
 		}
 		preBuffer.rewind(); // Reset position of input buffer
@@ -105,9 +104,8 @@ public class Sound implements UniqueID, Cleanupable {
 
 	@Override
 	public void cleanup() {
-		if (buffer == null) {
+		if (buffer == null)
 			return;
-		}
 
 		GlobalLogger.log("Cleaning up: " + name);
 

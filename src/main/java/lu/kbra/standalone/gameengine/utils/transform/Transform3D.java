@@ -29,8 +29,8 @@ public class Transform3D extends Transform {
 	}
 
 	public Transform3D(Vector3f trans, Quaternionf rot, Vector3f scale) {
-		this.translation = trans;
-		this.rotation = rot;
+		translation = trans;
+		rotation = rot;
 		this.scale = scale;
 
 		super.matrix = new Matrix4f();
@@ -75,7 +75,7 @@ public class Transform3D extends Transform {
 			translation = new Vector3f();
 			scale = new Vector3f();
 			rotation = new Quaternionf();
-			this.matrix = new Matrix4f();
+			matrix = new Matrix4f();
 			return;
 		}
 
@@ -87,7 +87,7 @@ public class Transform3D extends Transform {
 		matrix4f.getUnnormalizedRotation(rotation);
 		rotation.normalize();
 
-		this.matrix = new Matrix4f(matrix4f);
+		matrix = new Matrix4f(matrix4f);
 	}
 
 	/** chaining methods for scale */
@@ -128,22 +128,22 @@ public class Transform3D extends Transform {
 	}
 
 	public Transform3D scaleSet(float length) {
-		this.scale.set(length);
+		scale.set(length);
 		return this;
 	}
 
 	public Transform3D scaleSetX(float length) {
-		this.scale.x = length;
+		scale.x = length;
 		return this;
 	}
 
 	public Transform3D scaleSetY(float length) {
-		this.scale.y = length;
+		scale.y = length;
 		return this;
 	}
 
 	public Transform3D scaleSetZ(float length) {
-		this.scale.z = length;
+		scale.z = length;
 		return this;
 	}
 
@@ -268,37 +268,37 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
-//	public Transform3D rotate(float x, float y, float z) {
-//		final float newX = (float) Math.toRadians(x % 360);
-//		final float newY = (float) Math.toRadians(y % 360);
-//		final float newZ = (float) Math.toRadians(z % 360);
-//
-//		final Quaternionf rotationDelta = new Quaternionf();
-//		rotationDelta.rotationXYZ(newX, newY, newZ);
-//
-//		final Quaternionf conjugate = rotationDelta.conjugate();
-//
-//		rotation.mul(rotationDelta).mul(conjugate);
-//		return this;
-//	}
+	//	public Transform3D rotate(float x, float y, float z) {
+	//		final float newX = (float) Math.toRadians(x % 360);
+	//		final float newY = (float) Math.toRadians(y % 360);
+	//		final float newZ = (float) Math.toRadians(z % 360);
+	//
+	//		final Quaternionf rotationDelta = new Quaternionf();
+	//		rotationDelta.rotationXYZ(newX, newY, newZ);
+	//
+	//		final Quaternionf conjugate = rotationDelta.conjugate();
+	//
+	//		rotation.mul(rotationDelta).mul(conjugate);
+	//		return this;
+	//	}
 
 	public Transform3D rotationAdd(float x, float y, float z) {
-		this.rotation.rotateXYZ(x, y, z);
+		rotation.rotateXYZ(x, y, z);
 		return this;
 	}
 
 	public Transform3D rotationAdd(Vector3fc v) {
-		this.rotation.rotateXYZ(v.x(), v.y(), v.z());
+		rotation.rotateXYZ(v.x(), v.y(), v.z());
 		return this;
 	}
 
 	public Transform3D rotationSet(float x, float y, float z) {
-		this.rotation.identity().rotationXYZ(x, y, z);
+		rotation.identity().rotationXYZ(x, y, z);
 		return this;
 	}
 
 	public Transform3D rotationSet(Vector3fc v) {
-		this.rotation.identity().rotationXYZ(v.x(), v.y(), v.z());
+		rotation.identity().rotationXYZ(v.x(), v.y(), v.z());
 		return this;
 	}
 
@@ -341,9 +341,9 @@ public class Transform3D extends Transform {
 	}
 
 	public Transform3D set(Transform3D last) {
-		this.translation.set(last.translation);
-		this.scale.set(last.scale);
-		this.rotation.set(last.rotation);
+		translation.set(last.translation);
+		scale.set(last.scale);
+		rotation.set(last.rotation);
 		return this;
 	}
 

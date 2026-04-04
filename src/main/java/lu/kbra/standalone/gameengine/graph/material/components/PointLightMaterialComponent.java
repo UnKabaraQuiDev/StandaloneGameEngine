@@ -6,9 +6,9 @@ public class PointLightMaterialComponent extends MaterialComponent {
 	private int maxLights;
 
 	public PointLightMaterialComponent(String name, String countName, int max) {
-		this.lightName = name;
-		this.lightCountName = countName;
-		this.maxLights = max;
+		lightName = name;
+		lightCountName = countName;
+		maxLights = max;
 	}
 
 	public String getLightCountName() {

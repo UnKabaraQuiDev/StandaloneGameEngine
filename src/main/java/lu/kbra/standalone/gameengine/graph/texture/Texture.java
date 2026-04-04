@@ -38,9 +38,9 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	protected TextureOperation textureOperation = null;
 
 	public Texture(final String _name, final String _path, final TextureOperation txtOp) {
-		this.name = _name;
-		this.path = _path;
-		this.textureOperation = txtOp;
+		name = _name;
+		path = _path;
+		textureOperation = txtOp;
 	}
 
 	public abstract boolean setup();
@@ -48,85 +48,82 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	public abstract boolean checkConfigErrors();
 
 	protected int gen() {
-		this.glId = GL_W.glGenTextures();
-		return this.glId;
+		glId = GL_W.glGenTextures();
+		return glId;
 	}
 
 	public void active(final int i) {
-		if (i > 31) {
+		if (i > 31)
 			return;
-		}
 		GL_W.glActiveTexture(GL_W.GL_TEXTURE0 + i);
 	}
 
 	@Override
 	public void bind(final int i) {
-		this.active(i);
+		active(i);
 		this.bind();
 	}
 
 	public void bind() {
-		if (this.glId == -1) {
+		if (glId == -1)
 			return;
-		}
-		GL_W.glBindTexture(this.txtType.getGlId(), this.glId);
+		GL_W.glBindTexture(txtType.getGlId(), glId);
 	}
 
 	public void unbind(final int i) {
-		this.active(i);
+		active(i);
 		this.unbind();
 	}
 
 	public void unbind() {
-		GL_W.glBindTexture(this.txtType.getGlId(), 0);
+		GL_W.glBindTexture(txtType.getGlId(), 0);
 	}
 
 	public void genMipMaps() {
 		this.bind();
-		GL_W.glGenerateMipmap(this.txtType.getGlId());
+		GL_W.glGenerateMipmap(txtType.getGlId());
 	}
 
 	public void applyFilter() {
-		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.MIN_FILTER.getGlId(), this.minFilter.getGlId());
-		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.MAG_FILTER.getGlId(), this.magFilter.getGlId());
+		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.MIN_FILTER.getGlId(), minFilter.getGlId());
+		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.MAG_FILTER.getGlId(), magFilter.getGlId());
 	}
 
 	public void applyWrap() {
-		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.WRAP_HORIZONTAL.getGlId(), this.hWrap.getGlId());
-		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.WRAP_VERTICAL.getGlId(), this.vWrap.getGlId());
-		GL_W.glTexParameteri(this.txtType.getGlId(), TextureParameter.WRAP_DEPTH.getGlId(), this.dWrap.getGlId());
+		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_HORIZONTAL.getGlId(), hWrap.getGlId());
+		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_VERTICAL.getGlId(), vWrap.getGlId());
+		GL_W.glTexParameteri(txtType.getGlId(), TextureParameter.WRAP_DEPTH.getGlId(), dWrap.getGlId());
 	}
 
 	@Override
 	public void cleanup() {
-		if (this.glId == -1) {
+		if (glId == -1)
 			return;
-		}
 
-		GlobalLogger.log("Cleaning up: " + this.name + " (" + this.glId + ")");
+		GlobalLogger.log("Cleaning up: " + name + " (" + glId + ")");
 
-		GL_W.glDeleteTextures(this.glId);
-		this.glId = -1;
+		GL_W.glDeleteTextures(glId);
+		glId = -1;
 
 		super.cleanup();
 	}
 
 	@Override
 	public String getId() {
-		return this.name;
+		return name;
 	}
 
 	@Override
 	public int getGlId() {
-		return this.glId;
+		return glId;
 	}
 
 	public String getPath() {
-		return this.path;
+		return path;
 	}
 
 	public TextureFilter getMinFilter() {
-		return this.minFilter;
+		return minFilter;
 	}
 
 	public void setMinFilter(final TextureFilter minFilter) {
@@ -134,7 +131,7 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public TextureFilter getMagFilter() {
-		return this.magFilter;
+		return magFilter;
 	}
 
 	public void setMagFilter(final TextureFilter magFilter) {
@@ -142,17 +139,17 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public void setFilters(final TextureFilter min, final TextureFilter mag) {
-		this.minFilter = min;
-		this.magFilter = mag;
+		minFilter = min;
+		magFilter = mag;
 	}
 
 	public void setFilters(final TextureFilter filter) {
-		this.minFilter = filter;
-		this.magFilter = filter;
+		minFilter = filter;
+		magFilter = filter;
 	}
 
 	public TextureType getTextureType() {
-		return this.txtType;
+		return txtType;
 	}
 
 	public void setTextureType(final TextureType txtType) {
@@ -160,7 +157,7 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public TextureWrap gethWrap() {
-		return this.hWrap;
+		return hWrap;
 	}
 
 	public void sethWrap(final TextureWrap hWrap) {
@@ -168,7 +165,7 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public TextureWrap getvWrap() {
-		return this.vWrap;
+		return vWrap;
 	}
 
 	public void setvWrap(final TextureWrap vWrap) {
@@ -176,7 +173,7 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public TextureWrap getdWrap() {
-		return this.dWrap;
+		return dWrap;
 	}
 
 	public void setdWrap(final TextureWrap dWrap) {
@@ -190,13 +187,13 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public void setWraps(final TextureWrap wrap) {
-		this.hWrap = wrap;
-		this.vWrap = wrap;
-		this.dWrap = wrap;
+		hWrap = wrap;
+		vWrap = wrap;
+		dWrap = wrap;
 	}
 
 	public TexelFormat getTexelFormat() {
-		return this.texelFormat;
+		return texelFormat;
 	}
 
 	public void setTexelFormat(final TexelFormat texelFormat) {
@@ -204,7 +201,7 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public TexelInternalFormat getTexelInternalFormat() {
-		return this.texelInternalFormat;
+		return texelInternalFormat;
 	}
 
 	public void setTexelInternalFormat(final TexelInternalFormat texelInternalFormat) {
@@ -212,7 +209,7 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public DataType getDataType() {
-		return this.dataType;
+		return dataType;
 	}
 
 	public void setDataType(final DataType dataType) {
@@ -221,11 +218,11 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 
 	@Override
 	public boolean isValid() {
-		return this.glId != -1;
+		return glId != -1;
 	}
 
 	public boolean isGenerateMipmaps() {
-		return this.generateMipmaps;
+		return generateMipmaps;
 	}
 
 	public void setGenerateMipmaps(final boolean generateMipmaps) {
@@ -233,11 +230,11 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public boolean isArray() {
-		return TextureType.isArray(this.txtType);
+		return TextureType.isArray(txtType);
 	}
 
 	public int getSampleCount() {
-		return this.sampleCount;
+		return sampleCount;
 	}
 
 	public void setSampleCount(final int sampleCount) {
@@ -246,12 +243,12 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 
 	@Override
 	public String toString() {
-		return this.getClass().getSimpleName() + " [path=" + this.path + ", name=" + this.name + ", tid=" + this.glId + ", minFilter="
-				+ this.minFilter + ", magFilter=" + this.magFilter + ", txtType=" + this.txtType + ", hWrap=" + this.hWrap + ", vWrap="
-				+ this.vWrap + ", dWrap=" + this.dWrap + ", dataType=" + this.dataType + ", format=" + this.texelFormat
-				+ ", internalFormat=" + this.texelInternalFormat + ", generateMipmaps=" + this.generateMipmaps + ", fixedSampleLocation="
-				+ this.fixedSampleLocation + ", sampleCount=" + this.sampleCount + ", textureOperation=" + this.textureOperation
-				+ ", isValid()=" + this.isValid() + "]";
+		return this.getClass().getSimpleName() + " [path=" + path + ", name=" + name + ", tid=" + glId + ", minFilter="
+				+ minFilter + ", magFilter=" + magFilter + ", txtType=" + txtType + ", hWrap=" + hWrap + ", vWrap="
+				+ vWrap + ", dWrap=" + dWrap + ", dataType=" + dataType + ", format=" + texelFormat
+				+ ", internalFormat=" + texelInternalFormat + ", generateMipmaps=" + generateMipmaps + ", fixedSampleLocation="
+				+ fixedSampleLocation + ", sampleCount=" + sampleCount + ", textureOperation=" + textureOperation
+				+ ", isValid()=" + isValid() + "]";
 	}
 
 	public static TexelFormat getFormatByChannels(final int channels) {
@@ -307,28 +304,26 @@ public abstract class Texture extends AutoCleanupable implements UniqueID, Frame
 	}
 
 	public static int getChannelsByInternalFormat(final int format) {
-		if (format == TexelInternalFormat.RED.getGlId()) {
+		if (format == TexelInternalFormat.RED.getGlId())
 			return 1;
-		} else if (format == TexelInternalFormat.RG.getGlId()) {
+		if (format == TexelInternalFormat.RG.getGlId())
 			return 2;
-		} else if (format == TexelInternalFormat.RGB.getGlId()) {
+		else if (format == TexelInternalFormat.RGB.getGlId())
 			return 3;
-		} else if (format == TexelInternalFormat.RGBA.getGlId()) {
+		else if (format == TexelInternalFormat.RGBA.getGlId())
 			return 4;
-		}
 		return -1;
 	}
 
 	public static int getChannelsByFormat(final int format) {
-		if (format == TexelFormat.RED.getGlId()) {
+		if (format == TexelFormat.RED.getGlId())
 			return 1;
-		} else if (format == TexelFormat.RG.getGlId()) {
+		if (format == TexelFormat.RG.getGlId())
 			return 2;
-		} else if (format == TexelFormat.RGB.getGlId()) {
+		else if (format == TexelFormat.RGB.getGlId())
 			return 3;
-		} else if (format == TexelFormat.RGBA.getGlId()) {
+		else if (format == TexelFormat.RGBA.getGlId())
 			return 4;
-		}
 		return -1;
 	}
 

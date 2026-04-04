@@ -37,7 +37,7 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 	default void flatForEach(final Consumer<? super SceneEntity> action) {
 		// TODO: This isn't lock safe
 		synchronized (this.getEntitiesLock()) {
-			this.flatStream().forEach(action);
+			flatStream().forEach(action);
 		}
 	}
 
@@ -55,12 +55,10 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 
 	@Override
 	default <T extends B> T add(final T entity) {
-		if (this instanceof ParentAwareNode pan) {
+		if (this instanceof ParentAwareNode pan)
 			assert !pan.getParents().contains(entity) : "Child cannot be parent.";
-		}
-		if (entity == null) {
+		if (entity == null)
 			return null;
-		}
 		synchronized (this.getEntitiesLock()) {
 			this.getWEntities().add(entity);
 		}
@@ -73,13 +71,11 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 
 	@Override
 	default <T extends B> T[] addAll(final T... entity) {
-		if (entity == null || entity.length == 0) {
+		if (entity == null || entity.length == 0)
 			return null;
-		}
 		synchronized (this.getEntitiesLock()) {
-			for (final T e : entity) {
+			for (final T e : entity)
 				this.add(e);
-			}
 		}
 		return entity;
 	}
@@ -122,9 +118,8 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 	@Override
 	default <T extends B> Optional<T> remove(final T e) {
 		synchronized (this.getEntitiesLock()) {
-			if (e == null) {
+			if (e == null)
 				return Optional.empty();
-			}
 			final T old = (T) this.getWEntities().parallelStream().filter(c -> c.getId().equals(e.getId())).findFirst().orElse(null);
 			if (old != null) {
 				if (old instanceof final ParentAwareNode pa) {
@@ -149,10 +144,9 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 				this.add(new_);
 				return Optional.empty();
 			}
-			if (found != old) {
+			if (found != old)
 				throw new IllegalStateException("Found value and given old values do not match (" + PCUtils.toSimpleIdentityString(found)
-						+ " <> " + PCUtils.toSimpleIdentityString(old) + ").");
-			}
+				+ " <> " + PCUtils.toSimpleIdentityString(old) + ").");
 			this.add(new_);
 			return Optional.of(found);
 		}

@@ -6,6 +6,7 @@ import lu.kbra.pclib.pointer.prim.BooleanPointer;
 
 public class YieldExecutionThrowable extends Throwable {
 
+	private static final long serialVersionUID = 1L;
 	protected boolean setTimeout = false;
 	protected long timeoutNanos = 0;
 
@@ -19,12 +20,12 @@ public class YieldExecutionThrowable extends Throwable {
 	}
 
 	public YieldExecutionThrowable(BooleanPointer lock) {
-		this.predicate = lock::get;
+		predicate = lock::get;
 	}
 
 	public YieldExecutionThrowable(long timeoutNanos) {
 		this.timeoutNanos = timeoutNanos;
-		this.setTimeout = true;
+		setTimeout = true;
 	}
 
 	public boolean isSetTimeout() {

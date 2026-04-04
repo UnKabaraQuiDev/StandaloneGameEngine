@@ -23,7 +23,7 @@ public interface ShearOwner {
 	Matrix3f getShear();
 
 	default void applyShear(final AffineTransform affine) {
-		final Matrix3fc shear = this.getShear();
+		final Matrix3fc shear = getShear();
 		// project XZ plane: x' = m00*x + m02*z, z' = m20*x + m22*z
 		final AffineTransform shearAffine = new AffineTransform(shear.m00(),
 				shear.m20(), // m00, m10
@@ -31,7 +31,7 @@ public interface ShearOwner {
 				shear.m22(), // m01, m11
 				0,
 				0 // no translation
-		);
+				);
 		affine.concatenate(shearAffine);
 	}
 }

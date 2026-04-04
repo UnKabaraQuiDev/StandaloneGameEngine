@@ -51,51 +51,47 @@ public class SyntheticMat4fAttribArray extends Mat4fAttribArray {
 
 	@Override
 	public void init() {
-		this.bind();
+		bind();
 
-		GL_W.glBufferData(this.bufferType.getGlId(),
-				this.length * this.getElementByteSize(),
-				this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(),
+				length * getElementByteSize(),
+				iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 	}
 
 	@Override
 	public void update(final Matrix4f[] nPos) {
-		if (this.iStatic) {
+		if (iStatic)
 			throw new UnsupportedOperationException("Array is static.");
-		} else if (nPos.length != super.length) {
+		if (nPos.length != super.length)
 			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + super.length + ").");
-		}
-		this.bind();
+		bind();
 
-		GL_W.glBufferSubData(this.bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
 	}
 
 	public void resize(final int newSize) {
-		this.bind();
+		bind();
 
-		if (newSize == super.length) {
-//			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
+		if (newSize == super.length)
+			//			GL_W.glBufferSubData(bufferType.getGlId(), 0, nPos);
 			return;
-		} else {
-			GL_W.glBufferData(this.bufferType.getGlId(),
-					newSize * this.getElementByteSize(),
-					this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
+		GL_W.glBufferData(bufferType.getGlId(),
+				newSize * getElementByteSize(),
+				iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
 		super.length = newSize;
 	}
 
 	@Override
 	public void resize(final Matrix4f[] nPos) {
-		this.bind();
+		bind();
 
-		if (nPos.length == super.length) {
-			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
-		} else {
-			GL_W.glBufferData(this.bufferType.getGlId(),
+		if (nPos.length == super.length)
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, GameEngineUtils.toFlatArray(nPos));
+		else
+			GL_W.glBufferData(bufferType.getGlId(),
 					GameEngineUtils.toFlatArray(nPos),
-					this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
+					iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
 		super.length = nPos.length;
 	}

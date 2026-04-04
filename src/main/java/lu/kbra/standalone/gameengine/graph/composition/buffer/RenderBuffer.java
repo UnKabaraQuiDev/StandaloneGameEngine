@@ -48,6 +48,7 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 		GL_W.glActiveTexture(GL_W.GL_TEXTURE0 + i);
 	}
 
+	@Override
 	public void bind(int target) {
 		GL_W.glBindRenderbuffer(target, rbid);
 	}
@@ -65,7 +66,7 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 	}
 
 	public void setTexelInternalFormat(TexelInternalFormat texelFormat) {
-		this.texelInternalFormat = texelFormat;
+		texelInternalFormat = texelFormat;
 	}
 
 	public int getWidth() {
@@ -85,8 +86,8 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 	}
 
 	public void setSize(int w, int h) {
-		this.width = w;
-		this.height = h;
+		width = w;
+		height = h;
 	}
 
 	public int getRbid() {
@@ -95,9 +96,8 @@ public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachmen
 
 	@Override
 	public void cleanup() {
-		if (rbid == -1) {
+		if (rbid == -1)
 			return;
-		}
 
 		GlobalLogger.log("Cleaning up: " + name + "(" + rbid + ")");
 

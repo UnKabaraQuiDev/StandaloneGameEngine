@@ -19,9 +19,8 @@ non-sealed public interface ParentAwareNode extends ParentAwareComponent {
 		final Iterator<ParentAwareComponent> it = this.getParents(includeSelf).descendingIterator();
 		while (it.hasNext()) {
 			final ParentAwareComponent parent = it.next();
-			if (type.isInstance(parent)) {
+			if (type.isInstance(parent))
 				return Optional.of(type.cast(parent));
-			}
 		}
 		return Optional.empty();
 	}
@@ -31,11 +30,9 @@ non-sealed public interface ParentAwareNode extends ParentAwareComponent {
 	}
 
 	default <T> Optional<? extends T> getFirstParentMatching(final Class<T> type, final boolean includeSelf) {
-		for (final ParentAwareComponent parent : this.getParents(includeSelf)) {
-			if (type.isInstance(parent)) {
+		for (final ParentAwareComponent parent : this.getParents(includeSelf))
+			if (type.isInstance(parent))
 				return Optional.of(type.cast(parent));
-			}
-		}
 		return Optional.empty();
 	}
 
@@ -53,17 +50,16 @@ non-sealed public interface ParentAwareNode extends ParentAwareComponent {
 	}
 
 	default ParentAwareComponent getFirstParent() {
-		ParentAwareComponent current = this.getParent();
+		ParentAwareComponent current = getParent();
 
-		while (current instanceof final ParentAwareNode pan && pan.hasParent()) {
+		while (current instanceof final ParentAwareNode pan && pan.hasParent())
 			current = pan.getParent();
-		}
 
 		return current;
 	}
 
 	default boolean hasParent() {
-		return this.getParent() != null;
+		return getParent() != null;
 	}
 
 	default Deque<ParentAwareComponent> getParents() {

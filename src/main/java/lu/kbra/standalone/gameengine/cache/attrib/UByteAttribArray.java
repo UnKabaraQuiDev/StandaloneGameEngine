@@ -33,91 +33,86 @@ public class UByteAttribArray extends JavaAttribArray implements ByteJavaTypeAtt
 
 	@Override
 	public void init() {
-		this.bind();
+		bind();
 
-		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(this.data.length);
-		bbuffer.put(this.data);
+		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(data.length);
+		bbuffer.put(data);
 		bbuffer.flip();
 
-		super.length = this.data.length;
+		super.length = data.length;
 
-		GL_W.glBufferData(this.bufferType.getGlId(), bbuffer, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (this.isVertexArray()) {
-			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_BYTE, this.getElementByteSize(), 0);
-		}
+		if (isVertexArray())
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_BYTE, getElementByteSize(), 0);
 	}
 
 	public void update(final byte[] nPos) {
-		if (nPos.length != this.data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + this.data.length + ").");
-		}
+		if (nPos.length != data.length)
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 
 		this.update(0, nPos);
 	}
 
 	public void update(final int index, final byte[] nPos) {
-		this.bind();
+		bind();
 
-		if (this.iStatic) {
+		if (iStatic)
 			throw new UnsupportedOperationException("Array is static.");
-		}
 
-		System.arraycopy(nPos, 0, this.data, index, nPos.length);
-		super.length = this.data.length;
+		System.arraycopy(nPos, 0, data, index, nPos.length);
+		super.length = data.length;
 
 		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(nPos.length);
 		bbuffer.put(nPos);
 		bbuffer.flip();
 
-		GL_W.glBufferSubData(this.bufferType.getGlId(), index * this.getElementByteSize(), bbuffer);
+		GL_W.glBufferSubData(bufferType.getGlId(), index * getElementByteSize(), bbuffer);
 	}
 
 	public void resize(final byte[] nPos) {
-		this.bind();
+		bind();
 
-		final boolean sameSize = nPos.length == this.data.length;
-		this.data = nPos;
-		super.length = this.data.length;
+		final boolean sameSize = nPos.length == data.length;
+		data = nPos;
+		super.length = data.length;
 
-		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(this.data.length);
-		bbuffer.put(this.data);
+		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(data.length);
+		bbuffer.put(data);
 		bbuffer.flip();
 
-		if (sameSize) {
-			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, bbuffer);
-		} else {
-			GL_W.glBufferData(this.bufferType.getGlId(), bbuffer, this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
+		if (sameSize)
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, bbuffer);
+		else
+			GL_W.glBufferData(bufferType.getGlId(), bbuffer, iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (this.isVertexArray()) {
-			GL_W.glVertexAttribIPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, this.getElementByteSize(), 0);
-		}
+		if (isVertexArray())
+			GL_W.glVertexAttribIPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, getElementByteSize(), 0);
 	}
 
 	@Override
 	public boolean isLoaded() {
-		return this.data != null;
+		return data != null;
 	}
 
 	@Override
 	public int getLength() {
-		return this.isLoaded() ? (this.length = this.data.length) : super.getLength();
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override
 	public Byte get(final int i) {
-		return !this.isLoaded() ? null : this.data[i];
+		return !isLoaded() ? null : data[i];
 	}
 
 	@Override
 	public byte[] getData() {
-		return this.data;
+		return data;
 	}
 
 	@Override
 	public void update() {
-		this.update(this.data);
+		this.update(data);
 	}
 
 	@Override
@@ -127,7 +122,7 @@ public class UByteAttribArray extends JavaAttribArray implements ByteJavaTypeAtt
 
 	@Override
 	public byte[] toFlatArray() {
-		return this.data;
+		return data;
 	}
 
 }

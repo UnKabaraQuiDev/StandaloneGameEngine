@@ -48,14 +48,14 @@ public class CacheManager implements Cleanupable, UniqueID {
 		this.parent = parent;
 		this.name = name;
 
-		this.meshes = new ConcurrentHashMap<>();
-		this.scenes = new ConcurrentHashMap<>();
-		this.abstractShaders = new ConcurrentHashMap<>();
-		this.textures = new ConcurrentHashMap<>();
-		this.textEmitters = new ConcurrentHashMap<>();
-		this.instanceEmitters = new ConcurrentHashMap<>();
-		this.sounds = new ConcurrentHashMap<>();
-		this.framebuffers = new ConcurrentHashMap<>();
+		meshes = new ConcurrentHashMap<>();
+		scenes = new ConcurrentHashMap<>();
+		abstractShaders = new ConcurrentHashMap<>();
+		textures = new ConcurrentHashMap<>();
+		textEmitters = new ConcurrentHashMap<>();
+		instanceEmitters = new ConcurrentHashMap<>();
+		sounds = new ConcurrentHashMap<>();
+		framebuffers = new ConcurrentHashMap<>();
 	}
 
 	@Override
@@ -63,31 +63,31 @@ public class CacheManager implements Cleanupable, UniqueID {
 		GlobalLogger.log(Level.WARNING);
 		GlobalLogger.warning("Cleaning up !");
 
-		this.meshes.values().forEach(Mesh::cleanup);
-		this.meshes.clear();
+		meshes.values().forEach(Mesh::cleanup);
+		meshes.clear();
 
-		this.scenes.values().forEach(Scene::cleanup);
-		this.scenes.clear();
+		scenes.values().forEach(Scene::cleanup);
+		scenes.clear();
 
-		this.abstractShaders.values().forEach(AbstractShader::cleanup);
-		this.abstractShaders.clear();
+		abstractShaders.values().forEach(AbstractShader::cleanup);
+		abstractShaders.clear();
 
-		this.textures.values().forEach(Texture::cleanup);
-		this.textures.clear();
+		textures.values().forEach(Texture::cleanup);
+		textures.clear();
 
-		this.textEmitters.values().forEach(TextEmitter::cleanup);
-		this.textEmitters.clear();
+		textEmitters.values().forEach(TextEmitter::cleanup);
+		textEmitters.clear();
 
-		this.instanceEmitters.values().forEach(InstanceEmitter::cleanup);
-		this.instanceEmitters.clear();
+		instanceEmitters.values().forEach(InstanceEmitter::cleanup);
+		instanceEmitters.clear();
 
-		this.sounds.values().forEach(Sound::cleanup);
-		this.sounds.clear();
+		sounds.values().forEach(Sound::cleanup);
+		sounds.clear();
 
-		this.framebuffers.values().forEach(Framebuffer::cleanup);
-		this.framebuffers.clear();
+		framebuffers.values().forEach(Framebuffer::cleanup);
+		framebuffers.clear();
 
-//		this.name = null;
+		//		this.name = null;
 	}
 
 	@Override
@@ -96,8 +96,8 @@ public class CacheManager implements Cleanupable, UniqueID {
 	}
 
 	public void cleanupSounds() {
-		this.sounds.values().forEach(Sound::cleanup);
-		this.sounds.clear();
+		sounds.values().forEach(Sound::cleanup);
+		sounds.clear();
 	}
 
 	/*
@@ -107,74 +107,74 @@ public class CacheManager implements Cleanupable, UniqueID {
 	public boolean addMesh(Mesh m) {
 		if (m == null)
 			return false;
-		if (this.meshes.containsKey(m.getId()) && !this.meshes.get(m.getId()).equals(m)) {
+		if (meshes.containsKey(m.getId()) && !meshes.get(m.getId()).equals(m)) {
 			GlobalLogger.severe("Overwriting Mesh: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
-//			new Exception("Overwriting Mesh: " + m).fillInStackTrace().printStackTrace();
-			this.meshes.remove(m.getId()).cleanup();
+			//			new Exception("Overwriting Mesh: " + m).fillInStackTrace().printStackTrace();
+			meshes.remove(m.getId()).cleanup();
 		}
-		return this.meshes.putIfAbsent(m.getId(), m) == null;
+		return meshes.putIfAbsent(m.getId(), m) == null;
 	}
 
 	public boolean addScene(Scene m) {
 		if (m == null)
 			return false;
-		if (this.scenes.containsKey(m.getId()) && !this.scenes.get(m.getId()).equals(m))
-			this.scenes.remove(m.getId()).cleanup();
-		return this.scenes.putIfAbsent(m.getId(), m) == null;
+		if (scenes.containsKey(m.getId()) && !scenes.get(m.getId()).equals(m))
+			scenes.remove(m.getId()).cleanup();
+		return scenes.putIfAbsent(m.getId(), m) == null;
 	}
 
 	public boolean addAbstractShader(AbstractShader m) {
 		if (m == null)
 			return false;
-		if (this.abstractShaders.containsKey(m.getId()) && !this.abstractShaders.get(m.getId()).equals(m)) {
+		if (abstractShaders.containsKey(m.getId()) && !abstractShaders.get(m.getId()).equals(m)) {
 			GlobalLogger
-					.severe("Overwriting AbstractShader: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
-			this.abstractShaders.remove(m.getId()).cleanup();
+			.severe("Overwriting AbstractShader: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
+			abstractShaders.remove(m.getId()).cleanup();
 		}
-		return this.abstractShaders.putIfAbsent(m.getId(), m) == null;
+		return abstractShaders.putIfAbsent(m.getId(), m) == null;
 	}
 
 	public boolean addTexture(Texture m) {
 		if (m == null)
 			return false;
-		if (this.textures.containsKey(m.getId()) && !this.textures.get(m.getId()).equals(m))
-			this.textures.remove(m.getId()).cleanup();
-		return this.textures.putIfAbsent(m.getId(), m) == null;
+		if (textures.containsKey(m.getId()) && !textures.get(m.getId()).equals(m))
+			textures.remove(m.getId()).cleanup();
+		return textures.putIfAbsent(m.getId(), m) == null;
 	}
 
 	public boolean addTextEmitter(TextEmitter m) {
 		if (m == null)
 			return false;
-		if (this.textEmitters.containsKey(m.getId()) && !this.textEmitters.get(m.getId()).equals(m))
-			this.textEmitters.remove(m.getId()).cleanup();
-		return this.textEmitters.putIfAbsent(m.getId(), m) == null;
+		if (textEmitters.containsKey(m.getId()) && !textEmitters.get(m.getId()).equals(m))
+			textEmitters.remove(m.getId()).cleanup();
+		return textEmitters.putIfAbsent(m.getId(), m) == null;
 	}
 
 	public boolean addInstanceEmitter(InstanceEmitter m) {
 		if (m == null)
 			return false;
-		if (this.instanceEmitters.containsKey(m.getId()) && !this.instanceEmitters.get(m.getId()).equals(m)) {
+		if (instanceEmitters.containsKey(m.getId()) && !instanceEmitters.get(m.getId()).equals(m)) {
 			GlobalLogger
-					.severe("Overwriting InstanceEmitter: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
-			this.instanceEmitters.remove(m.getId()).cleanup();
+			.severe("Overwriting InstanceEmitter: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
+			instanceEmitters.remove(m.getId()).cleanup();
 		}
-		return this.instanceEmitters.putIfAbsent(m.getId(), m) == null;
+		return instanceEmitters.putIfAbsent(m.getId(), m) == null;
 	}
 
 	public boolean addSound(Sound m) {
 		if (m == null)
 			return false;
-		if (this.sounds.containsKey(m.getId()) && !this.sounds.get(m.getId()).equals(m))
-			this.sounds.remove(m.getId()).cleanup();
-		return this.sounds.putIfAbsent(m.getId(), m) == null;
+		if (sounds.containsKey(m.getId()) && !sounds.get(m.getId()).equals(m))
+			sounds.remove(m.getId()).cleanup();
+		return sounds.putIfAbsent(m.getId(), m) == null;
 	}
 
 	public boolean addFramebuffer(Framebuffer m) {
 		if (m == null)
 			return false;
-		if (this.framebuffers.containsKey(m.getId()) && !this.framebuffers.get(m.getId()).equals(m))
-			this.framebuffers.remove(m.getId()).cleanup();
-		return this.framebuffers.putIfAbsent(m.getId(), m) == null;
+		if (framebuffers.containsKey(m.getId()) && !framebuffers.get(m.getId()).equals(m))
+			framebuffers.remove(m.getId()).cleanup();
+		return framebuffers.putIfAbsent(m.getId(), m) == null;
 	}
 
 	/*
@@ -182,15 +182,15 @@ public class CacheManager implements Cleanupable, UniqueID {
 	 */
 
 	public Mesh getMesh(String name) {
-		return this.meshes.getOrDefault(name, parent == null ? null : parent.getMesh(name));
+		return meshes.getOrDefault(name, parent == null ? null : parent.getMesh(name));
 	}
 
 	public Scene getScene(String name) {
-		return this.scenes.getOrDefault(name, parent == null ? null : parent.getScene(name));
+		return scenes.getOrDefault(name, parent == null ? null : parent.getScene(name));
 	}
 
 	public AbstractShader getAbstractShader(String name) {
-		return this.abstractShaders.getOrDefault(name, parent == null ? null : parent.getAbstractShader(name));
+		return abstractShaders.getOrDefault(name, parent == null ? null : parent.getAbstractShader(name));
 	}
 
 	public <T extends AbstractShader> T getAbstractShader(Class<T> clazz) {
@@ -202,23 +202,23 @@ public class CacheManager implements Cleanupable, UniqueID {
 	}
 
 	public Texture getTexture(String name) {
-		return this.textures.getOrDefault(name, parent == null ? null : parent.getTexture(name));
+		return textures.getOrDefault(name, parent == null ? null : parent.getTexture(name));
 	}
 
 	public TextEmitter getTextEmitter(String name) {
-		return this.textEmitters.getOrDefault(name, parent == null ? null : parent.getTextEmitter(name));
+		return textEmitters.getOrDefault(name, parent == null ? null : parent.getTextEmitter(name));
 	}
 
 	public InstanceEmitter getInstanceEmitter(String name) {
-		return this.instanceEmitters.getOrDefault(name, parent == null ? null : parent.getInstanceEmitter(name));
+		return instanceEmitters.getOrDefault(name, parent == null ? null : parent.getInstanceEmitter(name));
 	}
 
 	public Sound getSound(String name) {
-		return this.sounds.getOrDefault(name, parent == null ? null : parent.getSound(name));
+		return sounds.getOrDefault(name, parent == null ? null : parent.getSound(name));
 	}
 
 	public Framebuffer getFramebuffer(String name) {
-		return this.framebuffers.getOrDefault(name, parent == null ? null : parent.getFramebuffer(name));
+		return framebuffers.getOrDefault(name, parent == null ? null : parent.getFramebuffer(name));
 	}
 
 	/*
@@ -226,7 +226,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 	 */
 
 	public Map<String, Mesh> getMeshes() {
-		return this.meshes;
+		return meshes;
 	}
 
 	public void setMeshes(Map<String, Mesh> meshes) {
@@ -234,7 +234,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 	}
 
 	public Map<String, Scene> getScenes() {
-		return this.scenes;
+		return scenes;
 	}
 
 	public void setScenes(Map<String, Scene> scenes) {
@@ -242,15 +242,15 @@ public class CacheManager implements Cleanupable, UniqueID {
 	}
 
 	public Map<String, AbstractShader> getRenderShaders() {
-		return this.abstractShaders;
+		return abstractShaders;
 	}
 
 	public void setRenderShaders(Map<String, AbstractShader> shaders) {
-		this.abstractShaders = shaders;
+		abstractShaders = shaders;
 	}
 
 	public Map<String, Texture> getTextures() {
-		return this.textures;
+		return textures;
 	}
 
 	public void setTextures(Map<String, Texture> textures) {
@@ -266,7 +266,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 	}
 
 	public Map<String, InstanceEmitter> getInstanceEmitters() {
-		return this.instanceEmitters;
+		return instanceEmitters;
 	}
 
 	public void setInstanceEmitters(Map<String, InstanceEmitter> instanceEmitters) {
@@ -327,37 +327,35 @@ public class CacheManager implements Cleanupable, UniqueID {
 
 	public void dump(PrintStream out) {
 		out.println("== DUMP:" + this.getClass().getName() + " :==: " + getId() + " :start ==");
-		out.println(Mesh.class.getName() + ": " + this.meshes.size() + ": " + this.meshes);
-		out.println(Scene.class.getName() + ": " + this.scenes.size() + ": " + this.scenes);
-		out.println(RenderShader.class.getName() + ": " + this.abstractShaders.size() + ": " + this.abstractShaders);
-		out.println(Texture.class.getName() + ": " + this.textures.size() + ": " + this.textures);
-		out.println(TextEmitter.class.getName() + ": " + this.textEmitters.size() + ": " + this.textEmitters);
-		out.println(Framebuffer.class.getName() + ": " + this.framebuffers.size() + ": " + this.framebuffers);
-		out.println(Sound.class.getName() + ": " + this.sounds.size() + ": " + this.sounds);
+		out.println(Mesh.class.getName() + ": " + meshes.size() + ": " + meshes);
+		out.println(Scene.class.getName() + ": " + scenes.size() + ": " + scenes);
+		out.println(RenderShader.class.getName() + ": " + abstractShaders.size() + ": " + abstractShaders);
+		out.println(Texture.class.getName() + ": " + textures.size() + ": " + textures);
+		out.println(TextEmitter.class.getName() + ": " + textEmitters.size() + ": " + textEmitters);
+		out.println(Framebuffer.class.getName() + ": " + framebuffers.size() + ": " + framebuffers);
+		out.println(Sound.class.getName() + ": " + sounds.size() + ": " + sounds);
 		out.println("== PARENT ==");
-		if (parent == null) {
+		if (parent == null)
 			out.println("null");
-		} else {
+		else
 			parent.dump(out);
-		}
 		out.println("== DUMP:" + this.getClass().getName() + ":end ==");
 	}
 
 	public void dump(PrintWriter out) {
 		out.println("== DUMP:" + this.getClass().getName() + " :==: " + getId() + " :start ==");
-		out.println(Mesh.class.getName() + ": " + this.meshes.size() + ": " + this.meshes);
-		out.println(Scene.class.getName() + ": " + this.scenes.size() + ": " + this.scenes);
-		out.println(RenderShader.class.getName() + ": " + this.abstractShaders.size() + ": " + this.abstractShaders);
-		out.println(Texture.class.getName() + ": " + this.textures.size() + ": " + this.textures);
-		out.println(TextEmitter.class.getName() + ": " + this.textEmitters.size() + ": " + this.textEmitters);
-		out.println(Framebuffer.class.getName() + ": " + this.framebuffers.size() + ": " + this.framebuffers);
-		out.println(Sound.class.getName() + ": " + this.sounds.size() + ": " + this.sounds);
+		out.println(Mesh.class.getName() + ": " + meshes.size() + ": " + meshes);
+		out.println(Scene.class.getName() + ": " + scenes.size() + ": " + scenes);
+		out.println(RenderShader.class.getName() + ": " + abstractShaders.size() + ": " + abstractShaders);
+		out.println(Texture.class.getName() + ": " + textures.size() + ": " + textures);
+		out.println(TextEmitter.class.getName() + ": " + textEmitters.size() + ": " + textEmitters);
+		out.println(Framebuffer.class.getName() + ": " + framebuffers.size() + ": " + framebuffers);
+		out.println(Sound.class.getName() + ": " + sounds.size() + ": " + sounds);
 		out.println("== PARENT ==");
-		if (parent == null) {
+		if (parent == null)
 			out.println("null (no parent attached)");
-		} else {
+		else
 			parent.dump(out);
-		}
 		out.println("== DUMP:" + this.getClass().getName() + ":end ==");
 	}
 

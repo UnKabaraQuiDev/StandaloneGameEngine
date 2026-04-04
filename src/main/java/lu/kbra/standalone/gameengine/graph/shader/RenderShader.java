@@ -43,7 +43,7 @@ public abstract class RenderShader extends AbstractShader {
 	}
 
 	public boolean isTransparent() {
-		return this.transparent;
+		return transparent;
 	}
 
 	public void setTransparent(boolean transparent) {

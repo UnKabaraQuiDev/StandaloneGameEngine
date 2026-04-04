@@ -56,91 +56,87 @@ public class Mat4fAttribArray extends JavaAttribArray implements MultiAttribArra
 
 	@Override
 	public void init() {
-		this.bind();
+		bind();
 
-		super.length = this.data.length;
+		super.length = data.length;
 
-		GL_W.glBufferData(this.bufferType.getGlId(), this.toFlatArray(), this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 	}
 
 	@Override
 	public void update() {
-		this.update(this.data);
+		this.update(data);
 	}
 
 	public void update(final Matrix4f[] nPos) {
-		this.bind();
+		bind();
 
-		if (this.iStatic) {
+		if (iStatic)
 			throw new UnsupportedOperationException("Array is static.");
-		} else if (nPos.length != this.data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + this.data.length + ").");
-		}
+		if (nPos.length != data.length)
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 
-		this.data = nPos;
-		super.length = this.data.length;
+		data = nPos;
+		super.length = data.length;
 
-		GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.toFlatArray());
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
 	}
 
 	public void update(final int index, final Matrix4f[] nPos) {
-		this.bind();
+		bind();
 
-		if (this.iStatic) {
+		if (iStatic)
 			throw new UnsupportedOperationException("Array is static.");
-		}
 
-		System.arraycopy(nPos, 0, this.data, index, nPos.length);
-		super.length = this.data.length;
+		System.arraycopy(nPos, 0, data, index, nPos.length);
+		super.length = data.length;
 
-		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(nPos.length * this.getElementByteSize());
+		final ByteBuffer bbuffer = ByteBuffer.allocateDirect(nPos.length * getElementByteSize());
 		int offset = 0;
 		for (final Matrix4f nPo : nPos) {
 			nPo.get(offset, bbuffer);
 			offset += 16 * Float.BYTES;
 		}
-//		bbuffer.flip();
+		//		bbuffer.flip();
 
-		GL_W.glBufferSubData(this.bufferType.getGlId(), index * this.getElementByteSize(), bbuffer);
+		GL_W.glBufferSubData(bufferType.getGlId(), index * getElementByteSize(), bbuffer);
 	}
 
 	public void resize(final Matrix4f[] nPos) {
-		this.bind();
+		bind();
 
-		final boolean sameSize = nPos.length == this.data.length;
-		this.data = nPos;
-		super.length = this.data.length;
+		final boolean sameSize = nPos.length == data.length;
+		data = nPos;
+		super.length = data.length;
 
-		if (sameSize) {
-			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.toFlatArray());
-		} else {
-			GL_W.glBufferData(this.bufferType.getGlId(), this.toFlatArray(), this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
+		if (sameSize)
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
+		else
+			GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 	}
 
 	@Override
 	public void enable() {
-		this.bind();
+		bind();
 
-		for (int i = 0; i < this.getAttribArrayCount(); i++) {
-			GL_W.glEnableVertexAttribArray(this.index + i);
-			GL_W.glVertexAttribPointer(this.index
-					+ i, this.getColumnComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), i * this.getColumnByteSize());
-			GL_W.glVertexAttribDivisor(this.index + i, this.divisor);
+		for (int i = 0; i < getAttribArrayCount(); i++) {
+			GL_W.glEnableVertexAttribArray(index + i);
+			GL_W.glVertexAttribPointer(index
+					+ i, getColumnComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), i * getColumnByteSize());
+			GL_W.glVertexAttribDivisor(index + i, divisor);
 		}
 	}
 
 	@Override
 	public void disable() {
-		this.bind();
+		bind();
 
-		for (int i = 0; i < this.getAttribArrayCount(); i++) {
-			GL_W.glDisableVertexAttribArray(this.index + i);
-		}
+		for (int i = 0; i < getAttribArrayCount(); i++)
+			GL_W.glDisableVertexAttribArray(index + i);
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(this.name, this.index, this.toFlatArray(), this.bufferType, this.iStatic);
+		return new FloatAttribArray(name, index, toFlatArray(), bufferType, iStatic);
 	}
 
 	@Override
@@ -150,27 +146,27 @@ public class Mat4fAttribArray extends JavaAttribArray implements MultiAttribArra
 
 	@Override
 	public int getLength() {
-		return this.isLoaded() ? (this.length = this.data.length) : super.getLength();
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override
 	public boolean isLoaded() {
-		return this.data != null;
+		return data != null;
 	}
 
 	@Override
 	public Matrix4f get(final int i) {
-		return !this.isLoaded() ? null : this.data[i];
+		return !isLoaded() ? null : data[i];
 	}
 
 	@Override
 	public Matrix4f[] getData() {
-		return this.data;
+		return data;
 	}
 
 	@Override
 	public float[] toFlatArray() {
-		return GameEngineUtils.toFlatArray(this.data);
+		return GameEngineUtils.toFlatArray(data);
 	}
 
 	@Override

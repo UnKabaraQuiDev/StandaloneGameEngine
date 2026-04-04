@@ -16,8 +16,8 @@ public class Transform2D extends Transform {
 	}
 
 	public Transform2D(Vector2f trans, float rot, Vector2f scale) {
-		this.translation = trans;
-		this.rotation = rot;
+		translation = trans;
+		rotation = rot;
 		this.scale = scale;
 
 		super.matrix = new Matrix4f();

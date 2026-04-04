@@ -19,6 +19,7 @@ import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 	private static PCLogger LOGGER = GlobalLogger.getLogger();
 
+	@Override
 	public void init() {
 		GL_W.WRAPPER = this;
 		GL_W.GL_SRC1_COLOR = GL33.GL_SRC1_COLOR;
@@ -2090,7 +2091,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = "
 					+ ret + " !! ERROR: " + err);
@@ -2127,7 +2128,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException(
 					"glGetActiveUniform_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
@@ -3428,7 +3429,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException(
 					"glMapBuffer_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
@@ -3904,7 +3905,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
 					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
@@ -4088,7 +4089,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException(
 					"nglMapBufferRange(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
@@ -4456,7 +4457,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException(
 					"glGetActiveUniformBlockName_String(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
@@ -4979,7 +4980,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg7 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
 					+ arg5 + ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -4991,7 +4992,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
 					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -5139,7 +5140,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
 					+ arg5 + ", " + arg6 + ") !! ERROR: " + err);
@@ -5396,7 +5397,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
 					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -5419,7 +5420,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
 					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6328,7 +6329,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6340,7 +6341,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6352,7 +6353,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6364,7 +6365,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6376,7 +6377,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6388,7 +6389,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6400,7 +6401,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6412,7 +6413,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6424,7 +6425,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6436,7 +6437,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -6577,7 +6578,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6600,7 +6601,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6623,7 +6624,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6646,7 +6647,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6669,7 +6670,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6692,7 +6693,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6715,7 +6716,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6738,7 +6739,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6761,7 +6762,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -6784,7 +6785,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -7177,7 +7178,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -7369,7 +7370,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -7783,7 +7784,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException(
 					"glGetFramebufferAttachmentParameteri(" + arg0 + ", " + arg1 + ", " + arg2 + ") = " + ret + " !! ERROR: " + err);
@@ -8381,7 +8382,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8393,7 +8394,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8405,7 +8406,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8417,7 +8418,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8429,7 +8430,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8441,7 +8442,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8453,7 +8454,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8465,7 +8466,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8477,7 +8478,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8489,7 +8490,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -8634,7 +8635,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -8646,7 +8647,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -8658,7 +8659,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -8670,7 +8671,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -8682,7 +8683,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -8694,7 +8695,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -8706,7 +8707,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -8718,7 +8719,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -8730,7 +8731,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -8742,7 +8743,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -9060,7 +9061,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9072,7 +9073,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9084,7 +9085,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9096,7 +9097,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9108,7 +9109,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9120,7 +9121,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9132,7 +9133,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9144,7 +9145,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9156,7 +9157,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9168,7 +9169,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -9599,7 +9600,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglCompressedTexSubImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
 					+ arg5 + ", " + arg6 + ") !! ERROR: " + err);
@@ -9736,7 +9737,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglCompressedTexSubImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
 					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ", " + arg10 + ") !! ERROR: " + err);
@@ -9767,7 +9768,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg7 + ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglCompressedTexSubImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", "
 					+ arg5 + ", " + arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);
@@ -11643,7 +11644,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glCopyTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5
 					+ ", " + arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -12009,7 +12010,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglGetTransformFeedbackVarying(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
 					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
@@ -12674,7 +12675,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", "
 					+ arg4 + ") = " + ret + " !! ERROR: " + err);
@@ -12699,7 +12700,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glGetTransformFeedbackVarying_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = "
 					+ ret + " !! ERROR: " + err);
@@ -13721,7 +13722,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glDrawRangeElementsBaseVertex(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
 					+ ", " + arg5 + ", " + arg6 + ") !! ERROR: " + err);
@@ -15382,7 +15383,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException(
 					"glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
@@ -15395,7 +15396,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glGetActiveAttrib_String(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = "
 					+ ret + " !! ERROR: " + err);
@@ -15606,7 +15607,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ", " + arg9 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglTexImage3D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ", " + arg9 + ") !! ERROR: " + err);
@@ -16224,7 +16225,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4
 					+ ") = " + ret + " !! ERROR: " + err);
@@ -16237,7 +16238,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret
-						+ (err != 0 ? " !! ERROR: " + err : ""));
+				+ (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException(
 					"glMapBufferRange_ByteBuffer(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ") = " + ret + " !! ERROR: " + err);
@@ -17444,7 +17445,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglTexImage1D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ") !! ERROR: " + err);
@@ -17653,7 +17654,7 @@ public class GL_W_GL33_LoggingDebug extends GL_W_GL32_LoggingDebug {
 		int err = org.lwjgl.opengl.GL33.glGetError();
 		LOGGER.log(Level.INFO,
 				"nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", " + arg6 + ", " + arg7
-						+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
+				+ ", " + arg8 + ")" + (err != 0 ? " !! ERROR: " + err : ""));
 		if (err != GL33.GL_NO_ERROR)
 			throw new RuntimeException("nglTexImage2D(" + arg0 + ", " + arg1 + ", " + arg2 + ", " + arg3 + ", " + arg4 + ", " + arg5 + ", "
 					+ arg6 + ", " + arg7 + ", " + arg8 + ") !! ERROR: " + err);

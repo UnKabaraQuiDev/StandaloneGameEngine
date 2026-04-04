@@ -42,29 +42,25 @@ public final class IOUtil {
 		ByteBuffer buffer;
 
 		Path path = resource.startsWith("http") ? null : Paths.get(resource);
-		if (path != null && Files.isReadable(path)) {
+		if (path != null && Files.isReadable(path))
 			try (SeekableByteChannel fc = Files.newByteChannel(path)) {
 				buffer = BufferUtils.createByteBuffer((int) fc.size() + 1);
-				while (fc.read(buffer) != -1) {
+				while (fc.read(buffer) != -1)
 					;
-				}
 			}
-		} else {
+		else
 			try (InputStream source = resource.startsWith("http") ? new URL(resource).openStream()
 					: IOUtil.class.getClassLoader().getResourceAsStream(resource); ReadableByteChannel rbc = Channels.newChannel(source)) {
 				buffer = createByteBuffer(bufferSize);
 
 				while (true) {
 					int bytes = rbc.read(buffer);
-					if (bytes == -1) {
+					if (bytes == -1)
 						break;
-					}
-					if (buffer.remaining() == 0) {
+					if (buffer.remaining() == 0)
 						buffer = resizeBuffer(buffer, buffer.capacity() * 3 / 2); // 50%
-					}
 				}
 			}
-		}
 
 		buffer.flip();
 		return memSlice(buffer);

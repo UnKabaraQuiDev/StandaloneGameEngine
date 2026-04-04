@@ -30,7 +30,7 @@ public class AudioMaster implements Cleanupable {
 
 	private boolean useTLC = false;
 	private long device, alContext;
-	private ALCCapabilities deviceCapabilities;;
+	private ALCCapabilities deviceCapabilities;
 	private ALCapabilities capabilities;
 
 	public AudioMaster() {
@@ -40,12 +40,11 @@ public class AudioMaster implements Cleanupable {
 	}
 
 	private void setup() {
-		this.thread = Thread.currentThread();
+		thread = Thread.currentThread();
 
 		device = ALC10.alcOpenDevice((ByteBuffer) null);
-		if (device == MemoryUtil.NULL) {
+		if (device == MemoryUtil.NULL)
 			throw new RuntimeException("Could not open ALC device");
-		}
 
 		deviceCapabilities = ALC.createCapabilities(device);
 		try {
@@ -54,9 +53,8 @@ public class AudioMaster implements Cleanupable {
 			e.printStackTrace();
 		}
 
-		if (!deviceCapabilities.OpenALC10) {
+		if (!deviceCapabilities.OpenALC10)
 			throw new RuntimeException("Could not open OpenAL device: OpenALC10 not supported");
-		}
 
 		GlobalLogger.info("Audio Output Devices: " + getDeviceNames());
 		GlobalLogger.info("Default Audio Output Device: " + getDefaultDevice());
@@ -66,11 +64,9 @@ public class AudioMaster implements Cleanupable {
 		GameEngineUtils.checkAlcError(device);
 
 		useTLC = deviceCapabilities.ALC_EXT_thread_local_context && EXTThreadLocalContext.alcSetThreadContext(alContext);
-		if (!useTLC) {
-			if (!ALC11.alcMakeContextCurrent(alContext)) {
+		if (!useTLC)
+			if (!ALC11.alcMakeContextCurrent(alContext))
 				throw new RuntimeException("Could not set context as thread context.");
-			}
-		}
 		GameEngineUtils.checkAlcError(device);
 
 		capabilities = AL.createCapabilities(deviceCapabilities, MemoryUtil::memCallocPointer);
@@ -140,9 +136,8 @@ public class AudioMaster implements Cleanupable {
 	}
 
 	public void checkAccessThrow() {
-		if (!checkAccess()) {
+		if (!checkAccess())
 			throw new IllegalAccessError(Thread.currentThread().getName() + " cannot access the audio context in " + getThreadName());
-		}
 	}
 
 	public boolean alcGetBool(int param) {
@@ -193,20 +188,18 @@ public class AudioMaster implements Cleanupable {
 
 	@Override
 	public void cleanup() {
-		if (device == -1) {
+		if (device == -1)
 			return;
-		}
 
 		GlobalLogger.log("Cleaning up: " + getClass().getName() + " in " + thread.getName());
 
 		ALC10.alcDestroyContext(alContext);
 		alContext = -1;
 		// ALC11.alcMakeContextCurrent(MemoryUtil.NULL);
-		if (useTLC) {
+		if (useTLC)
 			AL.setCurrentThread(null);
-		} else {
+		else
 			AL.setCurrentProcess(null);
-		}
 		MemoryUtil.memFree(capabilities.getAddressBuffer());
 		ALC10.alcCloseDevice(device);
 		device = -1;

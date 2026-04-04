@@ -31,12 +31,11 @@ public final class MathUtils {
 	public static int greatestAbsIndex(float... arr) {
 		int index = -1;
 		float max = Float.MIN_VALUE;
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < arr.length; i++)
 			if (Math.abs(arr[i]) > max) {
 				index = i;
 				max = Math.abs(arr[i]);
 			}
-		}
 		return index;
 	}
 
@@ -48,28 +47,24 @@ public final class MathUtils {
 				index = i;
 				max = (byte) Math.abs(arr[i]);
 			}
-			if (Math.abs(arr[i]) < min) {
+			if (Math.abs(arr[i]) < min)
 				min = (byte) Math.abs(arr[i]);
-			}
 		}
 		return min != max ? index : -1;
 	}
 
 	public static float greatestAbs(byte... arr) {
 		byte max = Byte.MIN_VALUE;
-		for (int i = 0; i < arr.length; i++) {
-			if (Math.abs(arr[i]) > max) {
-				max = (byte) Math.abs(arr[i]);
-			}
-		}
+		for (byte element : arr)
+			if (Math.abs(element) > max)
+				max = (byte) Math.abs(element);
 		return max;
 	}
 
 	public static byte sum(byte... arr) {
 		byte sum = Byte.MIN_VALUE;
-		for (int i = 0; i < arr.length; i++) {
-			sum += (byte) Math.abs(arr[i]);
-		}
+		for (byte element : arr)
+			sum += (byte) Math.abs(element);
 		return sum;
 	}
 
@@ -78,9 +73,8 @@ public final class MathUtils {
 			return string;
 		int missing = desiredLength - string.length();
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < missing; i++) {
+		for (int i = 0; i < missing; i++)
 			sb.append(c);
-		}
 		return sb.toString() + string;
 	}
 

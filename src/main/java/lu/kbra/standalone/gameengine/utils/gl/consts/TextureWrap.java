@@ -10,8 +10,8 @@ public enum TextureWrap implements GLConstant {
 
 	private int glId;
 
-	private TextureWrap(int id) {
-		this.glId = id;
+	TextureWrap(int id) {
+		glId = id;
 	}
 
 	@Override

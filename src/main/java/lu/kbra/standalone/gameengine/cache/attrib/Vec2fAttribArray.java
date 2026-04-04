@@ -40,57 +40,53 @@ public class Vec2fAttribArray extends JavaAttribArray implements FloatJavaTypeAt
 
 	@Override
 	public void init() {
-		this.bind();
+		bind();
 
-		super.length = this.data.length;
+		super.length = data.length;
 
-		GL_W.glBufferData(this.bufferType.getGlId(), this.toFlatArray(), this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
+		GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (this.isVertexArray()) {
-			GL_W.glVertexAttribPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), 0);
-		}
+		if (isVertexArray())
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 	}
 
 	@Override
 	public void update() {
-		this.update(this.data);
+		this.update(data);
 	}
 
 	public void update(final Vector2f[] nPos) {
-		this.bind();
+		bind();
 
-		if (this.iStatic) {
+		if (iStatic)
 			throw new UnsupportedOperationException("Array is static.");
-		} else if (nPos.length != this.data.length) {
-			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + this.data.length + ").");
-		}
+		if (nPos.length != data.length)
+			throw new IllegalArgumentException("Use #resize to change the array's size (" + nPos.length + "<>" + data.length + ").");
 
-		this.data = nPos;
-		super.length = this.data.length;
+		data = nPos;
+		super.length = data.length;
 
-		GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.toFlatArray());
+		GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
 	}
 
 	public void resize(final Vector2f[] nPos) {
-		this.bind();
+		bind();
 
-		final boolean sameSize = nPos.length == this.data.length;
-		this.data = nPos;
-		super.length = this.data.length;
+		final boolean sameSize = nPos.length == data.length;
+		data = nPos;
+		super.length = data.length;
 
-		if (sameSize) {
-			GL_W.glBufferSubData(this.bufferType.getGlId(), 0, this.toFlatArray());
-		} else {
-			GL_W.glBufferData(this.bufferType.getGlId(), this.toFlatArray(), this.iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
-		}
+		if (sameSize)
+			GL_W.glBufferSubData(bufferType.getGlId(), 0, toFlatArray());
+		else
+			GL_W.glBufferData(bufferType.getGlId(), toFlatArray(), iStatic ? GL_W.GL_STATIC_DRAW : GL_W.GL_DYNAMIC_DRAW);
 
-		if (this.isVertexArray()) {
-			GL_W.glVertexAttribPointer(this.index, this.getElementComponentCount(), GL_W.GL_FLOAT, false, this.getElementByteSize(), 0);
-		}
+		if (isVertexArray())
+			GL_W.glVertexAttribPointer(index, getElementComponentCount(), GL_W.GL_FLOAT, false, getElementByteSize(), 0);
 	}
 
 	public FloatAttribArray toFloatAttribArray() {
-		return new FloatAttribArray(this.name, this.index, this.toFlatArray(), this.bufferType, this.iStatic, this.divisor);
+		return new FloatAttribArray(name, index, toFlatArray(), bufferType, iStatic, divisor);
 	}
 
 	@Override
@@ -100,27 +96,27 @@ public class Vec2fAttribArray extends JavaAttribArray implements FloatJavaTypeAt
 
 	@Override
 	public int getLength() {
-		return this.isLoaded() ? (this.length = this.data.length) : super.getLength();
+		return isLoaded() ? (length = data.length) : super.getLength();
 	}
 
 	@Override
 	public boolean isLoaded() {
-		return this.data != null;
+		return data != null;
 	}
 
 	@Override
 	public Vector2f get(final int i) {
-		return !this.isLoaded() ? null : this.data[i];
+		return !isLoaded() ? null : data[i];
 	}
 
 	@Override
 	public Vector2f[] getData() {
-		return this.data;
+		return data;
 	}
 
 	@Override
 	public float[] toFlatArray() {
-		return GameEngineUtils.toFlatArray(this.data);
+		return GameEngineUtils.toFlatArray(data);
 	}
 
 	@Override

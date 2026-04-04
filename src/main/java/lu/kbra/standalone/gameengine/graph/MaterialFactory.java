@@ -28,22 +28,20 @@ public class MaterialFactory {
 
 	public <T extends Material> T newMaterial_(Class<T> materialClazz, Object... args) {
 		MATERIAL_2_SHADERS.computeIfAbsent(materialClazz, k -> {
-			if (!k.isAnnotationPresent(AssociatedShader.class)) {
+			if (!k.isAnnotationPresent(AssociatedShader.class))
 				throw new IllegalStateException("Class: " + k + " doesn't have @" + AssociatedShader.class.getSimpleName() + ".");
-			}
 			return k.getAnnotation(AssociatedShader.class).value();
 		});
 
 		final Class<? extends RenderShader> shaderClazz = MATERIAL_2_SHADERS.get(materialClazz);
 
-		if (!cache.hasAbstractShader(shaderClazz.getName())) {
+		if (!cache.hasAbstractShader(shaderClazz.getName()))
 			try {
 				cache.addAbstractShader(shaderClazz.getConstructor().newInstance());
 			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 					| NoSuchMethodException | SecurityException e) {
 				throw new RuntimeException("Exception while creating render shader.", e);
 			}
-		}
 
 		final AbstractShader shader = cache.getAbstractShader(shaderClazz.getName());
 

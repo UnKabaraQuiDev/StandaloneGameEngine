@@ -85,9 +85,8 @@ public final class GameEngineUtils {
 	}
 
 	public static void alcError(final boolean b, final String string) {
-		if (b) {
+		if (b)
 			throw new ALRuntimeException(string);
-		}
 	}
 
 	public static boolean checkAlError() {
@@ -108,9 +107,9 @@ public final class GameEngineUtils {
 		 */
 		case AL10.AL_INVALID_OPERATION:
 			throw new ALInvalidOperationException(caller, status, msg);
-		/*
-		 * case AL11.AL_INVALID_CONTEXT: throw new ALInvalidContextException(caller, status, msg);
-		 */
+			/*
+			 * case AL11.AL_INVALID_CONTEXT: throw new ALInvalidContextException(caller, status, msg);
+			 */
 		case AL10.AL_INVALID_NAME:
 			throw new ALInvalidNameException(caller, status, msg);
 		case AL10.AL_INVALID_ENUM:
@@ -198,9 +197,9 @@ public final class GameEngineUtils {
 			throw new EGLBadNativePixmapException(caller, status, msg);
 		case EGL10.EGL_BAD_NATIVE_WINDOW:
 			throw new EGLBadNativeWindowException(caller, status, msg);
-		/*
-		 * case EGL10.EGL_NO_CONTEXT: throw new EGLNoContextException(caller, status, msg);
-		 */
+			/*
+			 * case EGL10.EGL_NO_CONTEXT: throw new EGLNoContextException(caller, status, msg);
+			 */
 		default:
 			return true;
 		}
@@ -271,48 +270,42 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector2f[] vec2Repeating(final Vector2f[] is, final int size) {
-		if (size <= 0) {
+		if (size <= 0)
 			throw new IllegalArgumentException("Size should be greater than 0");
-		}
 
 		final int originalLength = is.length;
 		final int repeatedLength = originalLength * size;
 		final Vector2f[] result = new Vector2f[repeatedLength];
 
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++)
 			System.arraycopy(is, 0, result, i * originalLength, originalLength);
-		}
 
 		return result;
 	}
 
 	public static Vector4f[] vec4Repeating(final Vector4f[] is, final int size) {
-		if (size <= 0) {
+		if (size <= 0)
 			throw new IllegalArgumentException("Size should be greater than 0");
-		}
 
 		final int originalLength = is.length;
 		final int repeatedLength = originalLength * size;
 		final Vector4f[] result = new Vector4f[repeatedLength];
 
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++)
 			System.arraycopy(is, 0, result, i * originalLength, originalLength);
-		}
 
 		return result;
 	}
 
 	public static Matrix4f[] castArrayMat4f(final Object transforms) {
-		if (transforms instanceof Matrix4f[]) {
+		if (transforms instanceof Matrix4f[])
 			return (Matrix4f[]) transforms;
-		}
 		return Arrays.stream((Object[]) transforms).map(c -> (Matrix4f) c).toArray(Matrix4f[]::new);
 	}
 
 	public static Matrix3x2f[] castArrayMat3x2f(final Object transforms) {
-		if (transforms instanceof Matrix4f[]) {
+		if (transforms instanceof Matrix4f[])
 			return (Matrix3x2f[]) transforms;
-		}
 		return Arrays.stream((Object[]) transforms).map(c -> (Matrix3x2f) c).toArray(Matrix3x2f[]::new);
 	}
 
@@ -356,9 +349,8 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector2f normalizeGreater(final Vector2f vec) {
-		if (vec.lengthSquared() > 1) {
+		if (vec.lengthSquared() > 1)
 			return vec.normalize();
-		}
 		return vec;
 	}
 
@@ -372,9 +364,8 @@ public final class GameEngineUtils {
 	}
 
 	public static Vector2f getYDown(final Vector2f vec) {
-		if (vec.y > -vec.y) {
+		if (vec.y > -vec.y)
 			return vec.mul(-1);
-		}
 		return vec;
 	}
 
@@ -617,21 +608,28 @@ public final class GameEngineUtils {
 		float x = 0;
 		float y = 0;
 
-		if (horizontal == Alignment.LEADING) {
-			x = 0;
-		} else if (horizontal == Alignment.CENTER) {
-			x = -size.x() / 2f;
-		} else if (horizontal == Alignment.TRAILING) {
-			x = -size.x();
+		if (horizontal != null) {
+			switch (horizontal) {
+			case LEADING:
+				x = 0;
+				break;
+			case CENTER:
+				x = -size.x() / 2f;
+				break;
+			case TRAILING:
+				x = -size.x();
+				break;
+			default:
+				break;
+			}
 		}
 
-		if (vertical == Alignment.LEADING) {
+		if (vertical == Alignment.LEADING)
 			y = 0;
-		} else if (vertical == Alignment.CENTER) {
+		else if (vertical == Alignment.CENTER)
 			y = -size.y() / 2f;
-		} else if (vertical == Alignment.TRAILING) {
+		else if (vertical == Alignment.TRAILING)
 			y = -size.y();
-		}
 
 		return new Rectangle2D.Float(x, y, size.x(), size.y());
 	}
@@ -642,9 +640,8 @@ public final class GameEngineUtils {
 
 		boolean nonNull = false;
 		for (final Vector3f v : vertices.getData()) {
-			if (v == null) {
+			if (v == null)
 				continue;
-			}
 
 			nonNull = true;
 
@@ -657,11 +654,9 @@ public final class GameEngineUtils {
 			max.z = Math.max(max.z, v.z);
 		}
 
-		if (nonNull) {
+		if (nonNull)
 			return new BoundingBox(min, max);
-		} else {
-			return new BoundingBox(new Vector3f(0), new Vector3f(0));
-		}
+		return new BoundingBox(new Vector3f(0), new Vector3f(0));
 	}
 
 	public static Vector4f hexToColorToVec4f(final String hex) {
@@ -694,9 +689,9 @@ public final class GameEngineUtils {
 
 		float r, g, b;
 
-		if (s == 0.0f) {
+		if (s == 0.0f)
 			r = g = b = v;
-		} else {
+		else {
 			final float hf = h * 6.0f;
 			final int i = (int) hf;
 			final float f = hf - i;

@@ -15,8 +15,8 @@ public enum TextureFilter implements GLConstant {
 
 	private int glId;
 
-	private TextureFilter(int id) {
-		this.glId = id;
+	TextureFilter(int id) {
+		glId = id;
 	}
 
 	@Override

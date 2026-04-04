@@ -16,11 +16,10 @@ public class PostDeserializeWrapper extends JsonDeserializer<Object> {
 
 	@Override
 	public Object deserialize(final JsonParser p, final DeserializationContext ctxt) throws IOException {
-		final Object obj = this.defaultDeserializer.deserialize(p, ctxt);
+		final Object obj = defaultDeserializer.deserialize(p, ctxt);
 
-		if (obj instanceof final PostDeserialize pd) {
+		if (obj instanceof final PostDeserialize pd)
 			pd.postDeserialize();
-		}
 
 		return obj;
 	}

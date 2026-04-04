@@ -71,9 +71,8 @@ public final class ObjLoader {
 			}
 		}
 
-		if (colors.isEmpty()) {
+		if (colors.isEmpty())
 			colors = null;
-		}
 
 		List<Integer> indices = new ArrayList<>();
 		Vector3f[] verticesArr = new Vector3f[vertices.size()];
@@ -117,9 +116,8 @@ public final class ObjLoader {
 				aiProcess_Triangulate/* | aiProcess_GenSmoothNormals */ | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices,
 				PCUtils.getFileExtension(path));
 
-		if (scene == null) {
+		if (scene == null)
 			throw new RuntimeException("Failed to load OBJ: " + aiGetErrorString());
-		}
 
 		List<Vector3f> positionsList = new ArrayList<>();
 		List<Vector3f> normalsList = new ArrayList<>();
@@ -147,9 +145,8 @@ public final class ObjLoader {
 					Vector3f pos = new Vector3f(verts.get(idx).x(), verts.get(idx).y(), verts.get(idx).z());
 
 					Vector3f norm = new Vector3f(0, 0, 0);
-					if (norms != null) {
+					if (norms != null)
 						norm = new Vector3f(norms.get(idx).x(), norms.get(idx).y(), norms.get(idx).z());
-					}
 
 					Vector2f uv = new Vector2f(0, 0);
 					if (texCoords != null) {
@@ -160,9 +157,9 @@ public final class ObjLoader {
 					String key = idx + "/" + uv.x + "/" + uv.y + "/" + norm.x + "/" + norm.y + "/" + norm.z;
 
 					Integer existing = vertexMap.get(key);
-					if (existing != null) {
+					if (existing != null)
 						indicesList.add(existing);
-					} else {
+					else {
 						positionsList.add(pos);
 						normalsList.add(norm);
 						uvsList.add(uv);

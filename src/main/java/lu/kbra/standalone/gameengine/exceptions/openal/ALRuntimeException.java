@@ -2,6 +2,8 @@ package lu.kbra.standalone.gameengine.exceptions.openal;
 
 public class ALRuntimeException extends RuntimeException {
 
+	private static final long serialVersionUID = 1L;
+
 	public ALRuntimeException(String str) {
 		super(str);
 	}

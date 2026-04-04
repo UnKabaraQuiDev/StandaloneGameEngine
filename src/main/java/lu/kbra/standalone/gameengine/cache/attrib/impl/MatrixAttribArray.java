@@ -10,16 +10,16 @@ public interface MatrixAttribArray extends MultiAttribArray, JavaTypeAttribArray
 
 	@Override
 	default int getElementComponentCount() {
-		return this.getLineComponentCount() * this.getColumnComponentCount();
+		return getLineComponentCount() * getColumnComponentCount();
 	}
 
 	@Override
 	default int getAttribArrayCount() {
-		return this.getColumnComponentCount();
+		return getColumnComponentCount();
 	}
 
 	default int getColumnByteSize() {
-		return this.getColumnComponentCount() * this.getComponentByteSize();
+		return getColumnComponentCount() * getComponentByteSize();
 	}
 
 }

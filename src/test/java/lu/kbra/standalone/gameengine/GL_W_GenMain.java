@@ -93,20 +93,17 @@ public class GL_W_GenMain extends GenMainConsts {
 
 		public GLObject(String name, Class<?> source) {
 			this.name = name;
-			this.sources.add(source);
+			sources.add(source);
 		}
 
 		public abstract boolean matches(T method);
 
 		public boolean merge(Class<?> source, T type) {
-			if (matches(type)) {
-				if (!containsSource(source)) {
-					sources.add(source);
-				}
-				return true;
-			} else {
+			if (!matches(type))
 				return false;
-			}
+			if (!containsSource(source))
+				sources.add(source);
+			return true;
 		}
 
 		public boolean containsSource(Class<?> clazz) {
@@ -127,7 +124,7 @@ public class GL_W_GenMain extends GenMainConsts {
 
 		public GLField(Class<?> source, Field target) {
 			super(target.getName(), source);
-			this.type = target.getGenericType();
+			type = target.getGenericType();
 		}
 
 		@Override
@@ -149,23 +146,22 @@ public class GL_W_GenMain extends GenMainConsts {
 
 		public GLMethod(Class<?> source, Method target) {
 			super(target.getName(), source);
-			this.returnType = target.getGenericReturnType();
-			this.parameters = target.getParameters();
+			returnType = target.getGenericReturnType();
+			parameters = target.getParameters();
 		}
 
 		@Override
 		public boolean matches(Method method) {
-			if (!this.name.equals(method.getName()))
+			if (!name.equals(method.getName()))
 				return false;
-			if (!this.returnType.equals(method.getGenericReturnType()))
+			if (!returnType.equals(method.getGenericReturnType()))
 				return false;
 			Parameter[] other = method.getParameters();
 			if (other.length != parameters.length)
 				return false;
-			for (int i = 0; i < parameters.length; i++) {
+			for (int i = 0; i < parameters.length; i++)
 				if (!parameters[i].getType().equals(other[i].getType()))
 					return false;
-			}
 			return true;
 		}
 
@@ -175,9 +171,8 @@ public class GL_W_GenMain extends GenMainConsts {
 					.addModifiers(Modifier.PUBLIC, Modifier.DEFAULT)
 					.returns(TypeName.get(returnType));
 
-			for (Parameter p : parameters) {
+			for (Parameter p : parameters)
 				mb.addParameter(TypeName.get(p.getParameterizedType()), p.getName());
-			}
 
 			mb.addStatement("throw new $T($S)", UnsupportedOperationException.class, "Not implemented yet.");
 			return mb.build();
@@ -191,18 +186,16 @@ public class GL_W_GenMain extends GenMainConsts {
 
 			mb.addJavadoc("$L", getSourcesString());
 
-			for (Parameter p : parameters) {
+			for (Parameter p : parameters)
 				mb.addParameter(TypeName.get(p.getParameterizedType()), p.getName());
-			}
 
 			String argList = Arrays.stream(parameters).map(Parameter::getName).collect(Collectors.joining(", "));
 			String call = "WRAPPER." + methodName + "(" + argList + ")";
 
-			if (!TypeName.get(returnType).equals(TypeName.VOID)) {
+			if (!TypeName.get(returnType).equals(TypeName.VOID))
 				mb.addStatement("return $L", call);
-			} else {
+			else
 				mb.addStatement("$L", call);
-			}
 
 			return mb.build();
 		}
@@ -214,18 +207,16 @@ public class GL_W_GenMain extends GenMainConsts {
 					.addModifiers(Modifier.PUBLIC)
 					.returns(TypeName.get(returnType));
 
-			for (Parameter p : parameters) {
+			for (Parameter p : parameters)
 				mb.addParameter(TypeName.get(p.getParameterizedType()), p.getName());
-			}
 
 			String argList = Arrays.stream(parameters).map(Parameter::getName).collect(Collectors.joining(", "));
 			String call = implClazz.getName() + "." + name + "(" + argList + ")";
 
-			if (!TypeName.get(returnType).equals(TypeName.VOID)) {
+			if (!TypeName.get(returnType).equals(TypeName.VOID))
 				mb.addStatement("return $L", call);
-			} else {
+			else
 				mb.addStatement("$L", call);
-			}
 
 			return mb.build();
 		}
@@ -237,9 +228,8 @@ public class GL_W_GenMain extends GenMainConsts {
 					.addModifiers(Modifier.PUBLIC)
 					.returns(TypeName.get(returnType));
 
-			for (Parameter p : parameters) {
+			for (Parameter p : parameters)
 				mb.addParameter(TypeName.get(p.getParameterizedType()), p.getName());
-			}
 
 			String argList = Arrays.stream(parameters).map(Parameter::getName).collect(Collectors.joining(", "));
 			String call = implClazz.getName() + "." + name + "(" + argList + ")";
@@ -266,18 +256,16 @@ public class GL_W_GenMain extends GenMainConsts {
 					.addModifiers(Modifier.PUBLIC)
 					.returns(retType);
 
-			for (Parameter p : parameters) {
+			for (Parameter p : parameters)
 				mb.addParameter(TypeName.get(p.getParameterizedType()), p.getName());
-			}
 
 			String argList = Arrays.stream(parameters).map(Parameter::getName).collect(Collectors.joining(", "));
 			String call = implClazz.getName() + "." + name + "(" + argList + ")";
 
-			if (returnsValue) {
+			if (returnsValue)
 				mb.addStatement("$T ret = $L", retType, call);
-			} else {
+			else
 				mb.addStatement("$L", call);
-			}
 
 			String glGetError = implClazz.getName() + ".glGetError()";
 			mb.addStatement("int err = $L", glGetError);
@@ -288,7 +276,7 @@ public class GL_W_GenMain extends GenMainConsts {
 						" !! ERROR: ",
 						"");
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+				+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 
 				mb.addStatement("return ret");
 			} else {
@@ -315,40 +303,36 @@ public class GL_W_GenMain extends GenMainConsts {
 					.addModifiers(Modifier.PUBLIC)
 					.returns(retType);
 
-			for (Parameter p : parameters) {
+			for (Parameter p : parameters)
 				mb.addParameter(TypeName.get(p.getParameterizedType()), p.getName());
-			}
 
 			String argList = Arrays.stream(parameters).map(Parameter::getName).collect(Collectors.joining(", "));
 			String call = implClazz.getName() + "." + name + "(" + argList + ")";
 
-			if (returnsValue) {
+			if (returnsValue)
 				mb.addStatement("$T ret = $L", retType, call);
-			} else {
+			else
 				mb.addStatement("$L", call);
-			}
 
 			String glGetError = implClazz.getName() + ".glGetError()";
 			mb.addStatement("int err = $L", glGetError);
 
 			if (returnsValue) {
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+				+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 				mb.addStatement("return ret");
-			} else {
+			} else
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
 						implClazz,
 						RuntimeException.class);
-			}
 
 			return mb.build();
 		}
 
 		private String buildLogPrefix(String methodName) {
-			String logExpr = parameters.length == 0 ? methodName + "()"
+			return parameters.length == 0 ? methodName + "()"
 					: methodName + "(\" + " + Arrays.stream(parameters).map(Parameter::getName).collect(Collectors.joining(" + \", \" + "))
-							+ " + \")";
-			return logExpr;
+					+ " + \")";
 		}
 
 		public MethodSpec toLoggingDebugFlushingImplMethod(Class<?> implClazz, boolean explicitSuffix) {
@@ -361,18 +345,16 @@ public class GL_W_GenMain extends GenMainConsts {
 					.addModifiers(Modifier.PUBLIC)
 					.returns(retType);
 
-			for (Parameter p : parameters) {
+			for (Parameter p : parameters)
 				mb.addParameter(TypeName.get(p.getParameterizedType()), p.getName());
-			}
 
 			String argList = Arrays.stream(parameters).map(Parameter::getName).collect(Collectors.joining(", "));
 			String call = implClazz.getName() + "." + name + "(" + argList + ")";
 
-			if (returnsValue) {
+			if (returnsValue)
 				mb.addStatement("$T ret = $L", retType, call);
-			} else {
+			else
 				mb.addStatement("$L", call);
-			}
 
 			String glGetError = implClazz.getName() + ".glGetError()";
 			mb.addStatement("int err = $L", glGetError);
@@ -381,13 +363,12 @@ public class GL_W_GenMain extends GenMainConsts {
 
 			if (returnsValue) {
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+				+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 				mb.addStatement("return ret");
-			} else {
+			} else
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
 						implClazz,
 						RuntimeException.class);
-			}
 
 			return mb.build();
 		}
@@ -402,18 +383,16 @@ public class GL_W_GenMain extends GenMainConsts {
 					.addModifiers(Modifier.PUBLIC)
 					.returns(retType);
 
-			for (Parameter p : parameters) {
+			for (Parameter p : parameters)
 				mb.addParameter(TypeName.get(p.getParameterizedType()), p.getName());
-			}
 
 			String argList = Arrays.stream(parameters).map(Parameter::getName).collect(Collectors.joining(", "));
 			String call = implClazz.getName() + "." + name + "(" + argList + ")";
 
-			if (returnsValue) {
+			if (returnsValue)
 				mb.addStatement("$T ret = $L", retType, call);
-			} else {
+			else
 				mb.addStatement("$L", call);
-			}
 
 			String glGetError = implClazz.getName() + ".glGetError()";
 			mb.addStatement("int err = $L", glGetError);
@@ -428,13 +407,12 @@ public class GL_W_GenMain extends GenMainConsts {
 
 			if (returnsValue) {
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+				+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 				mb.addStatement("return ret");
-			} else {
+			} else
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
 						implClazz,
 						RuntimeException.class);
-			}
 
 			return mb.build();
 		}
@@ -446,24 +424,23 @@ public class GL_W_GenMain extends GenMainConsts {
 	private String getSuffixReturnTypeName(Type returnType) {
 		if (returnType == int.class)
 			return "";
-		else if (returnType == boolean.class)
+		if (returnType == boolean.class)
 			return "_boolean";
-		else if (returnType == void.class)
+		if (returnType == void.class)
 			return "";
-		else if (returnType == long.class)
+		if (returnType == long.class)
 			return "_long";
-		else if (returnType == float.class)
+		if (returnType == float.class)
 			return "_float";
-		else if (returnType == double.class)
+		if (returnType == double.class)
 			return "_double";
-		else if (returnType == short.class)
+		if (returnType == short.class)
 			return "_short";
-		else if (returnType == char.class)
+		if (returnType == char.class)
 			return "_char";
-		else if (returnType instanceof Class<?>)
+		if (returnType instanceof Class<?>)
 			return "_" + ((Class<?>) returnType).getSimpleName();
-		else
-			return "_" + returnType.getTypeName().replace(".", "_").replace("[]", "Array");
+		return "_" + returnType.getTypeName().replace(".", "_").replace("[]", "Array");
 	}
 
 	/*
@@ -483,7 +460,7 @@ public class GL_W_GenMain extends GenMainConsts {
 	 */
 
 	private void collectMethods(List<Class<?>> classes) {
-		for (Class<?> clazz : classes) {
+		for (Class<?> clazz : classes)
 			for (Method m : clazz.getMethods()) {
 				if (NAME_BLACKLIST.contains(m.getName()))
 					continue;
@@ -491,36 +468,31 @@ public class GL_W_GenMain extends GenMainConsts {
 				if (glMethods.containsKey(m.getName())) {
 					boolean merged = false;
 					GLMethod candidate = new GLMethod(clazz, m);
-					for (GLMethod existing : glMethods.get(m.getName())) {
+					for (GLMethod existing : glMethods.get(m.getName()))
 						if (existing.merge(clazz, m)) {
 							merged = true;
 							break;
 						}
-					}
-					if (!merged) {
+					if (!merged)
 						glMethods.get(m.getName()).add(candidate);
-					}
 				} else {
 					List<GLMethod> list = new ArrayList<>();
 					list.add(new GLMethod(clazz, m));
 					glMethods.put(m.getName(), list);
 				}
 			}
-		}
 	}
 
 	private void collectFields(List<Class<?>> classes) {
-		for (Class<?> clazz : classes) {
+		for (Class<?> clazz : classes)
 			for (Field f : clazz.getFields()) {
 				if (f.getType() != int.class)
 					continue;
-				if (glFields.containsKey(f.getName())) {
+				if (glFields.containsKey(f.getName()))
 					glFields.get(f.getName()).merge(clazz, f);
-				} else {
+				else
 					glFields.put(f.getName(), new GLField(clazz, f));
-				}
 			}
-		}
 	}
 
 	/*
@@ -532,9 +504,8 @@ public class GL_W_GenMain extends GenMainConsts {
 
 		for (Map.Entry<String, List<GLMethod>> entry : glMethods.entrySet()) {
 			boolean explicitSuffix = entry.getValue().size() > 1;
-			for (GLMethod m : entry.getValue()) {
+			for (GLMethod m : entry.getValue())
 				iface.addMethod(m.toInterfaceDefault(explicitSuffix));
-			}
 		}
 
 		iface.addMethod(MethodSpec.methodBuilder("checkError")
@@ -564,15 +535,13 @@ public class GL_W_GenMain extends GenMainConsts {
 		FieldSpec wrapperField = FieldSpec.builder(glWCall, "WRAPPER", Modifier.PUBLIC, Modifier.STATIC).build();
 		cls.addField(wrapperField);
 
-		for (GLField gf : glFields.values()) {
+		for (GLField gf : glFields.values())
 			cls.addField(gf.toFieldSpec());
-		}
 
 		for (Map.Entry<String, List<GLMethod>> entry : glMethods.entrySet()) {
 			boolean explicitSuffix = entry.getValue().size() > 1;
-			for (GLMethod m : entry.getValue()) {
+			for (GLMethod m : entry.getValue())
 				cls.addMethod(m.toWrapperStatic(explicitSuffix));
-			}
 		}
 
 		cls.addMethod(MethodSpec.methodBuilder("checkError")
@@ -640,11 +609,9 @@ public class GL_W_GenMain extends GenMainConsts {
 
 			init.addStatement("$T.WRAPPER = this", ClassName.get(PACKAGE_PATH, "GL_W"));
 
-			for (Field f : clazz.getFields()) {
-				if (f.getType() == int.class) {
+			for (Field f : clazz.getFields())
+				if (f.getType() == int.class)
 					init.addStatement("$T.$L = $T.$L", ClassName.get(PACKAGE_PATH, "GL_W"), f.getName(), ClassName.get(clazz), f.getName());
-				}
-			}
 			cls.addMethod(init.build());
 
 			for (Map.Entry<String, List<GLMethod>> entry : glMethods.entrySet()) {
@@ -747,9 +714,8 @@ public class GL_W_GenMain extends GenMainConsts {
 
 		for (Class<?> c : group) {
 			Class<?> sup = c.getSuperclass();
-			if (set.contains(sup)) {
+			if (set.contains(sup))
 				map.put(c, sup);
-			}
 		}
 	}
 
