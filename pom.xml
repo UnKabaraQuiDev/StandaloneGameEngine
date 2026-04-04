@@ -39,7 +39,7 @@
 		<joml.version>1.10.5</joml.version>
 		<lwjgl.natives>natives-linux</lwjgl.natives>
 		<lwjgl.debug>false</lwjgl.debug>
-		<pclib.version>1.0.2-SNAPSHOT</pclib.version>
+		<pclib.version>1.0.3-SNAPSHOT</pclib.version>
 
 		<local.jar.path>
 			${project.basedir}/target/${project.artifactId}-${project.version}.jar</local.jar.path>
