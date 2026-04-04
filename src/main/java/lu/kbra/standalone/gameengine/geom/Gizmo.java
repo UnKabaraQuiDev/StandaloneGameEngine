@@ -39,8 +39,8 @@ public class Gizmo implements UniqueID, Cleanupable, Renderable {
 	protected Vec4fAttribArray color;
 
 	@Deprecated
-	@Deprecated
-	protected int vertexCount, indicesCount;
+	protected int vertexCount;
+	protected int indicesCount;
 
 	/**
 	 * Positions are stored as attribArray 0, normals as attribArray 1, uvs as attribArray 2
