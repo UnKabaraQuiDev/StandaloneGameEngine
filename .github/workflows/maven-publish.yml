@@ -97,7 +97,7 @@ jobs:
           java-version: 17
 
       - name: Apply formatting
-        run: mvn -B -Pformat clean spotless:apply
+        run: mvn -B -Pformat clean initialize spotless:apply
 
       - name: Commit & push if needed
         run: |
