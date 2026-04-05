@@ -107,9 +107,9 @@ public final class GameEngineUtils {
 		 */
 		case AL10.AL_INVALID_OPERATION:
 			throw new ALInvalidOperationException(caller, status, msg);
-			/*
-			 * case AL11.AL_INVALID_CONTEXT: throw new ALInvalidContextException(caller, status, msg);
-			 */
+		/*
+		 * case AL11.AL_INVALID_CONTEXT: throw new ALInvalidContextException(caller, status, msg);
+		 */
 		case AL10.AL_INVALID_NAME:
 			throw new ALInvalidNameException(caller, status, msg);
 		case AL10.AL_INVALID_ENUM:
@@ -197,9 +197,9 @@ public final class GameEngineUtils {
 			throw new EGLBadNativePixmapException(caller, status, msg);
 		case EGL10.EGL_BAD_NATIVE_WINDOW:
 			throw new EGLBadNativeWindowException(caller, status, msg);
-			/*
-			 * case EGL10.EGL_NO_CONTEXT: throw new EGLNoContextException(caller, status, msg);
-			 */
+		/*
+		 * case EGL10.EGL_NO_CONTEXT: throw new EGLNoContextException(caller, status, msg);
+		 */
 		default:
 			return true;
 		}

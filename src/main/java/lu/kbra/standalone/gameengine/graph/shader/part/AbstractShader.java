@@ -290,8 +290,7 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 			return true;
 		}
 		GlobalLogger.log(Level.WARNING,
-				"Could not get Uniform location for: " + name + " in program " + this.name + " (" + spid + ") ("
-						+ GL_W.glGetError() + ")");
+				"Could not get Uniform location for: " + name + " in program " + this.name + " (" + spid + ") (" + GL_W.glGetError() + ")");
 		knownNotExistsUniforms.add(name);
 		return false;
 	}
@@ -319,8 +318,8 @@ public abstract class AbstractShader extends AutoCleanupable implements UniqueID
 			return true;
 		}
 		GlobalLogger.log(Level.WARNING,
-				"Could not get FragData location for: " + name + " in program " + this.name + " (" + spid + ") ("
-						+ GL_W.glGetError() + ")");
+				"Could not get FragData location for: " + name + " in program " + this.name + " (" + spid + ") (" + GL_W.glGetError()
+						+ ")");
 		knownNotExistsFragOutputs.add(name);
 		return false;
 	}

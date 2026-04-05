@@ -268,19 +268,19 @@ public class Transform3D extends Transform {
 		return this;
 	}
 
-	//	public Transform3D rotate(float x, float y, float z) {
-	//		final float newX = (float) Math.toRadians(x % 360);
-	//		final float newY = (float) Math.toRadians(y % 360);
-	//		final float newZ = (float) Math.toRadians(z % 360);
+	// public Transform3D rotate(float x, float y, float z) {
+	// final float newX = (float) Math.toRadians(x % 360);
+	// final float newY = (float) Math.toRadians(y % 360);
+	// final float newZ = (float) Math.toRadians(z % 360);
 	//
-	//		final Quaternionf rotationDelta = new Quaternionf();
-	//		rotationDelta.rotationXYZ(newX, newY, newZ);
+	// final Quaternionf rotationDelta = new Quaternionf();
+	// rotationDelta.rotationXYZ(newX, newY, newZ);
 	//
-	//		final Quaternionf conjugate = rotationDelta.conjugate();
+	// final Quaternionf conjugate = rotationDelta.conjugate();
 	//
-	//		rotation.mul(rotationDelta).mul(conjugate);
-	//		return this;
-	//	}
+	// rotation.mul(rotationDelta).mul(conjugate);
+	// return this;
+	// }
 
 	public Transform3D rotationAdd(float x, float y, float z) {
 		rotation.rotateXYZ(x, y, z);

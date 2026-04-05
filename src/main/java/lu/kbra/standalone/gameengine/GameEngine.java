@@ -119,7 +119,7 @@ public final class GameEngine implements Cleanupable, UniqueID {
 			audioMaster = new AudioMaster();
 			gameLogic.register(this);
 
-			//			gameLogic.updateInit();
+			// gameLogic.updateInit();
 		}
 
 		try {

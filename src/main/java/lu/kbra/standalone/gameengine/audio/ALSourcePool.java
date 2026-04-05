@@ -51,7 +51,7 @@ public class ALSourcePool {
 				sourceCount++;
 			} catch (ALRuntimeException e) {
 				throw e;
-				//				return i;
+				// return i;
 			}
 
 			if (sourceCount <= maxSources)

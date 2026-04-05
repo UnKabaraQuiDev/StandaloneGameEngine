@@ -97,7 +97,7 @@ public class Mat4fAttribArray extends JavaAttribArray implements MultiAttribArra
 			nPo.get(offset, bbuffer);
 			offset += 16 * Float.BYTES;
 		}
-		//		bbuffer.flip();
+		// bbuffer.flip();
 
 		GL_W.glBufferSubData(bufferType.getGlId(), index * getElementByteSize(), bbuffer);
 	}

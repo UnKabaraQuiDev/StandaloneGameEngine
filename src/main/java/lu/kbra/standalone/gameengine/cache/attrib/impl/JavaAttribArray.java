@@ -214,8 +214,8 @@ public abstract class JavaAttribArray extends AutoCleanupable implements GLObjec
 
 	@Override
 	public String toString() {
-		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + " * "
-				+ getComponentByteSize() + "B = " + getTotalByteSize() + "B";
+		return getGlId() + "|" + getIndex() + ") " + getName() + ": " + getLength() + " * " + getComponentByteSize() + "B = "
+				+ getTotalByteSize() + "B";
 	}
 
 	public static void update(final JavaAttribArray arr, final Object data) {

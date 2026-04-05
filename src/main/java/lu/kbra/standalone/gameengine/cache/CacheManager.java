@@ -87,7 +87,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 		framebuffers.values().forEach(Framebuffer::cleanup);
 		framebuffers.clear();
 
-		//		this.name = null;
+		// this.name = null;
 	}
 
 	@Override
@@ -109,7 +109,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 			return false;
 		if (meshes.containsKey(m.getId()) && !meshes.get(m.getId()).equals(m)) {
 			GlobalLogger.severe("Overwriting Mesh: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
-			//			new Exception("Overwriting Mesh: " + m).fillInStackTrace().printStackTrace();
+			// new Exception("Overwriting Mesh: " + m).fillInStackTrace().printStackTrace();
 			meshes.remove(m.getId()).cleanup();
 		}
 		return meshes.putIfAbsent(m.getId(), m) == null;
@@ -128,7 +128,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 			return false;
 		if (abstractShaders.containsKey(m.getId()) && !abstractShaders.get(m.getId()).equals(m)) {
 			GlobalLogger
-			.severe("Overwriting AbstractShader: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
+					.severe("Overwriting AbstractShader: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
 			abstractShaders.remove(m.getId()).cleanup();
 		}
 		return abstractShaders.putIfAbsent(m.getId(), m) == null;
@@ -155,7 +155,7 @@ public class CacheManager implements Cleanupable, UniqueID {
 			return false;
 		if (instanceEmitters.containsKey(m.getId()) && !instanceEmitters.get(m.getId()).equals(m)) {
 			GlobalLogger
-			.severe("Overwriting InstanceEmitter: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
+					.severe("Overwriting InstanceEmitter: " + m + " from " + PCUtils.getCallerClassName(true, false, CacheManager.class));
 			instanceEmitters.remove(m.getId()).cleanup();
 		}
 		return instanceEmitters.putIfAbsent(m.getId(), m) == null;

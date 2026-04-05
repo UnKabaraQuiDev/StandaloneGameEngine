@@ -50,8 +50,8 @@ public enum DataType implements GLConstant {
 	public boolean isInteger() {
 		return switch (this) {
 		case BYTE, UBYTE, SHORT, INT, USHORT, UINT, USHORT4444, USHORT5551, USHORT565, UINT10F11F11FREV, UINT2101010REV, UINT248,
-		UINT5999REV ->
-		true;
+				UINT5999REV ->
+			true;
 		case FLOAT, HALF_FLOAT -> false;
 		default -> throw new IllegalArgumentException("Weird data type: " + name());
 		};
@@ -79,7 +79,7 @@ public enum DataType implements GLConstant {
 		case FLOAT -> MemImageFormat.FLOAT;
 		case BYTE, INT, SHORT -> throw new UnsupportedOperationException("Unsupported data type: " + this);
 		case FLOAT32UINT248REV, UINT5999REV, UINT10F11F11FREV, UINT2101010REV, UINT248, USHORT4444, USHORT5551, USHORT565 ->
-		throw new UnsupportedOperationException("Weird data type: " + this);
+			throw new UnsupportedOperationException("Weird data type: " + this);
 		};
 	}
 

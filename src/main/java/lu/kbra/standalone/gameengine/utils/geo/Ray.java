@@ -42,7 +42,7 @@ public class Ray {
 	@Override
 	public String toString() {
 		return this.getClass().getName() + "{origin=" + origin + ", dir=" + dir + ", length=" + getLength() + ", endpoint=" + getEndPoint()
-		+ "}";
+				+ "}";
 	}
 
 }

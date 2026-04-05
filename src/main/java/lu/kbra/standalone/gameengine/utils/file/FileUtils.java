@@ -47,7 +47,7 @@ public final class FileUtils {
 				desiredChannels,
 				STBImage.stbi_is_hdr_from_memory(bb) ? MemImageFormat.FLOAT
 						: STBImage.stbi_is_16_bit_from_memory(bb) ? MemImageFormat.USHORT
-								: MemImageFormat.UBYTE);
+						: MemImageFormat.UBYTE);
 	}
 
 	public static MemImage STBILoad(ByteBuffer bb, final int desiredChannels, final MemImageFormat format) {

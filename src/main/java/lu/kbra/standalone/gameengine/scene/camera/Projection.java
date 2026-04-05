@@ -50,7 +50,7 @@ public class Projection {
 			final float halfWidth = halfHeight * aspectRatio;
 
 			projectionMatrix.identity()
-			.ortho(-halfWidth / size, halfWidth / size, -halfHeight / size, halfHeight / size, nearPlane, farPlane);
+					.ortho(-halfWidth / size, halfWidth / size, -halfHeight / size, halfHeight / size, nearPlane, farPlane);
 		}
 		return this;
 	}

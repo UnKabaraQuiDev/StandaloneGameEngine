@@ -31,7 +31,7 @@ public interface ShearOwner {
 				shear.m22(), // m01, m11
 				0,
 				0 // no translation
-				);
+		);
 		affine.concatenate(shearAffine);
 	}
 }

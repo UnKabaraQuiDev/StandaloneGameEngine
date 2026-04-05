@@ -146,7 +146,7 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 			}
 			if (found != old)
 				throw new IllegalStateException("Found value and given old values do not match (" + PCUtils.toSimpleIdentityString(found)
-				+ " <> " + PCUtils.toSimpleIdentityString(old) + ").");
+						+ " <> " + PCUtils.toSimpleIdentityString(old) + ").");
 			this.add(new_);
 			return Optional.of(found);
 		}

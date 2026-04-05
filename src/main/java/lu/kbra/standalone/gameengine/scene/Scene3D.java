@@ -141,8 +141,8 @@ public class Scene3D implements Scene {
 			final O oldValue = (O) entities.remove(old.getId());
 			this.onRemove(oldValue);
 			if (oldValue != old)
-				throw new IllegalStateException("Found value and given old values do not match ("
-						+ PCUtils.toSimpleIdentityString(oldValue) + " <> " + PCUtils.toSimpleIdentityString(old) + ").");
+				throw new IllegalStateException("Found value and given old values do not match (" + PCUtils.toSimpleIdentityString(oldValue)
+						+ " <> " + PCUtils.toSimpleIdentityString(old) + ").");
 			this.add(new_);
 			return Optional.of(oldValue);
 		}
@@ -231,8 +231,8 @@ public class Scene3D implements Scene {
 
 	@Override
 	public String toString() {
-		return "Scene3D@" + System.identityHashCode(this) + " [name=" + name + ", camera=" + camera + ", entitiesLock="
-				+ entitiesLock + ", entities=" + entities + "]";
+		return "Scene3D@" + System.identityHashCode(this) + " [name=" + name + ", camera=" + camera + ", entitiesLock=" + entitiesLock
+				+ ", entities=" + entities + "]";
 	}
 
 }

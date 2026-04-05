@@ -101,7 +101,7 @@ public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueI
 
 		final Matrix4f[] transforms = ((Mat4fAttribArray) instances.getParticleTransforms()).isLoaded()
 				? ((Mat4fAttribArray) instances.getParticleTransforms()).getData()
-						: new Matrix4f[instances.getParticleCount()];
+				: new Matrix4f[instances.getParticleCount()];
 		final Integer[] chars = new Integer[instances.getParticleCount()];
 		Arrays.fill(chars, 0);
 

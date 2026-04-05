@@ -30,7 +30,8 @@ public class PostDeserializeWrapper extends JsonDeserializer<Object> implements 
 	}
 
 	@Override
-	public JsonDeserializer<?> createContextual(final DeserializationContext ctxt, final BeanProperty property) throws JsonMappingException {
+	public JsonDeserializer<?> createContextual(final DeserializationContext ctxt, final BeanProperty property)
+			throws JsonMappingException {
 
 		JsonDeserializer<?> deser = this.defaultDeserializer;
 

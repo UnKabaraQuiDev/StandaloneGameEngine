@@ -35085,7 +35085,7 @@ public class GL_W_GL46_LoggingDebugSync implements GL_W_Call {
 			int arg13,
 			int arg14) {
 		org.lwjgl.opengl.GL46
-		.glCopyImageSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
+				.glCopyImageSubData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
 		int err = org.lwjgl.opengl.GL46.glGetError();
 		final long fence = GL32.glFenceSync(GL32.GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		GL11.glFlush();

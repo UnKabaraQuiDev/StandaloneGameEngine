@@ -154,7 +154,6 @@ public class Transform3DShear extends Transform3D implements ShearOwner {
 
 	@Override
 	public String toString() {
-		return "Transform3DShear [translation=" + translation + ", rotation=" + rotation + ", scale=" + scale + ", shear="
-				+ shear + "]";
+		return "Transform3DShear [translation=" + translation + ", rotation=" + rotation + ", scale=" + scale + ", shear=" + shear + "]";
 	}
 }

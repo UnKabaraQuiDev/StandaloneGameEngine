@@ -94,9 +94,9 @@ public class Vec4iAttribArray extends JavaAttribArray implements IntegerJavaType
 		return new IntAttribArray(name, index, toFlatArray(), bufferType, iStatic, divisor);
 	}
 
-	//	public UIntAttribArray toUIntAttribArray() {
-	//		return new UIntAttribArray(name, index * TYPE_SIZE, toFlatArray(), bufferType, iStatic);
-	//	}
+	// public UIntAttribArray toUIntAttribArray() {
+	// return new UIntAttribArray(name, index * TYPE_SIZE, toFlatArray(), bufferType, iStatic);
+	// }
 
 	@Override
 	public Class<?> getType() {

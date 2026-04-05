@@ -276,7 +276,7 @@ public class GL_W_GenMain extends GenMainConsts {
 						" !! ERROR: ",
 						"");
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-				+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 
 				mb.addStatement("return ret");
 			} else {
@@ -319,7 +319,7 @@ public class GL_W_GenMain extends GenMainConsts {
 
 			if (returnsValue) {
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-				+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 				mb.addStatement("return ret");
 			} else
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
@@ -332,7 +332,7 @@ public class GL_W_GenMain extends GenMainConsts {
 		private String buildLogPrefix(String methodName) {
 			return parameters.length == 0 ? methodName + "()"
 					: methodName + "(\" + " + Arrays.stream(parameters).map(Parameter::getName).collect(Collectors.joining(" + \", \" + "))
-					+ " + \")";
+							+ " + \")";
 		}
 
 		public MethodSpec toLoggingDebugFlushingImplMethod(Class<?> implClazz, boolean explicitSuffix) {
@@ -363,7 +363,7 @@ public class GL_W_GenMain extends GenMainConsts {
 
 			if (returnsValue) {
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-				+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 				mb.addStatement("return ret");
 			} else
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",
@@ -407,7 +407,7 @@ public class GL_W_GenMain extends GenMainConsts {
 
 			if (returnsValue) {
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName)
-				+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
+						+ " = \" + ret + \" !! ERROR: \" + err)", implClazz, RuntimeException.class);
 				mb.addStatement("return ret");
 			} else
 				mb.addStatement("if (err != $T.GL_NO_ERROR) throw new $T(\"" + buildLogPrefix(methodName) + " !! ERROR: \" + err)",

@@ -172,9 +172,9 @@ public class LoadedMesh extends AutoCleanupable implements Mesh {
 
 	@Override
 	public String toString() {
-		return "LoadedMesh [name=" + name + ", vao=" + vao + ", vbo=" + vbo + ", material=" + material + ", vertices="
-				+ vertices + ", indices=" + indices + ", attribs=" + attribs + ", vertexCount=" + vertexCount
-				+ ", indicesCount=" + indicesCount + ", isValid()=" + isValid() + ", boundingBox=" + boundingBox + "]";
+		return "LoadedMesh [name=" + name + ", vao=" + vao + ", vbo=" + vbo + ", material=" + material + ", vertices=" + vertices
+				+ ", indices=" + indices + ", attribs=" + attribs + ", vertexCount=" + vertexCount + ", indicesCount=" + indicesCount
+				+ ", isValid()=" + isValid() + ", boundingBox=" + boundingBox + "]";
 	}
 
 	public static QuadLoadedMesh newQuad(final String name, final Material material2, final Vector2f size) {

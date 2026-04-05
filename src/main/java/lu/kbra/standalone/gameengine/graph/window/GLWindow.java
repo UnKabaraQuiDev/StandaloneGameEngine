@@ -101,7 +101,6 @@ public class GLWindow extends Window {
 			throw new RuntimeException(e);
 		}
 
-
 		this.updateOptions();
 
 		this.createCallbacks();

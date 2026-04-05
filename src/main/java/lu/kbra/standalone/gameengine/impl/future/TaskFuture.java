@@ -117,15 +117,15 @@ public class TaskFuture<I, O> {
 		}, priority);
 	}
 
-	//	protected TaskFuture(Dispatcher dispatcher, Function<I, O> task) {
-	//		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
-	//	}
+	// protected TaskFuture(Dispatcher dispatcher, Function<I, O> task) {
+	// this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);
+	// }
 	//
-	//	protected TaskFuture(Dispatcher dispatcher, Function<I, O> task, int priority) {
-	//		this.dispatcher = dispatcher;
-	//		this.task = task;
-	//		this.priority = priority;
-	//	}
+	// protected TaskFuture(Dispatcher dispatcher, Function<I, O> task, int priority) {
+	// this.dispatcher = dispatcher;
+	// this.task = task;
+	// this.priority = priority;
+	// }
 
 	public TaskFuture(final Dispatcher dispatcher, final Supplier<O> task) {
 		this(dispatcher, task, Dispatcher.DEFAULT_PRIORITY);

@@ -192,8 +192,8 @@ public class Transform3DPivot extends Transform3D {
 
 	@Override
 	public String toString() {
-		return "Transform3DPivot [rotationPivot=" + rotationPivot + ", scalePivot=" + scalePivot + ", translation="
-				+ translation + ", rotation=" + rotation + ", scale=" + scale + ", matrix=" + matrix + "]";
+		return "Transform3DPivot [rotationPivot=" + rotationPivot + ", scalePivot=" + scalePivot + ", translation=" + translation
+				+ ", rotation=" + rotation + ", scale=" + scale + ", matrix=" + matrix + "]";
 	}
 
 }

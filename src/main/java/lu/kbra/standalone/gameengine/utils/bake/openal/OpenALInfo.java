@@ -168,9 +168,9 @@ public class OpenALInfo {
 		filters.put("Band-pass", AL_FILTER_BANDPASS);
 
 		filters.entrySet()
-		.stream()
-		.filter(entry -> EFXUtil.isFilterSupported(entry.getValue()))
-		.forEach(entry -> System.out.println("    " + entry.getKey()));
+				.stream()
+				.filter(entry -> EFXUtil.isFilterSupported(entry.getValue()))
+				.forEach(entry -> System.out.println("    " + entry.getKey()));
 
 		System.out.println("Supported effects: ");
 		HashMap<String, Integer> effects = new HashMap<>();
@@ -189,9 +189,9 @@ public class OpenALInfo {
 		effects.put("Equalizer", AL_EFFECT_EQUALIZER);
 
 		effects.entrySet()
-		.stream()
-		.filter(e -> EFXUtil.isEffectSupported(e.getValue()))
-		.forEach(e -> System.out.println("    " + e.getKey()));
+				.stream()
+				.filter(e -> EFXUtil.isEffectSupported(e.getValue()))
+				.forEach(e -> System.out.println("    " + e.getKey()));
 	}
 
 	private static void printDevices(int which, String kind) {
