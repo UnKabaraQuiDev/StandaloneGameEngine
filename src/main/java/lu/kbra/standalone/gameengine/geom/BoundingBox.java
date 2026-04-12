@@ -2,6 +2,7 @@ package lu.kbra.standalone.gameengine.geom;
 
 import java.awt.geom.Rectangle2D;
 
+import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
@@ -13,72 +14,100 @@ public class BoundingBox {
 	private Vector3f center;
 	private Vector3f size;
 
-	public BoundingBox(Vector3f min, Vector3f max) {
+	public BoundingBox(final Vector3f min, final Vector3f max) {
 		this.min = min;
 		this.max = max;
 	}
 
-	public BoundingBox(Vector3f min, Vector3f max, Vector3f center) {
+	public BoundingBox(final Vector3f min, final Vector3f max, final Vector3f center) {
 		this.min = min;
 		this.max = max;
 		this.center = center;
 	}
 
 	public Vector3f getMin() {
-		return min;
+		return this.min;
 	}
 
 	public Vector3f getMax() {
-		return max;
+		return this.max;
 	}
 
 	public Vector3f getCenter() {
-		if (center == null)
-			computeCenter();
-		return center;
+		if (this.center == null) {
+			this.computeCenter();
+		}
+		return this.center;
 	}
 
 	public Vector3f computeCenter() {
-		if (center == null)
-			center = new Vector3f();
-		return min.add(max, center).mul(0.5f);
+		if (this.center == null) {
+			this.center = new Vector3f();
+		}
+		return this.min.add(this.max, this.center).mul(0.5f);
 	}
 
 	public Vector3f getSize() {
-		if (size == null)
-			computeSize();
-		return size;
+		if (this.size == null) {
+			this.computeSize();
+		}
+		return this.size;
 	}
 
 	public Vector3f computeSize() {
-		if (size == null)
-			size = new Vector3f();
-		return max.sub(min, size);
+		if (this.size == null) {
+			this.size = new Vector3f();
+		}
+		return this.max.sub(this.min, this.size);
 	}
 
-	public Rectangle2D.Float project(GeoPlane plane) {
+	public Rectangle2D.Float project(final GeoPlane plane) {
 		return switch (plane) {
-		case XY -> new Rectangle2D.Float(min.x, min.y, max.x - min.x, max.y - min.y);
-		case XZ -> new Rectangle2D.Float(min.x, min.z, max.x - min.x, max.z - min.z);
-		case YZ -> new Rectangle2D.Float(min.y, min.z, max.y - min.y, max.z - min.z);
+		case XY -> new Rectangle2D.Float(this.min.x, this.min.y, this.max.x - this.min.x, this.max.y - this.min.y);
+		case XZ -> new Rectangle2D.Float(this.min.x, this.min.z, this.max.x - this.min.x, this.max.z - this.min.z);
+		case YZ -> new Rectangle2D.Float(this.min.y, this.min.z, this.max.y - this.min.y, this.max.z - this.min.z);
 		};
+	}
+
+	public BoundingBox translated(final Vector3f translation) {
+		return new BoundingBox(new Vector3f(this.min).add(translation), new Vector3f(this.max).add(translation));
+	}
+
+	public BoundingBox transformed(final Matrix4f matrix) {
+		final Vector3f min = new Vector3f(Float.POSITIVE_INFINITY);
+		final Vector3f max = new Vector3f(Float.NEGATIVE_INFINITY);
+
+		final Vector3f[] corners = new Vector3f[] {
+				new Vector3f(this.min.x, this.min.y, this.min.z),
+				new Vector3f(this.min.x, this.min.y, this.max.z),
+				new Vector3f(this.min.x, this.max.y, this.min.z),
+				new Vector3f(this.min.x, this.max.y, this.max.z),
+				new Vector3f(this.max.x, this.min.y, this.min.z),
+				new Vector3f(this.max.x, this.min.y, this.max.z),
+				new Vector3f(this.max.x, this.max.y, this.min.z),
+				new Vector3f(this.max.x, this.max.y, this.max.z) };
+
+		final Vector3f tmp = new Vector3f();
+
+		for (final Vector3f corner : corners) {
+			matrix.transformPosition(corner, tmp);
+
+			min.min(tmp);
+			max.max(tmp);
+		}
+
+		return new BoundingBox(min, max);
 	}
 
 	@Override
 	public String toString() {
-		return "BoundingBox [min=" + min + ", max=" + max + ", center=" + center + "]";
+		return "BoundingBox [min=" + this.min + ", max=" + this.max + ", center=" + this.center + "]";
 	}
 
-	public static BoundingBox union(BoundingBox bb1, BoundingBox bb2) {
-		final Vector3f max1 = bb1.getMax();
-		final Vector3f max2 = bb2.getMax();
-		final Vector3f min1 = bb1.getMin();
-		final Vector3f min2 = bb2.getMin();
-		return new BoundingBox(new Vector3f(min1).min(min2), new Vector3f(max1).min(max2));
-	}
-
-	public BoundingBox translated(Vector3f translation) {
-		return new BoundingBox(new Vector3f(min).add(translation), new Vector3f(max).add(translation));
+	public static BoundingBox union(final BoundingBox bb1, final BoundingBox bb2) {
+		final Vector3f min = new Vector3f(bb1.getMin()).min(bb2.getMin());
+		final Vector3f max = new Vector3f(bb1.getMax()).max(bb2.getMax());
+		return new BoundingBox(min, max);
 	}
 
 }

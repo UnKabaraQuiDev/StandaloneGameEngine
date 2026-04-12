@@ -10,7 +10,7 @@ public enum Interpolators implements Interpolator {
 		@Override
 		public float evaluate(float x) {
 			// to check
-			return x % 2 * p < p ? x % p : p - x % p;
+			return x % (2 * p) < p ? x % p : p - x % p;
 		}
 
 		@Override
