@@ -20,11 +20,11 @@ import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextAlignment;
 import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 
-public class TextEmitter extends AutoCleanupable implements Cleanupable, UniqueID, GLObject, Renderable {
+public class TextEmitter extends AutoCleanupable implements Cleanupable, IdOwner, GLObject, Renderable {
 
 	private static record SetupData(TextMaterial material, int bufferSize) {
 	}

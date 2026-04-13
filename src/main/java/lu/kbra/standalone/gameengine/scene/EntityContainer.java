@@ -5,9 +5,10 @@ import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.objs.entity.SceneEntity;
 
-public interface EntityContainer<B extends SceneEntity> extends Iterable<B> {
+public interface EntityContainer<B extends SceneEntity> extends Iterable<B>, IdOwner {
 
 	<T extends B> T add(T e);
 
@@ -27,7 +28,7 @@ public interface EntityContainer<B extends SceneEntity> extends Iterable<B> {
 
 	int size();
 
-	<T extends SceneEntity> T getEntity(String str);
+	<T extends B> T getEntity(String str);
 
 	Stream<B> parallelStream();
 
@@ -36,21 +37,22 @@ public interface EntityContainer<B extends SceneEntity> extends Iterable<B> {
 	@Override
 	void forEach(Consumer<? super B> action);
 
-	void flatForEach(Consumer<? super SceneEntity> action);
+	void flatForEach(Consumer<? super B> action);
 
-	default Stream<SceneEntity> flatStream() {
-		return stream().flatMap(this::flatten);
+	default Stream<B> flatStream() {
+		return this.stream().flatMap(this::flatten);
 	}
 
-	default Stream<SceneEntity> flatParallelStream() {
-		return parallelStream().flatMap(this::flatten);
+	default Stream<B> flatParallelStream() {
+		return this.parallelStream().flatMap(this::flatten);
 	}
 
-	default Stream<SceneEntity> flatten(SceneEntity entity) {
-		if (!(entity instanceof EntityContainer<?> container))
+	default Stream<B> flatten(final B entity) {
+		if (!(entity instanceof final EntityContainer<?> container)) {
 			return Stream.of(entity);
+		}
 
-		final EntityContainer<? extends SceneEntity> typed = (EntityContainer<? extends SceneEntity>) container;
+		final EntityContainer<? extends B> typed = (EntityContainer<? extends B>) container;
 		return Stream.concat(Stream.of(entity), typed.stream().flatMap(this::flatten));
 	}
 

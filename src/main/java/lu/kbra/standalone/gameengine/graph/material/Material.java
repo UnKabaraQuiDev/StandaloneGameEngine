@@ -11,9 +11,9 @@ import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.components.MaterialComponent;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.impl.Renderable;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 
-public class Material implements UniqueID {
+public class Material implements IdOwner {
 
 	protected final String name;
 	protected Map<String, Object> properties;

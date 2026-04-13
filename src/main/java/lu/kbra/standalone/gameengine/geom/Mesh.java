@@ -12,13 +12,13 @@ import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.Material;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.utils.geo.GeoPlane;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BeginMode;
 import lu.kbra.standalone.gameengine.utils.gl.consts.PolygonDrawMode;
 import lu.kbra.standalone.gameengine.utils.gl.consts.PolygonMode;
 
-public interface Mesh extends UniqueID, Renderable, GLObject {
+public interface Mesh extends IdOwner, Renderable, GLObject {
 
 	String ATTRIB_VERTICES_NAME = "vertices";
 	String ATTRIB_INDICES_NAME = "ids";

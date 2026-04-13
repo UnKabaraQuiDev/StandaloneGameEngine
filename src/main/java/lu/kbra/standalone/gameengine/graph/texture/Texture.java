@@ -5,7 +5,7 @@ import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.GLObject;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.utils.gl.consts.DataType;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TexelFormat;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TexelInternalFormat;
@@ -15,7 +15,7 @@ import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureWrap;
 import lu.kbra.standalone.gameengine.utils.mem.img.MemImageFormat;
 
-public abstract class Texture extends AutoCleanupable implements UniqueID, FramebufferAttachment, GLObject {
+public abstract class Texture extends AutoCleanupable implements IdOwner, FramebufferAttachment, GLObject {
 
 	public static final int MAX_TEXTURE_LOD_BIAS = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_LOD_BIAS);
 	public static final int MAX_TEXTURE_SIZE = GL_W.glGetInteger(GL_W.GL_MAX_TEXTURE_SIZE);

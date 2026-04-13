@@ -15,11 +15,11 @@ import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.Renderable;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 @Deprecated
-public class Gizmo implements UniqueID, Cleanupable, Renderable {
+public class Gizmo implements IdOwner, Cleanupable, Renderable {
 
 	@Deprecated
 	public static final float LINE_WIDTH = 2.5f;

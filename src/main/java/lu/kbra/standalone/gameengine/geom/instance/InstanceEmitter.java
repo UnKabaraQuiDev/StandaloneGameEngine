@@ -27,14 +27,14 @@ import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
 import lu.kbra.standalone.gameengine.impl.Renderable;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.impl.future.Dispatcher;
 import lu.kbra.standalone.gameengine.impl.future.TaskFuture;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 import lu.kbra.standalone.gameengine.utils.transform.Transform;
 import lu.kbra.standalone.gameengine.utils.transform.Transform3D;
 
-public class InstanceEmitter extends AutoCleanupable implements Renderable, Cleanupable, UniqueID, GLObject {
+public class InstanceEmitter extends AutoCleanupable implements Renderable, Cleanupable, IdOwner, GLObject {
 
 	public static final int TRANSFORM_BUFFER_INDEX = 5;
 	public static final int FIRST_BUFFER_INDEX = InstanceEmitter.TRANSFORM_BUFFER_INDEX + Mat4fAttribArray.ATTRIB_LENGTH;

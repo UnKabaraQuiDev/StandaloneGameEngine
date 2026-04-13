@@ -14,12 +14,12 @@ import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
 import lu.kbra.standalone.gameengine.impl.GLObject;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.gl.consts.FrameBufferAttachment;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TextureType;
 
-public final class Framebuffer extends AutoCleanupable implements UniqueID, Cleanupable, GLObject {
+public final class Framebuffer extends AutoCleanupable implements IdOwner, Cleanupable, GLObject {
 
 	private final String name;
 	private int fbo = -1;

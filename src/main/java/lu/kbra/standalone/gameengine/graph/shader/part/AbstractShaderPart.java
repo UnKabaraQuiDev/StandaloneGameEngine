@@ -10,10 +10,10 @@ import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 
-public abstract class AbstractShaderPart extends AutoCleanupable implements UniqueID, Cleanupable, GLObject {
+public abstract class AbstractShaderPart extends AutoCleanupable implements IdOwner, Cleanupable, GLObject {
 
 	public static final String DEBUG_PROPERTY = AbstractShaderPart.class.getSimpleName() + ".debug";
 	public static boolean DEBUG = Boolean.getBoolean(DEBUG_PROPERTY);

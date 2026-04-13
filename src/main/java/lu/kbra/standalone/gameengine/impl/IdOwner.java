@@ -1,6 +1,6 @@
 package lu.kbra.standalone.gameengine.impl;
 
-public interface UniqueID {
+public interface IdOwner {
 
 	String getId();
 

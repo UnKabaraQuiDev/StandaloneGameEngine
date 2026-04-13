@@ -17,11 +17,11 @@ import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
 import lu.kbra.standalone.gameengine.graph.shader.part.AbstractShader;
 import lu.kbra.standalone.gameengine.graph.texture.Texture;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.objs.text.TextEmitter;
 import lu.kbra.standalone.gameengine.scene.Scene;
 
-public class CacheManager implements Cleanupable, UniqueID {
+public class CacheManager implements Cleanupable, IdOwner {
 
 	protected String name;
 

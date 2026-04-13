@@ -1,8 +1,8 @@
 package lu.kbra.standalone.gameengine.objs.entity;
 
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 
-public interface SceneEntity extends UniqueID {
+public interface SceneEntity extends IdOwner {
 
 	boolean isActive();
 

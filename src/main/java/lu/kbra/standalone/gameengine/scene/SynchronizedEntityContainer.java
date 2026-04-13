@@ -34,7 +34,7 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 	}
 
 	@Override
-	default void flatForEach(final Consumer<? super SceneEntity> action) {
+	default void flatForEach(final Consumer<? super B> action) {
 		// TODO: This isn't lock safe
 		synchronized (this.getEntitiesLock()) {
 			flatStream().forEach(action);
@@ -111,7 +111,7 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 	}
 
 	@Override
-	default <T extends SceneEntity> T getEntity(final String str) {
+	default <T extends B> T getEntity(final String str) {
 		return (T) this.getWEntities().parallelStream().filter(c -> c.getId().equals(str)).findFirst().orElse(null);
 	}
 

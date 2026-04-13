@@ -4,10 +4,10 @@ import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.FramebufferAttachment;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.utils.gl.consts.TexelInternalFormat;
 
-public class RenderBuffer implements UniqueID, Cleanupable, FramebufferAttachment {
+public class RenderBuffer implements IdOwner, Cleanupable, FramebufferAttachment {
 
 	private String name;
 	private int rbid;

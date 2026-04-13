@@ -31,11 +31,11 @@ import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.AutoCleanupable;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
 import lu.kbra.standalone.gameengine.impl.GLObject;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.utils.GameEngineUtils;
 import lu.kbra.standalone.gameengine.utils.Property;
 
-public abstract class AbstractShader extends AutoCleanupable implements UniqueID, Cleanupable, GLObject {
+public abstract class AbstractShader extends AutoCleanupable implements IdOwner, Cleanupable, GLObject {
 
 	public static final String DEBUG_PROPERTY = AbstractShader.class.getSimpleName() + ".debug";
 	public static boolean DEBUG = Boolean.getBoolean(DEBUG_PROPERTY);

@@ -9,11 +9,11 @@ import lu.kbra.pclib.PCUtils;
 import lu.kbra.pclib.datastructure.triplet.Triplet;
 import lu.kbra.pclib.logger.GlobalLogger;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
-import lu.kbra.standalone.gameengine.impl.UniqueID;
+import lu.kbra.standalone.gameengine.impl.IdOwner;
 import lu.kbra.standalone.gameengine.utils.mem.buffer.MemBuffer;
 import lu.kbra.standalone.gameengine.utils.mem.buffer.MemBufferOrigin;
 
-public class Sound implements UniqueID, Cleanupable {
+public class Sound implements IdOwner, Cleanupable {
 
 	private final String name;
 
