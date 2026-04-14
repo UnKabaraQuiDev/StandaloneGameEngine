@@ -14,8 +14,8 @@ import lu.kbra.standalone.gameengine.cache.attrib.Vec4fAttribArray;
 import lu.kbra.standalone.gameengine.cache.attrib.impl.JavaAttribArray;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.impl.Cleanupable;
-import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.IdOwner;
+import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.utils.gl.consts.BufferType;
 
 @Deprecated

@@ -10,8 +10,8 @@ import lu.kbra.standalone.gameengine.cache.CacheManager;
 import lu.kbra.standalone.gameengine.generated.gl_wrapper.GL_W;
 import lu.kbra.standalone.gameengine.graph.material.components.MaterialComponent;
 import lu.kbra.standalone.gameengine.graph.shader.RenderShader;
-import lu.kbra.standalone.gameengine.impl.Renderable;
 import lu.kbra.standalone.gameengine.impl.IdOwner;
+import lu.kbra.standalone.gameengine.impl.Renderable;
 
 public class Material implements IdOwner {
 
