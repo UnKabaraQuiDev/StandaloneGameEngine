@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<umlmark-class version="0.8.1" icons="true" show-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-rel="true" router="FAN">  
+  <interface id="1" language="java" name="lu.kbra.standalone.gameengine.scene.SynchronizedEntityContainer" 
+    project="StandaloneGameEngine" 
+    file="/StandaloneGameEngine/src/main/java/lu/kbra/standalone/gameengine/scene/SynchronizedEntityContainer.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="243" y="333"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="false"/>    
+    </display>  
+  </interface>  
+  <interface id="2" language="java" name="lu.kbra.standalone.gameengine.scene.EntityContainer" 
+    project="StandaloneGameEngine" 
+    file="/StandaloneGameEngine/src/main/java/lu/kbra/standalone/gameengine/scene/EntityContainer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="574" y="335"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="3" language="java" name="lu.kbra.standalone.gameengine.scene.GenericScene" project="StandaloneGameEngine" 
+    file="/StandaloneGameEngine/src/main/java/lu/kbra/standalone/gameengine/scene/GenericScene.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1180" y="328"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <interface id="4" language="java" name="lu.kbra.standalone.gameengine.scene.Scene" project="StandaloneGameEngine" 
+    file="/StandaloneGameEngine/src/main/java/lu/kbra/standalone/gameengine/scene/Scene.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="856" y="332"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="false"/>    
+    </display>  
+  </interface>  
+  <realization id="5">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <generalization id="6">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="7">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <classifier-attribute resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" 
+    sort="true" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="false"/>    
+    <operations public="true" package="true" protected="true" private="true" static="false"/>  
+  </classifier-attribute>  
+  <association-attribute labels="true" multiplicity="true"/>
+</umlmark-class>

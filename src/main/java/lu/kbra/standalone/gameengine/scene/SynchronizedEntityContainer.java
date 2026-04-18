@@ -122,6 +122,7 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 				return Optional.empty();
 			final T old = (T) this.getWEntities().parallelStream().filter(c -> c.getId().equals(e.getId())).findFirst().orElse(null);
 			if (old != null) {
+				this.getWEntities().remove(old);
 				if (old instanceof final ParentAwareNode pa) {
 					ParentAwareComponent.checkHierarchy(this, pa);
 					pa.setParent(null);
@@ -141,12 +142,14 @@ public interface SynchronizedEntityContainer<B extends SceneEntity> extends Enti
 			}
 			final O found = (O) this.getWEntities().parallelStream().filter(c -> c.getId().equals(old.getId())).findFirst().orElse(null);
 			if (found == null) {
+				this.getWEntities().remove(found);
 				this.add(new_);
 				return Optional.empty();
 			}
-			if (found != old)
+			if (found != old) {
 				throw new IllegalStateException("Found value and given old values do not match (" + PCUtils.toSimpleIdentityString(found)
 						+ " <> " + PCUtils.toSimpleIdentityString(old) + ").");
+			}
 			this.add(new_);
 			return Optional.of(found);
 		}

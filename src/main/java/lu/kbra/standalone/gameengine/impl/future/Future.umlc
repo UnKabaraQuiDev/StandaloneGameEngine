@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<umlmark-class version="0.8.1" icons="true" show-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-rel="true" router="FAN">  
+  <class id="1" language="java" name="lu.kbra.standalone.gameengine.impl.future.YieldExecutionThrowable" 
+    project="StandaloneGameEngine" 
+    file="/StandaloneGameEngine/src/main/java/lu/kbra/standalone/gameengine/impl/future/YieldExecutionThrowable.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1609" y="180"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="lu.kbra.standalone.gameengine.impl.future.Dispatcher" 
+    project="StandaloneGameEngine" 
+    file="/StandaloneGameEngine/src/main/java/lu/kbra/standalone/gameengine/impl/future/Dispatcher.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1176" y="406"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="lu.kbra.standalone.gameengine.impl.future.StandaloneDispatcher" 
+    project="StandaloneGameEngine" 
+    file="/StandaloneGameEngine/src/main/java/lu/kbra/standalone/gameengine/impl/future/StandaloneDispatcher.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="710" y="615"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="lu.kbra.standalone.gameengine.impl.future.WorkerDispatcher" 
+    project="StandaloneGameEngine" 
+    file="/StandaloneGameEngine/src/main/java/lu/kbra/standalone/gameengine/impl/future/WorkerDispatcher.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="667" y="328"/>    
+    <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="false"/>      
+      <operations public="true" package="true" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <generalization id="5">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="6">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <classifier-attribute resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" 
+    sort="true" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="false"/>    
+    <operations public="true" package="true" protected="true" private="true" static="false"/>  
+  </classifier-attribute>  
+  <association-attribute labels="true" multiplicity="true"/>
+</umlmark-class>
